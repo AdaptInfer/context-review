@@ -1,4 +1,4 @@
-adaptivity
+Adaptivity
 arxiv
 blengerich
 cnellington
@@ -8,8 +8,9 @@ DeepLift
 DeepSHAP
 identifiability
 interpretability
+interpretable
 invariance
-lengerich
+Lengerich
 nonparametric
 OLS
 personalization
@@ -18,6 +19,7 @@ RBF
 regularizaiton
 regularizer
 regulatability
+scalable
 subpopulation
 TODO
 unmodeled
