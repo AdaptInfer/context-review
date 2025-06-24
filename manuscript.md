@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-06-24" />
   <meta name="citation_publication_date" content="2025-06-24" />
   <meta property="article:published_time" content="2025-06-24" />
-  <meta name="dc.modified" content="2025-06-24T18:36:22+00:00" />
-  <meta property="article:modified_time" content="2025-06-24T18:36:22+00:00" />
+  <meta name="dc.modified" content="2025-06-24T19:02:30+00:00" />
+  <meta property="article:modified_time" content="2025-06-24T19:02:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f4efe1e55d5f40b45b0d3eb4e4603c75e09d0e83/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f4efe1e55d5f40b45b0d3eb4e4603c75e09d0e83/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f4efe1e55d5f40b45b0d3eb4e4603c75e09d0e83/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/144b9ae77eceed259a3ffe31b41dd6640586c5e2/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/144b9ae77eceed259a3ffe31b41dd6640586c5e2/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/144b9ae77eceed259a3ffe31b41dd6640586c5e2/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/f4efe1e55d5f40b45b0d3eb4e4603c75e09d0e83/))
+([permalink](https://AdaptInfer.github.io/context-review/v/144b9ae77eceed259a3ffe31b41dd6640586c5e2/))
 was automatically generated
-from [AdaptInfer/context-review@f4efe1e](https://github.com/AdaptInfer/context-review/tree/f4efe1e55d5f40b45b0d3eb4e4603c75e09d0e83)
+from [AdaptInfer/context-review@144b9ae](https://github.com/AdaptInfer/context-review/tree/144b9ae77eceed259a3ffe31b41dd6640586c5e2)
 on June 24, 2025.
 </em></small>
 
@@ -123,21 +123,41 @@ In this review, we outline recent progress in integrating context into statistic
 We conclude by discussing future trends, challenges, and opportunities in context-adaptive statistical inference.
 
 ## Introduction
+A growing number of methods across statistics and machine learning aim to model how data distributions vary across individuals, environments, or tasks. This interest in context-adaptive inference reflects a shift from population-level models toward those that account for sample-specific variation.
 
-### Purpose and Scope
-TODO: Establishing the framework for our examination of context-adaptive statistical methods and the significance of foundation models.
+In statistics, **varying-coefficient models** allow model parameters to change smoothly with covariates. In machine learning, **meta-learning** and **transfer learning** enable models to adapt across tasks or domains. More recently, **in-context learning** -- by which foundation models adapt behavior based on support examples without parameter updates -- has emerged as a powerful mechanism for personalization in large language models.
 
-### Conceptual Foundations
-Unpacking the core principles and historical impact of adaptive methods within statistical modeling.
+These approaches originate from different traditions but share a common goal: to use *context* in the form of covariates, support data, or task descriptors to guide inference about sample-specific *parameters*.
 
+We formalize the setting by assuming each observation $X_i$ is drawn from a sample-specific distribution:
 
-### A Brief History of Personalized Inference
-
-Personalization aims to solve the problem of _parameter heterogeneity_, where model parameters are _sample-specific_. 
 $$X_i \sim P(X; \theta_i)$$
-From $N$ observations, personalized modeling methods aim to recover $N$ parameter estimates $\widehat{\theta}_1, ..., \widehat{\theta}_N$.
-Without further assumptions this problem is ill-defined, and the estimators have far too much variance to be useful. 
-We can begin to make this problem tractable by imposing assumptions on the topology of $\theta$, or the relationship between $\theta$ and contextual variables.
+
+where $\theta_i$ denotes the parameters governing the distribution of the $i$th observation. In the most general case, this formulation allows for arbitrary heterogeneity. However, estimating $N$ distinct parameters from $N$ observations is ill-posed without further structure.
+
+To make the problem tractable, context-adaptive methods introduce structure by assuming that parameters vary systematically with context:
+$$
+\theta_i = f(c_i).
+$$
+This deterministic formulation is common in varying-coefficient models and many supervised personalization settings.
+
+More generally, $\theta_i$ may be drawn from a context-dependent distribution:
+$$
+\theta_i \sim P(\theta \mid c_i),
+$$
+as in hierarchical Bayesian models or amortized inference frameworks. This stochastic formulation captures residual uncertainty or unmodeled variation beyond what is encoded in $c_i$.
+
+The function $f$ encodes how parameters vary with context, and may be linear, smooth, or nonparametric, depending on the modeling assumptions. In this view, the challenge of context-adaptive inference reduces to estimating or constraining $f$ given data $\{(x_i, c_i)\}_{i=1}^N$.
+
+Viewed this way, context-adaptive inference spans a spectrum—from models that seek **invariance** across environments to models that enable **personalization** at the level of individual samples. For example:
+
+- **Population models** assume $\theta_i = \theta$ for all $i$.
+- **Invariant risk minimization** [@doi:10.48550/arXiv.1907.02893] identifies components of $\theta$ that remain stable across distributions.
+- **Transfer learning** assumes partial invariance, learning domain-specific shifts around a shared representation.
+- **Varying-coefficient models** allow $\theta_i$ to vary smoothly with observed context.
+- **In-context learning** treats parameters as an implicit function of support examples.
+
+In this review, we survey methods across this spectrum. We highlight their shared foundations, clarify the assumptions they make about $\theta_i$, and explore the emerging connections between classical approaches such as varying-coefficient models and modern inference mechanisms like in-context learning.
 
 ### Population Models
 The fundamental assumption of most models is that samples are independent and identically distributed.
@@ -160,6 +180,10 @@ If several populations are present but equally represented, the optimal traditio
 __Lemma:__ A traditional OLS linear model will be the average of heterogeneous models. 
 
 ### Context-informed models
+
+Without further assumptions, sample-specific parameter estimation is ill-defined.
+Single sample estimation is prohibitively high variance.
+We can begin to make this problem tractable by taking note from previous work and imposing assumptions on the topology of $\theta$, or the relationship between $\theta$ and contextual variables.
 
 ##### Conditional and Cluster Models
 While conditional and cluster models are not truly personalized models, the spirit is the same.
