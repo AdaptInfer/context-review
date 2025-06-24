@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2024-10-25'
+date-meta: '2025-06-24'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="dc.date" content="2024-10-25" />
-  <meta name="citation_publication_date" content="2024-10-25" />
-  <meta property="article:published_time" content="2024-10-25" />
-  <meta name="dc.modified" content="2024-10-25T20:20:18+00:00" />
-  <meta property="article:modified_time" content="2024-10-25T20:20:18+00:00" />
+  <meta name="dc.date" content="2025-06-24" />
+  <meta name="citation_publication_date" content="2025-06-24" />
+  <meta property="article:published_time" content="2025-06-24" />
+  <meta name="dc.modified" content="2025-06-24T18:29:04+00:00" />
+  <meta property="article:modified_time" content="2025-06-24T18:29:04+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -39,15 +39,15 @@ header-includes: |
   <meta name="citation_author_institution" content="Computational Biology Department, Carnegie Mellon University" />
   <meta name="citation_author_orcid" content="0000-0001-7029-8023" />
   <meta name="twitter:creator" content="@probablybots" />
-  <link rel="canonical" href="https://LengerichLab.github.io/context-review/" />
-  <meta property="og:url" content="https://LengerichLab.github.io/context-review/" />
-  <meta property="twitter:url" content="https://LengerichLab.github.io/context-review/" />
-  <meta name="citation_fulltext_html_url" content="https://LengerichLab.github.io/context-review/" />
-  <meta name="citation_pdf_url" content="https://LengerichLab.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="application/pdf" href="https://LengerichLab.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/" />
-  <meta name="manubot_html_url_versioned" content="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/manuscript.pdf" />
+  <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
+  <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
+  <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +69,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/))
+([permalink](https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/))
 was automatically generated
-from [LengerichLab/context-review@52b3b12](https://github.com/LengerichLab/context-review/tree/52b3b121ba0c2a0356924294987782ef0f5a00bb)
-on October 25, 2024.
+from [AdaptInfer/context-review@4ef5ec2](https://github.com/AdaptInfer/context-review/tree/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6)
+on June 24, 2025.
 </em></small>
 
 
@@ -111,7 +111,7 @@ on October 25, 2024.
 
 
 ::: {#correspondence}
-✉ — Correspondence possible via [GitHub Issues](https://github.com/LengerichLab/context-review/issues)
+✉ — Correspondence possible via [GitHub Issues](https://github.com/AdaptInfer/context-review/issues)
 
 :::
 

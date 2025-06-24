@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Ben Lengerich" />
   <meta name="author" content="Caleb N. Ellington" />
-  <meta name="dcterms.date" content="2024-10-25" />
+  <meta name="dcterms.date" content="2025-06-24" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models</title>
   <style>
@@ -51,11 +51,11 @@
   <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="dc.date" content="2024-10-25" />
-  <meta name="citation_publication_date" content="2024-10-25" />
-  <meta property="article:published_time" content="2024-10-25" />
-  <meta name="dc.modified" content="2024-10-25T20:20:18+00:00" />
-  <meta property="article:modified_time" content="2024-10-25T20:20:18+00:00" />
+  <meta name="dc.date" content="2025-06-24" />
+  <meta name="citation_publication_date" content="2025-06-24" />
+  <meta property="article:published_time" content="2025-06-24" />
+  <meta name="dc.modified" content="2025-06-24T18:29:04+00:00" />
+  <meta property="article:modified_time" content="2025-06-24T18:29:04+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -70,15 +70,15 @@
   <meta name="citation_author_institution" content="Computational Biology Department, Carnegie Mellon University" />
   <meta name="citation_author_orcid" content="0000-0001-7029-8023" />
   <meta name="twitter:creator" content="@probablybots" />
-  <link rel="canonical" href="https://LengerichLab.github.io/context-review/" />
-  <meta property="og:url" content="https://LengerichLab.github.io/context-review/" />
-  <meta property="twitter:url" content="https://LengerichLab.github.io/context-review/" />
-  <meta name="citation_fulltext_html_url" content="https://LengerichLab.github.io/context-review/" />
-  <meta name="citation_pdf_url" content="https://LengerichLab.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="application/pdf" href="https://LengerichLab.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/" />
-  <meta name="manubot_html_url_versioned" content="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/manuscript.pdf" />
+  <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
+  <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
+  <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
+  <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -95,10 +95,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/LengerichLab/context-review/tree/52b3b121ba0c2a0356924294987782ef0f5a00bb">LengerichLab/context-review@52b3b12</a>
-on October 25, 2024.
+from <a href="https://github.com/AdaptInfer/context-review/tree/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6">AdaptInfer/context-review@4ef5ec2</a>
+on June 24, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -130,7 +130,7 @@ Computational Biology Department, Carnegie Mellon University
 </small></p></li>
 </ul>
 <div id="correspondence">
-<p>✉ — Correspondence possible via <a href="https://github.com/LengerichLab/context-review/issues">GitHub Issues</a></p>
+<p>✉ — Correspondence possible via <a href="https://github.com/AdaptInfer/context-review/issues">GitHub Issues</a></p>
 </div>
 <h2 class="page_break_before" id="abstract">Abstract</h2>
 <p>Context-adaptive inference enhances statistical methods by allowing model parameters to shift with context, either explicitly through parameter learning or implicitly via interactions between context and input features.
@@ -301,7 +301,7 @@ In this section, we will focus on recent progress in understanding how context i
 <div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Discriminative Subtyping of Lung Cancers from Histopathology Images via Contextual Deep Learning</strong> <div class="csl-block">Benjamin J Lengerich, Maruan Al-Shedivat, Amir Alavi, Jennifer Williams, Sami Labbaki, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2020-06-26) <a href="https://doi.org/gt68h6">https://doi.org/gt68h6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.06.25.20140053">10.1101/2020.06.25.20140053</a></div></div>
 </div>
 <div id="ref-Rt6voTFN" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Contextualized Networks Reveal Heterogeneous Transcriptomic Regulation in Tumors at Sample-Specific Resolution</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Thomas BK Watkins, Jiekun Yang, Hanxi Xiao, Manolis Kellis, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2023-12-04) <a href="https://doi.org/gt68h7">https://doi.org/gt68h7</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.12.01.569658">10.1101/2023.12.01.569658</a></div></div>
+<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Learning to Estimate Sample-specific Transcriptional Networks for 7000 Tumors</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Thomas BK Watkins, Jiekun Yang, Abhinav Adduri, Sazan Mahbub, Hanxi Xiao, Manolis Kellis, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2023-12-04) <a href="https://doi.org/gt68h7">https://doi.org/gt68h7</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.12.01.569658">10.1101/2023.12.01.569658</a></div></div>
 </div>
 <div id="ref-9S6tI5yv" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Contextual Feature Selection with Conditional Stochastic Gates</strong> <div class="csl-block">Ram Dyuthi Sristi, Ofir Lindenbaum, Shira Lifshitz, Maria Lavzin, Jackie Schiller, Gal Mishne, Hadas Benisty</div> <em>arXiv</em> (2023) <a href="https://doi.org/gt68jh">https://doi.org/gt68jh</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2312.14254">10.48550/arxiv.2312.14254</a></div></div>
