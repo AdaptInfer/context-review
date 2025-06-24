@@ -1,8 +1,8 @@
 # Output directory containing the formatted manuscript
 
-The [`gh-pages`](https://github.com/LengerichLab/context-review/tree/gh-pages) branch hosts the contents of this directory at <https://LengerichLab.github.io/context-review/>.
-The permalink for this webpage version is <https://LengerichLab.github.io/context-review/v/52b3b121ba0c2a0356924294987782ef0f5a00bb/>.
-To redirect to the permalink for the latest manuscript version at anytime, use the link <https://LengerichLab.github.io/context-review/v/freeze/>.
+The [`gh-pages`](https://github.com/AdaptInfer/context-review/tree/gh-pages) branch hosts the contents of this directory at <https://AdaptInfer.github.io/context-review/>.
+The permalink for this webpage version is <https://AdaptInfer.github.io/context-review/v/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6/>.
+To redirect to the permalink for the latest manuscript version at anytime, use the link <https://AdaptInfer.github.io/context-review/v/freeze/>.
 
 ## Files
 
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`52b3b121ba0c2a0356924294987782ef0f5a00bb`](https://github.com/LengerichLab/context-review/commit/52b3b121ba0c2a0356924294987782ef0f5a00bb).
+[`4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6`](https://github.com/AdaptInfer/context-review/commit/4ef5ec29bb5b5241de4576ea96cb753cd65ecaa6).
