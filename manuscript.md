@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-23" />
   <meta name="citation_publication_date" content="2025-07-23" />
   <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T16:50:32+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T16:50:32+00:00" />
+  <meta name="dc.modified" content="2025-07-23T17:26:55+00:00" />
+  <meta property="article:modified_time" content="2025-07-23T17:26:55+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/))
+([permalink](https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/))
 was automatically generated
-from [AdaptInfer/context-review@a346f48](https://github.com/AdaptInfer/context-review/tree/a346f48804b48ff2a564d1cbc96e46d08c802b1a)
+from [AdaptInfer/context-review@464ca8a](https://github.com/AdaptInfer/context-review/tree/464ca8ab9d07e1e11e3626120eda7d03ae7ef847)
 on July 23, 2025.
 </em></small>
 
@@ -265,7 +265,44 @@ $$ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta
 ## Theoretical Foundations and Advances in Varying-Coefficient Models
 
 ### Principles of Adaptivity
-TODO: Analyzing the core principles that underpin adaptivity in statistical modeling.
+What does it mean for a model to be adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is good adaptivity. In this section, we formalize the core principles that underlie adaptive modeling.
+
+#### 1. Adaptivity requires flexibility
+A model cannot adapt unless it has the capacity to represent multiple behaviors. Flexibility may take the form of nonlinearity, hierarchical structure, or modular components that allow different responses in different settings.
+
+- Interaction effects in regression models [@doi:10.1145/2783258.2788613]
+- Hierarchical models that allow for varying effects across groups
+- Meta-learning and mixtures-of-experts models that learn to adapt based on context
+- Varying-coefficient models that allow coefficients to change with context [@doi:10.1111/j.2517-6161.1993.tb01939.x]
+
+#### 2. Adaptivity requires a signal of heterogeneity
+- Varying-coefficient models adapt parameters based on observed context [@doi:10.1111/j.2517-6161.1993.tb01939.x]
+- Contextual bandits adapt actions to context features [@arxiv:1811.04383]
+- Multi-domain models adapt across known environments or inferred partitions [@arXiv:2010.07249]
+
+#### 3. Modularity improves adaptivity
+Adaptive systems are easier to design, debug, and interpret when built from modular parts. Modularity supports targeted adaptation, transferability, and disentanglement.
+
+- []
+
+#### 4. Adaptivity implies selectivity
+Adaptation must be earned. Overreacting to limited data leads to overfitting. The best adaptive methods include mechanisms for deciding when not to adapt.
+- Lepski's method [@arxiv:1508.00249]
+- Aggregation of classifiers [@doi:10.1007/978-3-540-45167-9_23]
+
+#### 5. Adaptivity is bounded by data efficiency
+[@arxiv:1911.12568]
+
+
+#### When Adaptivity Fails: Common Failure Modes
+Even when all the ingredients are present, adaptivity can backfire. Common failure modes include:
+
+- Spurious Adaptation: Adapting to unstable or confounded features [@arXiv:2010.05761]
+- Overfitting in Low-Data Contexts: Attempting fine-grained adaptation with insufficient signal
+- Modularity Mis-specification: Adapting in the wrong units or groupings [@arXiv:1911.08731]
+- Feedback Loops: Models that change the data distribution they rely on [@doi:10.1145/3097983.3098066]
+
+
 
 ### Advances in Varying-Coefficient Models
 TODO: Outlining key theoretical and methodological breakthroughs.

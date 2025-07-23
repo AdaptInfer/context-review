@@ -1,4 +1,4 @@
-Adaptivity
+adaptivity
 arxiv
 blengerich
 cnellington
@@ -12,8 +12,13 @@ interpretability
 interpretable
 invariance
 lengerich
+Lepski’s
+Mis
+Modularity
+nonlinearity
 nonparametric
 OLS
+Overfitting
 personalization
 probablybots
 RBF
@@ -22,7 +27,8 @@ regularizer
 regulatability
 scalable
 Spatio
-Subpopulation
+subpopulation
 TODO
+transferability
 unmodeled
 VC
