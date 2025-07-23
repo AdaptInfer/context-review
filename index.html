@@ -54,8 +54,8 @@
   <meta name="dc.date" content="2025-07-23" />
   <meta name="citation_publication_date" content="2025-07-23" />
   <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T16:50:32+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T16:50:32+00:00" />
+  <meta name="dc.modified" content="2025-07-23T17:26:55+00:00" />
+  <meta property="article:modified_time" content="2025-07-23T17:26:55+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -76,9 +76,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -95,9 +95,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/a346f48804b48ff2a564d1cbc96e46d08c802b1a">AdaptInfer/context-review@a346f48</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/464ca8ab9d07e1e11e3626120eda7d03ae7ef847">AdaptInfer/context-review@464ca8a</a>
 on July 23, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -239,58 +239,91 @@ Noted in foundational literature for linear varying coefficient models <span cla
 <span class="math display">\[ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N, D} \sum_{i=0}^N \prod_{j=0 s.t. D(c_i, c_j) &lt; d}^N P(x_j; \theta_i) P(\theta_i ; \theta_j) \]</span></p>
 <h2 id="theoretical-foundations-and-advances-in-varying-coefficient-models">Theoretical Foundations and Advances in Varying-Coefficient Models</h2>
 <h3 id="principles-of-adaptivity">Principles of Adaptivity</h3>
-<p>TODO: Analyzing the core principles that underpin adaptivity in statistical modeling.</p>
+<p>What does it mean for a model to be adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is good adaptivity. In this section, we formalize the core principles that underlie adaptive modeling.</p>
+<h4 id="adaptivity-requires-flexibility">1. Adaptivity requires flexibility</h4>
+<p>A model cannot adapt unless it has the capacity to represent multiple behaviors. Flexibility may take the form of nonlinearity, hierarchical structure, or modular components that allow different responses in different settings.</p>
+<ul>
+<li>Interaction effects in regression models <span class="citation" data-cites="gSmt16Rh">[<a href="#ref-gSmt16Rh" role="doc-biblioref">19</a>]</span></li>
+<li>Hierarchical models that allow for varying effects across groups</li>
+<li>Meta-learning and mixtures-of-experts models that learn to adapt based on context</li>
+<li>Varying-coefficient models that allow coefficients to change with context <span class="citation" data-cites="ugXwusl0">[<a href="#ref-ugXwusl0" role="doc-biblioref">3</a>]</span></li>
+</ul>
+<h4 id="adaptivity-requires-a-signal-of-heterogeneity">2. Adaptivity requires a signal of heterogeneity</h4>
+<ul>
+<li>Varying-coefficient models adapt parameters based on observed context <span class="citation" data-cites="ugXwusl0">[<a href="#ref-ugXwusl0" role="doc-biblioref">3</a>]</span></li>
+<li>Contextual bandits adapt actions to context features <span class="citation" data-cites="FJALdE9T">[<a href="#ref-FJALdE9T" role="doc-biblioref">20</a>]</span></li>
+<li>Multi-domain models adapt across known environments or inferred partitions <span class="citation" data-cites="10151coVE">[<a href="#ref-10151coVE" role="doc-biblioref">21</a>]</span></li>
+</ul>
+<h4 id="modularity-improves-adaptivity">3. Modularity improves adaptivity</h4>
+<p>Adaptive systems are easier to design, debug, and interpret when built from modular parts. Modularity supports targeted adaptation, transferability, and disentanglement.</p>
+<ul>
+<li>[]</li>
+</ul>
+<h4 id="adaptivity-implies-selectivity">4. Adaptivity implies selectivity</h4>
+<p>Adaptation must be earned. Overreacting to limited data leads to overfitting. The best adaptive methods include mechanisms for deciding when not to adapt.
+- Lepski’s method <span class="citation" data-cites="wK1jbWkS">[<a href="#ref-wK1jbWkS" role="doc-biblioref">22</a>]</span>
+- Aggregation of classifiers <span class="citation" data-cites="12npMQT1q">[<a href="#ref-12npMQT1q" role="doc-biblioref">23</a>]</span></p>
+<h4 id="adaptivity-is-bounded-by-data-efficiency">5. Adaptivity is bounded by data efficiency</h4>
+<p><span class="citation" data-cites="IdMLJI3A">[<a href="#ref-IdMLJI3A" role="doc-biblioref">24</a>]</span></p>
+<h4 id="when-adaptivity-fails-common-failure-modes">When Adaptivity Fails: Common Failure Modes</h4>
+<p>Even when all the ingredients are present, adaptivity can backfire. Common failure modes include:</p>
+<ul>
+<li>Spurious Adaptation: Adapting to unstable or confounded features <span class="citation" data-cites="1FLMzrLE9">[<a href="#ref-1FLMzrLE9" role="doc-biblioref">25</a>]</span></li>
+<li>Overfitting in Low-Data Contexts: Attempting fine-grained adaptation with insufficient signal</li>
+<li>Modularity Mis-specification: Adapting in the wrong units or groupings <span class="citation" data-cites="Jm8Kx8HW">[<a href="#ref-Jm8Kx8HW" role="doc-biblioref">26</a>]</span></li>
+<li>Feedback Loops: Models that change the data distribution they rely on <span class="citation" data-cites="MGkiKe9y">[<a href="#ref-MGkiKe9y" role="doc-biblioref">27</a>]</span></li>
+</ul>
 <h3 id="advances-in-varying-coefficient-models">Advances in Varying-Coefficient Models</h3>
 <p>TODO: Outlining key theoretical and methodological breakthroughs.</p>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="hRp04fhf">[<a href="#ref-hRp04fhf" role="doc-biblioref">19</a>]</span></li>
+<li><span class="citation" data-cites="hRp04fhf">[<a href="#ref-hRp04fhf" role="doc-biblioref">28</a>]</span></li>
 </ul>
 <h4 id="flexible-functional-forms">Flexible Functional Forms</h4>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="12iLFdCUZ">[<a href="#ref-12iLFdCUZ" role="doc-biblioref">20</a>]</span></li>
+<li><span class="citation" data-cites="12iLFdCUZ">[<a href="#ref-12iLFdCUZ" role="doc-biblioref">29</a>]</span></li>
 </ul>
 <h4 id="integration-with-state-of-the-art-machine-learning">Integration with State-of-the-Art Machine Learning</h4>
 <p>TODO: Enhancing VC models with modern ML technologies (e.g. deep learning, boosted trees, etc).</p>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="oitoW3mR">[<a href="#ref-oitoW3mR" role="doc-biblioref">21</a>]</span></li>
-<li><span class="citation" data-cites="TMcGYbzt">[<a href="#ref-TMcGYbzt" role="doc-biblioref">22</a>]</span></li>
-<li><span class="citation" data-cites="S3xhhqJk">[<a href="#ref-S3xhhqJk" role="doc-biblioref">23</a>]</span></li>
+<li><span class="citation" data-cites="oitoW3mR">[<a href="#ref-oitoW3mR" role="doc-biblioref">30</a>]</span></li>
+<li><span class="citation" data-cites="TMcGYbzt">[<a href="#ref-TMcGYbzt" role="doc-biblioref">31</a>]</span></li>
+<li><span class="citation" data-cites="S3xhhqJk">[<a href="#ref-S3xhhqJk" role="doc-biblioref">32</a>]</span></li>
 </ul>
 <h4 id="structured-data-spatio-temporal-graphs-etc.">Structured data (Spatio-Temporal, Graphs, etc.)</h4>
 <p>Related references:</p>
 <ul>
-<li><span class="citation" data-cites="10QS2bf0y">[<a href="#ref-10QS2bf0y" role="doc-biblioref">24</a>]</span></li>
-<li><span class="citation" data-cites="bRUIxim6">[<a href="#ref-bRUIxim6" role="doc-biblioref">25</a>]</span></li>
-<li><span class="citation" data-cites="iwpt0CaT">[<a href="#ref-iwpt0CaT" role="doc-biblioref">26</a>]</span></li>
-<li><span class="citation" data-cites="6dtlCKvl">[<a href="#ref-6dtlCKvl" role="doc-biblioref">27</a>]</span></li>
-<li><span class="citation" data-cites="m27Fk5Io">[<a href="#ref-m27Fk5Io" role="doc-biblioref">28</a>]</span></li>
-<li><span class="citation" data-cites="15H1sURQD">[<a href="#ref-15H1sURQD" role="doc-biblioref">29</a>]</span></li>
+<li><span class="citation" data-cites="10QS2bf0y">[<a href="#ref-10QS2bf0y" role="doc-biblioref">33</a>]</span></li>
+<li><span class="citation" data-cites="bRUIxim6">[<a href="#ref-bRUIxim6" role="doc-biblioref">34</a>]</span></li>
+<li><span class="citation" data-cites="iwpt0CaT">[<a href="#ref-iwpt0CaT" role="doc-biblioref">35</a>]</span></li>
+<li><span class="citation" data-cites="6dtlCKvl">[<a href="#ref-6dtlCKvl" role="doc-biblioref">36</a>]</span></li>
+<li><span class="citation" data-cites="m27Fk5Io">[<a href="#ref-m27Fk5Io" role="doc-biblioref">37</a>]</span></li>
+<li><span class="citation" data-cites="15H1sURQD">[<a href="#ref-15H1sURQD" role="doc-biblioref">38</a>]</span></li>
 </ul>
 <h3 id="context-invariant-training">Context-Invariant Training</h3>
 <p>TODO: The converse of VC models, exploring the implications of training context-invariant models.
 e.g. out-of-distribution generalization, robustness to adversarial attacks.</p>
 <p>Relevant references:</p>
 <ul>
-<li>Invariant Risk Minimization <span class="citation" data-cites="1DeCFT6PA">[<a href="#ref-1DeCFT6PA" role="doc-biblioref">30</a>]</span></li>
-<li>Out-of-Distribution Generalization via Risk Extrapolation <span class="citation" data-cites="11IMWGprl">[<a href="#ref-11IMWGprl" role="doc-biblioref">31</a>]</span></li>
-<li>The Risks of Invariant Risk Minimization <span class="citation" data-cites="1FLMzrLE9">[<a href="#ref-1FLMzrLE9" role="doc-biblioref">32</a>]</span></li>
-<li>Conditional Variance Penalties and Domain Adaptation <span class="citation" data-cites="L6xa6qzg">[<a href="#ref-L6xa6qzg" role="doc-biblioref">33</a>]</span></li>
+<li>Invariant Risk Minimization <span class="citation" data-cites="1DeCFT6PA">[<a href="#ref-1DeCFT6PA" role="doc-biblioref">39</a>]</span></li>
+<li>Out-of-Distribution Generalization via Risk Extrapolation <span class="citation" data-cites="11IMWGprl">[<a href="#ref-11IMWGprl" role="doc-biblioref">40</a>]</span></li>
+<li>The Risks of Invariant Risk Minimization <span class="citation" data-cites="1FLMzrLE9">[<a href="#ref-1FLMzrLE9" role="doc-biblioref">25</a>]</span></li>
+<li>Conditional Variance Penalties and Domain Adaptation <span class="citation" data-cites="L6xa6qzg">[<a href="#ref-L6xa6qzg" role="doc-biblioref">41</a>]</span></li>
 <li>Can Subpopulation Shifts Explain Disagreement in Model Generalization? <span class="citation" data-cites="HzzgJQN0">[<a href="#ref-HzzgJQN0" role="doc-biblioref">2</a>]</span></li>
 </ul>
 <h4 id="adversarial-robustness-as-context-invariant-training">Adversarial Robustness as Context-Invariant Training</h4>
 <p>Related references:</p>
 <ul>
-<li>Towards Deep Learning Models Resistant to Adversarial Attacks <span class="citation" data-cites="B0L8KJ8W">[<a href="#ref-B0L8KJ8W" role="doc-biblioref">34</a>]</span></li>
-<li>Robustness May Be at Odds with Accuracy <span class="citation" data-cites="ylSNfYug">[<a href="#ref-ylSNfYug" role="doc-biblioref">35</a>]</span></li>
+<li>Towards Deep Learning Models Resistant to Adversarial Attacks <span class="citation" data-cites="B0L8KJ8W">[<a href="#ref-B0L8KJ8W" role="doc-biblioref">42</a>]</span></li>
+<li>Robustness May Be at Odds with Accuracy <span class="citation" data-cites="ylSNfYug">[<a href="#ref-ylSNfYug" role="doc-biblioref">43</a>]</span></li>
 </ul>
 <h4 id="training-methods-for-context-invariant-models">Training methods for Context-Invariant Models</h4>
 <ul>
-<li>Just Train Twice: Improving Group Robustness without Training Group Information <span class="citation" data-cites="lwLz9yZT">[<a href="#ref-lwLz9yZT" role="doc-biblioref">36</a>]</span></li>
-<li>Environment Inference for Invariant Learning <span class="citation" data-cites="pn0xfUyE">[<a href="#ref-pn0xfUyE" role="doc-biblioref">37</a>]</span></li>
-<li>Distributionally Robust Neural Networks for Group Shifts <span class="citation" data-cites="Jm8Kx8HW">[<a href="#ref-Jm8Kx8HW" role="doc-biblioref">38</a>]</span></li>
+<li>Just Train Twice: Improving Group Robustness without Training Group Information <span class="citation" data-cites="lwLz9yZT">[<a href="#ref-lwLz9yZT" role="doc-biblioref">44</a>]</span></li>
+<li>Environment Inference for Invariant Learning <span class="citation" data-cites="pn0xfUyE">[<a href="#ref-pn0xfUyE" role="doc-biblioref">45</a>]</span></li>
+<li>Distributionally Robust Neural Networks for Group Shifts <span class="citation" data-cites="Jm8Kx8HW">[<a href="#ref-Jm8Kx8HW" role="doc-biblioref">26</a>]</span></li>
 </ul>
 <h2 id="context-adaptive-interpretations-of-context-invariant-models">Context-Adaptive Interpretations of Context-Invariant Models</h2>
 <p>In the previous section, we discussed the importance of context in model parameters.
@@ -299,7 +332,7 @@ In this section, we will focus on recent progress in understanding how context i
 <p>TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.</p>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="1DNxggO7I">[<a href="#ref-1DNxggO7I" role="doc-biblioref">39</a>]</span></li>
+<li><span class="citation" data-cites="1DNxggO7I">[<a href="#ref-1DNxggO7I" role="doc-biblioref">46</a>]</span></li>
 </ul>
 <h2 id="opportunities-for-foundation-models">Opportunities for Foundation Models</h2>
 <h3 id="expanding-frameworks">Expanding Frameworks</h3>
@@ -311,8 +344,8 @@ In this section, we will focus on recent progress in understanding how context i
 <p>TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.</p>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="14C9q1ybi">[<a href="#ref-14C9q1ybi" role="doc-biblioref">40</a>]</span></li>
-<li><span class="citation" data-cites="dvWlfk21">[<a href="#ref-dvWlfk21" role="doc-biblioref">41</a>]</span></li>
+<li><span class="citation" data-cites="14C9q1ybi">[<a href="#ref-14C9q1ybi" role="doc-biblioref">47</a>]</span></li>
+<li><span class="citation" data-cites="dvWlfk21">[<a href="#ref-dvWlfk21" role="doc-biblioref">48</a>]</span></li>
 </ul>
 <h3 id="performance-evaluation">Performance Evaluation</h3>
 <p>TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.</p>
@@ -396,74 +429,95 @@ In this section, we will focus on recent progress in understanding how context i
 <div id="ref-WlwUpYp" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">18. </div><div class="csl-right-inline"><strong>Learning Sample-Specific Models with Low-Rank Personalized Regression</strong> <div class="csl-block">Benjamin Lengerich, Bryon Aragam, Eric P Xing</div> <em>arXiv</em> (2019) <a href="https://doi.org/gt68jb">https://doi.org/gt68jb</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1910.06939">10.48550/arxiv.1910.06939</a></div></div>
 </div>
-<div id="ref-hRp04fhf" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">19. </div><div class="csl-right-inline"><strong>Publication Trends on the Varying Coefficients Model: Estimating the Actual (Under)Utilization of a Highly Acclaimed Method for Studying Statistical Interactions</strong> <div class="csl-block">Assaf Botzer</div> <em>Publications</em> (2025-04-07) <a href="https://doi.org/g9t2rq">https://doi.org/g9t2rq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/publications13020019">10.3390/publications13020019</a></div></div>
+<div id="ref-gSmt16Rh" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline"><strong>Intelligible Models for HealthCare</strong> <div class="csl-block">Rich Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, Noemie Elhadad</div> <em>Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em> (2015-08-10) <a href="https://doi.org/gftgxk">https://doi.org/gftgxk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1145/2783258.2788613">10.1145/2783258.2788613</a></div></div>
 </div>
-<div id="ref-12iLFdCUZ" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">20. </div><div class="csl-right-inline"><strong>Semi-nonparametric Varying Coefficients Models</strong> <div class="csl-block">Ting Li, Yang Yu, Xiao Wang, JS Marron, Hongtu Zhu</div> <em>Statistica Sinica</em> (2027) <a href="https://doi.org/g9t2rr">https://doi.org/g9t2rr</a> <div class="csl-block">DOI: <a href="https://doi.org/10.5705/ss.202024.0118">10.5705/ss.202024.0118</a></div></div>
+<div id="ref-FJALdE9T" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline"><strong>Adapting multi-armed bandits policies to contextual bandits scenarios</strong> <div class="csl-block">David Cortes</div> <em>arXiv</em> (2019-11-26) <a href="https://arxiv.org/abs/1811.04383">https://arxiv.org/abs/1811.04383</a></div>
 </div>
-<div id="ref-oitoW3mR" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">21. </div><div class="csl-right-inline"><strong>A tree-based varying coefficient model</strong> <div class="csl-block">Henning Zakrisson, Mathias Lindholm</div> <em>Computational Statistics</em> (2025-02-04) <a href="https://doi.org/g869k6">https://doi.org/g869k6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1007/s00180-025-01603-8">10.1007/s00180-025-01603-8</a></div></div>
+<div id="ref-10151coVE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline"><strong>Environment Inference for Invariant Learning</strong> <div class="csl-block">Elliot Creager, JÃ¶rn-Henrik Jacobsen, Richard Zemel</div> <em>arXiv</em> (2021-07-16) <a href="https://arxiv.org/abs/2010.07249">https://arxiv.org/abs/2010.07249</a></div>
 </div>
-<div id="ref-TMcGYbzt" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">22. </div><div class="csl-right-inline"><strong>VCBART: Bayesian trees for varying coefficients</strong> <div class="csl-block">Sameer K Deshpande, Ray Bai, Cecilia Balocchi, Jennifer E Starling, Jordan Weiss</div> <em>arXiv</em> (2024-09-26) <a href="https://arxiv.org/abs/2003.06416">https://arxiv.org/abs/2003.06416</a></div>
+<div id="ref-wK1jbWkS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline"><strong>Lepski's Method and Adaptive Estimation of Nonlinear Integral Functionals of Density</strong> <div class="csl-block">Rajarshi Mukherjee, Eric Tchetgen Tchetgen, James Robins</div> <em>arXiv</em> (2016-01-12) <a href="https://arxiv.org/abs/1508.00249">https://arxiv.org/abs/1508.00249</a></div>
 </div>
-<div id="ref-S3xhhqJk" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">23. </div><div class="csl-right-inline"><strong>Neural Additive Models: Interpretable Machine Learning with Neural Nets</strong> <div class="csl-block">Rishabh Agarwal, Levi Melnick, Nicholas Frosst, Xuezhou Zhang, Ben Lengerich, Rich Caruana, Geoffrey Hinton</div> <em>arXiv</em> (2021-10-26) <a href="https://arxiv.org/abs/2004.13912">https://arxiv.org/abs/2004.13912</a></div>
+<div id="ref-12npMQT1q" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline"><strong>Optimal Rates of Aggregation</strong> <div class="csl-block">Alexandre B Tsybakov</div> <em>Lecture Notes in Computer Science</em> (2003) <a href="https://doi.org/czntw5">https://doi.org/czntw5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1007/978-3-540-45167-9_23">10.1007/978-3-540-45167-9_23</a></div></div>
 </div>
-<div id="ref-10QS2bf0y" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">24. </div><div class="csl-right-inline"><strong>Network Varying Coefficient Model</strong> <div class="csl-block">Xinyan Fan, Kuangnan Fang, Wei Lan, Chih-Ling Tsai</div> <em>Journal of the American Statistical Association</em> (2025-04-11) <a href="https://doi.org/g9t2rm">https://doi.org/g9t2rm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1080/01621459.2025.2470481">10.1080/01621459.2025.2470481</a></div></div>
-</div>
-<div id="ref-bRUIxim6" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>Spatially Varying Coefficient Models for Estimating Heterogeneous Mixture Effects</strong> <div class="csl-block">Jacob Englert, Howard Chang</div> <em>arXiv</em> (2025-02-21) <a href="https://arxiv.org/abs/2502.14651">https://arxiv.org/abs/2502.14651</a></div>
-</div>
-<div id="ref-iwpt0CaT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>Fast Spatio‐Temporally Varying Coefficient Modeling With Reluctant Interaction Selection</strong> <div class="csl-block">Daisuke Murakami, Shinichiro Shirota, Seiji Kajita, Mami Kajita</div> <em>Geographical Analysis</em> (2025-04-15) <a href="https://doi.org/g9t2rn">https://doi.org/g9t2rn</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1111/gean.70005">10.1111/gean.70005</a></div></div>
-</div>
-<div id="ref-6dtlCKvl" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>Varying-coefficient spatial dynamic panel data models with fixed effects: Theory and application</strong> <div class="csl-block">Han Hong, Gaosheng Ju, Qi Li, Karen X Yan</div> <em>Journal of Econometrics</em> (2024-10) <a href="https://doi.org/g9t2rj">https://doi.org/g9t2rj</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.jeconom.2024.105883">10.1016/j.jeconom.2024.105883</a></div></div>
-</div>
-<div id="ref-m27Fk5Io" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>Varying coefficient panel data models and methods under correlated error components: Application to disparities in mental health services in England</strong> <div class="csl-block">Pipat Wongsa-art, Namhyun Kim, Yingcun Xia, Francesco Moscone</div> <em>Regional Science and Urban Economics</em> (2024-05) <a href="https://doi.org/g9t2rk">https://doi.org/g9t2rk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.regsciurbeco.2024.104009">10.1016/j.regsciurbeco.2024.104009</a></div></div>
-</div>
-<div id="ref-15H1sURQD" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>NOTMAD: Estimating Bayesian Networks with Sample-Specific Structures and Parameters</strong> <div class="csl-block">Ben Lengerich, Caleb Ellington, Bryon Aragam, Eric P Xing, Manolis Kellis</div> <em>arXiv</em> (2021-11-02) <a href="https://arxiv.org/abs/2111.01104">https://arxiv.org/abs/2111.01104</a></div>
-</div>
-<div id="ref-1DeCFT6PA" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>Invariant Risk Minimization</strong> <div class="csl-block">Martin Arjovsky, LÃ©on Bottou, Ishaan Gulrajani, David Lopez-Paz</div> <em>arXiv</em> (2020-03-31) <a href="https://arxiv.org/abs/1907.02893">https://arxiv.org/abs/1907.02893</a></div>
-</div>
-<div id="ref-11IMWGprl" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Out-of-Distribution Generalization via Risk Extrapolation (REx)</strong> <div class="csl-block">David Krueger, Ethan Caballero, Joern-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Dinghuai Zhang, Remi Le Priol, Aaron Courville</div> <em>arXiv</em> (2021-02-26) <a href="https://arxiv.org/abs/2003.00688">https://arxiv.org/abs/2003.00688</a></div>
+<div id="ref-IdMLJI3A" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline"><strong>Optimal Estimation of Change in a Population of Parameters</strong> <div class="csl-block">Ramya Korlakai Vinayak, Weihao Kong, Sham M Kakade</div> <em>arXiv</em> (2019-12-02) <a href="https://arxiv.org/abs/1911.12568">https://arxiv.org/abs/1911.12568</a></div>
 </div>
 <div id="ref-1FLMzrLE9" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>The Risks of Invariant Risk Minimization</strong> <div class="csl-block">Elan Rosenfeld, Pradeep Ravikumar, Andrej Risteski</div> <em>arXiv</em> (2021-03-30) <a href="https://arxiv.org/abs/2010.05761">https://arxiv.org/abs/2010.05761</a></div>
-</div>
-<div id="ref-L6xa6qzg" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>Conditional Variance Penalties and Domain Shift Robustness</strong> <div class="csl-block">Christina Heinze-Deml, Nicolai Meinshausen</div> <em>arXiv</em> (2019-04-16) <a href="https://arxiv.org/abs/1710.11469">https://arxiv.org/abs/1710.11469</a></div>
-</div>
-<div id="ref-B0L8KJ8W" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>Towards Deep Learning Models Resistant to Adversarial Attacks</strong> <div class="csl-block">Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, Adrian Vladu</div> <em>arXiv</em> (2019-09-06) <a href="https://arxiv.org/abs/1706.06083">https://arxiv.org/abs/1706.06083</a></div>
-</div>
-<div id="ref-ylSNfYug" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>Robustness May Be at Odds with Accuracy</strong> <div class="csl-block">Dimitris Tsipras, Shibani Santurkar, Logan Engstrom, Alexander Turner, Aleksander Madry</div> <em>arXiv</em> (2019-09-10) <a href="https://arxiv.org/abs/1805.12152">https://arxiv.org/abs/1805.12152</a></div>
-</div>
-<div id="ref-lwLz9yZT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">36. </div><div class="csl-right-inline"><strong>On the Sample Complexity of Adversarial Multi-Source PAC Learning</strong> <div class="csl-block">Nikola Konstantinov, Elias Frantar, Dan Alistarh, Christoph H Lampert</div> <em>arXiv</em> (2020-07-01) <a href="https://arxiv.org/abs/2002.10384">https://arxiv.org/abs/2002.10384</a></div>
-</div>
-<div id="ref-pn0xfUyE" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">37. </div><div class="csl-right-inline"><strong>Conflict-Averse Gradient Descent for Multi-task Learning</strong> <div class="csl-block">Bo Liu, Xingchao Liu, Xiaojie Jin, Peter Stone, Qiang Liu</div> <em>arXiv</em> (2024-02-22) <a href="https://arxiv.org/abs/2110.14048">https://arxiv.org/abs/2110.14048</a></div>
+<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>The Risks of Invariant Risk Minimization</strong> <div class="csl-block">Elan Rosenfeld, Pradeep Ravikumar, Andrej Risteski</div> <em>arXiv</em> (2021-03-30) <a href="https://arxiv.org/abs/2010.05761">https://arxiv.org/abs/2010.05761</a></div>
 </div>
 <div id="ref-Jm8Kx8HW" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">38. </div><div class="csl-right-inline"><strong>Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization</strong> <div class="csl-block">Shiori Sagawa, Pang Wei Koh, Tatsunori B Hashimoto, Percy Liang</div> <em>arXiv</em> (2020-04-03) <a href="https://arxiv.org/abs/1911.08731">https://arxiv.org/abs/1911.08731</a></div>
+<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization</strong> <div class="csl-block">Shiori Sagawa, Pang Wei Koh, Tatsunori B Hashimoto, Percy Liang</div> <em>arXiv</em> (2020-04-03) <a href="https://arxiv.org/abs/1911.08731">https://arxiv.org/abs/1911.08731</a></div>
+</div>
+<div id="ref-MGkiKe9y" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>The Selective Labels Problem</strong> <div class="csl-block">Himabindu Lakkaraju, Jon Kleinberg, Jure Leskovec, Jens Ludwig, Sendhil Mullainathan</div> <em>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em> (2017-08-04) <a href="https://doi.org/ggd7hz">https://doi.org/ggd7hz</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1145/3097983.3098066">10.1145/3097983.3098066</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29780658">29780658</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5958915">PMC5958915</a></div></div>
+</div>
+<div id="ref-hRp04fhf" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>Publication Trends on the Varying Coefficients Model: Estimating the Actual (Under)Utilization of a Highly Acclaimed Method for Studying Statistical Interactions</strong> <div class="csl-block">Assaf Botzer</div> <em>Publications</em> (2025-04-07) <a href="https://doi.org/g9t2rq">https://doi.org/g9t2rq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/publications13020019">10.3390/publications13020019</a></div></div>
+</div>
+<div id="ref-12iLFdCUZ" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>Semi-nonparametric Varying Coefficients Models</strong> <div class="csl-block">Ting Li, Yang Yu, Xiao Wang, JS Marron, Hongtu Zhu</div> <em>Statistica Sinica</em> (2027) <a href="https://doi.org/g9t2rr">https://doi.org/g9t2rr</a> <div class="csl-block">DOI: <a href="https://doi.org/10.5705/ss.202024.0118">10.5705/ss.202024.0118</a></div></div>
+</div>
+<div id="ref-oitoW3mR" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>A tree-based varying coefficient model</strong> <div class="csl-block">Henning Zakrisson, Mathias Lindholm</div> <em>Computational Statistics</em> (2025-02-04) <a href="https://doi.org/g869k6">https://doi.org/g869k6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1007/s00180-025-01603-8">10.1007/s00180-025-01603-8</a></div></div>
+</div>
+<div id="ref-TMcGYbzt" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>VCBART: Bayesian trees for varying coefficients</strong> <div class="csl-block">Sameer K Deshpande, Ray Bai, Cecilia Balocchi, Jennifer E Starling, Jordan Weiss</div> <em>arXiv</em> (2024-09-26) <a href="https://arxiv.org/abs/2003.06416">https://arxiv.org/abs/2003.06416</a></div>
+</div>
+<div id="ref-S3xhhqJk" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>Neural Additive Models: Interpretable Machine Learning with Neural Nets</strong> <div class="csl-block">Rishabh Agarwal, Levi Melnick, Nicholas Frosst, Xuezhou Zhang, Ben Lengerich, Rich Caruana, Geoffrey Hinton</div> <em>arXiv</em> (2021-10-26) <a href="https://arxiv.org/abs/2004.13912">https://arxiv.org/abs/2004.13912</a></div>
+</div>
+<div id="ref-10QS2bf0y" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>Network Varying Coefficient Model</strong> <div class="csl-block">Xinyan Fan, Kuangnan Fang, Wei Lan, Chih-Ling Tsai</div> <em>Journal of the American Statistical Association</em> (2025-04-11) <a href="https://doi.org/g9t2rm">https://doi.org/g9t2rm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1080/01621459.2025.2470481">10.1080/01621459.2025.2470481</a></div></div>
+</div>
+<div id="ref-bRUIxim6" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>Spatially Varying Coefficient Models for Estimating Heterogeneous Mixture Effects</strong> <div class="csl-block">Jacob Englert, Howard Chang</div> <em>arXiv</em> (2025-02-21) <a href="https://arxiv.org/abs/2502.14651">https://arxiv.org/abs/2502.14651</a></div>
+</div>
+<div id="ref-iwpt0CaT" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>Fast Spatio‐Temporally Varying Coefficient Modeling With Reluctant Interaction Selection</strong> <div class="csl-block">Daisuke Murakami, Shinichiro Shirota, Seiji Kajita, Mami Kajita</div> <em>Geographical Analysis</em> (2025-04-15) <a href="https://doi.org/g9t2rn">https://doi.org/g9t2rn</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1111/gean.70005">10.1111/gean.70005</a></div></div>
+</div>
+<div id="ref-6dtlCKvl" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline"><strong>Varying-coefficient spatial dynamic panel data models with fixed effects: Theory and application</strong> <div class="csl-block">Han Hong, Gaosheng Ju, Qi Li, Karen X Yan</div> <em>Journal of Econometrics</em> (2024-10) <a href="https://doi.org/g9t2rj">https://doi.org/g9t2rj</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.jeconom.2024.105883">10.1016/j.jeconom.2024.105883</a></div></div>
+</div>
+<div id="ref-m27Fk5Io" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline"><strong>Varying coefficient panel data models and methods under correlated error components: Application to disparities in mental health services in England</strong> <div class="csl-block">Pipat Wongsa-art, Namhyun Kim, Yingcun Xia, Francesco Moscone</div> <em>Regional Science and Urban Economics</em> (2024-05) <a href="https://doi.org/g9t2rk">https://doi.org/g9t2rk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.regsciurbeco.2024.104009">10.1016/j.regsciurbeco.2024.104009</a></div></div>
+</div>
+<div id="ref-15H1sURQD" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline"><strong>NOTMAD: Estimating Bayesian Networks with Sample-Specific Structures and Parameters</strong> <div class="csl-block">Ben Lengerich, Caleb Ellington, Bryon Aragam, Eric P Xing, Manolis Kellis</div> <em>arXiv</em> (2021-11-02) <a href="https://arxiv.org/abs/2111.01104">https://arxiv.org/abs/2111.01104</a></div>
+</div>
+<div id="ref-1DeCFT6PA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline"><strong>Invariant Risk Minimization</strong> <div class="csl-block">Martin Arjovsky, LÃ©on Bottou, Ishaan Gulrajani, David Lopez-Paz</div> <em>arXiv</em> (2020-03-31) <a href="https://arxiv.org/abs/1907.02893">https://arxiv.org/abs/1907.02893</a></div>
+</div>
+<div id="ref-11IMWGprl" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline"><strong>Out-of-Distribution Generalization via Risk Extrapolation (REx)</strong> <div class="csl-block">David Krueger, Ethan Caballero, Joern-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Dinghuai Zhang, Remi Le Priol, Aaron Courville</div> <em>arXiv</em> (2021-02-26) <a href="https://arxiv.org/abs/2003.00688">https://arxiv.org/abs/2003.00688</a></div>
+</div>
+<div id="ref-L6xa6qzg" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline"><strong>Conditional Variance Penalties and Domain Shift Robustness</strong> <div class="csl-block">Christina Heinze-Deml, Nicolai Meinshausen</div> <em>arXiv</em> (2019-04-16) <a href="https://arxiv.org/abs/1710.11469">https://arxiv.org/abs/1710.11469</a></div>
+</div>
+<div id="ref-B0L8KJ8W" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline"><strong>Towards Deep Learning Models Resistant to Adversarial Attacks</strong> <div class="csl-block">Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, Adrian Vladu</div> <em>arXiv</em> (2019-09-06) <a href="https://arxiv.org/abs/1706.06083">https://arxiv.org/abs/1706.06083</a></div>
+</div>
+<div id="ref-ylSNfYug" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline"><strong>Robustness May Be at Odds with Accuracy</strong> <div class="csl-block">Dimitris Tsipras, Shibani Santurkar, Logan Engstrom, Alexander Turner, Aleksander Madry</div> <em>arXiv</em> (2019-09-10) <a href="https://arxiv.org/abs/1805.12152">https://arxiv.org/abs/1805.12152</a></div>
+</div>
+<div id="ref-lwLz9yZT" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline"><strong>On the Sample Complexity of Adversarial Multi-Source PAC Learning</strong> <div class="csl-block">Nikola Konstantinov, Elias Frantar, Dan Alistarh, Christoph H Lampert</div> <em>arXiv</em> (2020-07-01) <a href="https://arxiv.org/abs/2002.10384">https://arxiv.org/abs/2002.10384</a></div>
+</div>
+<div id="ref-pn0xfUyE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline"><strong>Conflict-Averse Gradient Descent for Multi-task Learning</strong> <div class="csl-block">Bo Liu, Xingchao Liu, Xiaojie Jin, Peter Stone, Qiang Liu</div> <em>arXiv</em> (2024-02-22) <a href="https://arxiv.org/abs/2110.14048">https://arxiv.org/abs/2110.14048</a></div>
 </div>
 <div id="ref-1DNxggO7I" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">39. </div><div class="csl-right-inline"><strong>In-Context Explainers: Harnessing LLMs for Explaining Black Box Models</strong> <div class="csl-block">Nicholas Kroeger, Dan Ley, Satyapriya Krishna, Chirag Agarwal, Himabindu Lakkaraju</div> <em>arXiv</em> (2024-07-12) <a href="https://arxiv.org/abs/2310.05797">https://arxiv.org/abs/2310.05797</a></div>
+<div class="csl-left-margin">46. </div><div class="csl-right-inline"><strong>In-Context Explainers: Harnessing LLMs for Explaining Black Box Models</strong> <div class="csl-block">Nicholas Kroeger, Dan Ley, Satyapriya Krishna, Chirag Agarwal, Himabindu Lakkaraju</div> <em>arXiv</em> (2024-07-12) <a href="https://arxiv.org/abs/2310.05797">https://arxiv.org/abs/2310.05797</a></div>
 </div>
 <div id="ref-14C9q1ybi" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">40. </div><div class="csl-right-inline"><strong>Exact Inference for Transformed Large-Scale Varying Coefficient Models with Applications</strong> <div class="csl-block">Tianyu Chen, Robert Habans, Thomas Douthat, Jenna Losh, Lida Chalangar Jalili Dehkharghani, Li-Hsiang Lin</div> <em>Journal of Data Science</em> (2025-01-01) <a href="https://doi.org/g9t2rs">https://doi.org/g9t2rs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.6339/25-jds1181">10.6339/25-jds1181</a></div></div>
+<div class="csl-left-margin">47. </div><div class="csl-right-inline"><strong>Exact Inference for Transformed Large-Scale Varying Coefficient Models with Applications</strong> <div class="csl-block">Tianyu Chen, Robert Habans, Thomas Douthat, Jenna Losh, Lida Chalangar Jalili Dehkharghani, Li-Hsiang Lin</div> <em>Journal of Data Science</em> (2025-01-01) <a href="https://doi.org/g9t2rs">https://doi.org/g9t2rs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.6339/25-jds1181">10.6339/25-jds1181</a></div></div>
 </div>
 <div id="ref-dvWlfk21" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">41. </div><div class="csl-right-inline"><strong>Variable Selection for Generalized Single-Index Varying-Coefficient Models with Applications to Synergistic G × E Interactions</strong> <div class="csl-block">Shunjie Guan, Xu Liu, Yuehua Cui</div> <em>Mathematics</em> (2025-01-31) <a href="https://doi.org/g9t2rp">https://doi.org/g9t2rp</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/math13030469">10.3390/math13030469</a></div></div>
+<div class="csl-left-margin">48. </div><div class="csl-right-inline"><strong>Variable Selection for Generalized Single-Index Varying-Coefficient Models with Applications to Synergistic G × E Interactions</strong> <div class="csl-block">Shunjie Guan, Xu Liu, Yuehua Cui</div> <em>Mathematics</em> (2025-01-31) <a href="https://doi.org/g9t2rp">https://doi.org/g9t2rp</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/math13030469">10.3390/math13030469</a></div></div>
 </div>
 </div>
 <!-- default theme -->
