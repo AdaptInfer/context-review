@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-23" />
   <meta name="citation_publication_date" content="2025-07-23" />
   <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T16:00:22+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T16:00:22+00:00" />
+  <meta name="dc.modified" content="2025-07-23T16:50:32+00:00" />
+  <meta property="article:modified_time" content="2025-07-23T16:50:32+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/))
+([permalink](https://AdaptInfer.github.io/context-review/v/a346f48804b48ff2a564d1cbc96e46d08c802b1a/))
 was automatically generated
-from [AdaptInfer/context-review@30df45e](https://github.com/AdaptInfer/context-review/tree/30df45ea1b900860f3c57cb47abbdd9f459a4702)
+from [AdaptInfer/context-review@a346f48](https://github.com/AdaptInfer/context-review/tree/a346f48804b48ff2a564d1cbc96e46d08c802b1a)
 on July 23, 2025.
 </em></small>
 
@@ -178,6 +178,10 @@ If several populations are present but equally represented, the optimal traditio
 
 __Lemma:__ A traditional OLS linear model will be the average of heterogeneous models. 
 
+Relevant references:
+
+- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
+
 ### Context-informed models
 
 Without further assumptions, sample-specific parameter estimation is ill-defined.
@@ -267,17 +271,20 @@ TODO: Analyzing the core principles that underpin adaptivity in statistical mode
 TODO: Outlining key theoretical and methodological breakthroughs.
 
 Relevant references:
+
 - [@doi:10.3390/publications13020019]
 
 #### Flexible Functional Forms
 
 Relevant references:
+
 - [@doi:10.5705/ss.202024.0118]
 
 #### Integration with State-of-the-Art Machine Learning
 TODO: Enhancing VC models with modern ML technologies (e.g. deep learning, boosted trees, etc).
 
 Relevant references:
+
 - [@doi:10.1007/s00180-025-01603-8]
 - [@arxiv:2003.06416]
 - [@arxiv:2004.13912]
@@ -285,6 +292,7 @@ Relevant references:
 #### Structured data (Spatio-Temporal, Graphs, etc.)
 
 Related references:
+
 - [@doi:10.1080/01621459.2025.2470481]
 - [@arxiv:2502.14651]
 - [@doi:10.1111/gean.70005]
@@ -296,6 +304,25 @@ Related references:
 TODO: The converse of VC models, exploring the implications of training context-invariant models.
 e.g. out-of-distribution generalization, robustness to adversarial attacks.
 
+Relevant references:
+
+- Invariant Risk Minimization [@arXiv:1907.02893]
+- Out-of-Distribution Generalization via Risk Extrapolation [@arXiv:2003.00688]
+- The Risks of Invariant Risk Minimization [@arXiv:2010.05761]
+- Conditional Variance Penalties and Domain Adaptation [@arXiv:1710.11469]
+- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
+
+#### Adversarial Robustness as Context-Invariant Training
+Related references:
+
+- Towards Deep Learning Models Resistant to Adversarial Attacks [@arXiv:1706.06083]
+- Robustness May Be at Odds with Accuracy [@arXiv:1805.12152]
+
+#### Training methods for Context-Invariant Models
+- Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
+- Environment Inference for Invariant Learning [@arXiv:2110.14048]
+- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731]
+
 ## Context-Adaptive Interpretations of Context-Invariant Models
 
 In the previous section, we discussed the importance of context in model parameters. 
@@ -305,6 +332,7 @@ In this section, we will focus on recent progress in understanding how context i
 TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
 
 Relevant references:
+
 - [@arxiv:2310.05797]
 
 ## Opportunities for Foundation Models
@@ -323,6 +351,7 @@ TODO: Show recent progress and ongoing directions in using foundation models as 
 TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.
 
 Relevant references:
+
 - [@doi:10.6339/25-JDS1181]
 - [@doi:10.3390/math13030469]
 

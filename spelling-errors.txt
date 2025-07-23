@@ -6,11 +6,12 @@ covariate
 covariates
 DeepLift
 DeepSHAP
+Distributionally
 identifiability
 interpretability
 interpretable
 invariance
-Lengerich
+lengerich
 nonparametric
 OLS
 personalization
@@ -21,7 +22,7 @@ regularizer
 regulatability
 scalable
 Spatio
-subpopulation
+Subpopulation
 TODO
 unmodeled
 VC
