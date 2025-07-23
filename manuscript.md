@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-23" />
   <meta name="citation_publication_date" content="2025-07-23" />
   <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T15:56:43+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T15:56:43+00:00" />
+  <meta name="dc.modified" content="2025-07-23T16:00:22+00:00" />
+  <meta property="article:modified_time" content="2025-07-23T16:00:22+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/))
+([permalink](https://AdaptInfer.github.io/context-review/v/30df45ea1b900860f3c57cb47abbdd9f459a4702/))
 was automatically generated
-from [AdaptInfer/context-review@87402fc](https://github.com/AdaptInfer/context-review/tree/87402fceb91a90b28280ef191c3989d9e66afdbd)
+from [AdaptInfer/context-review@30df45e](https://github.com/AdaptInfer/context-review/tree/30df45ea1b900860f3c57cb47abbdd9f459a4702)
 on July 23, 2025.
 </em></small>
 
@@ -305,7 +305,7 @@ In this section, we will focus on recent progress in understanding how context i
 TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
 
 Relevant references:
-
+- [@arxiv:2310.05797]
 
 ## Opportunities for Foundation Models
 

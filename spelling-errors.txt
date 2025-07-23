@@ -1,4 +1,4 @@
-adaptivity
+Adaptivity
 arxiv
 blengerich
 cnellington
@@ -10,7 +10,7 @@ identifiability
 interpretability
 interpretable
 invariance
-lengerich
+Lengerich
 nonparametric
 OLS
 personalization
