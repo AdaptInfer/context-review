@@ -1,4 +1,4 @@
-Adaptivity
+adaptivity
 arxiv
 blengerich
 cnellington
@@ -10,7 +10,7 @@ identifiability
 interpretability
 interpretable
 invariance
-Lengerich
+lengerich
 nonparametric
 OLS
 personalization
@@ -20,6 +20,7 @@ regularizaiton
 regularizer
 regulatability
 scalable
+Spatio
 subpopulation
 TODO
 unmodeled

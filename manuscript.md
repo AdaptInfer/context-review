@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-06-24'
+date-meta: '2025-07-23'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="dc.date" content="2025-06-24" />
-  <meta name="citation_publication_date" content="2025-06-24" />
-  <meta property="article:published_time" content="2025-06-24" />
-  <meta name="dc.modified" content="2025-06-24T19:07:25+00:00" />
-  <meta property="article:modified_time" content="2025-06-24T19:07:25+00:00" />
+  <meta name="dc.date" content="2025-07-23" />
+  <meta name="citation_publication_date" content="2025-07-23" />
+  <meta property="article:published_time" content="2025-07-23" />
+  <meta name="dc.modified" content="2025-07-23T15:56:43+00:00" />
+  <meta property="article:modified_time" content="2025-07-23T15:56:43+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/2579a81b2cdb0ca3fa155482999c20915ccc7c9f/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2579a81b2cdb0ca3fa155482999c20915ccc7c9f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2579a81b2cdb0ca3fa155482999c20915ccc7c9f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +69,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/2579a81b2cdb0ca3fa155482999c20915ccc7c9f/))
+([permalink](https://AdaptInfer.github.io/context-review/v/87402fceb91a90b28280ef191c3989d9e66afdbd/))
 was automatically generated
-from [AdaptInfer/context-review@2579a81](https://github.com/AdaptInfer/context-review/tree/2579a81b2cdb0ca3fa155482999c20915ccc7c9f)
-on June 24, 2025.
+from [AdaptInfer/context-review@87402fc](https://github.com/AdaptInfer/context-review/tree/87402fceb91a90b28280ef191c3989d9e66afdbd)
+on July 23, 2025.
 </em></small>
 
 
@@ -266,8 +266,31 @@ TODO: Analyzing the core principles that underpin adaptivity in statistical mode
 ### Advances in Varying-Coefficient Models
 TODO: Outlining key theoretical and methodological breakthroughs.
 
-### Integration with State-of-the-Art Machine Learning
-TODO: Assessing the enhancement of VC models through modern ML technologies (e.g. deep learning, boosted trees, etc).
+Relevant references:
+- [@doi:10.3390/publications13020019]
+
+#### Flexible Functional Forms
+
+Relevant references:
+- [@doi:10.5705/ss.202024.0118]
+
+#### Integration with State-of-the-Art Machine Learning
+TODO: Enhancing VC models with modern ML technologies (e.g. deep learning, boosted trees, etc).
+
+Relevant references:
+- [@doi:10.1007/s00180-025-01603-8]
+- [@arxiv:2003.06416]
+- [@arxiv:2004.13912]
+
+#### Structured data (Spatio-Temporal, Graphs, etc.)
+
+Related references:
+- [@doi:10.1080/01621459.2025.2470481]
+- [@arxiv:2502.14651]
+- [@doi:10.1111/gean.70005]
+- [@doi:10.1016/j.jeconom.2024.105883]
+- [@doi:10.1016/j.regsciurbeco.2024.104009]
+- [@arXiv:2111.01104]
 
 ### Context-Invariant Training
 TODO: The converse of VC models, exploring the implications of training context-invariant models.
@@ -280,6 +303,8 @@ Such context-adaptive models can be learned by explicitly modeling the impact of
 In this section, we will focus on recent progress in understanding how context influences interpretations of statistical models, even when the model was not originally designed to incorporate context.
 
 TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
+
+Relevant references:
 
 
 ## Opportunities for Foundation Models
@@ -296,6 +321,10 @@ TODO: Show recent progress and ongoing directions in using foundation models as 
 
 ### Implementation Across Sectors
 TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.
+
+Relevant references:
+- [@doi:10.6339/25-JDS1181]
+- [@doi:10.3390/math13030469]
 
 ### Performance Evaluation
 TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.
