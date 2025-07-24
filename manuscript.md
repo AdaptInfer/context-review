@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-24" />
   <meta name="citation_publication_date" content="2025-07-24" />
   <meta property="article:published_time" content="2025-07-24" />
-  <meta name="dc.modified" content="2025-07-24T16:02:11+00:00" />
-  <meta property="article:modified_time" content="2025-07-24T16:02:11+00:00" />
+  <meta name="dc.modified" content="2025-07-24T16:35:43+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T16:35:43+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c2fcdf8a810c6001ea8f4e3a375fb68eceea2e51/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c2fcdf8a810c6001ea8f4e3a375fb68eceea2e51/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c2fcdf8a810c6001ea8f4e3a375fb68eceea2e51/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/))
+([permalink](https://AdaptInfer.github.io/context-review/v/c2fcdf8a810c6001ea8f4e3a375fb68eceea2e51/))
 was automatically generated
-from [AdaptInfer/context-review@5687f95](https://github.com/AdaptInfer/context-review/tree/5687f95ff77790e81f115653a0618ba9071f6ec4)
+from [AdaptInfer/context-review@c2fcdf8](https://github.com/AdaptInfer/context-review/tree/c2fcdf8a810c6001ea8f4e3a375fb68eceea2e51)
 on July 24, 2025.
 </em></small>
 
@@ -451,7 +451,7 @@ This section focuses on methods that aim to extract, approximate, or control the
   - Explaining predictions post-hoc
   - Approximating $f(c)$ from input-output behavior
 - References:
-  - LIME, SHAP, ExplainCSV [@doi:10.48550/arXiv.2310.07918]
+  - LIME, SHAP
 
 #### Prototype and Nearest-Neighbor Methods
 

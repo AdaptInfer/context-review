@@ -95,8 +95,6 @@ content/07.interpretations.md:10:personalization
 content/07.interpretations.md:11:adaptivity
 content/07.interpretations.md:13:Composability
 content/07.interpretations.md:20:interpretable
-content/07.interpretations.md:25:arXiv
-content/07.interpretations.md:25:ExplainCSV
 content/07.interpretations.md:25:SHAP
 content/07.interpretations.md:30:interpretability
 content/07.interpretations.md:35:autoencoders
