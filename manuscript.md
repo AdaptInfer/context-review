@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-24" />
   <meta name="citation_publication_date" content="2025-07-24" />
   <meta property="article:published_time" content="2025-07-24" />
-  <meta name="dc.modified" content="2025-07-24T16:54:29+00:00" />
-  <meta property="article:modified_time" content="2025-07-24T16:54:29+00:00" />
+  <meta name="dc.modified" content="2025-07-24T16:57:11+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T16:57:11+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/aac5c158af3e49ac9f7e8f709e12212534cceed7/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/aac5c158af3e49ac9f7e8f709e12212534cceed7/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/aac5c158af3e49ac9f7e8f709e12212534cceed7/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/aac5c158af3e49ac9f7e8f709e12212534cceed7/))
+([permalink](https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/))
 was automatically generated
-from [AdaptInfer/context-review@aac5c15](https://github.com/AdaptInfer/context-review/tree/aac5c158af3e49ac9f7e8f709e12212534cceed7)
+from [AdaptInfer/context-review@9aee3ed](https://github.com/AdaptInfer/context-review/tree/9aee3ed0e8253e56502960bad5a3aecada47138a)
 on July 24, 2025.
 </em></small>
 
@@ -118,8 +118,8 @@ on July 24, 2025.
 
 ## Abstract {.page_break_before}
 
-Context-adaptive inference extends traditional modeling by allowing parameters to vary across individuals, environments, or tasks. 
-This adaptativity may be *explicit* through parameterized functions of context or *implicit* as in foundation models that respond to prompts and support in-context learning. 
+Context-adaptive inference enables models to adjust their behavior across individuals, environments, or tasks. 
+This adaptivity may be *explicit*, through parameterized functions of context, or *implicit*, as in foundation models that respond to prompts and support in-context learning. 
 In this review, we connect recent developments in varying-coefficient models, contextualized learning, and in-context learning. 
 We highlight how foundation models can serve as flexible encoders of context, and how statistical methods offer structure and interpretability. 
 We propose a unified view of context-adaptive inference and outline open challenges in developing scalable, principled, and personalized models that adapt to the complexities of real-world data.

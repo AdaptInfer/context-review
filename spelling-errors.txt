@@ -1,6 +1,5 @@
 activations
-adaptativity
-Adaptivity
+adaptivity
 arxiv
 autoencoders
 blengerich
@@ -31,7 +30,7 @@ overfit
 overfitting
 parameterization
 personalization
-Pre
+pre
 pretraining
 probablybots
 RBF
@@ -41,7 +40,7 @@ regulatability
 scalable
 SHAP
 Spatio
-subpopulation
+Subpopulation
 subpopulations
 summarization
 TODO
