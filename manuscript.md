@@ -1,5 +1,5 @@
 ---
-title: 'Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models'
+title: 'Context-Adaptive Inference: Bridging Statistical and Foundation Models'
 keywords:
 - markdown
 - publishing
@@ -16,15 +16,15 @@ header-includes: |
   -->
   <meta name="dc.format" content="text/html" />
   <meta property="og:type" content="article" />
-  <meta name="dc.title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
+  <meta name="dc.title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
+  <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
+  <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
+  <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta name="dc.date" content="2025-07-24" />
   <meta name="citation_publication_date" content="2025-07-24" />
   <meta property="article:published_time" content="2025-07-24" />
-  <meta name="dc.modified" content="2025-07-24T13:04:17+00:00" />
-  <meta property="article:modified_time" content="2025-07-24T13:04:17+00:00" />
+  <meta name="dc.modified" content="2025-07-24T15:32:13+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T15:32:13+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/))
+([permalink](https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/))
 was automatically generated
-from [AdaptInfer/context-review@6368038](https://github.com/AdaptInfer/context-review/tree/63680389763bea752f2259872d458e90a5148323)
+from [AdaptInfer/context-review@4a4e77a](https://github.com/AdaptInfer/context-review/tree/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f)
 on July 24, 2025.
 </em></small>
 
@@ -118,100 +118,116 @@ on July 24, 2025.
 
 ## Abstract {.page_break_before}
 
-Context-adaptive inference extends classical statistical modeling by allowing parameters to vary across individuals, environments, or tasks. This adaptation may be explicit—through parameterized functions of context—or implicit, via interactions between context and input features. In this review, we survey recent advances in modeling sample-specific variation, including varying-coefficient models, transfer learning, and in-context learning. We also examine the emerging role of foundation models as flexible context encoders. Finally, we outline key challenges and open questions for the development of principled, scalable, and interpretable context-adaptive methods.
-
+Context-adaptive inference extends traditional modeling by allowing parameters to vary across individuals, environments, or tasks. 
+This adaptativity may be *explicit* through parameterized functions of context or *implicit* as in foundation models that respond to prompts and support in-context learning. 
+In this review, we connect recent developments in varying-coefficient models, contextualized learning, and in-context learning. 
+We highlight how foundation models can serve as flexible encoders of context, and how statistical methods offer structure and interpretability. 
+We propose a unified view of context-adaptive inference and outline open challenges in developing scalable, principled, and personalized models that adapt to the complexities of real-world data.
 
 ## Introduction
-A growing number of methods across statistics and machine learning aim to model how data distributions vary across individuals, environments, or tasks. This interest in context-adaptive inference reflects a shift from population-level models toward those that account for sample-specific variation.
 
-In statistics, **varying-coefficient models** allow model parameters to change smoothly with covariates. In machine learning, **meta-learning** and **transfer learning** enable models to adapt across tasks or domains. More recently, **in-context learning** -- by which foundation models adapt behavior based on support examples without parameter updates -- has emerged as a powerful mechanism for personalization in large language models.
+A convenient simplifying assumption in statistical modeling is that observations are independent and identically distributed (i.i.d.). 
+This assumption allows us to use a single model to make predictions across all data points. 
+But in practice, this assumption rarely holds. 
+Data are collected across different individuals, environments, and tasks -- each with their own characteristics, constraints, and dynamics.
 
-These approaches originate from different traditions but share a common goal: to use *context* in the form of covariates, support data, or task descriptors to guide inference about sample-specific *parameters*.
+To model this heterogeneity, a growing class of methods aim to make inference *adaptive to context*. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information -- whether covariates, environments, or support sets -- to inform sample-specific inference.
 
-We formalize the setting by assuming each observation $X_i$ is drawn from a sample-specific distribution:
+We formalize this by assuming each observation $x_i$ is drawn from a distribution governed by parameters $\theta_i$:
 
-$$X_i \sim P(X; \theta_i)$$
-
-where $\theta_i$ denotes the parameters governing the distribution of the $i$th observation. In the most general case, this formulation allows for arbitrary heterogeneity. However, estimating $N$ distinct parameters from $N$ observations is ill-posed without further structure.
-
-To make the problem tractable, context-adaptive methods introduce structure by assuming that parameters vary systematically with context:
 $$
-\theta_i = f(c_i).
+x_i \sim P(x; \theta_i).
 $$
-This deterministic formulation is common in varying-coefficient models and many supervised personalization settings.
 
-More generally, $\theta_i$ may be drawn from a context-dependent distribution:
+In population models, the assumption is that $\theta_i = \theta$ for all $i$. In context-adaptive models, we instead posit that the parameters vary with context:
+
 $$
-\theta_i \sim P(\theta \mid c_i),
+\theta_i = f(c_i) \quad \text{or} \quad \theta_i \sim P(\theta \mid c_i),
 $$
-as in hierarchical Bayesian models or amortized inference frameworks. This stochastic formulation captures residual uncertainty or unmodeled variation beyond what is encoded in $c_i$.
 
-The function $f$ encodes how parameters vary with context, and may be linear, smooth, or nonparametric, depending on the modeling assumptions. In this view, the challenge of context-adaptive inference reduces to estimating or constraining $f$ given data $\{(x_i, c_i)\}_{i=1}^N$.
+where $c_i$ captures the relevant covariates or environment for observation $i$. The goal is to estimate either a deterministic function $f$ or a conditional distribution over parameters.
 
-Viewed this way, context-adaptive inference spans a spectrum—from models that seek **invariance** across environments to models that enable **personalization** at the level of individual samples. For example:
+This shift raises new modeling challenges. 
+Estimating a unique $\theta_i$ from a single observation is ill-posed unless we impose structure—smoothness, sparsity, shared representations, or latent grouping. 
+And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we must develop tools to recover, interpret, or constrain the underlying parameter variation.
 
-- **Population models** assume $\theta_i = \theta$ for all $i$.
-- **Invariant risk minimization** [@doi:10.48550/arXiv.1907.02893] identifies components of $\theta$ that remain stable across distributions.
-- **Transfer learning** assumes partial invariance, learning domain-specific shifts around a shared representation.
-- **Varying-coefficient models** allow $\theta_i$ to vary smoothly with observed context.
-- **In-context learning** treats parameters as an implicit function of support examples.
+In this review, we examine methods that model how parameters vary with context. 
+We trace a trajectory from classical models that impose explicit structure on $\theta_i$, to modern methods where parameter variation is learned implicitly through flexible function classes. 
+Along the way, we highlight shared principles, formal distinctions, and practical implications for estimating, interpreting, and constraining context-dependent models. 
+Finally, we consider how the emergence of foundation models opens new opportunities for context-adaptive inference by scaling personalized opportunities and encouraging a rethinking of what adaptivity means in practice.
 
-In this review, we survey methods across this spectrum. We highlight their shared foundations, clarify the assumptions they make about $\theta_i$, and explore the emerging connections between classical approaches such as varying-coefficient models and modern inference mechanisms like in-context learning.
-
-### Population Models
-The fundamental assumption of most models is that samples are independent and identically distributed.
-However, if samples are identically distributed they must also have identical parameters.
-To account for parameter heterogeneity and create more realistic models we must relax this assumption, but the assumption is so fundamental to many methods that alternatives are rarely explored.
-Additionally, many traditional models may produce a seemingly acceptable fit to their data, even when the underlying model is heterogeneous.
-Here, we explore the consequences of applying homogeneous modeling approaches to heterogeneous data, and discuss how subtle but meaningful effects are often lost to the strength of the identically distributed assumption.
-
-Failure modes of population models can be identified by their error distributions.
-
-__Mode collapse__:
-If one population is much larger than another, the other population will be underrepresented in the model.
-
-__Outliers__:
-Small populations of outliers can have an enormous effect on OLS models in the parameter-averaging regime.
-
-__Phantom Populations__:
-If several populations are present but equally represented, the optimal traditional model will represent none of these populations.
-
-__Lemma:__ A traditional OLS linear model will be the average of heterogeneous models. 
-
-Relevant references:
-
-- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
-
-### Context-informed models
-
-Without further assumptions, sample-specific parameter estimation is ill-defined.
-Single sample estimation is prohibitively high variance.
-We can begin to make this problem tractable by taking note from previous work and imposing assumptions on the topology of $\theta$, or the relationship between $\theta$ and contextual variables.
-
-##### Conditional and Cluster Models
-While conditional and cluster models are not truly personalized models, the spirit is the same.
-These models make the assumption that models in a single conditional or cluster group are homogeneous. 
-More commonly this is written as a group of observations being generated by a single model.
-While the assumption results in fewer than $N$ models, it allows the use of generic plug-in estimators.
-Conditional or cluster estimators take the form 
-$$ \widehat{\theta}_0, ..., \widehat{\theta}_C = \arg\max_{\theta_0, ..., \theta_C} \sum_{c \in \mathcal{C}} \ell(X_c; \theta_c) $$
-where $\ell(X; \theta)$ is the log-likelihood of $\theta$ on $X$ and $c$ specifies the covariate group that samples are assigned to, usually by specifying a condition or clustering on covariates thought to affect the distribution of observations. 
-Notably, this method produces fewer than $N$ distinct models for $N$ samples and will fail to recover per-sample parameter variation.
+## From Population Assumptions to Context-Adaptive Inference
 
 
-##### Distance-regularized Models
-Distance-regularized models assume that models with similar covariates have similar parameters and encode this assumption as a regularization term.
-$$ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N} \sum_i \left[ \ell(x_i; \theta_i) \right] - \sum_{i, j} \frac{\| \theta_i - \theta_j \|}{D(c_i, c_j)} $$
-The second term is a regularizer that penalizes divergence of $\theta$'s with similar $c$.
+Most statistical and machine learning models begin with a foundational assumption: that all samples are drawn independently and identically from a shared population distribution. This assumption simplifies estimation and enables generalization from limited data, but it collapses in the presence of meaningful heterogeneity.
+
+In practice, data often reflect differences across individuals, environments, or conditions. These differences may stem from biological variation, temporal drift, site effects, or shifts in measurement context. Treating heterogeneous data as if it were homogeneous can obscure real effects, inflate variance, and lead to brittle predictions.
+
+### Failure Modes of Population Models
+
+Even when traditional models appear to fit aggregate data well, they may hide systematic failure modes.
+
+**Mode Collapse**  
+When one subpopulation is much larger than another, standard models are biased toward the dominant group, underrepresenting the minority group in both fit and predictions.
+
+**Outlier Sensitivity**  
+In the parameter-averaging regime, small but extreme groups can disproportionately distort the global model, especially in methods like ordinary least squares.
+
+**Phantom Populations**  
+When multiple subpopulations are equally represented, the global model may fit none of them well, instead converging to a solution that represents a non-existent average case.
+
+These behaviors reflect a deeper problem: the assumption of identically distributed samples is not just incorrect, but actively harmful in heterogeneous settings.
 
 
-##### Parametric Varying-coefficient models
+### Toward Context-Aware Models
+
+To account for heterogeneity, we must relax the assumption of shared parameters and allow the data-generating process to vary across samples. A general formulation assumes each observation is governed by its own latent parameters:
+$$
+x_i \sim P(x; \theta_i),
+$$
+
+However, estimating $N$ free parameters from $N$ samples is underdetermined. 
+Context-aware approaches resolve this by introducing structure on how parameters vary, often by assuming that $\theta_i$ depends on an observed context $c_i$:
+
+$$
+\theta_i = f(c_i) \quad \text{or} \quad \theta_i \sim P(\theta \mid c_i).
+$$
+
+This formulation makes the model estimable, but it raises new challenges. 
+How should $f$ be chosen? How smooth, flexible, or structured should it be? The remainder of this review explores different answers to this question, and shows how implicit and explicit representations of context can lead to powerful, personalized models.
+
+### Early Remedies: Grouped and Distance-Based Models
+
+Before diving into flexible estimators of $f(c)$, we review early modeling strategies that attempt to break away from homogeneity.
+
+#### Conditional and Clustered Models
+
+One approach is to group observations into C contexts, either by manually defining conditions (e.g. male vs. female) or using unsupervised clustering. Each group is then assigned a distinct parameter vector:
+
+$$
+\{\widehat{\theta}_0, \ldots, \widehat{\theta}_C\} = \arg\max_{\theta_0, \ldots, \theta_C} \sum_{c \in \mathcal{C}} \ell(X_c; \theta_c),
+$$
+where $\ell(X; \theta)$ is the log-likelihood of $\theta$ on $X$ and $c$ specifies the covariate group that samples are assigned to. This reduces variance but limits granularity. It assumes that all members of a group share the same distribution and fails to capture variation within a group.
+
+#### Distance-Regularized Estimation
+
+A more flexible alternative assumes that observations with similar contexts should have similar parameters. This is encoded as a regularization penalty that discourages large differences in $\theta_i$ for nearby $c_i$:
+
+$$
+\{\widehat{\theta}_0, \ldots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \ldots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) - \sum_{i,j} \frac{\|\theta_i - \theta_j\|}{D(c_i, c_j)} \right),
+$$
+
+where $D(c_i, c_j)$ is a distance metric between contexts. This approach allows for smoother parameter variation but requires careful choice of $D$ and regularization strength $\lambda$ to balance bias and variance.  
+The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff.
+
+#### Parametric Varying-coefficient models
 Original paper (based on a smoothing spline function): @doi:10.1111/j.2517-6161.1993.tb01939.x
 Markov networks: @doi:10.1080/01621459.2021.2000866
 Linear varying-coefficient models assume that parameters vary linearly with covariates, a much stronger assumption than the classic varying-coefficient model but making a conceptual leap that allows us to define a form for the relationship between the parameters and covariates. 
 $$\widehat{\theta}_0, ..., \widehat{\theta}_N = \widehat{A} C^T$$
 $$ \widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i) $$
 
+TODO: Note that they achieve distance-matching by using a distance metric under Euclidean distance, which is a special case of the distance-regularized estimation above.
 
 ##### Semi-parametric varying-coefficient Models
 Original paper: @doi:10.1214/aos/1017939139
@@ -262,12 +278,28 @@ Key idea: negative information sharing. Different models should be pushed apart.
 $$ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N, D} \sum_{i=0}^N \prod_{j=0 s.t. D(c_i, c_j) < d}^N P(x_j; \theta_i) P(\theta_i ; \theta_j) $$
 
 
-## Theoretical Foundations and Advances in Varying-Coefficient Models
+### A Spectrum of Context-Awareness
 
-### Principles of Adaptivity
-What does it mean for a model to be adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is good adaptivity. In this section, we formalize the core principles that underlie adaptive modeling.
+Context-aware models can be viewed along a spectrum of assumptions about the relationship between context and parameters.
 
-#### 1. Adaptivity requires flexibility
+**Global models**: $\theta_i = \theta$ for all $i$  
+**Grouped models**: $\theta_i = \theta_c$ for some finite set of groups  
+**Smooth models**: $\theta_i = f(c_i)$, with $f$ assumed to be continuous or low-complexity  
+**Latent models**: $\theta_i \sim P(\theta | c_i)$, with $f$ learned implicitly
+
+Each of these choices encodes different beliefs about how parameters vary. The next section formalizes this variation and examines general principles for adaptivity in statistical modeling.
+
+Relevant references:
+
+- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
+
+
+
+
+## Principles of Context-Adaptive Inference
+What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is good adaptivity. In this section, we formalize the core principles that underlie adaptive modeling.
+
+### 1. Adaptivity requires flexibility
 A model cannot adapt unless it has the capacity to represent multiple behaviors. Flexibility may take the form of nonlinearity, hierarchical structure, or modular components that allow different responses in different settings.
 
 - Interaction effects in regression models [@doi:10.1145/2783258.2788613]
@@ -275,26 +307,36 @@ A model cannot adapt unless it has the capacity to represent multiple behaviors.
 - Meta-learning and mixtures-of-experts models that learn to adapt based on context
 - Varying-coefficient models that allow coefficients to change with context [@doi:10.1111/j.2517-6161.1993.tb01939.x]
 
-#### 2. Adaptivity requires a signal of heterogeneity
+### 2. Adaptivity requires a signal of heterogeneity
 - Varying-coefficient models adapt parameters based on observed context [@doi:10.1111/j.2517-6161.1993.tb01939.x]
 - Contextual bandits adapt actions to context features [@arxiv:1811.04383]
 - Multi-domain models adapt across known environments or inferred partitions [@arXiv:2010.07249]
 
-#### 3. Modularity improves adaptivity
+### 3. Modularity improves adaptivity
 Adaptive systems are easier to design, debug, and interpret when built from modular parts. Modularity supports targeted adaptation, transferability, and disentanglement.
 
 - []
 
-#### 4. Adaptivity implies selectivity
+### 4. Adaptivity implies selectivity
 Adaptation must be earned. Overreacting to limited data leads to overfitting. The best adaptive methods include mechanisms for deciding when not to adapt.
 - Lepski's method [@arxiv:1508.00249]
 - Aggregation of classifiers [@doi:10.1007/978-3-540-45167-9_23]
 
-#### 5. Adaptivity is bounded by data efficiency
+### 5. Adaptivity is bounded by data efficiency
 [@arxiv:1911.12568]
 
+### 6. Adaptivity is not a free lunch
 
-#### When Adaptivity Fails: Common Failure Modes
+Adaptivity improves performance when heterogeneity is real and informative, but it can degrade performance when variation is spurious. Key tradeoffs include:
+
+- **Bias vs. variance**: More flexible adaptation can reduce bias but increase variance
+- **Stability vs. personalization**: Highly adaptive models may overfit to noise or adversarial context
+- **Inference cost**: Adaptive inference may be more computationally intensive than global prediction
+
+Understanding these tradeoffs is essential when designing systems for real-world deployment.
+
+
+### When Adaptivity Fails: Common Failure Modes
 Even when all the ingredients are present, adaptivity can backfire. Common failure modes include:
 
 - Spurious Adaptation: Adapting to unstable or confounded features [@arXiv:2010.05761]
@@ -304,7 +346,18 @@ Even when all the ingredients are present, adaptivity can backfire. Common failu
 
 
 
-### Advances in Varying-Coefficient Models
+Related references:
+
+
+
+
+## Explicit Adaptivity: Structured Estimation of $f(c)$
+
+TODO: Sync with overview.md
+
+### Varying-Coefficient Models
+
+### Recent Advances in Varying-Coefficient Models
 TODO: Outlining key theoretical and methodological breakthroughs.
 
 Relevant references:
@@ -360,17 +413,8 @@ Related references:
 - Environment Inference for Invariant Learning [@arXiv:2110.14048]
 - Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731]
 
-## Context-Adaptive Interpretations of Context-Invariant Models
 
-In the previous section, we discussed the importance of context in model parameters. 
-Such context-adaptive models can be learned by explicitly modeling the impact of contextual variables on model parameters, or learned implicitly in a model containing interaction effects between the context and the input features.
-In this section, we will focus on recent progress in understanding how context influences interpretations of statistical models, even when the model was not originally designed to incorporate context.
 
-TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
-
-Relevant references:
-
-- [@arxiv:2310.05797]
 
 ## **Opportunities for Foundation Models**
 
@@ -400,7 +444,110 @@ Recent innovations underscore the role of foundation models in context-sensitive
 
 
 
-## Applications, Case Studies, and Evaluations
+## Implicit Adaptivity: Emergent Contextualization within Complex Models
+
+
+Not all models adapt through explicit parameterization. In many modern systems, adaptation emerges from architecture, training data, or inference dynamics—without being hard-coded as a function of context.
+
+We refer to this as *implicit adaptivity*. These methods do not model $\theta_i$ directly as a function of $c_i$, nor do they always define context formally. Instead, they internalize patterns across training distributions in a way that enables flexible behavior at inference time.
+
+A canonical example is **in-context learning** with foundation models. Given a prompt consisting of a few examples, the model adjusts its behavior—often achieving personalization or task adaptation—without updating weights or making any explicit inference over $\theta$. This capacity arises from pretraining on diverse data and from the model’s architecture, not from structured estimation.
+
+Other forms of implicit adaptivity include:
+
+- **Fine-tuned models** that generalize across tasks or domains by adjusting shared components.
+- **Attention-based architectures** that condition on context without defining a parametric mapping.
+- **Gradient-based meta-learners** trained to produce fast adaptation without modeling $\theta(c)$ explicitly.
+
+These methods challenge the boundary between training and inference. They blur the distinction between model parameters and data inputs, and they rely on massive-scale training to amortize the cost of adaptation.
+
+In this section, we examine:
+
+- How implicit adaptivity arises in foundation models
+- What assumptions these models make (implicitly or explicitly) about context
+- How their performance compares to structured, explicit approaches
+- When it’s valuable to make the adaptation process more interpretable or modular
+
+Implicit adaptivity offers powerful capabilities, but it also hides structure that could be useful for analysis, debugging, or control. The next section explores efforts to *make the implicit explicit*—by approximating, interpreting, or extracting the latent adaptation mechanisms inside black-box models.
+
+### Defining Implicit Adaptation
+
+### Neural Networks with context inputs (e.g. interaction effects, attention mechanisms, etc.)
+
+### Amortized Inference and Meta-Learning
+
+### In-context learning in transformers and foundation models
+
+
+## Making Implicit Adaptivity Explicit: Local Models, Surrogates and Post Hoc Approximations
+
+This section focuses on methods that aim to extract, approximate, or control the internal adaptivity mechanisms of black-box models. These approaches recognize that implicit adaptivity—while powerful—can be opaque, hard to debug, and brittle to distribution shift. By surfacing structure, we gain interpretability, composability, and sometimes improved generalization.
+
+### Motivation
+
+- Implicit adaptivity can succeed without explicit modeling, but:
+  - It obscures *why* and *how* a model adapts
+  - It limits modular reuse and inspection
+  - It makes personalization hard to constrain or audit
+- Making adaptivity explicit supports:
+  - Better alignment with downstream goals
+  - Composability of learned modules
+  - Debugging and error attribution
+
+### Approaches
+
+#### Surrogate Modeling
+
+- Fit interpretable surrogates (e.g., linear models, decision trees) to approximate model behavior locally
+- Applications:
+  - Explaining predictions post-hoc
+  - Approximating $f(c)$ from input-output behavior
+- References:
+  - LIME, SHAP, ExplainCSV [@doi:10.48550/arXiv.2310.07918]
+
+#### Prototype and Nearest-Neighbor Methods
+
+- Use nearest neighbors in representation space to approximate model adaptation
+- Enables interpretability and modular updates
+- Related to contextual bandits, exemplar models
+
+#### Amortization Diagnostics
+
+- For amortized inference (e.g., variational autoencoders), analyze encoder mappings to understand how $q(\theta | x)$ varies with $x$
+- Could treat encoder as a learned $f(c)$ and evaluate its fidelity
+
+#### Disentangled Representations
+
+- Train models with constraints (e.g., variational regularization, info bottlenecks) to encourage explicit factors of variation
+- Goal: make parameter changes traceable to distinct contextual causes
+
+#### Parameter Extraction
+
+- Techniques like linear probes, weight attribution, or synthetic tasks to reverse-engineer how models adapt internally
+- Example: "what part of the weights encode the task?"
+
+### Tradeoffs
+
+- Fidelity vs interpretability
+- Local vs global explanations
+- Approximation error vs modular control
+
+### Open Questions
+
+- Can we extract *portable* modules from foundation models?
+- When does making structure explicit improve performance?
+- What is the right level of abstraction—parameters, functions, latent causes?
+
+This section bridges black-box adaptation and structured inference. It highlights how interpretability and performance need not be at odds—especially when the goal is robust, composable, and trustworthy adaptation.
+
+TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
+
+Relevant references:
+
+- [@arxiv:2310.05797]
+- Interpretations are statistics [@arXiv:2402.02870]
+
+## Applications, Case Studies, Evaluation Metrics, and Tools
 
 ### Implementation Across Sectors
 TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.
@@ -414,8 +561,6 @@ Relevant references:
 TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.
 
 
-## Technological and Software Tools
-
 ### Survey of Tools
 TODO: Reviewing current technological supports for context-adaptive models.
 
@@ -423,13 +568,38 @@ TODO: Reviewing current technological supports for context-adaptive models.
 TODO: Offering practical advice on tool selection and use for optimal outcomes.
 
 
-## Future Trends and Predictions
+## Future Trends and Opportunities with Foundation Models
 
 ### Emerging Technologies
 TODO: Identifying upcoming technologies and predicting their impact on context-adaptive learning.
 
 ### Advances in Methodologies
 TODO: Speculating on potential future methodological enhancements.
+
+
+### Expanding Frameworks with Foundation Models
+
+Foundation models refer to large-scale, general-purpose neural networks, predominantly transformer-based architectures, trained on vast datasets using self-supervised learning [@doi:10.48550/arXiv.2108.07258]. These models have significantly transformed modern statistical modeling and machine learning due to their flexibility, adaptability, and strong performance across diverse domains. Notably, large language models (LLMs) such as GPT-4 [@doi:10.48550/arXiv.2303.08774] and LLaMA-3.1 [@doi:10.48550/arXiv.2407.21783] have achieved substantial advancements in natural language processing (NLP), demonstrating proficiency in tasks ranging from text generation and summarization to question-answering and dialogue systems. Beyond NLP, foundation models also excel in multimodal (text-vision) tasks [@doi:10.48550/arXiv.2103.00020], text embedding generation [@doi:10.48550/arXiv.1810.04805], and structured tabular data analysis [@doi:10.48550/arXiv.2207.01848], highlighting their broad applicability.
+
+A key strength of foundation models lies in their capacity to dynamically adapt to different contexts provided by inputs. This adaptability is primarily achieved through techniques such as prompting, which involves designing queries to guide the model's behavior implicitly, allowing task-specific responses without additional fine-tuning [@doi:10.1145/3560815]. Furthermore, mixture-of-experts (MoE) architectures amplify this contextual adaptability by employing routing mechanisms that select specialized sub-models or "experts" tailored to specific input data, thus optimizing computational efficiency and performance [@doi:10.1007/s10462-012-9338-y].
+
+#### **Foundation Models as Context**
+
+Foundation models offer significant opportunities by supplying context-aware information that enhances various stages of statistical modeling and inference:
+
+**Feature Extraction and Interpretation:** Foundation models transform raw, unstructured data into structured and interpretable representations. For example, targeted prompts enable LLMs to extract insightful features from text, providing meaningful insights and facilitating interpretability [@doi:10.48550/arXiv.2302.12343, @doi:10.48550/arXiv.2305.12696, @doi:10.18653/v1/2023.emnlp-main.384]. This allows statistical models to operate directly on semantically meaningful features rather than on raw, less interpretable data.
+
+**Contextualized Representations for Downstream Modeling:** Foundation models produce adaptable embeddings and intermediate representations useful as inputs for downstream models, such as decision trees or linear models [@doi:10.48550/arXiv.2208.01066]. These embeddings significantly enhance the training of both complex, black-box models [@doi:10.48550/arXiv.2212.09741] and simpler statistical methods like n-gram-based analyses [@doi:10.1038/s41467-023-43713-1], thereby broadening the application scope and effectiveness of statistical approaches.
+
+**Post-hoc Interpretability:** Foundation models support interpretability by generating natural-language explanations for decisions made by complex models. This capability enhances transparency and trust in statistical inference, providing clear insights into how and why certain predictions or decisions are made [@doi:10.48550/arXiv.2409.08466].
+
+Recent innovations underscore the role of foundation models in context-sensitive inference and enhanced interpretability:
+
+**FLAN-MoE** (Fine-tuned Language Model with Mixture of Experts) [@doi:10.48550/arXiv.2305.14705] combines instruction tuning with expert selection, dynamically activating relevant sub-models based on the context. This method significantly improves performance across diverse NLP tasks, offering superior few-shot and zero-shot capabilities. It also facilitates interpretability through explicit expert activations. Future directions may explore advanced expert-selection techniques and multilingual capabilities.
+
+**LMPriors** (Pre-Trained Language Models as Task-Specific Priors) [@doi:10.48550/arXiv.2210.12530] leverages semantic insights from pre-trained models like GPT-3 to guide tasks such as causal inference, feature selection, and reinforcement learning. This method markedly enhances decision accuracy and efficiency without requiring extensive supervised datasets. However, it necessitates careful prompt engineering to mitigate biases and ethical concerns.
+
+**Mixture of In-Context Experts** (MoICE) [@doi:10.48550/arXiv.2210.12530] introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model's reasoning process.
 
 
 ## Open Problems
