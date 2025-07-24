@@ -1,6 +1,6 @@
 activations
 adaptativity
-adaptivity
+Adaptivity
 arxiv
 autoencoders
 blengerich
@@ -12,13 +12,13 @@ covariates
 DeepLift
 DeepSHAP
 Distributionally
-embeddings
+Embeddings
 ExplainCSV
 GPT
 identifiability
 interpretability
 interpretable
-lengerich
+Lengerich
 Lepski’s
 LLMs
 LMPriors
@@ -32,7 +32,7 @@ overfit
 Overfitting
 parameterization
 personalization
-Pre
+pre
 pretraining
 probablybots
 RBF
@@ -47,7 +47,7 @@ subpopulations
 summarization
 TODO
 tradeoff
-tradeoffs
+Tradeoffs
 transferability
 underdetermined
 underrepresenting

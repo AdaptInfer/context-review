@@ -23,8 +23,8 @@ header-includes: |
   <meta name="dc.date" content="2025-07-24" />
   <meta name="citation_publication_date" content="2025-07-24" />
   <meta property="article:published_time" content="2025-07-24" />
-  <meta name="dc.modified" content="2025-07-24T15:32:13+00:00" />
-  <meta property="article:modified_time" content="2025-07-24T15:32:13+00:00" />
+  <meta name="dc.modified" content="2025-07-24T16:02:11+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T16:02:11+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f/))
+([permalink](https://AdaptInfer.github.io/context-review/v/5687f95ff77790e81f115653a0618ba9071f6ec4/))
 was automatically generated
-from [AdaptInfer/context-review@4a4e77a](https://github.com/AdaptInfer/context-review/tree/4a4e77ae852f7bd4eb1a4934f4c1251e525b827f)
+from [AdaptInfer/context-review@5687f95](https://github.com/AdaptInfer/context-review/tree/5687f95ff77790e81f115653a0618ba9071f6ec4)
 on July 24, 2025.
 </em></small>
 
@@ -390,58 +390,6 @@ Related references:
 - [@doi:10.1016/j.regsciurbeco.2024.104009]
 - [@arXiv:2111.01104]
 
-### Context-Invariant Training
-TODO: The converse of VC models, exploring the implications of training context-invariant models.
-e.g. out-of-distribution generalization, robustness to adversarial attacks.
-
-Relevant references:
-
-- Invariant Risk Minimization [@arXiv:1907.02893]
-- Out-of-Distribution Generalization via Risk Extrapolation [@arXiv:2003.00688]
-- The Risks of Invariant Risk Minimization [@arXiv:2010.05761]
-- Conditional Variance Penalties and Domain Adaptation [@arXiv:1710.11469]
-- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
-
-#### Adversarial Robustness as Context-Invariant Training
-Related references:
-
-- Towards Deep Learning Models Resistant to Adversarial Attacks [@arXiv:1706.06083]
-- Robustness May Be at Odds with Accuracy [@arXiv:1805.12152]
-
-#### Training methods for Context-Invariant Models
-- Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
-- Environment Inference for Invariant Learning [@arXiv:2110.14048]
-- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731]
-
-
-
-
-## **Opportunities for Foundation Models**
-
-# **Expanding Frameworks**
-
-Foundation models refer to large-scale, general-purpose neural networks, predominantly transformer-based architectures, trained on vast datasets using self-supervised learning [@doi:10.48550/arXiv.2108.07258]. These models have significantly transformed modern statistical modeling and machine learning due to their flexibility, adaptability, and strong performance across diverse domains. Notably, large language models (LLMs) such as GPT-4 [@doi:10.48550/arXiv.2303.08774] and LLaMA-3.1 [@doi:10.48550/arXiv.2407.21783] have achieved substantial advancements in natural language processing (NLP), demonstrating proficiency in tasks ranging from text generation and summarization to question-answering and dialogue systems. Beyond NLP, foundation models also excel in multimodal (text-vision) tasks [@doi:10.48550/arXiv.2103.00020], text embedding generation [@doi:10.48550/arXiv.1810.04805], and structured tabular data analysis [@doi:10.48550/arXiv.2207.01848], highlighting their broad applicability.
-
-A key strength of foundation models lies in their capacity to dynamically adapt to different contexts provided by inputs. This adaptability is primarily achieved through techniques such as prompting, which involves designing queries to guide the model's behavior implicitly, allowing task-specific responses without additional fine-tuning [@doi:10.1145/3560815]. Furthermore, mixture-of-experts (MoE) architectures amplify this contextual adaptability by employing routing mechanisms that select specialized sub-models or "experts" tailored to specific input data, thus optimizing computational efficiency and performance [@doi:10.1007/s10462-012-9338-y].
-
-# **Foundation Models as Context**
-
-Foundation models offer significant opportunities by supplying context-aware information that enhances various stages of statistical modeling and inference:
-
-**Feature Extraction and Interpretation:** Foundation models transform raw, unstructured data into structured and interpretable representations. For example, targeted prompts enable LLMs to extract insightful features from text, providing meaningful insights and facilitating interpretability [@doi:10.48550/arXiv.2302.12343, @doi:10.48550/arXiv.2305.12696, @doi:10.18653/v1/2023.emnlp-main.384]. This allows statistical models to operate directly on semantically meaningful features rather than on raw, less interpretable data.
-
-**Contextualized Representations for Downstream Modeling:** Foundation models produce adaptable embeddings and intermediate representations useful as inputs for downstream models, such as decision trees or linear models [@doi:10.48550/arXiv.2208.01066]. These embeddings significantly enhance the training of both complex, black-box models [@doi:10.48550/arXiv.2212.09741] and simpler statistical methods like n-gram-based analyses [@doi:10.1038/s41467-023-43713-1], thereby broadening the application scope and effectiveness of statistical approaches.
-
-**Post-hoc Interpretability:** Foundation models support interpretability by generating natural-language explanations for decisions made by complex models. This capability enhances transparency and trust in statistical inference, providing clear insights into how and why certain predictions or decisions are made [@doi:10.48550/arXiv.2409.08466].
-
-Recent innovations underscore the role of foundation models in context-sensitive inference and enhanced interpretability:
-
-**FLAN-MoE** (Fine-tuned Language Model with Mixture of Experts) [@doi:10.48550/arXiv.2305.14705] combines instruction tuning with expert selection, dynamically activating relevant sub-models based on the context. This method significantly improves performance across diverse NLP tasks, offering superior few-shot and zero-shot capabilities. It also facilitates interpretability through explicit expert activations. Future directions may explore advanced expert-selection techniques and multilingual capabilities.
-
-**LMPriors** (Pre-Trained Language Models as Task-Specific Priors) [@doi:10.48550/arXiv.2210.12530] leverages semantic insights from pre-trained models like GPT-3 to guide tasks such as causal inference, feature selection, and reinforcement learning. This method markedly enhances decision accuracy and efficiency without requiring extensive supervised datasets. However, it necessitates careful prompt engineering to mitigate biases and ethical concerns.
-
-**Mixture of In-Context Experts** (MoICE) [@doi:10.48550/arXiv.2210.12530] introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model's reasoning process.
-
 
 
 ## Implicit Adaptivity: Emergent Contextualization within Complex Models
@@ -546,6 +494,32 @@ Relevant references:
 
 - [@arxiv:2310.05797]
 - Interpretations are statistics [@arXiv:2402.02870]
+
+
+## Context-Invariant Training: A View from the Converse
+TODO: The converse of context-adaptive models, exploring the implications of training context-invariant models.
+e.g. out-of-distribution generalization, robustness to adversarial attacks.
+
+Relevant references:
+
+- Invariant Risk Minimization [@arXiv:1907.02893]
+- Out-of-Distribution Generalization via Risk Extrapolation [@arXiv:2003.00688]
+- The Risks of Invariant Risk Minimization [@arXiv:2010.05761]
+- Conditional Variance Penalties and Domain Adaptation [@arXiv:1710.11469]
+- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
+
+### Adversarial Robustness as Context-Invariant Training
+Related references:
+
+- Towards Deep Learning Models Resistant to Adversarial Attacks [@arXiv:1706.06083]
+- Robustness May Be at Odds with Accuracy [@arXiv:1805.12152]
+
+### Training methods for Context-Invariant Models
+- Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
+- Environment Inference for Invariant Learning [@arXiv:2110.14048]
+- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731]
+
+
 
 ## Applications, Case Studies, Evaluation Metrics, and Tools
 
