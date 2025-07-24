@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-07-23'
+date-meta: '2025-07-24'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -20,11 +20,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="dc.date" content="2025-07-23" />
-  <meta name="citation_publication_date" content="2025-07-23" />
-  <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T17:26:55+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T17:26:55+00:00" />
+  <meta name="dc.date" content="2025-07-24" />
+  <meta name="citation_publication_date" content="2025-07-24" />
+  <meta property="article:published_time" content="2025-07-24" />
+  <meta name="dc.modified" content="2025-07-24T13:04:17+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T13:04:17+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +69,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/))
+([permalink](https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/))
 was automatically generated
-from [AdaptInfer/context-review@464ca8a](https://github.com/AdaptInfer/context-review/tree/464ca8ab9d07e1e11e3626120eda7d03ae7ef847)
-on July 23, 2025.
+from [AdaptInfer/context-review@6368038](https://github.com/AdaptInfer/context-review/tree/63680389763bea752f2259872d458e90a5148323)
+on July 24, 2025.
 </em></small>
 
 
@@ -372,14 +372,32 @@ Relevant references:
 
 - [@arxiv:2310.05797]
 
-## Opportunities for Foundation Models
+## **Opportunities for Foundation Models**
 
-### Expanding Frameworks
-TODO: Define foundation models, Explore how foundation models are redefining possibilities within statistical models.
+# **Expanding Frameworks**
 
+Foundation models refer to large-scale, general-purpose neural networks, predominantly transformer-based architectures, trained on vast datasets using self-supervised learning [@doi:10.48550/arXiv.2108.07258]. These models have significantly transformed modern statistical modeling and machine learning due to their flexibility, adaptability, and strong performance across diverse domains. Notably, large language models (LLMs) such as GPT-4 [@doi:10.48550/arXiv.2303.08774] and LLaMA-3.1 [@doi:10.48550/arXiv.2407.21783] have achieved substantial advancements in natural language processing (NLP), demonstrating proficiency in tasks ranging from text generation and summarization to question-answering and dialogue systems. Beyond NLP, foundation models also excel in multimodal (text-vision) tasks [@doi:10.48550/arXiv.2103.00020], text embedding generation [@doi:10.48550/arXiv.1810.04805], and structured tabular data analysis [@doi:10.48550/arXiv.2207.01848], highlighting their broad applicability.
 
-### Foundation models as context
-TODO: Show recent progress and ongoing directions in using foundation models as context.
+A key strength of foundation models lies in their capacity to dynamically adapt to different contexts provided by inputs. This adaptability is primarily achieved through techniques such as prompting, which involves designing queries to guide the model's behavior implicitly, allowing task-specific responses without additional fine-tuning [@doi:10.1145/3560815]. Furthermore, mixture-of-experts (MoE) architectures amplify this contextual adaptability by employing routing mechanisms that select specialized sub-models or "experts" tailored to specific input data, thus optimizing computational efficiency and performance [@doi:10.1007/s10462-012-9338-y].
+
+# **Foundation Models as Context**
+
+Foundation models offer significant opportunities by supplying context-aware information that enhances various stages of statistical modeling and inference:
+
+**Feature Extraction and Interpretation:** Foundation models transform raw, unstructured data into structured and interpretable representations. For example, targeted prompts enable LLMs to extract insightful features from text, providing meaningful insights and facilitating interpretability [@doi:10.48550/arXiv.2302.12343, @doi:10.48550/arXiv.2305.12696, @doi:10.18653/v1/2023.emnlp-main.384]. This allows statistical models to operate directly on semantically meaningful features rather than on raw, less interpretable data.
+
+**Contextualized Representations for Downstream Modeling:** Foundation models produce adaptable embeddings and intermediate representations useful as inputs for downstream models, such as decision trees or linear models [@doi:10.48550/arXiv.2208.01066]. These embeddings significantly enhance the training of both complex, black-box models [@doi:10.48550/arXiv.2212.09741] and simpler statistical methods like n-gram-based analyses [@doi:10.1038/s41467-023-43713-1], thereby broadening the application scope and effectiveness of statistical approaches.
+
+**Post-hoc Interpretability:** Foundation models support interpretability by generating natural-language explanations for decisions made by complex models. This capability enhances transparency and trust in statistical inference, providing clear insights into how and why certain predictions or decisions are made [@doi:10.48550/arXiv.2409.08466].
+
+Recent innovations underscore the role of foundation models in context-sensitive inference and enhanced interpretability:
+
+**FLAN-MoE** (Fine-tuned Language Model with Mixture of Experts) [@doi:10.48550/arXiv.2305.14705] combines instruction tuning with expert selection, dynamically activating relevant sub-models based on the context. This method significantly improves performance across diverse NLP tasks, offering superior few-shot and zero-shot capabilities. It also facilitates interpretability through explicit expert activations. Future directions may explore advanced expert-selection techniques and multilingual capabilities.
+
+**LMPriors** (Pre-Trained Language Models as Task-Specific Priors) [@doi:10.48550/arXiv.2210.12530] leverages semantic insights from pre-trained models like GPT-3 to guide tasks such as causal inference, feature selection, and reinforcement learning. This method markedly enhances decision accuracy and efficiency without requiring extensive supervised datasets. However, it necessitates careful prompt engineering to mitigate biases and ethical concerns.
+
+**Mixture of In-Context Experts** (MoICE) [@doi:10.48550/arXiv.2210.12530] introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model's reasoning process.
+
 
 
 ## Applications, Case Studies, and Evaluations

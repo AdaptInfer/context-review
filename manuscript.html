@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Ben Lengerich" />
   <meta name="author" content="Caleb N. Ellington" />
-  <meta name="dcterms.date" content="2025-07-23" />
+  <meta name="dcterms.date" content="2025-07-24" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models</title>
   <style>
@@ -51,11 +51,11 @@
   <meta name="citation_title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Statistical Inference: Recent Progress, Open Problems, and Opportunities for Foundation Models" />
-  <meta name="dc.date" content="2025-07-23" />
-  <meta name="citation_publication_date" content="2025-07-23" />
-  <meta property="article:published_time" content="2025-07-23" />
-  <meta name="dc.modified" content="2025-07-23T17:26:55+00:00" />
-  <meta property="article:modified_time" content="2025-07-23T17:26:55+00:00" />
+  <meta name="dc.date" content="2025-07-24" />
+  <meta name="citation_publication_date" content="2025-07-24" />
+  <meta property="article:published_time" content="2025-07-24" />
+  <meta name="dc.modified" content="2025-07-24T13:04:17+00:00" />
+  <meta property="article:modified_time" content="2025-07-24T13:04:17+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -76,9 +76,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -95,10 +95,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/464ca8ab9d07e1e11e3626120eda7d03ae7ef847/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/63680389763bea752f2259872d458e90a5148323/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/464ca8ab9d07e1e11e3626120eda7d03ae7ef847">AdaptInfer/context-review@464ca8a</a>
-on July 23, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/63680389763bea752f2259872d458e90a5148323">AdaptInfer/context-review@6368038</a>
+on July 24, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -334,18 +334,26 @@ In this section, we will focus on recent progress in understanding how context i
 <ul>
 <li><span class="citation" data-cites="1DNxggO7I">[<a href="#ref-1DNxggO7I" role="doc-biblioref">46</a>]</span></li>
 </ul>
-<h2 id="opportunities-for-foundation-models">Opportunities for Foundation Models</h2>
-<h3 id="expanding-frameworks">Expanding Frameworks</h3>
-<p>TODO: Define foundation models, Explore how foundation models are redefining possibilities within statistical models.</p>
-<h3 id="foundation-models-as-context">Foundation models as context</h3>
-<p>TODO: Show recent progress and ongoing directions in using foundation models as context.</p>
+<h2 id="opportunities-for-foundation-models"><strong>Opportunities for Foundation Models</strong></h2>
+<h1 id="expanding-frameworks"><strong>Expanding Frameworks</strong></h1>
+<p>Foundation models refer to large-scale, general-purpose neural networks, predominantly transformer-based architectures, trained on vast datasets using self-supervised learning <span class="citation" data-cites="1GbAsSOZV">[<a href="#ref-1GbAsSOZV" role="doc-biblioref">47</a>]</span>. These models have significantly transformed modern statistical modeling and machine learning due to their flexibility, adaptability, and strong performance across diverse domains. Notably, large language models (LLMs) such as GPT-4 <span class="citation" data-cites="17lpGtuH5">[<a href="#ref-17lpGtuH5" role="doc-biblioref">48</a>]</span> and LLaMA-3.1 <span class="citation" data-cites="yWg7tQr1">[<a href="#ref-yWg7tQr1" role="doc-biblioref">49</a>]</span> have achieved substantial advancements in natural language processing (NLP), demonstrating proficiency in tasks ranging from text generation and summarization to question-answering and dialogue systems. Beyond NLP, foundation models also excel in multimodal (text-vision) tasks <span class="citation" data-cites="17tnf46zM">[<a href="#ref-17tnf46zM" role="doc-biblioref">50</a>]</span>, text embedding generation <span class="citation" data-cites="urJgpE6q">[<a href="#ref-urJgpE6q" role="doc-biblioref">51</a>]</span>, and structured tabular data analysis <span class="citation" data-cites="rYveVDKJ">[<a href="#ref-rYveVDKJ" role="doc-biblioref">52</a>]</span>, highlighting their broad applicability.</p>
+<p>A key strength of foundation models lies in their capacity to dynamically adapt to different contexts provided by inputs. This adaptability is primarily achieved through techniques such as prompting, which involves designing queries to guide the model’s behavior implicitly, allowing task-specific responses without additional fine-tuning <span class="citation" data-cites="12nAa0T4v">[<a href="#ref-12nAa0T4v" role="doc-biblioref">53</a>]</span>. Furthermore, mixture-of-experts (MoE) architectures amplify this contextual adaptability by employing routing mechanisms that select specialized sub-models or “experts” tailored to specific input data, thus optimizing computational efficiency and performance <span class="citation" data-cites="g7RE7G0h">[<a href="#ref-g7RE7G0h" role="doc-biblioref">54</a>]</span>.</p>
+<h1 id="foundation-models-as-context"><strong>Foundation Models as Context</strong></h1>
+<p>Foundation models offer significant opportunities by supplying context-aware information that enhances various stages of statistical modeling and inference:</p>
+<p><strong>Feature Extraction and Interpretation:</strong> Foundation models transform raw, unstructured data into structured and interpretable representations. For example, targeted prompts enable LLMs to extract insightful features from text, providing meaningful insights and facilitating interpretability <span class="citation" data-cites="11RvF4F7q">[<a href="#ref-kAJDlMwy" role="doc-biblioref">57</a>]</span>. This allows statistical models to operate directly on semantically meaningful features rather than on raw, less interpretable data.</p>
+<p><strong>Contextualized Representations for Downstream Modeling:</strong> Foundation models produce adaptable embeddings and intermediate representations useful as inputs for downstream models, such as decision trees or linear models <span class="citation" data-cites="R7y5TKp9">[<a href="#ref-R7y5TKp9" role="doc-biblioref">58</a>]</span>. These embeddings significantly enhance the training of both complex, black-box models <span class="citation" data-cites="1AazNaZYl">[<a href="#ref-1AazNaZYl" role="doc-biblioref">59</a>]</span> and simpler statistical methods like n-gram-based analyses <span class="citation" data-cites="HQXzkG4Q">[<a href="#ref-HQXzkG4Q" role="doc-biblioref">60</a>]</span>, thereby broadening the application scope and effectiveness of statistical approaches.</p>
+<p><strong>Post-hoc Interpretability:</strong> Foundation models support interpretability by generating natural-language explanations for decisions made by complex models. This capability enhances transparency and trust in statistical inference, providing clear insights into how and why certain predictions or decisions are made <span class="citation" data-cites="XpHq6HEw">[<a href="#ref-XpHq6HEw" role="doc-biblioref">61</a>]</span>.</p>
+<p>Recent innovations underscore the role of foundation models in context-sensitive inference and enhanced interpretability:</p>
+<p><strong>FLAN-MoE</strong> (Fine-tuned Language Model with Mixture of Experts) <span class="citation" data-cites="zWwbz3cX">[<a href="#ref-zWwbz3cX" role="doc-biblioref">62</a>]</span> combines instruction tuning with expert selection, dynamically activating relevant sub-models based on the context. This method significantly improves performance across diverse NLP tasks, offering superior few-shot and zero-shot capabilities. It also facilitates interpretability through explicit expert activations. Future directions may explore advanced expert-selection techniques and multilingual capabilities.</p>
+<p><strong>LMPriors</strong> (Pre-Trained Language Models as Task-Specific Priors) <span class="citation" data-cites="Xtwwrjzy">[<a href="#ref-Xtwwrjzy" role="doc-biblioref">63</a>]</span> leverages semantic insights from pre-trained models like GPT-3 to guide tasks such as causal inference, feature selection, and reinforcement learning. This method markedly enhances decision accuracy and efficiency without requiring extensive supervised datasets. However, it necessitates careful prompt engineering to mitigate biases and ethical concerns.</p>
+<p><strong>Mixture of In-Context Experts</strong> (MoICE) <span class="citation" data-cites="Xtwwrjzy">[<a href="#ref-Xtwwrjzy" role="doc-biblioref">63</a>]</span> introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model’s reasoning process.</p>
 <h2 id="applications-case-studies-and-evaluations">Applications, Case Studies, and Evaluations</h2>
 <h3 id="implementation-across-sectors">Implementation Across Sectors</h3>
 <p>TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.</p>
 <p>Relevant references:</p>
 <ul>
-<li><span class="citation" data-cites="14C9q1ybi">[<a href="#ref-14C9q1ybi" role="doc-biblioref">47</a>]</span></li>
-<li><span class="citation" data-cites="dvWlfk21">[<a href="#ref-dvWlfk21" role="doc-biblioref">48</a>]</span></li>
+<li><span class="citation" data-cites="14C9q1ybi">[<a href="#ref-14C9q1ybi" role="doc-biblioref">64</a>]</span></li>
+<li><span class="citation" data-cites="dvWlfk21">[<a href="#ref-dvWlfk21" role="doc-biblioref">65</a>]</span></li>
 </ul>
 <h3 id="performance-evaluation">Performance Evaluation</h3>
 <p>TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.</p>
@@ -513,11 +521,62 @@ In this section, we will focus on recent progress in understanding how context i
 <div id="ref-1DNxggO7I" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">46. </div><div class="csl-right-inline"><strong>In-Context Explainers: Harnessing LLMs for Explaining Black Box Models</strong> <div class="csl-block">Nicholas Kroeger, Dan Ley, Satyapriya Krishna, Chirag Agarwal, Himabindu Lakkaraju</div> <em>arXiv</em> (2024-07-12) <a href="https://arxiv.org/abs/2310.05797">https://arxiv.org/abs/2310.05797</a></div>
 </div>
+<div id="ref-1GbAsSOZV" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">47. </div><div class="csl-right-inline"><strong>On the Opportunities and Risks of Foundation Models</strong> <div class="csl-block">Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, … Percy Liang</div> <em>arXiv</em> (2021) <a href="https://doi.org/hw3v">https://doi.org/hw3v</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2108.07258">10.48550/arxiv.2108.07258</a></div></div>
+</div>
+<div id="ref-17lpGtuH5" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">48. </div><div class="csl-right-inline"><strong>GPT-4 Technical Report</strong> <div class="csl-block">OpenAI, Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, … Barret Zoph</div> <em>arXiv</em> (2023) <a href="https://doi.org/grx4cb">https://doi.org/grx4cb</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2303.08774">10.48550/arxiv.2303.08774</a></div></div>
+</div>
+<div id="ref-yWg7tQr1" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">49. </div><div class="csl-right-inline"><strong>The Llama 3 Herd of Models</strong> <div class="csl-block">Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, … Zhiyu Ma</div> <em>arXiv</em> (2024) <a href="https://doi.org/ndw6">https://doi.org/ndw6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2407.21783">10.48550/arxiv.2407.21783</a></div></div>
+</div>
+<div id="ref-17tnf46zM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">50. </div><div class="csl-right-inline"><strong>Learning Transferable Visual Models From Natural Language Supervision</strong> <div class="csl-block">Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, … Ilya Sutskever</div> <em>arXiv</em> (2021) <a href="https://doi.org/hs7z">https://doi.org/hs7z</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2103.00020">10.48550/arxiv.2103.00020</a></div></div>
+</div>
+<div id="ref-urJgpE6q" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">51. </div><div class="csl-right-inline"><strong>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</strong> <div class="csl-block">Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova</div> <em>arXiv</em> (2018) <a href="https://doi.org/hm65">https://doi.org/hm65</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1810.04805">10.48550/arxiv.1810.04805</a></div></div>
+</div>
+<div id="ref-rYveVDKJ" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">52. </div><div class="csl-right-inline"><strong>TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second</strong> <div class="csl-block">Noah Hollmann, Samuel Müller, Katharina Eggensperger, Frank Hutter</div> <em>arXiv</em> (2022) <a href="https://doi.org/g9t22b">https://doi.org/g9t22b</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2207.01848">10.48550/arxiv.2207.01848</a></div></div>
+</div>
+<div id="ref-12nAa0T4v" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">53. </div><div class="csl-right-inline"><strong>Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing</strong> <div class="csl-block">Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, Graham Neubig</div> <em>ACM Computing Surveys</em> (2023-01-16) <a href="https://doi.org/gq5fh2">https://doi.org/gq5fh2</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1145/3560815">10.1145/3560815</a></div></div>
+</div>
+<div id="ref-g7RE7G0h" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">54. </div><div class="csl-right-inline"><strong>Mixture of experts: a literature survey</strong> <div class="csl-block">Saeed Masoudnia, Reza Ebrahimpour</div> <em>Artificial Intelligence Review</em> (2012-05-12) <a href="https://doi.org/f59sxs">https://doi.org/f59sxs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1007/s10462-012-9338-y">10.1007/s10462-012-9338-y</a></div></div>
+</div>
+<div id="ref-11RvF4F7q" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">55. </div><div class="csl-right-inline"><strong>CHiLL: Zero-shot Custom Interpretable Feature Extraction from Clinical Notes with Large Language Models</strong> <div class="csl-block">Denis Jered McInerney, Geoffrey Young, Jan-Willem van de Meent, Byron C Wallace</div> <em>arXiv</em> (2023) <a href="https://doi.org/g9t22g">https://doi.org/g9t22g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2302.12343">10.48550/arxiv.2302.12343</a></div></div>
+</div>
+<div id="ref-10hcHcmAG" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">56. </div><div class="csl-right-inline"><strong>Learning Interpretable Style Embeddings via Prompting LLMs</strong> <div class="csl-block">Ajay Patel, Delip Rao, Ansh Kothary, Kathleen McKeown, Chris Callison-Burch</div> <em>arXiv</em> (2023) <a href="https://doi.org/g9t22h">https://doi.org/g9t22h</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2305.12696">10.48550/arxiv.2305.12696</a></div></div>
+</div>
+<div id="ref-kAJDlMwy" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">57. </div><div class="csl-right-inline"><strong>Tree Prompting: Efficient Task Adaptation without Fine-Tuning</strong> <div class="csl-block">Chandan Singh, John Morris, Alexander Rush, Jianfeng Gao, Yuntian Deng</div> <em>Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing</em> (2023) <a href="https://doi.org/gtgrkq">https://doi.org/gtgrkq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.18653/v1/2023.emnlp-main.384">10.18653/v1/2023.emnlp-main.384</a></div></div>
+</div>
+<div id="ref-R7y5TKp9" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">58. </div><div class="csl-right-inline"><strong>What Can Transformers Learn In-Context? A Case Study of Simple Function Classes</strong> <div class="csl-block">Shivam Garg, Dimitris Tsipras, Percy Liang, Gregory Valiant</div> <em>arXiv</em> (2022) <a href="https://doi.org/g9t22c">https://doi.org/g9t22c</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2208.01066">10.48550/arxiv.2208.01066</a></div></div>
+</div>
+<div id="ref-1AazNaZYl" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">59. </div><div class="csl-right-inline"><strong>One Embedder, Any Task: Instruction-Finetuned Text Embeddings</strong> <div class="csl-block">Hongjin Su, Weijia Shi, Jungo Kasai, Yizhong Wang, Yushi Hu, Mari Ostendorf, Wen-tau Yih, Noah A Smith, Luke Zettlemoyer, Tao Yu</div> <em>arXiv</em> (2022) <a href="https://doi.org/g9t22f">https://doi.org/g9t22f</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2212.09741">10.48550/arxiv.2212.09741</a></div></div>
+</div>
+<div id="ref-HQXzkG4Q" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">60. </div><div class="csl-right-inline"><strong>Augmenting interpretable models with large language models during training</strong> <div class="csl-block">Chandan Singh, Armin Askari, Rich Caruana, Jianfeng Gao</div> <em>Nature Communications</em> (2023-11-30) <a href="https://doi.org/g9t2z9">https://doi.org/g9t2z9</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/s41467-023-43713-1">10.1038/s41467-023-43713-1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/38036543">38036543</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10689442">PMC10689442</a></div></div>
+</div>
+<div id="ref-XpHq6HEw" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">61. </div><div class="csl-right-inline"><strong>Explaining Datasets in Words: Statistical Models with Natural Language Parameters</strong> <div class="csl-block">Ruiqi Zhong, Heng Wang, Dan Klein, Jacob Steinhardt</div> <em>arXiv</em> (2024) <a href="https://doi.org/g9t22k">https://doi.org/g9t22k</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2409.08466">10.48550/arxiv.2409.08466</a></div></div>
+</div>
+<div id="ref-zWwbz3cX" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">62. </div><div class="csl-right-inline"><strong>Mixture-of-Experts Meets Instruction Tuning:A Winning Combination for Large Language Models</strong> <div class="csl-block">Sheng Shen, Le Hou, Yanqi Zhou, Nan Du, Shayne Longpre, Jason Wei, Hyung Won Chung, Barret Zoph, William Fedus, Xinyun Chen, … Denny Zhou</div> <em>arXiv</em> (2023) <a href="https://doi.org/g9t22j">https://doi.org/g9t22j</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2305.14705">10.48550/arxiv.2305.14705</a></div></div>
+</div>
+<div id="ref-Xtwwrjzy" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">63. </div><div class="csl-right-inline"><strong>LMPriors: Pre-Trained Language Models as Task-Specific Priors</strong> <div class="csl-block">Kristy Choi, Chris Cundy, Sanjari Srivastava, Stefano Ermon</div> <em>arXiv</em> (2022) <a href="https://doi.org/g9t22d">https://doi.org/g9t22d</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2210.12530">10.48550/arxiv.2210.12530</a></div></div>
+</div>
 <div id="ref-14C9q1ybi" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">47. </div><div class="csl-right-inline"><strong>Exact Inference for Transformed Large-Scale Varying Coefficient Models with Applications</strong> <div class="csl-block">Tianyu Chen, Robert Habans, Thomas Douthat, Jenna Losh, Lida Chalangar Jalili Dehkharghani, Li-Hsiang Lin</div> <em>Journal of Data Science</em> (2025-01-01) <a href="https://doi.org/g9t2rs">https://doi.org/g9t2rs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.6339/25-jds1181">10.6339/25-jds1181</a></div></div>
+<div class="csl-left-margin">64. </div><div class="csl-right-inline"><strong>Exact Inference for Transformed Large-Scale Varying Coefficient Models with Applications</strong> <div class="csl-block">Tianyu Chen, Robert Habans, Thomas Douthat, Jenna Losh, Lida Chalangar Jalili Dehkharghani, Li-Hsiang Lin</div> <em>Journal of Data Science</em> (2025-01-01) <a href="https://doi.org/g9t2rs">https://doi.org/g9t2rs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.6339/25-jds1181">10.6339/25-jds1181</a></div></div>
 </div>
 <div id="ref-dvWlfk21" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">48. </div><div class="csl-right-inline"><strong>Variable Selection for Generalized Single-Index Varying-Coefficient Models with Applications to Synergistic G × E Interactions</strong> <div class="csl-block">Shunjie Guan, Xu Liu, Yuehua Cui</div> <em>Mathematics</em> (2025-01-31) <a href="https://doi.org/g9t2rp">https://doi.org/g9t2rp</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/math13030469">10.3390/math13030469</a></div></div>
+<div class="csl-left-margin">65. </div><div class="csl-right-inline"><strong>Variable Selection for Generalized Single-Index Varying-Coefficient Models with Applications to Synergistic G × E Interactions</strong> <div class="csl-block">Shunjie Guan, Xu Liu, Yuehua Cui</div> <em>Mathematics</em> (2025-01-31) <a href="https://doi.org/g9t2rp">https://doi.org/g9t2rp</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/math13030469">10.3390/math13030469</a></div></div>
 </div>
 </div>
 <!-- default theme -->
