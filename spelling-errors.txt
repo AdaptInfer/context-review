@@ -1,11 +1,11 @@
 activations
 adaptativity
-adaptivity
+Adaptivity
 arxiv
 autoencoders
 blengerich
 cnellington
-Composability
+composability
 composable
 covariate
 covariates
@@ -17,7 +17,7 @@ GPT
 identifiability
 interpretability
 interpretable
-Lengerich
+lengerich
 Lepski’s
 LLMs
 LMPriors
@@ -28,7 +28,7 @@ multimodal
 NLP
 nonlinearity
 overfit
-Overfitting
+overfitting
 parameterization
 personalization
 Pre
@@ -46,7 +46,7 @@ subpopulations
 summarization
 TODO
 tradeoff
-tradeoffs
+Tradeoffs
 transferability
 underdetermined
 underrepresenting
