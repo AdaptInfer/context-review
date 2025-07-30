@@ -5,10 +5,11 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-07-24'
+date-meta: '2025-07-30'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
+- Yue Yao
 header-includes: |
   <!--
   Manubot generated metadata rendered from header-includes-template.html.
@@ -20,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-07-24" />
-  <meta name="citation_publication_date" content="2025-07-24" />
-  <meta property="article:published_time" content="2025-07-24" />
-  <meta name="dc.modified" content="2025-07-24T16:57:11+00:00" />
-  <meta property="article:modified_time" content="2025-07-24T16:57:11+00:00" />
+  <meta name="dc.date" content="2025-07-30" />
+  <meta name="citation_publication_date" content="2025-07-30" />
+  <meta property="article:published_time" content="2025-07-30" />
+  <meta name="dc.modified" content="2025-07-30T19:02:40+00:00" />
+  <meta property="article:modified_time" content="2025-07-30T19:02:40+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -39,15 +40,18 @@ header-includes: |
   <meta name="citation_author_institution" content="Computational Biology Department, Carnegie Mellon University" />
   <meta name="citation_author_orcid" content="0000-0001-7029-8023" />
   <meta name="twitter:creator" content="@probablybots" />
+  <meta name="citation_author" content="Yue Yao" />
+  <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
+  <meta name="citation_author_orcid" content="0009-0000-8195-3943" />
   <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
   <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +73,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/9aee3ed0e8253e56502960bad5a3aecada47138a/))
+([permalink](https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/))
 was automatically generated
-from [AdaptInfer/context-review@9aee3ed](https://github.com/AdaptInfer/context-review/tree/9aee3ed0e8253e56502960bad5a3aecada47138a)
-on July 24, 2025.
+from [AdaptInfer/context-review@fe95b6e](https://github.com/AdaptInfer/context-review/tree/fe95b6efdbc0fed49537d55fd84c10905b6811d3)
+on July 30, 2025.
 </em></small>
 
 
@@ -106,6 +110,18 @@ on July 24, 2025.
     <br>
   <small>
      Computational Biology Department, Carnegie Mellon University
+     · Funded by None
+  </small>
+
++ **Yue Yao**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0000-8195-3943](https://orcid.org/0009-0000-8195-3943)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [YueYao-stat](https://github.com/YueYao-stat)
+    <br>
+  <small>
+     Department of Statistics, University of Wisconsin-Madison
      · Funded by None
   </small>
 

@@ -4,19 +4,19 @@ arxiv
 autoencoders
 blengerich
 cnellington
-composability
+Composability
 composable
 covariate
 covariates
 DeepLift
 DeepSHAP
 Distributionally
-Embeddings
+embeddings
 GPT
 identifiability
 interpretability
 interpretable
-lengerich
+Lengerich
 Lepski’s
 LLMs
 LMPriors
@@ -27,7 +27,7 @@ multimodal
 NLP
 nonlinearity
 overfit
-overfitting
+Overfitting
 parameterization
 personalization
 pre
@@ -40,7 +40,7 @@ regulatability
 scalable
 SHAP
 Spatio
-Subpopulation
+subpopulation
 subpopulations
 summarization
 TODO
@@ -51,3 +51,6 @@ underdetermined
 underrepresenting
 variational
 VC
+Yao
+Yue
+YueYao
