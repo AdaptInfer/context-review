@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-07-30'
+date-meta: '2025-07-31'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -21,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-07-30" />
-  <meta name="citation_publication_date" content="2025-07-30" />
-  <meta property="article:published_time" content="2025-07-30" />
-  <meta name="dc.modified" content="2025-07-30T19:02:40+00:00" />
-  <meta property="article:modified_time" content="2025-07-30T19:02:40+00:00" />
+  <meta name="dc.date" content="2025-07-31" />
+  <meta name="citation_publication_date" content="2025-07-31" />
+  <meta property="article:published_time" content="2025-07-31" />
+  <meta name="dc.modified" content="2025-07-31T21:28:38+00:00" />
+  <meta property="article:modified_time" content="2025-07-31T21:28:38+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -49,9 +49,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/95d13f217a04d8c30e96b2d36b397577de4a12f5/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/95d13f217a04d8c30e96b2d36b397577de4a12f5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/95d13f217a04d8c30e96b2d36b397577de4a12f5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -73,10 +73,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/fe95b6efdbc0fed49537d55fd84c10905b6811d3/))
+([permalink](https://AdaptInfer.github.io/context-review/v/95d13f217a04d8c30e96b2d36b397577de4a12f5/))
 was automatically generated
-from [AdaptInfer/context-review@fe95b6e](https://github.com/AdaptInfer/context-review/tree/fe95b6efdbc0fed49537d55fd84c10905b6811d3)
-on July 30, 2025.
+from [AdaptInfer/context-review@95d13f2](https://github.com/AdaptInfer/context-review/tree/95d13f217a04d8c30e96b2d36b397577de4a12f5)
+on July 31, 2025.
 </em></small>
 
 
@@ -371,43 +371,76 @@ Related references:
 
 ## Explicit Adaptivity: Structured Estimation of $f(c)$
 
-TODO: Sync with overview.md
+In classical statistical modeling, all observations are typically assumed to share a common set of parameters. However, modern datasets often display significant heterogeneity across individuals, locations, or experimental conditions, making this assumption unrealistic in many real-world applications. To better capture such heterogeneity, recent approaches model parameters as explicit functions of observed context, formalized as $\theta_i = f(c_i)$, where $f$ maps each context to a sample-specific parameter [@hastie1993varying].
 
-### Varying-Coefficient Models
+This section systematically reviews explicit adaptivity methods, with a focus on structured estimation of $f(c)$. We begin by revisiting classical varying-coefficient models, which provide a conceptual and methodological foundation for modeling context-dependent effects. We then categorize recent advances in explicit adaptivity according to three principal strategies for estimating $f(c)$: (1) smooth nonparametric models that generalize classical techniques, (2) structurally constrained models that incorporate domain-specific knowledge such as spatial or network structure, and (3) learned function approximators that leverage machine learning methods for high-dimensional or complex contexts. Finally, we summarize key theoretical developments and highlight promising directions for future research in this rapidly evolving field.
 
-### Recent Advances in Varying-Coefficient Models
-TODO: Outlining key theoretical and methodological breakthroughs.
+### Classical Varying-Coefficient Models: A Foundation
 
-Relevant references:
+Varying-coefficient models (VCMs) are a foundational tool for modeling heterogeneity, as they allow model parameters to vary smoothly with observed context variables [@hastie1993varying; @li2024semi; @botzer2025publication]. In their original formulation, the regression coefficients are treated as nonparametric functions of low-dimensional covariates, such as time or age. The standard VCM takes the form
+$$
+y_i = \sum_{j=1}^{p} \beta_j(c_i) x_{ij} + \varepsilon_i,
+$$
+where each $\beta_j(c)$ is an unknown smooth function, typically estimated using kernel smoothing, local polynomials, or penalized splines [@li2024semi].
 
-- [@doi:10.3390/publications13020019]
+This approach provides greater flexibility than fixed-coefficient models and is widely used for longitudinal and functional data analysis. The assumption of smoothness makes estimation and theoretical analysis more tractable, but also imposes limitations. Classical VCMs work best when the context is low-dimensional and continuous. They may struggle with abrupt changes, discontinuities, or high-dimensional and structured covariates. In such cases, interpretability and accuracy can be compromised, motivating the development of a variety of modern extensions, which will be discussed in the following sections.
 
-#### Flexible Functional Forms
+### Advances in Modeling $f(c)$
 
-Relevant references:
+Recent years have seen substantial progress in the modeling of $f(c)$, the function mapping context to model parameters. These advances can be grouped into three major strategies: (1) **smooth non-parametric models** that extend classical flexibility; (2) **structurally constrained approaches** that encode domain knowledge such as spatial or network topology; and (3) high-capacity **learned function approximators** from machine learning designed for high-dimensional, unstructured contexts. Each strategy addresses specific challenges in modeling heterogeneity, and together they provide a comprehensive toolkit for explicit adaptivity.
 
-- [@doi:10.5705/ss.202024.0118]
+#### Smooth Non-parametric Models
 
-#### Integration with State-of-the-Art Machine Learning
-TODO: Enhancing VC models with modern ML technologies (e.g. deep learning, boosted trees, etc).
+This family of models generalizes the classical VCM by expressing $f(c)$ as a flexible, smooth function estimated with basis expansions and regularization. Common approaches include spline-based methods, local polynomial regression, and RKHS-based frameworks. For instance, [@li2024semi] developed a semi-nonparametric VCM using RKHS techniques for imaging genetics, enabling the model to capture complex nonlinear effects. Such methods are central to generalized additive models, supporting both flexibility and interpretability. Theoretical work has shown that penalized splines and kernel methods offer strong statistical guarantees in moderate dimensions, although computational cost and overfitting can become issues as the dimension of $c$ increases.
 
-Relevant references:
+#### Structurally Constrained Models
 
-- [@doi:10.1007/s00180-025-01603-8]
-- [@arxiv:2003.06416]
-- [@arxiv:2004.13912]
+Another direction focuses on incorporating structural information into $f(c)$, especially when the context is discrete, clustered, or topologically organized.
 
-#### Structured data (Spatio-Temporal, Graphs, etc.)
+**Piecewise-Constant and Partition-Based Models.**
+Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
 
-Related references:
+**Structured Regularization for Spatial, Graph, and Network Data.**
+When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients [@shi2021graph]. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@murakami2025fast; @englert2025spatially; @hu2024varying; @luo2024urban]. On networked data, the network VCM of [@fan2025network] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.
 
-- [@doi:10.1080/01621459.2025.2470481]
-- [@arxiv:2502.14651]
-- [@doi:10.1111/gean.70005]
-- [@doi:10.1016/j.jeconom.2024.105883]
-- [@doi:10.1016/j.regsciurbeco.2024.104009]
-- [@arXiv:2111.01104]
+#### Learned Function Approximators
 
+A third class of methods is rooted in modern machine learning, leveraging high-capacity models to approximate $f(c)$ directly from data. These approaches are especially valuable when the context is high-dimensional or unstructured, where classical assumptions may no longer be sufficient.
+
+**Tree-Based Ensembles.**
+Gradient boosting decision trees (GBDTs) and related ensemble methods are well suited to tabular and mixed-type contexts. The framework developed by [@wang2025boosted] extends varying-coefficient models by integrating gradient boosting, achieving strong predictive performance with a level of interpretability. These models are typically easier to train and tune than deep neural networks, and their structure lends itself to interpretation with tools such as SHAP.
+
+**Deep Neural Networks.**
+For contexts defined by complex, high-dimensional features such as images, text, or sequential data, deep neural networks offer unique advantages for modeling $f(c)$. These architectures can learn adaptive, data-driven representations that capture intricate relationships beyond the scope of classical models. Applications include personalized medicine, natural language processing, and behavioral science, where outcomes may depend on subtle or latent features of the context.
+
+The decision between these machine learning approaches depends on the specific characteristics of the data, the priority placed on interpretability, and computational considerations. Collectively, these advances have significantly broadened the scope of explicit adaptivity, making it feasible to model heterogeneity in ever more complex settings.
+
+### Key Theoretical Advances
+
+The expanding landscape of varying-coefficient models (VCMs) has been supported by substantial theoretical progress, which secures the validity of flexible modeling strategies and guides their practical use. The nature of these theoretical results often reflects the core structural assumptions of each model class.
+
+**Theory for Smooth Non-parametric Models.**
+For classical VCMs based on kernel smoothing, local polynomial estimation, or penalized splines, extensive theoretical work has characterized their convergence rates and statistical efficiency. Under standard regularity conditions, these estimators are known to achieve minimax optimality for function estimation in moderate dimensions [@hastie1993varying]. Recent developments, such as the work of [@li2024semi], have established asymptotic normality in semi-nonparametric settings, which enables valid confidence interval construction and hypothesis testing even in complex applications.
+
+**Theory for Structurally Constrained Models.**
+When discrete or network structure is incorporated into VCMs, theoretical analysis focuses on identifiability, regularization properties, and conditions for consistent estimation. For example, [@fan2025network] provide non-asymptotic error bounds for estimators in network VCMs, demonstrating that consistency can be attained when the underlying graph topology satisfies certain connectivity properties. In piecewise-constant and partition-based models, results from change-point analysis and total variation regularization guarantee that abrupt parameter changes can be recovered accurately under suitable sparsity and signal strength conditions.
+
+**Theory for High-Capacity and Learned Models.**
+The incorporation of machine learning models into VCMs introduces new theoretical challenges. For high-dimensional and sparse settings, oracle inequalities and penalized likelihood theory establish conditions for consistent variable selection and accurate estimation, as seen in methods based on boosting and other regularization techniques [@wang2025boosted; @cheng2020xgboost]. In the context of neural network-based VCMs, the theory is still developing, with current research focused on understanding generalization properties and identifiability in non-convex optimization. This remains an active and important frontier for both statistical and machine learning communities.
+
+These theoretical advances provide a rigorous foundation for explicit adaptivity, ensuring that VCMs can be deployed confidently across a wide range of complex and structured modeling scenarios.
+
+### Synthesis and Future Directions
+
+Selecting an appropriate modeling strategy for $f(c)$ involves weighing flexibility, interpretability, computational cost, and the extent of available domain knowledge. Learned function approximators, such as deep neural networks, offer unmatched capacity for modeling complex, high-dimensional relationships. However, classical smooth models and structurally constrained approaches often provide greater interpretability, transparency, and statistical efficiency. The choice of prior assumptions and the scalability of the estimation procedure are also central considerations in applied contexts.
+
+Looking forward, several trends are shaping the field. One important direction is the integration of varying-coefficient models with foundation models from natural language processing and computer vision. By using pre-trained embeddings as context variables $c_i$, it becomes possible to incorporate large amounts of prior knowledge and extend VCMs to multi-modal and unstructured data sources. Another active area concerns the principled combination of cross-modal contexts, bringing together information from text, images, and structured covariates within a unified VCM framework.
+
+Advances in interpretability and visualization for high-dimensional or black-box coefficient functions are equally important. Developing tools that allow users to understand and trust model outputs is critical for the adoption of VCMs in sensitive areas such as healthcare and policy analysis.
+
+Finally, closing the gap between methodological innovation and practical deployment remains a priority. Although the literature has produced many powerful variants of VCMs, practical adoption is often limited by the availability of software and the clarity of methodological guidance [@botzer2025publication]. Continued investment in user-friendly implementations, open-source libraries, and empirical benchmarks will facilitate broader adoption and greater impact.
+
+In summary, explicit adaptivity through structured estimation of $f(c)$ now forms a core paradigm at the interface of statistical modeling and machine learning. Future progress will focus not only on expanding the expressive power of these models, but also on making them more accessible, interpretable, and practically useful in real-world applications.
 
 
 ## Implicit Adaptivity: Emergent Contextualization within Complex Models
