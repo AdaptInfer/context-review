@@ -435,6 +435,145 @@
     "DOI": "10.3390/e23010018"
   },
   {
+    "id": "tibshirani1996regression",
+    "type": "article-journal",
+    "author": [
+      {"family": "Tibshirani", "given": "Robert"}
+    ],
+    "title": "Regression shrinkage and selection via the lasso",
+    "container-title": "Journal of the Royal Statistical Society: Series B (Methodological)",
+    "year": 1996,
+    "volume": "58",
+    "issue": "1",
+    "page": "267--288"
+  },
+  {
+    "id": "yuan2006model",
+    "type": "article-journal",
+    "author": [
+      {"family": "Yuan", "given": "Ming"},
+      {"family": "Lin", "given": "Yi"}
+    ],
+    "title": "Model selection and estimation in regression with grouped variables",
+    "container-title": "Journal of the Royal Statistical Society: Series B (Statistical Methodology)",
+    "year": 2006,
+    "volume": "68",
+    "issue": "1",
+    "page": "49--67"
+  },
+  {
+    "id": "boyd2011distributed",
+    "type": "article-journal",
+    "author": [
+      {"family": "Boyd", "given": "Stephen"},
+      {"family": "Parikh", "given": "Neal"},
+      {"family": "Chu", "given": "Eric"},
+      {"family": "Peleato", "given": "Brendan"},
+      {"family": "Eckstein", "given": "Jonathan"}
+    ],
+    "title": "Distributed optimization and statistical learning via the alternating direction method of multipliers",
+    "container-title": "Foundations and Trends in Machine Learning",
+    "year": 2011,
+    "volume": "3",
+    "issue": "1",
+    "page": "1--122"
+  },
+  {
+    "id": "bottou2018optimization",
+    "type": "article-journal",
+    "author": [
+      {"family": "Bottou", "given": "Léon"},
+      {"family": "Curtis", "given": "Frank E."},
+      {"family": "Nocedal", "given": "Jorge"}
+    ],
+    "title": "Optimization methods for large-scale machine learning",
+    "container-title": "SIAM Review",
+    "year": 2018,
+    "volume": "60",
+    "issue": "2",
+    "page": "223--311"
+  },
+  {
+    "id": "kingma2014adam",
+    "type": "manuscript",
+    "author": [
+      {"family": "Kingma", "given": "Diederik P."},
+      {"family": "Ba", "given": "Jimmy"}
+    ],
+    "title": "Adam: A method for stochastic optimization",
+    "year": 2014,
+    "archive": "arXiv",
+    "eprint": "1412.6980"
+  },
+  {
+    "id": "wang2018contextual",
+    "type": "paper-conference",
+    "author": [
+      {"family": "Balseiro", "given": "Santiago"},
+      {"family": "Golrezaei", "given": "Negin"},
+      {"family": "Mahdian", "given": "Mohammad"},
+      {"family": "Mirrokni", "given": "Vahab"},
+      {"family": "Schneider", "given": "Jon"}
+    ],
+    "title": "Contextual Bandits with Cross-Learning",
+    "container-title": "Advances in Neural Information Processing Systems",
+    "year": 2019,
+    "volume": "32",
+    "page": "",
+    "publisher": "Curran Associates, Inc."
+  },
+
+  {
+    "id": "ang2014asset",
+    "type": "article-journal",
+    "author": [
+      {"family": "Ang", "given": "Andrew"},
+      {"family": "Bekaert", "given": "Geert"}
+    ],
+    "title": "Asset Allocation with Regime Shifts and Long-Horizon Risks",
+    "container-title": "Review of Financial Studies",
+    "year": 2014,
+    "volume": "27",
+    "issue": "12",
+    "page": "3734--3777"
+  },
+  {
+    "id": "lei2018machinery",
+    "type": "article-journal",
+    "author": [
+      {"family": "Lei", "given": "Yaguo"},
+      {"family": "Li", "given": "Naipeng"},
+      {"family": "Gontarz", "given": "Stanislaw"},
+      {"family": "Lin", "given": "Jing"},
+      {"family": "Radkowski", "given": "Slawomir"},
+      {"family": "Dybala", "given": "Jacek"}
+    ],
+    "title": "A Model-based method for remaining useful life prediction of machinery",
+    "container-title": "IEEE Transactions on Reliability",
+    "year": 2018,
+    "volume": "65",
+    "issue": "3",
+    "page": "1314--1326"
+  },
+
+  {
+    "id": "wang2019efficiency",
+    "type": "manuscript",
+    "author": [
+      {"family": "Dzhoha", "given": "Andrii"},
+      {"family": "Mironenko", "given": "Alisa"},
+      {"family": "Labzin", "given": "Evgeny"},
+      {"family": "Vlasov", "given": "Vladimir"},
+      {"family": "Versteegh", "given": "Maarten"},
+      {"family": "Celikik", "given": "Marjan"}
+    ],
+    "title": "Efficient and Effective Query Context-Aware Learning-to-Rank Model for Sequential Recommendation",
+    "year": 2025,
+    "archive": "arXiv",
+    "eprint": "2507.03789",
+    "note": "cs.IR"
+  },
+  {
     "id": "petroni2019language",
     "type": "paper-conference",
     "author": [
