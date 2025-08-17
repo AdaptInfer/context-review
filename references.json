@@ -1,5 +1,25 @@
 [
   {
+    "id": "1GChRhAEq",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Ang",
+        "given": "Andrew"
+      },
+      {
+        "family": "Bekaert",
+        "given": "Geert"
+      }
+    ],
+    "title": "Asset Allocation with Regime Shifts and Long-Horizon Risks",
+    "container-title": "Review of Financial Studies",
+    "volume": "27",
+    "issue": "12",
+    "page": "3734--3777",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ang2014asset"
+  },
+  {
     "id": "wK1jbWkS",
     "URL": "https://arxiv.org/abs/1508.00249",
     "number": "1508.00249",
@@ -651,6 +671,30 @@
     "archive": "arXiv"
   },
   {
+    "id": "R5HQsIG9",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Bottou",
+        "given": "Léon"
+      },
+      {
+        "family": "Curtis",
+        "given": "Frank E."
+      },
+      {
+        "family": "Nocedal",
+        "given": "Jorge"
+      }
+    ],
+    "title": "Optimization methods for large-scale machine learning",
+    "container-title": "SIAM Review",
+    "volume": "60",
+    "issue": "2",
+    "page": "223--311",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: bottou2018optimization"
+  },
+  {
     "id": "159keZX88",
     "type": "article-journal",
     "author": [
@@ -666,6 +710,38 @@
     "page": "19",
     "DOI": "10.3390/publications13020019",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: botzer2025publication"
+  },
+  {
+    "id": "Bgxj9luJ",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Boyd",
+        "given": "Stephen"
+      },
+      {
+        "family": "Parikh",
+        "given": "Neal"
+      },
+      {
+        "family": "Chu",
+        "given": "Eric"
+      },
+      {
+        "family": "Peleato",
+        "given": "Brendan"
+      },
+      {
+        "family": "Eckstein",
+        "given": "Jonathan"
+      }
+    ],
+    "title": "Distributed optimization and statistical learning via the alternating direction method of multipliers",
+    "container-title": "Foundations and Trends in Machine Learning",
+    "volume": "3",
+    "issue": "1",
+    "page": "1--122",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: boyd2011distributed"
   },
   {
     "id": "16GpbreXJ",
@@ -6569,6 +6645,59 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: kingma2013auto"
   },
   {
+    "id": "nHWat6vD",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Kingma",
+        "given": "Diederik P."
+      },
+      {
+        "family": "Ba",
+        "given": "Jimmy"
+      }
+    ],
+    "title": "Adam: A method for stochastic optimization",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: kingma2014adam"
+  },
+  {
+    "id": "lGpaLCJV",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Lei",
+        "given": "Yaguo"
+      },
+      {
+        "family": "Li",
+        "given": "Naipeng"
+      },
+      {
+        "family": "Gontarz",
+        "given": "Stanislaw"
+      },
+      {
+        "family": "Lin",
+        "given": "Jing"
+      },
+      {
+        "family": "Radkowski",
+        "given": "Slawomir"
+      },
+      {
+        "family": "Dybala",
+        "given": "Jacek"
+      }
+    ],
+    "title": "A Model-based method for remaining useful life prediction of machinery",
+    "container-title": "IEEE Transactions on Reliability",
+    "volume": "65",
+    "issue": "3",
+    "page": "1314--1326",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: lei2018machinery"
+  },
+  {
     "id": "5WaW1b3E",
     "type": "article-journal",
     "author": [
@@ -6799,6 +6928,22 @@
     "note": "stat.ME\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: shi2021graph"
   },
   {
+    "id": "PeotCKyQ",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Tibshirani",
+        "given": "Robert"
+      }
+    ],
+    "title": "Regression shrinkage and selection via the lasso",
+    "container-title": "Journal of the Royal Statistical Society: Series B (Methodological)",
+    "volume": "58",
+    "issue": "1",
+    "page": "267--288",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: tibshirani1996regression"
+  },
+  {
     "id": "eqOwOT6q",
     "type": "paper-conference",
     "author": [
@@ -6865,6 +7010,71 @@
     "container-title": "Proceedings of the 40th International Conference on Machine Learning",
     "page": "35017--35037",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: von2023transformers"
+  },
+  {
+    "id": "1A9CGb6kl",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Balseiro",
+        "given": "Santiago"
+      },
+      {
+        "family": "Golrezaei",
+        "given": "Negin"
+      },
+      {
+        "family": "Mahdian",
+        "given": "Mohammad"
+      },
+      {
+        "family": "Mirrokni",
+        "given": "Vahab"
+      },
+      {
+        "family": "Schneider",
+        "given": "Jon"
+      }
+    ],
+    "title": "Contextual Bandits with Cross-Learning",
+    "container-title": "Advances in Neural Information Processing Systems",
+    "volume": "32",
+    "page": "",
+    "publisher": "Curran Associates, Inc.",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wang2018contextual"
+  },
+  {
+    "id": "Do5Pmykz",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Dzhoha",
+        "given": "Andrii"
+      },
+      {
+        "family": "Mironenko",
+        "given": "Alisa"
+      },
+      {
+        "family": "Labzin",
+        "given": "Evgeny"
+      },
+      {
+        "family": "Vlasov",
+        "given": "Vladimir"
+      },
+      {
+        "family": "Versteegh",
+        "given": "Maarten"
+      },
+      {
+        "family": "Celikik",
+        "given": "Marjan"
+      }
+    ],
+    "title": "Efficient and Effective Query Context-Aware Learning-to-Rank Model for Sequential Recommendation",
+    "archive": "arXiv",
+    "note": "cs.IR\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wang2019efficiency"
   },
   {
     "id": "VphcPzBL",
@@ -7023,5 +7233,25 @@
     "title": "An Explanation of In-context Learning as Implicit Bayesian Inference",
     "archive": "arXiv",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: xie2021an"
+  },
+  {
+    "id": "6zMua9lq",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Yuan",
+        "given": "Ming"
+      },
+      {
+        "family": "Lin",
+        "given": "Yi"
+      }
+    ],
+    "title": "Model selection and estimation in regression with grouped variables",
+    "container-title": "Journal of the Royal Statistical Society: Series B (Statistical Methodology)",
+    "volume": "68",
+    "issue": "1",
+    "page": "49--67",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: yuan2006model"
   }
 ]
