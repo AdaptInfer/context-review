@@ -1,5 +1,304 @@
 [
   {
+    "id": "bnBshyMZ",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Alain",
+        "given": "Guillaume"
+      },
+      {
+        "family": "Bengio",
+        "given": "Yoshua"
+      }
+    ],
+    "title": "Understanding Intermediate Layers Using Linear Classifier Probes",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: AlainBengio2016"
+  },
+  {
+    "id": "10jCLvzty",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Alemi",
+        "given": "Alexander A."
+      },
+      {
+        "family": "Fischer",
+        "given": "Ian"
+      },
+      {
+        "family": "Dillon",
+        "given": "Joshua V."
+      },
+      {
+        "family": "Murphy",
+        "given": "Kevin"
+      }
+    ],
+    "title": "Deep Variational Information Bottleneck",
+    "container-title": "International Conference on Learning Representations",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: AlemiFischerDillonMurphy2017"
+  },
+  {
+    "id": "19AZg3mLf",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Bordt",
+        "given": "Sebastian"
+      },
+      {
+        "family": "Raidl",
+        "given": "Eric"
+      },
+      {
+        "family": "von Luxburg",
+        "given": "Ulrike"
+      }
+    ],
+    "title": "Rethinking Explainable Machine Learning as Applied Statistics",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: BordtRaidlLuxburg2024"
+  },
+  {
+    "id": "quy0xhhL",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Chen",
+        "given": "Chaofan"
+      },
+      {
+        "family": "Li",
+        "given": "Oscar"
+      },
+      {
+        "family": "Tao",
+        "given": "Daniel"
+      },
+      {
+        "family": "Barnett",
+        "given": "Alina"
+      },
+      {
+        "family": "Su",
+        "given": "Jonathan"
+      },
+      {
+        "family": "Rudin",
+        "given": "Cynthia"
+      }
+    ],
+    "title": "This Looks Like That: Deep Learning for Interpretable Image Recognition",
+    "container-title": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+    "DOI": "10.1109/CVPR.2019.00914",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ChenLiTaoBarnettSuRudin2019"
+  },
+  {
+    "id": "B1j4YBEB",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Cremer",
+        "given": "Chris"
+      },
+      {
+        "family": "Morris",
+        "given": "Quaid"
+      },
+      {
+        "family": "Duvenaud",
+        "given": "David"
+      }
+    ],
+    "title": "Inference Suboptimality in Variational Autoencoders",
+    "container-title": "Proceedings of the 35th International Conference on Machine Learning",
+    "publisher": "PMLR",
+    "volume": "80",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: CremerMorrisDuvenaud2018"
+  },
+  {
+    "id": "xdOmjxko",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Koh",
+        "given": "Pang Wei"
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      }
+    ],
+    "title": "Understanding Black-box Predictions via Influence Functions",
+    "container-title": "Proceedings of the 34th International Conference on Machine Learning",
+    "publisher": "PMLR",
+    "volume": "70",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: KohLiang2017"
+  },
+  {
+    "id": "KboFKxwb",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Kroeger",
+        "given": "Nicholas"
+      },
+      {
+        "family": "Ley",
+        "given": "Dan"
+      },
+      {
+        "family": "Krishna",
+        "given": "Satyapriya"
+      },
+      {
+        "family": "Agarwal",
+        "given": "Chirag"
+      },
+      {
+        "family": "Lakkaraju",
+        "given": "Himabindu"
+      }
+    ],
+    "title": "In-Context Explainers: Harnessing LLMs for Explaining Black Box Models",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: KroegerLeyKrishnaAgarwalLakkaraju2024"
+  },
+  {
+    "id": "StZxZNd2",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Lundberg",
+        "given": "Scott M."
+      },
+      {
+        "family": "Lee",
+        "given": "Su-In"
+      }
+    ],
+    "title": "A Unified Approach to Interpreting Model Predictions",
+    "container-title": "Advances in Neural Information Processing Systems",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: LundbergLee2017"
+  },
+  {
+    "id": "e9kuC7bS",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Meng",
+        "given": "Kevin"
+      },
+      {
+        "family": "Bau",
+        "given": "David"
+      },
+      {
+        "family": "Andonian",
+        "given": "Alex"
+      },
+      {
+        "family": "Belinkov",
+        "given": "Yonatan"
+      }
+    ],
+    "title": "Locating and Editing Factual Associations in GPT",
+    "container-title": "Advances in Neural Information Processing Systems",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: MengBauAndonianBelinkov2022"
+  },
+  {
+    "id": "1GR6qhy9S",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Ribeiro",
+        "given": "Marco Tulio"
+      },
+      {
+        "family": "Singh",
+        "given": "Sameer"
+      },
+      {
+        "family": "Guestrin",
+        "given": "Carlos"
+      }
+    ],
+    "title": "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier",
+    "container-title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "publisher": "ACM",
+    "DOI": "10.1145/2939672.2939778",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: RibeiroSinghGuestrin2016"
+  },
+  {
+    "id": "F5p7aZaa",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Shrikumar",
+        "given": "Avanti"
+      },
+      {
+        "family": "Greenside",
+        "given": "Peyton"
+      },
+      {
+        "family": "Kundaje",
+        "given": "Anshul"
+      }
+    ],
+    "title": "Learning Important Features Through Propagating Activation Differences",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ShrikumarGreensideKundaje2017"
+  },
+  {
+    "id": "rMp9yyDJ",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Sundararajan",
+        "given": "Mukund"
+      },
+      {
+        "family": "Taly",
+        "given": "Ankur"
+      },
+      {
+        "family": "Yan",
+        "given": "Qiqi"
+      }
+    ],
+    "title": "Axiomatic Attribution for Deep Networks",
+    "container-title": "Proceedings of the 34th International Conference on Machine Learning",
+    "publisher": "PMLR",
+    "volume": "70",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: SundararajanTalyYan2017"
+  },
+  {
+    "id": "12TaD6gil",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Tenney",
+        "given": "Ian"
+      },
+      {
+        "family": "Xia",
+        "given": "Patrick"
+      },
+      {
+        "family": "Chen",
+        "given": "Berlin"
+      }
+    ],
+    "title": "What Do You Learn from Context? Probing for Sentence Structure in Contextualized Word Representations",
+    "container-title": "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT)",
+    "publisher": "Association for Computational Linguistics",
+    "note": "and other authors\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: TenneyDasPavlick2019"
+  },
+  {
     "id": "1GChRhAEq",
     "type": "article-journal",
     "author": [
@@ -582,93 +881,33 @@
     "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2110.14048"
   },
   {
-    "id": "1DNxggO7I",
-    "URL": "https://arxiv.org/abs/2310.05797",
-    "number": "2310.05797",
-    "title": "In-Context Explainers: Harnessing LLMs for Explaining Black Box Models",
-    "issued": {
-      "date-parts": [
-        [
-          2024,
-          7,
-          12
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Nicholas",
-        "family": "Kroeger"
-      },
-      {
-        "given": "Dan",
-        "family": "Ley"
-      },
-      {
-        "given": "Satyapriya",
-        "family": "Krishna"
-      },
-      {
-        "given": "Chirag",
-        "family": "Agarwal"
-      },
-      {
-        "given": "Himabindu",
-        "family": "Lakkaraju"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "Recent advancements in Large Language Models (LLMs) have demonstrated exceptional capabilities in complex tasks like machine translation, commonsense reasoning, and language understanding. One of the primary reasons for the adaptability of LLMs in such diverse tasks is their in-context learning (ICL) capability, which allows them to perform well on new tasks by simply using a few task samples in the prompt. Despite their effectiveness in enhancing the performance of LLMs on diverse language and tabular tasks, these methods have not been thoroughly explored for their potential to generate post hoc explanations. In this work, we carry out one of the first explorations to analyze the effectiveness of LLMs in explaining other complex predictive models using ICL. To this end, we propose a novel framework, In-Context Explainers, comprising of three novel approaches that exploit the ICL capabilities of LLMs to explain the predictions made by other predictive models. We conduct extensive analysis with these approaches on real-world tabular and text datasets and demonstrate that LLMs are capable of explaining other predictive models similar to state-of-the-art post hoc explainers, opening up promising avenues for future research into LLM-based post hoc explanations of complex predictive models.",
-    "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2310.05797"
-  },
-  {
-    "id": "tEt0Suzf",
-    "URL": "https://arxiv.org/abs/2402.02870",
-    "number": "2402.02870",
-    "title": "Rethinking Explainable Machine Learning as Applied Statistics",
-    "issued": {
-      "date-parts": [
-        [
-          2025,
-          6,
-          17
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Sebastian",
-        "family": "Bordt"
-      },
-      {
-        "given": "Eric",
-        "family": "Raidl"
-      },
-      {
-        "given": "Ulrike",
-        "family": "von Luxburg"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "In the rapidly growing literature on explanation algorithms, it often remains unclear what precisely these algorithms are for and how they should be used. In this position paper, we argue for a novel and pragmatic perspective: Explainable machine learning needs to recognize its parallels with applied statistics. Concretely, explanations are statistics of high-dimensional functions, and we should think about them analogously to traditional statistical quantities. Among others, this implies that we must think carefully about the matter of interpretation, or how the explanations relate to intuitive questions that humans have about the world. The fact that this is scarcely being discussed in research papers is one of the main drawbacks of the current literature. Moving forward, the analogy between explainable machine learning and applied statistics suggests fruitful ways for how research practices can be improved.",
-    "note": "license: http://creativecommons.org/licenses/by-sa/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2402.02870"
-  },
-  {
     "id": "193MlihYp",
-    "type": "manuscript",
+    "type": "article-journal",
     "author": [
       {
         "family": "Bommasani",
         "given": "Rishi"
+      },
+      {
+        "family": "Hudson",
+        "given": "Drew A."
+      },
+      {
+        "family": "Adeli",
+        "given": "Ehsan"
+      },
+      {
+        "family": "Altman",
+        "given": "Russ"
+      },
+      {
+        "family": "Arora",
+        "given": "Simran"
       }
     ],
     "title": "On the Opportunities and Risks of Foundation Models",
-    "note": "and others\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: bommasani2021opportunities",
-    "archive": "arXiv"
+    "container-title": "arXiv preprint arXiv:2108.07258",
+    "note": "and other authors\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: bommasani2021opportunities"
   },
   {
     "id": "R5HQsIG9",
@@ -934,6 +1173,35 @@
     "title": "Why Can GPT Learn In-Context? Language Models as Meta-Learners",
     "archive": "arXiv",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dai2022can"
+  },
+  {
+    "id": "19AlWXYPF",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Dai",
+        "given": "Damai"
+      },
+      {
+        "family": "Dong",
+        "given": "Li"
+      },
+      {
+        "family": "Sun",
+        "given": "Yutao"
+      },
+      {
+        "family": "Ma",
+        "given": "Shuming"
+      },
+      {
+        "family": "Wei",
+        "given": "Furu"
+      }
+    ],
+    "title": "Knowledge Neurons in Pretrained Transformers",
+    "container-title": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dai2022knowledge"
   },
   {
     "publisher": "Springer Berlin Heidelberg",
@@ -6493,6 +6761,23 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dong2022survey"
   },
   {
+    "id": "Vl20CyW4",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Doshi-Velez",
+        "given": "Finale"
+      },
+      {
+        "family": "Kim",
+        "given": "Been"
+      }
+    ],
+    "title": "Towards a Rigorous Science of Interpretable Machine Learning",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: doshi2017towards"
+  },
+  {
     "id": "YcdobJB",
     "type": "manuscript",
     "author": [
@@ -6751,6 +7036,39 @@
     "page": "18",
     "DOI": "10.3390/e23010018",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: linardatos2020explainable"
+  },
+  {
+    "id": "2tgTw2mh",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Locatello",
+        "given": "Francesco"
+      },
+      {
+        "family": "Bauer",
+        "given": "Stefan"
+      },
+      {
+        "family": "Lucic",
+        "given": "Mario"
+      },
+      {
+        "family": "Gelly",
+        "given": "Sylvain"
+      },
+      {
+        "family": "Schölkopf",
+        "given": "Bernhard"
+      },
+      {
+        "family": "Bachem",
+        "given": "Olivier"
+      }
+    ],
+    "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
+    "container-title": "International Conference on Machine Learning",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: locatello2019challenging"
   },
   {
     "id": "UiqiqyOG",

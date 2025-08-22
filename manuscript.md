@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-08-17'
+date-meta: '2025-08-22'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-08-17" />
-  <meta name="citation_publication_date" content="2025-08-17" />
-  <meta property="article:published_time" content="2025-08-17" />
-  <meta name="dc.modified" content="2025-08-17T20:53:19+00:00" />
-  <meta property="article:modified_time" content="2025-08-17T20:53:19+00:00" />
+  <meta name="dc.date" content="2025-08-22" />
+  <meta name="citation_publication_date" content="2025-08-22" />
+  <meta property="article:published_time" content="2025-08-22" />
+  <meta name="dc.modified" content="2025-08-22T15:16:03+00:00" />
+  <meta property="article:modified_time" content="2025-08-22T15:16:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7892b31a5c105efffc4aaf6e0df8ad54a478700d/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7892b31a5c105efffc4aaf6e0df8ad54a478700d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7892b31a5c105efffc4aaf6e0df8ad54a478700d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/7892b31a5c105efffc4aaf6e0df8ad54a478700d/))
+([permalink](https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/))
 was automatically generated
-from [AdaptInfer/context-review@7892b31](https://github.com/AdaptInfer/context-review/tree/7892b31a5c105efffc4aaf6e0df8ad54a478700d)
-on August 17, 2025.
+from [AdaptInfer/context-review@b478748](https://github.com/AdaptInfer/context-review/tree/b4787484258721fb48ca575184f003ad0d703ec9)
+on August 22, 2025.
 </em></small>
 
 
@@ -592,71 +592,116 @@ These considerations motivate a growing search for techniques that can make the 
 
 ## Making Implicit Adaptivity Explicit: Local Models, Surrogates and Post Hoc Approximations
 
-This section focuses on methods that aim to extract, approximate, or control the internal adaptivity mechanisms of black-box models. These approaches recognize that implicit adaptivity—while powerful—can be opaque, hard to debug, and brittle to distribution shift. By surfacing structure, we gain interpretability, composability, and sometimes improved generalization.
-
 ### Motivation
-
-- Implicit adaptivity can succeed without explicit modeling, but:
-  - It obscures *why* and *how* a model adapts
-  - It limits modular reuse and inspection
-  - It makes personalization hard to constrain or audit
-- Making adaptivity explicit supports:
-  - Better alignment with downstream goals
-  - Composability of learned modules
-  - Debugging and error attribution
+Building on the prior discussion of implicit adaptivity, we now turn to methods that expose, approximate, or control those adaptive mechanisms.  
+Implicit adaptivity allows powerful models, including foundation models, to adjust behavior without explicitly representing a mapping from context to parameters [@bommasani2021opportunities]. This flexibility hides why and how adaptation occurs, limits modular reuse, and complicates auditing, personalization, and failure diagnosis. Making adaptivity explicit improves alignment with downstream goals, enables modular composition, and supports debugging and error attribution. It also fits the call for a more rigorous science of interpretability with defined objectives and evaluation criteria [@doshi2017towards; @BordtRaidlLuxburg2024].  
+This chapter reviews practical approaches for surfacing structure, the assumptions they rely on, and how to evaluate their faithfulness and utility.
 
 ### Approaches
+Efforts to make implicit adaptation explicit span complementary strategies that differ in assumptions, granularity, and computational cost. We group them into six families:
+
+1. surrogate modeling for local approximation,  
+2. prototype- and neighbor-based reasoning,  
+3. diagnostics for amortized inference,  
+4. disentanglement and bottleneck methods,  
+5. parameter extraction and probing, and  
+6. emerging approaches that leverage large language models as post-hoc explainers.
 
 #### Surrogate Modeling
+This line of work approximates a black-box $h(x,c)$ with an interpretable model in a small neighborhood, so that local behavior and a local view of $f(c)$ can be inspected. A formal template is
 
-- Fit interpretable surrogates (e.g., linear models, decision trees) to approximate model behavior locally
-- Applications:
-  - Explaining predictions post-hoc
-  - Approximating $f(c)$ from input-output behavior
-- References:
-  - LIME, SHAP
+$$
+\hat{g}\_{x\_0,c\_0} = \arg\min_{g \in \mathcal{G}} \, \mathbb{E}\_{(x,c) \sim \mathcal{N}_{x_0,c_0}} \left[ \ell\big(h(x,c), g(x,c)\big) \right] + \Omega(g),
+$$
+
+where $\mathcal N_{x_0,c_0}$ defines a locality (e.g., kernel weights), $\ell$ measures fidelity, and $\Omega$ controls complexity. A convenient local goodness-of-fit is
+
+$$
+R^2_{\text{local}}
+= 1 - \frac{\sum_i w_i\,\big(h_i - g_i\big)^2}{\sum_i w_i\,\big(h_i - \bar h\big)^2},
+\qquad
+w_i \propto \kappa\!\big((x_i,c_i),(x_0,c_0)\big).
+$$
+
+LIME perturbs inputs and fits a locality-weighted linear surrogate [@RibeiroSinghGuestrin2016]; SHAP / DeepSHAP provide additive attributions based on Shapley values [@LundbergLee2017]. Integrated Gradients and DeepLIFT link attribution to path-integrated sensitivity or reference-based contributions [@SundararajanTalyYan2017; @ShrikumarGreensideKundaje2017]. These methods are most reliable when the model is near-linear in the chosen neighborhood and perturbations remain near the data manifold; consequently, a rigorous analysis involves stating the neighborhood definition, reporting the surrogate’s goodness-of-fit, and assessing stability across seeds and baselines.
 
 #### Prototype and Nearest-Neighbor Methods
-
-- Use nearest neighbors in representation space to approximate model adaptation
-- Enables interpretability and modular updates
-- Related to contextual bandits, exemplar models
+Here, a decision is grounded by reference to similar cases in representation space, which supports case-based explanations and modular updates. ProtoPNet learns a library of visual prototypes to implement “this looks like that” reasoning [@ChenLiTaoBarnettSuRudin2019]. Deep $k$-nearest neighbors audits predictions by querying neighbors in activation space and can flag distribution shift [@PapernotMcDanielGoodfellow2018]. Influence functions link a prediction to influential training points for data-centric debugging [@KohLiang2017]. This line of work connects naturally to exemplar models and contextual bandits, where decisions are justified via comparisons to context-matched exemplars. Reports should include prototype coverage and diversity, neighbor quality checks, and the effect of editing prototypes or influential examples.
 
 #### Amortization Diagnostics
+For amortized inference systems (e.g., VAEs), the encoder $q_{\phi}(\theta\mid x)$ can be treated as an implicit $f(c)$. Diagnostics measure amortization gaps and identify suboptimal inference or collapse [@CremerMorrisDuvenaud2018]. Useful outputs include calibration under shift and posterior predictive checks, together with ablations that vary encoder capacity or add limited iterative refinement. This clarifies when the learned mapping is faithful versus when it underfits the target posterior.
 
-- For amortized inference (e.g., variational autoencoders), analyze encoder mappings to understand how $q(\theta | x)$ varies with $x$
-- Could treat encoder as a learned $f(c)$ and evaluate its fidelity
+#### Disentangled and Bottlenecked Representations
+The aim is to expose factors that align with distinct contextual causes, making changes traceable and controllable. $\beta$-VAE encourages more factorized latents [@HigginsMattheyPalAubry2017], while the Deep Variational Information Bottleneck promotes predictive minimality that can suppress spurious context [@AlemiFischerDillonMurphy2017]. Concept-based methods such as TCAV and ACE map latent directions to human concepts and test sensitivity at the concept level [@KimGhorbaniZaharia2018; @GhorbaniWexlerZouKim2019]. Fully unsupervised disentanglement is often ill-posed without inductive bias or weak supervision [@locatello2019challenging]. Reports should include concept validity tests, factor stability across runs, and simple interventions that demonstrate controllability.
 
-#### Disentangled Representations
+#### Parameter Extraction and Probing
+This family locates where adaptation is encoded and exposes handles for inspection or edits. Linear probes test what is linearly decodable from intermediate layers [@AlainBengio2016]; edge probing examines specific linguistic structure in contextualized representations [@TenneyDasPavlick2019]. Model editing methods such as ROME can modify stored factual associations directly in weights [@MengBauAndonianBelinkov2022], while “knowledge neurons” seek units linked to particular facts [@dai2022knowledge]. Evaluations should include pre/post-edit behavior, the locality and persistence of edits, and any side effects on unrelated capabilities.
 
-- Train models with constraints (e.g., variational regularization, info bottlenecks) to encourage explicit factors of variation
-- Goal: make parameter changes traceable to distinct contextual causes
+#### LLMs as Post-hoc Explainers
+Recent work uses in-context prompting to elicit rationales, counterfactuals, or error hypotheses from large language models for a target system [@KroegerLeyKrishnaAgarwalLakkaraju2024]. These explanations can be useful but must be validated for faithfulness, for example by checking agreement with surrogate attributions, reproducing input–output behavior, and testing stability to prompt variations. Explanations should be treated as statistical estimators with stated objectives and evaluation criteria [@BordtRaidlLuxburg2024].
 
-#### Parameter Extraction
+### Trade-offs
 
-- Techniques like linear probes, weight attribution, or synthetic tasks to reverse-engineer how models adapt internally
-- Example: "what part of the weights encode the task?"
+#### Fidelity vs. Interpretability
+High-fidelity surrogates capture the target model’s behavior more accurately, yet they often grow in complexity and lose readability. A crisp statement of the design goal is
 
-### Tradeoffs
+$$
+\min\_{g\in\mathcal G}\ \underbrace{\phi\_{\text{fid}}(g;U)}\_{\text{faithfulness on use set }U}
+\+ \lambda\\underbrace{\psi\_{\text{simplicity}}(g)}\_{\text{sparsity / size / semantic load}},
+$$
 
-- Fidelity vs interpretability
-- Local vs global explanations
-- Approximation error vs modular control
+where $\phi_{\text{fid}}$ can be local $R^2$, AUC, or rank correlation with $h$, and $\psi_{\text{simplicity}}$ can be sparsity, tree depth, rule count, or active concept count. If a simple surrogate underfits, consider structured regularization (e.g., monotonic constraints, grouped sparsity, concept bottlenecks). If a complex surrogate is needed, accompany it with readable summaries (partial dependence snapshots, distilled rule sets, compact concept reports).
+
+#### Local vs. Global Scope
+Local surrogates aim for $g_{x_0,c_0}\approx h$ only on $\mathcal N_{x_0,c_0}$, whereas a global surrogate seeks $g_{\text{global}}\approx h$ across the domain, potentially smoothing away distinct regimes. Hybrid schemes combine both:
+
+$$
+g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
+\qquad \sum_k w_k(x,c)=1,\quad w_k\ge 0,
+$$
+
+with local experts $g_k$ and soft assignment $w_k$. Report the neighborhood definition, coverage (fraction of test cases with acceptable local fit), and disagreements between local and global views; flag regions where the global surrogate is unreliable.
+
+#### Approximation vs. Control
+Coarse modularization makes control and auditing simpler because edits act on a small number of levers, yet residual error can be large. Fine-grained extraction, such as neuron- or weight-level edits, can achieve precise behavioral changes but may introduce unintended side effects. Define the intended edit surface in advance (concepts, features, prototypes, submodules, parameters). For coarse modules, measure the residual gap to the base model and verify that edits improve target behavior without harming unaffected cases. For fine-grained edits, quantify locality and collateral effects using a held-out audit suite with counterfactuals, canary tasks, and out-of-distribution probes. Maintain versioned edits, enable rollback, and document the scope of validity.
 
 ### Open Questions
 
-- Can we extract *portable* modules from foundation models?
-- When does making structure explicit improve performance?
-- What is the right level of abstraction—parameters, functions, latent causes?
+#### Reusable Modules
+A central question is whether we can isolate portable skills or routines from large models and reuse them across tasks without degrading overall capability [@bommasani2021opportunities]. Concretely, a reusable module should satisfy portability, isolation, composability, and stability. Promising directions include concept bottlenecks that expose human-aligned interfaces, prototype libraries as swappable reference sets, sparse adapters that confine changes to limited parameter subsets, and routing mechanisms that select modules based on context. Evaluation should track transfer performance, sample efficiency, interference on held-out capabilities, and robustness under domain shift.
 
-This section bridges black-box adaptation and structured inference. It highlights how interpretability and performance need not be at odds—especially when the goal is robust, composable, and trustworthy adaptation.
+#### Performance Gains
+When does making structure explicit improve robustness or efficiency compared to purely implicit adaptation? Benefits are most likely when domain priors are reliable, data are scarce, or safety constraints limit free-form behavior. Explicit structure is promising when context topology is known (spatial or graph), when spurious correlations should be suppressed, and when explanations must be auditable. To assess this, fix capacity and training budget and vary only the explicit structure (prototypes, disentanglement, bottlenecks). Stress tests should cover diverse distributional challenges, including covariate shift, concept shift, long-tail classes, and adversarially correlated features. Account for costs such as concept annotation, extra hyperparameters, and potential in-domain accuracy loss.
 
-TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
+#### Abstraction Level
+Another open issue is the appropriate level at which to represent structure: parameters (weights, neurons), functions (local surrogates, concept scorers, routing policies), or latent causes (disentangled or causal factors). Choose based on the use case. For safety patches, lower-level handles allow precise edits but require guardrails and monitoring. For scientific or policy communication, function- or concept-level interfaces are often more stable and auditable. Optimize three objectives in tension: faithfulness to the underlying model, usability for the target audience, and stability under shift. Tooling should support movement between levels (e.g., distilling weight-level edits into concept summaries or lifting local surrogates into compact global reports).
 
-Relevant references:
+### Notes on Classical Post-hoc Methods
+LIME, SHAP, and gradient-based methods such as Integrated Gradients and DeepLIFT remain common tools for context-adaptive interpretation. Their usefulness depends on careful design and transparent reporting. Explanations should be treated as statistical estimators with stated objectives and evaluation criteria [@doshi2017towards; @BordtRaidlLuxburg2024].
 
-- [@arxiv:2310.05797]
-- Interpretations are statistics [@arXiv:2402.02870]
+#### Scope and locality
+Local surrogate methods require a clear definition of the neighborhood in which the explanation is valid. The sampling scheme, kernel width, and surrogate capacity determine which aspects of the black box can be recovered. When context variables are present, the explanation should be conditioned on the relevant context and the valid region should be described.
+
+#### Attribution methods in practice
+Attribution based on gradients is sensitive to baseline selection, path construction, input scaling, and preprocessing. Baselines should have clear domain meaning, and sensitivity analyses should show how conclusions change under alternative baselines. For perturbation-based surrogates, report the perturbation distribution and any constraints that keep samples on the data manifold.
+
+#### Faithfulness and robustness
+Faithfulness and robustness should be checked rather than assumed. Useful checks include deletion and insertion curves, counterfactual tests, randomization tests, stability under small input and seed perturbations, and for local surrogates a local goodness-of-fit such as a neighborhood $R^2$. The evaluation metric should match the stated objective of the explanation [@BordtRaidlLuxburg2024; @doshi2017towards].
+
+#### Minimal reporting checklist
+- Data slice and context used for the explanation, with a description of the locality or neighborhood.  
+- Surrogate specification, including model family, regularization, and kernel or sampling parameters.  
+- Faithfulness metrics, for example local $R^2$, deletion and insertion area, counterfactual validity.  
+- Sensitivity analyses over baselines, random seeds, and small perturbations, with uncertainty estimates.  
+- Computational budget and constraints that may affect explanation quality.  
+- Known limitations and failure modes observed during validation.
+
+#### From post hoc analysis to design
+When the goal is control, auditing, or policy communication, insights from post-hoc analysis can inform the design of explicit context-to-parameter structure. In such cases, use post-hoc findings to specify prototypes, bottlenecks, or concept interfaces that are trained and validated directly, rather than relying only on after-the-fact rationales [@doshi2017towards; @BordtRaidlLuxburg2024]. Taken together, these tools bridge black-box adaptation and structured inference and prepare the ground for designs where context-to-parameter structure is specified and trained end to end.
+
+#### Implications for classical models
+These tools can also clarify how traditional models, for example, logistic regression with interaction terms or generalized additive models to admit a local adaptation view: a simple global form paired with context-sensitive weights or features. Reading such models through the lens of local surrogates and concept interfaces helps align classical estimation with modern, context-adaptive practice.
+
 
 
 ## Context-Invariant Training: A View from the Converse
