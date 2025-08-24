@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-08-22'
+date-meta: '2025-08-24'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-08-22" />
-  <meta name="citation_publication_date" content="2025-08-22" />
-  <meta property="article:published_time" content="2025-08-22" />
-  <meta name="dc.modified" content="2025-08-22T15:16:03+00:00" />
-  <meta property="article:modified_time" content="2025-08-22T15:16:03+00:00" />
+  <meta name="dc.date" content="2025-08-24" />
+  <meta name="citation_publication_date" content="2025-08-24" />
+  <meta property="article:published_time" content="2025-08-24" />
+  <meta name="dc.modified" content="2025-08-24T21:29:27+00:00" />
+  <meta property="article:modified_time" content="2025-08-24T21:29:27+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/b4787484258721fb48ca575184f003ad0d703ec9/))
+([permalink](https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/))
 was automatically generated
-from [AdaptInfer/context-review@b478748](https://github.com/AdaptInfer/context-review/tree/b4787484258721fb48ca575184f003ad0d703ec9)
-on August 22, 2025.
+from [AdaptInfer/context-review@f1c58be](https://github.com/AdaptInfer/context-review/tree/f1c58be44a228c0d044307f11dd264eee6d5108d)
+on August 24, 2025.
 </em></small>
 
 
@@ -437,7 +437,7 @@ Another direction focuses on incorporating structural information into $f(c)$, e
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
 
 **Structured Regularization for Spatial, Graph, and Network Data.**
-When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients [@shi2021graph]. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@murakami2025fast; @englert2025spatially; @hu2024varying; @luo2024urban]. On networked data, the network VCM of [@fan2025network] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.
+When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients [@arXiv:1803.07658]. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@murakami2025fast; @englert2025spatially; @hu2024varying; @luo2024urban]. On networked data, the network VCM of [@fan2025network] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.
 
 #### Learned Function Approximators
 
@@ -705,16 +705,15 @@ These tools can also clarify how traditional models, for example, logistic regre
 
 
 ## Context-Invariant Training: A View from the Converse
-TODO: The converse of context-adaptive models, exploring the implications of training context-invariant models.
-e.g. out-of-distribution generalization, robustness to adversarial attacks.
 
-Relevant references:
+Most of this review discusses the importance of context in tailoring predictions. The converse view is to ask about the robustness of a model: can we learn features so that one simple predictor works across sites, cohorts, or time—despite shifting environments and nuisance cues? Training for context invariance targets out-of-distribution (OOD) generalization by prioritizing signals whose relationship to the target is stable across environments while down-weighting shortcuts that fluctuate. Standard Empirical Risk Minimization (ERM) [@vapnik1991principles] often latches onto spurious, environment-specific correlations. In practice, this means using multiple environments during training and favoring representations that make a single readout perform well everywhere. 
 
-- Invariant Risk Minimization [@arXiv:1907.02893]
-- Out-of-Distribution Generalization via Risk Extrapolation [@arXiv:2003.00688]
-- The Risks of Invariant Risk Minimization [@arXiv:2010.05761]
-- Conditional Variance Penalties and Domain Adaptation [@arXiv:1710.11469]
-- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
+The first method for invariant prediction with modern deep learning problems and techniques is Invariant Risk Minimization (IRM), which ties robustness to learning invariant (causally stable) predictors across multiple training environments [@arXiv:1907.02893]. IRM learns a representation $\Phi$ so that the predictor $w$ is simultaneously optimal for every training environment $e$ with respect to the risk $R^e(\cdot)$. The original optimization problem is bi-leveled and hard to solve. To overcome computation difficulty, the author proposes a surrogate model IRMv1, which adds a penalty forcing the per-environment risk to be stationary for a shared "dummy" classifier (gradient at $w=1$ near zero). This construction connects invariance to out-of-distribution (OOD) generalization by encouraging predictors aligned with causal mechanisms that persist across environments.
+
+However, there are several risks of IRM: in linear models IRM often fails to recover the invariant predictor, and in nonlinear settings IRM can fail catastrophically unless the test data are sufficiently similar to training—undercutting its goal of handling distribution shift (changes in $P(X)$ with $P(Y|X)$ fixed) [@arXiv:2010.05761]. Thus, IRM offers no mechanism to reduce sensitivity when those shifts are amplified at test time. To address the covariate shift situation, Risk Extrapolation (REx) allows extrapolation beyond the convex hull and optimize directly over the vector of per-environment risks, with the two instantiations, MM-REx and V-REx. MM-REx performs robust optimization over affine combinations of the environment risks (weights sum to 1, can be negative), while V-REx is a simpler surrogate that minimizes the mean risk plus the variance of risks across environments [@arXiv:2003.00688].
+
+Unlike IRM that assumes multiple observed environments and seeks a representation for which the same classifier is optimal in every environment, one can assume that some samples share an identifier. The paper [@arXiv:1710.11469] decomposes features into core (whose class-conditional distribution is stable across domains) and style (e.g., brightness, pose) that vary with domain. Under this assumption, the CoRe estimator promotes robustness by penalizing the conditional variance of the prediction or loss within groups with the same class label and identifer $(Y,ID)$.
+
 
 ### Adversarial Robustness as Context-Invariant Training
 Related references:
