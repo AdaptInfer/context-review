@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 approximators
 arxiv
@@ -29,7 +29,7 @@ doshi
 embeddings
 englert
 ERM
-explainers
+Explainers
 GBDTs
 generalizability
 GhorbaniWexlerZouKim
@@ -46,7 +46,7 @@ invariance
 IRM
 IRMv
 latents
-Lengerich
+lengerich
 Lepski’s
 Liu
 LLMs
@@ -70,7 +70,7 @@ overfit
 overfitting
 personalization
 Piecewise
-pre
+Pre
 preprocessing
 probablybots
 ProtoPNet
@@ -86,7 +86,7 @@ Shapley
 ShrikumarGreensideKundaje
 submodules
 suboptimal
-Subpopulation
+subpopulation
 subpopulations
 summarization
 swappable

@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-08-24'
+date-meta: '2025-09-04'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-08-24" />
-  <meta name="citation_publication_date" content="2025-08-24" />
-  <meta property="article:published_time" content="2025-08-24" />
-  <meta name="dc.modified" content="2025-08-24T21:29:27+00:00" />
-  <meta property="article:modified_time" content="2025-08-24T21:29:27+00:00" />
+  <meta name="dc.date" content="2025-09-04" />
+  <meta name="citation_publication_date" content="2025-09-04" />
+  <meta property="article:published_time" content="2025-09-04" />
+  <meta name="dc.modified" content="2025-09-04T22:32:26+00:00" />
+  <meta property="article:modified_time" content="2025-09-04T22:32:26+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f99ee82ee2611c27f7e3f482c76995f364e5d85f/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f99ee82ee2611c27f7e3f482c76995f364e5d85f/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f99ee82ee2611c27f7e3f482c76995f364e5d85f/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/f1c58be44a228c0d044307f11dd264eee6d5108d/))
+([permalink](https://AdaptInfer.github.io/context-review/v/f99ee82ee2611c27f7e3f482c76995f364e5d85f/))
 was automatically generated
-from [AdaptInfer/context-review@f1c58be](https://github.com/AdaptInfer/context-review/tree/f1c58be44a228c0d044307f11dd264eee6d5108d)
-on August 24, 2025.
+from [AdaptInfer/context-review@f99ee82](https://github.com/AdaptInfer/context-review/tree/f99ee82ee2611c27f7e3f482c76995f364e5d85f)
+on September 4, 2025.
 </em></small>
 
 
@@ -330,25 +330,6 @@ Relevant references:
 
 
 
-## Context-Adaptive Interpretations of Context-Invariant Models
-
-In the previous section, we discussed the importance of context in model parameters. 
-Such context-adaptive models can be learned by explicitly modeling the impact of contextual variables on model parameters, or learned implicitly in a model containing interaction effects between the context and the input features.
-In this section, we will focus on recent progress in understanding how context influences interpretations of statistical models, even when the model was not originally designed to incorporate context.
-
-TODO: Discussing the implications of context-adaptive interpretations for traditional models. Related work including LIME/DeepLift/DeepSHAP.
-
-### Context-Aware Efficiency Principles and Design
-
-The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.
-
-Context-aware efficiency often relies on sparsity assumptions that limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of context-dependent parameters to be zero simultaneously [@yuan2006model], hierarchical regularization that applies different regularization strengths to different levels of context specificity [@tibshirani1996regression], and adaptive thresholding that dynamically adjusts sparsity levels based on context complexity.
-
-Efficient context-adaptive inference can be achieved through computational strategies that allocate resources based on context. Early stopping terminates optimization early for contexts where convergence is rapid [@bottou2018optimization], while context-dependent sampling uses different sampling strategies for different contexts [@wang2018contextual]. Caching and warm-starting leverage solutions from similar contexts to accelerate optimization, particularly effective when contexts exhibit smooth variation [@boyd2011distributed].
-
-The design of context-aware methods often involves balancing computational efficiency with interpretability. Linear context functions are more interpretable but may require more parameters, while explicit context encoding improves interpretability but may increase computational cost. Local context modeling provides better interpretability but may be less efficient for large-scale applications. These trade-offs must be carefully considered based on the specific requirements of the application domain, as demonstrated in recent work on adaptive optimization methods [@kingma2014adam].
-
-
 
 ## Principles of Context-Adaptive Inference
 What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is good adaptivity. In this section, we formalize the core principles that underlie adaptive modeling.
@@ -466,6 +447,20 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 
 These theoretical advances provide a rigorous foundation for explicit adaptivity, ensuring that VCMs can be deployed confidently across a wide range of complex and structured modeling scenarios.
 
+
+### Context-Aware Efficiency Principles and Design
+
+The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.
+
+Context-aware efficiency often relies on sparsity assumptions that limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of context-dependent parameters to be zero simultaneously [@yuan2006model], hierarchical regularization that applies different regularization strengths to different levels of context specificity [@tibshirani1996regression], and adaptive thresholding that dynamically adjusts sparsity levels based on context complexity.
+
+Efficient context-adaptive inference can be achieved through computational strategies that allocate resources based on context. Early stopping terminates optimization early for contexts where convergence is rapid [@bottou2018optimization], while context-dependent sampling uses different sampling strategies for different contexts [@wang2018contextual]. Caching and warm-starting leverage solutions from similar contexts to accelerate optimization, particularly effective when contexts exhibit smooth variation [@boyd2011distributed].
+
+The design of context-aware methods often involves balancing computational efficiency with interpretability. Linear context functions are more interpretable but may require more parameters, while explicit context encoding improves interpretability but may increase computational cost. Local context modeling provides better interpretability but may be less efficient for large-scale applications. These trade-offs must be carefully considered based on the specific requirements of the application domain, as demonstrated in recent work on adaptive optimization methods [@kingma2014adam].
+
+
+
+
 ### Synthesis and Future Directions
 
 Selecting an appropriate modeling strategy for $f(c)$ involves weighing flexibility, interpretability, computational cost, and the extent of available domain knowledge. Learned function approximators, such as deep neural networks, offer unmatched capacity for modeling complex, high-dimensional relationships. However, classical smooth models and structurally constrained approaches often provide greater interpretability, transparency, and statistical efficiency. The choice of prior assumptions and the scalability of the estimation procedure are also central considerations in applied contexts.
@@ -477,27 +472,6 @@ Advances in interpretability and visualization for high-dimensional or black-box
 Finally, closing the gap between methodological innovation and practical deployment remains a priority. Although the literature has produced many powerful variants of VCMs, practical adoption is often limited by the availability of software and the clarity of methodological guidance [@botzer2025publication]. Continued investment in user-friendly implementations, open-source libraries, and empirical benchmarks will facilitate broader adoption and greater impact.
 
 In summary, explicit adaptivity through structured estimation of $f(c)$ now forms a core paradigm at the interface of statistical modeling and machine learning. Future progress will focus not only on expanding the expressive power of these models, but also on making them more accessible, interpretable, and practically useful in real-world applications.
-
-
-## Applications, Case Studies, and Evaluations
-
-### Implementation Across Sectors
-TODO: Detailed examination of context-adaptive models in sectors like healthcare and finance.
-
-### Performance Evaluation
-TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.
-
-### Context-Aware Efficiency in Practice
-
-The principles of context-aware efficiency find practical applications across diverse domains, demonstrating how computational and statistical efficiency can be achieved through intelligent context utilization.
-
-In healthcare applications, context-aware efficiency enables adaptive imaging protocols that adjust scan parameters based on patient context such as age, symptoms, and medical history, reducing unnecessary radiation exposure. Personalized screening schedules optimize screening frequency based on individual risk factors and previous results, while resource allocation systems efficiently distribute limited healthcare resources based on patient acuity and context.
-
-Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing frequency based on market volatility and transaction costs [@ang2014asset].
-
-Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@lei2018machinery]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
-
-A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
 
 
 ## Implicit Adaptivity: Emergent Contextualization in Complex Models
@@ -738,6 +712,20 @@ Relevant references:
 - [@doi:10.6339/25-JDS1181]
 - [@doi:10.3390/math13030469]
 
+
+### Context-Aware Efficiency in Practice
+
+The principles of context-aware efficiency find practical applications across diverse domains, demonstrating how computational and statistical efficiency can be achieved through intelligent context utilization.
+
+In healthcare applications, context-aware efficiency enables adaptive imaging protocols that adjust scan parameters based on patient context such as age, symptoms, and medical history, reducing unnecessary radiation exposure. Personalized screening schedules optimize screening frequency based on individual risk factors and previous results, while resource allocation systems efficiently distribute limited healthcare resources based on patient acuity and context.
+
+Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing frequency based on market volatility and transaction costs [@ang2014asset].
+
+Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@lei2018machinery]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
+
+A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
+
+
 ### Performance Evaluation
 TODO: Successes, failures, and comparative analyses of context-adaptive models across applications.
 
@@ -748,26 +736,6 @@ TODO: Reviewing current technological supports for context-adaptive models.
 ### Selection and Usage Guidance
 TODO: Offering practical advice on tool selection and use for optimal outcomes.
 
-
-## Conclusion
-
-### Overview of Insights
-TODO: Summarizing the main findings and contributions of this review.
-
-### Future Directions
-TODO: Discussing potential developments and innovations in context-adaptive statistical inference.
-
-### Context-Aware Efficiency: A Unifying Framework
-
-The principles of context-aware efficiency emerge as a unifying theme across the diverse methods surveyed in this review. This framework provides a systematic approach to designing methods that are both computationally tractable and statistically principled.
-
-Several fundamental insights emerge from our analysis. Rather than being a nuisance parameter, context provides information that can be leveraged to improve both statistical and computational efficiency. Methods that adapt their computational strategy based on context often achieve better performance than those that use fixed approaches. The design of context-aware methods requires careful consideration of how to balance computational efficiency with interpretability and regulatory compliance.
-
-Future research in context-aware efficiency should focus on developing methods that can efficiently handle high-dimensional, multimodal context information, creating systems that can adaptively allocate computational resources based on context complexity and urgency, investigating how efficiency principles learned in one domain can be transferred to others, and ensuring that context-aware efficiency methods can be deployed in regulated environments while maintaining interpretability [@wang2019efficiency].
-
-The development of context-aware efficiency principles has implications beyond statistical modeling. More efficient methods reduce computational costs and environmental impact, enabling sustainable computing practices. Efficient methods also democratize AI by enabling deployment of sophisticated models on resource-constrained devices. Furthermore, context-aware efficiency enables deployment of personalized models in time-critical applications, supporting real-time decision making.
-
-As we move toward an era of increasingly personalized and context-aware statistical inference, the principles outlined in this review provide a foundation for developing methods that are both theoretically sound and practically useful.
 
 ## Future Trends and Opportunities with Foundation Models
 
@@ -821,6 +789,17 @@ TODO: Other open problems?
 ### Overview of Insights
 TODO: Summarizing the main findings and contributions of this review.
 
+#### Context-Aware Efficiency: A Unifying Framework
+
+The principles of context-aware efficiency emerge as a unifying theme across the diverse methods surveyed in this review. This framework provides a systematic approach to designing methods that are both computationally tractable and statistically principled.
+
+Several fundamental insights emerge from our analysis. Rather than being a nuisance parameter, context provides information that can be leveraged to improve both statistical and computational efficiency. Methods that adapt their computational strategy based on context often achieve better performance than those that use fixed approaches. The design of context-aware methods requires careful consideration of how to balance computational efficiency with interpretability and regulatory compliance.
+
+Future research in context-aware efficiency should focus on developing methods that can efficiently handle high-dimensional, multimodal context information, creating systems that can adaptively allocate computational resources based on context complexity and urgency, investigating how efficiency principles learned in one domain can be transferred to others, and ensuring that context-aware efficiency methods can be deployed in regulated environments while maintaining interpretability [@wang2019efficiency].
+
+The development of context-aware efficiency principles has implications beyond statistical modeling. More efficient methods reduce computational costs and environmental impact, enabling sustainable computing practices. Efficient methods also democratize AI by enabling deployment of sophisticated models on resource-constrained devices. Furthermore, context-aware efficiency enables deployment of personalized models in time-critical applications, supporting real-time decision making.
+
+As we move toward an era of increasingly personalized and context-aware statistical inference, the principles outlined in this review provide a foundation for developing methods that are both theoretically sound and practically useful.
 
 ### Future Directions
 TODO: Discussing potential developments and innovations in context-adaptive statistical inference.
