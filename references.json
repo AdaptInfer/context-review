@@ -1,7 +1,8 @@
 [
   {
-    "id": "bnBshyMZ",
-    "type": "manuscript",
+    "id": "1HROmiXOz",
+    "type": "article-journal",
+    "title": "Understanding intermediate layers using linear classifier probes",
     "author": [
       {
         "family": "Alain",
@@ -12,13 +13,22 @@
         "given": "Yoshua"
       }
     ],
-    "title": "Understanding Intermediate Layers Using Linear Classifier Probes",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: AlainBengio2016"
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "volume": "abs/1610.01644",
+    "URL": "https://api.semanticscholar.org/CorpusID:9794990",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Alain2016UnderstandingIL"
   },
   {
-    "id": "10jCLvzty",
-    "type": "paper-conference",
+    "id": "FPJnDqnE",
+    "type": "article-journal",
+    "title": "Deep Variational Information Bottleneck",
     "author": [
       {
         "family": "Alemi",
@@ -31,19 +41,180 @@
       {
         "family": "Dillon",
         "given": "Joshua V."
-      },
-      {
-        "family": "Murphy",
-        "given": "Kevin"
       }
     ],
-    "title": "Deep Variational Information Bottleneck",
-    "container-title": "International Conference on Learning Representations",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: AlemiFischerDillonMurphy2017"
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "volume": "abs/1612.00410",
+    "URL": "https://api.semanticscholar.org/CorpusID:204922497",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Alemi2017DeepVI"
   },
   {
-    "id": "19AZg3mLf",
+    "id": "rXJuRh4F",
+    "type": "article-journal",
+    "title": "Selective Test-Time Adaptation for Unsupervised Anomaly Detection using Neural Implicit Representations",
+    "author": [
+      {
+        "family": "Ambekar",
+        "given": "Sameer"
+      },
+      {
+        "family": "Schnabel",
+        "given": "Julia A."
+      },
+      {
+        "family": "Bercea",
+        "given": "Cosmin I."
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2410.03306",
+    "URL": "https://api.semanticscholar.org/CorpusID:273163004",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ambekar2024SelectiveTA"
+  },
+  {
+    "id": "eWO4aUQ6",
+    "type": "article-journal",
+    "title": "Bayesian scaling laws for in-context learning",
+    "author": [
+      {
+        "family": "Arora",
+        "given": "Aryaman"
+      },
+      {
+        "family": "Jurafsky",
+        "given": "Daniel"
+      },
+      {
+        "family": "Potts",
+        "given": "Christopher"
+      },
+      {
+        "family": "Goodman",
+        "given": "Noah D."
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2410.16531",
+    "URL": "https://api.semanticscholar.org/CorpusID:273507537",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Arora2024BayesianSL"
+  },
+  {
+    "id": "PGLlyugi",
+    "type": "article-journal",
+    "title": "Transformers as Support Vector Machines",
+    "author": [
+      {
+        "family": "Ataee Tarzanagh",
+        "given": "Davoud"
+      },
+      {
+        "family": "Li",
+        "given": "Yingcong"
+      },
+      {
+        "family": "Thrampoulidis",
+        "given": "Christos"
+      },
+      {
+        "family": "Oymak",
+        "given": "Samet"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "volume": "abs/2308.16898",
+    "URL": "https://api.semanticscholar.org/CorpusID:261395206",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: AtaeeTarzanagh2023TransformersAS"
+  },
+  {
+    "id": "ql9MY89d",
     "type": "manuscript",
+    "author": [
+      {
+        "family": "Balseiro",
+        "given": "Santiago R."
+      },
+      {
+        "family": "Golrezaei",
+        "given": "Negin"
+      },
+      {
+        "family": "Mahdian",
+        "given": "Mohammad"
+      },
+      {
+        "family": "Mirrokni",
+        "given": "Vahab S."
+      },
+      {
+        "family": "Schneider",
+        "given": "Jon"
+      }
+    ],
+    "title": "Contextual Bandits with Cross-learning",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Balseiro2018ContextualBW"
+  },
+  {
+    "id": "3looVq4U",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Bommasani",
+        "given": "Rishi"
+      },
+      {
+        "family": "Hudson",
+        "given": "Drew A."
+      },
+      {
+        "family": "Adeli",
+        "given": "Ehsan"
+      },
+      {
+        "family": "Altman",
+        "given": "Russ"
+      },
+      {
+        "family": "Arora",
+        "given": "Simran"
+      }
+    ],
+    "title": "On the Opportunities and Risks of Foundation Models",
+    "archive": "arXiv",
+    "note": "and other authors\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Bommasani2021OnTO"
+  },
+  {
+    "id": "byOqPJ9J",
+    "type": "paper-conference",
+    "title": "Rethinking Explainable Machine Learning as Applied Statistics",
     "author": [
       {
         "family": "Bordt",
@@ -58,13 +229,275 @@
         "given": "Ulrike"
       }
     ],
-    "title": "Rethinking Explainable Machine Learning as Applied Statistics",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: BordtRaidlLuxburg2024"
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:267412927",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Bordt2024RethinkingEM"
   },
   {
-    "id": "quy0xhhL",
+    "id": "n4I8NBgb",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Bottou",
+        "given": "Léon"
+      },
+      {
+        "family": "Curtis",
+        "given": "Frank E."
+      },
+      {
+        "family": "Nocedal",
+        "given": "Jorge"
+      }
+    ],
+    "title": "Optimization Methods for Large-Scale Machine Learning",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Bottou2016OptimizationMF"
+  },
+  {
+    "id": "GQQU9PQb",
+    "type": "article-journal",
+    "title": "Publication Trends on the Varying Coefficients Model: Estimating the Actual (Under)Utilization of a Highly Acclaimed Method for Studying Statistical Interactions",
+    "author": [
+      {
+        "family": "Botzer",
+        "given": "Assaf"
+      }
+    ],
+    "container-title": "Publ.",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "volume": "13",
+    "page": "19",
+    "URL": "https://api.semanticscholar.org/CorpusID:277710491",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Botzer2025PublicationTO"
+  },
+  {
+    "id": "gXylcdAj",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Boyd",
+        "given": "Stephen P."
+      },
+      {
+        "family": "Parikh",
+        "given": "Neal"
+      },
+      {
+        "family": "Chu",
+        "given": "Eric"
+      },
+      {
+        "family": "Peleato",
+        "given": "Borja"
+      },
+      {
+        "family": "Eckstein",
+        "given": "Jonathan"
+      }
+    ],
+    "title": "Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers",
+    "container-title": "Found. Trends Mach. Learn.",
+    "volume": "3",
+    "page": "1-122",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Boyd2011DistributedOA"
+  },
+  {
+    "id": "nhdYYtrp",
+    "type": "article-journal",
+    "title": "Language Models are Few-Shot Learners",
+    "author": [
+      {
+        "family": "Brown",
+        "given": "Tom B."
+      },
+      {
+        "family": "Mann",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Ryder",
+        "given": "Nick"
+      },
+      {
+        "family": "Subbiah",
+        "given": "Melanie"
+      },
+      {
+        "family": "Kaplan",
+        "given": "Jared"
+      },
+      {
+        "family": "Dhariwal",
+        "given": "Prafulla"
+      },
+      {
+        "family": "Neelakantan",
+        "given": "Arvind"
+      },
+      {
+        "family": "Shyam",
+        "given": "Pranav"
+      },
+      {
+        "family": "Sastry",
+        "given": "Girish"
+      },
+      {
+        "family": "Askell",
+        "given": "Amanda"
+      },
+      {
+        "family": "Agarwal",
+        "given": "Sandhini"
+      },
+      {
+        "family": "Herbert-Voss",
+        "given": "Ariel"
+      },
+      {
+        "family": "Krueger",
+        "given": "Gretchen"
+      },
+      {
+        "family": "Henighan",
+        "given": "T. J."
+      },
+      {
+        "family": "Child",
+        "given": "Rewon"
+      },
+      {
+        "family": "Ramesh",
+        "given": "Aditya"
+      },
+      {
+        "family": "Ziegler",
+        "given": "Daniel M."
+      },
+      {
+        "family": "Wu",
+        "given": "Jeff"
+      },
+      {
+        "family": "Winter",
+        "given": "Clemens"
+      },
+      {
+        "family": "Hesse",
+        "given": "Christopher"
+      },
+      {
+        "family": "Chen",
+        "given": "Mark"
+      },
+      {
+        "family": "Sigler",
+        "given": "Eric"
+      },
+      {
+        "family": "Litwin",
+        "given": "Mateusz"
+      },
+      {
+        "family": "Gray",
+        "given": "Scott"
+      },
+      {
+        "family": "Chess",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Clark",
+        "given": "Jack"
+      },
+      {
+        "family": "Berner",
+        "given": "Christopher"
+      },
+      {
+        "family": "McCandlish",
+        "given": "Sam"
+      },
+      {
+        "family": "Radford",
+        "given": "Alec"
+      },
+      {
+        "family": "Sutskever",
+        "given": "Ilya"
+      },
+      {
+        "family": "Amodei",
+        "given": "Dario"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "volume": "abs/2005.14165",
+    "URL": "https://api.semanticscholar.org/CorpusID:218971783",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Brown2020LanguageMA"
+  },
+  {
+    "id": "1D89dIDtO",
+    "type": "article-journal",
+    "title": "Continuous Temporal Domain Generalization",
+    "author": [
+      {
+        "family": "Cai",
+        "given": "Zekun"
+      },
+      {
+        "family": "Bai",
+        "given": "Guangji"
+      },
+      {
+        "family": "Jiang",
+        "given": "Renhe"
+      },
+      {
+        "family": "Song",
+        "given": "Xuan"
+      },
+      {
+        "family": "Zhao",
+        "given": "Liang"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2405.16075",
+    "URL": "https://api.semanticscholar.org/CorpusID:270063125",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Cai2024ContinuousTD"
+  },
+  {
+    "id": "rwzMVtZm",
     "type": "paper-conference",
+    "title": "This looks like that: deep learning for interpretable image recognition",
     "author": [
       {
         "family": "Chen",
@@ -75,12 +508,8 @@
         "given": "Oscar"
       },
       {
-        "family": "Tao",
-        "given": "Daniel"
-      },
-      {
         "family": "Barnett",
-        "given": "Alina"
+        "given": "Alina Jade"
       },
       {
         "family": "Su",
@@ -91,37 +520,792 @@
         "given": "Cynthia"
       }
     ],
-    "title": "This Looks Like That: Deep Learning for Interpretable Image Recognition",
-    "container-title": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
-    "DOI": "10.1109/CVPR.2019.00914",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ChenLiTaoBarnettSuRudin2019"
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:49482223",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Chen2018ThisLL"
   },
   {
-    "id": "B1j4YBEB",
+    "id": "ySxuugBg",
+    "type": "article-journal",
+    "title": "LFME: A Simple Framework for Learning from Multiple Experts in Domain Generalization",
+    "author": [
+      {
+        "family": "Chen",
+        "given": "Liang"
+      },
+      {
+        "family": "Zhang",
+        "given": "Yong"
+      },
+      {
+        "family": "Song",
+        "given": "Yibing"
+      },
+      {
+        "family": "Shen",
+        "given": "Zhiqiang"
+      },
+      {
+        "family": "Liu",
+        "given": "Lingqiao"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2410.17020",
+    "URL": "https://api.semanticscholar.org/CorpusID:273507138",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Chen2024LFMEAS"
+  },
+  {
+    "id": "ynoNTdxR",
     "type": "paper-conference",
+    "title": "Inference Suboptimality in Variational Autoencoders",
     "author": [
       {
         "family": "Cremer",
         "given": "Chris"
       },
       {
-        "family": "Morris",
-        "given": "Quaid"
+        "family": "Li",
+        "given": "Xuechen"
       },
       {
         "family": "Duvenaud",
-        "given": "David"
+        "given": "David Kristjanson"
       }
     ],
-    "title": "Inference Suboptimality in Variational Autoencoders",
-    "container-title": "Proceedings of the 35th International Conference on Machine Learning",
-    "publisher": "PMLR",
-    "volume": "80",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: CremerMorrisDuvenaud2018"
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:3524184",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Cremer2018InferenceSI"
   },
   {
-    "id": "xdOmjxko",
+    "id": "4DoXpxVd",
+    "type": "article-journal",
+    "title": "Knowledge Neurons in Pretrained Transformers",
+    "author": [
+      {
+        "family": "Dai",
+        "given": "Damai"
+      },
+      {
+        "family": "Dong",
+        "given": "Li"
+      },
+      {
+        "family": "Hao",
+        "given": "Yaru"
+      },
+      {
+        "family": "Sui",
+        "given": "Zhifang"
+      },
+      {
+        "family": "Wei",
+        "given": "Furu"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "volume": "abs/2104.08696",
+    "URL": "https://api.semanticscholar.org/CorpusID:233296761",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Dai2021KnowledgeNI"
+  },
+  {
+    "id": "sbcsv77q",
     "type": "paper-conference",
+    "title": "Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers",
+    "author": [
+      {
+        "family": "Dai",
+        "given": "Damai"
+      },
+      {
+        "family": "Sun",
+        "given": "Yutao"
+      },
+      {
+        "family": "Dong",
+        "given": "Li"
+      },
+      {
+        "family": "Hao",
+        "given": "Yaru"
+      },
+      {
+        "family": "Ma",
+        "given": "Shuming"
+      },
+      {
+        "family": "Sui",
+        "given": "Zhifang"
+      },
+      {
+        "family": "Wei",
+        "given": "Furu"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:258686544",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Dai2022WhyCG"
+  },
+  {
+    "id": "i1igC2BC",
+    "type": "paper-conference",
+    "title": "A Survey on In-context Learning",
+    "author": [
+      {
+        "family": "Dong",
+        "given": "Qingxiu"
+      },
+      {
+        "family": "Li",
+        "given": "Lei"
+      },
+      {
+        "family": "Dai",
+        "given": "Damai"
+      },
+      {
+        "family": "Zheng",
+        "given": "Ce"
+      },
+      {
+        "family": "Wu",
+        "given": "Zhiyong"
+      },
+      {
+        "family": "Chang",
+        "given": "Baobao"
+      },
+      {
+        "family": "Sun",
+        "given": "Xu"
+      },
+      {
+        "family": "Xu",
+        "given": "Jingjing"
+      },
+      {
+        "family": "Li",
+        "given": "Lei"
+      },
+      {
+        "family": "Sui",
+        "given": "Zhifang"
+      }
+    ],
+    "container-title": "Conference on Empirical Methods in Natural Language Processing",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:255372865",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Dong2022ASO"
+  },
+  {
+    "id": "4YiO662d",
+    "type": "article-journal",
+    "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+    "author": [
+      {
+        "family": "Doshi-Velez",
+        "given": "Finale"
+      },
+      {
+        "family": "Kim",
+        "given": "Been"
+      }
+    ],
+    "container-title": "arXiv: Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:11319376",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: DoshiVelez2017TowardsAR"
+  },
+  {
+    "id": "OngP0u23",
+    "type": "paper-conference",
+    "title": "Spatially Varying Coefficient Models for Estimating Heterogeneous Mixture Effects",
+    "author": [
+      {
+        "family": "Englert",
+        "given": "Jacob R."
+      },
+      {
+        "family": "Chang",
+        "given": "Howard"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:276482233",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Englert2025SpatiallyVC"
+  },
+  {
+    "id": "5HZh8pIu",
+    "type": "article-journal",
+    "title": "Network Varying Coefficient Model",
+    "author": [
+      {
+        "family": "Fan",
+        "given": "Xinyan"
+      },
+      {
+        "family": "Fang",
+        "given": "Kuangnan"
+      },
+      {
+        "family": "Lan",
+        "given": "Wei"
+      },
+      {
+        "family": "Tsai",
+        "given": "Chih-Ling"
+      }
+    ],
+    "container-title": "Journal of the American Statistical Association",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:276599564",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Fan2025NetworkVC"
+  },
+  {
+    "id": "wo0peFG5",
+    "type": "paper-conference",
+    "title": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+    "author": [
+      {
+        "family": "Finn",
+        "given": "Chelsea"
+      },
+      {
+        "family": "Abbeel",
+        "given": "P."
+      },
+      {
+        "family": "Levine",
+        "given": "Sergey"
+      }
+    ],
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:6719686",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Finn2017ModelAgnosticMF"
+  },
+  {
+    "id": "9W6kdR7s",
+    "type": "article-journal",
+    "title": "Shortcut learning in deep neural networks",
+    "author": [
+      {
+        "family": "Geirhos",
+        "given": "Robert"
+      },
+      {
+        "family": "Jacobsen",
+        "given": "Jörn-Henrik"
+      },
+      {
+        "family": "Michaelis",
+        "given": "Claudio"
+      },
+      {
+        "family": "Zemel",
+        "given": "Richard S."
+      },
+      {
+        "family": "Brendel",
+        "given": "Wieland"
+      },
+      {
+        "family": "Bethge",
+        "given": "Matthias"
+      },
+      {
+        "family": "Wichmann",
+        "given": "Felix"
+      }
+    ],
+    "container-title": "Nature Machine Intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "volume": "2",
+    "page": "665-673",
+    "URL": "https://api.semanticscholar.org/CorpusID:215786368",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Geirhos2020ShortcutLI"
+  },
+  {
+    "id": "htzWcAM1",
+    "type": "paper-conference",
+    "author": [
+      {
+        "family": "Gelman",
+        "given": "Andrew"
+      },
+      {
+        "family": "Su",
+        "given": "Yu-Sung"
+      }
+    ],
+    "title": "Data Analysis Using Regression and Multilevel/Hierarchical Models",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Gelman2006DataAU"
+  },
+  {
+    "id": "PHDk950u",
+    "type": "paper-conference",
+    "title": "Towards Automatic Concept-based Explanations",
+    "author": [
+      {
+        "family": "Ghorbani",
+        "given": "Amirata"
+      },
+      {
+        "family": "Wexler",
+        "given": "James"
+      },
+      {
+        "family": "Zou",
+        "given": "James Y."
+      },
+      {
+        "family": "Kim",
+        "given": "Been"
+      }
+    ],
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:184487319",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ghorbani2019TowardsAC"
+  },
+  {
+    "id": "pirD8JuJ",
+    "type": "article-journal",
+    "title": "Varying‐Coefficient Models",
+    "author": [
+      {
+        "family": "Hastie",
+        "given": "Trevor J."
+      },
+      {
+        "family": "Tibshirani",
+        "given": "Robert"
+      }
+    ],
+    "container-title": "Journal of the Royal Statistical Society. Series B (Methodological)",
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "volume": "55",
+    "page": "757-779",
+    "URL": "https://api.semanticscholar.org/CorpusID:125170071",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Hastie1993VaryingCoefficientM"
+  },
+  {
+    "id": "um27DIkT",
+    "type": "paper-conference",
+    "title": "beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework",
+    "author": [
+      {
+        "family": "Higgins",
+        "given": "Irina"
+      },
+      {
+        "family": "Matthey",
+        "given": "Loïc"
+      },
+      {
+        "family": "Pal",
+        "given": "Arka"
+      },
+      {
+        "family": "Burgess",
+        "given": "Christopher P."
+      },
+      {
+        "family": "Glorot",
+        "given": "Xavier"
+      },
+      {
+        "family": "Botvinick",
+        "given": "Matthew M."
+      },
+      {
+        "family": "Mohamed",
+        "given": "Shakir"
+      },
+      {
+        "family": "Lerchner",
+        "given": "Alexander"
+      }
+    ],
+    "container-title": "International Conference on Learning Representations",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:46798026",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Higgins2016betaVAELB"
+  },
+  {
+    "id": "AhnjNoZf",
+    "type": "article-journal",
+    "title": "Meta-Learning in Neural Networks: A Survey",
+    "author": [
+      {
+        "family": "Hospedales",
+        "given": "Timothy M."
+      },
+      {
+        "family": "Antoniou",
+        "given": "Antreas"
+      },
+      {
+        "family": "Micaelli",
+        "given": "Paul"
+      },
+      {
+        "family": "Storkey",
+        "given": "Amos J."
+      }
+    ],
+    "container-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "volume": "44",
+    "page": "5149-5169",
+    "URL": "https://api.semanticscholar.org/CorpusID:215744839",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Hospedales2020MetaLearningIN"
+  },
+  {
+    "id": "7SNrxgEk",
+    "type": "article-journal",
+    "title": "Unsupervised Learning via Meta-Learning",
+    "author": [
+      {
+        "family": "Hsu",
+        "given": "Kyle"
+      },
+      {
+        "family": "Levine",
+        "given": "Sergey"
+      },
+      {
+        "family": "Finn",
+        "given": "Chelsea"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "volume": "abs/1810.02334",
+    "URL": "https://api.semanticscholar.org/CorpusID:52922125",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Hsu2018UnsupervisedLV"
+  },
+  {
+    "id": "KBnuztMa",
+    "type": "paper-conference",
+    "title": "Harder Task Needs More Experts: Dynamic Routing in MoE Models",
+    "author": [
+      {
+        "family": "Huang",
+        "given": "Quzhe"
+      },
+      {
+        "family": "An",
+        "given": "Zhenwei"
+      },
+      {
+        "family": "Nan",
+        "given": "Zhuang"
+      },
+      {
+        "family": "Tao",
+        "given": "Mingxu"
+      },
+      {
+        "family": "Zhang",
+        "given": "Chen"
+      },
+      {
+        "family": "Jin",
+        "given": "Yang"
+      },
+      {
+        "family": "Xu",
+        "given": "Kun"
+      },
+      {
+        "family": "Chen",
+        "given": "Liwei"
+      },
+      {
+        "family": "Huang",
+        "given": "Songfang"
+      },
+      {
+        "family": "Feng",
+        "given": "Yansong"
+      }
+    ],
+    "container-title": "Annual Meeting of the Association for Computational Linguistics",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:271895204",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Huang2024HarderTN"
+  },
+  {
+    "id": "5UsFy1cc",
+    "type": "article-journal",
+    "title": "Adaptive Mixtures of Local Experts",
+    "author": [
+      {
+        "family": "Jacobs",
+        "given": "Robert A."
+      },
+      {
+        "family": "Jordan",
+        "given": "Michael I."
+      },
+      {
+        "family": "Nowlan",
+        "given": "Steven J."
+      },
+      {
+        "family": "Hinton",
+        "given": "Geoffrey E."
+      }
+    ],
+    "container-title": "Neural Computation",
+    "issued": {
+      "date-parts": [
+        [
+          1991
+        ]
+      ]
+    },
+    "volume": "3",
+    "page": "79-87",
+    "URL": "https://api.semanticscholar.org/CorpusID:572361",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Jacobs1991AdaptiveMO"
+  },
+  {
+    "id": "uaQfPsiI",
+    "type": "paper-conference",
+    "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
+    "author": [
+      {
+        "family": "Kim",
+        "given": "Been"
+      },
+      {
+        "family": "Wattenberg",
+        "given": "Martin"
+      },
+      {
+        "family": "Gilmer",
+        "given": "Justin"
+      },
+      {
+        "family": "Cai",
+        "given": "Carrie J."
+      },
+      {
+        "family": "Wexler",
+        "given": "James"
+      },
+      {
+        "family": "Viégas",
+        "given": "Fernanda B."
+      },
+      {
+        "family": "Sayres",
+        "given": "Rory"
+      }
+    ],
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:51737170",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kim2017InterpretabilityBF"
+  },
+  {
+    "id": "run7WIHy",
+    "type": "paper-conference",
+    "title": "Test-Time Adaptation Induces Stronger Accuracy and Agreement-on-the-Line",
+    "author": [
+      {
+        "family": "Kim",
+        "given": "Eungyeup"
+      },
+      {
+        "family": "Sun",
+        "given": "Mingjie"
+      },
+      {
+        "family": "Baek",
+        "given": "Christina"
+      },
+      {
+        "family": "Raghunathan",
+        "given": "Aditi"
+      },
+      {
+        "family": "Kolter",
+        "given": "J. Zico"
+      }
+    ],
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:263830662",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kim2023TestTimeAI"
+  },
+  {
+    "id": "HVOSvrMU",
+    "type": "article-journal",
+    "title": "Auto-Encoding Variational Bayes",
+    "author": [
+      {
+        "family": "Kingma",
+        "given": "Diederik P."
+      },
+      {
+        "family": "Welling",
+        "given": "Max"
+      }
+    ],
+    "container-title": "CoRR",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "volume": "abs/1312.6114",
+    "URL": "https://api.semanticscholar.org/CorpusID:216078090",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kingma2013AutoEncodingVB"
+  },
+  {
+    "id": "fV3bp5El",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Kingma",
+        "given": "Diederik P."
+      },
+      {
+        "family": "Ba",
+        "given": "Jimmy"
+      }
+    ],
+    "title": "Adam: A Method for Stochastic Optimization",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kingma2014AdamAM"
+  },
+  {
+    "id": "4HmAqDnt",
+    "type": "paper-conference",
+    "title": "Understanding Black-box Predictions via Influence Functions",
     "author": [
       {
         "family": "Koh",
@@ -132,15 +1316,130 @@
         "given": "Percy"
       }
     ],
-    "title": "Understanding Black-box Predictions via Influence Functions",
-    "container-title": "Proceedings of the 34th International Conference on Machine Learning",
-    "publisher": "PMLR",
-    "volume": "70",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: KohLiang2017"
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:13193974",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Koh2017UnderstandingBP"
   },
   {
-    "id": "KboFKxwb",
-    "type": "manuscript",
+    "id": "ViAP9fh7",
+    "type": "paper-conference",
+    "title": "WILDS: A Benchmark of in-the-Wild Distribution Shifts",
+    "author": [
+      {
+        "family": "Koh",
+        "given": "Pang Wei"
+      },
+      {
+        "family": "Sagawa",
+        "given": "Shiori"
+      },
+      {
+        "family": "Marklund",
+        "given": "Henrik"
+      },
+      {
+        "family": "Xie",
+        "given": "Sang Michael"
+      },
+      {
+        "family": "Zhang",
+        "given": "Marvin"
+      },
+      {
+        "family": "Balsubramani",
+        "given": "Akshay"
+      },
+      {
+        "family": "Hu",
+        "given": "Weihua"
+      },
+      {
+        "family": "Yasunaga",
+        "given": "Michihiro"
+      },
+      {
+        "family": "Phillips",
+        "given": "Richard Lanas"
+      },
+      {
+        "family": "Gao",
+        "given": "Irena"
+      },
+      {
+        "family": "Lee",
+        "given": "Tony"
+      },
+      {
+        "family": "David",
+        "given": "Etiene"
+      },
+      {
+        "family": "Stavness",
+        "given": "Ian"
+      },
+      {
+        "family": "Guo",
+        "given": "Wei"
+      },
+      {
+        "family": "Earnshaw",
+        "given": "Berton A."
+      },
+      {
+        "family": "Haque",
+        "given": "Imran S."
+      },
+      {
+        "family": "Beery",
+        "given": "Sara Meghan"
+      },
+      {
+        "family": "Leskovec",
+        "given": "Jure"
+      },
+      {
+        "family": "Kundaje",
+        "given": "Anshul"
+      },
+      {
+        "family": "Pierson",
+        "given": "Emma"
+      },
+      {
+        "family": "Levine",
+        "given": "Sergey"
+      },
+      {
+        "family": "Finn",
+        "given": "Chelsea"
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      }
+    ],
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:229156320",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Koh2020WILDSAB"
+  },
+  {
+    "id": "v0xAySK8",
+    "type": "paper-conference",
+    "title": "In-Context Explainers: Harnessing LLMs for Explaining Black Box Models",
     "author": [
       {
         "family": "Kroeger",
@@ -163,13 +1462,242 @@
         "given": "Himabindu"
       }
     ],
-    "title": "In-Context Explainers: Harnessing LLMs for Explaining Black Box Models",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: KroegerLeyKrishnaAgarwalLakkaraju2024"
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:263829193",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kroeger2023InContextEH"
   },
   {
-    "id": "StZxZNd2",
+    "id": "a6BiplBF",
     "type": "paper-conference",
+    "title": "The Selective Labels Problem: Evaluating Algorithmic Predictions in the Presence of Unobservables",
+    "author": [
+      {
+        "family": "Lakkaraju",
+        "given": "Himabindu"
+      },
+      {
+        "family": "Kleinberg",
+        "given": "Jon M."
+      },
+      {
+        "family": "Leskovec",
+        "given": "Jure"
+      },
+      {
+        "family": "Ludwig",
+        "given": "Jens"
+      },
+      {
+        "family": "Mullainathan",
+        "given": "Sendhil"
+      }
+    ],
+    "container-title": "Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:2178920",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Lakkaraju2017TheSL"
+  },
+  {
+    "id": "MoVIrux0",
+    "type": "article-journal",
+    "title": "Optimal pointwise adaptive methods in nonparametric estimation",
+    "author": [
+      {
+        "family": "Lepski",
+        "given": "Oleg V."
+      },
+      {
+        "family": "Spokoiny",
+        "given": "Vladimir G."
+      }
+    ],
+    "container-title": "Annals of Statistics",
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "volume": "25",
+    "page": "2512-2546",
+    "URL": "https://api.semanticscholar.org/CorpusID:2635430",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Lepski1997OptimalPA"
+  },
+  {
+    "id": "IeaH24Dv",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Linardatos",
+        "given": "Pantelis"
+      },
+      {
+        "family": "Papastefanopoulos",
+        "given": "Vasilis"
+      },
+      {
+        "family": "Kotsiantis",
+        "given": "Sotiris B."
+      }
+    ],
+    "title": "Explainable AI: A Review of Machine Learning Interpretability Methods",
+    "container-title": "Entropy",
+    "volume": "23",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Linardatos2020ExplainableAA"
+  },
+  {
+    "id": "nhWQSRBg",
+    "type": "article-journal",
+    "title": "The weighted majority algorithm",
+    "author": [
+      {
+        "family": "Littlestone",
+        "given": "Nick"
+      },
+      {
+        "family": "Warmuth",
+        "given": "Manfred K."
+      }
+    ],
+    "container-title": "30th Annual Symposium on Foundations of Computer Science",
+    "issued": {
+      "date-parts": [
+        [
+          1989
+        ]
+      ]
+    },
+    "page": "256-261",
+    "URL": "https://api.semanticscholar.org/CorpusID:12843330",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Littlestone1989TheWM"
+  },
+  {
+    "id": "z4KxhXha",
+    "type": "article-journal",
+    "title": "A Closer Look into Mixture-of-Experts in Large Language Models",
+    "author": [
+      {
+        "family": "Lo",
+        "given": "Ka Man"
+      },
+      {
+        "family": "Huang",
+        "given": "Zeyu"
+      },
+      {
+        "family": "Qiu",
+        "given": "Zihan"
+      },
+      {
+        "family": "Wang",
+        "given": "Zili"
+      },
+      {
+        "family": "Fu",
+        "given": "Jie"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2406.18219",
+    "URL": "https://api.semanticscholar.org/CorpusID:270737825",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Lo2024ACL"
+  },
+  {
+    "id": "oMsXuhzd",
+    "type": "paper-conference",
+    "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
+    "author": [
+      {
+        "family": "Locatello",
+        "given": "Francesco"
+      },
+      {
+        "family": "Bauer",
+        "given": "Stefan"
+      },
+      {
+        "family": "Lucic",
+        "given": "Mario"
+      },
+      {
+        "family": "Gelly",
+        "given": "Sylvain"
+      },
+      {
+        "family": "Scholkopf",
+        "given": "Bernhard"
+      },
+      {
+        "family": "Bachem",
+        "given": "Olivier"
+      }
+    ],
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:54089884",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Locatello2018ChallengingCA"
+  },
+  {
+    "id": "mrmXRBJo",
+    "type": "article-journal",
+    "title": "Penalized Spline Estimation for Varying-Coefficient Models",
+    "author": [
+      {
+        "family": "Lu",
+        "given": "Yiqiang"
+      },
+      {
+        "family": "Zhang",
+        "given": "Riquan"
+      },
+      {
+        "family": "Zhu",
+        "given": "Liping"
+      }
+    ],
+    "container-title": "Communications in Statistics - Theory and Methods",
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    },
+    "volume": "37",
+    "page": "2249-2261",
+    "URL": "https://api.semanticscholar.org/CorpusID:121809483",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Lu2008PenalizedSE"
+  },
+  {
+    "id": "3XVsx394",
+    "type": "paper-conference",
+    "title": "A Unified Approach to Interpreting Model Predictions",
     "author": [
       {
         "family": "Lundberg",
@@ -180,13 +1708,21 @@
         "given": "Su-In"
       }
     ],
-    "title": "A Unified Approach to Interpreting Model Predictions",
-    "container-title": "Advances in Neural Information Processing Systems",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: LundbergLee2017"
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:21889700",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Lundberg2017AUA"
   },
   {
-    "id": "e9kuC7bS",
+    "id": "1FCZIJJbH",
     "type": "paper-conference",
+    "title": "Locating and Editing Factual Associations in GPT",
     "author": [
       {
         "family": "Meng",
@@ -205,13 +1741,335 @@
         "given": "Yonatan"
       }
     ],
-    "title": "Locating and Editing Factual Associations in GPT",
-    "container-title": "Advances in Neural Information Processing Systems",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: MengBauAndonianBelinkov2022"
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:255825985",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Meng2022LocatingAE"
   },
   {
-    "id": "1GR6qhy9S",
+    "id": "cEMOLLg",
+    "type": "article-journal",
+    "title": "Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?",
+    "author": [
+      {
+        "family": "Min",
+        "given": "Sewon"
+      },
+      {
+        "family": "Lyu",
+        "given": "Xinxi"
+      },
+      {
+        "family": "Holtzman",
+        "given": "Ari"
+      },
+      {
+        "family": "Artetxe",
+        "given": "Mikel"
+      },
+      {
+        "family": "Lewis",
+        "given": "Mike"
+      },
+      {
+        "family": "Hajishirzi",
+        "given": "Hannaneh"
+      },
+      {
+        "family": "Zettlemoyer",
+        "given": "Luke"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "volume": "abs/2202.12837",
+    "URL": "https://api.semanticscholar.org/CorpusID:247155069",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Min2022RethinkingTR"
+  },
+  {
+    "id": "1BatMyNyU",
+    "type": "article-journal",
+    "title": "Fast Spatio‐Temporally Varying Coefficient Modeling With Reluctant Interaction Selection",
+    "author": [
+      {
+        "family": "Murakami",
+        "given": "Daisuke"
+      },
+      {
+        "family": "Shirota",
+        "given": "Shinichiro"
+      },
+      {
+        "family": "Kajita",
+        "given": "Seiji"
+      },
+      {
+        "family": "Kajita",
+        "given": "Mami"
+      }
+    ],
+    "container-title": "Geographical Analysis",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:273233361",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Murakami2024FastSV"
+  },
+  {
+    "id": "5xvP4cZ1",
+    "type": "article-journal",
+    "title": "In-context Learning and Induction Heads",
+    "author": [
+      {
+        "family": "Olsson",
+        "given": "Catherine"
+      },
+      {
+        "family": "Elhage",
+        "given": "Nelson"
+      },
+      {
+        "family": "Nanda",
+        "given": "Neel"
+      },
+      {
+        "family": "Joseph",
+        "given": "Nicholas"
+      },
+      {
+        "family": "Dassarma",
+        "given": "Nova"
+      },
+      {
+        "family": "Henighan",
+        "given": "T. J."
+      },
+      {
+        "family": "Mann",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Askell",
+        "given": "Amanda"
+      },
+      {
+        "family": "Bai",
+        "given": "Yuntao"
+      },
+      {
+        "family": "Chen",
+        "given": "Anna"
+      },
+      {
+        "family": "Conerly",
+        "given": "Tom"
+      },
+      {
+        "family": "Drain",
+        "given": "Dawn"
+      },
+      {
+        "family": "Ganguli",
+        "given": "Deep"
+      },
+      {
+        "family": "Hatfield-Dodds",
+        "given": "Zac"
+      },
+      {
+        "family": "Hernandez",
+        "given": "Danny"
+      },
+      {
+        "family": "Johnston",
+        "given": "Scott"
+      },
+      {
+        "family": "Jones",
+        "given": "Andy"
+      },
+      {
+        "family": "Kernion",
+        "given": "John"
+      },
+      {
+        "family": "Lovitt",
+        "given": "Liane"
+      },
+      {
+        "family": "Ndousse",
+        "given": "Kamal"
+      },
+      {
+        "family": "Amodei",
+        "given": "Dario"
+      },
+      {
+        "family": "Brown",
+        "given": "Tom B."
+      },
+      {
+        "family": "Clark",
+        "given": "Jack"
+      },
+      {
+        "family": "Kaplan",
+        "given": "Jared"
+      },
+      {
+        "family": "McCandlish",
+        "given": "Sam"
+      },
+      {
+        "family": "Olah",
+        "given": "Chris"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "volume": "abs/2209.11895",
+    "URL": "https://api.semanticscholar.org/CorpusID:252532078",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Olsson2022IncontextLA"
+  },
+  {
+    "id": "Hyh4oJHn",
+    "type": "article-journal",
+    "title": "Towards Modular LLMs by Building and Reusing a Library of LoRAs",
+    "author": [
+      {
+        "family": "Ostapenko",
+        "given": "Oleksiy"
+      },
+      {
+        "family": "Su",
+        "given": "Zhan"
+      },
+      {
+        "family": "Ponti",
+        "given": "E."
+      },
+      {
+        "family": "Charlin",
+        "given": "Laurent"
+      },
+      {
+        "family": "Le Roux",
+        "given": "Nicolas"
+      },
+      {
+        "family": "Pereira",
+        "given": "Matheus"
+      },
+      {
+        "family": "Caccia",
+        "given": "Lucas"
+      },
+      {
+        "family": "Sordoni",
+        "given": "Alessandro"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2405.11157",
+    "URL": "https://api.semanticscholar.org/CorpusID:269922018",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ostapenko2024TowardsML"
+  },
+  {
+    "id": "TcDVxgHv",
+    "type": "article-journal",
+    "title": "Deep k-Nearest Neighbors: Towards Confident, Interpretable and Robust Deep Learning",
+    "author": [
+      {
+        "family": "Papernot",
+        "given": "Nicolas"
+      },
+      {
+        "family": "Mcdaniel",
+        "given": "Patrick"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "volume": "abs/1803.04765",
+    "URL": "https://api.semanticscholar.org/CorpusID:3882460",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Papernot2018DeepKN"
+  },
+  {
+    "id": "eWa6TjX2",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Petroni",
+        "given": "Fabio"
+      },
+      {
+        "family": "Rocktäschel",
+        "given": "Tim"
+      },
+      {
+        "family": "Lewis",
+        "given": "Patrick"
+      },
+      {
+        "family": "Bakhtin",
+        "given": "Anton"
+      },
+      {
+        "family": "Wu",
+        "given": "Yuxiang"
+      },
+      {
+        "family": "Miller",
+        "given": "Alexander H."
+      },
+      {
+        "family": "Riedel",
+        "given": "Sebastian"
+      }
+    ],
+    "title": "Language Models as Knowledge Bases?",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Petroni2019LanguageMA"
+  },
+  {
+    "id": "6oC3BWiG",
     "type": "paper-conference",
+    "title": "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier",
     "author": [
       {
         "family": "Ribeiro",
@@ -226,15 +2084,119 @@
         "given": "Carlos"
       }
     ],
-    "title": "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier",
     "container-title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
-    "publisher": "ACM",
-    "DOI": "10.1145/2939672.2939778",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: RibeiroSinghGuestrin2016"
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:13029170",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ribeiro2016WhySI"
   },
   {
-    "id": "F5p7aZaa",
-    "type": "manuscript",
+    "id": "10qodfWCa",
+    "type": "article-journal",
+    "title": "An Overview of Multi-Task Learning in Deep Neural Networks",
+    "author": [
+      {
+        "family": "Ruder",
+        "given": "Sebastian"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "volume": "abs/1706.05098",
+    "URL": "https://api.semanticscholar.org/CorpusID:10175374",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ruder2017AnOO"
+  },
+  {
+    "id": "5vHnjc4b",
+    "type": "article-journal",
+    "title": "Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization",
+    "author": [
+      {
+        "family": "Sagawa",
+        "given": "Shiori"
+      },
+      {
+        "family": "Koh",
+        "given": "Pang Wei"
+      },
+      {
+        "family": "Hashimoto",
+        "given": "Tatsunori B."
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "volume": "abs/1911.08731",
+    "URL": "https://api.semanticscholar.org/CorpusID:208176471",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Sagawa2019DistributionallyRN"
+  },
+  {
+    "id": "1Fc0kIYQ4",
+    "type": "article-journal",
+    "title": "Scalable Multi-Domain Adaptation of Language Models using Modular Experts",
+    "author": [
+      {
+        "family": "Schafhalter",
+        "given": "Peter"
+      },
+      {
+        "family": "Liao",
+        "given": "Shun"
+      },
+      {
+        "family": "Zhou",
+        "given": "Yanqi"
+      },
+      {
+        "family": "Yeh",
+        "given": "Chih-Kuan"
+      },
+      {
+        "family": "Kandoor",
+        "given": "Arun"
+      },
+      {
+        "family": "Laudon",
+        "given": "James"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2410.10181",
+    "URL": "https://api.semanticscholar.org/CorpusID:273346210",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Schafhalter2024ScalableMA"
+  },
+  {
+    "id": "rQnxWUdp",
+    "type": "paper-conference",
+    "title": "Learning Important Features Through Propagating Activation Differences",
     "author": [
       {
         "family": "Shrikumar",
@@ -249,13 +2211,21 @@
         "given": "Anshul"
       }
     ],
-    "title": "Learning Important Features Through Propagating Activation Differences",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ShrikumarGreensideKundaje2017"
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:3385018",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Shrikumar2017LearningIF"
   },
   {
-    "id": "rMp9yyDJ",
+    "id": "MfWOgMP0",
     "type": "paper-conference",
+    "title": "Axiomatic Attribution for Deep Networks",
     "author": [
       {
         "family": "Sundararajan",
@@ -270,15 +2240,21 @@
         "given": "Qiqi"
       }
     ],
-    "title": "Axiomatic Attribution for Deep Networks",
-    "container-title": "Proceedings of the 34th International Conference on Machine Learning",
-    "publisher": "PMLR",
-    "volume": "70",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: SundararajanTalyYan2017"
+    "container-title": "International Conference on Machine Learning",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:16747630",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Sundararajan2017AxiomaticAF"
   },
   {
-    "id": "12TaD6gil",
-    "type": "paper-conference",
+    "id": "dh6xe0MV",
+    "type": "article-journal",
+    "title": "What do you learn from context? Probing for sentence structure in contextualized word representations",
     "author": [
       {
         "family": "Tenney",
@@ -291,12 +2267,379 @@
       {
         "family": "Chen",
         "given": "Berlin"
+      },
+      {
+        "family": "Wang",
+        "given": "Alex"
+      },
+      {
+        "family": "Poliak",
+        "given": "Adam"
+      },
+      {
+        "family": "McCoy",
+        "given": "R. Thomas"
+      },
+      {
+        "family": "Kim",
+        "given": "Najoung"
+      },
+      {
+        "family": "Van Durme",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Bowman",
+        "given": "Samuel R."
+      },
+      {
+        "family": "Das",
+        "given": "Dipanjan"
+      },
+      {
+        "family": "Pavlick",
+        "given": "Ellie"
       }
     ],
-    "title": "What Do You Learn from Context? Probing for Sentence Structure in Contextualized Word Representations",
-    "container-title": "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT)",
-    "publisher": "Association for Computational Linguistics",
-    "note": "and other authors\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: TenneyDasPavlick2019"
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "volume": "abs/1905.06316",
+    "URL": "https://api.semanticscholar.org/CorpusID:108300988",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Tenney2019WhatDY"
+  },
+  {
+    "id": "1BIpbSBB",
+    "type": "article-journal",
+    "title": "An overview of statistical learning theory",
+    "author": [
+      {
+        "family": "Vapnik",
+        "given": "Vladimir Naumovich"
+      }
+    ],
+    "container-title": "IEEE Transactions on Neural Networks",
+    "issued": {
+      "date-parts": [
+        [
+          1999
+        ]
+      ]
+    },
+    "volume": "10 5",
+    "page": "988-999",
+    "URL": "https://api.semanticscholar.org/CorpusID:6294728",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Vapnik1999AnOO"
+  },
+  {
+    "id": "1GERSXJ6W",
+    "type": "paper-conference",
+    "title": "Attention is All you Need",
+    "author": [
+      {
+        "family": "Vaswani",
+        "given": "Ashish"
+      },
+      {
+        "family": "Shazeer",
+        "given": "Noam M."
+      },
+      {
+        "family": "Parmar",
+        "given": "Niki"
+      },
+      {
+        "family": "Uszkoreit",
+        "given": "Jakob"
+      },
+      {
+        "family": "Jones",
+        "given": "Llion"
+      },
+      {
+        "family": "Gomez",
+        "given": "Aidan N."
+      },
+      {
+        "family": "Kaiser",
+        "given": "Lukasz"
+      },
+      {
+        "family": "Polosukhin",
+        "given": "Illia"
+      }
+    ],
+    "container-title": "Neural Information Processing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:13756489",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Vaswani2017AttentionIA"
+  },
+  {
+    "id": "jqqbYcAr",
+    "type": "manuscript",
+    "author": [
+      {
+        "family": "Wei",
+        "given": "Jason"
+      },
+      {
+        "family": "Wang",
+        "given": "Xuezhi"
+      },
+      {
+        "family": "Schuurmans",
+        "given": "Dale"
+      },
+      {
+        "family": "Bosma",
+        "given": "Maarten"
+      },
+      {
+        "family": "Chi",
+        "given": "Ed H."
+      },
+      {
+        "family": "Xia",
+        "given": "F."
+      },
+      {
+        "family": "Le",
+        "given": "Quoc"
+      },
+      {
+        "family": "Zhou",
+        "given": "Denny"
+      }
+    ],
+    "title": "Chain of Thought Prompting Elicits Reasoning in Large Language Models",
+    "archive": "arXiv",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Wei2022ChainOT"
+  },
+  {
+    "id": "oCuEj46V",
+    "type": "article-journal",
+    "title": "Emergent Abilities of Large Language Models",
+    "author": [
+      {
+        "family": "Wei",
+        "given": "Jason"
+      },
+      {
+        "family": "Tay",
+        "given": "Yi"
+      },
+      {
+        "family": "Bommasani",
+        "given": "Rishi"
+      },
+      {
+        "family": "Raffel",
+        "given": "Colin"
+      },
+      {
+        "family": "Zoph",
+        "given": "Barret"
+      },
+      {
+        "family": "Borgeaud",
+        "given": "Sebastian"
+      },
+      {
+        "family": "Yogatama",
+        "given": "Dani"
+      },
+      {
+        "family": "Bosma",
+        "given": "Maarten"
+      },
+      {
+        "family": "Zhou",
+        "given": "Denny"
+      },
+      {
+        "family": "Metzler",
+        "given": "Donald"
+      },
+      {
+        "family": "Chi",
+        "given": "Ed H."
+      },
+      {
+        "family": "Hashimoto",
+        "given": "Tatsunori"
+      },
+      {
+        "family": "Vinyals",
+        "given": "Oriol"
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      },
+      {
+        "family": "Dean",
+        "given": "Jeff"
+      },
+      {
+        "family": "Fedus",
+        "given": "William"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "volume": "abs/2206.07682",
+    "URL": "https://api.semanticscholar.org/CorpusID:249674500",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Wei2022EmergentAO"
+  },
+  {
+    "id": "ijdAm3bf",
+    "type": "article-journal",
+    "title": "Mixture of LoRA Experts",
+    "author": [
+      {
+        "family": "Wu",
+        "given": "Xun"
+      },
+      {
+        "family": "Huang",
+        "given": "Shaohan"
+      },
+      {
+        "family": "Wei",
+        "given": "Furu"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2404.13628",
+    "URL": "https://api.semanticscholar.org/CorpusID:269293160",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Wu2024MixtureOL"
+  },
+  {
+    "id": "KTwv72iC",
+    "type": "article-journal",
+    "title": "An Explanation of In-context Learning as Implicit Bayesian Inference",
+    "author": [
+      {
+        "family": "Xie",
+        "given": "Sang Michael"
+      },
+      {
+        "family": "Raghunathan",
+        "given": "Aditi"
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      },
+      {
+        "family": "Ma",
+        "given": "Tengyu"
+      }
+    ],
+    "container-title": "ArXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "volume": "abs/2111.02080",
+    "URL": "https://api.semanticscholar.org/CorpusID:241035330",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Xie2021AnEO"
+  },
+  {
+    "id": "h3Uh8wYi",
+    "type": "article-journal",
+    "author": [
+      {
+        "family": "Yuan",
+        "given": "Ming"
+      },
+      {
+        "family": "Lin",
+        "given": "Yi"
+      }
+    ],
+    "title": "Model selection and estimation in regression with grouped variables",
+    "container-title": "Journal of the Royal Statistical Society: Series B (Statistical Methodology)",
+    "volume": "68",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Yuan2006ModelSA"
+  },
+  {
+    "id": "dlBtVL5G",
+    "type": "article-journal",
+    "title": "A tree-based varying coefficient model",
+    "author": [
+      {
+        "family": "Zakrisson",
+        "given": "Henning"
+      },
+      {
+        "family": "Lindholm",
+        "given": "Mathias"
+      }
+    ],
+    "container-title": "arXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "volume": "abs/2401.05982",
+    "URL": "https://api.semanticscholar.org/CorpusID:266933390",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Zakrisson2024ATV"
+  },
+  {
+    "id": "El7MAmHp",
+    "type": "article-journal",
+    "title": "Tree Boosted Varying Coefficient Models",
+    "author": [
+      {
+        "family": "Zhou",
+        "given": "Yichen"
+      },
+      {
+        "family": "Hooker",
+        "given": "Giles"
+      }
+    ],
+    "container-title": "arXiv: Methodology",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "https://api.semanticscholar.org/CorpusID:91184310",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Zhou2019TreeBV"
   },
   {
     "id": "1GChRhAEq",
@@ -317,40 +2660,6 @@
     "issue": "12",
     "page": "3734--3777",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ang2014asset"
-  },
-  {
-    "id": "wK1jbWkS",
-    "URL": "https://arxiv.org/abs/1508.00249",
-    "number": "1508.00249",
-    "title": "Lepski's Method and Adaptive Estimation of Nonlinear Integral Functionals of Density",
-    "issued": {
-      "date-parts": [
-        [
-          2016,
-          1,
-          12
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Rajarshi",
-        "family": "Mukherjee"
-      },
-      {
-        "given": "Eric Tchetgen",
-        "family": "Tchetgen"
-      },
-      {
-        "given": "James",
-        "family": "Robins"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "We study the adaptive minimax estimation of non-linear integral functionals of a density and extend the results obtained for linear and quadratic functionals to general functionals. The typical rate optimal non-adaptive minimax estimators of \"smooth\" non-linear functionals are higher order U-statistics. Since Lepski's method requires tight control of tails of such estimators, we bypass such calculations by a modification of Lepski's method which is applicable in such situations. As a necessary ingredient, we also provide a method to control higher order moments of minimax estimator of cubic integral functionals. Following a standard constrained risk inequality method, we also show the optimality of our adaptation rates.",
-    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1508.00249"
   },
   {
     "id": "B0L8KJ8W",
@@ -425,52 +2734,6 @@
     "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1710.11469"
   },
   {
-    "id": "1CKKSF6Q6",
-    "URL": "https://arxiv.org/abs/1803.07658",
-    "number": "1803.07658",
-    "title": "Graph-based regularization for regression problems with alignment and highly-correlated designs",
-    "issued": {
-      "date-parts": [
-        [
-          2019,
-          10,
-          15
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Yuan",
-        "family": "Li"
-      },
-      {
-        "given": "Benjamin",
-        "family": "Mark"
-      },
-      {
-        "given": "Garvesh",
-        "family": "Raskutti"
-      },
-      {
-        "given": "Rebecca",
-        "family": "Willett"
-      },
-      {
-        "given": "Hyebin",
-        "family": "Song"
-      },
-      {
-        "given": "David",
-        "family": "Neiman"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "Sparse models for high-dimensional linear regression and machine learning have received substantial attention over the past two decades. Model selection, or determining which features or covariates are the best explanatory variables, is critical to the interpretability of a learned model. Much of the current literature assumes that covariates are only mildly correlated. However, in many modern applications covariates are highly correlated and do not exhibit key properties (such as the restricted eigenvalue condition, restricted isometry property, or other related assumptions). This work considers a high-dimensional regression setting in which a graph governs both correlations among the covariates and the similarity among regression coefficients -- meaning there is \\emph{alignment} between the covariates and regression coefficients. Using side information about the strength of correlations among features, we form a graph with edge weights corresponding to pairwise covariances. This graph is used to define a graph total variation regularizer that promotes similar weights for correlated features.\n  This work shows how the proposed graph-based regularization yields mean-squared error guarantees for a broad range of covariance graph structures. These guarantees are optimal for many specific covariance graphs, including block and lattice graphs. Our proposed approach outperforms other methods for highly-correlated design in a variety of experiments on synthetic data and real biochemistry data.",
-    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1803.07658"
-  },
-  {
     "id": "ylSNfYug",
     "URL": "https://arxiv.org/abs/1805.12152",
     "number": "1805.12152",
@@ -511,32 +2774,6 @@
     "type": "report",
     "abstract": "We show that there may exist an inherent tension between the goal of adversarial robustness and that of standard generalization. Specifically, training robust models may not only be more resource-consuming, but also lead to a reduction of standard accuracy. We demonstrate that this trade-off between the standard accuracy of a model and its robustness to adversarial perturbations provably exists in a fairly simple and natural setting. These findings also corroborate a similar phenomenon observed empirically in more complex settings. Further, we argue that this phenomenon is a consequence of robust classifiers learning fundamentally different feature representations than standard classifiers. These differences, in particular, seem to result in unexpected benefits: the representations learned by robust models tend to align better with salient data characteristics and human perception.",
     "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1805.12152"
-  },
-  {
-    "id": "FJALdE9T",
-    "URL": "https://arxiv.org/abs/1811.04383",
-    "number": "1811.04383",
-    "title": "Adapting multi-armed bandits policies to contextual bandits scenarios",
-    "issued": {
-      "date-parts": [
-        [
-          2019,
-          11,
-          26
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "David",
-        "family": "Cortes"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "This work explores adaptations of successful multi-armed bandits policies to the online contextual bandits scenario with binary rewards using binary classification algorithms such as logistic regression as black-box oracles. Some of these adaptations are achieved through bootstrapping or approximate bootstrapping, while others rely on other forms of randomness, resulting in more scalable approaches than previous works, and the ability to work with any type of classification algorithm. In particular, the Adaptive-Greedy algorithm shows a lot of promise, in many cases achieving better performance than upper confidence bound and Thompson sampling strategies, at the expense of more hyperparameters to tune.",
-    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1811.04383"
   },
   {
     "id": "1DeCFT6PA",
@@ -613,40 +2850,6 @@
     "type": "report",
     "abstract": "Overparameterized neural networks can be highly accurate on average on an i.i.d. test set yet consistently fail on atypical groups of the data (e.g., by learning spurious correlations that hold on average but not in such groups). Distributionally robust optimization (DRO) allows us to learn models that instead minimize the worst-case training loss over a set of pre-defined groups. However, we find that naively applying group DRO to overparameterized neural networks fails: these models can perfectly fit the training data, and any model with vanishing average training loss also already has vanishing worst-case training loss. Instead, the poor worst-case performance arises from poor generalization on some groups. By coupling group DRO models with increased regularization---a stronger-than-typical L2 penalty or early stopping---we achieve substantially higher worst-group accuracies, with 10-40 percentage point improvements on a natural language inference task and two image tasks, while maintaining high average accuracies. Our results suggest that regularization is important for worst-group generalization in the overparameterized regime, even if it is not needed for average generalization. Finally, we introduce a stochastic optimization algorithm, with convergence guarantees, to efficiently train group DRO models.",
     "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1911.08731"
-  },
-  {
-    "id": "IdMLJI3A",
-    "URL": "https://arxiv.org/abs/1911.12568",
-    "number": "1911.12568",
-    "title": "Optimal Estimation of Change in a Population of Parameters",
-    "issued": {
-      "date-parts": [
-        [
-          2019,
-          12,
-          2
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Ramya Korlakai",
-        "family": "Vinayak"
-      },
-      {
-        "given": "Weihao",
-        "family": "Kong"
-      },
-      {
-        "given": "Sham M.",
-        "family": "Kakade"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "Paired estimation of change in parameters of interest over a population plays a central role in several application domains including those in the social sciences, epidemiology, medicine and biology. In these domains, the size of the population under study is often very large, however, the number of observations available per individual in the population is very small (\\emph{sparse observations}) which makes the problem challenging. Consider the setting with $N$ independent individuals, each with unknown parameters $(p_i, q_i)$ drawn from some unknown distribution on $[0, 1]^2$. We observe $X_i \\sim \\text{Bin}(t, p_i)$ before an event and $Y_i \\sim \\text{Bin}(t, q_i)$ after the event. Provided these paired observations, $\\{(X_i, Y_i) \\}_{i=1}^N$, our goal is to accurately estimate the \\emph{distribution of the change in parameters}, $Î´_i := q_i - p_i$, over the population and properties of interest like the \\emph{$\\ell_1$-magnitude of the change} with sparse observations ($t\\ll N$). We provide \\emph{information theoretic lower bounds} on the error in estimating the distribution of change and the $\\ell_1$-magnitude of change. Furthermore, we show that the following two step procedure achieves the optimal error bounds: first, estimate the full joint distribution of the paired parameters using the maximum likelihood estimator (MLE) and then estimate the distribution of change and the $\\ell_1$-magnitude of change using the joint MLE. Notably, and perhaps surprisingly, these error bounds are of the same order as the minimax optimal error bounds for learning the \\emph{full} joint distribution itself (in Wasserstein-1 distance); in other words, estimating the magnitude of the change of parameters over the population is, in a minimax sense, as difficult as estimating the full joint distribution itself.",
-    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1911.12568"
   },
   {
     "id": "lwLz9yZT",
@@ -775,40 +2978,6 @@
     "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2010.05761"
   },
   {
-    "id": "10151coVE",
-    "URL": "https://arxiv.org/abs/2010.07249",
-    "number": "2010.07249",
-    "title": "Environment Inference for Invariant Learning",
-    "issued": {
-      "date-parts": [
-        [
-          2021,
-          7,
-          16
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Elliot",
-        "family": "Creager"
-      },
-      {
-        "given": "JÃ¶rn-Henrik",
-        "family": "Jacobsen"
-      },
-      {
-        "given": "Richard",
-        "family": "Zemel"
-      }
-    ],
-    "container-title": "arXiv",
-    "publisher": "arXiv",
-    "type": "report",
-    "abstract": "Learning models that gracefully handle distribution shifts is central to research on domain generalization, robust optimization, and fairness. A promising formulation is domain-invariant learning, which identifies the key issue of learning which features are domain-specific versus domain-invariant. An important assumption in this area is that the training examples are partitioned into \"domains\" or \"environments\". Our focus is on the more common setting where such partitions are not provided. We propose EIIL, a general framework for domain-invariant learning that incorporates Environment Inference to directly infer partitions that are maximally informative for downstream Invariant Learning. We show that EIIL outperforms invariant learning methods on the CMNIST benchmark without using environment labels, and significantly outperforms ERM on worst-group performance in the Waterbirds and CivilComments datasets. Finally, we establish connections between EIIL and algorithmic fairness, which enables EIIL to improve accuracy and calibration in a fair prediction problem.",
-    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2010.07249"
-  },
-  {
     "id": "1CkxORTSX",
     "URL": "https://arxiv.org/abs/2103.00315",
     "number": "2103.00315",
@@ -925,354 +3094,6 @@
     "type": "report",
     "abstract": "The goal of multi-task learning is to enable more efficient learning than single task learning by sharing model structures for a diverse set of tasks. A standard multi-task learning objective is to minimize the average loss across all tasks. While straightforward, using this objective often results in much worse final performance for each task than learning them independently. A major challenge in optimizing a multi-task model is the conflicting gradients, where gradients of different task objectives are not well aligned so that following the average gradient direction can be detrimental to specific tasks' performance. Previous work has proposed several heuristics to manipulate the task gradients for mitigating this problem. But most of them lack convergence guarantee and/or could converge to any Pareto-stationary point. In this paper, we introduce Conflict-Averse Gradient descent (CAGrad) which minimizes the average loss function, while leveraging the worst local improvement of individual tasks to regularize the algorithm trajectory. CAGrad balances the objectives automatically and still provably converges to a minimum over the average loss. It includes the regular gradient descent (GD) and the multiple gradient descent algorithm (MGDA) in the multi-objective optimization (MOO) literature as special cases. On a series of challenging multi-task supervised learning and reinforcement learning tasks, CAGrad achieves improved performance over prior state-of-the-art multi-objective gradient manipulation methods.",
     "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2110.14048"
-  },
-  {
-    "id": "193MlihYp",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Bommasani",
-        "given": "Rishi"
-      },
-      {
-        "family": "Hudson",
-        "given": "Drew A."
-      },
-      {
-        "family": "Adeli",
-        "given": "Ehsan"
-      },
-      {
-        "family": "Altman",
-        "given": "Russ"
-      },
-      {
-        "family": "Arora",
-        "given": "Simran"
-      }
-    ],
-    "title": "On the Opportunities and Risks of Foundation Models",
-    "container-title": "arXiv preprint arXiv:2108.07258",
-    "note": "and other authors\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: bommasani2021opportunities"
-  },
-  {
-    "id": "R5HQsIG9",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Bottou",
-        "given": "Léon"
-      },
-      {
-        "family": "Curtis",
-        "given": "Frank E."
-      },
-      {
-        "family": "Nocedal",
-        "given": "Jorge"
-      }
-    ],
-    "title": "Optimization methods for large-scale machine learning",
-    "container-title": "SIAM Review",
-    "volume": "60",
-    "issue": "2",
-    "page": "223--311",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: bottou2018optimization"
-  },
-  {
-    "id": "159keZX88",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Botzer",
-        "given": "Assaf"
-      }
-    ],
-    "title": "Publication Trends on the Varying Coefficients Model: Estimating the Actual (Under)Utilization of a Highly Acclaimed Method for Studying Statistical Interactions",
-    "container-title": "Publications",
-    "volume": "13",
-    "issue": "2",
-    "page": "19",
-    "DOI": "10.3390/publications13020019",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: botzer2025publication"
-  },
-  {
-    "id": "Bgxj9luJ",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Boyd",
-        "given": "Stephen"
-      },
-      {
-        "family": "Parikh",
-        "given": "Neal"
-      },
-      {
-        "family": "Chu",
-        "given": "Eric"
-      },
-      {
-        "family": "Peleato",
-        "given": "Brendan"
-      },
-      {
-        "family": "Eckstein",
-        "given": "Jonathan"
-      }
-    ],
-    "title": "Distributed optimization and statistical learning via the alternating direction method of multipliers",
-    "container-title": "Foundations and Trends in Machine Learning",
-    "volume": "3",
-    "issue": "1",
-    "page": "1--122",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: boyd2011distributed"
-  },
-  {
-    "id": "16GpbreXJ",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Brown",
-        "given": "Tom B."
-      },
-      {
-        "family": "Mann",
-        "given": "Benjamin"
-      },
-      {
-        "family": "Ryder",
-        "given": "Nick"
-      },
-      {
-        "family": "Subbiah",
-        "given": "Melanie"
-      },
-      {
-        "family": "Kaplan",
-        "given": "Jared"
-      },
-      {
-        "family": "Dhariwal",
-        "given": "Prafulla"
-      },
-      {
-        "family": "Neelakantan",
-        "given": "Arvind"
-      },
-      {
-        "family": "Shyam",
-        "given": "Pranav"
-      },
-      {
-        "family": "Sastry",
-        "given": "Girish"
-      },
-      {
-        "family": "Askell",
-        "given": "Amanda"
-      },
-      {
-        "family": "Agarwal",
-        "given": "Sandhini"
-      },
-      {
-        "family": "Herbert-Voss",
-        "given": "Ariel"
-      },
-      {
-        "family": "Krueger",
-        "given": "Gretchen"
-      },
-      {
-        "family": "Henighan",
-        "given": "Tom"
-      },
-      {
-        "family": "Child",
-        "given": "Rewon"
-      },
-      {
-        "family": "Ramesh",
-        "given": "Aditya"
-      },
-      {
-        "family": "Ziegler",
-        "given": "Daniel M."
-      },
-      {
-        "family": "Wu",
-        "given": "Jeffrey"
-      },
-      {
-        "family": "Winter",
-        "given": "Clemens"
-      },
-      {
-        "family": "Hesse",
-        "given": "Christopher"
-      },
-      {
-        "family": "Chen",
-        "given": "Mark"
-      },
-      {
-        "family": "Sigler",
-        "given": "Eric"
-      },
-      {
-        "family": "Litwin",
-        "given": "Mateusz"
-      },
-      {
-        "family": "Gray",
-        "given": "Scott"
-      },
-      {
-        "family": "Chess",
-        "given": "Benjamin"
-      },
-      {
-        "family": "Clark",
-        "given": "Jack"
-      },
-      {
-        "family": "Berner",
-        "given": "Christopher"
-      },
-      {
-        "family": "McCandlish",
-        "given": "Sam"
-      },
-      {
-        "family": "Radford",
-        "given": "Alec"
-      },
-      {
-        "family": "Sutskever",
-        "given": "Ilya"
-      },
-      {
-        "family": "Amodei",
-        "given": "Dario"
-      }
-    ],
-    "title": "Language Models are Few-Shot Learners",
-    "container-title": "Advances in Neural Information Processing Systems 33",
-    "page": "1877--1901",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: brown2020language"
-  },
-  {
-    "id": "1GTolz1Ss",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Cheng",
-        "given": "Yu"
-      },
-      {
-        "family": "Yang",
-        "given": "Dongdong"
-      },
-      {
-        "family": "Zhou",
-        "given": "Denny"
-      }
-    ],
-    "title": "XGBoost-Inspired Estimation for High-Dimensional Varying Coefficient Models",
-    "archive": "arXiv",
-    "note": "stat.ML\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: cheng2020xgboost"
-  },
-  {
-    "id": "uSkZkc4u",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Dai",
-        "given": "Damai"
-      },
-      {
-        "family": "Sun",
-        "given": "Yutao"
-      },
-      {
-        "family": "Dong",
-        "given": "Li"
-      },
-      {
-        "family": "Hao",
-        "given": "Yaru"
-      },
-      {
-        "family": "Ma",
-        "given": "Shuming"
-      },
-      {
-        "family": "Sui",
-        "given": "Zhifang"
-      },
-      {
-        "family": "Wei",
-        "given": "Furu"
-      }
-    ],
-    "title": "Why Can GPT Learn In-Context? Language Models as Meta-Learners",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dai2022can"
-  },
-  {
-    "id": "19AlWXYPF",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Dai",
-        "given": "Damai"
-      },
-      {
-        "family": "Dong",
-        "given": "Li"
-      },
-      {
-        "family": "Sun",
-        "given": "Yutao"
-      },
-      {
-        "family": "Ma",
-        "given": "Shuming"
-      },
-      {
-        "family": "Wei",
-        "given": "Furu"
-      }
-    ],
-    "title": "Knowledge Neurons in Pretrained Transformers",
-    "container-title": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dai2022knowledge"
-  },
-  {
-    "publisher": "Springer Berlin Heidelberg",
-    "DOI": "10.1007/978-3-540-45167-9_23",
-    "type": "chapter",
-    "page": "303-313",
-    "source": "Crossref",
-    "title": "Optimal Rates of Aggregation",
-    "author": [
-      {
-        "given": "Alexandre B.",
-        "family": "Tsybakov"
-      }
-    ],
-    "container-title": "Lecture Notes in Computer Science",
-    "issued": {
-      "date-parts": [
-        [
-          2003
-        ]
-      ]
-    },
-    "URL": "https://doi.org/czntw5",
-    "id": "12npMQT1q",
-    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1007/978-3-540-45167-9_23"
   },
   {
     "publisher": "Springer Science and Business Media LLC",
@@ -1596,100 +3417,6 @@
     "URL": "https://doi.org/gmfvmb",
     "id": "ugXwusl0",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1111/j.2517-6161.1993.tb01939.x"
-  },
-  {
-    "publisher": "ACM",
-    "DOI": "10.1145/2783258.2788613",
-    "type": "paper-conference",
-    "page": "1721-1730",
-    "source": "Crossref",
-    "title": "Intelligible Models for HealthCare",
-    "author": [
-      {
-        "given": "Rich",
-        "family": "Caruana"
-      },
-      {
-        "given": "Yin",
-        "family": "Lou"
-      },
-      {
-        "given": "Johannes",
-        "family": "Gehrke"
-      },
-      {
-        "given": "Paul",
-        "family": "Koch"
-      },
-      {
-        "given": "Marc",
-        "family": "Sturm"
-      },
-      {
-        "given": "Noemie",
-        "family": "Elhadad"
-      }
-    ],
-    "event": "KDD '15: The 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
-    "container-title": "Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
-    "issued": {
-      "date-parts": [
-        [
-          2015,
-          8,
-          10
-        ]
-      ]
-    },
-    "URL": "https://doi.org/gftgxk",
-    "id": "gSmt16Rh",
-    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/2783258.2788613"
-  },
-  {
-    "publisher": "ACM",
-    "DOI": "10.1145/3097983.3098066",
-    "type": "paper-conference",
-    "page": "275-284",
-    "source": "Crossref",
-    "title": "The Selective Labels Problem",
-    "author": [
-      {
-        "given": "Himabindu",
-        "family": "Lakkaraju"
-      },
-      {
-        "given": "Jon",
-        "family": "Kleinberg"
-      },
-      {
-        "given": "Jure",
-        "family": "Leskovec"
-      },
-      {
-        "given": "Jens",
-        "family": "Ludwig"
-      },
-      {
-        "given": "Sendhil",
-        "family": "Mullainathan"
-      }
-    ],
-    "event": "KDD '17: The 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
-    "container-title": "Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
-    "issued": {
-      "date-parts": [
-        [
-          2017,
-          8,
-          4
-        ]
-      ]
-    },
-    "URL": "https://doi.org/ggd7hz",
-    "PMCID": "PMC5958915",
-    "PMID": "29780658",
-    "id": "MGkiKe9y",
-    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/3097983.3098066"
   },
   {
     "publisher": "Association for Computing Machinery (ACM)",
@@ -6758,241 +8485,6 @@
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.6339/25-jds1181"
   },
   {
-    "id": "TPky1hwV",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Dong",
-        "given": "Qingxiu"
-      },
-      {
-        "family": "Li",
-        "given": "Lei"
-      },
-      {
-        "family": "Dai",
-        "given": "Damai"
-      },
-      {
-        "family": "Zheng",
-        "given": "Ce"
-      },
-      {
-        "family": "Wu",
-        "given": "Zhiyong"
-      },
-      {
-        "family": "Chang",
-        "given": "Baobao"
-      },
-      {
-        "family": "Sun",
-        "given": "Xu"
-      },
-      {
-        "family": "Xu",
-        "given": "Jingjing"
-      },
-      {
-        "family": "Huang",
-        "given": "Fei"
-      },
-      {
-        "family": "Li",
-        "given": "Xin"
-      }
-    ],
-    "title": "A Survey for In-context Learning",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: dong2022survey"
-  },
-  {
-    "id": "Vl20CyW4",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Doshi-Velez",
-        "given": "Finale"
-      },
-      {
-        "family": "Kim",
-        "given": "Been"
-      }
-    ],
-    "title": "Towards a Rigorous Science of Interpretable Machine Learning",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: doshi2017towards"
-  },
-  {
-    "id": "YcdobJB",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Englert",
-        "given": "Jacob"
-      },
-      {
-        "family": "Chang",
-        "given": "Howard"
-      }
-    ],
-    "title": "Spatially Varying Coefficient Models for Estimating Heterogeneous Mixture Effects",
-    "archive": "arXiv",
-    "note": "stat.AP\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: englert2025spatially"
-  },
-  {
-    "id": "eIFyeYdp",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Fan",
-        "given": "Xinyan"
-      },
-      {
-        "family": "Fang",
-        "given": "Kuangnan"
-      },
-      {
-        "family": "Lan",
-        "given": "Wei"
-      },
-      {
-        "family": "Tsai",
-        "given": "Chih-Ling"
-      }
-    ],
-    "title": "Network Varying Coefficient Model",
-    "container-title": "Journal of the American Statistical Association",
-    "DOI": "10.1080/01621459.2025.2470481",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: fan2025network"
-  },
-  {
-    "id": "qKQnj4go",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Finn",
-        "given": "Chelsea"
-      },
-      {
-        "family": "Abbeel",
-        "given": "Pieter"
-      },
-      {
-        "family": "Levine",
-        "given": "Sergey"
-      }
-    ],
-    "title": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
-    "container-title": "Proceedings of the 34th International Conference on Machine Learning",
-    "page": "1126--1135",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: finn2017model"
-  },
-  {
-    "id": "nJe4KvW1",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Hastie",
-        "given": "Trevor"
-      },
-      {
-        "family": "Tibshirani",
-        "given": "Robert"
-      }
-    ],
-    "title": "Varying-coefficient models",
-    "container-title": "Journal of the Royal Statistical Society: Series B (Methodological)",
-    "volume": "55",
-    "issue": "4",
-    "page": "757--796",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: hastie1993varying"
-  },
-  {
-    "id": "17ZQvSfwG",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Hospedales",
-        "given": "Timothy"
-      },
-      {
-        "family": "Antoniou",
-        "given": "Antreas"
-      },
-      {
-        "family": "Micaelli",
-        "given": "Paul"
-      },
-      {
-        "family": "Storkey",
-        "given": "Amos"
-      }
-    ],
-    "title": "Meta-Learning in Neural Networks: A Survey",
-    "container-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-    "volume": "44",
-    "issue": "9",
-    "page": "5149--5169",
-    "DOI": "10.1109/TPAMI.2021.3079209",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: hospedales2021meta"
-  },
-  {
-    "id": "OWMnVMab",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Hu",
-        "given": "Yiqing"
-      },
-      {
-        "family": "Zhao",
-        "given": "Qingyuan"
-      }
-    ],
-    "title": "Varying-Coefficient Panel Models with Spatial Dependence",
-    "container-title": "Journal of Econometrics",
-    "volume": "241",
-    "issue": "1",
-    "page": "105883",
-    "DOI": "10.1016/j.jeconom.2024.105883",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: hu2024varying"
-  },
-  {
-    "id": "1BRT5VuZM",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Kingma",
-        "given": "Diederik P."
-      },
-      {
-        "family": "Welling",
-        "given": "Max"
-      }
-    ],
-    "title": "Auto-Encoding Variational Bayes",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: kingma2013auto"
-  },
-  {
-    "id": "nHWat6vD",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Kingma",
-        "given": "Diederik P."
-      },
-      {
-        "family": "Ba",
-        "given": "Jimmy"
-      }
-    ],
-    "title": "Adam: A method for stochastic optimization",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: kingma2014adam"
-  },
-  {
     "id": "lGpaLCJV",
     "type": "article-journal",
     "author": [
@@ -7029,264 +8521,6 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: lei2018machinery"
   },
   {
-    "id": "5WaW1b3E",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Li",
-        "given": "Ting"
-      },
-      {
-        "family": "Yu",
-        "given": "Yang"
-      },
-      {
-        "family": "Wang",
-        "given": "Xiao"
-      },
-      {
-        "family": "Marron",
-        "given": "J.S."
-      },
-      {
-        "family": "Zhu",
-        "given": "Hongtu"
-      }
-    ],
-    "title": "Semi-nonparametric Varying Coefficients Models for Imaging Genetics",
-    "container-title": "Statistica Sinica",
-    "note": "To appear\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: li2024semi",
-    "DOI": "10.5705/ss.202024.0118"
-  },
-  {
-    "id": "40yMf8Is",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Linardatos",
-        "given": "Pantelis"
-      },
-      {
-        "family": "Papastefanopoulos",
-        "given": "Vasilis"
-      },
-      {
-        "family": "Kotsiantis",
-        "given": "Sotiris"
-      }
-    ],
-    "title": "Explainable AI: A Review of Machine Learning Interpretability Methods",
-    "container-title": "Entropy",
-    "volume": "23",
-    "issue": "1",
-    "page": "18",
-    "DOI": "10.3390/e23010018",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: linardatos2020explainable"
-  },
-  {
-    "id": "2tgTw2mh",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Locatello",
-        "given": "Francesco"
-      },
-      {
-        "family": "Bauer",
-        "given": "Stefan"
-      },
-      {
-        "family": "Lucic",
-        "given": "Mario"
-      },
-      {
-        "family": "Gelly",
-        "given": "Sylvain"
-      },
-      {
-        "family": "Schölkopf",
-        "given": "Bernhard"
-      },
-      {
-        "family": "Bachem",
-        "given": "Olivier"
-      }
-    ],
-    "title": "Challenging Common Assumptions in the Unsupervised Learning of Disentangled Representations",
-    "container-title": "International Conference on Machine Learning",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: locatello2019challenging"
-  },
-  {
-    "id": "UiqiqyOG",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Luo",
-        "given": "Chongliang"
-      },
-      {
-        "family": "Du",
-        "given": "Yihong"
-      },
-      {
-        "family": "Zhao",
-        "given": "Peng"
-      }
-    ],
-    "title": "Urban Economic Modeling with Spatially Varying Coefficients",
-    "container-title": "Regional Science and Urban Economics",
-    "volume": "99",
-    "page": "104009",
-    "DOI": "10.1016/j.regsciurbeco.2024.104009",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: luo2024urban"
-  },
-  {
-    "id": "ZYb8Bxk0",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Min",
-        "given": "Sewon"
-      },
-      {
-        "family": "Lyu",
-        "given": "Xinxi"
-      },
-      {
-        "family": "Holtzman",
-        "given": "Ari"
-      },
-      {
-        "family": "Artetxe",
-        "given": "Mikel"
-      },
-      {
-        "family": "Lewis",
-        "given": "Mike"
-      },
-      {
-        "family": "Hajishirzi",
-        "given": "Hannaneh"
-      },
-      {
-        "family": "Zettlemoyer",
-        "given": "Luke"
-      }
-    ],
-    "title": "Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?",
-    "container-title": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
-    "page": "11048--11064",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: min2022rethinking"
-  },
-  {
-    "id": "HmeksLbr",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Murakami",
-        "given": "Daisuke"
-      },
-      {
-        "family": "Shirota",
-        "given": "Shinichiro"
-      },
-      {
-        "family": "Kajita",
-        "given": "Seiji"
-      },
-      {
-        "family": "Kajita",
-        "given": "Mami"
-      }
-    ],
-    "title": "Fast Spatio-Temporally Varying Coefficient Modeling With Reluctant Interaction Selection",
-    "container-title": "Geographical Analysis",
-    "volume": "57",
-    "page": "521--539",
-    "DOI": "10.1111/gean.70005",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: murakami2025fast"
-  },
-  {
-    "id": "150dVFuGy",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Olsson",
-        "given": "Catherine"
-      }
-    ],
-    "title": "In-context Learning and Induction Heads",
-    "note": "and others\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: olsson2022incontext",
-    "archive": "arXiv"
-  },
-  {
-    "id": "Zxb6oJ4N",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Petroni",
-        "given": "Fabio"
-      },
-      {
-        "family": "Rocktäschel",
-        "given": "Tim"
-      },
-      {
-        "family": "Riedel",
-        "given": "Sebastian"
-      },
-      {
-        "family": "Lewis",
-        "given": "Patrick S. H."
-      },
-      {
-        "family": "Bakhtin",
-        "given": "Anton"
-      },
-      {
-        "family": "Wu",
-        "given": "Yuxiang"
-      },
-      {
-        "family": "Miller",
-        "given": "Alexander H."
-      }
-    ],
-    "title": "Language Models as Knowledge Bases?",
-    "container-title": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
-    "page": "2463--2473",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: petroni2019language"
-  },
-  {
-    "id": "1AsYpVghl",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Ruder",
-        "given": "Sebastian"
-      }
-    ],
-    "title": "An Overview of Multi-Task Learning in Deep Neural Networks",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ruder2017overview"
-  },
-  {
-    "id": "PeotCKyQ",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Tibshirani",
-        "given": "Robert"
-      }
-    ],
-    "title": "Regression shrinkage and selection via the lasso",
-    "container-title": "Journal of the Royal Statistical Society: Series B (Methodological)",
-    "volume": "58",
-    "issue": "1",
-    "page": "267--288",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: tibshirani1996regression"
-  },
-  {
     "id": "15RY4QKp3",
     "type": "paper-conference",
     "title": "Principles of Risk Minimization for Learning Theory",
@@ -7306,106 +8540,6 @@
     "event": "Advances in Neural Information Processing Systems (NIPS 1991)",
     "URL": "https://proceedings.neurips.cc/paper/1991/file/ff4d5fbbafdf976cfdc032e3bde78de5-Abstract.html",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: vapnik1991principles"
-  },
-  {
-    "id": "eqOwOT6q",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Vaswani",
-        "given": "Ashish"
-      },
-      {
-        "family": "Shazeer",
-        "given": "Noam"
-      },
-      {
-        "family": "Parmar",
-        "given": "Niki"
-      },
-      {
-        "family": "Uszkoreit",
-        "given": "Jakob"
-      },
-      {
-        "family": "Jones",
-        "given": "Llion"
-      },
-      {
-        "family": "Gomez",
-        "given": "Aidan N."
-      },
-      {
-        "family": "Kaiser",
-        "given": "Lukasz"
-      },
-      {
-        "family": "Polosukhin",
-        "given": "Illia"
-      }
-    ],
-    "title": "Attention Is All You Need",
-    "container-title": "Advances in Neural Information Processing Systems 30",
-    "page": "5998--6008",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: vaswani2017attention"
-  },
-  {
-    "id": "1CanAlj65",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Ataee Tarzanagh",
-        "given": "Davoud"
-      },
-      {
-        "family": "Li",
-        "given": "Yingcong"
-      },
-      {
-        "family": "Thrampoulidis",
-        "given": "Christos"
-      },
-      {
-        "family": "Oymak",
-        "given": "Samet"
-      }
-    ],
-    "title": "Transformers as Support Vector Machines",
-    "container-title": "Proceedings of the 40th International Conference on Machine Learning",
-    "page": "35017--35037",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: von2023transformers"
-  },
-  {
-    "id": "1A9CGb6kl",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Balseiro",
-        "given": "Santiago"
-      },
-      {
-        "family": "Golrezaei",
-        "given": "Negin"
-      },
-      {
-        "family": "Mahdian",
-        "given": "Mohammad"
-      },
-      {
-        "family": "Mirrokni",
-        "given": "Vahab"
-      },
-      {
-        "family": "Schneider",
-        "given": "Jon"
-      }
-    ],
-    "title": "Contextual Bandits with Cross-Learning",
-    "container-title": "Advances in Neural Information Processing Systems",
-    "volume": "32",
-    "page": "",
-    "publisher": "Curran Associates, Inc.",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wang2018contextual"
   },
   {
     "id": "Do5Pmykz",
@@ -7439,183 +8573,5 @@
     "title": "Efficient and Effective Query Context-Aware Learning-to-Rank Model for Sequential Recommendation",
     "archive": "arXiv",
     "note": "cs.IR\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wang2019efficiency"
-  },
-  {
-    "id": "VphcPzBL",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Wang",
-        "given": "Yunfei"
-      },
-      {
-        "family": "Sun",
-        "given": "Qiang"
-      }
-    ],
-    "title": "Boosted Trees for Varying-Coefficient Models",
-    "container-title": "Machine Learning",
-    "note": "To appear\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wang2025boosted",
-    "DOI": "10.1007/s00180-025-01603-8"
-  },
-  {
-    "id": "BXrKAqFG",
-    "type": "paper-conference",
-    "author": [
-      {
-        "family": "Wei",
-        "given": "Jason"
-      },
-      {
-        "family": "Wang",
-        "given": "Xuezhi"
-      },
-      {
-        "family": "Schuurmans",
-        "given": "Dale"
-      },
-      {
-        "family": "Bosma",
-        "given": "Maarten"
-      },
-      {
-        "family": "Xia",
-        "given": "Fei"
-      },
-      {
-        "family": "Chi",
-        "given": "Ed"
-      },
-      {
-        "family": "Le",
-        "given": "Quoc V."
-      },
-      {
-        "family": "Zhou",
-        "given": "Denny"
-      }
-    ],
-    "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
-    "container-title": "Advances in Neural Information Processing Systems 35",
-    "page": "6021--6035",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wei2022chain"
-  },
-  {
-    "id": "z62tJ72i",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Wei",
-        "given": "Jason"
-      },
-      {
-        "family": "Tay",
-        "given": "Yi"
-      },
-      {
-        "family": "Bommasani",
-        "given": "Rishi"
-      },
-      {
-        "family": "Raffel",
-        "given": "Colin"
-      },
-      {
-        "family": "Zoph",
-        "given": "Barret"
-      },
-      {
-        "family": "Borgeaud",
-        "given": "Sebastian"
-      },
-      {
-        "family": "Yogatama",
-        "given": "Dani"
-      },
-      {
-        "family": "Bosma",
-        "given": "Maarten"
-      },
-      {
-        "family": "Zhou",
-        "given": "Denny"
-      },
-      {
-        "family": "Metzler",
-        "given": "Donald"
-      },
-      {
-        "family": "Chi",
-        "given": "Ed H."
-      },
-      {
-        "family": "Hashimoto",
-        "given": "Tatsunori"
-      },
-      {
-        "family": "Vinyals",
-        "given": "Oriol"
-      },
-      {
-        "family": "Liang",
-        "given": "Percy"
-      },
-      {
-        "family": "Dean",
-        "given": "Jeff"
-      },
-      {
-        "family": "Fedus",
-        "given": "William"
-      }
-    ],
-    "title": "Emergent Abilities of Large Language Models",
-    "container-title": "Transactions on Machine Learning Research",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: wei2022emergent"
-  },
-  {
-    "id": "dg3bTKFO",
-    "type": "manuscript",
-    "author": [
-      {
-        "family": "Xie",
-        "given": "Sang Michael"
-      },
-      {
-        "family": "Raghunathan",
-        "given": "Aditi"
-      },
-      {
-        "family": "Liang",
-        "given": "Percy"
-      },
-      {
-        "family": "Ma",
-        "given": "Tengyu"
-      }
-    ],
-    "title": "An Explanation of In-context Learning as Implicit Bayesian Inference",
-    "archive": "arXiv",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: xie2021an"
-  },
-  {
-    "id": "6zMua9lq",
-    "type": "article-journal",
-    "author": [
-      {
-        "family": "Yuan",
-        "given": "Ming"
-      },
-      {
-        "family": "Lin",
-        "given": "Yi"
-      }
-    ],
-    "title": "Model selection and estimation in regression with grouped variables",
-    "container-title": "Journal of the Royal Statistical Society: Series B (Statistical Methodology)",
-    "volume": "68",
-    "issue": "1",
-    "page": "49--67",
-    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: yuan2006model"
   }
 ]
