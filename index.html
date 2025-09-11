@@ -8,7 +8,7 @@
   <meta name="author" content="Caleb N. Ellington" />
   <meta name="author" content="Yue Yao" />
   <meta name="author" content="Dong Liu" />
-  <meta name="dcterms.date" content="2025-09-06" />
+  <meta name="dcterms.date" content="2025-09-11" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: Bridging Statistical and Foundation Models</title>
   <style>
@@ -53,11 +53,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-06" />
-  <meta name="citation_publication_date" content="2025-09-06" />
-  <meta property="article:published_time" content="2025-09-06" />
-  <meta name="dc.modified" content="2025-09-06T06:59:36+00:00" />
-  <meta property="article:modified_time" content="2025-09-06T06:59:36+00:00" />
+  <meta name="dc.date" content="2025-09-11" />
+  <meta name="citation_publication_date" content="2025-09-11" />
+  <meta property="article:published_time" content="2025-09-11" />
+  <meta name="dc.modified" content="2025-09-11T19:38:05+00:00" />
+  <meta property="article:modified_time" content="2025-09-11T19:38:05+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,10 +104,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/4a1e9ed17780d4227c9578347dcbc9ed431571ee">AdaptInfer/context-review@4a1e9ed</a>
-on September 6, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/3e7afa3d4e28d08431692ac134f56a73bf75e822">AdaptInfer/context-review@3e7afa3</a>
+on September 11, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -231,59 +231,38 @@ where <span class="math inline">\(\ell(X; \theta)\)</span> is the log-likelihood
 \]</span></p>
 <p>where <span class="math inline">\(D(c_i, c_j)\)</span> is a distance metric between contexts. This approach allows for smoother parameter variation but requires careful choice of <span class="math inline">\(D\)</span> and regularization strength <span class="math inline">\(\lambda\)</span> to balance bias and variance.<br />
 The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff.</p>
-<h4 id="parametric-varying-coefficient-models">Parametric Varying-coefficient models</h4>
-<p>Original paper (based on a smoothing spline function): <span class="citation" data-cites="ugXwusl0">[<a href="#ref-ugXwusl0" role="doc-biblioref">1</a>]</span>
-Markov networks: <span class="citation" data-cites="TULLRYDp">[<a href="#ref-TULLRYDp" role="doc-biblioref">2</a>]</span>
-Linear varying-coefficient models assume that parameters vary linearly with covariates, a much stronger assumption than the classic varying-coefficient model but making a conceptual leap that allows us to define a form for the relationship between the parameters and covariates.
-<span class="math display">\[\widehat{\theta}_0, ..., \widehat{\theta}_N = \widehat{A} C^T\]</span>
-<span class="math display">\[ \widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i) \]</span></p>
-<p>TODO: Note that they achieve distance-matching by using a distance metric under Euclidean distance, which is a special case of the distance-regularized estimation above.</p>
-<h5 id="semi-parametric-varying-coefficient-models">Semi-parametric varying-coefficient Models</h5>
-<p>Original paper: <span class="citation" data-cites="l6vMkIsa">[<a href="#ref-l6vMkIsa" role="doc-biblioref">3</a>]</span>
-2-step estimation with RBF kernels: <span class="citation" data-cites="1CkxORTSX">[<a href="#ref-1CkxORTSX" role="doc-biblioref">4</a>]</span></p>
-<p>Classic varying-coefficient models assume that models with similar covariates have similar parameters, or – more formally – that changes in parameters are smooth over the covariate space.
-This assumption is encoded as a sample weighting, often using a kernel, where the relevance of a sample to a model is equivalent to its kernel similarity over the covariate space.
-<span class="math display">\[\widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N} \sum_{i, j} \frac{K(c_i, c_j)}{\sum_{k} K(c_i, c_k)} \ell(x_j; \theta_i)\]</span>
-This estimator is the simplest to recover <span class="math inline">\(N\)</span> unique parameter estimates.
-However, the assumption here is contradictory to the partition model estimator.
-When the relationship between covariates and parameters is discontinuous or abrupt, this estimator will fail.</p>
-<h5 id="contextualized-models">Contextualized Models</h5>
-<p>Seminal work <span class="citation" data-cites="SfCo6pSp">[<a href="#ref-SfCo6pSp" role="doc-biblioref">5</a>]</span>
-Contextualized ML generalization and applications: <span class="citation" data-cites="HYsEq2UQ">[<a href="#ref-HYsEq2UQ" role="doc-biblioref">6</a>]</span>, <span class="citation" data-cites="grNza1Og">[<a href="#ref-grNza1Og" role="doc-biblioref">7</a>]</span>, <span class="citation" data-cites="4cK1tiec">[<a href="#ref-4cK1tiec" role="doc-biblioref">8</a>]</span>, <span class="citation" data-cites="nYipTPML">[<a href="#ref-nYipTPML" role="doc-biblioref">9</a>]</span>, <span class="citation" data-cites="esxxcr9l">[<a href="#ref-esxxcr9l" role="doc-biblioref">10</a>]</span>, <span class="citation" data-cites="O1UU4a5P">[<a href="#ref-O1UU4a5P" role="doc-biblioref">11</a>]</span>, <span class="citation" data-cites="Rt6voTFN">[<a href="#ref-Rt6voTFN" role="doc-biblioref">12</a>]</span>, <span class="citation" data-cites="9S6tI5yv">[<a href="#ref-9S6tI5yv" role="doc-biblioref">13</a>]</span></p>
-<p>Contextualized models make the assumption that parameters are some function of context, but make no assumption on the form of that function.
-In this regime, we seek to estimate the function often using a deep learner (if we have some differentiable proxy for probability):
-<span class="math display">\[ \widehat{f} = \arg \max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)) \]</span></p>
-<h3 id="latent-structure-models">Latent-structure Models</h3>
-<h5 id="partition-models">Partition Models</h5>
-<p>Markov networks: <span class="citation" data-cites="lAsTg3IH">[<a href="#ref-lAsTg3IH" role="doc-biblioref">14</a>]</span>
-Partition models also assume that parameters can be partitioned into homogeneous groups over the covariate space, but make no assumption about where these partitions occur.
-This allows the use of information from different groups in estimating a model for a each covariate.
-Partition model estimators are most often utilized to infer abrupt model changes over time and take the form
-<span class="math display">\[ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N} \sum_i \ell(x_i; \theta_i) + \sum_{i = 2}^N \text{TV}(\theta_i, \theta_{i-1})\]</span>
-Where the regularizaiton term might take the form
-<span class="math display">\[\text{TV}(\theta_i, \theta_{i - 1}) = |\theta_i - \theta_{i-1}|\]</span>
-This still fails to recover a unique parameter estimate for each sample, but gets closer to the spirit of personalized modeling by putting the model likelihood and partition regularizer in competition to find the optimal partitions.</p>
+<h3 id="parametric-and-semi-parametric-varying-coefficient-models">Parametric and Semi-parametric Varying-Coefficient Models</h3>
+<p>Varying-coefficient models (VCMs) provide one of the earliest formal frameworks for explicit adaptivity. Parametric VCMs assume that parameters vary linearly with covariates, a restrictive but interpretable assumption <span class="citation" data-cites="ugXwusl0">[<a href="#ref-ugXwusl0" role="doc-biblioref">1</a>]</span>. The estimation can be written as
+<span class="math display">\[
+\widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i).
+\]</span>
+This formulation can be interpreted as a special case of distance-regularized estimation where the distance metric is Euclidean. Related developments in graphical models extend this idea to structured dependencies <span class="citation" data-cites="TULLRYDp">[<a href="#ref-TULLRYDp" role="doc-biblioref">2</a>]</span>.</p>
+<p>Semi-parametric VCMs relax the linearity assumption by requiring only that parameter variation be smooth. This is commonly encoded through kernel weighting, where the relevance of each sample is determined by its similarity in the covariate space <span class="citation" data-cites="l6vMkIsa 1CkxORTSX">[<a href="#ref-l6vMkIsa" role="doc-biblioref">3</a>,<a href="#ref-1CkxORTSX" role="doc-biblioref">4</a>]</span>. These models are more flexible but may fail when the true relationship between covariates and parameters is discontinuous.</p>
+<h3 id="contextualized-models">Contextualized Models</h3>
+<p>Contextualized models take a fully non-parametric approach, introduced in <span class="citation" data-cites="SfCo6pSp">[<a href="#ref-SfCo6pSp" role="doc-biblioref">5</a>]</span>. They assume that parameters are functions of context, <span class="math inline">\(f(c)\)</span>, but do not restrict the form of <span class="math inline">\(f\)</span>. Instead, <span class="math inline">\(f\)</span> is estimated directly, often with deep neural networks as function approximators:
+<span class="math display">\[
+\widehat{f} = \arg \max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)).
+\]</span>
+This framework has been widely applied, from machine learning toolboxes <span class="citation" data-cites="HYsEq2UQ 4cK1tiec">[<a href="#ref-HYsEq2UQ" role="doc-biblioref">6</a>,<a href="#ref-4cK1tiec" role="doc-biblioref">7</a>]</span> to personalized genomics <span class="citation" data-cites="Rt6voTFN grNza1Og">[<a href="#ref-Rt6voTFN" role="doc-biblioref">8</a>,<a href="#ref-grNza1Og" role="doc-biblioref">9</a>]</span>, biomedical informatics <span class="citation" data-cites="nYipTPML esxxcr9l O1UU4a5P">[<a href="#ref-nYipTPML" role="doc-biblioref">10</a>,<a href="#ref-esxxcr9l" role="doc-biblioref">11</a>,<a href="#ref-O1UU4a5P" role="doc-biblioref">12</a>]</span>, and contextual feature selection <span class="citation" data-cites="9S6tI5yv">[<a href="#ref-9S6tI5yv" role="doc-biblioref">13</a>]</span>. These examples highlight how contextual signals can drive adaptation without assuming a fixed functional form.</p>
+<h3 id="partition-and-latent-structure-models">Partition and Latent-Structure Models</h3>
+<p>Partition models extend the contextualized framework by assuming that parameters can be divided into homogeneous groups, while leaving group boundaries to be inferred. This design is useful for capturing abrupt changes over covariates such as time. Estimation typically balances the likelihood with a penalty on parameter differences between adjacent samples, often expressed through a Total Variation (TV) penalty <span class="citation" data-cites="lAsTg3IH">[<a href="#ref-lAsTg3IH" role="doc-biblioref">14</a>]</span>:
+<span class="math display">\[
+\{\widehat{\theta}_0, \dots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \dots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) + \lambda \sum_{i = 2}^N \|\theta_i - \theta_{i-1}\| \right).
+\]</span>
+By encouraging piecewise-constant structures, partition models get closer to personalized modeling, balancing fit and parsimony.</p>
 <h3 id="fine-tuned-models-and-transfer-learning">Fine-tuned Models and Transfer Learning</h3>
-<p>Review: <span class="citation" data-cites="k6r0UwSv">[<a href="#ref-k6r0UwSv" role="doc-biblioref">15</a>]</span>
-Noted in foundational literature for linear varying coefficient models <span class="citation" data-cites="l6vMkIsa">[<a href="#ref-l6vMkIsa" role="doc-biblioref">3</a>]</span></p>
-<p>Estimate a population model, freeze these parameters, and then include a smaller set of personalized parameters to estimate on a smaller subpopulation.
-<span class="math display">\[ \widehat{\gamma} = \arg\max_{\gamma} = \ell(\gamma; X) \]</span>
-<span class="math display">\[ \widehat{\theta_c} = \arg\max_{\theta_c} = \ell(\theta_c; \widehat{\gamma}, X_c) \]</span></p>
-<h3 id="context-informed-and-latent-structure-models">Context-informed and Latent-structure models</h3>
-<p>Seminal paper: <span class="citation" data-cites="WlwUpYp">[<a href="#ref-WlwUpYp" role="doc-biblioref">16</a>]</span></p>
-<p>Key idea: negative information sharing. Different models should be pushed apart.
-<span class="math display">\[ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N, D} \sum_{i=0}^N \prod_{j=0 s.t. D(c_i, c_j) &lt; d}^N P(x_j; \theta_i) P(\theta_i ; \theta_j) \]</span></p>
+<p>Another practical strategy for handling heterogeneity is fine-tuning. A global population model is first estimated, and then a smaller set of parameters is updated for particular subpopulations. This idea underlies transfer learning, where large pre-trained models are adapted to new tasks with limited additional training <span class="citation" data-cites="k6r0UwSv">[<a href="#ref-k6r0UwSv" role="doc-biblioref">15</a>]</span>. Fine-tuning balances the bias–variance tradeoff by borrowing statistical strength from large datasets while preserving flexibility for local adaptation. This notion was already recognized in early VCM literature as a form of semi-parametric estimation <span class="citation" data-cites="l6vMkIsa">[<a href="#ref-l6vMkIsa" role="doc-biblioref">3</a>]</span>.</p>
+<h3 id="models-for-explicit-subgroup-separation">Models for Explicit Subgroup Separation</h3>
+<p>Most adaptive methods encourage parameters for similar contexts to converge, but recent work explores the opposite: ensuring that models for distinct subgroups remain separated. This prevents minority subgroups from collapsing into majority patterns. Such “negative information sharing” is often implemented by learning representations that disentangle subgroup structure, bridging statistical partitioning with adversarial or contrastive learning objectives <span class="citation" data-cites="WlwUpYp">[<a href="#ref-WlwUpYp" role="doc-biblioref">16</a>]</span>.</p>
 <h3 id="a-spectrum-of-context-awareness">A Spectrum of Context-Awareness</h3>
-<p>Context-aware models can be viewed along a spectrum of assumptions about the relationship between context and parameters.</p>
-<p><strong>Global models</strong>: <span class="math inline">\(\theta_i = \theta\)</span> for all <span class="math inline">\(i\)</span><br />
-<strong>Grouped models</strong>: <span class="math inline">\(\theta_i = \theta_c\)</span> for some finite set of groups<br />
-<strong>Smooth models</strong>: <span class="math inline">\(\theta_i = f(c_i)\)</span>, with <span class="math inline">\(f\)</span> assumed to be continuous or low-complexity<br />
-<strong>Latent models</strong>: <span class="math inline">\(\theta_i \sim P(\theta | c_i)\)</span>, with <span class="math inline">\(f\)</span> learned implicitly</p>
-<p>Each of these choices encodes different beliefs about how parameters vary. The next section formalizes this variation and examines general principles for adaptivity in statistical modeling.</p>
-<p>Relevant references:</p>
+<p>Context-aware models can be organized along a spectrum of assumptions about the relationship between context and parameters:</p>
 <ul>
-<li>Can Subpopulation Shifts Explain Disagreement in Model Generalization? <span class="citation" data-cites="HzzgJQN0">[<a href="#ref-HzzgJQN0" role="doc-biblioref">17</a>]</span></li>
+<li><strong>Global models</strong>: <span class="math inline">\(\theta_i = \theta\)</span> for all <span class="math inline">\(i\)</span>.</li>
+<li><strong>Grouped models</strong>: <span class="math inline">\(\theta_i = \theta_c\)</span> for some finite set of groups.</li>
+<li><strong>Smooth models</strong>: <span class="math inline">\(\theta_i = f(c_i)\)</span>, with <span class="math inline">\(f\)</span> assumed to be continuous or low-complexity.</li>
+<li><strong>Latent models</strong>: <span class="math inline">\(\theta_i \sim P(\theta \mid c_i)\)</span>, with <span class="math inline">\(f\)</span> learned implicitly.</li>
 </ul>
+<p>Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. For a discussion of how subpopulation shifts influence generalization, see <span class="citation" data-cites="HzzgJQN0">[<a href="#ref-HzzgJQN0" role="doc-biblioref">17</a>]</span>.</p>
 <h2 id="principles-of-context-adaptive-inference">Principles of Context-Adaptive Inference</h2>
 <p>What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is beneficial. This section formalizes the core principles that underlie adaptive modeling and situates them within both classical statistics and recent advances in machine learning.</p>
 <p>Adaptivity is best understood as a structured set of design choices rather than a single mechanism. Each principle described below highlights a different axis along which models can incorporate or restrict adaptation. Flexibility captures the representational capacity needed for adaptation, while signals of heterogeneity determine when adaptation is justified. Modularity helps organize adaptation into interpretable and transferable units, and selectivity guards against overfitting by controlling when adaptation is triggered. Data efficiency limits how finely we can adapt in practice, and tradeoffs remind us that adaptation is never free of cost. Together, these principles define both the promise and the risks of adaptive systems.</p>
@@ -602,23 +581,23 @@ g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
 <div id="ref-HYsEq2UQ" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline"><strong>Contextualized Machine Learning</strong> <div class="csl-block">Benjamin Lengerich, Caleb N Ellington, Andrea Rubbi, Manolis Kellis, Eric P Xing</div> <em>arXiv</em> (2023) <a href="https://doi.org/gt68jg">https://doi.org/gt68jg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2310.11340">10.48550/arxiv.2310.11340</a></div></div>
 </div>
-<div id="ref-grNza1Og" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline"><strong>NOTMAD: Estimating Bayesian Networks with Sample-Specific Structures and Parameters</strong> <div class="csl-block">Ben Lengerich, Caleb Ellington, Bryon Aragam, Eric P Xing, Manolis Kellis</div> <em>arXiv</em> (2021) <a href="https://doi.org/gt68jc">https://doi.org/gt68jc</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2111.01104">10.48550/arxiv.2111.01104</a></div></div>
-</div>
 <div id="ref-4cK1tiec" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Contextualized: Heterogeneous Modeling Toolbox</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Wesley Lo, Aaron Alvarez, Andrea Rubbi, Manolis Kellis, Eric P Xing</div> <em>Journal of Open Source Software</em> (2024-05-08) <a href="https://doi.org/gt68h8">https://doi.org/gt68h8</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.06469">10.21105/joss.06469</a></div></div>
-</div>
-<div id="ref-nYipTPML" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>Contextualized Policy Recovery: Modeling and Interpreting Medical Decisions with Adaptive Imitation Learning</strong> <div class="csl-block">Jannik Deuschel, Caleb N Ellington, Yingtao Luo, Benjamin J Lengerich, Pascal Friederich, Eric P Xing</div> <em>arXiv</em> (2023) <a href="https://doi.org/gt68jf">https://doi.org/gt68jf</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2310.07918">10.48550/arxiv.2310.07918</a></div></div>
-</div>
-<div id="ref-esxxcr9l" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Automated interpretable discovery of heterogeneous treatment effectiveness: A COVID-19 case study</strong> <div class="csl-block">Benjamin J Lengerich, Mark E Nunnally, Yin Aphinyanaphongs, Caleb Ellington, Rich Caruana</div> <em>Journal of Biomedical Informatics</em> (2022-06) <a href="https://doi.org/gt68h5">https://doi.org/gt68h5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.jbi.2022.104086">10.1016/j.jbi.2022.104086</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/35504543">35504543</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9055753">PMC9055753</a></div></div>
-</div>
-<div id="ref-O1UU4a5P" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Discriminative Subtyping of Lung Cancers from Histopathology Images via Contextual Deep Learning</strong> <div class="csl-block">Benjamin J Lengerich, Maruan Al-Shedivat, Amir Alavi, Jennifer Williams, Sami Labbaki, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2020-06-26) <a href="https://doi.org/gt68h6">https://doi.org/gt68h6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.06.25.20140053">10.1101/2020.06.25.20140053</a></div></div>
+<div class="csl-left-margin">7. </div><div class="csl-right-inline"><strong>Contextualized: Heterogeneous Modeling Toolbox</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Wesley Lo, Aaron Alvarez, Andrea Rubbi, Manolis Kellis, Eric P Xing</div> <em>Journal of Open Source Software</em> (2024-05-08) <a href="https://doi.org/gt68h8">https://doi.org/gt68h8</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.06469">10.21105/joss.06469</a></div></div>
 </div>
 <div id="ref-Rt6voTFN" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Learning to Estimate Sample-specific Transcriptional Networks for 7000 Tumors</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Thomas BK Watkins, Jiekun Yang, Abhinav Adduri, Sazan Mahbub, Hanxi Xiao, Manolis Kellis, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2023-12-04) <a href="https://doi.org/gt68h7">https://doi.org/gt68h7</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.12.01.569658">10.1101/2023.12.01.569658</a></div></div>
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Learning to Estimate Sample-specific Transcriptional Networks for 7000 Tumors</strong> <div class="csl-block">Caleb N Ellington, Benjamin J Lengerich, Thomas BK Watkins, Jiekun Yang, Abhinav Adduri, Sazan Mahbub, Hanxi Xiao, Manolis Kellis, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2023-12-04) <a href="https://doi.org/gt68h7">https://doi.org/gt68h7</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2023.12.01.569658">10.1101/2023.12.01.569658</a></div></div>
+</div>
+<div id="ref-grNza1Og" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>NOTMAD: Estimating Bayesian Networks with Sample-Specific Structures and Parameters</strong> <div class="csl-block">Ben Lengerich, Caleb Ellington, Bryon Aragam, Eric P Xing, Manolis Kellis</div> <em>arXiv</em> (2021) <a href="https://doi.org/gt68jc">https://doi.org/gt68jc</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2111.01104">10.48550/arxiv.2111.01104</a></div></div>
+</div>
+<div id="ref-nYipTPML" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Contextualized Policy Recovery: Modeling and Interpreting Medical Decisions with Adaptive Imitation Learning</strong> <div class="csl-block">Jannik Deuschel, Caleb N Ellington, Yingtao Luo, Benjamin J Lengerich, Pascal Friederich, Eric P Xing</div> <em>arXiv</em> (2023) <a href="https://doi.org/gt68jf">https://doi.org/gt68jf</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2310.07918">10.48550/arxiv.2310.07918</a></div></div>
+</div>
+<div id="ref-esxxcr9l" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Automated interpretable discovery of heterogeneous treatment effectiveness: A COVID-19 case study</strong> <div class="csl-block">Benjamin J Lengerich, Mark E Nunnally, Yin Aphinyanaphongs, Caleb Ellington, Rich Caruana</div> <em>Journal of Biomedical Informatics</em> (2022-06) <a href="https://doi.org/gt68h5">https://doi.org/gt68h5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.jbi.2022.104086">10.1016/j.jbi.2022.104086</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/35504543">35504543</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9055753">PMC9055753</a></div></div>
+</div>
+<div id="ref-O1UU4a5P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Discriminative Subtyping of Lung Cancers from Histopathology Images via Contextual Deep Learning</strong> <div class="csl-block">Benjamin J Lengerich, Maruan Al-Shedivat, Amir Alavi, Jennifer Williams, Sami Labbaki, Eric P Xing</div> <em>Cold Spring Harbor Laboratory</em> (2020-06-26) <a href="https://doi.org/gt68h6">https://doi.org/gt68h6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.06.25.20140053">10.1101/2020.06.25.20140053</a></div></div>
 </div>
 <div id="ref-9S6tI5yv" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Contextual Feature Selection with Conditional Stochastic Gates</strong> <div class="csl-block">Ram Dyuthi Sristi, Ofir Lindenbaum, Shira Lifshitz, Maria Lavzin, Jackie Schiller, Gal Mishne, Hadas Benisty</div> <em>arXiv</em> (2023) <a href="https://doi.org/gt68jh">https://doi.org/gt68jh</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2312.14254">10.48550/arxiv.2312.14254</a></div></div>
