@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-06'
+date-meta: '2025-09-11'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-06" />
-  <meta name="citation_publication_date" content="2025-09-06" />
-  <meta property="article:published_time" content="2025-09-06" />
-  <meta name="dc.modified" content="2025-09-06T06:59:36+00:00" />
-  <meta property="article:modified_time" content="2025-09-06T06:59:36+00:00" />
+  <meta name="dc.date" content="2025-09-11" />
+  <meta name="citation_publication_date" content="2025-09-11" />
+  <meta property="article:published_time" content="2025-09-11" />
+  <meta name="dc.modified" content="2025-09-11T19:38:05+00:00" />
+  <meta property="article:modified_time" content="2025-09-11T19:38:05+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/4a1e9ed17780d4227c9578347dcbc9ed431571ee/))
+([permalink](https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/))
 was automatically generated
-from [AdaptInfer/context-review@4a1e9ed](https://github.com/AdaptInfer/context-review/tree/4a1e9ed17780d4227c9578347dcbc9ed431571ee)
-on September 6, 2025.
+from [AdaptInfer/context-review@3e7afa3](https://github.com/AdaptInfer/context-review/tree/3e7afa3d4e28d08431692ac134f56a73bf75e822)
+on September 11, 2025.
 </em></small>
 
 
@@ -255,79 +255,50 @@ $$
 where $D(c_i, c_j)$ is a distance metric between contexts. This approach allows for smoother parameter variation but requires careful choice of $D$ and regularization strength $\lambda$ to balance bias and variance.  
 The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff.
 
-#### Parametric Varying-coefficient models
-Original paper (based on a smoothing spline function): @doi:10.1111/j.2517-6161.1993.tb01939.x
-Markov networks: @doi:10.1080/01621459.2021.2000866
-Linear varying-coefficient models assume that parameters vary linearly with covariates, a much stronger assumption than the classic varying-coefficient model but making a conceptual leap that allows us to define a form for the relationship between the parameters and covariates. 
-$$\widehat{\theta}_0, ..., \widehat{\theta}_N = \widehat{A} C^T$$
-$$ \widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i) $$
+### Parametric and Semi-parametric Varying-Coefficient Models
 
-TODO: Note that they achieve distance-matching by using a distance metric under Euclidean distance, which is a special case of the distance-regularized estimation above.
+Varying-coefficient models (VCMs) provide one of the earliest formal frameworks for explicit adaptivity. Parametric VCMs assume that parameters vary linearly with covariates, a restrictive but interpretable assumption [@doi:10.1111/j.2517-6161.1993.tb01939.x]. The estimation can be written as
+$$
+\widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i).
+$$
+This formulation can be interpreted as a special case of distance-regularized estimation where the distance metric is Euclidean. Related developments in graphical models extend this idea to structured dependencies [@doi:10.1080/01621459.2021.2000866].
 
-##### Semi-parametric varying-coefficient Models
-Original paper: @doi:10.1214/aos/1017939139
-2-step estimation with RBF kernels: @arxiv:2103.00315
+Semi-parametric VCMs relax the linearity assumption by requiring only that parameter variation be smooth. This is commonly encoded through kernel weighting, where the relevance of each sample is determined by its similarity in the covariate space [@doi:10.1214/aos/1017939139; @arxiv:2103.00315]. These models are more flexible but may fail when the true relationship between covariates and parameters is discontinuous.
 
-Classic varying-coefficient models assume that models with similar covariates have similar parameters, or -- more formally -- that changes in parameters are smooth over the covariate space.
-This assumption is encoded as a sample weighting, often using a kernel, where the relevance of a sample to a model is equivalent to its kernel similarity over the covariate space.
-$$\widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N} \sum_{i, j} \frac{K(c_i, c_j)}{\sum_{k} K(c_i, c_k)} \ell(x_j; \theta_i)$$
-This estimator is the simplest to recover $N$ unique parameter estimates. 
-However, the assumption here is contradictory to the partition model estimator. 
-When the relationship between covariates and parameters is discontinuous or abrupt, this estimator will fail.
+### Contextualized Models
 
-##### Contextualized Models
-Seminal work @doi:10.48550/arXiv.1705.10301
-Contextualized ML generalization and applications: @doi:10.48550/arXiv.2310.11340, @doi:10.48550/arXiv.2111.01104, @doi:10.21105/joss.06469, @doi:10.48550/arXiv.2310.07918, @doi:10.1016/j.jbi.2022.104086, @doi:10.1101/2020.06.25.20140053, @doi:10.1101/2023.12.01.569658, @doi:10.48550/arXiv.2312.14254
+Contextualized models take a fully non-parametric approach, introduced in [@doi:10.48550/arXiv.1705.10301]. They assume that parameters are functions of context, $f(c)$, but do not restrict the form of $f$. Instead, $f$ is estimated directly, often with deep neural networks as function approximators:
+$$
+\widehat{f} = \arg \max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)).
+$$
+This framework has been widely applied, from machine learning toolboxes [@doi:10.48550/arXiv.2310.11340; @doi:10.21105/joss.06469] to personalized genomics [@doi:10.1101/2023.12.01.569658; @doi:10.48550/arXiv.2111.01104], biomedical informatics [@doi:10.48550/arXiv.2310.07918; @doi:10.1016/j.jbi.2022.104086; @doi:10.1101/2020.06.25.20140053], and contextual feature selection [@doi:10.48550/arXiv.2312.14254]. These examples highlight how contextual signals can drive adaptation without assuming a fixed functional form.
 
-Contextualized models make the assumption that parameters are some function of context, but make no assumption on the form of that function. 
-In this regime, we seek to estimate the function often using a deep learner (if we have some differentiable proxy for probability):
-$$ \widehat{f} = \arg \max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)) $$
+### Partition and Latent-Structure Models
 
-### Latent-structure Models
-
-##### Partition Models
-Markov networks: @doi:10.1214/09-AOAS308
-Partition models also assume that parameters can be partitioned into homogeneous groups over the covariate space, but make no assumption about where these partitions occur.
-This allows the use of information from different groups in estimating a model for a each covariate. 
-Partition model estimators are most often utilized to infer abrupt model changes over time and take the form
-$$ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N} \sum_i \ell(x_i; \theta_i) + \sum_{i = 2}^N \text{TV}(\theta_i, \theta_{i-1})$$
-Where the regularizaiton term might take the form 
-$$\text{TV}(\theta_i, \theta_{i - 1}) = |\theta_i - \theta_{i-1}|$$ 
-This still fails to recover a unique parameter estimate for each sample, but gets closer to the spirit of personalized modeling by putting the model likelihood and partition regularizer in competition to find the optimal partitions. 
-
+Partition models extend the contextualized framework by assuming that parameters can be divided into homogeneous groups, while leaving group boundaries to be inferred. This design is useful for capturing abrupt changes over covariates such as time. Estimation typically balances the likelihood with a penalty on parameter differences between adjacent samples, often expressed through a Total Variation (TV) penalty [@doi:10.1214/09-AOAS308]:
+$$
+\{\widehat{\theta}_0, \dots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \dots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) + \lambda \sum_{i = 2}^N \|\theta_i - \theta_{i-1}\| \right).
+$$
+By encouraging piecewise-constant structures, partition models get closer to personalized modeling, balancing fit and parsimony.
 
 ### Fine-tuned Models and Transfer Learning
-Review: @doi:10.48550/arXiv.2206.02058
-Noted in foundational literature for linear varying coefficient models @doi:10.1214/aos/1017939139
 
-Estimate a population model, freeze these parameters, and then include a smaller set of personalized parameters to estimate on a smaller subpopulation.
-$$ \widehat{\gamma} = \arg\max_{\gamma} = \ell(\gamma; X) $$
-$$ \widehat{\theta_c} = \arg\max_{\theta_c} = \ell(\theta_c; \widehat{\gamma}, X_c) $$
+Another practical strategy for handling heterogeneity is fine-tuning. A global population model is first estimated, and then a smaller set of parameters is updated for particular subpopulations. This idea underlies transfer learning, where large pre-trained models are adapted to new tasks with limited additional training [@doi:10.48550/arXiv.2206.02058]. Fine-tuning balances the bias–variance tradeoff by borrowing statistical strength from large datasets while preserving flexibility for local adaptation. This notion was already recognized in early VCM literature as a form of semi-parametric estimation [@doi:10.1214/aos/1017939139].
 
+### Models for Explicit Subgroup Separation
 
-
-### Context-informed and Latent-structure models
-Seminal paper: @doi:10.48550/arXiv.1910.06939
-
-Key idea: negative information sharing. Different models should be pushed apart.
-$$ \widehat{\theta}_0, ..., \widehat{\theta}_N = \arg\max_{\theta_0, ..., \theta_N, D} \sum_{i=0}^N \prod_{j=0 s.t. D(c_i, c_j) < d}^N P(x_j; \theta_i) P(\theta_i ; \theta_j) $$
-
+Most adaptive methods encourage parameters for similar contexts to converge, but recent work explores the opposite: ensuring that models for distinct subgroups remain separated. This prevents minority subgroups from collapsing into majority patterns. Such “negative information sharing” is often implemented by learning representations that disentangle subgroup structure, bridging statistical partitioning with adversarial or contrastive learning objectives [@doi:10.48550/arXiv.1910.06939].
 
 ### A Spectrum of Context-Awareness
 
-Context-aware models can be viewed along a spectrum of assumptions about the relationship between context and parameters.
+Context-aware models can be organized along a spectrum of assumptions about the relationship between context and parameters:
 
-**Global models**: $\theta_i = \theta$ for all $i$  
-**Grouped models**: $\theta_i = \theta_c$ for some finite set of groups  
-**Smooth models**: $\theta_i = f(c_i)$, with $f$ assumed to be continuous or low-complexity  
-**Latent models**: $\theta_i \sim P(\theta | c_i)$, with $f$ learned implicitly
+* **Global models**: $\theta_i = \theta$ for all $i$.
+* **Grouped models**: $\theta_i = \theta_c$ for some finite set of groups.
+* **Smooth models**: $\theta_i = f(c_i)$, with $f$ assumed to be continuous or low-complexity.
+* **Latent models**: $\theta_i \sim P(\theta \mid c_i)$, with $f$ learned implicitly.
 
-Each of these choices encodes different beliefs about how parameters vary. The next section formalizes this variation and examines general principles for adaptivity in statistical modeling.
-
-Relevant references:
-
-- Can Subpopulation Shifts Explain Disagreement in Model Generalization? [@arXiv:2106.04486]
-
+Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. For a discussion of how subpopulation shifts influence generalization, see [@arXiv:2106.04486].
 
 
 
