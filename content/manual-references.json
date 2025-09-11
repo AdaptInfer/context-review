@@ -1214,6 +1214,61 @@
     "issued": {"date-parts": [[2024]]},
     "volume": "abs/2410.16531",
     "URL": "https://api.semanticscholar.org/CorpusID:273507537"
+  },
+  {
+    "id": "Kaplan2020ScalingLF",
+    "type": "manuscript",
+    "title": "Scaling Laws for Neural Language Models",
+    "author": [
+      {"family": "Kaplan", "given": "Jared"},
+      {"family": "McCandlish", "given": "Sam"},
+      {"family": "Henighan", "given": "Tom"},
+      {"family": "Brown", "given": "Tom B."},
+      {"family": "Chess", "given": "Benjamin"},
+      {"family": "Child", "given": "Rewon"},
+      {"family": "Gray", "given": "Scott"},
+      {"family": "Radford", "given": "Alec"},
+      {"family": "Wu", "given": "Jeffrey"},
+      {"family": "Amodei", "given": "Dario"}
+    ],
+    "issued": {"date-parts": [[2020]]},
+    "archive": "arXiv",
+    "eprint": "2001.08361",
+    "URL": "https://arxiv.org/abs/2001.08361"
+  },
+  {
+    "id": "Hoffmann2022TrainingCO",
+    "type": "manuscript",
+    "title": "Training Compute-Optimal Large Language Models",
+    "author": [
+      {"family": "Hoffmann", "given": "Jordan"},
+      {"family": "Borgeaud", "given": "Sebastian"},
+      {"family": "Mensch", "given": "Arthur"},
+      {"family": "Buchatskaya", "given": "Elena"},
+      {"family": "Cai", "given": "Trevor"},
+      {"family": "Rutherford", "given": "Eliza"},
+      {"family": "de Las Casas", "given": "Diego"},
+      {"family": "Hendricks", "given": "Lisa Anne"},
+      {"family": "Welbl", "given": "Johannes"},
+      {"family": "Clark", "given": "Aidan"},
+      {"family": "Hennigan", "given": "Tom"},
+      {"family": "Noland", "given": "Eric"},
+      {"family": "Millican", "given": "Katie"},
+      {"family": "van den Driessche", "given": "George"},
+      {"family": "Damoc", "given": "Bogdan"},
+      {"family": "Guy", "given": "Aurelia"},
+      {"family": "Osindero", "given": "Simon"},
+      {"family": "Simonyan", "given": "Karen"},
+      {"family": "Elsen", "given": "Erich"},
+      {"family": "Rae", "given": "Jack W."},
+      {"family": "Vinyals", "given": "Oriol"},
+      {"family": "Sifre", "given": "Laurent"}
+    ],
+    "issued": {"date-parts": [[2022]]},
+    "archive": "arXiv",
+    "eprint": "2203.15556",
+    "URL": "https://arxiv.org/abs/2203.15556",
+    "note": "cs.CL"
   }
 ]
 
