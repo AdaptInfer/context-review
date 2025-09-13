@@ -318,9 +318,9 @@ content/08.invariant.md:22:arXiv
 content/08.invariant.md:22:Distributionally
 content/09.applications_tools.md:4:TODO
 content/09.applications_tools.md:18:rebalancing
-content/09.applications_tools.md:26:TODO
-content/09.applications_tools.md:30:TODO
-content/09.applications_tools.md:33:TODO
+content/09.applications_tools.md:35:TODO
+content/09.applications_tools.md:39:TODO
+content/09.applications_tools.md:42:TODO
 content/10.future_trends.md:4:TODO
 content/10.future_trends.md:7:TODO
 content/10.future_trends.md:12:arXiv

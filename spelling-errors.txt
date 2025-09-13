@@ -29,7 +29,7 @@ DeepLIFT
 DeepSHAP
 Distributionally
 DoshiVelez
-Embeddings
+embeddings
 encodings
 Englert
 ERM
@@ -38,7 +38,7 @@ GBDTs
 generalizability
 Ghorbani
 GPT
-HTE
+hte
 hyperparameters
 ICL
 identifer
@@ -53,7 +53,7 @@ IRMv
 Koh
 latents
 LearningIF
-Lengerich
+lengerich
 Lepski’s
 Lindholm
 Liu
@@ -65,9 +65,9 @@ minimax
 mis
 missingness
 misspecified
-modularity
+Modularity
 MoICE
-mtl
+MTL
 multimodal
 Neyman
 NLP
@@ -81,7 +81,7 @@ overfitting
 parameterization
 personalization
 piecewise
-pre
+Pre
 preprocessing
 probablybots
 ProtoPNet

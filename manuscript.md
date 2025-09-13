@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T21:28:46+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T21:28:46+00:00" />
+  <meta name="dc.modified" content="2025-09-13T21:59:18+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T21:59:18+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,9 +78,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/))
+([permalink](https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/))
 was automatically generated
-from [AdaptInfer/context-review@574e90b](https://github.com/AdaptInfer/context-review/tree/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2)
+from [AdaptInfer/context-review@b4f47f2](https://github.com/AdaptInfer/context-review/tree/b4f47f28acca7242d709c7fd849105c185ee5f19)
 on September 13, 2025.
 </em></small>
 
@@ -754,6 +754,15 @@ Financial services leverage context-aware efficiency principles in risk assessme
 Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@lei2018machinery]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
 
 A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
+
+
+### Contextualized Network Inference
+
+One domain where context-adaptive models have shown particular promise is in network inference for genomics. Traditional approaches assume that all samples can be pooled into a single network, or that cohorts can be partitioned into homogeneous groups. These assumptions are often unrealistic: cancer, for example, exhibits both cross-patient heterogeneity and within-patient shifts in gene regulation. 
+
+Contextualized network models address this challenge by learning archetypal networks and then representing each sample as a mixture of these archetypes, weighted by its observed context. This formulation allows researchers to move beyond average-case networks and uncover mechanisms of disease, heterogeneity across patients, driver mutations, and structural hazards.
+
+![Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.](images/contextualized_networks.png){#fig:contextualized-networks width="90%"}
 
 
 ### Performance Evaluation
