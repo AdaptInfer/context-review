@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T20:03:01+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T20:03:01+00:00" />
+  <meta name="dc.modified" content="2025-09-13T20:19:55+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T20:19:55+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,9 +78,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/))
+([permalink](https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/))
 was automatically generated
-from [AdaptInfer/context-review@ee86b0c](https://github.com/AdaptInfer/context-review/tree/ee86b0c2f3b7e143420f35297b967e8ff2b46852)
+from [AdaptInfer/context-review@c24cbc1](https://github.com/AdaptInfer/context-review/tree/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6)
 on September 13, 2025.
 </em></small>
 
@@ -364,6 +364,15 @@ By connecting classical statistical models with modern adaptive architectures, t
 ## Explicit Adaptivity: Structured Estimation of $f(c)$
 
 In classical statistical modeling, all observations are typically assumed to share a common set of parameters. However, modern datasets often display significant heterogeneity across individuals, locations, or experimental conditions, making this assumption unrealistic in many real-world applications. To better capture such heterogeneity, recent approaches model parameters as explicit functions of observed context, formalized as $\theta_i = f(c_i)$, where $f$ maps each context to a sample-specific parameter [@Hastie1993VaryingCoefficientM].
+
+A familiar example of explicit adaptivity is multi-task learning, where context is defined by task identity. 
+Traditional multi-task learning (left) assigns each task its own head on top of shared representations, 
+while context-flagged models (right) pass task identity directly as an input, enabling richer parameter sharing. 
+This illustrates how explicit conditioning on context variables can unify tasks within a single model and 
+provides an intuitive entry point to more general forms of explicit adaptivity (Figure {@fig:mtl-context}).
+
+![Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks.](images/mtl_context.png){#fig:mtl-context width="75%"}
+
 
 This section systematically reviews explicit adaptivity methods, with a focus on structured estimation of $f(c)$. We begin by revisiting classical varying-coefficient models, which provide a conceptual and methodological foundation for modeling context-dependent effects. We then categorize recent advances in explicit adaptivity according to three principal strategies for estimating $f(c)$: (1) smooth nonparametric models that generalize classical techniques, (2) structurally constrained models that incorporate domain-specific knowledge such as spatial or network structure, and (3) learned function approximators that leverage machine learning methods for high-dimensional or complex contexts. Finally, we summarize key theoretical developments and highlight promising directions for future research in this rapidly evolving field.
 

@@ -32,7 +32,7 @@ embeddings
 encodings
 Englert
 ERM
-explainers
+Explainers
 GBDTs
 generalizability
 Ghorbani
@@ -43,7 +43,7 @@ identifer
 identifiability
 instantiations
 interprepretable
-interpretability
+Interpretability
 interpretable
 invariance
 IRM
@@ -51,7 +51,7 @@ IRMv
 Koh
 latents
 LearningIF
-Lengerich
+lengerich
 Lepski’s
 Lindholm
 Liu
@@ -65,6 +65,7 @@ missingness
 misspecified
 Modularity
 MoICE
+mtl
 multimodal
 NLP
 NoakLiu
@@ -73,10 +74,10 @@ OOD
 operationalize
 optimality
 optimizers
-Overfitting
+overfitting
 parameterization
 personalization
-piecewise
+Piecewise
 Pre
 preprocessing
 probablybots
