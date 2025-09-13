@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T21:59:18+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T21:59:18+00:00" />
+  <meta name="dc.modified" content="2025-09-13T22:15:45+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T22:15:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,9 +78,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/))
+([permalink](https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/))
 was automatically generated
-from [AdaptInfer/context-review@b4f47f2](https://github.com/AdaptInfer/context-review/tree/b4f47f28acca7242d709c7fd849105c185ee5f19)
+from [AdaptInfer/context-review@0d24bcf](https://github.com/AdaptInfer/context-review/tree/0d24bcfe587405e187a9ad584591302ef1cdaeb1)
 on September 13, 2025.
 </em></small>
 
@@ -431,6 +431,24 @@ the context space into piecewise models, with parameters indexed both by context
 identity $(i,j)$. Such splits allow sample-level heterogeneity to be captured within contexts, 
 while high-level partitions mimic task boundaries and enable task switching.](images/context_splits.png){#fig:context-splits width="75%"}
 
+
+A subtle but important point is that the boundary between “parametric” and “nonparametric” adaptivity is porous. 
+If we fit **simple parametric models within each context** -- for observed contexts $c$ or latent subcontexts $Z$ -- and then **aggregate across contexts**, the resulting conditional
+
+$$
+P(Y\mid X,C) \;=\; \int P(Y\mid X,C,Z)\, dP(Z\mid C)
+$$
+
+can display rich, multimodal behavior that looks nonparametric. In other words, **global flexibility can emerge from compositional, context-specific parametrics**. 
+When component families are identifiable (or suitably regularized) and the context-to-mixture map is constrained (e.g., smoothness/TV/sparsity over $c$), the aggregate model remains estimable and interpretable while avoiding overflexible, ill-posed mixtures.
+
+![Compositional inference: nonparametric flexibility from parametric context-specific models. 
+(A) Overall conditional $P(Y \mid X, C)$. 
+(B) Context-specific components $P(Y \mid X, C, Z=z_i)$ for latent subgroups $Z$. 
+(C) Recombination via marginalization $\int_Z P(Y \mid X, C, Z)$. 
+(D) Aggregated distribution showing how structured parametric pieces yield multimodal, nonparametric-like behavior.](images/compositional-inference.png){#fig:compositional-inference width="85%"}
+
+This perspective motivates flexible function approximators: trees and neural networks can be read as learning either the **context-to-mixture weights** or **local parametric maps**, providing similar global flexibility with different inductive biases.
 
 **Structured Regularization for Spatial, Graph, and Network Data.**
 When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@Murakami2024FastSV; @Englert2025SpatiallyVC]. On networked data, the network VCM of [@Fan2025NetworkVC] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.

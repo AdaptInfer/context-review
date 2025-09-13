@@ -56,8 +56,8 @@
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T21:59:18+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T21:59:18+00:00" />
+  <meta name="dc.modified" content="2025-09-13T22:15:45+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T22:15:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,9 +104,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/b4f47f28acca7242d709c7fd849105c185ee5f19/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/b4f47f28acca7242d709c7fd849105c185ee5f19">AdaptInfer/context-review@b4f47f2</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/0d24bcfe587405e187a9ad584591302ef1cdaeb1">AdaptInfer/context-review@0d24bcf</a>
 on September 13, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -357,6 +357,24 @@ identity <span class="math inline">\((i,j)\)</span>. Such splits allow sample-le
 while high-level partitions mimic task boundaries and enable task switching.</figcaption>
 </figure>
 </div>
+<p>A subtle but important point is that the boundary between “parametric” and “nonparametric” adaptivity is porous.
+If we fit <strong>simple parametric models within each context</strong> – for observed contexts <span class="math inline">\(c\)</span> or latent subcontexts <span class="math inline">\(Z\)</span> – and then <strong>aggregate across contexts</strong>, the resulting conditional</p>
+<p><span class="math display">\[
+P(Y\mid X,C) \;=\; \int P(Y\mid X,C,Z)\, dP(Z\mid C)
+\]</span></p>
+<p>can display rich, multimodal behavior that looks nonparametric. In other words, <strong>global flexibility can emerge from compositional, context-specific parametrics</strong>.
+When component families are identifiable (or suitably regularized) and the context-to-mixture map is constrained (e.g., smoothness/TV/sparsity over <span class="math inline">\(c\)</span>), the aggregate model remains estimable and interpretable while avoiding overflexible, ill-posed mixtures.</p>
+<div id="fig:compositional-inference" class="fignos">
+<figure>
+<img src="images/compositional-inference.png" style="width:85.0%" alt="Figure 4: Compositional inference: nonparametric flexibility from parametric context-specific models. (A) Overall conditional P(Y \mid X, C). (B) Context-specific components P(Y \mid X, C, Z=z_i) for latent subgroups Z. (C) Recombination via marginalization \int_Z P(Y \mid X, C, Z). (D) Aggregated distribution showing how structured parametric pieces yield multimodal, nonparametric-like behavior." />
+<figcaption aria-hidden="true"><span>Figure 4:</span> Compositional inference: nonparametric flexibility from parametric context-specific models.
+(A) Overall conditional <span class="math inline">\(P(Y \mid X, C)\)</span>.
+(B) Context-specific components <span class="math inline">\(P(Y \mid X, C, Z=z_i)\)</span> for latent subgroups <span class="math inline">\(Z\)</span>.
+(C) Recombination via marginalization <span class="math inline">\(\int_Z P(Y \mid X, C, Z)\)</span>.
+(D) Aggregated distribution showing how structured parametric pieces yield multimodal, nonparametric-like behavior.</figcaption>
+</figure>
+</div>
+<p>This perspective motivates flexible function approximators: trees and neural networks can be read as learning either the <strong>context-to-mixture weights</strong> or <strong>local parametric maps</strong>, providing similar global flexibility with different inductive biases.</p>
 <p><strong>Structured Regularization for Spatial, Graph, and Network Data.</strong>
 When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions <span class="citation" data-cites="1BatMyNyU OngP0u23">[<a href="#ref-1BatMyNyU" role="doc-biblioref">39</a>,<a href="#ref-OngP0u23" role="doc-biblioref">40</a>]</span>. On networked data, the network VCM of <span class="citation" data-cites="5HZh8pIu">[<a href="#ref-5HZh8pIu" role="doc-biblioref">41</a>]</span> generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.</p>
 <h4 id="learned-function-approximators">Learned Function Approximators</h4>
@@ -381,11 +399,11 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 <p>Context-adaptive models provide a natural resolution by treating <strong>measurement sparsity itself as context.</strong> Rather than ignoring missingness, the model learns to adjust its parameterization according to which features are observed. In effect, each measurement policy (labs-only, vitals-only, multimodal) defines a context, and explicit adaptivity allows estimation that respects these differences while still sharing information. This perspective reframes missingness from a nuisance into structured signal: it encodes which sources of evidence are available and how they should be combined.</p>
 <div id="fig:sparsity-context" class="fignos">
 <figure>
-<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 4: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
-<figcaption aria-hidden="true"><span>Figure 4:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
+<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 5: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
+<figcaption aria-hidden="true"><span>Figure 5:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
 </figure>
 </div>
-<p>Figure <a href="#fig:sparsity-context">4</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
+<p>Figure <a href="#fig:sparsity-context">5</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
 <p>TODO: Any relevant citations?</p>
 <h3 id="context-aware-efficiency-principles-and-design">Context-Aware Efficiency Principles and Design</h3>
 <p>The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.</p>
@@ -577,8 +595,8 @@ g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
 <p>Contextualized network models address this challenge by learning archetypal networks and then representing each sample as a mixture of these archetypes, weighted by its observed context. This formulation allows researchers to move beyond average-case networks and uncover mechanisms of disease, heterogeneity across patients, driver mutations, and structural hazards.</p>
 <div id="fig:contextualized-networks" class="fignos">
 <figure>
-<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 5: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
-<figcaption aria-hidden="true"><span>Figure 5:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
+<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 6: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
+<figcaption aria-hidden="true"><span>Figure 6:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
 </figure>
 </div>
 <h3 id="performance-evaluation">Performance Evaluation</h3>
