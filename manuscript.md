@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T21:00:42+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T21:00:42+00:00" />
+  <meta name="dc.modified" content="2025-09-13T21:28:46+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T21:28:46+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,9 +78,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/))
+([permalink](https://AdaptInfer.github.io/context-review/v/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2/))
 was automatically generated
-from [AdaptInfer/context-review@3bfe3c9](https://github.com/AdaptInfer/context-review/tree/3bfe3c9f369a2ab02f00f1c37edf198b938a9936)
+from [AdaptInfer/context-review@574e90b](https://github.com/AdaptInfer/context-review/tree/574e90b6c32f8264e5704b0b9f7dc89d9dcbd1f2)
 on September 13, 2025.
 </em></small>
 
@@ -230,6 +230,22 @@ $$
 
 This formulation makes the model estimable, but it raises new challenges. 
 How should $f$ be chosen? How smooth, flexible, or structured should it be? The remainder of this review explores different answers to this question, and shows how implicit and explicit representations of context can lead to powerful, personalized models.
+
+
+A classical example of this challenge arises in causal inference. 
+Following the Neyman–Rubin potential outcomes framework, we let $Y(1)$ and $Y(0)$ denote 
+the outcomes that would be observed under treatment and control, respectively. 
+The average treatment effect (ATE) is then $E[Y(1) - Y(0)]$, or more generally the conditional 
+average treatment effect (CATE) given covariates. 
+Standard approaches often condition only on $X$, while heterogeneous treatment effect (HTE) 
+models incorporate additional context $C$ to capture systematic variation across subpopulations 
+(Figure {@fig:hte-context}).
+
+![Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on $X$, 
+implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) 
+that allows treatment effects to vary systematically with additional context $C$.](images/hte.png){#fig:hte-context width="70%"}
+
+These models highlight both the promise and the challenges of choosing and estimating $f(c)$.
 
 ### Early Remedies: Grouped and Distance-Based Models
 
