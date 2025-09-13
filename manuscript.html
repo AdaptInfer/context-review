@@ -56,8 +56,8 @@
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T20:19:55+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T20:19:55+00:00" />
+  <meta name="dc.modified" content="2025-09-13T21:00:42+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T21:00:42+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,9 +104,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6">AdaptInfer/context-review@c24cbc1</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/3bfe3c9f369a2ab02f00f1c37edf198b938a9936">AdaptInfer/context-review@3bfe3c9</a>
 on September 13, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -325,6 +325,21 @@ y_i = \sum_{j=1}^{p} \beta_j(c_i) x_{ij} + \varepsilon_i
 <p>Another direction focuses on incorporating structural information into <span class="math inline">\(f(c)\)</span>, especially when the context is discrete, clustered, or topologically organized.</p>
 <p><strong>Piecewise-Constant and Partition-Based Models.</strong>
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.</p>
+<p>A key design principle is that splits of the context space can mimic what we might otherwise
+treat as distinct “tasks.” By introducing hierarchical partitions, we can capture heterogeneity
+at multiple levels: sample-level variation within each context, and task-level switching across
+contexts. This perspective connects classical partition-based models with multi-task learning,
+highlighting how explicit splits of context define where parameters should be shared versus
+differentiated (Figure <a href="#fig:context-splits">2</a>).</p>
+<div id="fig:context-splits" class="fignos">
+<figure>
+<img src="images/context_splits.png" style="width:75.0%" alt="Figure 2: Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition the context space into piecewise models, with parameters indexed both by context c and task identity (i,j). Such splits allow sample-level heterogeneity to be captured within contexts, while high-level partitions mimic task boundaries and enable task switching." />
+<figcaption aria-hidden="true"><span>Figure 2:</span> Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition
+the context space into piecewise models, with parameters indexed both by context <span class="math inline">\(c\)</span> and task
+identity <span class="math inline">\((i,j)\)</span>. Such splits allow sample-level heterogeneity to be captured within contexts,
+while high-level partitions mimic task boundaries and enable task switching.</figcaption>
+</figure>
+</div>
 <p><strong>Structured Regularization for Spatial, Graph, and Network Data.</strong>
 When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions <span class="citation" data-cites="1BatMyNyU OngP0u23">[<a href="#ref-1BatMyNyU" role="doc-biblioref">39</a>,<a href="#ref-OngP0u23" role="doc-biblioref">40</a>]</span>. On networked data, the network VCM of <span class="citation" data-cites="5HZh8pIu">[<a href="#ref-5HZh8pIu" role="doc-biblioref">41</a>]</span> generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.</p>
 <h4 id="learned-function-approximators">Learned Function Approximators</h4>
@@ -349,11 +364,11 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 <p>Context-adaptive models provide a natural resolution by treating <strong>measurement sparsity itself as context.</strong> Rather than ignoring missingness, the model learns to adjust its parameterization according to which features are observed. In effect, each measurement policy (labs-only, vitals-only, multimodal) defines a context, and explicit adaptivity allows estimation that respects these differences while still sharing information. This perspective reframes missingness from a nuisance into structured signal: it encodes which sources of evidence are available and how they should be combined.</p>
 <div id="fig:sparsity-context" class="fignos">
 <figure>
-<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 2: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
-<figcaption aria-hidden="true"><span>Figure 2:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
+<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 3: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
+<figcaption aria-hidden="true"><span>Figure 3:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
 </figure>
 </div>
-<p>Figure <a href="#fig:sparsity-context">2</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
+<p>Figure <a href="#fig:sparsity-context">3</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
 <p>TODO: Any relevant citations?</p>
 <h3 id="context-aware-efficiency-principles-and-design">Context-Aware Efficiency Principles and Design</h3>
 <p>The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.</p>

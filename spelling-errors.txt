@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 approximators
 arxiv
@@ -43,7 +43,7 @@ identifer
 identifiability
 instantiations
 interprepretable
-Interpretability
+interpretability
 interpretable
 invariance
 IRM
@@ -65,7 +65,7 @@ missingness
 misspecified
 Modularity
 MoICE
-mtl
+MTL
 multimodal
 NLP
 NoakLiu
@@ -77,8 +77,8 @@ optimizers
 overfitting
 parameterization
 personalization
-Piecewise
-Pre
+piecewise
+pre
 preprocessing
 probablybots
 ProtoPNet

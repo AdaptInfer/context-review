@@ -25,8 +25,8 @@ header-includes: |
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T20:19:55+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T20:19:55+00:00" />
+  <meta name="dc.modified" content="2025-09-13T21:00:42+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T21:00:42+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,9 +78,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/))
+([permalink](https://AdaptInfer.github.io/context-review/v/3bfe3c9f369a2ab02f00f1c37edf198b938a9936/))
 was automatically generated
-from [AdaptInfer/context-review@c24cbc1](https://github.com/AdaptInfer/context-review/tree/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6)
+from [AdaptInfer/context-review@3bfe3c9](https://github.com/AdaptInfer/context-review/tree/3bfe3c9f369a2ab02f00f1c37edf198b938a9936)
 on September 13, 2025.
 </em></small>
 
@@ -402,6 +402,19 @@ Another direction focuses on incorporating structural information into $f(c)$, e
 
 **Piecewise-Constant and Partition-Based Models.**
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
+
+A key design principle is that splits of the context space can mimic what we might otherwise 
+treat as distinct “tasks.” By introducing hierarchical partitions, we can capture heterogeneity 
+at multiple levels: sample-level variation within each context, and task-level switching across 
+contexts. This perspective connects classical partition-based models with multi-task learning, 
+highlighting how explicit splits of context define where parameters should be shared versus 
+differentiated (Figure {@fig:context-splits}).
+
+![Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition 
+the context space into piecewise models, with parameters indexed both by context $c$ and task 
+identity $(i,j)$. Such splits allow sample-level heterogeneity to be captured within contexts, 
+while high-level partitions mimic task boundaries and enable task switching.](images/context_splits.png){#fig:context-splits width="75%"}
+
 
 **Structured Regularization for Spatial, Graph, and Network Data.**
 When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@Murakami2024FastSV; @Englert2025SpatiallyVC]. On networked data, the network VCM of [@Fan2025NetworkVC] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.
