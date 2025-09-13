@@ -56,8 +56,8 @@
   <meta name="dc.date" content="2025-09-13" />
   <meta name="citation_publication_date" content="2025-09-13" />
   <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T20:03:01+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T20:03:01+00:00" />
+  <meta name="dc.modified" content="2025-09-13T20:19:55+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T20:19:55+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,9 +104,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/ee86b0c2f3b7e143420f35297b967e8ff2b46852">AdaptInfer/context-review@ee86b0c</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/c24cbc13ee0dd76e8bf95b6004c75590c00a9ac6">AdaptInfer/context-review@c24cbc1</a>
 on September 13, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -298,6 +298,17 @@ By encouraging piecewise-constant structures, partition models get closer to per
 <p>By connecting classical statistical models with modern adaptive architectures, this framework provides both a conceptual map and practical guidance. It highlights that context-adaptive inference is not a single technique but a set of principles that shape how adaptivity should be designed and deployed. When applied responsibly, these principles enable models that are flexible yet disciplined, personalized yet robust, and efficient yet interprepretable. This discussion prepares for the next section, where we turn to explicit adaptive models that operationalize these principles in practice.</p>
 <h2 id="explicit-adaptivity-structured-estimation-of-fc">Explicit Adaptivity: Structured Estimation of <span class="math inline">\(f(c)\)</span></h2>
 <p>In classical statistical modeling, all observations are typically assumed to share a common set of parameters. However, modern datasets often display significant heterogeneity across individuals, locations, or experimental conditions, making this assumption unrealistic in many real-world applications. To better capture such heterogeneity, recent approaches model parameters as explicit functions of observed context, formalized as <span class="math inline">\(\theta_i = f(c_i)\)</span>, where <span class="math inline">\(f\)</span> maps each context to a sample-specific parameter <span class="citation" data-cites="pirD8JuJ">[<a href="#ref-pirD8JuJ" role="doc-biblioref">18</a>]</span>.</p>
+<p>A familiar example of explicit adaptivity is multi-task learning, where context is defined by task identity.
+Traditional multi-task learning (left) assigns each task its own head on top of shared representations,
+while context-flagged models (right) pass task identity directly as an input, enabling richer parameter sharing.
+This illustrates how explicit conditioning on context variables can unify tasks within a single model and
+provides an intuitive entry point to more general forms of explicit adaptivity (Figure <a href="#fig:mtl-context">1</a>).</p>
+<div id="fig:mtl-context" class="fignos">
+<figure>
+<img src="images/mtl_context.png" style="width:75.0%" alt="Figure 1: Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks." />
+<figcaption aria-hidden="true"><span>Figure 1:</span> Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks.</figcaption>
+</figure>
+</div>
 <p>This section systematically reviews explicit adaptivity methods, with a focus on structured estimation of <span class="math inline">\(f(c)\)</span>. We begin by revisiting classical varying-coefficient models, which provide a conceptual and methodological foundation for modeling context-dependent effects. We then categorize recent advances in explicit adaptivity according to three principal strategies for estimating <span class="math inline">\(f(c)\)</span>: (1) smooth nonparametric models that generalize classical techniques, (2) structurally constrained models that incorporate domain-specific knowledge such as spatial or network structure, and (3) learned function approximators that leverage machine learning methods for high-dimensional or complex contexts. Finally, we summarize key theoretical developments and highlight promising directions for future research in this rapidly evolving field.</p>
 <h3 id="classical-varying-coefficient-models-a-foundation">Classical Varying-Coefficient Models: A Foundation</h3>
 <p>Varying-coefficient models (VCMs) are a foundational tool for modeling heterogeneity, as they allow model parameters to vary smoothly with observed context variables <span class="citation" data-cites="pirD8JuJ GQQU9PQb">[<a href="#ref-pirD8JuJ" role="doc-biblioref">18</a>,<a href="#ref-GQQU9PQb" role="doc-biblioref">38</a>]</span>. In their original formulation, the regression coefficients are treated as nonparametric functions of low-dimensional covariates, such as time or age. The standard VCM takes the form</p>
@@ -338,11 +349,11 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 <p>Context-adaptive models provide a natural resolution by treating <strong>measurement sparsity itself as context.</strong> Rather than ignoring missingness, the model learns to adjust its parameterization according to which features are observed. In effect, each measurement policy (labs-only, vitals-only, multimodal) defines a context, and explicit adaptivity allows estimation that respects these differences while still sharing information. This perspective reframes missingness from a nuisance into structured signal: it encodes which sources of evidence are available and how they should be combined.</p>
 <div id="fig:sparsity-context" class="fignos">
 <figure>
-<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 1: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
-<figcaption aria-hidden="true"><span>Figure 1:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
+<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 2: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
+<figcaption aria-hidden="true"><span>Figure 2:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
 </figure>
 </div>
-<p>Figure <a href="#fig:sparsity-context">1</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
+<p>Figure <a href="#fig:sparsity-context">2</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
 <p>TODO: Any relevant citations?</p>
 <h3 id="context-aware-efficiency-principles-and-design">Context-Aware Efficiency Principles and Design</h3>
 <p>The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.</p>
