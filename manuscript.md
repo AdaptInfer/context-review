@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-11'
+date-meta: '2025-09-13'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-11" />
-  <meta name="citation_publication_date" content="2025-09-11" />
-  <meta property="article:published_time" content="2025-09-11" />
-  <meta name="dc.modified" content="2025-09-11T19:38:05+00:00" />
-  <meta property="article:modified_time" content="2025-09-11T19:38:05+00:00" />
+  <meta name="dc.date" content="2025-09-13" />
+  <meta name="citation_publication_date" content="2025-09-13" />
+  <meta property="article:published_time" content="2025-09-13" />
+  <meta name="dc.modified" content="2025-09-13T20:03:01+00:00" />
+  <meta property="article:modified_time" content="2025-09-13T20:03:01+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/3e7afa3d4e28d08431692ac134f56a73bf75e822/))
+([permalink](https://AdaptInfer.github.io/context-review/v/ee86b0c2f3b7e143420f35297b967e8ff2b46852/))
 was automatically generated
-from [AdaptInfer/context-review@3e7afa3](https://github.com/AdaptInfer/context-review/tree/3e7afa3d4e28d08431692ac134f56a73bf75e822)
-on September 11, 2025.
+from [AdaptInfer/context-review@ee86b0c](https://github.com/AdaptInfer/context-review/tree/ee86b0c2f3b7e143420f35297b967e8ff2b46852)
+on September 13, 2025.
 </em></small>
 
 
@@ -425,6 +425,19 @@ When discrete or network structure is incorporated into VCMs, theoretical analys
 The incorporation of machine learning models into VCMs introduces new theoretical challenges. For high-dimensional and sparse settings, oracle inequalities and penalized likelihood theory establish conditions for consistent variable selection and accurate estimation, as seen in methods based on boosting and other regularization techniques. In the context of neural network-based VCMs, the theory is still developing, with current research focused on understanding generalization properties and identifiability in non-convex optimization. This remains an active and important frontier for both statistical and machine learning communities.
 
 These theoretical advances provide a rigorous foundation for explicit adaptivity, a wide range of complex and structured modeling scenarios.
+
+### Sparsity and Incomplete Measurements as Context
+
+A central practical challenge in combining real-world datasets is inconsistent measurement: different cohorts or institutions often collect different subsets of features. One dataset may contain detailed laboratory values, another may focus on imaging or physiological measurements, and a third may emphasize clinical outcomes. If such cohorts are naively pooled, the resulting feature matrix is sparse and unbalanced. If incomplete samples are discarded, data efficiency collapses.  
+
+Context-adaptive models provide a natural resolution by treating **measurement sparsity itself as context.** Rather than ignoring missingness, the model learns to adjust its parameterization according to which features are observed. In effect, each measurement policy (labs-only, vitals-only, multimodal) defines a context, and explicit adaptivity allows estimation that respects these differences while still sharing information. This perspective reframes missingness from a nuisance into structured signal: it encodes which sources of evidence are available and how they should be combined.  
+
+![Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.](images/measurement-sparsity-context.png){#fig:sparsity-context width="70%"}
+
+Figure @fig:sparsity-context illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.  
+
+TODO: Any relevant citations?
+
 
 ### Context-Aware Efficiency Principles and Design
 
