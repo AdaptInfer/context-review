@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-13'
+date-meta: '2025-09-15'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-13" />
-  <meta name="citation_publication_date" content="2025-09-13" />
-  <meta property="article:published_time" content="2025-09-13" />
-  <meta name="dc.modified" content="2025-09-13T22:15:45+00:00" />
-  <meta property="article:modified_time" content="2025-09-13T22:15:45+00:00" />
+  <meta name="dc.date" content="2025-09-15" />
+  <meta name="citation_publication_date" content="2025-09-15" />
+  <meta property="article:published_time" content="2025-09-15" />
+  <meta name="dc.modified" content="2025-09-15T19:52:07+00:00" />
+  <meta property="article:modified_time" content="2025-09-15T19:52:07+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/0d24bcfe587405e187a9ad584591302ef1cdaeb1/))
+([permalink](https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/))
 was automatically generated
-from [AdaptInfer/context-review@0d24bcf](https://github.com/AdaptInfer/context-review/tree/0d24bcfe587405e187a9ad584591302ef1cdaeb1)
-on September 13, 2025.
+from [AdaptInfer/context-review@b294546](https://github.com/AdaptInfer/context-review/tree/b294546e9b04c7c558553876acf981cbaa25ef5c)
+on September 15, 2025.
 </em></small>
 
 
@@ -830,16 +830,47 @@ Recent innovations underscore the role of foundation models in context-sensitive
 
 ## Open Problems
 
-### Theoretical Challenges
-TODO: Critically examining unresolved theoretical issues like identifiability, etc.
+The rapid development of context-adaptive modeling has created both opportunities and challenges. This chapter outlines the most pressing open research questions and broader challenges that will shape the future of the field. We first detail five key technical research questions, covering modularity, the benefits of explicit structure, levels of abstraction, and remaining barriers. We then turn to the broader outlook, focusing on the ethical and societal implications of deploying these powerful adaptive systems.
 
-### Ethical and Regulatory Considerations
-TODO: Discussing the ethical landscape and regulatory challenges, with focus on benefits of interpretability and regulatability.
+### Open Research Questions
 
-### Complexity in Implementation
-TODO: Addressing obstacles in practical applications and gathering insights from real-world data.
+Recent advances have broadened the scope of adaptive inference, but many questions remain unresolved. These questions cover several areas: modularity, the theoretical and practical benefits of explicit structure, the appropriate level of abstraction for intervention, barriers that limit adoption, and the balance between interpretable-by-design and post-hoc interpretability. Together, they define a research agenda that is both methodologically rich and practically significant.
 
-TODO: Other open problems?
+First, researchers need to examine whether skills and routines can be modularized in a way that allows portability across tasks without interference. Second, the field must clarify under what conditions explicit structure provides measurable benefits. Third, it remains unclear at which level of abstraction such structure should be imposed, whether at the level of parameters, functions, or latent factors. Fourth, adoption is limited by both theoretical and practical barriers, including identifiability, generalization, and computational feasibility. Finally, the community must address the tension between building models that are interpretable from the start and those that rely on post-hoc explanations. The following subsections provide a more detailed discussion of these five questions.
+
+#### Can Reusable Modules Enable Portability Across Tasks?
+A central question is whether the skills or routines acquired by large models can be isolated and reused as portable modules across tasks without reducing overall performance [@doi:10.48550/arXiv.2108.07258]. The vision of modularity is to build an ecosystem of specialized components that can be composed when needed, instead of training a new large model for each task. Potential approaches include the study of concept bottlenecks that force models to represent information in human-understandable concepts, prototype libraries that act as case-based memory, and sparse adapters and routing mechanisms that selectively activate components according to context [@doi:10.48550/arXiv.2404.13628; @doi:10.48550/arXiv.2311.16142].
+
+Applications illustrate the promise of this research. In healthcare, diagnostic modules could be reused across diseases. In natural language processing, syntax-aware modules might be applied across languages. However, modularity also introduces risks. Interactions between modules may cause interference, and poorly aligned modules may amplify biases. Future work should therefore design evaluation protocols that test not only portability and composability, but also isolation of unintended side effects and robustness to distribution shift [@doi:10.48550/arXiv.2407.21783].
+
+#### What Are the Theoretical and Practical Benefits of Explicit Structure?
+Clarifying the theoretical and practical benefits of explicit structure is an important open question. Implicit adaptation is highly flexible, but explicit structure may provide stronger guarantees of robustness and generalization under distribution shift. Practical benefits include greater interpretability, improved debugging, and the ability to incorporate domain knowledge directly.
+
+To advance this agenda, systematic comparisons with implicit approaches are needed. Stress testing under covariate shift, concept drift, long-tail distributions, and adversarial correlations is particularly important, and benchmarks such as WILDS provide a useful starting point [@doi:10.48550/arXiv.2012.07421]. At the same time, researchers must weigh the costs of explicit structure. These costs include additional annotation, increased hyperparameter complexity, and potential reductions in in-domain accuracy [@doi:10.48550/arXiv.2004.07780, @doi:10.48550/arXiv.1911.08731]. A comprehensive evaluation framework that quantifies both theoretical guarantees and practical trade-offs remains to be established.
+
+#### At What Level of Abstraction Should Explicit Structure Be Imposed?
+Determining the appropriate level of abstraction for intervention remains a challenge. Parameter-level edits provide precise control but are brittle and can have unpredictable side effects [@doi:10.48550/arXiv.2212.10559]. Concept-level interventions provide stability and interpretability but may fail to capture the model’s internal computations in full detail [@doi:10.48550/arXiv.1807.03124].
+
+Intermediate levels may offer a balance. For example, function-level interventions or local surrogate models can capture mid-level abstractions that combine precision with stability. More importantly, future work should aim to develop methods that allow translation across levels. For instance, low-level parameter edits could be distilled into high-level conceptual summaries, while abstract concepts might be operationalized through concrete parameter changes. Such tools would make adaptive models more interpretable and more controllable in practice.
+
+#### What Theoretical and Practical Barriers Remain?
+Several barriers continue to limit the adoption of adaptive models. On the theoretical side, researchers have yet to establish strong guarantees for identifiability and generalization under distribution shift [@doi:10.48550/arXiv.1911.08731]. Extending these guarantees to high-dimensional and multimodal data remains an unsolved challenge.
+
+Practical barriers are equally important. Training and deploying adaptive models requires significant computational and memory resources. Data limitations, such as biased sampling and noisy feedback, reduce reliability. Evaluation frameworks remain centered on accuracy, with insufficient attention to fairness, stability, and long-term robustness. Finally, the absence of standardized tools and implementation guidelines prevents many practitioners from applying state-of-the-art methods beyond research settings [@doi:10.3390/publications13020019].
+
+#### Interpretable-by-Design vs Post-hoc Interpretability: What Is the Right Path Forward?
+A final open question concerns the balance between interpretable-by-design approaches and post-hoc interpretability. Interpretable-by-design models, such as varying coefficient models, provide transparency and faithfulness from the outset but may restrict predictive performance [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Post-hoc methods allow powerful foundation models to be explained after training, but explanations may be incomplete or unfaithful to the model’s internal reasoning [@doi:10.48550/arXiv.2108.07258].
+
+Progress in both directions suggests that the future lies in integration rather than a binary choice. Hybrid models may embed interpretable structures at their core while using post-hoc tools for flexibility. Promising directions include benchmarks that jointly evaluate adaptivity and interpretability, as well as human-in-the-loop workflows that allow domain experts to constrain and validate model adaptation in practice.
+
+### Broader Challenges and Future Outlook
+
+While the previous section focused on research questions that can be addressed by new methods, theory, and experiments, broader challenges remain that extend beyond purely technical considerations. These challenges concern the responsible deployment of adaptive models in real-world environments, where issues such as ethics, fairness, and regulatory compliance play a critical role. Adaptive systems used in sensitive domains like healthcare and finance must satisfy principles of interpretability, auditability, and accountability in order to prevent harm and build public trust [@doi:10.48550/arXiv.2108.07258]. Regulators and practitioners will need to collaborate to create transparent standards so that adaptive decisions can be evaluated and explained.
+
+Another set of challenges arises from the dynamic interaction between adaptive models and their environments. Feedback loops may amplify small initial biases, leading to systematic disadvantages for certain groups over time. Examples can be seen in credit scoring, hiring, and online recommendation systems, where early decisions influence future data collection and can entrench inequalities [@doi:10.1145/3097983.3098066]. Addressing these risks requires methods that anticipate long-term effects, including simulation studies, formal analyses of dynamic systems, and model designs that incorporate fairness constraints directly during learning.
+
+Looking ahead, the long-term vision for adaptive modeling is to develop systems that are not only powerful but also trustworthy. Progress requires moving beyond accuracy as the dominant evaluation criterion to include fairness, stability, and transparency. Human oversight should be an integral part of adaptive pipelines, enabling experts to guide and validate model behavior in practice. Sustainability is another important dimension, as the computational and environmental costs of adaptive models continue to grow. By combining technical innovation with responsible deployment, the field can ensure that adaptive inference contributes to both scientific progress and societal benefit.
+
 
 ## Conclusion
 
