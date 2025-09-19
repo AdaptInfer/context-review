@@ -8,7 +8,7 @@
   <meta name="author" content="Caleb N. Ellington" />
   <meta name="author" content="Yue Yao" />
   <meta name="author" content="Dong Liu" />
-  <meta name="dcterms.date" content="2025-09-15" />
+  <meta name="dcterms.date" content="2025-09-19" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: Bridging Statistical and Foundation Models</title>
   <style>
@@ -53,11 +53,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-15" />
-  <meta name="citation_publication_date" content="2025-09-15" />
-  <meta property="article:published_time" content="2025-09-15" />
-  <meta name="dc.modified" content="2025-09-15T19:52:07+00:00" />
-  <meta property="article:modified_time" content="2025-09-15T19:52:07+00:00" />
+  <meta name="dc.date" content="2025-09-19" />
+  <meta name="citation_publication_date" content="2025-09-19" />
+  <meta property="article:published_time" content="2025-09-19" />
+  <meta name="dc.modified" content="2025-09-19T19:33:03+00:00" />
+  <meta property="article:modified_time" content="2025-09-19T19:33:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,10 +104,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/b294546e9b04c7c558553876acf981cbaa25ef5c">AdaptInfer/context-review@b294546</a>
-on September 15, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/7911957163931be5110fae096b756217353785f5">AdaptInfer/context-review@7911957</a>
+on September 19, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -203,6 +203,16 @@ When one subpopulation is much larger than another, standard models are biased t
 In the parameter-averaging regime, small but extreme groups can disproportionately distort the global model, especially in methods like ordinary least squares.</p>
 <p><strong>Phantom Populations</strong><br />
 When multiple subpopulations are equally represented, the global model may fit none of them well, instead converging to a solution that represents a non-existent average case.</p>
+<div id="fig:population-failures" class="fignos">
+<figure>
+<img src="images/population_failures.png" style="width:80.0%" alt="Figure 1: Failure Modes of Population Models. Illustrative schematics of common failure types when fitting a single global model to heterogeneous data. (A) Mode Collapse: the dominant group drives the fit, underrepresenting the minority. (B) Outlier Sensitivity: extreme points distort the global line, shifting predictions away from the majority. (C) Phantom Populations: the global fit represents no actual subgroup, but an artificial average. (D) Hidden Confounding / Simpson’s Paradox: aggregate trends reverse subgroup trends, obscuring true relationships." />
+<figcaption aria-hidden="true"><span>Figure 1:</span> Failure Modes of Population Models. Illustrative schematics of common failure types when fitting a single global model to heterogeneous data.
+(A) <strong>Mode Collapse</strong>: the dominant group drives the fit, underrepresenting the minority.
+(B) <strong>Outlier Sensitivity</strong>: extreme points distort the global line, shifting predictions away from the majority.
+(C) <strong>Phantom Populations</strong>: the global fit represents no actual subgroup, but an artificial average.
+(D) <strong>Hidden Confounding / Simpson’s Paradox</strong>: aggregate trends reverse subgroup trends, obscuring true relationships.</figcaption>
+</figure>
+</div>
 <p>These behaviors reflect a deeper problem: the assumption of identically distributed samples is not just incorrect, but actively harmful in heterogeneous settings.</p>
 <h3 id="toward-context-aware-models">Toward Context-Aware Models</h3>
 <p>To account for heterogeneity, we must relax the assumption of shared parameters and allow the data-generating process to vary across samples. A general formulation assumes each observation is governed by its own latent parameters:
@@ -223,11 +233,11 @@ The average treatment effect (ATE) is then <span class="math inline">\(E[Y(1) - 
 average treatment effect (CATE) given covariates.
 Standard approaches often condition only on <span class="math inline">\(X\)</span>, while heterogeneous treatment effect (HTE)
 models incorporate additional context <span class="math inline">\(C\)</span> to capture systematic variation across subpopulations
-(Figure <a href="#fig:hte-context">1</a>).</p>
+(Figure <a href="#fig:hte-context">2</a>).</p>
 <div id="fig:hte-context" class="fignos">
 <figure>
-<img src="images/hte.png" style="width:70.0%" alt="Figure 1: Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on X, implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) that allows treatment effects to vary systematically with additional context C." />
-<figcaption aria-hidden="true"><span>Figure 1:</span> Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on <span class="math inline">\(X\)</span>,
+<img src="images/hte.png" style="width:70.0%" alt="Figure 2: Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on X, implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) that allows treatment effects to vary systematically with additional context C." />
+<figcaption aria-hidden="true"><span>Figure 2:</span> Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on <span class="math inline">\(X\)</span>,
 implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE)
 that allows treatment effects to vary systematically with additional context <span class="math inline">\(C\)</span>.</figcaption>
 </figure>
@@ -319,11 +329,11 @@ By encouraging piecewise-constant structures, partition models get closer to per
 Traditional multi-task learning (left) assigns each task its own head on top of shared representations,
 while context-flagged models (right) pass task identity directly as an input, enabling richer parameter sharing.
 This illustrates how explicit conditioning on context variables can unify tasks within a single model and
-provides an intuitive entry point to more general forms of explicit adaptivity (Figure <a href="#fig:mtl-context">2</a>).</p>
+provides an intuitive entry point to more general forms of explicit adaptivity (Figure <a href="#fig:mtl-context">3</a>).</p>
 <div id="fig:mtl-context" class="fignos">
 <figure>
-<img src="images/mtl_context.png" style="width:75.0%" alt="Figure 2: Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks." />
-<figcaption aria-hidden="true"><span>Figure 2:</span> Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks.</figcaption>
+<img src="images/mtl_context.png" style="width:75.0%" alt="Figure 3: Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks." />
+<figcaption aria-hidden="true"><span>Figure 3:</span> Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks.</figcaption>
 </figure>
 </div>
 <p>This section systematically reviews explicit adaptivity methods, with a focus on structured estimation of <span class="math inline">\(f(c)\)</span>. We begin by revisiting classical varying-coefficient models, which provide a conceptual and methodological foundation for modeling context-dependent effects. We then categorize recent advances in explicit adaptivity according to three principal strategies for estimating <span class="math inline">\(f(c)\)</span>: (1) smooth nonparametric models that generalize classical techniques, (2) structurally constrained models that incorporate domain-specific knowledge such as spatial or network structure, and (3) learned function approximators that leverage machine learning methods for high-dimensional or complex contexts. Finally, we summarize key theoretical developments and highlight promising directions for future research in this rapidly evolving field.</p>
@@ -347,11 +357,11 @@ treat as distinct “tasks.” By introducing hierarchical partitions, we can ca
 at multiple levels: sample-level variation within each context, and task-level switching across
 contexts. This perspective connects classical partition-based models with multi-task learning,
 highlighting how explicit splits of context define where parameters should be shared versus
-differentiated (Figure <a href="#fig:context-splits">3</a>).</p>
+differentiated (Figure <a href="#fig:context-splits">4</a>).</p>
 <div id="fig:context-splits" class="fignos">
 <figure>
-<img src="images/context_splits.png" style="width:75.0%" alt="Figure 3: Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition the context space into piecewise models, with parameters indexed both by context c and task identity (i,j). Such splits allow sample-level heterogeneity to be captured within contexts, while high-level partitions mimic task boundaries and enable task switching." />
-<figcaption aria-hidden="true"><span>Figure 3:</span> Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition
+<img src="images/context_splits.png" style="width:75.0%" alt="Figure 4: Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition the context space into piecewise models, with parameters indexed both by context c and task identity (i,j). Such splits allow sample-level heterogeneity to be captured within contexts, while high-level partitions mimic task boundaries and enable task switching." />
+<figcaption aria-hidden="true"><span>Figure 4:</span> Hierarchical splits of context enable multi-level adaptivity. Explicit adaptivity can partition
 the context space into piecewise models, with parameters indexed both by context <span class="math inline">\(c\)</span> and task
 identity <span class="math inline">\((i,j)\)</span>. Such splits allow sample-level heterogeneity to be captured within contexts,
 while high-level partitions mimic task boundaries and enable task switching.</figcaption>
@@ -366,8 +376,8 @@ P(Y\mid X,C) \;=\; \int P(Y\mid X,C,Z)\, dP(Z\mid C)
 When component families are identifiable (or suitably regularized) and the context-to-mixture map is constrained (e.g., smoothness/TV/sparsity over <span class="math inline">\(c\)</span>), the aggregate model remains estimable and interpretable while avoiding overflexible, ill-posed mixtures.</p>
 <div id="fig:compositional-inference" class="fignos">
 <figure>
-<img src="images/compositional-inference.png" style="width:85.0%" alt="Figure 4: Compositional inference: nonparametric flexibility from parametric context-specific models. (A) Overall conditional P(Y \mid X, C). (B) Context-specific components P(Y \mid X, C, Z=z_i) for latent subgroups Z. (C) Recombination via marginalization \int_Z P(Y \mid X, C, Z). (D) Aggregated distribution showing how structured parametric pieces yield multimodal, nonparametric-like behavior." />
-<figcaption aria-hidden="true"><span>Figure 4:</span> Compositional inference: nonparametric flexibility from parametric context-specific models.
+<img src="images/compositional-inference.png" style="width:85.0%" alt="Figure 5: Compositional inference: nonparametric flexibility from parametric context-specific models. (A) Overall conditional P(Y \mid X, C). (B) Context-specific components P(Y \mid X, C, Z=z_i) for latent subgroups Z. (C) Recombination via marginalization \int_Z P(Y \mid X, C, Z). (D) Aggregated distribution showing how structured parametric pieces yield multimodal, nonparametric-like behavior." />
+<figcaption aria-hidden="true"><span>Figure 5:</span> Compositional inference: nonparametric flexibility from parametric context-specific models.
 (A) Overall conditional <span class="math inline">\(P(Y \mid X, C)\)</span>.
 (B) Context-specific components <span class="math inline">\(P(Y \mid X, C, Z=z_i)\)</span> for latent subgroups <span class="math inline">\(Z\)</span>.
 (C) Recombination via marginalization <span class="math inline">\(\int_Z P(Y \mid X, C, Z)\)</span>.
@@ -399,11 +409,11 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 <p>Context-adaptive models provide a natural resolution by treating <strong>measurement sparsity itself as context.</strong> Rather than ignoring missingness, the model learns to adjust its parameterization according to which features are observed. In effect, each measurement policy (labs-only, vitals-only, multimodal) defines a context, and explicit adaptivity allows estimation that respects these differences while still sharing information. This perspective reframes missingness from a nuisance into structured signal: it encodes which sources of evidence are available and how they should be combined.</p>
 <div id="fig:sparsity-context" class="fignos">
 <figure>
-<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 5: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
-<figcaption aria-hidden="true"><span>Figure 5:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
+<img src="images/measurement-sparsity-context.png" style="width:70.0%" alt="Figure 6: Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features." />
+<figcaption aria-hidden="true"><span>Figure 6:</span> Patterns of missingness as context. Each dataset (e.g., cohort with labs, cohort with vitals, cohort with imaging) provides a different subset of measurements. Context-adaptive models allow integration by conditioning on measurement availability, enabling learning from fewer samples with more heterogeneous features.</figcaption>
 </figure>
 </div>
-<p>Figure <a href="#fig:sparsity-context">5</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
+<p>Figure <a href="#fig:sparsity-context">6</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
 <p>TODO: Any relevant citations?</p>
 <h3 id="context-aware-efficiency-principles-and-design">Context-Aware Efficiency Principles and Design</h3>
 <p>The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.</p>
@@ -595,8 +605,8 @@ g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
 <p>Contextualized network models address this challenge by learning archetypal networks and then representing each sample as a mixture of these archetypes, weighted by its observed context. This formulation allows researchers to move beyond average-case networks and uncover mechanisms of disease, heterogeneity across patients, driver mutations, and structural hazards.</p>
 <div id="fig:contextualized-networks" class="fignos">
 <figure>
-<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 6: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
-<figcaption aria-hidden="true"><span>Figure 6:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
+<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 7: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
+<figcaption aria-hidden="true"><span>Figure 7:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
 </figure>
 </div>
 <h3 id="performance-evaluation">Performance Evaluation</h3>
@@ -1030,10 +1040,10 @@ g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
 <div class="csl-left-margin">123. </div><div class="csl-right-inline"><strong>Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization</strong> <div class="csl-block">Shiori Sagawa, Pang Wei Koh, Tatsunori B Hashimoto, Percy Liang</div> <em>arXiv</em> (2019) <a href="https://doi.org/g93rnm">https://doi.org/g93rnm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1911.08731">10.48550/arxiv.1911.08731</a></div></div>
 </div>
 <div id="ref-16Xv40Ngd" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">124. </div><div class="csl-right-inline"><strong>Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers</strong> <div class="csl-block">Damai Dai, Yutao Sun, Li Dong, Yaru Hao, Shuming Ma, Zhifang Sui, Furu Wei</div> <em>arXiv</em> (2023-05-15) <a href="https://doi.org/gtkkf9">https://doi.org/gtkkf9</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2212.10559">10.48550/arxiv.2212.10559</a></div></div>
+<div class="csl-left-margin">124. </div><div class="csl-right-inline"><strong>Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers</strong> <div class="csl-block">Damai Dai, Yutao Sun, Li Dong, Yaru Hao, Shuming Ma, Zhifang Sui, Furu Wei</div> <em>arXiv</em> (2022) <a href="https://doi.org/gtkkf9">https://doi.org/gtkkf9</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2212.10559">10.48550/arxiv.2212.10559</a></div></div>
 </div>
 <div id="ref-J9eXUymQ" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">125. </div><div class="csl-right-inline"><strong>An Overview of Perception Methods for Horticultural Robots: From Pollination to Harvest</strong> <div class="csl-block">Ho Seok Ahn, Feras Dayoub, Marija Popovic, Bruce MacDonald, Roland Siegwart, Inkyu Sa</div> <em>arXiv</em> (2018-06-26) <a href="https://doi.org/g93rnk">https://doi.org/g93rnk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1807.03124">10.48550/arxiv.1807.03124</a></div></div>
+<div class="csl-left-margin">125. </div><div class="csl-right-inline"><strong>An Overview of Perception Methods for Horticultural Robots: From Pollination to Harvest</strong> <div class="csl-block">Ho Seok Ahn, Feras Dayoub, Marija Popovic, Bruce MacDonald, Roland Siegwart, Inkyu Sa</div> <em>arXiv</em> (2018) <a href="https://doi.org/g93rnk">https://doi.org/g93rnk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1807.03124">10.48550/arxiv.1807.03124</a></div></div>
 </div>
 <div id="ref-hRp04fhf" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">126. </div><div class="csl-right-inline"><strong>Publication Trends on the Varying Coefficients Model: Estimating the Actual (Under)Utilization of a Highly Acclaimed Method for Studying Statistical Interactions</strong> <div class="csl-block">Assaf Botzer</div> <em>Publications</em> (2025-04-07) <a href="https://doi.org/g9t2rq">https://doi.org/g9t2rq</a> <div class="csl-block">DOI: <a href="https://doi.org/10.3390/publications13020019">10.3390/publications13020019</a></div></div>
