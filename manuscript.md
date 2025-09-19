@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-15'
+date-meta: '2025-09-19'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-15" />
-  <meta name="citation_publication_date" content="2025-09-15" />
-  <meta property="article:published_time" content="2025-09-15" />
-  <meta name="dc.modified" content="2025-09-15T19:52:07+00:00" />
-  <meta property="article:modified_time" content="2025-09-15T19:52:07+00:00" />
+  <meta name="dc.date" content="2025-09-19" />
+  <meta name="citation_publication_date" content="2025-09-19" />
+  <meta property="article:published_time" content="2025-09-19" />
+  <meta name="dc.modified" content="2025-09-19T19:33:03+00:00" />
+  <meta property="article:modified_time" content="2025-09-19T19:33:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/b294546e9b04c7c558553876acf981cbaa25ef5c/))
+([permalink](https://AdaptInfer.github.io/context-review/v/7911957163931be5110fae096b756217353785f5/))
 was automatically generated
-from [AdaptInfer/context-review@b294546](https://github.com/AdaptInfer/context-review/tree/b294546e9b04c7c558553876acf981cbaa25ef5c)
-on September 15, 2025.
+from [AdaptInfer/context-review@7911957](https://github.com/AdaptInfer/context-review/tree/7911957163931be5110fae096b756217353785f5)
+on September 19, 2025.
 </em></small>
 
 
@@ -210,6 +210,13 @@ In the parameter-averaging regime, small but extreme groups can disproportionate
 
 **Phantom Populations**  
 When multiple subpopulations are equally represented, the global model may fit none of them well, instead converging to a solution that represents a non-existent average case.
+
+![Failure Modes of Population Models. Illustrative schematics of common failure types when fitting a single global model to heterogeneous data. 
+(A) **Mode Collapse**: the dominant group drives the fit, underrepresenting the minority. 
+(B) **Outlier Sensitivity**: extreme points distort the global line, shifting predictions away from the majority. 
+(C) **Phantom Populations**: the global fit represents no actual subgroup, but an artificial average. 
+(D) **Hidden Confounding / Simpson’s Paradox**: aggregate trends reverse subgroup trends, obscuring true relationships.](images/population_failures.png){#fig:population-failures width="80%"}
+
 
 These behaviors reflect a deeper problem: the assumption of identically distributed samples is not just incorrect, but actively harmful in heterogeneous settings.
 

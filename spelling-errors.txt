@@ -34,12 +34,12 @@ Embeddings
 encodings
 Englert
 ERM
-Explainers
+explainers
 GBDTs
 generalizability
 Ghorbani
 GPT
-HTE
+hte
 hyperparameter
 hyperparameters
 ICL
@@ -47,8 +47,8 @@ identifer
 identifiability
 instantiations
 interprepretable
-interpretability
-interpretable
+Interpretability
+Interpretable
 invariance
 IRM
 IRMv
@@ -70,7 +70,7 @@ misspecified
 modularity
 modularized
 MoICE
-mtl
+MTL
 multimodal
 Neyman
 NLP
@@ -87,7 +87,7 @@ parameterization
 parametrics
 personalization
 piecewise
-pre
+Pre
 preprocessing
 probablybots
 ProtoPNet
