@@ -1,6 +1,6 @@
 activations
 adaptively
-Adaptivity
+adaptivity
 adversarially
 approximators
 arxiv
@@ -34,7 +34,7 @@ Embeddings
 encodings
 Englert
 ERM
-explainers
+Explainers
 GBDTs
 generalizability
 Ghorbani
@@ -67,7 +67,7 @@ minimax
 mis
 missingness
 misspecified
-modularity
+Modularity
 modularized
 MoICE
 MTL
@@ -81,13 +81,13 @@ operationalize
 operationalized
 optimality
 optimizers
-overfitting
+Overfitting
 overflexible
 parameterization
 parametrics
 personalization
 piecewise
-Pre
+pre
 preprocessing
 probablybots
 ProtoPNet
