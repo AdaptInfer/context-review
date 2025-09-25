@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-22'
+date-meta: '2025-09-25'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-22" />
-  <meta name="citation_publication_date" content="2025-09-22" />
-  <meta property="article:published_time" content="2025-09-22" />
-  <meta name="dc.modified" content="2025-09-22T20:10:29+00:00" />
-  <meta property="article:modified_time" content="2025-09-22T20:10:29+00:00" />
+  <meta name="dc.date" content="2025-09-25" />
+  <meta name="citation_publication_date" content="2025-09-25" />
+  <meta property="article:published_time" content="2025-09-25" />
+  <meta name="dc.modified" content="2025-09-25T21:39:52+00:00" />
+  <meta property="article:modified_time" content="2025-09-25T21:39:52+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d3c243c2747fc3c9aa9ed16f3e85a809b9c34778/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d3c243c2747fc3c9aa9ed16f3e85a809b9c34778/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d3c243c2747fc3c9aa9ed16f3e85a809b9c34778/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/d3c243c2747fc3c9aa9ed16f3e85a809b9c34778/))
+([permalink](https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/))
 was automatically generated
-from [AdaptInfer/context-review@d3c243c](https://github.com/AdaptInfer/context-review/tree/d3c243c2747fc3c9aa9ed16f3e85a809b9c34778)
-on September 22, 2025.
+from [AdaptInfer/context-review@dee26a2](https://github.com/AdaptInfer/context-review/tree/dee26a21b79cd5fcd063089c8a39dd726d859b58)
+on September 25, 2025.
 </em></small>
 
 
@@ -329,7 +329,7 @@ Each formulation encodes different beliefs about parameter variation. The next s
 
 What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is beneficial. This section formalizes the core principles that underlie adaptive modeling and situates them within both classical statistics and recent advances in machine learning.
 
-Adaptivity is best understood as a structured set of design choices rather than a single mechanism. Each principle described below highlights a different axis along which models can incorporate or restrict adaptation. Flexibility captures the representational capacity needed for adaptation, while signals of heterogeneity determine when adaptation is justified. Modularity helps organize adaptation into interpretable and transferable units, and selectivity guards against overfitting by controlling when adaptation is triggered. Data efficiency limits how finely we can adapt in practice, and tradeoffs remind us that adaptation is never free of cost. Together, these principles define both the promise and the risks of adaptive systems. 
+Adaptivity is best understood as a structured set of design choices rather than a single mechanism. Each principle described below highlights a different axis along which models can incorporate or restrict adaptation. Flexibility captures the representational capacity needed for adaptation, while signals of heterogeneity determine when adaptation is justified. Modularity helps organize adaptation into interpretable and transferable units, and selectivity guards against overfitting by controlling when adaptation is triggered. Data efficiency limits how finely we can adapt in practice, and tradeoffs remind us that adaptation is never free of cost. Together, these principles define both the promise and the risks of adaptive systems.
 
 We organize this section into six subsections, each addressing one principle. Afterward, we discuss failure modes and conclude with a synthesis that connects these ideas to practical implications.
 
@@ -344,22 +344,22 @@ Flexibility alone is not enough. A model also requires observable signals that i
 In machine learning, contextual bandits adapt decisions to side information that characterizes the current environment, while benchmarks like WILDS highlight that real-world datasets often contain distributional shifts and subgroup heterogeneity [@Koh2020WILDSAB]. Recent work extends this further, modeling time-varying changes in continuous temporal domain generalization [@Cai2024ContinuousTD] or leveraging diversity across experts to separate stable from unstable patterns [@Chen2024LFMEAS]. Across applications, from medicine to online platforms, heterogeneity signals provide the essential cues that justify adaptation.
 
 ### 3. Modularity improves adaptivity
-Organizing adaptation into modular units improves interpretability and robustness. Instead of spreading changes across an entire system, modularity restricts variation to well-defined subcomponents that can be recombined, reused, or replaced. This structure provides three advantages: targeted adaptation, since adjustments are localized to the relevant parts of a model; transferability, because modules can be carried across tasks or domains; and disentanglement, since modular designs isolate distinct sources of variation. 
+Organizing adaptation into modular units improves interpretability and robustness. Instead of spreading changes across an entire system, modularity restricts variation to well-defined subcomponents that can be recombined, reused, or replaced. This structure provides three advantages: targeted adaptation, since adjustments are localized to the relevant parts of a model; transferability, because modules can be carried across tasks or domains; and disentanglement, since modular designs isolate distinct sources of variation.
 
 A canonical example is the mixture-of-experts framework, where a gating network routes inputs to specialized experts trained for different data regimes [@Jacobs1991AdaptiveMO]. By decomposing capacity in this way, models not only gain efficiency but also clarify which components are responsible for specific adaptive behaviors. Recent advances extend this principle in modern architectures: modular domain experts [@Schafhalter2024ScalableMA], adapter libraries for large language models [@Ostapenko2024TowardsML], and mixtures of LoRA experts [@Wu2024MixtureOL]. In applications ranging from language processing to computer vision, modularity has become a cornerstone of scalable adaptivity.
 
 ### 4. Adaptivity implies selectivity
-Adaptation must not occur indiscriminately. Overreacting to noise or small fluctuations often leads to overfitting, which undermines the very purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence. 
+Adaptation must not occur indiscriminately. Overreacting to noise or small fluctuations often leads to overfitting, which undermines the very purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence.
 
 Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@Lepski1997OptimalPA]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@Littlestone1989TheWM]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@Ambekar2024SelectiveTA], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@Kim2023TestTimeAI]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@Huang2024HarderTN]. These safeguards demonstrate that good adaptation is selective adaptation.
 
 ### 5. Adaptivity is bounded by data efficiency
-Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the availability of data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting to idiosyncratic patterns. This limitation is not tied to a particular method but reflects a general statistical truth: the ability to adapt cannot exceed the information provided by the data. 
+Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the availability of data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting to idiosyncratic patterns. This limitation is not tied to a particular method but reflects a general statistical truth: the ability to adapt cannot exceed the information provided by the data.
 
 Meta-learning research illustrates this tension, as few-shot frameworks show both the promise of cross-task generalization and the sharp degradation that occurs when task diversity or sample size is insufficient [@Hsu2018UnsupervisedLV]. Bayesian analyses of scaling laws for in-context learning formalize how the reliability of adaptation grows with data [@Arora2024BayesianSL]. To mitigate these limits, modular reuse strategies have been developed, including adapter libraries [@Ostapenko2024TowardsML] and modular domain experts. Practical applications, from medicine to recommendation systems, highlight the same lesson: adaptation cannot outpace the data that supports it.
 
 ### 6. Adaptivity is not a free lunch
-Adaptivity offers benefits but also introduces costs. It can reduce bias and improve personalization, but at the expense of variance, computational resources, and stability. A model that adapts too readily may become fragile, inconsistent across runs, or difficult to interpret. 
+Adaptivity offers benefits but also introduces costs. It can reduce bias and improve personalization, but at the expense of variance, computational resources, and stability. A model that adapts too readily may become fragile, inconsistent across runs, or difficult to interpret.
 
 In statistical terms, this tension is captured by the classic bias and variance tradeoff [@Vapnik1999AnOO]: increasing flexibility reduces systematic error but simultaneously increases estimation variance, especially in small-sample settings. Adaptive methods expand flexibility, which means they must also contend with this cost unless constrained by strong regularization or selectivity. In machine learning practice, these tradeoffs surface in multiple ways. Sparse expert models illustrate them clearly: while they scale efficiently, routing instability can cause experts to collapse or remain underused, undermining reliability [@Lo2024ACL]. Test-time adaptation can boost performance under distribution shift but may destabilize previously well-calibrated predictions. These examples show that adaptation is powerful but never free.
 
@@ -375,6 +375,12 @@ The six principles describe when adaptation should succeed, but in practice, fai
 **Feedback loops.** Adaptive models can also alter the very distributions they rely on, especially in high-stakes applications such as recommendation, hiring, or credit scoring. This creates feedback loops where bias is reinforced rather than corrected. For example, an adaptive recommender system that over-personalizes may restrict exposure to diverse content, reshaping user behavior in ways that amplify initial bias. The selective labels problem in algorithmic evaluation illustrates how unobserved counterfactuals complicate learning from adaptively collected data [@Lakkaraju2017TheSL]. These examples show that adaptation must be evaluated with attention to long-term interactions, not only short-term accuracy.
 
 Taken together, these failure modes illustrate that adaptivity is double-edged: the same mechanisms that enable personalization and robustness can also entrench bias, waste data efficiency, or destabilize models if not carefully designed and monitored.
+
+![Failure Modes of Context-Adaptive Models.
+(A) **Mode Collapse**: adaptive fits diverge from the true stable relationship.
+(B) **Overfitting in Low-Data Contexts**: adaptation follows noise rather than signal.
+(C) **Modularity Mis-Specification**: incorrect partitions obscure the true structure.
+(D) **Feedback Loops**: adaptive decisions reshape the very data they rely on.](images/adaptive_failures.png){#fig:adaptive-failures width="80%"}
 
 ### Synthesis and Implications
 The principles and failure modes together provide a coherent framework for context-adaptive inference. Flexibility and heterogeneity define the capacity and justification for adaptation, ensuring that models have room to vary and meaningful signals to guide that variation. Modularity and selectivity organize adaptation into structured, interpretable, and disciplined forms, while data efficiency and tradeoffs impose the practical limits that prevent overreach. Failure modes remind us that these principles are not optional: neglecting them can lead to spurious adaptation, instability, or entrenched bias.
