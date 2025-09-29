@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 approximators
 arxiv
@@ -13,6 +13,7 @@ blengerich
 Bordt
 Bottlenecked
 Botzer
+Bühlmann
 CATE
 centric
 CGBM
@@ -25,9 +26,11 @@ counterfactuals
 Counterintuitively
 covariate
 covariates
+Danaher
 decodable
 DeepLIFT
 DeepSHAP
+Dempster
 Distributionally
 DoshiVelez
 embeddings
@@ -35,10 +38,14 @@ encodings
 Englert
 ERM
 explainers
+frequentist
 GBDTs
 generalizability
+GGMs
 Ghorbani
 GPT
+Guo
+Hastie
 HTE
 hyperparameter
 hyperparameters
@@ -54,14 +61,18 @@ IRM
 IRMv
 Koh
 latents
+Lauritzen
 LearningIF
 lengerich
 Lepski’s
+Levina
 Lindholm
 Liu
 LLMs
 LMPriors
 MAML
+Meinshausen
+Michailidis
 minimality
 minimax
 mis
@@ -112,6 +123,7 @@ summarization
 swappable
 TCAV
 thresholding
+Tibshirani
 TODO
 TowardsAC
 TowardsAR
@@ -128,6 +140,7 @@ Variational
 VCM
 VCMs
 WILDSAB
+Witten
 Yao
 Yue
 YueYao

@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-25'
+date-meta: '2025-09-29'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-25" />
-  <meta name="citation_publication_date" content="2025-09-25" />
-  <meta property="article:published_time" content="2025-09-25" />
-  <meta name="dc.modified" content="2025-09-25T21:39:52+00:00" />
-  <meta property="article:modified_time" content="2025-09-25T21:39:52+00:00" />
+  <meta name="dc.date" content="2025-09-29" />
+  <meta name="citation_publication_date" content="2025-09-29" />
+  <meta property="article:published_time" content="2025-09-29" />
+  <meta name="dc.modified" content="2025-09-29T15:57:00+00:00" />
+  <meta property="article:modified_time" content="2025-09-29T15:57:00+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/dee26a21b79cd5fcd063089c8a39dd726d859b58/))
+([permalink](https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/))
 was automatically generated
-from [AdaptInfer/context-review@dee26a2](https://github.com/AdaptInfer/context-review/tree/dee26a21b79cd5fcd063089c8a39dd726d859b58)
-on September 25, 2025.
+from [AdaptInfer/context-review@e8c5551](https://github.com/AdaptInfer/context-review/tree/e8c5551ed114d23099759670ca5340b419fd9a7b)
+on September 29, 2025.
 </em></small>
 
 
@@ -429,6 +429,15 @@ This family of models generalizes the classical VCM by expressing $f(c)$ as a fl
 
 Another direction focuses on incorporating structural information into $f(c)$, especially when the context is discrete, clustered, or topologically organized.
 
+TODO: Include the following:
+
+- [ ] Dempster (1972) – covariance selection, origin of sparse GGMs.
+- [ ] Lauritzen (1996) – foundational reference on graphical models.
+- [ ] Meinshausen & Bühlmann (2006) – neighborhood selection as lasso-style inference.
+- [ ] Friedman, Hastie & Tibshirani (2008) – graphical lasso.
+- [ ] Guo, Levina, Michailidis & Zhu (2011) – joint estimation of multiple GGMs.
+- [ ] Danaher, Wang & Witten (2014) – Joint Graphical Lasso (the main frequentist approach).
+
 **Piecewise-Constant and Partition-Based Models.**
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
 
@@ -465,6 +474,8 @@ This perspective motivates flexible function approximators: trees and neural net
 
 **Structured Regularization for Spatial, Graph, and Network Data.**
 When context exhibits known structure, regularization terms can be designed to promote similarity among neighboring coefficients. For example, spatially varying-coefficient models have been applied to problems in geographical analysis and econometrics, where local effects are expected to vary across adjacent regions [@Murakami2024FastSV; @Englert2025SpatiallyVC]. On networked data, the network VCM of [@Fan2025NetworkVC] generalizes these ideas by learning both the latent positions and the parameter functions on graphs, allowing the model to accommodate complex relational heterogeneity. Such structural constraints allow models to leverage domain knowledge, improving efficiency and interpretability where smooth models may struggle.
+
+Beyond spatial and single-network constraints, Bayesian approaches allow explicit modeling of multiple related graphical models across contexts. Rather than estimating each network independently or pooling across all data, these methods place structured priors that encourage information sharing when appropriate. For example, [@doi:10.1198/jasa.2011.tm10465] introduced Bayesian inference for GGMs with lattice structure, demonstrating how spatial priors can capture context-dependence across neighboring sites. Building on this idea, [@doi:10.1080/01621459.2014.896806]  proposed a Bayesian framework with a Markov random field prior and spike-and-slab formulation to learn when edges should be shared across sample groups, improving estimation and quantifying inter-context similarity. More recently, [@doi:10.1093/biomtc/ujaf053] extended these principles to covariate-dependent graph learning, where network structure varies smoothly with observed covariates. Their dual group spike-and-slab prior enables multi-level selection at node, covariate, and local levels, providing a flexible and interpretable framework for heterogeneous biological networks. Together, these advances illustrate how Bayesian structural priors make adaptivity explicit in graphical models, supporting both efficient estimation and scientific interpretability.
 
 #### Learned Function Approximators
 
