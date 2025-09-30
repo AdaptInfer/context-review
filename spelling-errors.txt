@@ -37,7 +37,7 @@ embeddings
 encodings
 Englert
 ERM
-explainers
+Explainers
 frequentist
 GBDTs
 generalizability
@@ -46,7 +46,7 @@ Ghorbani
 GPT
 Guo
 Hastie
-HTE
+hte
 hyperparameter
 hyperparameters
 ICL
@@ -63,7 +63,7 @@ Koh
 latents
 Lauritzen
 LearningIF
-lengerich
+Lengerich
 Lepski’s
 Levina
 Lindholm
@@ -78,10 +78,10 @@ minimax
 mis
 missingness
 misspecified
-Modularity
+modularity
 modularized
 MoICE
-mtl
+MTL
 multimodal
 Neyman
 NLP
@@ -92,13 +92,13 @@ operationalize
 operationalized
 optimality
 optimizers
-overfitting
+Overfitting
 overflexible
 parameterization
 parametrics
 personalization
-piecewise
-Pre
+Piecewise
+pre
 preprocessing
 probablybots
 ProtoPNet

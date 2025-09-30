@@ -8,7 +8,7 @@
   <meta name="author" content="Caleb N. Ellington" />
   <meta name="author" content="Yue Yao" />
   <meta name="author" content="Dong Liu" />
-  <meta name="dcterms.date" content="2025-09-29" />
+  <meta name="dcterms.date" content="2025-09-30" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: Bridging Statistical and Foundation Models</title>
   <style>
@@ -53,11 +53,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-29" />
-  <meta name="citation_publication_date" content="2025-09-29" />
-  <meta property="article:published_time" content="2025-09-29" />
-  <meta name="dc.modified" content="2025-09-29T15:57:00+00:00" />
-  <meta property="article:modified_time" content="2025-09-29T15:57:00+00:00" />
+  <meta name="dc.date" content="2025-09-30" />
+  <meta name="citation_publication_date" content="2025-09-30" />
+  <meta property="article:published_time" content="2025-09-30" />
+  <meta name="dc.modified" content="2025-09-30T20:28:30+00:00" />
+  <meta property="article:modified_time" content="2025-09-30T20:28:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -104,10 +104,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/e8c5551ed114d23099759670ca5340b419fd9a7b">AdaptInfer/context-review@e8c5551</a>
-on September 29, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/06ec18184746b83f29ba6335a5be278839a6d9c5">AdaptInfer/context-review@06ec181</a>
+on September 30, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -501,6 +501,14 @@ In contrast, explicit models provide direct, interpretable mappings from context
 <p>Building on the prior discussion of implicit adaptivity, we now turn to methods that expose, approximate, or control those adaptive mechanisms.<br />
 Implicit adaptivity allows powerful models, including foundation models, to adjust behavior without explicitly representing a mapping from context to parameters <span class="citation" data-cites="3looVq4U">[<a href="#ref-3looVq4U" role="doc-biblioref">54</a>]</span>. This flexibility hides why and how adaptation occurs, limits modular reuse, and complicates auditing, personalization, and failure diagnosis. Making adaptivity explicit improves alignment with downstream goals, enables modular composition, and supports debugging and error attribution. It also fits the call for a more rigorous science of interpretability with defined objectives and evaluation criteria <span class="citation" data-cites="4YiO662d byOqPJ9J">[<a href="#ref-4YiO662d" role="doc-biblioref">71</a>,<a href="#ref-byOqPJ9J" role="doc-biblioref">72</a>]</span>.<br />
 This chapter reviews practical approaches for surfacing structure, the assumptions they rely on, and how to evaluate their faithfulness and utility.</p>
+<p><strong>From Implicit to Explicit Adaptivity</strong><br />
+Implicit adaptivity is hidden, flexible, and hard to audit, while explicit adaptivity surfaces modular structure that is structured, auditable, and controllable. The transition highlights three key trade-offs developed in this section: <strong>Fidelity vs. Interpretability</strong>, <strong>Local vs. Global Scope</strong>, and <strong>Approximation vs. Control</strong>.</p>
+<div id="fig:implicit-to-explicit" class="fignos">
+<figure>
+<img src="images/explicit_from_implicit.png" style="width:80.0%" alt="Figure 8: From Implicit to Explicit Adaptivity. A black-box model (left) represents implicit adaptation, which is hidden and opaque. Making adaptivity explicit (right) exposes structured components that can be inspected and controlled. The axes below highlight the trade-offs between fidelity and interpretability, local and global scope, and approximation and control." />
+<figcaption aria-hidden="true"><span>Figure 8:</span> From Implicit to Explicit Adaptivity. A black-box model (left) represents implicit adaptation, which is hidden and opaque. Making adaptivity explicit (right) exposes structured components that can be inspected and controlled. The axes below highlight the trade-offs between fidelity and interpretability, local and global scope, and approximation and control.</figcaption>
+</figure>
+</div>
 <h3 id="approaches">Approaches</h3>
 <p>Efforts to make implicit adaptation explicit span complementary strategies that differ in assumptions, granularity, and computational cost. We group them into six families:</p>
 <ol type="1">
@@ -625,8 +633,8 @@ g(x,c)=\sum_{k=1}^{K} w_k(x,c)\, g_k(x,c),
 <p>Contextualized network models address this challenge by learning archetypal networks and then representing each sample as a mixture of these archetypes, weighted by its observed context. This formulation allows researchers to move beyond average-case networks and uncover mechanisms of disease, heterogeneity across patients, driver mutations, and structural hazards.</p>
 <div id="fig:contextualized-networks" class="fignos">
 <figure>
-<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 8: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
-<figcaption aria-hidden="true"><span>Figure 8:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
+<img src="images/contextualized_networks.png" style="width:90.0%" alt="Figure 9: Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations." />
+<figcaption aria-hidden="true"><span>Figure 9:</span> Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.</figcaption>
 </figure>
 </div>
 <h3 id="performance-evaluation">Performance Evaluation</h3>

@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-29'
+date-meta: '2025-09-30'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-29" />
-  <meta name="citation_publication_date" content="2025-09-29" />
-  <meta property="article:published_time" content="2025-09-29" />
-  <meta name="dc.modified" content="2025-09-29T15:57:00+00:00" />
-  <meta property="article:modified_time" content="2025-09-29T15:57:00+00:00" />
+  <meta name="dc.date" content="2025-09-30" />
+  <meta name="citation_publication_date" content="2025-09-30" />
+  <meta property="article:published_time" content="2025-09-30" />
+  <meta name="dc.modified" content="2025-09-30T20:28:30+00:00" />
+  <meta property="article:modified_time" content="2025-09-30T20:28:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/e8c5551ed114d23099759670ca5340b419fd9a7b/))
+([permalink](https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/))
 was automatically generated
-from [AdaptInfer/context-review@e8c5551](https://github.com/AdaptInfer/context-review/tree/e8c5551ed114d23099759670ca5340b419fd9a7b)
-on September 29, 2025.
+from [AdaptInfer/context-review@06ec181](https://github.com/AdaptInfer/context-review/tree/06ec18184746b83f29ba6335a5be278839a6d9c5)
+on September 30, 2025.
 </em></small>
 
 
@@ -642,6 +642,13 @@ These considerations motivate a growing search for techniques that can make the 
 Building on the prior discussion of implicit adaptivity, we now turn to methods that expose, approximate, or control those adaptive mechanisms.  
 Implicit adaptivity allows powerful models, including foundation models, to adjust behavior without explicitly representing a mapping from context to parameters [@Bommasani2021OnTO]. This flexibility hides why and how adaptation occurs, limits modular reuse, and complicates auditing, personalization, and failure diagnosis. Making adaptivity explicit improves alignment with downstream goals, enables modular composition, and supports debugging and error attribution. It also fits the call for a more rigorous science of interpretability with defined objectives and evaluation criteria [@DoshiVelez2017TowardsAR; @Bordt2024RethinkingEM].  
 This chapter reviews practical approaches for surfacing structure, the assumptions they rely on, and how to evaluate their faithfulness and utility.
+
+
+**From Implicit to Explicit Adaptivity**  
+Implicit adaptivity is hidden, flexible, and hard to audit, while explicit adaptivity surfaces modular structure that is structured, auditable, and controllable. The transition highlights three key trade-offs developed in this section: **Fidelity vs. Interpretability**, **Local vs. Global Scope**, and **Approximation vs. Control**.  
+
+![From Implicit to Explicit Adaptivity. A black-box model (left) represents implicit adaptation, which is hidden and opaque. Making adaptivity explicit (right) exposes structured components that can be inspected and controlled. The axes below highlight the trade-offs between fidelity and interpretability, local and global scope, and approximation and control.](images/explicit_from_implicit.png){#fig:implicit-to-explicit width="80%"}  
+
 
 ### Approaches
 Efforts to make implicit adaptation explicit span complementary strategies that differ in assumptions, granularity, and computational cost. We group them into six families:
