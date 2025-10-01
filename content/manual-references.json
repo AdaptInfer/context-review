@@ -1214,6 +1214,148 @@
     "issued": {"date-parts": [[2024]]},
     "volume": "abs/2410.16531",
     "URL": "https://api.semanticscholar.org/CorpusID:273507537"
-  }
+  },
+  
+@article{fisher1949design,
+  title={The design of experiments},
+  author={Fisher, Ronald A},
+  year={1949},
+  publisher={Oliver \& Boyd}
+},
+
+@article{henderson1953estimation,
+  title={Estimation of variance and covariance components},
+  author={Henderson, Charles R},
+  journal={Biometrics},
+  volume={9},
+  number={2},
+  pages={226--252},
+  year={1953},
+  publisher={JSTOR}
+},
+
+@article{cronbach1955construct,
+  title={Construct validity in psychological tests.},
+  author={Cronbach, Lee J and Meehl, Paul E},
+  journal={Psychological bulletin},
+  volume={52},
+  number={4},
+  pages={281},
+  year={1955},
+  publisher={American Psychological Association}
+},
+
+@article{kalman1960new,
+  title={A new approach to linear filtering and prediction problems},
+  author={Kalman, Rudolph Emil},
+  year={1960}
+},
+
+@article{ramsay1982data,
+  title={When the data are functions},
+  author={Ramsay, James O},
+  journal={Psychometrika},
+  volume={47},
+  number={4},
+  pages={379--396},
+  year={1982},
+  publisher={Springer}
+},
+
+@article{caruana1997multitask,
+  title={Multitask learning},
+  author={Caruana, Rich},
+  journal={Machine learning},
+  volume={28},
+  number={1},
+  pages={41--75},
+  year={1997},
+  publisher={Springer}
+},
+
+@article{pan2009survey,
+  title={A survey on transfer learning},
+  author={Pan, Sinno Jialin and Yang, Qiang},
+  journal={IEEE Transactions on knowledge and data engineering},
+  volume={22},
+  number={10},
+  pages={1345--1359},
+  year={2009},
+  publisher={IEEE}
+},
+
+@article{collis1999learning,
+  title={Learning to Learn},
+  author={Collis, Betty and Meeuwsen, Enrico},
+  journal={Internet based learning: An introduction and framework for higher education and business},
+  pages={25},
+  year={1999},
+  publisher={Stylus Publishing, LLC.}
+},
+
+@inproceedings{li2010contextual,
+  title={A contextual-bandit approach to personalized news article recommendation},
+  author={Li, Lihong and Chu, Wei and Langford, John and Schapire, Robert E},
+  booktitle={Proceedings of the 19th international conference on World wide web},
+  pages={661--670},
+  year={2010}
+},
+
+@article{salton1975vector,
+  title={A vector space model for automatic indexing},
+  author={Salton, Gerard and Wong, Anita and Yang, Chung-Shu},
+  journal={Communications of the ACM},
+  volume={18},
+  number={11},
+  pages={613--620},
+  year={1975},
+  publisher={ACM New York, NY, USA}
+},
+
+@article{sobel19683x3,
+  title={A 3x3 isotropic gradient operator for image processing},
+  author={Sobel, Irwin and Feldman, Gary and others},
+  journal={a talk at the Stanford Artificial Project in},
+  volume={1968},
+  pages={271--272},
+  year={1968}
+},
+
+@article{atal1971speech,
+  title={Speech analysis and synthesis by linear prediction of the speech wave},
+  author={Atal, Bishnu S and Hanauer, Suzanne L},
+  journal={The journal of the acoustical society of America},
+  volume={50},
+  number={2B},
+  pages={637--655},
+  year={1971},
+  publisher={Acoustical Society of America}
+},
+
+
+@inproceedings{devlin2019bert,
+  title={Bert: Pre-training of deep bidirectional transformers for language understanding},
+  author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  booktitle={Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers)},
+  pages={4171--4186},
+  year={2019}
+},
+
+
+@inproceedings{radford2021learning,
+  title={Learning transferable visual models from natural language supervision},
+  author={Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others},
+  booktitle={International conference on machine learning},
+  pages={8748--8763},
+  year={2021},
+  organization={PmLR}
+},
+
+@article{bommasani2021opportunities,
+  title={On the opportunities and risks of foundation models},
+  author={Bommasani, Rishi},
+  journal={arXiv preprint arXiv:2108.07258},
+  year={2021}
+}
 ]
 
