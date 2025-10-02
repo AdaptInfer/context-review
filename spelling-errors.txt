@@ -1,6 +1,6 @@
 activations
 adaptively
-Adaptivity
+adaptivity
 adversarially
 approximators
 arxiv
@@ -33,12 +33,11 @@ DeepSHAP
 Dempster
 Distributionally
 DoshiVelez
-embeddings
+Embeddings
 encodings
 Englert
 ERM
 Explainers
-frequentist
 GBDTs
 generalizability
 GGMs
@@ -52,10 +51,11 @@ hyperparameters
 ICL
 identifer
 identifiability
+independencies
 instantiations
 interprepretable
 interpretability
-interpretable
+Interpretable
 invariance
 IRM
 IRMv
@@ -78,7 +78,7 @@ minimax
 mis
 missingness
 misspecified
-modularity
+Modularity
 modularized
 MoICE
 MTL
@@ -92,7 +92,7 @@ operationalize
 operationalized
 optimality
 optimizers
-Overfitting
+overfitting
 overflexible
 parameterization
 parametrics

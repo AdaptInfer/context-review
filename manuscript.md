@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-09-30'
+date-meta: '2025-10-02'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -22,11 +22,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-09-30" />
-  <meta name="citation_publication_date" content="2025-09-30" />
-  <meta property="article:published_time" content="2025-09-30" />
-  <meta name="dc.modified" content="2025-09-30T20:28:30+00:00" />
-  <meta property="article:modified_time" content="2025-09-30T20:28:30+00:00" />
+  <meta name="dc.date" content="2025-10-02" />
+  <meta name="citation_publication_date" content="2025-10-02" />
+  <meta property="article:published_time" content="2025-10-02" />
+  <meta name="dc.modified" content="2025-10-02T17:03:48+00:00" />
+  <meta property="article:modified_time" content="2025-10-02T17:03:48+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -54,9 +54,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +78,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/06ec18184746b83f29ba6335a5be278839a6d9c5/))
+([permalink](https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/))
 was automatically generated
-from [AdaptInfer/context-review@06ec181](https://github.com/AdaptInfer/context-review/tree/06ec18184746b83f29ba6335a5be278839a6d9c5)
-on September 30, 2025.
+from [AdaptInfer/context-review@72b7bd9](https://github.com/AdaptInfer/context-review/tree/72b7bd9b8fec4720228c7903d681166c73f20a2e)
+on October 2, 2025.
 </em></small>
 
 
@@ -425,18 +425,13 @@ Recent years have seen substantial progress in the modeling of $f(c)$, the funct
 
 This family of models generalizes the classical VCM by expressing $f(c)$ as a flexible, smooth function estimated with basis expansions and regularization. Common approaches include spline-based methods, local polynomial regression, and RKHS-based frameworks. For instance, developed a semi-nonparametric VCM using RKHS techniques for imaging genetics, enabling the model to capture complex nonlinear effects. Such methods are central to generalized additive models, supporting both flexibility and interpretability. Theoretical work has shown that penalized splines and kernel methods offer strong statistical guarantees in moderate dimensions, although computational cost and overfitting can become issues as the dimension of $c$ increases.
 
-#### Structurally Constrained Models
+#### Structured Regularization for Graphical and Network Models
 
-Another direction focuses on incorporating structural information into $f(c)$, especially when the context is discrete, clustered, or topologically organized.
+The origins of structurally constrained models can be traced to early work on covariance selection. Dempster (1972) demonstrated that zeros in the inverse covariance matrix correspond directly to conditional independencies, introducing the principle that sparsity reflects structure [@doi:10.2307/2528966]. This idea was later consolidated by Lauritzen (1996), whose influential monograph systematized probabilistic graphical models and highlighted how independence assumptions can be embedded into statistical estimation [@dlauritzen1996graphical]. Together, these works established the conceptual foundation that explicit structure can guide inference in high-dimensional settings.
 
-TODO: Include the following:
+As high-dimensional data became common, scalable estimation procedures emerged to make these ideas practical. Meinshausen and Bühlmann (2006) proposed neighborhood selection, recasting graph recovery as a series of sparse regression problems that infer conditional dependencies node by node [@doi:10.1214/009053606000000281]. Shortly thereafter, Friedman, Hastie, and Tibshirani (2008) developed the graphical lasso, a convex penalized likelihood method that directly estimates sparse precision matrices [@doi:10.1093/biostatistics/kxm045]. These contributions showed that sparsity-inducing penalties could recover large network structures reliably, thereby providing concrete tools for estimating $f(c)$ when context corresponds to a structured dependency pattern such as a graph.
 
-- [ ] Dempster (1972) – covariance selection, origin of sparse GGMs.
-- [ ] Lauritzen (1996) – foundational reference on graphical models.
-- [ ] Meinshausen & Bühlmann (2006) – neighborhood selection as lasso-style inference.
-- [ ] Friedman, Hastie & Tibshirani (2008) – graphical lasso.
-- [ ] Guo, Levina, Michailidis & Zhu (2011) – joint estimation of multiple GGMs.
-- [ ] Danaher, Wang & Witten (2014) – Joint Graphical Lasso (the main frequentist approach).
+Building on these advances, later research recognized that networks themselves may vary across contexts. Guo, Levina, Michailidis, and Zhu (2011) introduced penalties that jointly estimate multiple graphical models, encouraging sparsity within each network while borrowing strength across related groups [@doi:10.1093/biomet/asq060]. Danaher, Wang, and Witten (2014) extended this framework with the Joint Graphical Lasso, which balances shared structure and context-specific edges across multiple populations [@doi:10.1111/rssb.12033]. These developments illustrate how structured regularization transforms explicit adaptivity into a principled strategy: instead of estimating networks independently, one can pool information selectively across contexts (where context $c$ is the group or task identity), making the estimation of the parameter function $f(c)$ both interpretable and statistically efficient.
 
 **Piecewise-Constant and Partition-Based Models.**
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
