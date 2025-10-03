@@ -5,12 +5,13 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-02'
+date-meta: '2025-10-03'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
 - Yue Yao
 - Dong Liu
+- Jiaqi Wang
 header-includes: |
   <!--
   Manubot generated metadata rendered from header-includes-template.html.
@@ -22,11 +23,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-02" />
-  <meta name="citation_publication_date" content="2025-10-02" />
-  <meta property="article:published_time" content="2025-10-02" />
-  <meta name="dc.modified" content="2025-10-02T17:03:48+00:00" />
-  <meta property="article:modified_time" content="2025-10-02T17:03:48+00:00" />
+  <meta name="dc.date" content="2025-10-03" />
+  <meta name="citation_publication_date" content="2025-10-03" />
+  <meta property="article:published_time" content="2025-10-03" />
+  <meta name="dc.modified" content="2025-10-03T16:18:18+00:00" />
+  <meta property="article:modified_time" content="2025-10-03T16:18:18+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -48,15 +49,19 @@ header-includes: |
   <meta name="citation_author_institution" content="Department of Computer Science, Yale University" />
   <meta name="citation_author_orcid" content="0009-0009-6815-8297" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Jiaqi Wang" />
+  <meta name="citation_author_institution" content="Paul G. Allen School of Computer Science &amp; Engineering, University of Washington" />
+  <meta name="citation_author_orcid" content="0009-0003-8531-9490" />
+  <meta name="twitter:creator" content="@None" />
   <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
   <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -78,10 +83,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/72b7bd9b8fec4720228c7903d681166c73f20a2e/))
+([permalink](https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/))
 was automatically generated
-from [AdaptInfer/context-review@72b7bd9](https://github.com/AdaptInfer/context-review/tree/72b7bd9b8fec4720228c7903d681166c73f20a2e)
-on October 2, 2025.
+from [AdaptInfer/context-review@44a0346](https://github.com/AdaptInfer/context-review/tree/44a0346f092c243cc09bfd172842158a320533ee)
+on October 3, 2025.
 </em></small>
 
 
@@ -139,6 +144,18 @@ on October 2, 2025.
     <br>
   <small>
      Department of Computer Science, Yale University
+     · Funded by None
+  </small>
+
++ **Jiaqi Wang**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0003-8531-9490](https://orcid.org/0009-0003-8531-9490)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [w-jiaqi](https://github.com/w-jiaqi)
+    <br>
+  <small>
+     Paul G. Allen School of Computer Science & Engineering, University of Washington
      · Funded by None
   </small>
 
@@ -511,8 +528,7 @@ Context-adaptive models provide a natural resolution by treating **measurement s
 
 Figure @fig:sparsity-context illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.  
 
-TODO: Any relevant citations?
-
+Evaluation of missingness-as-context models should report *mask-stratified metrics*, including worst-group performance, following group-robust evaluation practice [@Sagawa2019GroupDRO; @Koh2021WILDS]. Robustness should be probed with *mask-shift stress tests*, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@Zhou2023DAMS; @Koh2021WILDS]. When imputation is used, authors should assess *imputation realism* by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for \(p(x_{\text{missing}}\mid x_{\text{observed}})\) [@Ivanov2019VAEAC; @Yoon2018GAIN]. For causal or estimation applications, conduct *ignorability sensitivity analyses*, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@Little1994PatternMixture; @Munoz2023HeckmanMI]. Finally, include *ablations* that remove mask/indicator inputs—and, for trees, disable default-direction routing—to confirm that gains derive from modeling the mask signal rather than artifacts [@Chen2016XGBoost; @VanNess2022MissingIndicator]. Practical implementations of these ideas are widely available: **GRU-D** [@Che2018GRUD] and **BRITS** [@Cao2018BRITS] provide mask- and time-aware sequence models, while **GAIN** [@Yoon2018GAIN] and **VAEAC** [@Ivanov2019VAEAC] offer open-source code for imputation under arbitrary masks. For tree ensembles, **XGBoost** supports sparsity-aware default-direction splits, making it straightforward to treat “NA” values as context without preprocessing [@Chen2016XGBoost].
 
 ### Context-Aware Efficiency Principles and Design
 

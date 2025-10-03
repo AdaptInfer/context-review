@@ -495,6 +495,114 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Cai2024ContinuousTD"
   },
   {
+    "id": "Bl30FFIi",
+    "type": "paper-conference",
+    "title": "BRITS: Bidirectional Recurrent Imputation for Time Series",
+    "author": [
+      {
+        "family": "Cao",
+        "given": "Wei"
+      },
+      {
+        "family": "Wang",
+        "given": "Dong"
+      },
+      {
+        "family": "Li",
+        "given": "Jian"
+      },
+      {
+        "family": "Zhou",
+        "given": "Hao"
+      },
+      {
+        "family": "Li",
+        "given": "Lei"
+      },
+      {
+        "family": "Li",
+        "given": "Yitan"
+      }
+    ],
+    "container-title": "Advances in Neural Information Processing Systems 31 (NeurIPS 2018)",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://proceedings.neurips.cc/paper/2018/hash/734e6bfcd358e25ac1db0a4241b95651-Abstract.html",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Cao2018BRITS"
+  },
+  {
+    "id": "R3MGlv2S",
+    "type": "article-journal",
+    "title": "Recurrent Neural Networks for Multivariate Time Series with Missing Values",
+    "author": [
+      {
+        "family": "Che",
+        "given": "Zhengping"
+      },
+      {
+        "family": "Purushotham",
+        "given": "Sanjay"
+      },
+      {
+        "family": "Cho",
+        "given": "Kyunghyun"
+      },
+      {
+        "family": "Sontag",
+        "given": "David"
+      },
+      {
+        "family": "Liu",
+        "given": "Yan"
+      }
+    ],
+    "container-title": "Scientific Reports",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "volume": "8",
+    "page": "6085",
+    "DOI": "10.1038/s41598-018-24271-9",
+    "URL": "https://www.nature.com/articles/s41598-018-24271-9",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Che2018GRUD"
+  },
+  {
+    "id": "mcQbhuyn",
+    "type": "paper-conference",
+    "title": "XGBoost: A Scalable Tree Boosting System",
+    "author": [
+      {
+        "family": "Chen",
+        "given": "Tianqi"
+      },
+      {
+        "family": "Guestrin",
+        "given": "Carlos"
+      }
+    ],
+    "container-title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "785-794",
+    "DOI": "10.1145/2939672.2939785",
+    "URL": "https://dl.acm.org/doi/10.1145/2939672.2939785",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Chen2016XGBoost"
+  },
+  {
     "id": "rwzMVtZm",
     "type": "paper-conference",
     "title": "This looks like that: deep learning for interpretable image recognition",
@@ -1143,6 +1251,36 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Huang2024HarderTN"
   },
   {
+    "id": "1DD1jAYZd",
+    "type": "article-journal",
+    "title": "Variational Autoencoder with Arbitrary Conditioning",
+    "author": [
+      {
+        "family": "Ivanov",
+        "given": "Oleg"
+      },
+      {
+        "family": "Figurnov",
+        "given": "Michael"
+      },
+      {
+        "family": "Vetrov",
+        "given": "Dmitry"
+      }
+    ],
+    "container-title": "arXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "volume": "abs/1806.02382",
+    "URL": "https://arxiv.org/abs/1806.02382",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Ivanov2019VAEAC"
+  },
+  {
     "id": "5UsFy1cc",
     "type": "article-journal",
     "title": "Adaptive Mixtures of Local Experts",
@@ -1437,6 +1575,65 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Koh2020WILDSAB"
   },
   {
+    "id": "I3kCk5k2",
+    "type": "paper-conference",
+    "title": "WILDS: A Benchmark of in-the-Wild Distribution Shifts",
+    "author": [
+      {
+        "family": "Koh",
+        "given": "Pang Wei"
+      },
+      {
+        "family": "Sagawa",
+        "given": "Shiori"
+      },
+      {
+        "family": "Marklund",
+        "given": "Henrik"
+      },
+      {
+        "family": "Xie",
+        "given": "Sang Michael"
+      },
+      {
+        "family": "Zhang",
+        "given": "Marvin"
+      },
+      {
+        "family": "Balsubramani",
+        "given": "Akshay"
+      },
+      {
+        "family": "Hu",
+        "given": "Weihua"
+      },
+      {
+        "family": "Levine",
+        "given": "Sergey"
+      },
+      {
+        "family": "Finn",
+        "given": "Chelsea"
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      }
+    ],
+    "container-title": "Proceedings of the 38th International Conference on Machine Learning",
+    "publisher": "PMLR",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "volume": "139",
+    "URL": "https://proceedings.mlr.press/v139/koh21a.html",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Koh2021WILDS"
+  },
+  {
     "id": "v0xAySK8",
     "type": "paper-conference",
     "title": "In-Context Explainers: Harnessing LLMs for Explaining Black Box Models",
@@ -1557,6 +1754,31 @@
     "container-title": "Entropy",
     "volume": "23",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Linardatos2020ExplainableAA"
+  },
+  {
+    "id": "jqcBCPQs",
+    "type": "article-journal",
+    "title": "A Class of Pattern-Mixture Models for Normal Incomplete Data",
+    "author": [
+      {
+        "family": "Little",
+        "given": "Roderick J. A."
+      }
+    ],
+    "container-title": "Biometrika",
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "volume": "81",
+    "issue": "3",
+    "page": "471-483",
+    "DOI": "10.1093/biomet/81.3.471",
+    "URL": "https://academic.oup.com/biomet/article-abstract/81/3/471/256979",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Little1994PatternMixture"
   },
   {
     "id": "nhWQSRBg",
@@ -1797,6 +2019,44 @@
     "volume": "abs/2202.12837",
     "URL": "https://api.semanticscholar.org/CorpusID:247155069",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Min2022RethinkingTR"
+  },
+  {
+    "id": "ye7pP794",
+    "type": "article-journal",
+    "title": "Multiple imputation of incomplete multilevel data using Heckman selection models",
+    "author": [
+      {
+        "family": "Muñoz",
+        "given": "Johanna"
+      },
+      {
+        "family": "Audibert",
+        "given": "Matthieu"
+      },
+      {
+        "family": "Pavlou",
+        "given": "Melina"
+      },
+      {
+        "family": "Riley",
+        "given": "Richard D."
+      },
+      {
+        "family": "Debray",
+        "given": "Thomas P. A."
+      }
+    ],
+    "container-title": "arXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "volume": "abs/2301.05043",
+    "URL": "https://arxiv.org/abs/2301.05043",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Munoz2023HeckmanMI"
   },
   {
     "id": "1BatMyNyU",
@@ -2152,6 +2412,40 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Sagawa2019DistributionallyRN"
   },
   {
+    "id": "J9mQL0g5",
+    "type": "article-journal",
+    "title": "Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization",
+    "author": [
+      {
+        "family": "Sagawa",
+        "given": "Shiori"
+      },
+      {
+        "family": "Koh",
+        "given": "Pang Wei"
+      },
+      {
+        "family": "Hashimoto",
+        "given": "Tatsunori B."
+      },
+      {
+        "family": "Liang",
+        "given": "Percy"
+      }
+    ],
+    "container-title": "arXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "volume": "abs/1911.08731",
+    "URL": "https://arxiv.org/abs/1911.08731",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Sagawa2019GroupDRO"
+  },
+  {
     "id": "1Fc0kIYQ4",
     "type": "article-journal",
     "title": "Scalable Multi-Domain Adaptation of Language Models using Modular Experts",
@@ -2312,6 +2606,40 @@
     "volume": "abs/1905.06316",
     "URL": "https://api.semanticscholar.org/CorpusID:108300988",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Tenney2019WhatDY"
+  },
+  {
+    "id": "5ykU3Zv8",
+    "type": "article-journal",
+    "title": "The Missing Indicator Method: From Low to High Dimensions",
+    "author": [
+      {
+        "family": "Van Ness",
+        "given": "Mike"
+      },
+      {
+        "family": "Bosschieter",
+        "given": "Tomas M."
+      },
+      {
+        "family": "Halpin-Gregorio",
+        "given": "Roberto"
+      },
+      {
+        "family": "Udell",
+        "given": "Madeleine"
+      }
+    ],
+    "container-title": "arXiv",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "volume": "abs/2211.09259",
+    "URL": "https://arxiv.org/abs/2211.09259",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: VanNess2022MissingIndicator"
   },
   {
     "id": "1BIpbSBB",
@@ -2573,6 +2901,37 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Xie2021AnEO"
   },
   {
+    "id": "SXfDe3KU",
+    "type": "paper-conference",
+    "title": "GAIN: Missing Data Imputation using Generative Adversarial Nets",
+    "author": [
+      {
+        "family": "Yoon",
+        "given": "Jinsung"
+      },
+      {
+        "family": "Jordon",
+        "given": "James"
+      },
+      {
+        "family": "van der Schaar",
+        "given": "Mihaela"
+      }
+    ],
+    "container-title": "Proceedings of the 35th International Conference on Machine Learning",
+    "publisher": "PMLR",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "volume": "80",
+    "URL": "https://proceedings.mlr.press/v80/yoon18a.html",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Yoon2018GAIN"
+  },
+  {
     "id": "h3Uh8wYi",
     "type": "article-journal",
     "author": [
@@ -2640,6 +2999,37 @@
     },
     "URL": "https://api.semanticscholar.org/CorpusID:91184310",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Zhou2019TreeBV"
+  },
+  {
+    "id": "195IMYRMU",
+    "type": "paper-conference",
+    "title": "Domain Adaptation under Missingness Shift",
+    "author": [
+      {
+        "family": "Zhou",
+        "given": "Helen"
+      },
+      {
+        "family": "Balakrishnan",
+        "given": "Sivaraman"
+      },
+      {
+        "family": "Lipton",
+        "given": "Zachary C."
+      }
+    ],
+    "container-title": "Proceedings of the 26th International Conference on Artificial Intelligence and Statistics",
+    "publisher": "PMLR",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "volume": "206",
+    "URL": "https://proceedings.mlr.press/v206/zhou23b.html",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Zhou2023DAMS"
   },
   {
     "id": "1GChRhAEq",
