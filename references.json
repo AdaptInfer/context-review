@@ -1129,6 +1129,111 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Higgins2016betaVAELB"
   },
   {
+    "id": "Zc8hnVfA",
+    "type": "manuscript",
+    "title": "Training Compute-Optimal Large Language Models",
+    "author": [
+      {
+        "family": "Hoffmann",
+        "given": "Jordan"
+      },
+      {
+        "family": "Borgeaud",
+        "given": "Sebastian"
+      },
+      {
+        "family": "Mensch",
+        "given": "Arthur"
+      },
+      {
+        "family": "Buchatskaya",
+        "given": "Elena"
+      },
+      {
+        "family": "Cai",
+        "given": "Trevor"
+      },
+      {
+        "family": "Rutherford",
+        "given": "Eliza"
+      },
+      {
+        "family": "de Las Casas",
+        "given": "Diego"
+      },
+      {
+        "family": "Hendricks",
+        "given": "Lisa Anne"
+      },
+      {
+        "family": "Welbl",
+        "given": "Johannes"
+      },
+      {
+        "family": "Clark",
+        "given": "Aidan"
+      },
+      {
+        "family": "Hennigan",
+        "given": "Tom"
+      },
+      {
+        "family": "Noland",
+        "given": "Eric"
+      },
+      {
+        "family": "Millican",
+        "given": "Katie"
+      },
+      {
+        "family": "van den Driessche",
+        "given": "George"
+      },
+      {
+        "family": "Damoc",
+        "given": "Bogdan"
+      },
+      {
+        "family": "Guy",
+        "given": "Aurelia"
+      },
+      {
+        "family": "Osindero",
+        "given": "Simon"
+      },
+      {
+        "family": "Simonyan",
+        "given": "Karen"
+      },
+      {
+        "family": "Elsen",
+        "given": "Erich"
+      },
+      {
+        "family": "Rae",
+        "given": "Jack W."
+      },
+      {
+        "family": "Vinyals",
+        "given": "Oriol"
+      },
+      {
+        "family": "Sifre",
+        "given": "Laurent"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "archive": "arXiv",
+    "URL": "https://arxiv.org/abs/2203.15556",
+    "note": "cs.CL\nLoaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Hoffmann2022TrainingCO"
+  },
+  {
     "id": "AhnjNoZf",
     "type": "article-journal",
     "title": "Meta-Learning in Neural Networks: A Survey",
@@ -1314,6 +1419,63 @@
     "page": "79-87",
     "URL": "https://api.semanticscholar.org/CorpusID:572361",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Jacobs1991AdaptiveMO"
+  },
+  {
+    "id": "1EAtiMm6o",
+    "type": "manuscript",
+    "title": "Scaling Laws for Neural Language Models",
+    "author": [
+      {
+        "family": "Kaplan",
+        "given": "Jared"
+      },
+      {
+        "family": "McCandlish",
+        "given": "Sam"
+      },
+      {
+        "family": "Henighan",
+        "given": "Tom"
+      },
+      {
+        "family": "Brown",
+        "given": "Tom B."
+      },
+      {
+        "family": "Chess",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Child",
+        "given": "Rewon"
+      },
+      {
+        "family": "Gray",
+        "given": "Scott"
+      },
+      {
+        "family": "Radford",
+        "given": "Alec"
+      },
+      {
+        "family": "Wu",
+        "given": "Jeffrey"
+      },
+      {
+        "family": "Amodei",
+        "given": "Dario"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "archive": "arXiv",
+    "URL": "https://arxiv.org/abs/2001.08361",
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Kaplan2020ScalingLF"
   },
   {
     "id": "uaQfPsiI",
@@ -3052,6 +3214,40 @@
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: ang2014asset"
   },
   {
+    "id": "1HqcEkGab",
+    "URL": "https://arxiv.org/abs/1702.08734",
+    "number": "1702.08734",
+    "title": "Billion-scale similarity search with GPUs",
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          7
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Jeff",
+        "family": "Johnson"
+      },
+      {
+        "given": "Matthijs",
+        "family": "Douze"
+      },
+      {
+        "given": "HervÃ©",
+        "family": "JÃ©gou"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Similarity search finds application in specialized database systems handling complex data such as images or videos, which are typically represented by high-dimensional features and require specific indexing structures. This paper tackles the problem of better utilizing GPUs for this task. While GPUs excel at data-parallel tasks, prior approaches are bottlenecked by algorithms that expose less parallelism, such as k-min selection, or make poor use of the memory hierarchy.\n  We propose a design for k-selection that operates at up to 55% of theoretical peak performance, enabling a nearest neighbor implementation that is 8.5x faster than prior GPU state of the art. We apply it in different similarity search scenarios, by proposing optimized design for brute-force, approximate and compressed-domain search based on product quantization. In all these setups, we outperform the state of the art by large margins. Our implementation enables the construction of a high accuracy k-NN graph on 95 million images from the Yfcc100M dataset in 35 minutes, and of a graph connecting 1 billion vectors in less than 12 hours on 4 Maxwell Titan X GPUs. We have open-sourced our approach for the sake of comparison and reproducibility.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1702.08734"
+  },
+  {
     "id": "B0L8KJ8W",
     "URL": "https://arxiv.org/abs/1706.06083",
     "number": "1706.06083",
@@ -3486,6 +3682,544 @@
     "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2110.14048"
   },
   {
+    "id": "cHqJJQHt",
+    "URL": "https://arxiv.org/abs/2212.03471",
+    "number": "2212.03471",
+    "title": "Bayesian Forecasting in Economics and Finance: A Modern Review",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          8,
+          1
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Gael M.",
+        "family": "Martin"
+      },
+      {
+        "given": "David T.",
+        "family": "Frazier"
+      },
+      {
+        "given": "Worapree",
+        "family": "Maneesoonthorn"
+      },
+      {
+        "given": "Ruben",
+        "family": "Loaiza-Maya"
+      },
+      {
+        "given": "Florian",
+        "family": "Huber"
+      },
+      {
+        "given": "Gary",
+        "family": "Koop"
+      },
+      {
+        "given": "John",
+        "family": "Maheu"
+      },
+      {
+        "given": "Didier",
+        "family": "Nibbering"
+      },
+      {
+        "given": "Anastasios",
+        "family": "Panagiotelis"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "The Bayesian statistical paradigm provides a principled and coherent approach to probabilistic forecasting. Uncertainty about all unknowns that characterize any forecasting problem -- model, parameters, latent states -- is able to be quantified explicitly, and factored into the forecast distribution via the process of integration or averaging. Allied with the elegance of the method, Bayesian forecasting is now underpinned by the burgeoning field of Bayesian computation, which enables Bayesian forecasts to be produced for virtually any problem, no matter how large, or complex. The current state of play in Bayesian forecasting in economics and finance is the subject of this review. The aim is to provide the reader with an overview of modern approaches to the field, set in some historical context; and with sufficient computational detail given to assist the reader with implementation.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2212.03471"
+  },
+  {
+    "id": "xoOsuDeH",
+    "URL": "https://arxiv.org/abs/2303.02781v1",
+    "number": "2303.02781v1",
+    "version": "v1",
+    "title": "Robustness, Evaluation and Adaptation of Machine Learning Models in the\n  Wild",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          5
+        ]
+      ]
+    },
+    "author": [
+      {
+        "literal": "Vihari Piratla"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Our goal is to improve reliability of Machine Learning (ML) systems deployed in the wild. ML models perform exceedingly well when test examples are similar to train examples. However, real-world applications are required to perform on any distribution of test examples. Current ML systems can fail silently on test examples with distribution shifts. In order to improve reliability of ML models due to covariate or domain shift, we propose algorithms that enable models to: (a) generalize to a larger family of test distributions, (b) evaluate accuracy under distribution shifts, (c) adapt to a target distribution. We study causes of impaired robustness to domain shifts and present algorithms for training domain robust models. A key source of model brittleness is due to domain overfitting, which our new training algorithms suppress and instead encourage domain-general hypotheses. While we improve robustness over standard training methods for certain problem settings, performance of ML systems can still vary drastically with domain shifts. It is crucial for developers and stakeholders to understand model vulnerabilities and operational ranges of input, which could be assessed on the fly during the deployment, albeit at a great cost. Instead, we advocate for proactively estimating accuracy surfaces over any combination of prespecified and interpretable domain shifts for performance forecasting. We present a label-efficient estimation to address estimation over a combinatorial space of domain shifts. Further, when a model's performance on a target domain is found to be poor, traditional approaches adapt the model using the target domain's resources. Standard adaptation methods assume access to sufficient labeled resources, which may be impractical for deployed models. We initiate a study of lightweight adaptation techniques with only unlabeled data resources with a focus on language applications.",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2303.02781v1"
+  },
+  {
+    "id": "PF464FGD",
+    "URL": "https://arxiv.org/abs/2309.06180",
+    "number": "2309.06180",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          13
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Woosuk",
+        "family": "Kwon"
+      },
+      {
+        "given": "Zhuohan",
+        "family": "Li"
+      },
+      {
+        "given": "Siyuan",
+        "family": "Zhuang"
+      },
+      {
+        "given": "Ying",
+        "family": "Sheng"
+      },
+      {
+        "given": "Lianmin",
+        "family": "Zheng"
+      },
+      {
+        "given": "Cody Hao",
+        "family": "Yu"
+      },
+      {
+        "given": "Joseph E.",
+        "family": "Gonzalez"
+      },
+      {
+        "given": "Hao",
+        "family": "Zhang"
+      },
+      {
+        "given": "Ion",
+        "family": "Stoica"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "High throughput serving of large language models (LLMs) requires batching sufficiently many requests at a time. However, existing systems struggle because the key-value cache (KV cache) memory for each request is huge and grows and shrinks dynamically. When managed inefficiently, this memory can be significantly wasted by fragmentation and redundant duplication, limiting the batch size. To address this problem, we propose PagedAttention, an attention algorithm inspired by the classical virtual memory and paging techniques in operating systems. On top of it, we build vLLM, an LLM serving system that achieves (1) near-zero waste in KV cache memory and (2) flexible sharing of KV cache within and across requests to further reduce memory usage. Our evaluations show that vLLM improves the throughput of popular LLMs by 2-4$\\times$ with the same level of latency compared to the state-of-the-art systems, such as FasterTransformer and Orca. The improvement is more pronounced with longer sequences, larger models, and more complex decoding algorithms. vLLM's source code is publicly available at https://github.com/vllm-project/vllm",
+    "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2309.06180"
+  },
+  {
+    "id": "D4deReQm",
+    "URL": "https://arxiv.org/abs/2309.17453",
+    "number": "2309.17453",
+    "title": "Efficient Streaming Language Models with Attention Sinks",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          9
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Guangxuan",
+        "family": "Xiao"
+      },
+      {
+        "given": "Yuandong",
+        "family": "Tian"
+      },
+      {
+        "given": "Beidi",
+        "family": "Chen"
+      },
+      {
+        "given": "Song",
+        "family": "Han"
+      },
+      {
+        "given": "Mike",
+        "family": "Lewis"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Deploying Large Language Models (LLMs) in streaming applications such as multi-round dialogue, where long interactions are expected, is urgently needed but poses two major challenges. Firstly, during the decoding stage, caching previous tokens' Key and Value states (KV) consumes extensive memory. Secondly, popular LLMs cannot generalize to longer texts than the training sequence length. Window attention, where only the most recent KVs are cached, is a natural approach -- but we show that it fails when the text length surpasses the cache size. We observe an interesting phenomenon, namely attention sink, that keeping the KV of initial tokens will largely recover the performance of window attention. In this paper, we first demonstrate that the emergence of attention sink is due to the strong attention scores towards initial tokens as a \"sink\" even if they are not semantically important. Based on the above analysis, we introduce StreamingLLM, an efficient framework that enables LLMs trained with a finite length attention window to generalize to infinite sequence lengths without any fine-tuning. We show that StreamingLLM can enable Llama-2, MPT, Falcon, and Pythia to perform stable and efficient language modeling with up to 4 million tokens and more. In addition, we discover that adding a placeholder token as a dedicated attention sink during pre-training can further improve streaming deployment. In streaming settings, StreamingLLM outperforms the sliding window recomputation baseline by up to 22.2x speedup. Code and datasets are provided at https://github.com/mit-han-lab/streaming-llm.",
+    "note": "license: http://creativecommons.org/licenses/by/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2309.17453"
+  },
+  {
+    "id": "1BPbcGQGq",
+    "URL": "https://arxiv.org/abs/2402.19473",
+    "number": "2402.19473",
+    "title": "Retrieval-Augmented Generation for AI-Generated Content: A Survey",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          6,
+          24
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Penghao",
+        "family": "Zhao"
+      },
+      {
+        "given": "Hailin",
+        "family": "Zhang"
+      },
+      {
+        "given": "Qinhan",
+        "family": "Yu"
+      },
+      {
+        "given": "Zhengren",
+        "family": "Wang"
+      },
+      {
+        "given": "Yunteng",
+        "family": "Geng"
+      },
+      {
+        "given": "Fangcheng",
+        "family": "Fu"
+      },
+      {
+        "given": "Ling",
+        "family": "Yang"
+      },
+      {
+        "given": "Wentao",
+        "family": "Zhang"
+      },
+      {
+        "given": "Jie",
+        "family": "Jiang"
+      },
+      {
+        "given": "Bin",
+        "family": "Cui"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Advancements in model algorithms, the growth of foundational models, and access to high-quality datasets have propelled the evolution of Artificial Intelligence Generated Content (AIGC). Despite its notable successes, AIGC still faces hurdles such as updating knowledge, handling long-tail data, mitigating data leakage, and managing high training and inference costs. Retrieval-Augmented Generation (RAG) has recently emerged as a paradigm to address such challenges. In particular, RAG introduces the information retrieval process, which enhances the generation process by retrieving relevant objects from available data stores, leading to higher accuracy and better robustness. In this paper, we comprehensively review existing efforts that integrate RAG technique into AIGC scenarios. We first classify RAG foundations according to how the retriever augments the generator, distilling the fundamental abstractions of the augmentation methodologies for various retrievers and generators. This unified perspective encompasses all RAG scenarios, illuminating advancements and pivotal technologies that help with potential future progress. We also summarize additional enhancements methods for RAG, facilitating effective engineering and implementation of RAG systems. Then from another view, we survey on practical applications of RAG across different modalities and tasks, offering valuable references for researchers and practitioners. Furthermore, we introduce the benchmarks for RAG, discuss the limitations of current RAG systems, and suggest potential directions for future research. Github: https://github.com/PKU-DAIR/RAG-Survey.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2402.19473"
+  },
+  {
+    "id": "gfPki3PM",
+    "URL": "https://arxiv.org/abs/2406.12274",
+    "number": "2406.12274",
+    "title": "SafeInfer: Context Adaptive Decoding Time Safety Alignment for Large Language Models",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          12,
+          17
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Somnath",
+        "family": "Banerjee"
+      },
+      {
+        "given": "Sayan",
+        "family": "Layek"
+      },
+      {
+        "given": "Soham",
+        "family": "Tripathy"
+      },
+      {
+        "given": "Shanu",
+        "family": "Kumar"
+      },
+      {
+        "given": "Animesh",
+        "family": "Mukherjee"
+      },
+      {
+        "given": "Rima",
+        "family": "Hazra"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Safety-aligned language models often exhibit fragile and imbalanced safety mechanisms, increasing the likelihood of generating unsafe content. In addition, incorporating new knowledge through editing techniques to language models can further compromise safety. To address these issues, we propose SafeInfer, a context-adaptive, decoding-time safety alignment strategy for generating safe responses to user queries. SafeInfer comprises two phases: the safety amplification phase, which employs safe demonstration examples to adjust the model's hidden states and increase the likelihood of safer outputs, and the safety-guided decoding phase, which influences token selection based on safety-optimized distributions, ensuring the generated content complies with ethical guidelines. Further, we present HarmEval, a novel benchmark for extensive safety evaluations, designed to address potential misuse scenarios in accordance with the policies of leading AI tech giants.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2406.12274"
+  },
+  {
+    "id": "RkqVE8TP",
+    "URL": "https://arxiv.org/abs/2409.08354",
+    "number": "2409.08354",
+    "title": "Bayesian Dynamic Factor Models for High-dimensional Matrix-valued Time Series",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          11
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Wei",
+        "family": "Zhang"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "We introduce a class of Bayesian matrix dynamic factor models that accommodates time-varying volatility, outliers, and cross-sectional correlation in the idiosyncratic components. For model comparison, we employ an importance-sampling estimator of the marginal likelihood based on the cross-entropy method to determine: (1) the optimal dimension of the factor matrix; (2) whether a vector- or matrix-valued structure is more suitable; and (3) whether an approximate or exact factor model is favored by the data. Through a series of Monte Carlo experiments, we demonstrate the accuracy of the factor estimates and the effectiveness of the marginal likelihood estimator in correctly identifying the true model. Applications to macroeconomic and financial datasets illustrate the model's ability to capture key features in matrix-valued time series.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2409.08354"
+  },
+  {
+    "id": "yApXu0Vp",
+    "URL": "https://arxiv.org/abs/2410.12837",
+    "number": "2410.12837",
+    "title": "A Comprehensive Survey of Retrieval-Augmented Generation (RAG): Evolution, Current Landscape and Future Directions",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          10,
+          18
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Shailja",
+        "family": "Gupta"
+      },
+      {
+        "given": "Rajesh",
+        "family": "Ranjan"
+      },
+      {
+        "given": "Surya Narayan",
+        "family": "Singh"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "This paper presents a comprehensive study of Retrieval-Augmented Generation (RAG), tracing its evolution from foundational concepts to the current state of the art. RAG combines retrieval mechanisms with generative language models to enhance the accuracy of outputs, addressing key limitations of LLMs. The study explores the basic architecture of RAG, focusing on how retrieval and generation are integrated to handle knowledge-intensive tasks. A detailed review of the significant technological advancements in RAG is provided, including key innovations in retrieval-augmented language models and applications across various domains such as question-answering, summarization, and knowledge-based tasks. Recent research breakthroughs are discussed, highlighting novel methods for improving retrieval efficiency. Furthermore, the paper examines ongoing challenges such as scalability, bias, and ethical concerns in deployment. Future research directions are proposed, focusing on improving the robustness of RAG models, expanding the scope of application of RAG models, and addressing societal implications. This survey aims to serve as a foundational resource for researchers and practitioners in understanding the potential of RAG and its trajectory in natural language processing.",
+    "note": "license: http://creativecommons.org/licenses/by-nc-nd/4.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2410.12837"
+  },
+  {
+    "id": "EsknayJ2",
+    "URL": "https://arxiv.org/abs/2504.15965",
+    "number": "2504.15965",
+    "title": "From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          24
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Yaxiong",
+        "family": "Wu"
+      },
+      {
+        "given": "Sheng",
+        "family": "Liang"
+      },
+      {
+        "given": "Chen",
+        "family": "Zhang"
+      },
+      {
+        "given": "Yichao",
+        "family": "Wang"
+      },
+      {
+        "given": "Yongyue",
+        "family": "Zhang"
+      },
+      {
+        "given": "Huifeng",
+        "family": "Guo"
+      },
+      {
+        "given": "Ruiming",
+        "family": "Tang"
+      },
+      {
+        "given": "Yong",
+        "family": "Liu"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Memory is the process of encoding, storing, and retrieving information, allowing humans to retain experiences, knowledge, skills, and facts over time, and serving as the foundation for growth and effective interaction with the world. It plays a crucial role in shaping our identity, making decisions, learning from past experiences, building relationships, and adapting to changes. In the era of large language models (LLMs), memory refers to the ability of an AI system to retain, recall, and use information from past interactions to improve future responses and interactions. Although previous research and reviews have provided detailed descriptions of memory mechanisms, there is still a lack of a systematic review that summarizes and analyzes the relationship between the memory of LLM-driven AI systems and human memory, as well as how we can be inspired by human memory to construct more powerful memory systems. To achieve this, in this paper, we propose a comprehensive survey on the memory of LLM-driven AI systems. In particular, we first conduct a detailed analysis of the categories of human memory and relate them to the memory of AI systems. Second, we systematically organize existing memory-related work and propose a categorization method based on three dimensions (object, form, and time) and eight quadrants. Finally, we illustrate some open problems regarding the memory of current AI systems and outline possible future directions for memory in the era of large language models.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2504.15965"
+  },
+  {
+    "id": "QciOeUHY",
+    "URL": "https://arxiv.org/abs/2506.06326",
+    "number": "2506.06326",
+    "title": "Memory OS of AI Agent",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          10
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Jiazheng",
+        "family": "Kang"
+      },
+      {
+        "given": "Mingming",
+        "family": "Ji"
+      },
+      {
+        "given": "Zhe",
+        "family": "Zhao"
+      },
+      {
+        "given": "Ting",
+        "family": "Bai"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "Large Language Models (LLMs) face a crucial challenge from fixed context windows and inadequate memory management, leading to a severe shortage of long-term memory capabilities and limited personalization in the interactive experience with AI agents. To overcome this challenge, we innovatively propose a Memory Operating System, i.e., MemoryOS, to achieve comprehensive and efficient memory management for AI agents. Inspired by the memory management principles in operating systems, MemoryOS designs a hierarchical storage architecture and consists of four key modules: Memory Storage, Updating, Retrieval, and Generation. Specifically, the architecture comprises three levels of storage units: short-term memory, mid-term memory, and long-term personal memory. Key operations within MemoryOS include dynamic updates between storage units: short-term to mid-term updates follow a dialogue-chain-based FIFO principle, while mid-term to long-term updates use a segmented page organization strategy. Our pioneering MemoryOS enables hierarchical memory integration and dynamic updating. Extensive experiments on the LoCoMo benchmark show an average improvement of 49.11% on F1 and 46.18% on BLEU-1 over the baselines on GPT-4o-mini, showing contextual coherence and personalized memory retention in long conversations. The implementation code is open-sourced at https://github.com/BAI-LAB/MemoryOS.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2506.06326"
+  },
+  {
+    "id": "nTk9nk8h",
+    "URL": "https://arxiv.org/abs/2508.10055",
+    "number": "2508.10055",
+    "title": "Bayesian Models for Joint Selection of Features and Auto-Regressive Lags: Theory and Applications in Environmental and Financial Forecasting",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          18
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Alokesh",
+        "family": "Manna"
+      },
+      {
+        "given": "Sujit K.",
+        "family": "Ghosh"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "We develop a Bayesian framework for variable selection in linear regression with autocorrelated errors, accommodating lagged covariates and autoregressive structures. This setting occurs in time series applications where responses depend on contemporaneous or past explanatory variables and persistent stochastic shocks, including financial modeling, hydrological forecasting, and meteorological applications requiring temporal dependency capture. Our methodology uses hierarchical Bayesian models with spike-and-slab priors to simultaneously select relevant covariates and lagged error terms. We propose an efficient two-stage MCMC algorithm separating sampling of variable inclusion indicators and model parameters to address high-dimensional computational challenges. Theoretical analysis establishes posterior selection consistency under mild conditions, even when candidate predictors grow exponentially with sample size, common in modern time series with many potential lagged variables. Through simulations and real applications (groundwater depth prediction, S&P 500 log returns modeling), we demonstrate substantial gains in variable selection accuracy and predictive performance. Compared to existing methods, our framework achieves lower MSPE, improved true model component identification, and greater robustness with autocorrelated noise, underscoring practical utility for model interpretation and forecasting in autoregressive settings.",
+    "note": "license: http://creativecommons.org/publicdomain/zero/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2508.10055"
+  },
+  {
+    "id": "1C0w0XTvj",
+    "URL": "https://arxiv.org/abs/2509.01794",
+    "number": "2509.01794",
+    "title": "A Multi-target Bayesian Transformer Framework for Predicting Cardiovascular Disease Biomarkers during Pandemics",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          3
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Trusting",
+        "family": "Inekwe"
+      },
+      {
+        "given": "Emmanuel",
+        "family": "Agu"
+      },
+      {
+        "given": "Winnie",
+        "family": "Mkandawire"
+      },
+      {
+        "given": "Andres",
+        "family": "Colubri"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "The COVID-19 pandemic disrupted healthcare systems worldwide, disproportionately impacting individuals with chronic conditions such as cardiovascular disease (CVD). These disruptions -- through delayed care and behavioral changes, affected key CVD biomarkers, including LDL cholesterol (LDL-C), HbA1c, BMI, and systolic blood pressure (SysBP). Accurate modeling of these changes is crucial for predicting disease progression and guiding preventive care. However, prior work has not addressed multi-target prediction of CVD biomarker from Electronic Health Records (EHRs) using machine learning (ML), while jointly capturing biomarker interdependencies, temporal patterns, and predictive uncertainty. In this paper, we propose MBT-CB, a Multi-target Bayesian Transformer (MBT) with pre-trained BERT-based transformer framework to jointly predict LDL-C, HbA1c, BMI and SysBP CVD biomarkers from EHR data. The model leverages Bayesian Variational Inference to estimate uncertainties, embeddings to capture temporal relationships and a DeepMTR model to capture biomarker inter-relationships. We evaluate MBT-CT on retrospective EHR data from 3,390 CVD patient records (304 unique patients) in Central Massachusetts during the Covid-19 pandemic. MBT-CB outperformed a comprehensive set of baselines including other BERT-based ML models, achieving an MAE of 0.00887, RMSE of 0.0135 and MSE of 0.00027, while effectively capturing data and model uncertainty, patient biomarker inter-relationships, and temporal dynamics via its attention and embedding mechanisms. MBT-CB's superior performance highlights its potential to improve CVD biomarker prediction and support clinical decision-making during pandemics.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2509.01794"
+  },
+  {
+    "id": "138XfoxXm",
+    "URL": "https://arxiv.org/abs/2509.08183",
+    "number": "2509.08183",
+    "title": "Chaotic Bayesian Inference: Strange Attractors as Risk Models for Black Swan Events",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          11
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Crystal",
+        "family": "Rust"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "We introduce a new risk modeling framework where chaotic attractors shape the geometry of Bayesian inference. By combining heavy-tailed priors with Lorenz and Rossler dynamics, the models naturally generate volatility clustering, fat tails, and extreme events. We compare two complementary approaches: Model A, which emphasizes geometric stability, and Model B, which highlights rare bursts using Fibonacci diagnostics. Together, they provide a dual perspective for systemic risk analysis, linking Black Swan theory to practical tools for stress testing and volatility monitoring.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:2509.08183"
+  },
+  {
     "publisher": "Springer Science and Business Media LLC",
     "issue": "2",
     "DOI": "10.1007/s10462-012-9338-y",
@@ -3519,6 +4253,40 @@
     "container-title-short": "Artif Intell Rev",
     "id": "g7RE7G0h",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1007/s10462-012-9338-y"
+  },
+  {
+    "publisher": "Elsevier BV",
+    "issue": "4",
+    "DOI": "10.1016/j.chaos.2008.07.022",
+    "type": "article-journal",
+    "page": "1764-1772",
+    "source": "Crossref",
+    "title": "Dynamic effects of increasing heterogeneity in financial markets",
+    "volume": "41",
+    "author": [
+      {
+        "given": "Ahmad K.",
+        "family": "Naimzada"
+      },
+      {
+        "given": "Giorgio",
+        "family": "Ricchiuti"
+      }
+    ],
+    "container-title": "Chaos, Solitons &amp; Fractals",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          8
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bfbqxn",
+    "container-title-short": "Chaos, Solitons &amp; Fractals",
+    "id": "1HdkTgLul",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1016/j.chaos.2008.07.022"
   },
   {
     "publisher": "Elsevier BV",
@@ -4384,46 +5152,6 @@
     "container-title-short": "Biometrics",
     "id": "1AAscRzye",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.2307/2528966"
-  },
-  {
-    "publisher": "MDPI AG",
-    "issue": "3",
-    "abstract": "<jats:p>Complex diseases such as type 2 diabetes are influenced by both environmental and genetic risk factors, leading to a growing interest in identifying gene–environment (G × E) interactions. A three-step variable selection method for single-index varying-coefficients models was proposed in recent research. This method selects varying and constant-effect genetic predictors, as well as non-zero loading parameters, to identify genetic factors that interact linearly or nonlinearly with a mixture of environmental factors to influence disease risk. In this paper, we extend this approach to a binary response setting given that many complex human diseases are binary traits. We also establish the oracle property for our variable selection method, demonstrating that it performs as well as if the correct sub-model were known in advance. Additionally, we assess the performance of our method through finite-sample simulations with both continuous and discrete gene variables. Finally, we apply our approach to a type 2 diabetes dataset, identifying potential genetic factors that interact with a combination of environmental variables, both linearly and nonlinearly, to influence the risk of developing type 2 diabetes.</jats:p>",
-    "DOI": "10.3390/math13030469",
-    "type": "article-journal",
-    "page": "469",
-    "source": "Crossref",
-    "title": "Variable Selection for Generalized Single-Index Varying-Coefficient Models with Applications to Synergistic G × E Interactions",
-    "volume": "13",
-    "author": [
-      {
-        "given": "Shunjie",
-        "family": "Guan"
-      },
-      {
-        "given": "Xu",
-        "family": "Liu"
-      },
-      {
-        "given": "Yuehua",
-        "family": "Cui"
-      }
-    ],
-    "container-title": "Mathematics",
-    "language": "en",
-    "issued": {
-      "date-parts": [
-        [
-          2025,
-          1,
-          31
-        ]
-      ]
-    },
-    "URL": "https://doi.org/g9t2rp",
-    "container-title-short": "Mathematics",
-    "id": "dvWlfk21",
-    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.3390/math13030469"
   },
   {
     "publisher": "MDPI AG",
@@ -9621,55 +10349,6 @@
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.48550/arxiv.2409.08466"
   },
   {
-    "publisher": "School of Statistics, Renmin University of China",
-    "abstract": "<jats:p>Studying migration patterns driven by extreme environmental events is crucial for building a sustainable society and stable economy. Motivated by a real dataset about human migrations, this paper develops a transformed varying coefficient model for origin and destination (OD) regression to elucidate the complex associations of migration patterns with spatio-temporal dependencies and socioeconomic factors. Existing studies often overlook the dynamic effects of these factors in OD regression. Furthermore, with the increasing ease of collecting OD data, the scale of current OD regression data is typically large, necessitating the development of methods for efficiently fitting large-scale migration data. We address the challenge by proposing a new Bayesian interpretation for the proposed OD models, leveraging sufficient statistics for efficient big data computation. Our method, inspired by migration studies, promises broad applicability across various fields, contributing to refined statistical analysis techniques. Extensive numerical studies are provided, and insights from real data analysis are shared.</jats:p>",
-    "DOI": "10.6339/25-jds1181",
-    "type": "article-journal",
-    "page": "353-369",
-    "source": "Crossref",
-    "title": "Exact Inference for Transformed Large-Scale Varying Coefficient Models with Applications",
-    "author": [
-      {
-        "given": "Tianyu",
-        "family": "Chen"
-      },
-      {
-        "given": "Robert",
-        "family": "Habans"
-      },
-      {
-        "given": "Thomas",
-        "family": "Douthat"
-      },
-      {
-        "given": "Jenna",
-        "family": "Losh"
-      },
-      {
-        "given": "Lida",
-        "family": "Chalangar Jalili Dehkharghani"
-      },
-      {
-        "given": "Li-Hsiang",
-        "family": "Lin"
-      }
-    ],
-    "container-title": "Journal of Data Science",
-    "language": "en",
-    "issued": {
-      "date-parts": [
-        [
-          2025,
-          1,
-          1
-        ]
-      ]
-    },
-    "URL": "https://doi.org/g9t2rs",
-    "id": "14C9q1ybi",
-    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.6339/25-jds1181"
-  },
-  {
     "id": "lGpaLCJV",
     "type": "article-journal",
     "author": [
@@ -9704,6 +10383,130 @@
     "issue": "3",
     "page": "1314--1326",
     "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: lei2018machinery"
+  },
+  {
+    "title": "A review of multivariate longitudinal data analysis.",
+    "volume": "20",
+    "issue": "4",
+    "page": "299-330",
+    "container-title": "Statistical methods in medical research",
+    "container-title-short": "Stat Methods Med Res",
+    "ISSN": "1477-0334",
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          3,
+          8
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "S",
+        "family": "Bandyopadhyay"
+      },
+      {
+        "given": "B",
+        "family": "Ganguli"
+      },
+      {
+        "given": "A",
+        "family": "Chatterjee"
+      }
+    ],
+    "PMID": "20212072",
+    "DOI": "10.1177/0962280209340191",
+    "abstract": "Repeated observation of multiple outcomes is common in biomedical and public health research. Such experiments result in multivariate longitudinal data, which are unique in the sense that they allow the researcher to study the joint evolution of these outcomes over time. Special methods are required to analyse such data because repeated observations on any given response are likely to be correlated over time while multiple responses measured at a given time point will also be correlated. We review three approaches for analysing such data in the light of the associated theory, applications and software. The first method consists of the application of univariate longitudinal tools to a single summary outcome. The second method aims at estimating regression coefficients without explicitly modelling the underlying covariance structure of the data. The third method combines all the outcomes into a single joint multivariate model. We also introduce a multivariate longitudinal dataset and use it to illustrate some of the techniques discussed in the article.",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/20212072",
+    "type": "article-journal",
+    "id": "9GZOsj4z",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:20212072"
+  },
+  {
+    "title": "A Bayesian multilevel time-varying framework for joint modeling of hospitalization and survival in patients on dialysis.",
+    "volume": "41",
+    "issue": "29",
+    "page": "5597-5611",
+    "container-title": "Statistics in medicine",
+    "container-title-short": "Stat Med",
+    "ISSN": "1097-0258",
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          10,
+          1
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Esra",
+        "family": "Kürüm"
+      },
+      {
+        "given": "Danh V",
+        "family": "Nguyen"
+      },
+      {
+        "given": "Sudipto",
+        "family": "Banerjee"
+      },
+      {
+        "given": "Yihao",
+        "family": "Li"
+      },
+      {
+        "given": "Connie M",
+        "family": "Rhee"
+      },
+      {
+        "given": "Damla",
+        "family": "Şentürk"
+      }
+    ],
+    "PMID": "36181392",
+    "PMCID": "PMC9931182",
+    "DOI": "10.1002/sim.9582",
+    "abstract": "Over 782 000 individuals in the United States have end-stage kidney disease with about 72% of patients on dialysis, a life-sustaining treatment. Dialysis patients experience high mortality and frequent hospitalizations, at about twice per year. These poor outcomes are exacerbated at key time periods, such as the fragile period after transition to dialysis. In order to study the time-varying effects of modifiable patient and dialysis facility risk factors on hospitalization and mortality, we propose a novel Bayesian multilevel time-varying joint model. Efficient estimation and inference is achieved within the Bayesian framework using Markov chain Monte Carlo, where multilevel (patient- and dialysis facility-level) varying coefficient functions are targeted via Bayesian P-splines. Applications to the United States Renal Data System, a national database which contains data on nearly all patients on dialysis in the United States, highlight significant time-varying effects of patient- and facility-level risk factors on hospitalization risk and mortality. Finite sample performance of the proposed methodology is studied through simulations.",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/36181392",
+    "type": "article-journal",
+    "id": "5V2lk8fC",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:36181392"
+  },
+  {
+    "title": "[A field study: piroxicam in arthrosis and soft tissue rheumatism. Results of a multicenter study].",
+    "volume": "72",
+    "issue": "37",
+    "page": "1189-94",
+    "container-title": "Schweizerische Rundschau fur Medizin Praxis = Revue suisse de medecine Praxis",
+    "container-title-short": "Schweiz Rundsch Med Prax",
+    "ISSN": "1013-2058",
+    "issued": {
+      "date-parts": [
+        [
+          1983,
+          9,
+          13
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "O",
+        "family": "Knüsel"
+      },
+      {
+        "given": "G",
+        "family": "Hinz"
+      }
+    ],
+    "PMID": "6356121",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/6356121",
+    "type": "article-journal",
+    "id": "D6xnJJaY",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:PMC6356121"
   },
   {
     "id": "15RY4QKp3",
