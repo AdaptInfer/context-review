@@ -9,7 +9,7 @@
   <meta name="author" content="Yue Yao" />
   <meta name="author" content="Dong Liu" />
   <meta name="author" content="Jiaqi Wang" />
-  <meta name="dcterms.date" content="2025-10-03" />
+  <meta name="dcterms.date" content="2025-10-04" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: Bridging Statistical and Foundation Models</title>
   <style>
@@ -54,11 +54,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-03" />
-  <meta name="citation_publication_date" content="2025-10-03" />
-  <meta property="article:published_time" content="2025-10-03" />
-  <meta name="dc.modified" content="2025-10-03T16:18:18+00:00" />
-  <meta property="article:modified_time" content="2025-10-03T16:18:18+00:00" />
+  <meta name="dc.date" content="2025-10-04" />
+  <meta name="citation_publication_date" content="2025-10-04" />
+  <meta property="article:published_time" content="2025-10-04" />
+  <meta name="dc.modified" content="2025-10-04T16:11:26+00:00" />
+  <meta property="article:modified_time" content="2025-10-04T16:11:26+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -90,9 +90,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/59d39fcb520e2287456746445bb5009386510fe3/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/59d39fcb520e2287456746445bb5009386510fe3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/59d39fcb520e2287456746445bb5009386510fe3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -109,10 +109,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/44a0346f092c243cc09bfd172842158a320533ee/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/59d39fcb520e2287456746445bb5009386510fe3/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/44a0346f092c243cc09bfd172842158a320533ee">AdaptInfer/context-review@44a0346</a>
-on October 3, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/59d39fcb520e2287456746445bb5009386510fe3">AdaptInfer/context-review@59d39fc</a>
+on October 4, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -443,7 +443,7 @@ The incorporation of machine learning models into VCMs introduces new theoretica
 </figure>
 </div>
 <p>Figure <a href="#fig:sparsity-context">7</a> illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.</p>
-<p>Evaluation of missingness-as-context models should report <em>mask-stratified metrics</em>, including worst-group performance, following group-robust evaluation practice <span class="citation" data-cites="J9mQL0g5 I3kCk5k2">[<a href="#ref-J9mQL0g5" role="doc-biblioref">53</a>,<a href="#ref-I3kCk5k2" role="doc-biblioref">54</a>]</span>. Robustness should be probed with <em>mask-shift stress tests</em>, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting <span class="citation" data-cites="195IMYRMU I3kCk5k2">[<a href="#ref-I3kCk5k2" role="doc-biblioref">54</a>,<a href="#ref-195IMYRMU" role="doc-biblioref">55</a>]</span>. When imputation is used, authors should assess <em>imputation realism</em> by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for (p(x_{}x_{})) <span class="citation" data-cites="1DD1jAYZd SXfDe3KU">[<a href="#ref-1DD1jAYZd" role="doc-biblioref">56</a>,<a href="#ref-SXfDe3KU" role="doc-biblioref">57</a>]</span>. For causal or estimation applications, conduct <em>ignorability sensitivity analyses</em>, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms <span class="citation" data-cites="jqcBCPQs ye7pP794">[<a href="#ref-jqcBCPQs" role="doc-biblioref">58</a>,<a href="#ref-ye7pP794" role="doc-biblioref">59</a>]</span>. Finally, include <em>ablations</em> that remove mask/indicator inputs—and, for trees, disable default-direction routing—to confirm that gains derive from modeling the mask signal rather than artifacts <span class="citation" data-cites="mcQbhuyn 5ykU3Zv8">[<a href="#ref-mcQbhuyn" role="doc-biblioref">60</a>,<a href="#ref-5ykU3Zv8" role="doc-biblioref">61</a>]</span>. Practical implementations of these ideas are widely available: <strong>GRU-D</strong> <span class="citation" data-cites="R3MGlv2S">[<a href="#ref-R3MGlv2S" role="doc-biblioref">62</a>]</span> and <strong>BRITS</strong> <span class="citation" data-cites="Bl30FFIi">[<a href="#ref-Bl30FFIi" role="doc-biblioref">63</a>]</span> provide mask- and time-aware sequence models, while <strong>GAIN</strong> <span class="citation" data-cites="SXfDe3KU">[<a href="#ref-SXfDe3KU" role="doc-biblioref">57</a>]</span> and <strong>VAEAC</strong> <span class="citation" data-cites="1DD1jAYZd">[<a href="#ref-1DD1jAYZd" role="doc-biblioref">56</a>]</span> offer open-source code for imputation under arbitrary masks. For tree ensembles, <strong>XGBoost</strong> supports sparsity-aware default-direction splits, making it straightforward to treat “NA” values as context without preprocessing <span class="citation" data-cites="mcQbhuyn">[<a href="#ref-mcQbhuyn" role="doc-biblioref">60</a>]</span>.</p>
+<p>Evaluation of missingness-as-context models should report <em>mask-stratified metrics</em>, including worst-group performance, following group-robust evaluation practice <span class="citation" data-cites="J9mQL0g5 I3kCk5k2">[<a href="#ref-J9mQL0g5" role="doc-biblioref">53</a>,<a href="#ref-I3kCk5k2" role="doc-biblioref">54</a>]</span>. Robustness should be probed with <em>mask-shift stress tests</em>, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting <span class="citation" data-cites="195IMYRMU I3kCk5k2">[<a href="#ref-I3kCk5k2" role="doc-biblioref">54</a>,<a href="#ref-195IMYRMU" role="doc-biblioref">55</a>]</span>. When imputation is used, authors should assess <em>imputation realism</em> by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for <span class="math inline">\(p(x_{\text{missing}}\mid x_{\text{observed}})\)</span> <span class="citation" data-cites="1DD1jAYZd SXfDe3KU">[<a href="#ref-1DD1jAYZd" role="doc-biblioref">56</a>,<a href="#ref-SXfDe3KU" role="doc-biblioref">57</a>]</span>. For causal or estimation applications, conduct <em>ignorability sensitivity analyses</em>, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms <span class="citation" data-cites="jqcBCPQs ye7pP794">[<a href="#ref-jqcBCPQs" role="doc-biblioref">58</a>,<a href="#ref-ye7pP794" role="doc-biblioref">59</a>]</span>. Finally, include <em>ablations</em> that remove mask/indicator inputs—and, for trees, disable default-direction routing—to confirm that gains derive from modeling the mask signal rather than artifacts <span class="citation" data-cites="mcQbhuyn 5ykU3Zv8">[<a href="#ref-mcQbhuyn" role="doc-biblioref">60</a>,<a href="#ref-5ykU3Zv8" role="doc-biblioref">61</a>]</span>. Practical implementations of these ideas are widely available: <strong>GRU-D</strong> <span class="citation" data-cites="R3MGlv2S">[<a href="#ref-R3MGlv2S" role="doc-biblioref">62</a>]</span> and <strong>BRITS</strong> <span class="citation" data-cites="Bl30FFIi">[<a href="#ref-Bl30FFIi" role="doc-biblioref">63</a>]</span> provide mask- and time-aware sequence models, while <strong>GAIN</strong> <span class="citation" data-cites="SXfDe3KU">[<a href="#ref-SXfDe3KU" role="doc-biblioref">57</a>]</span> and <strong>VAEAC</strong> <span class="citation" data-cites="1DD1jAYZd">[<a href="#ref-1DD1jAYZd" role="doc-biblioref">56</a>]</span> offer open-source code for imputation under arbitrary masks. For tree ensembles, <strong>XGBoost</strong> supports sparsity-aware default-direction splits, making it straightforward to treat “NA” values as context without preprocessing <span class="citation" data-cites="mcQbhuyn">[<a href="#ref-mcQbhuyn" role="doc-biblioref">60</a>]</span>.</p>
 <h3 id="context-aware-efficiency-principles-and-design">Context-Aware Efficiency Principles and Design</h3>
 <p>The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.</p>
 <p>One central principle is the use of sparsity assumptions to limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of parameters to be zero simultaneously <span class="citation" data-cites="h3Uh8wYi">[<a href="#ref-h3Uh8wYi" role="doc-biblioref">64</a>]</span>, hierarchical regularization that applies different strengths of shrinkage to varying levels of context specificity <span class="citation" data-cites="htzWcAM1">[<a href="#ref-htzWcAM1" role="doc-biblioref">65</a>]</span>, and adaptive thresholding that dynamically adjusts sparsity levels in accordance with context complexity.</p>
