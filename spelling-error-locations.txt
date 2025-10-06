@@ -6,6 +6,14 @@ content/02.introduction.md:22:covariates
 content/02.introduction.md:26:adaptivity
 content/02.introduction.md:29:covariates
 content/02.introduction.md:33:interpretable
+content/02.introduction.md:39:pretrained
+content/02.introduction.md:42:Adaptivity
+content/02.introduction.md:44:TODO
+content/02.introduction.md:44:TODO
+content/02.introduction.md:44:TODO
+content/02.introduction.md:44:TODO
+content/02.introduction.md:44:TODO
+content/02.introduction.md:47:siloed
 content/03.overview.md:13:subpopulation
 content/03.overview.md:13:underrepresenting
 content/03.overview.md:19:subpopulations

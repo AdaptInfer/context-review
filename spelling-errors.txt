@@ -41,12 +41,12 @@ DoshiVelez
 DRO
 DRO’s
 EIIL
-embeddings
+Embeddings
 EmergentAO
 encodings
 Englert
 ERM
-Explainers
+explainers
 factuality
 FAISS
 GBDTs
@@ -60,7 +60,7 @@ Guo
 Hastie
 HeckmanMI
 Hoffmann
-hte
+HTE
 hyperparameter
 hyperparameters
 ICL
@@ -71,12 +71,12 @@ independencies
 instantiations
 interconnectedness
 interprepretable
-Interpretability
+interpretability
 interpretable
 invariance
 IRM
 IRMv
-jiaqi
+Jiaqi
 JTT
 KKT
 Koh
@@ -102,7 +102,7 @@ Michailidis
 Milvus
 minimality
 minimax
-Mis
+mis
 MissingIndicator
 missingness
 misspecified
@@ -111,7 +111,7 @@ modularity
 modularized
 MoICE
 MSE
-MTL
+mtl
 multimodal
 Neyman
 NLP
@@ -132,6 +132,7 @@ PGD
 piecewise
 Pre
 preprocessing
+pretrained
 probablybots
 ProtoPNet
 PublicationTO
@@ -154,6 +155,7 @@ scalable
 SHAP
 Shapley
 Shrikumar
+siloed
 SpatiallyVC
 stationarity
 StreamingLLM
@@ -185,7 +187,7 @@ VAE
 VAEAC
 VAEs
 VanNess
-variational
+Variational
 VCM
 VCMs
 vLLM
