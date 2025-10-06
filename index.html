@@ -58,8 +58,8 @@
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T03:35:21+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T03:35:21+00:00" />
+  <meta name="dc.modified" content="2025-10-06T04:09:52+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T04:09:52+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -114,9 +114,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/d060779c07c528cf72327bb30306e42ba4a370ee">AdaptInfer/context-review@d060779</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/3110e6763737f04343f493871511ce66ab726493">AdaptInfer/context-review@3110e67</a>
 on October 6, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -224,6 +224,42 @@ We begin with classical models that impose explicit structure—such as varying-
 Though these methods arise from different traditions, they share a common goal: to tailor inference to the local characteristics of each observation or task.
 Along the way, we highlight recurring themes: complex models often decompose into simpler, context-specific components; foundation models can both adapt to and generate context; and context-awareness challenges classical assumptions of homogeneity.
 These perspectives offer a unifying lens on recent advances and open new directions for building adaptive, interpretable, and personalized models.</p>
+<h3 id="related-surveys-and-reviews">Related Surveys and Reviews</h3>
+<p>Several surveys have examined specific aspects of context-adaptive inference, but they have largely remained confined to individual methodological traditions.
+Classical statistical surveys focus on varying-coefficient models and related structured regression methods.
+In machine learning, surveys on transfer and meta-learning emphasize task adaptation and shared representations, while recent work on foundation models explores the implicit adaptation capabilities of large pretrained models.
+Table 1 summarizes the scope and coverage of representative surveys.</p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 30%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Survey</th>
+<th>Topic Focus</th>
+<th>Scope</th>
+<th>Coverage of Adaptivity</th>
+<th>Gap Relative to This Work</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TODO: Add references and details for each survey.</td>
+<td>TODO: Add references and details for each survey.</td>
+<td>TODO: Add references and details for each survey.</td>
+<td>TODO: Add references and details for each survey.</td>
+<td>TODO: Add references and details for each survey.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1: Representative surveys and their coverage of context-adaptive inference. Most focus on a single methodological tradition and do not connect explicit and implicit approaches.</em></p>
+<p>While existing surveys have reviewed individual components of this landscape—such as varying-coefficient models, meta-learning, or foundation models—they have remained largely siloed.
+This article provides the first comprehensive review that unifies explicit and implicit context-adaptive methods under a common framework.
+By situating classical statistical models, modern machine learning methods, and foundation models along a shared spectrum of context-adaptive inference, we highlight common principles and distinctive challenges.</p>
 <h2 id="from-population-assumptions-to-context-adaptive-inference">From Population Assumptions to Context-Adaptive Inference</h2>
 <p>Most statistical and machine learning models begin with a foundational assumption: that all samples are drawn independently and identically from a shared population distribution. This assumption simplifies estimation and enables generalization from limited data, but it collapses in the presence of meaningful heterogeneity.</p>
 <p>In practice, data often reflect differences across individuals, environments, or conditions. These differences may stem from biological variation, temporal drift, site effects, or shifts in measurement context. Treating heterogeneous data as if it were homogeneous can obscure real effects, inflate variance, and lead to brittle predictions.</p>
