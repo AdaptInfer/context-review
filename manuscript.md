@@ -7,14 +7,14 @@ keywords:
 lang: en-US
 date-meta: '2025-10-06'
 author-meta:
-- Ben Lengerich
-- Caleb N. Ellington
 - Yue Yao
+- Caleb N. Ellington
+- Jingyun Jia
 - Dong Liu
 - Rikhil Rao
 - Jiaqi Wang
-- Jingyun Jia
 - Samuel Wales-McGrath
+- Ben Lengerich
 header-includes: |
   <!--
   Manubot generated metadata rendered from header-includes-template.html.
@@ -29,25 +29,25 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T15:46:20+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T15:46:20+00:00" />
+  <meta name="dc.modified" content="2025-10-06T15:52:59+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T15:52:59+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
   <meta name="dc.publisher" content="Manubot" />
   <meta name="citation_journal_title" content="Manubot" />
   <meta name="citation_technical_report_institution" content="Manubot" />
-  <meta name="citation_author" content="Ben Lengerich" />
+  <meta name="citation_author" content="Yue Yao" />
   <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
-  <meta name="citation_author_orcid" content="0000-0001-8690-9554" />
-  <meta name="twitter:creator" content="@ben_lengerich" />
+  <meta name="citation_author_orcid" content="0009-0000-8195-3943" />
   <meta name="citation_author" content="Caleb N. Ellington" />
   <meta name="citation_author_institution" content="Computational Biology Department, Carnegie Mellon University" />
   <meta name="citation_author_orcid" content="0000-0001-7029-8023" />
   <meta name="twitter:creator" content="@probablybots" />
-  <meta name="citation_author" content="Yue Yao" />
+  <meta name="citation_author" content="Jingyun Jia" />
   <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
-  <meta name="citation_author_orcid" content="0009-0000-8195-3943" />
+  <meta name="citation_author_orcid" content="0009-0006-3241-3485" />
+  <meta name="twitter:creator" content="@None" />
   <meta name="citation_author" content="Dong Liu" />
   <meta name="citation_author_institution" content="Department of Computer Science, Yale University" />
   <meta name="citation_author_orcid" content="0009-0009-6815-8297" />
@@ -60,23 +60,23 @@ header-includes: |
   <meta name="citation_author_institution" content="Paul G. Allen School of Computer Science &amp; Engineering, University of Washington" />
   <meta name="citation_author_orcid" content="0009-0003-8531-9490" />
   <meta name="twitter:creator" content="@None" />
-  <meta name="citation_author" content="Jingyun Jia" />
-  <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
-  <meta name="citation_author_orcid" content="0009-0006-3241-3485" />
-  <meta name="twitter:creator" content="@None" />
   <meta name="citation_author" content="Samuel Wales-McGrath" />
   <meta name="citation_author_institution" content="Department of Computer Science and Engineering, The Ohio State University" />
   <meta name="citation_author_orcid" content="0009-0008-5405-2646" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Ben Lengerich" />
+  <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
+  <meta name="citation_author_orcid" content="0000-0001-8690-9554" />
+  <meta name="twitter:creator" content="@ben_lengerich" />
   <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
   <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -98,9 +98,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/))
+([permalink](https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/))
 was automatically generated
-from [AdaptInfer/context-review@34cc6c1](https://github.com/AdaptInfer/context-review/tree/34cc6c120b8f9d7847be37d37a2729e425288ba3)
+from [AdaptInfer/context-review@3050e86](https://github.com/AdaptInfer/context-review/tree/3050e86926899623c5c9749692bfd83f9bb03138)
 on October 6, 2025.
 </em></small>
 
@@ -110,14 +110,12 @@ on October 6, 2025.
 
 
 
-+ **Ben Lengerich**
++ **Yue Yao**
   <br>
     ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [0000-0001-8690-9554](https://orcid.org/0000-0001-8690-9554)
+    [0009-0000-8195-3943](https://orcid.org/0009-0000-8195-3943)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [blengerich](https://github.com/blengerich)
-    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
-    [ben_lengerich](https://twitter.com/ben_lengerich)
+    [YueYao-stat](https://github.com/YueYao-stat)
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
@@ -138,12 +136,12 @@ on October 6, 2025.
      · Funded by None
   </small>
 
-+ **Yue Yao**
++ **Jingyun Jia**
   <br>
     ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [0009-0000-8195-3943](https://orcid.org/0009-0000-8195-3943)
+    [0009-0006-3241-3485](https://orcid.org/0009-0006-3241-3485)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [YueYao-stat](https://github.com/YueYao-stat)
+    [Clouddelta](https://github.com/Clouddelta)
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
@@ -186,18 +184,6 @@ on October 6, 2025.
      · Funded by None
   </small>
 
-+ **Jingyun Jia**
-  <br>
-    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
-    [0009-0006-3241-3485](https://orcid.org/0009-0006-3241-3485)
-    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
-    [Clouddelta](https://github.com/Clouddelta)
-    <br>
-  <small>
-     Department of Statistics, University of Wisconsin-Madison
-     · Funded by None
-  </small>
-
 + **Samuel Wales-McGrath**
   <br>
     ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
@@ -207,6 +193,20 @@ on October 6, 2025.
     <br>
   <small>
      Department of Computer Science and Engineering, The Ohio State University
+     · Funded by None
+  </small>
+
++ **Ben Lengerich**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0000-0001-8690-9554](https://orcid.org/0000-0001-8690-9554)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [blengerich](https://github.com/blengerich)
+    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
+    [ben_lengerich](https://twitter.com/ben_lengerich)
+    <br>
+  <small>
+     Department of Statistics, University of Wisconsin-Madison
      · Funded by None
   </small>
 
