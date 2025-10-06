@@ -14,6 +14,7 @@ author-meta:
 - Rikhil Rao
 - Jiaqi Wang
 - Jingyun Jia
+- Samuel Wales-McGrath
 header-includes: |
   <!--
   Manubot generated metadata rendered from header-includes-template.html.
@@ -28,8 +29,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T05:49:31+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T05:49:31+00:00" />
+  <meta name="dc.modified" content="2025-10-06T15:46:20+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T15:46:20+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -63,15 +64,19 @@ header-includes: |
   <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
   <meta name="citation_author_orcid" content="0009-0006-3241-3485" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Samuel Wales-McGrath" />
+  <meta name="citation_author_institution" content="Department of Computer Science and Engineering, The Ohio State University" />
+  <meta name="citation_author_orcid" content="0009-0008-5405-2646" />
+  <meta name="twitter:creator" content="@None" />
   <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
   <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -93,9 +98,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/))
+([permalink](https://AdaptInfer.github.io/context-review/v/34cc6c120b8f9d7847be37d37a2729e425288ba3/))
 was automatically generated
-from [AdaptInfer/context-review@f066044](https://github.com/AdaptInfer/context-review/tree/f06604401a82fa19cc8ebce5238a186175a5ae1a)
+from [AdaptInfer/context-review@34cc6c1](https://github.com/AdaptInfer/context-review/tree/34cc6c120b8f9d7847be37d37a2729e425288ba3)
 on October 6, 2025.
 </em></small>
 
@@ -190,6 +195,18 @@ on October 6, 2025.
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
+     · Funded by None
+  </small>
+
++ **Samuel Wales-McGrath**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0008-5405-2646](https://orcid.org/0009-0008-5405-2646)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [Samuel-WM](https://github.com/Samuel-WM)
+    <br>
+  <small>
+     Department of Computer Science and Engineering, The Ohio State University
      · Funded by None
   </small>
 
@@ -1120,12 +1137,39 @@ There is no one-size-fits-all context-adaptive model. Successful deployment depe
 
 ## Future Trends and Opportunities with Foundation Models
 
-### Emerging Technologies
-TODO: Identifying upcoming technologies and predicting their impact on context-adaptive learning.
+### A New Paradigm for Context-Adaptive Inference
+The emergence of large-scale foundation models has reshaped context-adaptive learning. Trained on vast and diverse datasets with self-supervised objectives, these models internalize broad statistical regularities across language, vision, and multimodal data [@doi:10.48550/arXiv.2108.07258]. Unlike earlier approaches that relied on hand-crafted features or narrowly scoped models, foundation models can process and structure complex, high-dimensional contexts in ways that were previously infeasible.
+Their impact is clear in natural language processing, where large language models achieve strong zero-shot and few-shot generalization, and in computer vision, where multimodal encoders such as CLIP align images and text into a shared representation space [@doi:10.48550/arXiv.2103.00020]. These advances mark a shift from treating feature extraction and inference as separate stages toward unified systems that function simultaneously as representation learners and adaptive engines. At the same time, challenges remain, including high computational demands, the risk of amplifying societal biases, and the difficulty of interpreting learned representations [@doi:10.48550/arXiv.1607.06520].
+This section introduces three contributions of foundation models to adaptive inference: their role as universal context encoders, the mechanisms they provide for dynamic adaptation, and their potential to connect with formal statistical and causal reasoning.
 
-### Advances in Methodologies
-TODO: Speculating on potential future methodological enhancements.
+#### Universal Context Encoders
+Foundation models act as general-purpose context encoders, transforming raw, unstructured data into meaningful representations without manual feature engineering. For textual data, models such as BERT learn embeddings that capture semantic and syntactic nuances, supporting tasks from classification to retrieval [@doi:10.48550/arXiv.1810.04805]. For visual and multimodal inputs, CLIP aligns images and text into a shared embedding space, enabling zero-shot classification and cross-modal retrieval [@doi:10.48550/arXiv.2103.00020].
+These representations can be seen as new context variables: semantically rich features that can feed directly into statistical pipelines. Classical methods such as regression or causal inference can then operate on data that would otherwise be unstructured. The implication for context-adaptive inference is that foundation models provide a versatile encoding layer that expands the range of contexts accessible to formal modeling.
 
+#### Dynamic Adaptation Mechanisms
+Foundation models support dynamic adaptation at inference time, allowing flexible responses to new tasks without retraining from scratch. The most prominent mechanism is in-context learning (ICL), where models adapt behavior by conditioning on examples in a prompt, enabling rapid few-shot or zero-shot generalization [@doi:10.48550/arXiv.2208.01066].
+Scaling is supported by modular architectures such as Mixture-of-Experts (MoE), which route inputs to specialized sub-networks for sparse activation, increasing capacity without proportional compute [@doi:10.48550/arXiv.1701.06538]. Parameter-efficient fine-tuning (PEFT) methods such as LoRA show that models can be adapted by updating less than one percent of weights, achieving near full fine-tuning performance [@doi:10.48550/arXiv.2106.09685].
+Together, these mechanisms demonstrate that adaptation can be achieved flexibly and efficiently, which is critical for extending pre-trained models to diverse domains.
+
+#### Bridging with Statistical and Causal Reasoning
+A growing research direction is combining the representational strength of foundation models with the rigor of statistical and causal inference. Language models can already extract relational patterns from text to suggest or critique causal graphs [@doi:10.48550/arXiv.2305.07171]. Approaches like LMPriors show how foundation models can provide task-specific priors that improve sample efficiency in statistical estimation [@doi:10.48550/arXiv.2210.12530]. Models also generate natural language explanations that clarify predictions or summarize statistical results, supporting interpretability [@doi:10.48550/arXiv.2310.05797].
+The implication for context-adaptive inference is that foundation models can act as bridges, linking flexible representation learning with principled inference. This integration creates pathways for adaptive systems that are both powerful and theoretically grounded.
+
+#### Transition to Future Trends
+Building on these foundations, the next section turns to future directions. We examine how emerging technologies and methodological advances will further shape the ability of foundation models to support context-adaptive inference, highlighting both opportunities and challenges.
+
+
+### Next-Generation Methods for Contextualized Adaptive Inference
+While current foundation models already enable impressive forms of adaptivity, the next phase of research looks toward methods that will shape the future of contextualized adaptive inference. These directions point ahead, emphasizing how models may be adapted, combined, and evaluated. The aim is not only greater power, but also more transparency and reliability in high-stakes settings. We highlight three forward-looking methodological trends: modular fine tuning and compositional adaptation, mechanistic insights into in-context learning, and new frameworks for reliability and calibration.
+
+#### Modular Fine-Tuning and Compositional Adaptation
+Parameter-efficient fine-tuning approaches such as adapters and LoRA demonstrate that large models can be customized by updating only a small subset of weights, preserving most of the pre-trained knowledge while lowering costs [@doi:10.48550/arXiv.2106.09685]. Building on this, future systems are expected to use compositional strategies in which multiple specialized modules, each tuned to different contexts or domains, are dynamically assembled for new tasks [@doi:10.48550/arXiv.2005.00247]. Findings suggest that merging or routing across several LoRA modules can even outperform full fine-tuning, pointing to a new paradigm where adaptation comes from modular reuse rather than retraining [@doi:10.48550/arXiv.2402.15414]. This signals a shift from one-off fine-tuning to building a growing library of contextual skills that can be flexibly recombined. In the future, compositional methods are likely to become central, enabling adaptive models that scale efficiently and support personalized systems tailored to users or environments on demand.
+
+#### In-Context Learning and Mechanistic Insights
+In-context learning (ICL) has already changed how models generalize, but its mechanisms are still only partly understood. Some studies suggest transformers may implement optimization-like updates internally, simulating gradient descent during a forward pass when processing prompt examples [@doi:10.48550/arXiv.2212.07677]. Other work frames ICL as implicit Bayesian inference, where the prompt acts as evidence that reshapes the predictive distribution [@doi:10.48550/arXiv.2306.04891]. At the architectural level, mechanistic analyses have identified induction heads in transformer attention circuits as key drivers of pattern learning, offering a concrete explanation for few-shot generalization [@doi:10.48550/arXiv.2209.11895]. Looking forward, these insights are likely to guide the design of new architectures that enhance and stabilize in-context adaptation. Future systems may not only perform better in few-shot settings, but also provide clearer signals of how they adapt, increasing trust and control in applied use.
+
+#### Reliability, Calibration, and Context-Sensitive Evaluation
+As models adapt more flexibly, a central challenge will be keeping predictions calibrated and reliable across shifting contexts. It is well established that deep neural networks, including large language models, are often poorly calibrated, producing overconfident probabilities that do not align with true accuracy [@doi:10.48550/arXiv.1706.04599]. Future work will likely integrate uncertainty quantification directly into adaptive pipelines, using strategies such as deep ensembles or conformal prediction to provide confidence intervals [@doi:10.48550/arXiv.2012.07421]. At the same time, evaluation protocols will need to emphasize robustness to distribution shifts, testing whether models can sustain performance and signal uncertainty under novel or adversarial conditions [@doi:10.48550/arXiv.2211.09110]. These developments point to a future where adaptive inference is judged not only by accuracy, but also by dependability and context-awareness across environments. By embedding calibration and reliability into design, contextualized learning is likely to evolve into a more trustworthy and auditable standard.
 
 ### Expanding Frameworks with Foundation Models
 

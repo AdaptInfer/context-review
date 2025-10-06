@@ -6,7 +6,7 @@ Akyürek
 algorithmically
 approximators
 Arora
-arxiv
+arXiv
 AtaeeTarzanagh
 AUC
 auditability
@@ -65,7 +65,7 @@ Guo
 Hastie
 HeckmanMI
 Hoffmann
-hte
+HTE
 hyperparameter
 hyperparameters
 ICL
@@ -77,12 +77,12 @@ instantiations
 interconnectedness
 interprepretable
 Interpretability
-Interpretable
+interpretable
 invariance
 IRM
 IRMv
 Jia
-Jiaqi
+jiaqi
 Jingyun
 JTT
 KKT
@@ -101,6 +101,7 @@ LLM
 LLMs
 LMPriors
 MAML
+McGrath
 MCMC
 MDFMs
 Meinshausen
@@ -114,11 +115,11 @@ MissingIndicator
 missingness
 misspecified
 MNAR
-Modularity
+modularity
 modularized
 MoICE
 MSE
-MTL
+mtl
 multimodal
 Neyman
 NLP
@@ -134,10 +135,11 @@ overflexible
 overparameterized
 parameterization
 parametrics
+PEFT
 personalization
 PGD
 piecewise
-pre
+Pre
 preprocessing
 pretrained
 pretraining
@@ -197,7 +199,7 @@ VAE
 VAEAC
 VAEs
 VanNess
-variational
+Variational
 VCM
 VCMs
 vLLM
