@@ -28,8 +28,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T05:08:19+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T05:08:19+00:00" />
+  <meta name="dc.modified" content="2025-10-06T05:49:31+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T05:49:31+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -69,9 +69,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -93,9 +93,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/))
+([permalink](https://AdaptInfer.github.io/context-review/v/f06604401a82fa19cc8ebce5238a186175a5ae1a/))
 was automatically generated
-from [AdaptInfer/context-review@5543db8](https://github.com/AdaptInfer/context-review/tree/5543db8a2118cb5b0c489a0e4924a698f3920943)
+from [AdaptInfer/context-review@f066044](https://github.com/AdaptInfer/context-review/tree/f06604401a82fa19cc8ebce5238a186175a5ae1a)
 on October 6, 2025.
 </em></small>
 
@@ -743,6 +743,78 @@ From a more mechanistic, architectural perspective, researchers have identified 
 #### Limitations and Open Questions
 
 Despite its remarkable capabilities, ICL faces significant limitations with respect to transparency, explicit control, and robustness. The adaptation process is opaque, making it difficult to debug or predict failure modes. Furthermore, performance can be brittle and highly sensitive to small changes in the prompt. As summarized in recent surveys, key open questions include developing a more complete theoretical understanding of ICL, improving its reliability, and establishing methods for controlling its behavior in high-stakes applications [@Dong2022ASO].
+
+### Theoretical Bridges Between Varying-Coefficient Models and In-Context Learning
+
+Recent theoretical work has uncovered deep connections between classical varying-coefficient models and the mechanisms underlying in-context learning in transformers. 
+Although these approaches arise from different traditions — one grounded in semi-parametric statistics, the other in large-scale deep learning — they can implement strikingly similar estimators. 
+This section formalizes these parallels and reviews key theoretical results establishing these bridges.
+
+#### Varying-Coefficient Models as Kernel Regression
+
+Consider a semi-parametric varying-coefficient model in which each observation is governed by a parameter vector $\theta_i$ that depends smoothly on context $c_i$. 
+For a new query context $c^\ast$, the parameter estimate is obtained by solving a locally weighted likelihood problem:
+
+$$
+\widehat{\theta}(c^\ast) 
+= \arg\max_{\theta} \sum_{i=1}^n K_\lambda(c_i, c^\ast)\,\ell(x_i; \theta),
+$$
+
+where $K_\lambda$ is a kernel function that measures similarity between contexts and $\ell$ is the log-likelihood.
+
+For regression with squared loss, this reduces to kernel ridge regression in the context space. 
+Let $y = (y_1,\dots,y_n)^\top$ and $K \in \mathbb{R}^{n \times n}$ be the Gram matrix with $K_{ij} = k(c_i, c_j)$. 
+The prediction at $c^\ast$ is
+
+$$
+\widehat{y}(c^\ast) = k(c^\ast)^\top (K + \lambda I)^{-1} y,
+$$
+
+where $k(c^\ast) = (k(c^\ast, c_1), \ldots, k(c^\ast, c_n))^\top$. 
+This expression highlights that varying-coefficient models perform kernel smoothing in the context space: nearby observations in context have greater influence on the parameter estimates at $c^\ast$.
+
+Equivalently, the fitted model can be written as
+
+$$
+\widehat{f}(x^\ast, c^\ast) = \sum_{i=1}^n \alpha_i(c^\ast)\, y_i,
+$$
+
+where $\alpha_i(c^\ast)$ are normalized kernel weights determined entirely by the context similarities and the regularization parameter $\lambda$.
+
+#### Transformers as Ridge and Kernel Regressors In-Context
+
+A parallel line of work has demonstrated that transformers trained on simple regression tasks can learn to perform ridge or kernel regression within their forward pass, without any explicit instruction to do so.
+
+[TODO: What learning algorithm is in-context learning? Investigations with linear models, Akyürek et al., 2022] show that for linear regression tasks, transformers can learn to implement the ridge regression estimator
+
+$$
+\widehat{w} = (X^\top X + \lambda I)^{-1} X^\top y
+$$
+
+directly from a sequence of in-context examples. Each example $(x_i, y_i)$ is represented as a token, and the query token attends to the support tokens to compute the prediction for $x^\ast$; the attention mechanism learns to encode the solution to the regression problem.
+
+[TODO: Transformers learn in-context by gradient descent, von Oswald et al., 2023] establish convergence results showing that gradient-based training of transformers on a distribution of regression tasks leads them to implement kernel regression in context, with the transformer's learned attention kernel playing the role of $k(c_i, c_j)$. [TODO: What can transformers learn in-context? A case study of simple function classes, Garg et al., 2023] and [TODO: Why can transformers learn in-context? Language models implicitly implement functions, Dai et al., 2023] extend these results, showing that attention layers can approximate kernel smoothers under appropriate scaling limits, and that learned representations can substitute for hand-specified kernels.
+
+Finally, [TODO: Transformers as amortized Bayesian inference engines, Goyal et al., 2025] provide a Bayesian interpretation: transformers pre-trained on large distributions of tasks implicitly learn a prior over functions, and in-context learning corresponds to performing amortized Bayesian inference with this prior. The in-context examples act as data, and the transformer's forward pass computes an approximate posterior predictive distribution for the query.
+
+In all these cases, the support set within the prompt plays the same role as the neighborhood in context space for varying-coefficient models. 
+The query token's prediction is obtained by aggregating information from the support tokens with learned similarity weights, which are implemented by the attention mechanism rather than an explicit kernel function.
+
+#### Synthesis: Two Paths to the Same Estimators
+
+Taken together, these results reveal a common form:
+
+$$
+\widehat{f}(x^\ast, c^\ast) = \sum_{i=1}^n \alpha_i(c^\ast)\, y_i,
+$$
+
+where the weights $\alpha_i(c^\ast)$ depend on the relationship between the query context $c^\ast$ and support contexts $\{c_i\}$.
+
+- In varying-coefficient models, $\alpha_i(c^\ast)$ are determined explicitly by a user-chosen kernel $K_\lambda$.
+- In transformers, $\alpha_i(c^\ast)$ emerge implicitly from the learned attention patterns and internal computations after pretraining.
+
+Thus, in-context learning and varying-coefficient modeling are not just philosophically aligned — they can implement the same family of estimators, one through explicit semi-parametric specification, the other through emergent, data-driven computation. This bridge motivates a unified framework for studying context-adaptive inference: explicit methods provide interpretability and structure, while implicit methods provide flexibility and scalability. Understanding how these two meet offers a promising path toward adaptive, interpretable models at scale.
+
 
 ### Comparative Synthesis: Implicit versus Explicit Adaptivity
 
