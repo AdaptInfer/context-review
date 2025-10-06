@@ -28,8 +28,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T04:24:37+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T04:24:37+00:00" />
+  <meta name="dc.modified" content="2025-10-06T05:08:19+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T05:08:19+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -69,9 +69,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -93,9 +93,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/))
+([permalink](https://AdaptInfer.github.io/context-review/v/5543db8a2118cb5b0c489a0e4924a698f3920943/))
 was automatically generated
-from [AdaptInfer/context-review@64bcfb9](https://github.com/AdaptInfer/context-review/tree/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20)
+from [AdaptInfer/context-review@5543db8](https://github.com/AdaptInfer/context-review/tree/5543db8a2118cb5b0c489a0e4924a698f3920943)
 on October 6, 2025.
 </em></small>
 
@@ -235,9 +235,15 @@ This shift raises new modeling challenges.
 Estimating a unique $\theta_i$ from a single observation is ill-posed unless we impose structure—smoothness, sparsity, shared representations, or latent grouping. 
 And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we must develop tools to recover, interpret, or constrain the underlying parameter variation.
 
+### Emerging Theoretical Bridges and Scope of This Review
+
+Recent theoretical work has revealed that the boundary between explicit and implicit approaches to context adaptation may be narrower than it first appears. 
+A growing line of research has shown that transformers trained on regression tasks can implement classical estimators such as ordinary least squares, ridge regression, and even nonlinear kernel regression in context [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559]. 
+In other words, while varying-coefficient models specify a mapping from context to parameters explicitly, in-context learning can implicitly perform the same estimators through internal computation. 
+This emerging bridge motivates a unified treatment of explicit statistical models and implicit foundation models within a single conceptual framework.
 
 In this review, we examine methods that use context to guide inference, either by specifying how parameters change with covariates or by learning to adapt behavior implicitly. 
-We begin with classical models that impose explicit structure—such as varying-coefficient models and multi-task learning—and then turn to more flexible approaches like meta-learning and in-context learning with foundation models. 
+We begin with classical models that impose explicit structure, such as varying-coefficient models and multi-task learning, and then turn to more flexible approaches like meta-learning and in-context learning with foundation models. 
 Though these methods arise from different traditions, they share a common goal: to tailor inference to the local characteristics of each observation or task. 
 Along the way, we highlight recurring themes: complex models often decompose into simpler, context-specific components; foundation models can both adapt to and generate context; and context-awareness challenges classical assumptions of homogeneity. 
 These perspectives offer a unifying lens on recent advances and open new directions for building adaptive, interpretable, and personalized models.
