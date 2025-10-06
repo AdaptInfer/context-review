@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 algorithmically
 approximators
@@ -22,6 +22,7 @@ CATE
 centric
 CGBM
 changepoints
+Clouddelta
 cnellington
 comovement
 composability
@@ -46,7 +47,7 @@ EmergentAO
 encodings
 Englert
 ERM
-explainers
+Explainers
 factuality
 FAISS
 GBDTs
@@ -76,7 +77,9 @@ interpretable
 invariance
 IRM
 IRMv
+Jia
 Jiaqi
+Jingyun
 JTT
 KKT
 Koh
@@ -130,7 +133,7 @@ parametrics
 personalization
 PGD
 piecewise
-Pre
+pre
 preprocessing
 pretrained
 probablybots
@@ -187,7 +190,7 @@ VAE
 VAEAC
 VAEs
 VanNess
-Variational
+variational
 VCM
 VCMs
 vLLM

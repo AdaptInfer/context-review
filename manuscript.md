@@ -13,6 +13,7 @@ author-meta:
 - Dong Liu
 - Rikhil Rao
 - Jiaqi Wang
+- Jingyun Jia
 header-includes: |
   <!--
   Manubot generated metadata rendered from header-includes-template.html.
@@ -27,8 +28,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T04:09:52+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T04:09:52+00:00" />
+  <meta name="dc.modified" content="2025-10-06T04:24:37+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T04:24:37+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -58,15 +59,19 @@ header-includes: |
   <meta name="citation_author_institution" content="Paul G. Allen School of Computer Science &amp; Engineering, University of Washington" />
   <meta name="citation_author_orcid" content="0009-0003-8531-9490" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Jingyun Jia" />
+  <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
+  <meta name="citation_author_orcid" content="0009-0006-3241-3485" />
+  <meta name="twitter:creator" content="@None" />
   <link rel="canonical" href="https://AdaptInfer.github.io/context-review/" />
   <meta property="og:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta property="twitter:url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -88,9 +93,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/3110e6763737f04343f493871511ce66ab726493/))
+([permalink](https://AdaptInfer.github.io/context-review/v/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20/))
 was automatically generated
-from [AdaptInfer/context-review@3110e67](https://github.com/AdaptInfer/context-review/tree/3110e6763737f04343f493871511ce66ab726493)
+from [AdaptInfer/context-review@64bcfb9](https://github.com/AdaptInfer/context-review/tree/64bcfb9686a81e18916e7d6bb09e7d2762ba6e20)
 on October 6, 2025.
 </em></small>
 
@@ -173,6 +178,18 @@ on October 6, 2025.
     <br>
   <small>
      Paul G. Allen School of Computer Science & Engineering, University of Washington
+     · Funded by None
+  </small>
+
++ **Jingyun Jia**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0006-3241-3485](https://orcid.org/0009-0006-3241-3485)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [Clouddelta](https://github.com/Clouddelta)
+    <br>
+  <small>
+     Department of Statistics, University of Wisconsin-Madison
      · Funded by None
   </small>
 
