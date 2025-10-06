@@ -2,6 +2,7 @@ activations
 adaptively
 adaptivity
 adversarially
+algorithmically
 approximators
 Arora
 arXiv
@@ -37,6 +38,9 @@ DeepSHAP
 Dempster
 Distributionally
 DoshiVelez
+DRO
+DRO’s
+EIIL
 embeddings
 EmergentAO
 encodings
@@ -47,6 +51,7 @@ factuality
 FAISS
 GBDTs
 generalizability
+generalizable
 GGMs
 Ghorbani
 GPT
@@ -55,7 +60,7 @@ Guo
 Hastie
 HeckmanMI
 Hoffmann
-HTE
+hte
 hyperparameter
 hyperparameters
 ICL
@@ -66,12 +71,13 @@ independencies
 instantiations
 interconnectedness
 interprepretable
-interpretability
+Interpretability
 interpretable
 invariance
 IRM
 IRMv
 jiaqi
+JTT
 KKT
 Koh
 KV
@@ -84,6 +90,7 @@ Levina
 Lindholm
 Lipschitzness
 Liu
+LLM
 LLMs
 LMPriors
 MAML
@@ -117,9 +124,11 @@ optimality
 optimizers
 overfitting
 overflexible
+overparameterized
 parameterization
 parametrics
 personalization
+PGD
 piecewise
 Pre
 preprocessing
@@ -135,6 +144,7 @@ reframes
 regularizer
 RethinkingEM
 RethinkingTR
+reweighted
 Rikhil
 rikhilr
 RKHS
@@ -170,6 +180,7 @@ underdetermined
 underfits
 underrepresenting
 unmodeled
+upweighted
 VAE
 VAEAC
 VAEs

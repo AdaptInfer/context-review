@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-04'
+date-meta: '2025-10-06'
 author-meta:
 - Ben Lengerich
 - Caleb N. Ellington
@@ -24,11 +24,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-04" />
-  <meta name="citation_publication_date" content="2025-10-04" />
-  <meta property="article:published_time" content="2025-10-04" />
-  <meta name="dc.modified" content="2025-10-04T21:36:54+00:00" />
-  <meta property="article:modified_time" content="2025-10-04T21:36:54+00:00" />
+  <meta name="dc.date" content="2025-10-06" />
+  <meta name="citation_publication_date" content="2025-10-06" />
+  <meta property="article:published_time" content="2025-10-06" />
+  <meta name="dc.modified" content="2025-10-06T03:35:21+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T03:35:21+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -64,9 +64,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/659155b709f198b21f0a5b4bb916e7cc1fa8139b/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/659155b709f198b21f0a5b4bb916e7cc1fa8139b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/659155b709f198b21f0a5b4bb916e7cc1fa8139b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -88,10 +88,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/659155b709f198b21f0a5b4bb916e7cc1fa8139b/))
+([permalink](https://AdaptInfer.github.io/context-review/v/d060779c07c528cf72327bb30306e42ba4a370ee/))
 was automatically generated
-from [AdaptInfer/context-review@659155b](https://github.com/AdaptInfer/context-review/tree/659155b709f198b21f0a5b4bb916e7cc1fa8139b)
-on October 4, 2025.
+from [AdaptInfer/context-review@d060779](https://github.com/AdaptInfer/context-review/tree/d060779c07c528cf72327bb30306e42ba4a370ee)
+on October 6, 2025.
 </em></small>
 
 
@@ -857,15 +857,49 @@ Unlike IRM that assumes multiple observed environments and seeks a representatio
 
 
 ### Adversarial Robustness as Context-Invariant Training
+While IRM focuses on learning models that are robust across different environments, adversarial robustness can be viewed as a subclass of the approach. Those different environments can be interpreted as fine-grained, synthetic perturbations around each data point rather than distinct real-world domains.
+Invariant learning generally seeks predictors whose performance remains stable when the data-generating context changes — for example, across hospitals, time periods, or demographic groups [@arXiv:1501.01332]. Adversarial robustness follows the same principle of invariance, but at a much finer scale: instead of using naturally occurring environments, it constructs synthetic “environments” through small, deliberate perturbations of the input data. These perturbations simulate local environmental shifts around each sample and expose the model to worst-case contexts.
+From this perspective, adversarial robustness is essentially context-invariant learning under infinitesimal, adversarially generated environments.
+Each adversarial example $x'=x+\delta$ (where $||\delta||_p\leq \eps) can be interpreted as belonging to a neighboring environment of the original input x. Training the model to perform consistently under such local shifts enforces a form of fine-grained invariance that complements the coarse-grained invariance targeted by IRM.
+The paper [@arXiv:1706.06083] addresses the vulnerability of deep learning models to adversarial attacks from the optimization view. Specifically, the authors interpret adversarial robustness as a min-max optimization problem, where the goal is to minimize the worst-case loss incurred by adversarial examples. The authors introduce the Projected Gradient Descent (PGD) as a universal first-order adversary and these adversarially perturbed samples are subsequently incorporated into the training loop to enhance robustness against such local context shifts. In this view, the environments in IRM correspond to multiple data domains, while those in adversarial training correspond to local neighborhoods of each sample—both formulations share the same objective of minimizing performance variation across shifts in context.
+
+[@arXiv:1805.12152] provably demonstrates the trade-off between robustness and accuracy in machine learning models. The authors argue that adversarial training, while improving robustness to adversarial perturbations, can decrease the model's accuracy on clean data. This occurs because adversarial training forces the model to adjust its decision boundaries, which may lead to a loss in standard performance. The paper also shows that the representations learned by robust models align better with salient data characteristics and human perception, which suggests that robust models focus more on features that are meaningful and interpretable. At the same time, robust models tend to learn representations that align better with salient data characteristics and human perception, suggesting that robustness promotes the extraction of stable, semantically meaningful features, mirroring the goal of context-invariant learning at a smaller, instance-specific scale [@arXiv:1905.02175].
+
+This perspective is directly applicable to the challenges faced by LLM-based Agents as surveyed in [@arXiv:2309.07864]. An autonomous agent does not operate in a sterile, curated dataset; it operates in the wild. The 'fine-grained, synthetic perturbations' explored in adversarial robustness research are a perfect model for the challenges an agent faces:
+
+**Perception Robustness**: A small, imperceptible change to an image or a document an agent is analyzing (an adversarial perturbation) could cause it to completely misinterpret its environment and take a disastrous action.
+
+**Tool-Use Robustness**: A slight rephrasing of a user's command could trick a non-robust agent into generating incorrect or malicious code for a tool to execute.
+<!-- 
 Related references:
 
 - Towards Deep Learning Models Resistant to Adversarial Attacks [@arXiv:1706.06083]
 - Robustness May Be at Odds with Accuracy [@arXiv:1805.12152]
 
+- The Rise and Potential of Large Language Model Based Agents: A Survey [@arXiv:2309.07864] -->
+
 ### Training methods for Context-Invariant Models
-- Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
+While the principle of context-invariance is a powerful theoretical goal, several practical training methodologies have been developed to approximate it, primarily by enhancing robustness against group shifts. These methods vary in their assumptions, particularly regarding the availability of explicit group or environment labels for the training data.
+
+A foundational approach, applicable when group labels are available, is Group Distributionally Robust Optimization (Group DRO). Unlike standard Empirical Risk Minimization (ERM) which minimizes the average loss over the entire dataset, formulated as:
+$$
+\min_{f} \frac{1}{n} \sum_{i=1}^{n} L(f(x_i), y_i)
+$$
+Group DRO's objective is to minimize the loss on the worst-performing data group. This is formally expressed as a min-max problem:
+$$
+\min_{f} \max_{g \in \mathcal{G}} \mathbb{E}_{(x,y) \sim P_g} [L(f(x), y)]
+$$
+where $\mathcal{G}$ represents the set of all predefined groups and $P_g$ is the data distribution for a specific group $g$ [@arXiv:1911.08731]. However, the authors identify a critical pitfall: in modern, overparameterized neural networks, this method can fail. Such models can easily memorize the entire training set, reducing the worst-case training loss to zero without actually learning a generalizable solution. The key insight from this work is that **strong regularization** (such as a high L2 penalty or aggressive early stopping) is essential. Regularization prevents the model from perfectly fitting the training data, forcing it to learn simpler, more robust features that generalize better to the worst-case groups on unseen data.
+The primary limitation of Group DRO is its reliance on fully annotated training data, a luxury seldom available in real-world scenarios. This challenge has spurred the development of methods that operate without explicit group information. These approaches cleverly leverage the inherent biases of standard models as a source of information.
+A simple and highly effective heuristic is Just Train Twice (JTT) [@arXiv:2107.09044]. This method operates in two stages: first, a standard ERM model is trained for several epochs. Second, the training examples that this initial model misclassified are identified and upweighted. A new model is then trained from scratch on this reweighted dataset. The underlying assumption is that a standard model's errors serve as an effective proxy for identifying examples from minority or difficult groups. By focusing the second stage of training on these hard examples, JTT improves worst-group performance without ever needing to know the group labels.
+Providing a more formalized framework, Environment Inference for Invariant Learning (EIIL) aims to bridge the gap between unlabeled data and invariant learning algorithms like IRM [@arXiv:2010.07249]. Similar to JTT, EIIL begins by training a standard ERM model. It then uses the biases of this reference model to automatically partition the dataset into several inferred "environments." For instance, examples the model confidently gets right might form one environment, while those it gets wrong form another. These algorithmically generated environment labels can then be fed into any off-the-shelf invariant learning method to train a final, robust model. EIIL essentially transforms the problem from one requiring manual labels to one where environments can be discovered directly from the data itself.
+Together, these methods illustrate a clear progression from fully-supervised techniques to more practical approaches that cleverly infer hidden data structure, all aiming to build models that are more robust and invariant to challenging shifts in context.
+
+
+
+<!-- - Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
 - Environment Inference for Invariant Learning [@arXiv:2110.14048]
-- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731]
+- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731] -->
 
 
 
