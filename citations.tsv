@@ -2,6 +2,11 @@ input_id	dealiased_id	standard_id	short_id
 arXiv:2212.07677	arXiv:2212.07677	arxiv:2212.07677	Humo13Op
 arXiv:2208.01066	arXiv:2208.01066	arxiv:2208.01066	fo6ln654
 arXiv:2212.10559	arXiv:2212.10559	arxiv:2212.10559	PZHprt8G
+doi:10.4310/sii.2008.v1.n1.a15	doi:10.4310/sii.2008.v1.n1.a15	doi:10.4310/sii.2008.v1.n1.a15	boDjf6IJ
+doi:10.48550/arXiv:2010.03522	doi:10.48550/arXiv:2010.03522	doi:10.48550/arxiv:2010.03522	HuaD9j8u
+doi:10.48550/arXiv.2106.09685	doi:10.48550/arXiv.2106.09685	doi:10.48550/arxiv.2106.09685	Pf2hk1xb
+doi:10.48550/arXiv.2307.13721	doi:10.48550/arXiv.2307.13721	doi:10.48550/arxiv.2307.13721	7UR8Jpoi
+doi:10.48550/arXiv.2302.09419	doi:10.48550/arXiv.2302.09419	doi:10.48550/arxiv.2302.09419	iJglbhTY
 doi:10.1111/j.2517-6161.1993.tb01939.x	doi:10.1111/j.2517-6161.1993.tb01939.x	doi:10.1111/j.2517-6161.1993.tb01939.x	ugXwusl0
 doi:10.1080/01621459.2021.2000866	doi:10.1080/01621459.2021.2000866	doi:10.1080/01621459.2021.2000866	TULLRYDp
 doi:10.1214/aos/1017939139	doi:10.1214/aos/1017939139	doi:10.1214/aos/1017939139	l6vMkIsa
@@ -53,7 +58,7 @@ Kaplan2020ScalingLF	Kaplan2020ScalingLF	Kaplan2020ScalingLF	1EAtiMm6o
 Hoffmann2022TrainingCO	Hoffmann2022TrainingCO	Hoffmann2022TrainingCO	Zc8hnVfA
 Botzer2025PublicationTO	Botzer2025PublicationTO	Botzer2025PublicationTO	GQQU9PQb
 doi:10.2307/2528966	doi:10.2307/2528966	doi:10.2307/2528966	1AAscRzye
-dlauritzen1996graphical	dlauritzen1996graphical	dlauritzen1996graphical	8RQjnDY9
+lauritzen1996graphical	lauritzen1996graphical	lauritzen1996graphical	bYytUWol
 doi:10.1214/009053606000000281	doi:10.1214/009053606000000281	doi:10.1214/009053606000000281	eFgbj4Kw
 doi:10.1093/biostatistics/kxm045	doi:10.1093/biostatistics/kxm045	doi:10.1093/biostatistics/kxm045	m4KsbXUW
 doi:10.1093/biomet/asq060	doi:10.1093/biomet/asq060	doi:10.1093/biomet/asq060	hxZIBmjM
@@ -151,7 +156,6 @@ doi:10.48550/arXiv.1607.06520	doi:10.48550/arXiv.1607.06520	doi:10.48550/arxiv.1
 doi:10.48550/arXiv.1810.04805	doi:10.48550/arXiv.1810.04805	doi:10.48550/arxiv.1810.04805	urJgpE6q
 doi:10.48550/arXiv.2208.01066	doi:10.48550/arXiv.2208.01066	doi:10.48550/arxiv.2208.01066	R7y5TKp9
 doi:10.48550/arXiv.1701.06538	doi:10.48550/arXiv.1701.06538	doi:10.48550/arxiv.1701.06538	mFiH1ERh
-doi:10.48550/arXiv.2106.09685	doi:10.48550/arXiv.2106.09685	doi:10.48550/arxiv.2106.09685	Pf2hk1xb
 doi:10.48550/arXiv.2305.07171	doi:10.48550/arXiv.2305.07171	doi:10.48550/arxiv.2305.07171	6ALrEKtt
 doi:10.48550/arXiv.2210.12530	doi:10.48550/arXiv.2210.12530	doi:10.48550/arxiv.2210.12530	Xtwwrjzy
 doi:10.48550/arXiv.2310.05797	doi:10.48550/arXiv.2310.05797	doi:10.48550/arxiv.2310.05797	RvAOKYai

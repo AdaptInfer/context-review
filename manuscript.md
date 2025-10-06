@@ -29,8 +29,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-06" />
   <meta name="citation_publication_date" content="2025-10-06" />
   <meta property="article:published_time" content="2025-10-06" />
-  <meta name="dc.modified" content="2025-10-06T15:52:59+00:00" />
-  <meta property="article:modified_time" content="2025-10-06T15:52:59+00:00" />
+  <meta name="dc.modified" content="2025-10-06T21:40:56+00:00" />
+  <meta property="article:modified_time" content="2025-10-06T21:40:56+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -74,9 +74,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a3045eedb50f573b1da6d7b3ba83ff6e0d3bb10f/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a3045eedb50f573b1da6d7b3ba83ff6e0d3bb10f/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a3045eedb50f573b1da6d7b3ba83ff6e0d3bb10f/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -98,9 +98,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/3050e86926899623c5c9749692bfd83f9bb03138/))
+([permalink](https://AdaptInfer.github.io/context-review/v/a3045eedb50f573b1da6d7b3ba83ff6e0d3bb10f/))
 was automatically generated
-from [AdaptInfer/context-review@3050e86](https://github.com/AdaptInfer/context-review/tree/3050e86926899623c5c9749692bfd83f9bb03138)
+from [AdaptInfer/context-review@a3045ee](https://github.com/AdaptInfer/context-review/tree/a3045eedb50f573b1da6d7b3ba83ff6e0d3bb10f)
 on October 6, 2025.
 </em></small>
 
@@ -274,12 +274,18 @@ Table 1 summarizes the scope and coverage of representative surveys.
 
 | Survey | Topic Focus | Scope | Coverage of Adaptivity | Gap Relative to This Work |
 |--------|-------------|-------|-------------------------|----------------------------|
-|TODO: Add references and details for each survey. | TODO: Add references and details for each survey. | TODO: Add references and details for each survey. | TODO: Add references and details for each survey. | TODO: Add references and details for each survey. |
-*Table 1: Representative surveys and their coverage of context-adaptive inference. Most focus on a single methodological tradition and do not connect explicit and implicit approaches.*
+| Statistical Methods with Varying Coefficient Models[@doi:10.4310/sii.2008.v1.n1.a15.] | Varying-coefficient modeling | Classical statistical modeling, with parameters expressed as functions of covariates | Explicit adaptivity: parameters change smoothly with context via \(f(c)\) | Limited to explicit, parametric formulations; no connection to neural or emergent adaptation |
+| A Survey of Deep Meta-Learning[@doi:10.48550/arXiv:2010.03522] | Meta-learning | Neural meta-learning methods for cross-task adaptation | Task-level adaptivity: models learn to generalize quickly across tasks | Focused on task switching; does not integrate explicit parameter modeling or implicit foundation model adaptation |
+| LoRA: Low-Rank Adaptation of Large Language Models[@doi:10.48550/arXiv.2106.09685] | Parameter-efficient adaptation | Adaptation of large pretrained transformer models via low-rank updates while freezing base weights | Implicit adaptivity via parameter-efficient updates, enabling contextual adaptation without full fine-tuning | Strong in efficient adaptation mechanism, but narrow in scope—does not address explicit contextual structure or cross-domain generalization |
+| Foundational Models Defining a New Era in Vision: A Survey and Outlook[@doi:10.48550/arXiv.2307.13721] | Vision-based foundation models | Architectures, multimodal integration, prompting, fusion in vision models | Implicit adaptivity in vision contexts, via prompt or fusion mechanisms across visual tasks | Domain-specific focus limits generalization; less discussion on theoretical adaptation across modalities |
+| A Comprehensive Survey on Pretrained Foundation Models[@doi:10.48550/arXiv.2302.09419] | Pretrained foundation models | Coverage of models across modalities, training regimes, adaptation and fine-tuning strategies | Implicit adaptivity via representation transfer and generalization across tasks | Broad in scope but does not deeply analyze parameter-level adaptation or explicit–implicit alignment |
+
+*Table 1: Representative surveys and key papers covering context-adaptive inference. Most works focus on a single methodological tradition and do not connect explicit and implicit approaches.*
 
 While existing surveys have reviewed individual components of this landscape—such as varying-coefficient models, meta-learning, or foundation models—they have remained largely siloed.
 This article provides the first comprehensive review that unifies explicit and implicit context-adaptive methods under a common framework.
 By situating classical statistical models, modern machine learning methods, and foundation models along a shared spectrum of context-adaptive inference, we highlight common principles and distinctive challenges.
+
 
 ## From Population Assumptions to Context-Adaptive Inference
 
@@ -577,7 +583,7 @@ This family of models generalizes the classical VCM by expressing $f(c)$ as a fl
 
 #### Structured Regularization for Graphical and Network Models
 
-The origins of structurally constrained models can be traced to early work on covariance selection. Dempster (1972) demonstrated that zeros in the inverse covariance matrix correspond directly to conditional independencies, introducing the principle that sparsity reflects structure [@doi:10.2307/2528966]. This idea was later consolidated by Lauritzen (1996), whose influential monograph systematized probabilistic graphical models and highlighted how independence assumptions can be embedded into statistical estimation [@dlauritzen1996graphical]. Together, these works established the conceptual foundation that explicit structure can guide inference in high-dimensional settings.
+The origins of structurally constrained models can be traced to early work on covariance selection. Dempster (1972) demonstrated that zeros in the inverse covariance matrix correspond directly to conditional independencies, introducing the principle that sparsity reflects structure [@doi:10.2307/2528966]. This idea was later consolidated by Lauritzen (1996), whose influential monograph systematized probabilistic graphical models and highlighted how independence assumptions can be embedded into statistical estimation [@lauritzen1996graphical]. Together, these works established the conceptual foundation that explicit structure can guide inference in high-dimensional settings.
 
 As high-dimensional data became common, scalable estimation procedures emerged to make these ideas practical. Meinshausen and Bühlmann (2006) proposed neighborhood selection, recasting graph recovery as a series of sparse regression problems that infer conditional dependencies node by node [@doi:10.1214/009053606000000281]. Shortly thereafter, Friedman, Hastie, and Tibshirani (2008) developed the graphical lasso, a convex penalized likelihood method that directly estimates sparse precision matrices [@doi:10.1093/biostatistics/kxm045]. These contributions showed that sparsity-inducing penalties could recover large network structures reliably, thereby providing concrete tools for estimating $f(c)$ when context corresponds to a structured dependency pattern such as a graph.
 
