@@ -29,8 +29,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-13" />
   <meta name="citation_publication_date" content="2025-10-13" />
   <meta property="article:published_time" content="2025-10-13" />
-  <meta name="dc.modified" content="2025-10-13T16:18:33+00:00" />
-  <meta property="article:modified_time" content="2025-10-13T16:18:33+00:00" />
+  <meta name="dc.modified" content="2025-10-13T17:17:27+00:00" />
+  <meta property="article:modified_time" content="2025-10-13T17:17:27+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -74,9 +74,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ef23d89f4ef2d547abd02c207f717c0e2f147489/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ef23d89f4ef2d547abd02c207f717c0e2f147489/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ef23d89f4ef2d547abd02c207f717c0e2f147489/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -98,9 +98,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/))
+([permalink](https://AdaptInfer.github.io/context-review/v/ef23d89f4ef2d547abd02c207f717c0e2f147489/))
 was automatically generated
-from [AdaptInfer/context-review@1b23203](https://github.com/AdaptInfer/context-review/tree/1b23203ae312975491c43ade56d3580d0f31eddd)
+from [AdaptInfer/context-review@ef23d89](https://github.com/AdaptInfer/context-review/tree/ef23d89f4ef2d547abd02c207f717c0e2f147489)
 on October 13, 2025.
 </em></small>
 
@@ -539,7 +539,7 @@ $$
 \widehat{\theta}
 = \arg\min_{\theta \in \Theta}
 \frac{1}{n} \sum_{i=1}^n \ell(\theta; x_i, y_i, c_i)
-\+ \lambda\, \mathcal{R}(\theta).
++ \lambda\, \mathcal{R}(\theta).
 $$
 
 Assuming local Lipschitzness in $c$ and $L$-smooth, $\mu$-strongly convex risk in $\theta$, a standard bias–variance decomposition yields for each component $j$
@@ -548,8 +548,8 @@ $$
 \mathbb{E}\!\left[\|\widehat{\theta}j(c) - \theta_j(c)\|^2\right]
 \lesssim
 \underbrace{\frac{\sigma^2}{N_{\text{eff}}(c,\delta)}}_{\text{variance}}
-\+ \underbrace{\delta^{2\alpha}}_{\text{approx. bias}}
-\+ \underbrace{\lambda^2}_{\text{reg. bias}},
++ \underbrace{\delta^{2\alpha}}_{\text{approx. bias}}
++ \underbrace{\lambda^2}_{\text{reg. bias}},
 \quad \alpha > 0,
 $$
 
@@ -561,7 +561,7 @@ $$
 \mathcal{L}\!\big(\theta^{(T(c))}\big) - \mathcal{L}\!\big(\theta^{\star}\big)
 \;\le\;
 (1-\eta\mu)^{T(c)}\!\left(\mathcal{L}\!\big(\theta^{(0)}\big) - \mathcal{L}\!\big(\theta^{\star}\big)\right)
-\+ \frac{\eta L \sigma^2}{2\mu\,N_{\text{eff}}(c,\delta)}\,.
++ \frac{\eta L \sigma^2}{2\mu\,N_{\text{eff}}(c,\delta)}\,.
 $$
 
 linking compute allocation $T(c)$ and data availability $N_{\text{eff}}(c,\delta)$ to the attainable excess risk at context $c$.
@@ -575,7 +575,7 @@ $$
 \min_{\phi}\;
 \mathbb{E}_{(x,y,c)\sim \mathcal{D}}
 \ell\big(f_\phi(x,c),y\big)
-\+ \lambda\,\Omega(\phi)
++ \lambda\,\Omega(\phi)
 \quad
 \text{s.t.}\quad
 \mathbb{E}_{c}\,\mathcal{C}\big(f_\phi; T(c), c\big) \le B,
@@ -588,8 +588,8 @@ $$
 \min_{\phi}\;
 \mathbb{E}_{(x,y,c)}
 \ell\big(f_\phi(x,c),y\big)
-\+ \lambda\,\Omega(\phi)
-\+ \gamma\,\mathbb{E}_{c}\,\mathcal{C}\big(f_\phi; T(c), c\big),
++ \lambda\,\Omega(\phi)
++ \gamma\,\mathbb{E}_{c}\,\mathcal{C}\big(f_\phi; T(c), c\big),
 $$
 
 which trades off accuracy and compute via $\gamma$.  
@@ -599,7 +599,7 @@ A compute-aware sparsity penalty can be written as
 $$
 \Omega(\phi)
 = \sum_{m=1}^M \alpha_m\,\|\phi_m\|_2^2
-\+ \tau\, \mathbb{E}_{c} \sum_{m=1}^M \pi_\phi(m\mid c),
++ \tau\, \mathbb{E}_{c} \sum_{m=1}^M \pi_\phi(m\mid c),
 $$
 
 encouraging few active modules per context.  
@@ -607,8 +607,8 @@ Under smoothness and strong convexity, the optimality conditions yield the KKT s
 
 $$
 \nabla_\phi \Big( \mathbb{E}\,\ell
-\+ \lambda\,\Omega
-\+ \gamma\,\mathbb{E}_c\,\mathcal{C} \Big)
++ \lambda\,\Omega
++ \gamma\,\mathbb{E}_c\,\mathcal{C} \Big)
 = 0,
 \quad
 \gamma\,\big( \mathbb{E}_c\,\mathcal{C} - B \big) = 0,
@@ -957,7 +957,7 @@ Efforts to make implicit adaptation explicit span complementary strategies that 
 This line of work approximates a black-box $h(x,c)$ with an interpretable model in a small neighborhood, so that local behavior and a local view of $f(c)$ can be inspected. A formal template is
 
 $$
-\hat{g}\_{x\_0,c\_0} = \arg\min_{g \in \mathcal{G}} \, \mathbb{E}\_{(x,c) \sim \mathcal{N}_{x_0,c_0}} \left[ \ell\big(h(x,c), g(x,c)\big) \right] + \Omega(g),
+\hat{g}_{x_0,c_0} = \arg\min_{g \in \mathcal{G}} \, \mathbb{E}_{(x,c) \sim \mathcal{N}_{x_0,c_0}} \left[ \ell\big(h(x,c), g(x,c)\big) \right] + \Omega(g),
 $$
 
 where $\mathcal N_{x_0,c_0}$ defines a locality (e.g., kernel weights), $\ell$ measures fidelity, and $\Omega$ controls complexity. Where $\mathcal{G}$ denotes a restricted hypothesis class, often composed of linear or other low-complexity functions chosen to enhance interpretability. A convenient local goodness-of-fit is
@@ -994,8 +994,8 @@ These methodological families differ in their assumptions and computational gran
 High-fidelity surrogates capture the target model’s behavior more accurately, yet they often grow in complexity and lose readability. A crisp statement of the design goal is
 
 $$
-\min\_{g\in\mathcal G}\ \underbrace{\phi\_{\text{fid}}(g;U)}\_{\text{faithfulness on use set }U}
-\+ \lambda\\underbrace{\psi\_{\text{simplicity}}(g)}\_{\text{sparsity / size / semantic load}},
+\min_{g\in\mathcal G}\ \underbrace{\phi_{\text{fid}}(g;U)}_{\text{faithfulness on use set }U}
++ \lambda\\underbrace{\psi_{\text{simplicity}}(g)}_{\text{sparsity / size / semantic load}},
 $$
 
 where $\phi_{\text{fid}}$ can be local $R^2$, AUC, or rank correlation with $h$, and $\psi_{\text{simplicity}}$ can be sparsity, tree depth, rule count, or active concept count. If a simple surrogate underfits, consider structured regularization (e.g., monotonic constraints, grouped sparsity, concept bottlenecks). If a complex surrogate is needed, accompany it with readable summaries (partial dependence snapshots, distilled rule sets, compact concept reports).
@@ -1183,7 +1183,7 @@ The function $k \mapsto \mathrm{AE}_k$ summarizes few-shot adaptation gains acro
 
 #### Transfer Performance
 
-Transfer across source and target contexts, $\mathcal{C}\_{\mathrm{src}} \to \mathcal{C}_{\mathrm{tgt}}$,  
+Transfer across source and target contexts, $\mathcal{C}_{\mathrm{src}} \to \mathcal{C}_{\mathrm{tgt}}$,  
 with shared representation $\phi$, can be measured by
 
 $$
