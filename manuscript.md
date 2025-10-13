@@ -29,8 +29,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-13" />
   <meta name="citation_publication_date" content="2025-10-13" />
   <meta property="article:published_time" content="2025-10-13" />
-  <meta name="dc.modified" content="2025-10-13T04:20:28+00:00" />
-  <meta property="article:modified_time" content="2025-10-13T04:20:28+00:00" />
+  <meta name="dc.modified" content="2025-10-13T16:18:33+00:00" />
+  <meta property="article:modified_time" content="2025-10-13T16:18:33+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -74,9 +74,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7ecefc43867f463a25eed6199a336a22770f39e3/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ecefc43867f463a25eed6199a336a22770f39e3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ecefc43867f463a25eed6199a336a22770f39e3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -98,9 +98,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/7ecefc43867f463a25eed6199a336a22770f39e3/))
+([permalink](https://AdaptInfer.github.io/context-review/v/1b23203ae312975491c43ade56d3580d0f31eddd/))
 was automatically generated
-from [AdaptInfer/context-review@7ecefc4](https://github.com/AdaptInfer/context-review/tree/7ecefc43867f463a25eed6199a336a22770f39e3)
+from [AdaptInfer/context-review@1b23203](https://github.com/AdaptInfer/context-review/tree/1b23203ae312975491c43ade56d3580d0f31eddd)
 on October 13, 2025.
 </em></small>
 
@@ -1138,7 +1138,7 @@ The principles of context-aware efficiency find practical applications across di
 
 In healthcare applications, context-aware efficiency enables adaptive imaging protocols that adjust scan parameters based on patient context such as age, symptoms, and medical history, reducing unnecessary radiation exposure. Personalized screening schedules optimize screening frequency based on individual risk factors and previous results, while resource allocation systems efficiently distribute limited healthcare resources based on patient acuity and context.
 
-Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing frequency based on market volatility and transaction costs [@doi:0.1093/rfs/15.4.1137].
+Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing based on volatility regimes and transaction costs, as studied in regime-switching portfolio models [@doi:10.1093/rfs/15.4.1137].
 
 Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@doi:10.1109/TR.2016.2570568]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
 
@@ -1172,13 +1172,13 @@ Define the adaptation efficiency as
 $$
 \mathrm{AE}_k(c)
 = \mathcal{R}(\hat{f}_0 \mid c)
-\- \mathcal{R}(\hat{f}_{S_k} \mid c),
+- \mathcal{R}(\hat{f}_{S_k} \mid c),
 \qquad
 \mathrm{AE}_k
 = \mathbb{E}_{c}\!\left[\, \mathrm{AE}_k(c) \,\right],
 $$
 
-where $\hat{f}\_0$ is the non-adapted baseline and $\hat{f}\_{S_k}$ the adapted predictor.  
+where $\hat{f}_0$ is the non-adapted baseline and $\hat{f}_{S_k}$ the adapted predictor.  
 The function $k \mapsto \mathrm{AE}_k$ summarizes few-shot adaptation gains across different context sizes.
 
 #### Transfer Performance
@@ -1189,7 +1189,7 @@ with shared representation $\phi$, can be measured by
 $$
 \mathrm{TP}(\phi)
 = \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\phi}\big)
-\- \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\mathrm{scratch}}\big),
+- \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\mathrm{scratch}}\big),
 $$
 
 quantifying performance retained when transferring $\phi$ from source to target contexts compared with training from scratch.
@@ -1205,7 +1205,7 @@ $$
 = \sup_{\widetilde{\mathcal{D}}\in Q}
 \left[
 \mathcal{R}_{\widetilde{\mathcal{D}}}(\hat{f})
-\- \mathcal{R}_{\mathcal{D}_{\mathrm{test}}}(\hat{f})
+- \mathcal{R}_{\mathcal{D}_{\mathrm{test}}}(\hat{f})
 \right],
 $$
 
@@ -1223,7 +1223,7 @@ In healthcare applications, context-aware efficiency enables adaptive imaging pr
 
 Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing frequency based on market volatility and transaction costs [@doi:10.1109/TR.2016.2570568].
 
-Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@doi:0.1093/rfs/15.4.1137]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
+Industrial applications derive clear benefits from context-aware efficiency. In predictive maintenance, systems adapt maintenance schedules using equipment context such as age, usage history, and environmental conditions. For example, recent surveys of predictive maintenance in Industry 4.0 identify architectures that integrate sensor data, remaining-useful-life models, and context-aware scheduling policies [@doi:10.1016/j.cie.2020.106889; @doi:10.1109/WETICE57085.2023.10477842]. In quality control, context-dependent sampling directs inspection efforts to high-risk units, reducing waste and computational cost. Inventory management likewise benefits from context-aware forecasting models that incorporate demand volatility, seasonality, and external signals; recent work shows that such approaches outperform traditional forecasts in retail settings [@doi:10.1080/13675567.2025.2566806].
 
 A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
 
