@@ -2,6 +2,7 @@ activations
 adaptively
 adaptivity
 adversarially
+Agentic
 Akyürek
 algorithmically
 approximators
@@ -37,6 +38,7 @@ decodable
 DeepLIFT
 DeepSHAP
 Dempster
+Dherin
 dimensionality
 Distributionally
 Doshi
@@ -45,8 +47,9 @@ DRO’s
 EIIL
 embeddings
 encodings
+ensembling
 ERM
-Explainers
+explainers
 factuality
 FAISS
 Garg
@@ -66,8 +69,8 @@ identifiability
 ignorability
 independencies
 interconnectedness
-interpretability
-interpretable
+Interpretability
+Interpretable
 invariance
 IRM
 IRM’s
@@ -80,7 +83,7 @@ KKT
 KV
 latents
 Lauritzen’s
-Lengerich
+lengerich
 Lepski’s
 Levina
 Lindholm
@@ -103,14 +106,16 @@ minimality
 minimax
 mis
 misattribution
+miscalibrated
 missingness
 misspecified
+MLP
 MNAR
 modularity
 modularized
 MoICE
 MSE
-mtl
+MTL
 multimodal
 Neyman
 NLP
@@ -120,7 +125,7 @@ OOD
 operationalized
 optimality
 optimizers
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -128,7 +133,7 @@ parametrics
 PEFT
 personalization
 PGD
-piecewise
+Piecewise
 Poursabzi
 pre
 preprocessing
@@ -146,6 +151,7 @@ Regressors
 regularizer
 regularizers
 reproducibility
+reusability
 Reuter
 reweighted
 reweights
@@ -165,6 +171,7 @@ stationarity
 StreamingLLM
 subcomponents
 subcontexts
+submodels
 submodules
 suboptimal
 subpopulation
@@ -174,6 +181,7 @@ summarization
 swappable
 TabICL
 TCAV
+TCGA
 thresholding
 Tibshirani
 tradeoff
@@ -188,7 +196,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCM
 VCMs
 vLLM
