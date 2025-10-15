@@ -32,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-15" />
   <meta name="citation_publication_date" content="2025-10-15" />
   <meta property="article:published_time" content="2025-10-15" />
-  <meta name="dc.modified" content="2025-10-15T16:06:03+00:00" />
-  <meta property="article:modified_time" content="2025-10-15T16:06:03+00:00" />
+  <meta name="dc.modified" content="2025-10-15T16:58:15+00:00" />
+  <meta property="article:modified_time" content="2025-10-15T16:58:15+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -88,9 +88,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -112,9 +112,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/))
+([permalink](https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/))
 was automatically generated
-from [AdaptInfer/context-review@b745d58](https://github.com/AdaptInfer/context-review/tree/b745d585a252f3731d5e001f360b4b5ea380cf71)
+from [AdaptInfer/context-review@8eca4c6](https://github.com/AdaptInfer/context-review/tree/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a)
 on October 15, 2025.
 </em></small>
 
@@ -277,61 +277,48 @@ We also identify open problems in identifiability, robustness under distribution
 
 ## Introduction
 
-A convenient simplifying assumption in statistical modeling is that observations are independent and identically distributed (i.i.d.). 
-This assumption allows us to use a single model to make predictions across all data points. 
-But in practice, this assumption rarely holds. 
-Data are collected across different individuals, environments, and tasks -- each with their own characteristics, constraints, and dynamics.
-When the i.i.d. assumption breaks down, using a single global model can obscure meaningful heterogeneity.
+A convenient simplifying assumption in statistical modeling is that observations are independent and identically distributed (i.i.d.). This assumption allows us to use a single model to make predictions across all data points. But in practice, this assumption rarely holds. Data are collected across different individuals, environments, and tasks—each with their own characteristics, constraints, and dynamics. When the i.i.d. assumption breaks down, using a single global model can obscure meaningful heterogeneity.
 
-To model this heterogeneity, a growing class of methods aim to make inference *adaptive to context*. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information -- whether covariates, environments, or support sets -- to inform sample-specific inference.
+To model this heterogeneity, a growing class of methods aim to make inference *adaptive to context*. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information—whether covariates, environments, or support sets—to inform sample-specific inference.
 
 We formalize this by assuming each observation $x_i$ is drawn from a distribution governed by parameters $\theta_i$:
-
 $$
-x_i \sim P(x; \theta_i).
-$$
-
-In population models, the assumption is that $\theta_i = \theta$ for all $i$. In context-adaptive models, we instead posit that the parameters vary with context:
-
-$$
-\theta_i = f(c_i) \quad \text{or} \quad \theta_i \sim P(\theta \mid c_i),
+x_i \sim P(x;\,\theta_i).
 $$
 
+In population models, the assumption is that $\theta_i=\theta$ for all $i$. In context-adaptive models, we instead posit that the parameters vary with context:
+$$
+\theta_i=f(c_i)\quad\text{or}\quad \theta_i\sim P(\theta\mid c_i),
+$$
 where $c_i$ captures the relevant covariates or environment for observation $i$. The goal is to estimate either a deterministic function $f$ or a conditional distribution over parameters.
 
-This shift raises new modeling challenges. 
-Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. 
-And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we must develop tools to recover, interpret, or constrain the underlying parameter variation.
+This shift raises new modeling challenges. Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we need tools to recover, interpret, or constrain the underlying parameter variation.
 
 ### Problem Setup and Notation
 
-We study supervised prediction with units $i=1,\dots,n$.  
-Each unit has a **context** $c_i \in \mathcal{C}$ (e.g., patient/user/site/time), and observed data $\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}$ with $x_{ij}\in\mathcal{X}$, $y_{ij}\in\mathcal{Y}$.  
-Predictions come from a model family $\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}$ (e.g., linear model, neural net, probabilistic model, etc.).
+We study supervised prediction with units $i=1,\dots,n$. Each unit has a **context** $c_i\in\mathcal{C}$ (e.g., patient/user/site/time) and observed data $\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}$ with $x_{ij}\in\mathcal{X}$ and $y_{ij}\in\mathcal{Y}$. Predictions come from a model family $\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}$ (e.g., linear model, neural net, probabilistic model).
 
-In **global** (i.i.d.) models, $\theta_i \equiv \theta^\star$.  
-In **context-adaptive** models, parameters vary with context, as you already introduce:
+In **global** (i.i.d.) models, $\theta_i\equiv\theta^\star$. In **context-adaptive** models, parameters vary with context:
 $\theta_i=f(c_i)$ or $\theta_i\sim P(\theta\mid c_i)$.
 
 For a new unit with context $c$, we write a unified empirical objective:
-
 $$
-\widehat{\theta}(c)\;\in\;\arg\min_{\theta\in\Theta}\;
+\widehat{\theta}(c)\in\arg\min_{\theta\in\Theta}\;
 \underbrace{\sum_{(i,j)\in S(c)} \ell\!\big(h_\theta(x_{ij}),y_{ij}\big)}_{\text{context-dependent support}}
 \;+\;
-\underbrace{\mathcal{R}(\theta\,;\,c)}_{\text{context-structured regularization}}\,,
+\underbrace{\mathcal{R}(\theta;\,c)}_{\text{context-structured regularization}},
 \tag{★}
 $$
 where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a **support set** selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.).
 
-**How context enters.** We separate **explicit** and **implicit** mechanisms:
-- **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficient, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
+**How context enters.**  
+- **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
 - **Implicit parameterization:** context alters optimization or internal states without exposing $\theta$ directly (e.g., mixture-of-experts with gates $g(x,c)$; retrieval where $S(c)$ is built by a retriever $R(c)$; in-context learning where a prompt map $P(c)$ conditions a foundation model).
 
 For convenience, we use a **context encoder** $\phi:\mathcal{C}\to\mathbb{R}^d$ and a similarity/kernel $K(c,c')$. A common instance of (★) is kernel-weighted risk:
-
 $$
-\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),\quad
+\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),
+\qquad
 w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
 $$
 
@@ -346,13 +333,40 @@ $$
 (iii) *Identifiability/stability:* $\ell$ is convex in model outputs and $\mathcal{R}$ yields a unique or stable minimizer.  
 (iv) *Resource tracking:* we track $|S(c)|$, optimization steps, and memory to compare **adaptation efficiency**.
 
+With this notation in place, we now formalize the link between explicit and implicit context adaptation. This link has been contributed in pieces across recent work; here we unify those results.
 
-### Theoretical Bridges and Scope
+### Theoretical Bridge
 
-Recent theoretical work has revealed that the boundary between explicit and implicit approaches to context adaptation may be narrower than it first appears. 
-A growing line of research has shown that transformers trained on regression tasks can implement classical estimators such as ordinary least squares, ridge regression, and even nonlinear kernel regression in context [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559]. 
-In other words, while varying-coefficient models specify a mapping from context to parameters explicitly, in-context learning can implicitly perform the same estimators through internal computation. 
-This emerging bridge motivates a unified treatment of explicit statistical models and implicit foundation models within a single conceptual framework.
+Recent theoretical work suggests that “explicit” context models (e.g., varying-coefficients, hierarchical/multitask) and “implicit” mechanisms (e.g., in-context learning via attention) often implement the same estimator class under squared loss, differing mainly in how they encode neighborhoods and regularization. Using the notation above, we make this precise.
+
+**Proposition 1 (Explicit varying-coefficients and linear ICL coincide with kernel ridge on joint features in the linear squared-loss setting).**  
+Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\varepsilon$ with $\mathbb{E}[\varepsilon]=0$. Let
+(i) a context encoder $\phi:\mathcal{C}\to\mathbb{R}^{d_c}$,
+(ii) joint features $\psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}$,
+(iii) a context-dependent support set $S(c)$ with nonnegative weights $w_{ij}(c)$.
+
+- **(A) Explicit varying-coefficients.** Let $\theta(c)=B\,\phi(c)$ with $B\in\mathbb{R}^{d_x\times d_c}$ and ridge penalty $\lambda\lVert B\rVert_F^2$. The weighted ridge solution yields
+  $$
+  \widehat y(x,c)=k_{(x,c)}^\top \big(K+\lambda I\big)^{-1} y,\quad
+  K_{ab}=\langle \psi_a,\psi_b\rangle=\langle x_a,x_b\rangle\cdot\langle \phi(c_a),\phi(c_b)\rangle,
+  $$
+  i.e., **kernel ridge regression (KRR)** on joint features.
+
+- **(B) Implicit adaptation via linear ICL.** Let a single linear attention layer consume the weighted support set $S(c)$ with linear $q=Q\psi$, $k=K\psi$, $v=V\psi$ and a linear readout. With attention weights proportional to $w_{ij}(c)\cdot \langle q,k_{ij}\rangle$, the induced predictor equals KRR with kernel
+  $$
+  k\big((x,c),(x',c')\big)=\langle q(x,c),k(x',c')\rangle,
+  $$
+  i.e., a learned **dot-product kernel** on the same joint features. If attention parameters are trained in the linearized/NTK regime, learning equals kernel regression with the network’s NTK, which is again a dot-product kernel on linear transforms of $\psi$.
+
+**Corollary 1 (Retrieval, gating, and weighting are kernel/measure choices).** Choosing $S(c)$ via a retriever $R(c)$, or gating in a mixture-of-experts, corresponds to changing the kernel and/or the empirical measure (weights $w_{ij}(c)$) used by KRR on $\psi$.
+
+*Proof in Appendix A.*  
+
+*Positioning and prior art.* Proposition 1 is expository: part (A) is standard ridge⇔kernel duality on joint features; part (B) follows from (i) fixed attention + trained linear head = ridge on fixed features and (ii) NTK linearization ⇒ kernel regression with the network’s NTK. 
+Our contribution is the unified **context-aware** formulation: explicit design knobs via $S(c)$, $\mathcal{R}(\theta;c)$, and compute—and the mapping of retrieval/gating to kernel/measure choices. See transformer ICL as classical estimators [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559] and NTK analyses [@arXiv:1806.07572; @arXiv:1912.02803].
+
+
+### Scope of Review and Relation to Prior Work
 
 In this review, we examine methods that use context to guide inference, either by specifying how parameters change with covariates or by learning to adapt behavior implicitly. 
 We begin with classical models that impose explicit structure, such as varying-coefficient models and multi-task learning, and then turn to more flexible approaches like meta-learning and in-context learning with foundation models. 
@@ -360,7 +374,7 @@ Though these methods arise from different traditions, they share a common goal: 
 Along the way, we highlight recurring themes: complex models often decompose into simpler, context-specific components; foundation models can both adapt to and generate context; and context-awareness challenges classical assumptions of homogeneity. 
 These perspectives offer a unifying lens on recent advances and open new directions for building adaptive, interpretable, and personalized models.
 
-### Related Surveys and Reviews
+#### Related Surveys and Reviews
 
 Several surveys have examined specific aspects of context-adaptive inference, but they have largely remained confined to individual methodological traditions. 
 Classical statistical surveys focus on varying-coefficient models and related structured regression methods. 
@@ -1761,4 +1775,213 @@ Together, these directions outline a path toward the next generation of adaptive
 
 <!-- Explicitly insert bibliography here -->
 <div id="refs"></div>
+
+
+## Appendix A {.page_break_before}
+
+This appendix gives full proofs for Proposition 1 and Corollary 1. We keep the weighted support-set notation from the Introduction and make all linear-algebra steps explicit.
+
+---
+
+### A.0  Preliminaries and identities
+
+- **Joint features.** For any pair $(x,c)$, define
+$$
+  \psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}.
+  $$
+  For each indexed training example $a$ (standing in for $(i,j)$), write $\psi_a:=\psi(x_a,c_a)$.
+
+- **Design/labels/weights.** Stack $N=\sum_i m_i$ training rows:
+  $$
+  Z\in\mathbb{R}^{N\times d_x d_c}\ \text{ with rows } Z_a=\psi_a^\top,\qquad
+  y\in\mathbb{R}^{N},\qquad
+  W=\mathrm{diag}(w_a)\in\mathbb{R}^{N\times N},\ w_a\ge 0.
+  $$
+  Define the (unweighted) Gram matrix \(K:=ZZ^\top\) and the weighted Gram
+  $$
+  K_W:=W^{1/2} K\, W^{1/2} \;=\; W^{1/2} Z Z^\top W^{1/2}.
+  $$
+  For a query $(x,c)$, let $k(\cdot,(x,c)) := Z\,\psi(x,c)\in\mathbb{R}^N$ and $k_{(x,c)}:=W^{1/2}k(\cdot,(x,c))$.
+
+- **Vectorization identity.** For conformable matrices $A,B,C$,
+  $$
+  \mathrm{vec}(A B C)=\big(C^\top\otimes A\big)\mathrm{vec}(B),\quad
+  \langle \mathrm{vec}(B),\,x\otimes z\rangle = x^\top B z.
+  $$
+
+- **Weighted ridge solution.** For any \(X\in\mathbb{R}^{N\times p}\), ridge objective
+  $$
+  \min_\beta \ \|W^{1/2}(y-X\beta)\|_2^2+\lambda\|\beta\|_2^2
+  $$
+  has unique minimizer \(\widehat\beta=(X^\top W X+\lambda I)^{-1}X^\top W y\) and equivalent dual form
+  $$
+  \widehat\beta = X^\top W^{1/2}\big(W^{1/2}XX^\top W^{1/2}+\lambda I\big)^{-1}W^{1/2}y.
+  $$
+  Predictions for a new feature vector \(x_\star\) equal
+  $$
+  \widehat f(x_\star)=x_\star^\top \widehat\beta
+  \;=\;
+  \underbrace{\big(W^{1/2}X x_\star\big)^\top}_{k_\star^\top}
+  \big(W^{1/2}XX^\top W^{1/2}+\lambda I\big)^{-1}
+  W^{1/2}y.
+  $$
+  This is **kernel ridge regression** (KRR) with kernel $K_W=W^{1/2}XX^\top W^{1/2}$ and query vector $k_\star=W^{1/2}X x_\star$.
+
+---
+
+### A.1  Proof of Proposition 1(A): explicit varying-coefficients ⇔ weighted KRR on joint features
+
+Assume the linear, squared-loss setting with $y=\langle \theta(c),x\rangle+\varepsilon$ and $\mathbb{E}[\varepsilon]=0\). Let the varying-coefficients model be \(\theta(c)=B\,\phi(c)\) with \(B\in\mathbb{R}^{d_x\times d_c}$ and ridge penalty $\lambda\|B\|_F^2$.
+
+**Step 1 (reduce to ridge in joint-feature space).** Vectorize \(B\) as \(\beta=\mathrm{vec}(B)\in\mathbb{R}^{d_x d_c}\). By the identity above,
+$$
+x_a^\top B\,\phi(c_a)=\langle \beta,\, x_a\otimes \phi(c_a)\rangle = \langle \beta,\,\psi_a\rangle .
+$$
+Thus the weighted objective specialized from (★) is
+$$
+\min_{\beta\in\mathbb{R}^{d_x d_c}}
+\ \big\|W^{1/2}\big(y - Z\beta\big)\big\|_2^2 + \lambda \|\beta\|_2^2,
+$$
+which is exactly weighted ridge with design $X\equiv Z$.
+
+**Step 2 (closed form and prediction).** By the ridge solution,
+$$
+\widehat\beta=(Z^\top W Z+\lambda I)^{-1} Z^\top W y,
+$$
+and the prediction at a query $(x,c)$ with joint feature $\psi(x,c)$ is
+$$
+\widehat y(x,c)=\psi(x,c)^\top \widehat\beta
+= \underbrace{\big(W^{1/2} Z\, \psi(x,c)\big)}_{k_{(x,c)}}^\top
+\big(W^{1/2} Z Z^\top W^{1/2}+\lambda I\big)^{-1} W^{1/2} y.
+$$
+
+**Step 3 (kernel form).** Since $K:=ZZ^\top$ and $K_W:=W^{1/2} K W^{1/2}$,
+$$
+\boxed{\ \widehat y(x,c)\;=\; k_{(x,c)}^\top \big(K_W+\lambda I\big)^{-1} W^{1/2}y\ }.
+$$
+Moreover,
+$$
+K_{ab}=\langle \psi_a,\psi_b\rangle
+=\big\langle x_a\otimes \phi(c_a),\,x_b\otimes \phi(c_b)\big\rangle
+=\langle x_a,x_b\rangle\cdot \langle \phi(c_a),\phi(c_b)\rangle,
+$$
+so (A) is precisely **KRR on joint features** with sample weights $W$. This proves part (A). \■
+
+---
+
+### A.2  Proof of Proposition 1(B): linear ICL ⇒ kernel regression
+
+We analyze a single attention layer operating on the weighted support set \(S(c)\), using **linear** maps for queries, keys, and values:
+$$
+q(x,c)=Q\,\psi(x,c),\qquad k_a = K\,\psi_a,\qquad v_a=V\,\psi_a,
+$$
+with $Q\in\mathbb{R}^{d_q\times d_\psi}$, $K\in\mathbb{R}^{d_k\times d_\psi}$, $V\in\mathbb{R}^{d_v\times d_\psi}$, $d_\psi=d_x d_c$. Let the **unnormalized** attention score for index $a$ be
+$$
+s_a(x,c):=w_a\,\langle q(x,c),k_a\rangle \;=\; w_a\,\psi(x,c)^\top Q^\top K\,\psi_a .
+$$
+Define normalized weights $\alpha_a(x,c):=s_a(x,c)/\sum_b s_b(x,c)$ (or any fixed positive normalization; the form below is pointwise in $\{\alpha_a\}$). The context representation and scalar prediction are
+$$
+z(x,c)=\sum_a \alpha_a(x,c)\, v_a,\qquad \widehat y(x,c)=u^\top z(x,c).
+$$
+
+We prove two statements: **(B1)** exact KRR if the attention maps are fixed and only the readout is trained, and **(B2)** kernel regression with the NTK if the attention parameters are trained in the linearized regime.
+
+#### A.2.1  (B1) Fixed attention, trained linear head ⇒ exact KRR
+
+Assume \(Q,K,V\) are fixed functions (pretrained or chosen a priori), hence \(\alpha_a(x,c)\) are **deterministic** functions of \((x,c)\) and the support set. Define the induced **feature map**
+$$
+\varphi(x,c):=\sum_a \alpha_a(x,c)\, v_a \;\in\; \mathbb{R}^{d_v}.
+$$
+Stack \(\varphi_a:=\varphi(x_a,c_a)\) row-wise into \(\Phi\in\mathbb{R}^{N\times d_v}\). Training only the readout \(u\) with weighted ridge,
+$$
+\widehat u \in \arg\min_u \ \|W^{1/2}(y-\Phi u)\|_2^2+\lambda \|u\|_2^2
+$$
+yields \(\widehat u=(\Phi^\top W \Phi + \lambda I)^{-1}\Phi^\top W y\) and predictions
+$$
+\widehat y(x,c)=\varphi(x,c)^\top \widehat u
+= \underbrace{\big(W^{1/2}\Phi\,\varphi(x,c)\big)}_{k_{(x,c)}}^\top
+\big(W^{1/2}\Phi\Phi^\top W^{1/2}+\lambda I\big)^{-1} W^{1/2} y.
+$$
+Therefore,
+$$
+\boxed{\ \widehat y(x,c)=k_{(x,c)}^\top \big(K_W+\lambda I\big)^{-1}W^{1/2}y\ },
+\quad K_W:=W^{1/2}\underbrace{(\Phi\Phi^\top)}_{=:K}W^{1/2},
+$$
+which is exactly **kernel ridge regression** with kernel
+$$
+k\big((x,c),(x',c')\big)=\langle \varphi(x,c),\varphi(x',c')\rangle.
+$$
+Because \(v_a=V\psi_a\) and \(\alpha_a(x,c)\propto w_a\,\psi(x,c)^\top Q^\top K \psi_a\), \(\varphi\) is a linear transform of a **weighted average of joint features**; hence the kernel is a dot-product on linear transforms of \(\{\psi_a\}\). This proves (B1). ■
+
+#### A.2.2  (B2) Training attention in the linearized/NTK regime ⇒ kernel regression with NTK
+
+Now let \(\theta=(Q,K,V,u)\) be trainable, and suppose training uses squared loss with gradient flow (or sufficiently small steps) starting from initialization \(\theta_0\). The **linearized model** around \(\theta_0\) is the first-order Taylor expansion
+$$
+\widehat y_\theta(x,c)\;\approx\;\widehat y_{\theta_0}(x,c)+\nabla_\theta \widehat y_{\theta_0}(x,c)^\top (\theta-\theta_0)
+=: \widehat y_{\theta_0}(x,c) + \phi_{\mathrm{NTK}}(x,c)^\top (\theta-\theta_0),
+$$
+where \(\phi_{\mathrm{NTK}}(x,c):=\nabla_\theta \widehat y_{\theta_0}(x,c)\) are the **tangent features**. Standard NTK results (for squared loss, gradient flow, and linearization-validity conditions) imply that the learned function equals **kernel regression with the NTK**:
+$$
+k_{\mathrm{NTK}}\big((x,c),(x',c')\big)
+:= \big\langle \phi_{\mathrm{NTK}}(x,c),\,\phi_{\mathrm{NTK}}(x',c')\big\rangle,
+$$
+i.e., predictions have the KRR form with kernel \(K_{\mathrm{NTK}}\) on the training set (and explicit ridge if used, or implicit regularization via early stopping).
+
+It remains to identify the structure of \(\phi_{\mathrm{NTK}}\) for our **linear attention** block and show it lies in the span of **linear transforms of joint features**. Differentiating
+$\widehat y(x,c)=u^\top \sum_a \alpha_a(x,c)\, V\psi_a$ at $\theta_0$ yields four groups of terms:
+
+- **Readout path ($u$).** \(\partial \widehat y/\partial u = \sum_a \alpha_a(x,c)\, V\psi_a = \varphi_0(x,c)\). This is linear in \(\{\psi_a\}\).
+
+- **Value path ($V$).** \(\partial \widehat y/\partial V = \sum_a \alpha_a(x,c)\, u\,\psi_a^\top\). This contributes terms of the form \((u\otimes I)\sum_a \alpha_a(x,c)\psi_a\), i.e., linear in \(\{\psi_a\}\).
+
+- **Query/key paths ($Q,K$).** For linear attention with scores \(s_a=w_a\,\psi(x,c)^\top Q^\top K \psi_a\) and normalized \(\alpha_a=s_a/\sum_b s_b\), derivatives of \(\alpha_a\) w.r.t. \(Q\) and \(K\) are linear combinations of \(\psi(x,c)\) and \(\{\psi_a\}\):
+  $$
+  \frac{\partial \alpha_a}{\partial Q}\propto 
+  \sum_b \big[\delta_{ab}-\alpha_b(x,c)\big]\,
+  w_a w_b \big( K\psi_a\,\psi(x,c)^\top \big),
+  \qquad
+  \frac{\partial \alpha_a}{\partial K}\propto 
+  \sum_b \big[\delta_{ab}-\alpha_b(x,c)\big]\,
+  w_a w_b \big( \psi(x,c)\,\psi_a^\top Q^\top \big),
+  $$
+  and hence $\partial \widehat y/\partial Q$, $\partial \widehat y/\partial K$ are finite linear combinations of tensors each bilinear in $\psi(x,c)$ and some $\psi_a$. Contracting with \(u\) and \(V\) produces terms *linear* in \(\psi(x,c)\) and linear in the set \(\{\psi_a\}\).
+
+Collecting all components, the tangent feature map can be written as
+$$
+\phi_{\mathrm{NTK}}(x,c)=\mathcal{L}\big(\psi(x,c),\{\psi_a\}\big),
+$$
+where \(\mathcal{L}\) is a fixed linear operator determined by \(\theta_0\), \(W\), and the normalization rule for attention. Consequently, the NTK takes the **dot-product** form
+$$
+k_{\mathrm{NTK}}\big((x,c),(x',c')\big)=
+\Psi(x,c)^\top\, \mathcal{M}\, \Psi(x',c'),
+$$
+for some positive semidefinite matrix $\mathcal{M}$ and a finite-dimensional feature stack $\Psi$ that concatenates linear transforms of $\psi(x,c)$ and of the support-set $\{\psi_a\}$. In particular, $k_{\mathrm{NTK}}$ is a dot-product kernel on **linear transforms of the joint features** (possibly augmented by normalization-dependent combinations). Therefore, training the linear-attention ICL model in the linearized regime equals kernel regression with such a kernel—completing (B2). ■
+
+**Assumptions for A.2.2.** Squared loss; gradient flow (or sufficiently small steps); initialization independent of the data; and a regime where the linearization error stays controlled over training (e.g., small learning rate, sufficient width/depth so that the NTK remains close to its initialization).
+
+---
+
+### A.3  Proof of Corollary 1: retrieval/gating/weighting as kernel/measure choices
+
+In both A.1 and A.2, predictions have the KRR form
+$$
+\widehat y(x,c)=k_{(x,c)}^\top \big(K^\sharp + \lambda I\big)^{-1} \mu,
+$$
+where \(K^\sharp\) is a positive semidefinite kernel matrix computed over the support set (e.g., $K_W=W^{1/2}ZZ^\top W^{1/2}$ in A.1 or $W^{1/2}\Phi\Phi^\top W^{1/2}$ / $K_{\mathrm{NTK}}$ in A.2), $k_{(x,c)}$ is the associated query vector, and \(\mu=W^{1/2}y\) (or an equivalent reweighting).
+
+- **Retrieval $R(c)$ / gating.** Changing the support set $S(c)$ (e.g., via a retriever or a gating policy) **removes or adds rows/columns** in $K^\sharp$ and entries in $k_{(x,c)}$. This is equivalent to changing the **empirical measure** over which the kernel smoother is computed (i.e., which samples contribute and how).
+
+- **Weights $w_{ij}(c)$.** Changing the weights modifies $W$ and hence replaces $K$ by $K_W=W^{1/2} K W^{1/2}$ and $k$ by $k_{(x,c)}=W^{1/2}k$. This is standard **importance weighting** in kernel regression.
+
+- **Induced kernels.** Attention, value projections, or learned encoders change the **feature map** (e.g., $\psi\mapsto V\psi$ or $\psi\mapsto Q\psi$), thereby changing the kernel $k((x,c),(x',c'))=\langle \Phi(x,c),\Phi(x',c')\rangle$.
+
+Thus retrieval/gating instantiate **neighborhood selection** (measure choice), and value/query/key processing instantiate **kernel choice**. ■
+
+---
+
+### A.4  Remarks
+
+- **No Gaussianity is required.** Part (A) only uses squared loss and linear algebra; the noise model $y=f(x,c)+\varepsilon$ with $\mathbb{E}[\varepsilon]=0$ suffices.
+- **Early stopping vs. explicit ridge.** If training uses early stopping rather than explicit $\lambda$, the resulting predictor is still a kernel regressor with an *implicit* regularization parameter controlled by stopping time (for gradient flow on squared loss).
+- **Multiple layers / nonlinear value stacks.** With deeper nonlinear stacks, the exact identities above become local/first-order (linearized) approximations; the NTK statement continues to apply under its usual conditions.
 
