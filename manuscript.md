@@ -14,6 +14,8 @@ author-meta:
 - Rikhil Rao
 - Jiaqi Wang
 - Samuel Wales-McGrath
+- Yixin Yang
+- Zhiyuan Li
 - Baiheng Chen
 - Ben Lengerich
 header-includes: |
@@ -30,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-15" />
   <meta name="citation_publication_date" content="2025-10-15" />
   <meta property="article:published_time" content="2025-10-15" />
-  <meta name="dc.modified" content="2025-10-15T15:30:25+00:00" />
-  <meta property="article:modified_time" content="2025-10-15T15:30:25+00:00" />
+  <meta name="dc.modified" content="2025-10-15T15:30:58+00:00" />
+  <meta property="article:modified_time" content="2025-10-15T15:30:58+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -65,6 +67,13 @@ header-includes: |
   <meta name="citation_author_institution" content="Department of Computer Science and Engineering, The Ohio State University" />
   <meta name="citation_author_orcid" content="0009-0008-5405-2646" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Yixin Yang" />
+  <meta name="citation_author_orcid" content="0009-0008-1436-5584" />
+  <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Zhiyuan Li" />
+  <meta name="citation_author_institution" content="Department of Computer Sciences, University of Wisconsin-Madison" />
+  <meta name="citation_author_orcid" content="0009-0006-6016-7381" />
+  <meta name="twitter:creator" content="@None" />
   <meta name="citation_author" content="Baiheng Chen" />
   <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
   <meta name="citation_author_orcid" content="0000-0001-8554-3984" />
@@ -79,9 +88,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4ff2e4919582591bb09165b23e42591eceefddbd/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ff2e4919582591bb09165b23e42591eceefddbd/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4ff2e4919582591bb09165b23e42591eceefddbd/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/654e850ed7853f0a1b9536b72c3aa6758f37a4c4/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/654e850ed7853f0a1b9536b72c3aa6758f37a4c4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/654e850ed7853f0a1b9536b72c3aa6758f37a4c4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -103,9 +112,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/4ff2e4919582591bb09165b23e42591eceefddbd/))
+([permalink](https://AdaptInfer.github.io/context-review/v/654e850ed7853f0a1b9536b72c3aa6758f37a4c4/))
 was automatically generated
-from [AdaptInfer/context-review@4ff2e49](https://github.com/AdaptInfer/context-review/tree/4ff2e4919582591bb09165b23e42591eceefddbd)
+from [AdaptInfer/context-review@654e850](https://github.com/AdaptInfer/context-review/tree/654e850ed7853f0a1b9536b72c3aa6758f37a4c4)
 on October 15, 2025.
 </em></small>
 
@@ -198,6 +207,28 @@ on October 15, 2025.
     <br>
   <small>
      Department of Computer Science and Engineering, The Ohio State University
+     · Funded by None
+  </small>
+
++ **Yixin Yang**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0008-1436-5584](https://orcid.org/0009-0008-1436-5584)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [Jessego5](https://github.com/Jessego5)
+    <br>
+  <small>
+  </small>
+
++ **Zhiyuan Li**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0009-0006-6016-7381](https://orcid.org/0009-0006-6016-7381)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [LZYEIL](https://github.com/LZYEIL)
+    <br>
+  <small>
+     Department of Computer Sciences, University of Wisconsin-Madison
      · Funded by None
   </small>
 
