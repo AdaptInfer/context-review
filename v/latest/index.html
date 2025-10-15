@@ -63,8 +63,8 @@
   <meta name="dc.date" content="2025-10-15" />
   <meta name="citation_publication_date" content="2025-10-15" />
   <meta property="article:published_time" content="2025-10-15" />
-  <meta name="dc.modified" content="2025-10-15T15:35:12+00:00" />
-  <meta property="article:modified_time" content="2025-10-15T15:35:12+00:00" />
+  <meta name="dc.modified" content="2025-10-15T16:06:03+00:00" />
+  <meta property="article:modified_time" content="2025-10-15T16:06:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -119,9 +119,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -138,9 +138,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/a50162b4ca2479b76ba6a7348ddf8110eb01f95e">AdaptInfer/context-review@a50162b</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/b745d585a252f3731d5e001f360b4b5ea380cf71">AdaptInfer/context-review@b745d58</a>
 on October 15, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -298,6 +298,39 @@ x_i \sim P(x; \theta_i).
 <p>This shift raises new modeling challenges.
 Estimating a unique <span class="math inline">\(\theta_i\)</span> from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping.
 And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we must develop tools to recover, interpret, or constrain the underlying parameter variation.</p>
+<h3 id="problem-setup-and-notation">Problem Setup and Notation</h3>
+<p>We study supervised prediction with units <span class="math inline">\(i=1,\dots,n\)</span>.<br />
+Each unit has a <strong>context</strong> <span class="math inline">\(c_i \in \mathcal{C}\)</span> (e.g., patient/user/site/time), and observed data <span class="math inline">\(\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}\)</span> with <span class="math inline">\(x_{ij}\in\mathcal{X}\)</span>, <span class="math inline">\(y_{ij}\in\mathcal{Y}\)</span>.<br />
+Predictions come from a model family <span class="math inline">\(\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}\)</span> (e.g., linear model, neural net, probabilistic model, etc.).</p>
+<p>In <strong>global</strong> (i.i.d.) models, <span class="math inline">\(\theta_i \equiv \theta^\star\)</span>.<br />
+In <strong>context-adaptive</strong> models, parameters vary with context, as you already introduce:
+<span class="math inline">\(\theta_i=f(c_i)\)</span> or <span class="math inline">\(\theta_i\sim P(\theta\mid c_i)\)</span>.</p>
+<p>For a new unit with context <span class="math inline">\(c\)</span>, we write a unified empirical objective:</p>
+<p><span class="math display">\[
+\widehat{\theta}(c)\;\in\;\arg\min_{\theta\in\Theta}\;
+\underbrace{\sum_{(i,j)\in S(c)} \ell\!\big(h_\theta(x_{ij}),y_{ij}\big)}_{\text{context-dependent support}}
+\;+\;
+\underbrace{\mathcal{R}(\theta\,;\,c)}_{\text{context-structured regularization}}\,,
+\tag{★}
+\]</span>
+where <span class="math inline">\(\ell\)</span> is a proper loss (e.g., squared, logistic), <span class="math inline">\(S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}\)</span> is a <strong>support set</strong> selected for context <span class="math inline">\(c\)</span>, and <span class="math inline">\(\mathcal{R}(\theta;c)\)</span> encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.).</p>
+<p><strong>How context enters.</strong> We separate <strong>explicit</strong> and <strong>implicit</strong> mechanisms:
+- <strong>Explicit parameterization:</strong> a map <span class="math inline">\(f:\mathcal{C}\to\Theta\)</span> sets <span class="math inline">\(\theta_i=f(c_i)\)</span> (e.g., varying-coefficient, hierarchical Bayes, multi-task/meta-learning). Here <span class="math inline">\(\mathcal{R}(\theta;c)\)</span> typically regularizes <span class="math inline">\(f\)</span> (e.g., Lipschitz over <span class="math inline">\(\mathcal{C}\)</span>, group lasso, low-rank).
+- <strong>Implicit parameterization:</strong> context alters optimization or internal states without exposing <span class="math inline">\(\theta\)</span> directly (e.g., mixture-of-experts with gates <span class="math inline">\(g(x,c)\)</span>; retrieval where <span class="math inline">\(S(c)\)</span> is built by a retriever <span class="math inline">\(R(c)\)</span>; in-context learning where a prompt map <span class="math inline">\(P(c)\)</span> conditions a foundation model).</p>
+<p>For convenience, we use a <strong>context encoder</strong> <span class="math inline">\(\phi:\mathcal{C}\to\mathbb{R}^d\)</span> and a similarity/kernel <span class="math inline">\(K(c,c&#39;)\)</span>. A common instance of (★) is kernel-weighted risk:</p>
+<p><span class="math display">\[
+\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),\quad
+w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
+\]</span></p>
+<p><strong>Granularity.</strong> We refer to adaptation granularity <span class="math inline">\(g\in\{\text{group},\text{unit},\text{example}\}\)</span> and to three design “knobs” we will revisit:<br />
+1) <strong>Information</strong> via <span class="math inline">\(S(c)\)</span> or <span class="math inline">\(P(c)\)</span> (what context is exposed),<br />
+2) <strong>Inductive bias</strong> via <span class="math inline">\(\mathcal{R}(\theta;c)\)</span> (how parameters may vary),<br />
+3) <strong>Compute</strong> via warm-starts/caching/steps (how aggressively we solve (★) at test time).</p>
+<p><strong>Standing assumptions (used as needed).</strong><br />
+(i) <em>Exchangeability within context:</em> conditional on <span class="math inline">\((\theta_i,c_i)\)</span>, <span class="math inline">\((x_{ij},y_{ij})\)</span> are i.i.d.<br />
+(ii) <em>Regularity:</em> either <span class="math inline">\(\theta=f(c)\)</span> with <span class="math inline">\(f\)</span> in a regular class (e.g., Lipschitz/sparse/low-rank) or retrieval weights <span class="math inline">\(w_{ij}(c)\)</span> are bounded and locally normalized.<br />
+(iii) <em>Identifiability/stability:</em> <span class="math inline">\(\ell\)</span> is convex in model outputs and <span class="math inline">\(\mathcal{R}\)</span> yields a unique or stable minimizer.<br />
+(iv) <em>Resource tracking:</em> we track <span class="math inline">\(|S(c)|\)</span>, optimization steps, and memory to compare <strong>adaptation efficiency</strong>.</p>
 <h3 id="theoretical-bridges-and-scope">Theoretical Bridges and Scope</h3>
 <p>Recent theoretical work has revealed that the boundary between explicit and implicit approaches to context adaptation may be narrower than it first appears.
 A growing line of research has shown that transformers trained on regression tasks can implement classical estimators such as ordinary least squares, ridge regression, and even nonlinear kernel regression in context <span class="citation" data-cites="Humo13Op fo6ln654 PZHprt8G">[<a href="#ref-Humo13Op" role="doc-biblioref">1</a>,<a href="#ref-fo6ln654" role="doc-biblioref">2</a>,<a href="#ref-PZHprt8G" role="doc-biblioref">3</a>]</span>.
