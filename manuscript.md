@@ -32,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-15" />
   <meta name="citation_publication_date" content="2025-10-15" />
   <meta property="article:published_time" content="2025-10-15" />
-  <meta name="dc.modified" content="2025-10-15T15:35:12+00:00" />
-  <meta property="article:modified_time" content="2025-10-15T15:35:12+00:00" />
+  <meta name="dc.modified" content="2025-10-15T16:06:03+00:00" />
+  <meta property="article:modified_time" content="2025-10-15T16:06:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -88,9 +88,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -112,9 +112,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/a50162b4ca2479b76ba6a7348ddf8110eb01f95e/))
+([permalink](https://AdaptInfer.github.io/context-review/v/b745d585a252f3731d5e001f360b4b5ea380cf71/))
 was automatically generated
-from [AdaptInfer/context-review@a50162b](https://github.com/AdaptInfer/context-review/tree/a50162b4ca2479b76ba6a7348ddf8110eb01f95e)
+from [AdaptInfer/context-review@b745d58](https://github.com/AdaptInfer/context-review/tree/b745d585a252f3731d5e001f360b4b5ea380cf71)
 on October 15, 2025.
 </em></small>
 
@@ -302,6 +302,50 @@ where $c_i$ captures the relevant covariates or environment for observation $i$.
 This shift raises new modeling challenges. 
 Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. 
 And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we must develop tools to recover, interpret, or constrain the underlying parameter variation.
+
+### Problem Setup and Notation
+
+We study supervised prediction with units $i=1,\dots,n$.  
+Each unit has a **context** $c_i \in \mathcal{C}$ (e.g., patient/user/site/time), and observed data $\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}$ with $x_{ij}\in\mathcal{X}$, $y_{ij}\in\mathcal{Y}$.  
+Predictions come from a model family $\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}$ (e.g., linear model, neural net, probabilistic model, etc.).
+
+In **global** (i.i.d.) models, $\theta_i \equiv \theta^\star$.  
+In **context-adaptive** models, parameters vary with context, as you already introduce:
+$\theta_i=f(c_i)$ or $\theta_i\sim P(\theta\mid c_i)$.
+
+For a new unit with context $c$, we write a unified empirical objective:
+
+$$
+\widehat{\theta}(c)\;\in\;\arg\min_{\theta\in\Theta}\;
+\underbrace{\sum_{(i,j)\in S(c)} \ell\!\big(h_\theta(x_{ij}),y_{ij}\big)}_{\text{context-dependent support}}
+\;+\;
+\underbrace{\mathcal{R}(\theta\,;\,c)}_{\text{context-structured regularization}}\,,
+\tag{★}
+$$
+where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a **support set** selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.).
+
+**How context enters.** We separate **explicit** and **implicit** mechanisms:
+- **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficient, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
+- **Implicit parameterization:** context alters optimization or internal states without exposing $\theta$ directly (e.g., mixture-of-experts with gates $g(x,c)$; retrieval where $S(c)$ is built by a retriever $R(c)$; in-context learning where a prompt map $P(c)$ conditions a foundation model).
+
+For convenience, we use a **context encoder** $\phi:\mathcal{C}\to\mathbb{R}^d$ and a similarity/kernel $K(c,c')$. A common instance of (★) is kernel-weighted risk:
+
+$$
+\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),\quad
+w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
+$$
+
+**Granularity.** We refer to adaptation granularity $g\in\{\text{group},\text{unit},\text{example}\}$ and to three design “knobs” we will revisit:  
+1) **Information** via $S(c)$ or $P(c)$ (what context is exposed),  
+2) **Inductive bias** via $\mathcal{R}(\theta;c)$ (how parameters may vary),  
+3) **Compute** via warm-starts/caching/steps (how aggressively we solve (★) at test time).
+
+**Standing assumptions (used as needed).**  
+(i) *Exchangeability within context:* conditional on $(\theta_i,c_i)$, $(x_{ij},y_{ij})$ are i.i.d.  
+(ii) *Regularity:* either $\theta=f(c)$ with $f$ in a regular class (e.g., Lipschitz/sparse/low-rank) or retrieval weights $w_{ij}(c)$ are bounded and locally normalized.  
+(iii) *Identifiability/stability:* $\ell$ is convex in model outputs and $\mathcal{R}$ yields a unique or stable minimizer.  
+(iv) *Resource tracking:* we track $|S(c)|$, optimization steps, and memory to compare **adaptation efficiency**.
+
 
 ### Theoretical Bridges and Scope
 
