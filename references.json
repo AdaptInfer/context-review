@@ -1,5 +1,232 @@
 [
   {
+    "id": "jbY4pWUH",
+    "type": "paper-conference",
+    "title": "Early Drift Detection Method",
+    "author": [
+      {
+        "family": "Baena-García",
+        "given": "Manuel"
+      },
+      {
+        "family": "del Campo-Ávila",
+        "given": "José"
+      },
+      {
+        "family": "Fidalgo",
+        "given": "Raul"
+      },
+      {
+        "family": "Bifet",
+        "given": "Albert"
+      },
+      {
+        "family": "Gavalda",
+        "given": "Ricard"
+      },
+      {
+        "family": "Morales-Bueno",
+        "given": "Rafael"
+      }
+    ],
+    "container-title": "Fourth International Workshop on Knowledge Discovery from Data Streams",
+    "volume": "6",
+    "page": "77–86",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Baena2006EarlyDrift"
+  },
+  {
+    "id": "SldOo5zA",
+    "type": "article-journal",
+    "title": "A Markovian Decision Process",
+    "author": [
+      {
+        "family": "Bellman",
+        "given": "Richard"
+      }
+    ],
+    "container-title": "Journal of Mathematics and Mechanics",
+    "page": "679–684",
+    "publisher": "JSTOR",
+    "issued": {
+      "date-parts": [
+        [
+          1957
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Bellman1957Markovian"
+  },
+  {
+    "id": "18GHyIdqs",
+    "type": "book",
+    "title": "Statistical Methods for Research Workers",
+    "author": [
+      {
+        "family": "Fisher",
+        "given": "Ronald A."
+      }
+    ],
+    "publisher": "Oliver & Boyd",
+    "publisher-place": "Edinburgh",
+    "issued": {
+      "date-parts": [
+        [
+          1925
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Fisher1925Research"
+  },
+  {
+    "id": "vKtb27Ba",
+    "type": "book",
+    "title": "Theoria motus corporum coelestium in sectionibus conicis solem ambientium",
+    "author": [
+      {
+        "family": "Gauss",
+        "given": "Carl Friedrich"
+      }
+    ],
+    "publisher": "Perthes & Besser",
+    "publisher-place": "Hamburg",
+    "issued": {
+      "date-parts": [
+        [
+          1809
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Gauss1809Ambientium"
+  },
+  {
+    "id": "1GKMYvnqB",
+    "type": "article-journal",
+    "title": "Estimation of Genetic Parameters",
+    "author": [
+      {
+        "family": "Henderson",
+        "given": "Charles R."
+      }
+    ],
+    "container-title": "Annals of Mathematical Statistics",
+    "volume": "21",
+    "issue": "2",
+    "page": "309–310",
+    "issued": {
+      "date-parts": [
+        [
+          1950
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Henderson1950Genetic"
+  },
+  {
+    "id": "8BCLzHII",
+    "type": "book",
+    "title": "Nouvelles méthodes pour la détermination des orbites des comètes",
+    "author": [
+      {
+        "family": "Legendre",
+        "given": "Adrien-Marie"
+      }
+    ],
+    "publisher": "Courcier",
+    "publisher-place": "Paris",
+    "issued": {
+      "date-parts": [
+        [
+          1805
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Legendre1805Comets"
+  },
+  {
+    "id": "jlS72VrS",
+    "type": "book",
+    "title": "Reinforcement Learning: An Introduction",
+    "author": [
+      {
+        "family": "Sutton",
+        "given": "Richard S."
+      },
+      {
+        "family": "Barto",
+        "given": "Andrew G."
+      }
+    ],
+    "publisher": "MIT Press",
+    "publisher-place": "Cambridge, MA",
+    "ISBN": "978-0-262-19398-6",
+    "issued": {
+      "date-parts": [
+        [
+          1998
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Sutton1998RLIntroduction"
+  },
+  {
+    "id": "jggKMQFt",
+    "type": "thesis",
+    "title": "Learning from Delayed Rewards",
+    "author": [
+      {
+        "family": "Watkins",
+        "given": "Christopher John Cornish Hellaby"
+      }
+    ],
+    "publisher": "King's College, University of Cambridge",
+    "genre": "PhD thesis",
+    "issued": {
+      "date-parts": [
+        [
+          1989
+        ]
+      ]
+    },
+    "note": "Loaded from an external bibliography file by Manubot.\nsource_bibliography: manual-references.json\nstandard_id: Watkins1989Learning"
+  },
+  {
+    "id": "NLVTJ9Lj",
+    "URL": "https://arxiv.org/abs/1312.6114",
+    "number": "1312.6114",
+    "title": "Auto-Encoding Variational Bayes",
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          13
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Diederik P",
+        "family": "Kingma"
+      },
+      {
+        "given": "Max",
+        "family": "Welling"
+      }
+    ],
+    "container-title": "arXiv",
+    "publisher": "arXiv",
+    "type": "report",
+    "abstract": "How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets? We introduce a stochastic variational inference and learning algorithm that scales to large datasets and, under some mild differentiability conditions, even works in the intractable case. Our contributions are two-fold. First, we show that a reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient methods. Second, we show that for i.i.d. datasets with continuous latent variables per datapoint, posterior inference can be made especially efficient by fitting an approximate inference model (also called a recognition model) to the intractable posterior using the proposed lower bound estimator. Theoretical advantages are reflected in experimental results.",
+    "note": "license: http://arxiv.org/licenses/nonexclusive-distrib/1.0/\nThis CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: arxiv:1312.6114"
+  },
+  {
     "id": "JhS4KMR7",
     "URL": "https://arxiv.org/abs/1501.01332",
     "number": "1501.01332",
@@ -1313,6 +1540,34 @@
   },
   {
     "publisher": "Wiley",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>Functional data analysis (FDA) models data using functions or functional parameters. The complexity of the functions is not assumed to be known in advance, so that methods are used for approximating these with as much flexibility as the data require.</jats:p>",
+    "DOI": "10.1002/0470013192.bsa239",
+    "source": "Crossref",
+    "title": "Functional Data Analysis",
+    "author": [
+      {
+        "given": "James",
+        "family": "Ramsay"
+      }
+    ],
+    "container-title": "Encyclopedia of Statistics in Behavioral Science",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2005,
+          4,
+          15
+        ]
+      ]
+    },
+    "URL": "https://doi.org/b9tmj6",
+    "id": "OXCuJonU",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1002/0470013192.bsa239",
+    "type": "entry"
+  },
+  {
+    "publisher": "Wiley",
     "DOI": "10.1002/9780470973394",
     "source": "Crossref",
     "title": "Multilevel Statistical Models",
@@ -1423,6 +1678,34 @@
     "container-title-short": "Information and Computation",
     "id": "dSHoyg5K",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1006/inco.1994.1009"
+  },
+  {
+    "publisher": "Springer US",
+    "DOI": "10.1007/978-1-4899-3242-6",
+    "type": "book",
+    "source": "Crossref",
+    "title": "Generalized Linear Models",
+    "author": [
+      {
+        "given": "P.",
+        "family": "McCullagh"
+      },
+      {
+        "given": "J. A.",
+        "family": "Nelder"
+      }
+    ],
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1989
+        ]
+      ]
+    },
+    "URL": "https://doi.org/brhr",
+    "id": "1HWqsAX0j",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1007/978-1-4899-3242-6"
   },
   {
     "publisher": "Elsevier BV",
@@ -1587,6 +1870,243 @@
   {
     "publisher": "Springer Science and Business Media LLC",
     "issue": "1",
+    "DOI": "10.1023/a:1007379606734",
+    "type": "article-journal",
+    "page": "41-75",
+    "source": "Crossref",
+    "title": "Multitask Learning",
+    "volume": "28",
+    "author": [
+      {
+        "given": "Rich",
+        "family": "Caruana"
+      }
+    ],
+    "container-title": "Machine Learning",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1997,
+          7
+        ]
+      ]
+    },
+    "URL": "https://doi.org/d3gsgj",
+    "container-title-short": "Machine Learning",
+    "id": "9k4OKrXL",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1023/a:1007379606734"
+  },
+  {
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "2-3",
+    "DOI": "10.1023/a:1013689704352",
+    "type": "article-journal",
+    "page": "235-256",
+    "source": "Crossref",
+    "title": "Finite-time Analysis of the Multiarmed Bandit Problem",
+    "volume": "47",
+    "author": [
+      {
+        "given": "Peter",
+        "family": "Auer"
+      },
+      {
+        "given": "Nicolò",
+        "family": "Cesa-Bianchi"
+      },
+      {
+        "given": "Paul",
+        "family": "Fischer"
+      }
+    ],
+    "container-title": "Machine Learning",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2002,
+          5
+        ]
+      ]
+    },
+    "URL": "https://doi.org/dxkxgv",
+    "container-title-short": "Machine Learning",
+    "id": "17mBgrHWB",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1023/a:1013689704352"
+  },
+  {
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "3-4",
+    "DOI": "10.1023/a:1022672621406",
+    "type": "article-journal",
+    "page": "229-256",
+    "source": "Crossref",
+    "title": "Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning",
+    "volume": "8",
+    "author": [
+      {
+        "given": "Ronald J.",
+        "family": "Williams"
+      }
+    ],
+    "container-title": "Machine Learning",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1992,
+          5
+        ]
+      ]
+    },
+    "URL": "https://doi.org/b762gd",
+    "container-title-short": "Machine Learning",
+    "id": "5ivkUecW",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1023/a:1022672621406"
+  },
+  {
+    "publisher": "American Psychological Association (APA)",
+    "issue": "4",
+    "DOI": "10.1037/h0040957",
+    "type": "article-journal",
+    "page": "281-302",
+    "source": "Crossref",
+    "title": "Construct validity in psychological tests.",
+    "volume": "52",
+    "author": [
+      {
+        "given": "Lee J.",
+        "family": "Cronbach"
+      },
+      {
+        "given": "Paul E.",
+        "family": "Meehl"
+      }
+    ],
+    "container-title": "Psychological Bulletin",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1955,
+          7
+        ]
+      ]
+    },
+    "URL": "https://doi.org/dcsjjf",
+    "container-title-short": "Psychological Bulletin",
+    "PMID": "13245896",
+    "id": "3oGysJy4",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1037/h0040957"
+  },
+  {
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "7540",
+    "DOI": "10.1038/nature14236",
+    "type": "article-journal",
+    "page": "529-533",
+    "source": "Crossref",
+    "title": "Human-level control through deep reinforcement learning",
+    "volume": "518",
+    "author": [
+      {
+        "given": "Volodymyr",
+        "family": "Mnih"
+      },
+      {
+        "given": "Koray",
+        "family": "Kavukcuoglu"
+      },
+      {
+        "given": "David",
+        "family": "Silver"
+      },
+      {
+        "given": "Andrei A.",
+        "family": "Rusu"
+      },
+      {
+        "given": "Joel",
+        "family": "Veness"
+      },
+      {
+        "given": "Marc G.",
+        "family": "Bellemare"
+      },
+      {
+        "given": "Alex",
+        "family": "Graves"
+      },
+      {
+        "given": "Martin",
+        "family": "Riedmiller"
+      },
+      {
+        "given": "Andreas K.",
+        "family": "Fidjeland"
+      },
+      {
+        "given": "Georg",
+        "family": "Ostrovski"
+      },
+      {
+        "given": "Stig",
+        "family": "Petersen"
+      },
+      {
+        "given": "Charles",
+        "family": "Beattie"
+      },
+      {
+        "given": "Amir",
+        "family": "Sadik"
+      },
+      {
+        "given": "Ioannis",
+        "family": "Antonoglou"
+      },
+      {
+        "given": "Helen",
+        "family": "King"
+      },
+      {
+        "given": "Dharshan",
+        "family": "Kumaran"
+      },
+      {
+        "given": "Daan",
+        "family": "Wierstra"
+      },
+      {
+        "given": "Shane",
+        "family": "Legg"
+      },
+      {
+        "given": "Demis",
+        "family": "Hassabis"
+      }
+    ],
+    "container-title": "Nature",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          2,
+          25
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gc3h75",
+    "container-title-short": "Nature",
+    "PMID": "25719670",
+    "id": "BLbPVL8P",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/nature14236"
+  },
+  {
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "1",
     "abstract": "<jats:title>Abstract</jats:title><jats:p>Recent large language models (LLMs), such as ChatGPT, have demonstrated remarkable prediction performance for a growing array of tasks. However, their proliferation into high-stakes domains and compute-limited settings has created a burgeoning need for interpretability and efficiency. We address this need by proposing Aug-imodels, a framework for leveraging the knowledge learned by LLMs to build extremely efficient and interpretable prediction models. Aug-imodels use LLMs during fitting but not during inference, allowing complete transparency and often a speed/memory improvement of greater than 1000x for inference compared to LLMs. We explore two instantiations of Aug-imodels in natural-language processing: Aug-Linear, which augments a linear model with decoupled embeddings from an LLM and Aug-Tree, which augments a decision tree with LLM feature expansions. Across a variety of text-classification datasets, both outperform their non-augmented, interpretable counterparts. Aug-Linear can even outperform much larger models, e.g. a 6-billion parameter GPT-J model, despite having 10,000x fewer parameters and being fully transparent. We further explore Aug-imodels in a natural-language fMRI study, where they generate interesting interpretations from scientific data.</jats:p>",
     "DOI": "10.1038/s41467-023-43713-1",
     "type": "article-journal",
@@ -1672,6 +2192,70 @@
     "container-title-short": "Nat Mach Intell",
     "id": "RzmVBDLx",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/s42256-023-00620-w"
+  },
+  {
+    "publisher": "Informa UK Limited",
+    "issue": "227",
+    "DOI": "10.1080/01621459.1944.10500699",
+    "type": "article-journal",
+    "page": "357-365",
+    "source": "Crossref",
+    "title": "Application of the Logistic Function to Bio-Assay",
+    "volume": "39",
+    "author": [
+      {
+        "given": "Joseph",
+        "family": "Berkson"
+      }
+    ],
+    "container-title": "Journal of the American Statistical Association",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1944,
+          9
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gn82f3",
+    "container-title-short": "Journal of the American Statistical Association",
+    "id": "15YaJttEf",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1080/01621459.1944.10500699"
+  },
+  {
+    "publisher": "Informa UK Limited",
+    "issue": "421",
+    "DOI": "10.1080/01621459.1993.10594284",
+    "type": "article-journal",
+    "page": "9-25",
+    "source": "Crossref",
+    "title": "Approximate Inference in Generalized Linear Mixed Models",
+    "volume": "88",
+    "author": [
+      {
+        "given": "N. E.",
+        "family": "Breslow"
+      },
+      {
+        "given": "D. G.",
+        "family": "Clayton"
+      }
+    ],
+    "container-title": "Journal of the American Statistical Association",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1993,
+          3
+        ]
+      ]
+    },
+    "URL": "https://doi.org/ggnhwn",
+    "container-title-short": "Journal of the American Statistical Association",
+    "id": "sPnUGQ8l",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1080/01621459.1993.10594284"
   },
   {
     "publisher": "Informa UK Limited",
@@ -1897,6 +2481,127 @@
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1080/13675567.2025.2566806"
   },
   {
+    "publisher": "IOP Publishing",
+    "issue": "7",
+    "DOI": "10.1088/2040-8978/17/7/073001",
+    "type": "article-journal",
+    "page": "073001",
+    "source": "Crossref",
+    "title": "Compression, restoration, resampling, ‘compressive sensing’: fast transforms in digital imaging",
+    "volume": "17",
+    "author": [
+      {
+        "given": "L P",
+        "family": "Yaroslavsky"
+      }
+    ],
+    "container-title": "Journal of Optics",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/g96wr9",
+    "container-title-short": "J. Opt.",
+    "id": "13xFsnpVI",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1088/2040-8978/17/7/073001"
+  },
+  {
+    "publisher": "American Mathematical Society (AMS)",
+    "issue": "5",
+    "DOI": "10.1090/s0002-9904-1952-09620-8",
+    "type": "article-journal",
+    "page": "527-535",
+    "source": "Crossref",
+    "title": "Some aspects of the sequential design of experiments",
+    "volume": "58",
+    "author": [
+      {
+        "given": "Herbert",
+        "family": "Robbins"
+      }
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1952
+        ]
+      ]
+    },
+    "URL": "https://doi.org/c325nh",
+    "container-title-short": "Bull. Amer. Math. Soc.",
+    "id": "18RlJp2YO",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1090/s0002-9904-1952-09620-8"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "3",
+    "DOI": "10.1093/biomet/58.3.545",
+    "type": "article-journal",
+    "page": "545-554",
+    "source": "Crossref",
+    "title": "Recovery of inter-block information when block sizes are unequal",
+    "volume": "58",
+    "author": [
+      {
+        "given": "H. D.",
+        "family": "PATTERSON"
+      },
+      {
+        "given": "R.",
+        "family": "THOMPSON"
+      }
+    ],
+    "container-title": "Biometrika",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1971
+        ]
+      ]
+    },
+    "URL": "https://doi.org/c473hg",
+    "container-title-short": "Biometrika",
+    "id": "xPNSAM4v",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/biomet/58.3.545"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "4",
+    "DOI": "10.1093/biomet/78.4.719",
+    "type": "article-journal",
+    "page": "719-727",
+    "source": "Crossref",
+    "title": "Estimation in generalized linear models with random effects",
+    "volume": "78",
+    "author": [
+      {
+        "given": "ROBERT",
+        "family": "SCHALL"
+      }
+    ],
+    "container-title": "Biometrika",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1991
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bhxfht",
+    "container-title-short": "Biometrika",
+    "id": "iS2cDavY",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/biomet/78.4.719"
+  },
+  {
     "publisher": "Oxford University Press (OUP)",
     "issue": "1",
     "DOI": "10.1093/biomet/asq060",
@@ -2020,6 +2725,26 @@
     "PMID": "18079126",
     "id": "m4KsbXUW",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/biostatistics/kxm045"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "DOI": "10.1093/jnci/11.6.1269",
+    "type": "article-journal",
+    "source": "Crossref",
+    "title": "A Method of Estimating Comparative Rates from Clinical Data. Applications to Cancer of the Lung, Breast, and Cervix",
+    "container-title": "JNCI: Journal of the National Cancer Institute",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1951,
+          6
+        ]
+      ]
+    },
+    "URL": "https://doi.org/g96wsb",
+    "id": "pC7P4enS",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/jnci/11.6.1269"
   },
   {
     "publisher": "Oxford University PressOxford",
@@ -2217,6 +2942,111 @@
   },
   {
     "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "issue": "10",
+    "DOI": "10.1109/tkde.2009.191",
+    "type": "article-journal",
+    "page": "1345-1359",
+    "source": "Crossref",
+    "title": "A Survey on Transfer Learning",
+    "volume": "22",
+    "author": [
+      {
+        "given": "Sinno Jialin",
+        "family": "Pan"
+      },
+      {
+        "given": "Qiang",
+        "family": "Yang"
+      }
+    ],
+    "container-title": "IEEE Transactions on Knowledge and Data Engineering",
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          10
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bc4vws",
+    "container-title-short": "IEEE Trans. Knowl. Data Eng.",
+    "id": "12JtL2o6T",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1109/tkde.2009.191"
+  },
+  {
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "issue": "6",
+    "DOI": "10.1109/tpami.1984.4767596",
+    "type": "article-journal",
+    "page": "721-741",
+    "source": "Crossref",
+    "title": "Stochastic Relaxation, Gibbs Distributions, and the Bayesian Restoration of Images",
+    "volume": "PAMI-6",
+    "author": [
+      {
+        "given": "Stuart",
+        "family": "Geman"
+      },
+      {
+        "given": "Donald",
+        "family": "Geman"
+      }
+    ],
+    "container-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          1984,
+          11
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bpv4j5",
+    "container-title-short": "IEEE Trans. Pattern Anal. Mach. Intell.",
+    "PMID": "22499653",
+    "id": "SXlx1fmn",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1109/tpami.1984.4767596"
+  },
+  {
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "issue": "8",
+    "DOI": "10.1109/tpami.2013.50",
+    "type": "article-journal",
+    "page": "1798-1828",
+    "source": "Crossref",
+    "title": "Representation Learning: A Review and New Perspectives",
+    "volume": "35",
+    "author": [
+      {
+        "given": "Y.",
+        "family": "Bengio"
+      },
+      {
+        "given": "A.",
+        "family": "Courville"
+      },
+      {
+        "given": "P.",
+        "family": "Vincent"
+      }
+    ],
+    "container-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          8
+        ]
+      ]
+    },
+    "URL": "https://doi.org/f42hw4",
+    "container-title-short": "IEEE Trans. Pattern Anal. Mach. Intell.",
+    "PMID": "23787338",
+    "id": "SVoGevDg",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1109/tpami.2013.50"
+  },
+  {
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
     "issue": "3",
     "DOI": "10.1109/tr.2016.2570568",
     "type": "article-journal",
@@ -2263,6 +3093,43 @@
     "container-title-short": "IEEE Trans. Rel.",
     "id": "jH6SpM8M",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1109/tr.2016.2570568"
+  },
+  {
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "issue": "5",
+    "DOI": "10.1109/tsmc.1983.6313077",
+    "type": "article-journal",
+    "page": "834-846",
+    "source": "Crossref",
+    "title": "Neuronlike adaptive elements that can solve difficult learning control problems",
+    "volume": "SMC-13",
+    "author": [
+      {
+        "given": "Andrew G.",
+        "family": "Barto"
+      },
+      {
+        "given": "Richard S.",
+        "family": "Sutton"
+      },
+      {
+        "given": "Charles W.",
+        "family": "Anderson"
+      }
+    ],
+    "container-title": "IEEE Transactions on Systems, Man, and Cybernetics",
+    "issued": {
+      "date-parts": [
+        [
+          1983,
+          9
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gddhk6",
+    "container-title-short": "IEEE Trans. Syst., Man, Cybern.",
+    "id": "YAPw7zCk",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1109/tsmc.1983.6313077"
   },
   {
     "publisher": "IEEE",
@@ -2338,6 +3205,72 @@
     "URL": "https://doi.org/fvntrn",
     "id": "kfKaakAe",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1111/j.1467-9868.2005.00532.x"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "2",
+    "abstract": "<jats:title>Summary</jats:title>\n               <jats:p>A sequence of 0’s and 1’s is observed and it is suspected that the chance that a particular trial is a 1 depends on the value of one or more independent variables. Tests and estimates for such situations are considered, dealing first with problems in which the independent variable is preassigned and then with independent variables that are functions of the sequence. There is a considerable amount of earlier work, which is reviewed.</jats:p>",
+    "DOI": "10.1111/j.2517-6161.1958.tb00292.x",
+    "type": "article-journal",
+    "page": "215-232",
+    "source": "Crossref",
+    "title": "The Regression Analysis of Binary Sequences",
+    "volume": "20",
+    "author": [
+      {
+        "given": "D. R.",
+        "family": "Cox"
+      }
+    ],
+    "container-title": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1958,
+          7,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gfzf66",
+    "id": "fzXXj6RE",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1111/j.2517-6161.1958.tb00292.x"
+  },
+  {
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "1",
+    "abstract": "<jats:title>Summary</jats:title>\n               <jats:p>The usual linear statistical model is reanalyzed using Bayesian methods and the concept of exchangeability. The general method is illustrated by applications to two-factor experimental designs and multiple regression.</jats:p>",
+    "DOI": "10.1111/j.2517-6161.1972.tb00885.x",
+    "type": "article-journal",
+    "page": "1-18",
+    "source": "Crossref",
+    "title": "Bayes Estimates for the Linear Model",
+    "volume": "34",
+    "author": [
+      {
+        "given": "D. V.",
+        "family": "Lindley"
+      },
+      {
+        "given": "A. F. M.",
+        "family": "Smith"
+      }
+    ],
+    "container-title": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1972,
+          9,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gg2vv3",
+    "id": "mLMS4pAF",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1111/j.2517-6161.1972.tb00885.x"
   },
   {
     "publisher": "Oxford University Press (OUP)",
@@ -2445,6 +3378,204 @@
     "PMID": "24817823",
     "id": "JDoK9thg",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1111/rssb.12033"
+  },
+  {
+    "publisher": "ASME International",
+    "issue": "1",
+    "abstract": "<jats:p>The classical filtering and prediction problem is re-examined using the Bode-Shannon representation of random processes and the “state-transition” method of analysis of dynamic systems. New results are: (1) The formulation and methods of solution of the problem apply without modification to stationary and nonstationary statistics and to growing-memory and infinite-memory filters. (2) A nonlinear difference (or differential) equation is derived for the covariance matrix of the optimal estimation error. From the solution of this equation the co-efficients of the difference (or differential) equation of the optimal linear filter are obtained without further calculations. (3) The filtering problem is shown to be the dual of the noise-free regulator problem. The new method developed here is applied to two well-known problems, confirming and extending earlier results. The discussion is largely self-contained and proceeds from first principles; basic concepts of the theory of random processes are reviewed in the Appendix.</jats:p>",
+    "DOI": "10.1115/1.3662552",
+    "type": "article-journal",
+    "page": "35-45",
+    "source": "Crossref",
+    "title": "A New Approach to Linear Filtering and Prediction Problems",
+    "volume": "82",
+    "author": [
+      {
+        "given": "R. E.",
+        "family": "Kalman"
+      }
+    ],
+    "container-title": "Journal of Basic Engineering",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1960,
+          3,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/dmftj3",
+    "id": "RauXHY7u",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1115/1.3662552"
+  },
+  {
+    "publisher": "Acoustical Society of America (ASA)",
+    "issue": "2B",
+    "abstract": "<jats:p>We describe a procedure for efficient encoding of the speech wave by representing it in terms of time-varying parameters related to the transfer function of the vocal tract and the characteristics of the excitation. The speech wave, sampled at 10 kHz, is analyzed by predicting the present speech sample as a linear combination of the 12 previous samples. The 12 predictor coefficients are determined by minimizing the mean-squared error between the actual and the predicted values of the speech samples. Fifteen parameters—namely, the 12 predictor coefficients, the pitch period, a binary parameter indicating whether the speech is voiced or unvoiced, and the rms value of the speech samples—are derived by analysis of the speech wave, encoded and transmitted to the synthesizer. The speech wave is synthesized as the output of a linear recursive filter excited by either a sequence of quasiperiodic pulses or a white-noise source. Application of this method for efficient transmission and storage of speech signals as well as procedures for determining other speech characteristics, such as formant frequencies and bandwidths, the spectral envelope, and the autocorrelation function, are discussed.</jats:p>",
+    "DOI": "10.1121/1.1912679",
+    "type": "article-journal",
+    "page": "637-655",
+    "source": "Crossref",
+    "title": "Speech Analysis and Synthesis by Linear Prediction of the Speech Wave",
+    "volume": "50",
+    "author": [
+      {
+        "given": "B. S.",
+        "family": "Atal"
+      },
+      {
+        "given": "Suzanne L.",
+        "family": "Hanauer"
+      }
+    ],
+    "container-title": "The Journal of the Acoustical Society of America",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1971,
+          8,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/cc657m",
+    "PMID": "4106390",
+    "id": "1F4l9zw7H",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1121/1.1912679"
+  },
+  {
+    "publisher": "ACM",
+    "DOI": "10.1145/1557019.1557041",
+    "type": "paper-conference",
+    "page": "139-148",
+    "source": "Crossref",
+    "title": "New ensemble methods for evolving data streams",
+    "author": [
+      {
+        "given": "Albert",
+        "family": "Bifet"
+      },
+      {
+        "given": "Geoff",
+        "family": "Holmes"
+      },
+      {
+        "given": "Bernhard",
+        "family": "Pfahringer"
+      },
+      {
+        "given": "Richard",
+        "family": "Kirkby"
+      },
+      {
+        "given": "Ricard",
+        "family": "Gavaldà"
+      }
+    ],
+    "event": "KDD09: The 15th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "container-title": "Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining",
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          6,
+          28
+        ]
+      ]
+    },
+    "URL": "https://doi.org/dkxcrj",
+    "id": "yml0Vh7r",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/1557019.1557041"
+  },
+  {
+    "publisher": "ACM",
+    "DOI": "10.1145/1772690.1772758",
+    "type": "paper-conference",
+    "page": "661-670",
+    "source": "Crossref",
+    "title": "A contextual-bandit approach to personalized news article recommendation",
+    "author": [
+      {
+        "given": "Lihong",
+        "family": "Li"
+      },
+      {
+        "given": "Wei",
+        "family": "Chu"
+      },
+      {
+        "given": "John",
+        "family": "Langford"
+      },
+      {
+        "given": "Robert E.",
+        "family": "Schapire"
+      }
+    ],
+    "event": "WWW '10: The 19th International World Wide Web Conference",
+    "container-title": "Proceedings of the 19th international conference on World wide web",
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          4,
+          26
+        ]
+      ]
+    },
+    "URL": "https://doi.org/bpkcx9",
+    "id": "On9K3pxW",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/1772690.1772758"
+  },
+  {
+    "publisher": "Association for Computing Machinery (ACM)",
+    "issue": "4",
+    "abstract": "<jats:p>Concept drift primarily refers to an online supervised learning scenario when the relation between the input data and the target variable changes over time. Assuming a general knowledge of supervised learning in this article, we characterize adaptive learning processes; categorize existing strategies for handling concept drift; overview the most representative, distinct, and popular techniques and algorithms; discuss evaluation methodology of adaptive algorithms; and present a set of illustrative applications. The survey covers the different facets of concept drift in an integrated way to reflect on the existing scattered state of the art. Thus, it aims at providing a comprehensive introduction to the concept drift adaptation for researchers, industry analysts, and practitioners.</jats:p>",
+    "DOI": "10.1145/2523813",
+    "type": "article-journal",
+    "page": "1-37",
+    "source": "Crossref",
+    "title": "A survey on concept drift adaptation",
+    "volume": "46",
+    "author": [
+      {
+        "given": "João",
+        "family": "Gama"
+      },
+      {
+        "given": "Indrė",
+        "family": "Žliobaitė"
+      },
+      {
+        "given": "Albert",
+        "family": "Bifet"
+      },
+      {
+        "given": "Mykola",
+        "family": "Pechenizkiy"
+      },
+      {
+        "given": "Abdelhamid",
+        "family": "Bouchachia"
+      }
+    ],
+    "container-title": "ACM Computing Surveys",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          3
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gd893p",
+    "container-title-short": "ACM Comput. Surv.",
+    "id": "BkxeQdkH",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/2523813"
   },
   {
     "publisher": "ACM",
@@ -2616,6 +3747,45 @@
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/3560815"
   },
   {
+    "publisher": "Association for Computing Machinery (ACM)",
+    "issue": "11",
+    "abstract": "<jats:p>In a document retrieval, or other pattern matching environment where stored entities (documents) are compared with each other or with incoming patterns (search requests), it appears that the best indexing (property) space is one where each entity lies as far away from the others as possible; in these circumstances the value of an indexing system may be expressible as a function of the density of the object space; in particular, retrieval performance may correlate inversely with space density. An approach based on space density computations is used to choose an optimum indexing vocabulary for a collection of documents. Typical evaluation results are shown, demonstating the usefulness of the model.</jats:p>",
+    "DOI": "10.1145/361219.361220",
+    "type": "article-journal",
+    "page": "613-620",
+    "source": "Crossref",
+    "title": "A vector space model for automatic indexing",
+    "volume": "18",
+    "author": [
+      {
+        "given": "G.",
+        "family": "Salton"
+      },
+      {
+        "given": "A.",
+        "family": "Wong"
+      },
+      {
+        "given": "C. S.",
+        "family": "Yang"
+      }
+    ],
+    "container-title": "Communications of the ACM",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          1975,
+          11
+        ]
+      ]
+    },
+    "URL": "https://doi.org/fw8vv8",
+    "container-title-short": "Commun. ACM",
+    "id": "u6KGkrtr",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1145/361219.361220"
+  },
+  {
     "publisher": "MIT Press - Journals",
     "issue": "1",
     "abstract": "<jats:p> We present a new supervised learning procedure for systems composed of many separate networks, each of which learns to handle a subset of the complete set of training cases. The new procedure can be viewed either as a modular version of a multilayer supervised network, or as an associative version of competitive learning. It therefore provides a new link between these two apparently different approaches. We demonstrate that the learning procedure divides up a vowel discrimination task into appropriate subtasks, each of which can be solved by a very simple expert network. </jats:p>",
@@ -2747,6 +3917,52 @@
     "PMID": "26924867",
     "id": "721WoKJr",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1198/jasa.2011.tm10465"
+  },
+  {
+    "publisher": "Chapman and Hall/CRC",
+    "DOI": "10.1201/b16018",
+    "type": "book",
+    "source": "Crossref",
+    "title": "Bayesian Data Analysis",
+    "author": [
+      {
+        "given": "Andrew",
+        "family": "Gelman"
+      },
+      {
+        "given": "John B.",
+        "family": "Carlin"
+      },
+      {
+        "given": "Hal S.",
+        "family": "Stern"
+      },
+      {
+        "given": "David B.",
+        "family": "Dunson"
+      },
+      {
+        "given": "Aki",
+        "family": "Vehtari"
+      },
+      {
+        "given": "Donald B.",
+        "family": "Rubin"
+      }
+    ],
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          11,
+          27
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gqfx8g",
+    "id": "Jk46kTvA",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1201/b16018"
   },
   {
     "publisher": "Institute of Mathematical Statistics",
@@ -2889,6 +4105,39 @@
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1214/aos/1030741083"
   },
   {
+    "publisher": "Institute of Mathematical Statistics",
+    "issue": "3",
+    "DOI": "10.1214/ss/1177013604",
+    "type": "article-journal",
+    "source": "Crossref",
+    "title": "Generalized Additive Models",
+    "volume": "1",
+    "author": [
+      {
+        "given": "Trevor",
+        "family": "Hastie"
+      },
+      {
+        "given": "Robert",
+        "family": "Tibshirani"
+      }
+    ],
+    "container-title": "Statistical Science",
+    "issued": {
+      "date-parts": [
+        [
+          1986,
+          8,
+          1
+        ]
+      ]
+    },
+    "URL": "https://doi.org/cjx3mk",
+    "container-title-short": "Statist. Sci.",
+    "id": "12q6JvZEW",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1214/ss/1177013604"
+  },
+  {
     "publisher": "Emerald",
     "issue": "1",
     "DOI": "10.1561/2200000016",
@@ -2916,6 +4165,35 @@
     "container-title-short": "FNT in Machine Learning",
     "id": "W3XPrQXH",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1561/2200000016"
+  },
+  {
+    "publisher": "Emerald",
+    "issue": "2",
+    "DOI": "10.1561/2200000018",
+    "type": "article-journal",
+    "page": "107-194",
+    "source": "Crossref",
+    "title": "Online Learning and Online Convex Optimization",
+    "volume": "4",
+    "author": [
+      {
+        "given": "Shai",
+        "family": "Shalev-Shwartz"
+      }
+    ],
+    "container-title": "Foundations and Trends® in Machine Learning",
+    "language": "en",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "URL": "https://doi.org/gc7rf4",
+    "container-title-short": "FNT in Machine Learning",
+    "id": "5S8Ulwe8",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1561/2200000018"
   },
   {
     "publisher": "Association for Computational Linguistics",
@@ -3044,6 +4322,38 @@
   },
   {
     "publisher": "JSTOR",
+    "issue": "3",
+    "DOI": "10.2307/2344614",
+    "type": "article-journal",
+    "page": "370",
+    "source": "Crossref",
+    "title": "Generalized Linear Models",
+    "volume": "135",
+    "author": [
+      {
+        "given": "J. A.",
+        "family": "Nelder"
+      },
+      {
+        "given": "R. W. M.",
+        "family": "Wedderburn"
+      }
+    ],
+    "container-title": "Journal of the Royal Statistical Society. Series A (General)",
+    "issued": {
+      "date-parts": [
+        [
+          1972
+        ]
+      ]
+    },
+    "URL": "https://doi.org/dhq253",
+    "container-title-short": "Journal of the Royal Statistical Society. Series A (General)",
+    "id": "kXBVO9y8",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.2307/2344614"
+  },
+  {
+    "publisher": "JSTOR",
     "issue": "1",
     "DOI": "10.2307/2528966",
     "type": "article-journal",
@@ -3070,6 +4380,39 @@
     "container-title-short": "Biometrics",
     "id": "1AAscRzye",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.2307/2528966"
+  },
+  {
+    "publisher": "JSTOR",
+    "issue": "4",
+    "DOI": "10.2307/2529876",
+    "type": "article-journal",
+    "page": "963",
+    "source": "Crossref",
+    "title": "Random-Effects Models for Longitudinal Data",
+    "volume": "38",
+    "author": [
+      {
+        "given": "Nan M.",
+        "family": "Laird"
+      },
+      {
+        "given": "James H.",
+        "family": "Ware"
+      }
+    ],
+    "container-title": "Biometrics",
+    "issued": {
+      "date-parts": [
+        [
+          1982,
+          12
+        ]
+      ]
+    },
+    "URL": "https://doi.org/b8dmsr",
+    "container-title-short": "Biometrics",
+    "id": "7EbnZ6mY",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.2307/2529876"
   },
   {
     "publisher": "MDPI AG",
@@ -3365,6 +4708,52 @@
     "URL": "https://doi.org/g958zd",
     "version": "2",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.48550/arxiv.1606.01865"
+  },
+  {
+    "type": "article",
+    "id": "3wZYBtMr",
+    "categories": [
+      "Machine Learning (cs.LG)",
+      "Machine Learning (stat.ML)",
+      "FOS: Computer and information sciences",
+      "FOS: Computer and information sciences"
+    ],
+    "author": [
+      {
+        "family": "Vinyals",
+        "given": "Oriol"
+      },
+      {
+        "family": "Blundell",
+        "given": "Charles"
+      },
+      {
+        "family": "Lillicrap",
+        "given": "Timothy"
+      },
+      {
+        "family": "Kavukcuoglu",
+        "given": "Koray"
+      },
+      {
+        "family": "Wierstra",
+        "given": "Daan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "abstract": "Learning from a few examples remains a key challenge in machine learning. Despite recent advances in important domains such as vision and language, the standard supervised deep learning paradigm does not offer a satisfactory solution for learning new concepts rapidly from little data. In this work, we employ ideas from metric learning based on deep neural features and from recent advances that augment neural networks with external memories. Our framework learns a network that maps a small labelled support set and an unlabelled example to its label, obviating the need for fine-tuning to adapt to new class types. We then define one-shot learning problems on vision (using Omniglot, ImageNet) and language tasks. Our algorithm improves one-shot accuracy on ImageNet from 87.6% to 93.2% and from 88.0% to 93.8% on Omniglot compared to competing approaches. We also demonstrate the usefulness of the same model on language modeling by introducing a one-shot task on the Penn Treebank.",
+    "DOI": "10.48550/arxiv.1606.04080",
+    "publisher": "arXiv",
+    "title": "Matching Networks for One Shot Learning",
+    "URL": "https://doi.org/g96wsd",
+    "version": "2",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.48550/arxiv.1606.04080"
   },
   {
     "type": "article",
@@ -3686,6 +5075,44 @@
     "URL": "https://doi.org/mcsx",
     "version": "3",
     "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.48550/arxiv.1703.04730"
+  },
+  {
+    "type": "article",
+    "id": "1EGW21dqi",
+    "categories": [
+      "Machine Learning (cs.LG)",
+      "Machine Learning (stat.ML)",
+      "FOS: Computer and information sciences",
+      "FOS: Computer and information sciences"
+    ],
+    "author": [
+      {
+        "family": "Snell",
+        "given": "Jake"
+      },
+      {
+        "family": "Swersky",
+        "given": "Kevin"
+      },
+      {
+        "family": "Zemel",
+        "given": "Richard S."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "abstract": "We propose prototypical networks for the problem of few-shot classification, where a classifier must generalize to new classes not seen in the training set, given only a small number of examples of each new class. Prototypical networks learn a metric space in which classification can be performed by computing distances to prototype representations of each class. Compared to recent approaches for few-shot learning, they reflect a simpler inductive bias that is beneficial in this limited-data regime, and achieve excellent results. We provide an analysis showing that some simple design decisions can yield substantial improvements over recent approaches involving complicated architectural choices and meta-learning. We further extend prototypical networks to zero-shot learning and achieve state-of-the-art results on the CU-Birds dataset.",
+    "DOI": "10.48550/arxiv.1703.05175",
+    "publisher": "arXiv",
+    "title": "Prototypical Networks for Few-shot Learning",
+    "URL": "https://doi.org/g96wsf",
+    "version": "2",
+    "note": "This CSL Item was generated by Manubot v0.6.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.48550/arxiv.1703.05175"
   },
   {
     "type": "article-journal",
