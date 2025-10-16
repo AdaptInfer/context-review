@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-15'
+date-meta: '2025-10-16'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-15" />
-  <meta name="citation_publication_date" content="2025-10-15" />
-  <meta property="article:published_time" content="2025-10-15" />
-  <meta name="dc.modified" content="2025-10-15T16:58:15+00:00" />
-  <meta property="article:modified_time" content="2025-10-15T16:58:15+00:00" />
+  <meta name="dc.date" content="2025-10-16" />
+  <meta name="citation_publication_date" content="2025-10-16" />
+  <meta property="article:published_time" content="2025-10-16" />
+  <meta name="dc.modified" content="2025-10-16T15:15:03+00:00" />
+  <meta property="article:modified_time" content="2025-10-16T15:15:03+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -72,6 +72,7 @@ header-includes: |
   <meta name="citation_author_orcid" content="0009-0008-5405-2646" />
   <meta name="twitter:creator" content="@None" />
   <meta name="citation_author" content="Yixin Yang" />
+  <meta name="citation_author_institution" content="Department of Computer Sciences, University of Wisconsin-Madison" />
   <meta name="citation_author_orcid" content="0009-0008-1436-5584" />
   <meta name="twitter:creator" content="@None" />
   <meta name="citation_author" content="Zhiyuan Li" />
@@ -88,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -112,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a/))
+([permalink](https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/))
 was automatically generated
-from [AdaptInfer/context-review@8eca4c6](https://github.com/AdaptInfer/context-review/tree/8eca4c63350633fe2bd7f71a45bf8b1c0b96e13a)
-on October 15, 2025.
+from [AdaptInfer/context-review@23e15a2](https://github.com/AdaptInfer/context-review/tree/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f)
+on October 16, 2025.
 </em></small>
 
 
@@ -230,6 +231,8 @@ on October 15, 2025.
     [Jessego5](https://github.com/Jessego5)
     <br>
   <small>
+     Department of Computer Sciences, University of Wisconsin-Madison
+     · Funded by None
   </small>
 
 + **Zhiyuan Li**

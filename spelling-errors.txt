@@ -1,13 +1,13 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 ADWIN
 Agentic
 Akyürek
 algorithmically
 ANOVA
-Approximators
+approximators
 Arjovsky
 arXiv
 AUC
@@ -40,7 +40,7 @@ controllability
 convolutional
 counterfactuals
 Counterintuitively
-Covariate
+covariate
 covariates
 Dai
 Danaher
@@ -64,7 +64,7 @@ encodings
 ensembling
 ERM
 Exchangeability
-Explainers
+explainers
 factuality
 FAISS
 GAM
@@ -95,7 +95,7 @@ ImageNet
 independencies
 interconnectedness
 interpretability
-Interpretable
+interpretable
 intraclass
 invariance
 invariances
@@ -114,7 +114,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-lengerich
+Lengerich
 Lepski’s
 Levina
 Lindholm
@@ -153,11 +153,11 @@ missingness
 misspecified
 MLP
 MNAR
-modularity
+Modularity
 modularized
 MoICE
 MSE
-mtl
+MTL
 multimodal
 Nelder
 Neyman
@@ -172,7 +172,7 @@ OOD
 operationalized
 optimality
 optimizers
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -185,9 +185,9 @@ PGD
 piecewise
 pointwise
 Poursabzi
-pre
+Pre
 preprocessing
-pretrained
+Pretrained
 pretraining
 priori
 probablybots
@@ -256,7 +256,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCM
 VCMs
 Vectorization
