@@ -14,7 +14,7 @@ AUC
 auditability
 auditable
 Autoencoder
-autoencoders
+Autoencoders
 autoregressive
 Baiheng
 BaihengChen
@@ -84,7 +84,7 @@ GPT
 GRU
 Guo
 Hastie
-HTE
+hte
 hyperparameter
 hyperparameters
 hyperprior
@@ -187,7 +187,7 @@ pointwise
 Poursabzi
 Pre
 preprocessing
-Pretrained
+pretrained
 pretraining
 priori
 probablybots

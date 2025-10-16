@@ -32,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-16" />
   <meta name="citation_publication_date" content="2025-10-16" />
   <meta property="article:published_time" content="2025-10-16" />
-  <meta name="dc.modified" content="2025-10-16T15:15:03+00:00" />
-  <meta property="article:modified_time" content="2025-10-16T15:15:03+00:00" />
+  <meta name="dc.modified" content="2025-10-16T17:20:26+00:00" />
+  <meta property="article:modified_time" content="2025-10-16T17:20:26+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,9 +113,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f/))
+([permalink](https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/))
 was automatically generated
-from [AdaptInfer/context-review@23e15a2](https://github.com/AdaptInfer/context-review/tree/23e15a2b3226af6cbcc7e1fb65876b5fd5bc844f)
+from [AdaptInfer/context-review@2df4f31](https://github.com/AdaptInfer/context-review/tree/2df4f31efbf372153a73358c51c56f72b374e937)
 on October 16, 2025.
 </em></small>
 
@@ -134,7 +134,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 + **Caleb N. Ellington**
@@ -148,7 +147,6 @@ on October 16, 2025.
     <br>
   <small>
      Computational Biology Department, Carnegie Mellon University
-     · Funded by None
   </small>
 
 + **Jingyun Jia**
@@ -160,7 +158,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 + **Baiheng Chen**
@@ -172,7 +169,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 + **Dong Liu**
@@ -184,7 +180,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Computer Science, Yale University
-     · Funded by None
   </small>
 
 + **Rikhil Rao**
@@ -196,7 +191,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Computer Science, University of Wisconsin - Madison
-     · Funded by None
   </small>
 
 + **Jiaqi Wang**
@@ -208,7 +202,6 @@ on October 16, 2025.
     <br>
   <small>
      Paul G. Allen School of Computer Science & Engineering, University of Washington
-     · Funded by None
   </small>
 
 + **Samuel Wales-McGrath**
@@ -220,7 +213,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Computer Science and Engineering, The Ohio State University
-     · Funded by None
   </small>
 
 + **Yixin Yang**
@@ -232,7 +224,6 @@ on October 16, 2025.
     <br>
   <small>
      Department of Computer Sciences, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 + **Zhiyuan Li**
@@ -244,11 +235,10 @@ on October 16, 2025.
     <br>
   <small>
      Department of Computer Sciences, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 + **Ben Lengerich**
-  <br>
+  ^[✉](#correspondence)^<br>
     ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
     [0000-0001-8690-9554](https://orcid.org/0000-0001-8690-9554)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
@@ -258,12 +248,14 @@ on October 16, 2025.
     <br>
   <small>
      Department of Statistics, University of Wisconsin-Madison
-     · Funded by None
   </small>
 
 
 ::: {#correspondence}
 ✉ — Correspondence possible via [GitHub Issues](https://github.com/AdaptInfer/context-review/issues)
+or email to
+Ben Lengerich \<lengerich@wisc.edu\>.
+
 
 :::
 
@@ -537,7 +529,7 @@ Each formulation encodes different beliefs about parameter variation. The next s
 
 ### Independent and identically distributed samples
 
-The initial research data mostly came from strictly designed experiments, such as agricultural field trials or psychological experiments. The characteristics of such data are small scale and simple structure. Researchers usually assume that each observation is independent of one another and identically distributed [@Fisher1949Fesign]. Under this setting, there is no dependency among the data, and researchers mainly focus on the overall average level or effect.
+The initial research data mostly came from strictly designed experiments, such as agricultural field trials or psychological experiments. The characteristics of such data are small scale and simple structure. Researchers usually assume that each observation is independent of one another and identically distributed [@Fisher1949Design]. Under this setting, there is no dependency among the data, and researchers mainly focus on the overall average level or effect.
 
 Linear models emerged as the fundamental approach to conduct statistical analysis for such data. One of the first methods in the development of linear models, the method of least squares, was first published in a work by Legendre [@Legendre1805Comets] and later independently developed and justified by Gauss [@Gauss1809Ambientium]. By reducing the squared deviations between predictions and results, this method offered a general framework for fitting a regression line via observed data. The estimator is expressed as follows:
 
@@ -585,7 +577,7 @@ Together, these early statistical frameworks provided the foundation for analysi
 
 ### Hierarchical data
 
-With the expansion of research fields, a hierarchical structure gradually emerges in the collected empirical data. For example, bull is nested in sire and herd [@doi:10.2307/3001660]; the respondents are nested within the population of subjects [@doi:10.1037/h0040957]; and repeated measurements of the same object at different time points also make the data show longitudinal correlation. This type of data is more complex than independent and identically distributed samples. It not only has differences among groups but also needs to take into account the changes of individuals over time simultaneously. The observed values are no longer completely independent of each other, but there exists a distinct hierarchical effect.
+With the expansion of research fields, a hierarchical structure gradually emerges in the collected empirical data. For example, bull is nested in sire and herd [@doi:10.1080/00288233.1981.10420865]; the respondents are nested within the population of subjects [@doi:10.1037/h0040957]; and repeated measurements of the same object at different time points also make the data show longitudinal correlation. This type of data is more complex than independent and identically distributed samples. It not only has differences among groups but also needs to take into account the changes of individuals over time simultaneously. The observed values are no longer completely independent of each other, but there exists a distinct hierarchical effect.
 
 Early work on hierarchical dependence started with the introduction of linear models that contain both fixed and random effects to estimate genetic parameters [@Henderson1950Genetic]. This approach laid the statistical basis for partitioning variability into systematic and random components, which became the basis for how intraclass correlation would later be understood and applied. A general form of the linear models can be written as:
 
@@ -654,13 +646,13 @@ $$
 
 More generally, domain adaptation methods address cases where both $p(x)$ and $p(y|x)$ differ across source and target domains. Techniques such as kernel mean matching, adversarial domain-invariant representations, or graph-based alignment were developed to tackle these shifts. These methods emerged as data collection became distributed across different environments (e.g., new sensors, populations, or changing conditions), requiring models that adapt to new contexts beyond the original training distribution.
 
-Finally, the combination of many tasks and very few examples per task has given rise to few-shot learning. In few-shot learning [@doi:10.1145/3361568], the goal is to generalize to new classes or tasks from only a handful of labeled examples. Modern approaches typically leverage prior experience across tasks or classes. Metric-based methods, such as Matching Networks and Prototypical Networks [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175], learn an embedding $\phi(x)$ so that samples from the same class cluster together. A novel class can then be represented by the mean of its few support examples in this latent space. Alternatively, meta-learning algorithms train on many simulated few-shot tasks so the model learns to adapt quickly. These few-shot and meta-learning frameworks explicitly confront data scarcity by transferring inductive biases across tasks, enabling effective learning in regimes far beyond the traditional large-sample assumptions.
+Finally, the combination of many tasks and very few examples per task has given rise to few-shot learning. In few-shot learning [@doi:10.1145/3386252], the goal is to generalize to new classes or tasks from only a handful of labeled examples. Modern approaches typically leverage prior experience across tasks or classes. Metric-based methods, such as Matching Networks and Prototypical Networks [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175], learn an embedding $\phi(x)$ so that samples from the same class cluster together. A novel class can then be represented by the mean of its few support examples in this latent space. Alternatively, meta-learning algorithms train on many simulated few-shot tasks so the model learns to adapt quickly. These few-shot and meta-learning frameworks explicitly confront data scarcity by transferring inductive biases across tasks, enabling effective learning in regimes far beyond the traditional large-sample assumptions.
 
 ### Online and interactive data
 
 In the Internet era, the way data is collected has undergone significant changes. User behavior data, sensor data, and platform experimental data exhibit the characteristics of streaming and interactivity [@doi:10.1145/1772690.1772758]. The generation of dynamic data poses new challenges to model construction and problem-solving. Data is not collected all at once but is generated in real time and is often related to the feedback loop of the system [@doi:10.1115/1.3662552]. This type of data is more dynamic and complex compared to traditional experimental or measurement data, involving both time dependence and continuous influence from the environment and interaction.
 
-A natural starting point to address this challenge is the concept of online learning [@doi:10.5555/3041838.3041955]. A foundational formulation is the Online Convex Optimization (OCO) framework [@doi:10.1561/2200000018]. At each round $t = 1, \dots, T$, the learner selects a decision $x_t \in F$, where $F \subset \mathbb{R}^n$ is a convex decision set. The environment then reveals a convex loss function $c_t : F \to \mathbb{R}$, and the learner incurs loss $c_t(x_t)$. The central performance measure is the regret, defined as:
+A natural starting point to address this challenge is the concept of online learning [@doi:10.48550/arXiv.1802.02871]. A foundational formulation is the Online Convex Optimization (OCO) framework [@doi:10.1561/2200000018]. At each round $t = 1, \dots, T$, the learner selects a decision $x_t \in F$, where $F \subset \mathbb{R}^n$ is a convex decision set. The environment then reveals a convex loss function $c_t : F \to \mathbb{R}$, and the learner incurs loss $c_t(x_t)$. The central performance measure is the regret, defined as:
 
 $$
 R(T) = \sum_{t=1}^{T} c_t(x_t) - \min_{x \in F} \sum_{t=1}^{T} c_t(x)
@@ -674,7 +666,7 @@ $$
 
 where $\eta_t$ is a step size and $\Pi_F$ denotes projection onto $F$. With appropriately chosen step sizes, OGD achieves the classic bound $R(T) = O(\sqrt{T})$, implying vanishing average regret. This framework provides the mathematical foundation for more complex online methods, such as bandits and reinforcement learning.
 
-While OCO provides guarantees with respect to a fixed comparator, real-world data streams rarely remain stationary. The statistical relationship between inputs $x$ and outputs $y$ can change over time. This phenomenon is known as concept drift [@doi:10.1145/2523813]. To cope with drift, online adaptive learning methods augment the basic OCO paradigm by explicitly adapting to distributional changes. A representative technique for drift detection is the Drift Detection Method (DDM) [@doi:10.1007/978-3-540-28645-5\_29]. It monitors the online error rate $\hat{p}\_i$ after $i$ samples together with its standard deviation $s\_i$. The method keeps track of the minimum values observed $(p\_{\min}, s\_{\min})$, and raises an alarm when
+While OCO provides guarantees with respect to a fixed comparator, real-world data streams rarely remain stationary. The statistical relationship between inputs $x$ and outputs $y$ can change over time. This phenomenon is known as concept drift [@doi:10.1145/2523813]. To cope with drift, online adaptive learning methods augment the basic OCO paradigm by explicitly adapting to distributional changes. A representative technique for drift detection is the Drift Detection Method (DDM) [@doi:10.1007/978-3-540-28645-5_29]. It monitors the online error rate $\hat{p}\_i$ after $i$ samples together with its standard deviation $s\_i$. The method keeps track of the minimum values observed $(p\_{\min}, s\_{\min})$, and raises an alarm when
 
 $$
 \hat{p}_i + s_i \geq p_{\min} + \alpha \cdot s_{\min}
@@ -1055,7 +1047,7 @@ The decision between these machine learning approaches depends on the specific c
 The expanding landscape of varying-coefficient models (VCMs) has been supported by substantial theoretical progress, which secures the validity of flexible modeling strategies and guides their practical use. The nature of these theoretical results often reflects the core structural assumptions of each model class.
 
 **Theory for Smooth Non-parametric Models.**
-For classical VCMs based on kernel smoothing, local polynomial estimation, or penalized splines, extensive theoretical work has characterized their convergence rates and statistical efficiency. Under standard regularity conditions, these estimators are known to achieve minimax optimality for function estimation in moderate dimensions [@@doi:10.1111/j.2517-6161.1993.tb01939.x]. More specifically, Lu, Zhang, and Zhu (2008) established both consistency and asymptotic normality for penalized spline estimators when using a sufficient number of knots and appropriate penalty terms [@doi:10.1080/03610920801931887], enabling valid inference through confidence intervals and hypothesis testing. These results provide a solid theoretical foundation even in relatively complex modeling contexts.
+For classical VCMs based on kernel smoothing, local polynomial estimation, or penalized splines, extensive theoretical work has characterized their convergence rates and statistical efficiency. Under standard regularity conditions, these estimators are known to achieve minimax optimality for function estimation in moderate dimensions [@doi:10.1111/j.2517-6161.1993.tb01939.x]. More specifically, Lu, Zhang, and Zhu (2008) established both consistency and asymptotic normality for penalized spline estimators when using a sufficient number of knots and appropriate penalty terms [@doi:10.1080/03610920801931887], enabling valid inference through confidence intervals and hypothesis testing. These results provide a solid theoretical foundation even in relatively complex modeling contexts.
 
 **Theory for Structurally Constrained Models.**
 When discrete or network structure is incorporated into VCMs, theoretical analysis focuses on identifiability, regularization properties, and conditions for consistent estimation. For example, [@doi:10.1080/01621459.2025.2470481] provide non-asymptotic error bounds for estimators in network VCMs, demonstrating that consistency can be attained when the underlying graph topology satisfies certain connectivity properties. In piecewise-constant and partition-based models, results from change-point analysis and total variation regularization guarantee that abrupt parameter changes can be recovered accurately under suitable sparsity and signal strength conditions.

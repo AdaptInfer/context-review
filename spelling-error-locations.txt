@@ -131,6 +131,7 @@ content/04.historical.md:108:regularizer
 content/04.historical.md:110:Covariate
 content/04.historical.md:120:arXiv
 content/04.historical.md:120:arXiv
+content/04.historical.md:126:arXiv
 content/04.historical.md:126:OCO
 content/04.historical.md:132:OGD
 content/04.historical.md:132:OGD
