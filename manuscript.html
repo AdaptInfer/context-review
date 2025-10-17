@@ -15,7 +15,7 @@
   <meta name="author" content="Yixin Yang" />
   <meta name="author" content="Zhiyuan Li" />
   <meta name="author" content="Ben Lengerich" />
-  <meta name="dcterms.date" content="2025-10-16" />
+  <meta name="dcterms.date" content="2025-10-17" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: Bridging Statistical and Foundation Models</title>
   <style>
@@ -60,11 +60,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-16" />
-  <meta name="citation_publication_date" content="2025-10-16" />
-  <meta property="article:published_time" content="2025-10-16" />
-  <meta name="dc.modified" content="2025-10-16T17:20:26+00:00" />
-  <meta property="article:modified_time" content="2025-10-16T17:20:26+00:00" />
+  <meta name="dc.date" content="2025-10-17" />
+  <meta name="citation_publication_date" content="2025-10-17" />
+  <meta property="article:published_time" content="2025-10-17" />
+  <meta name="dc.modified" content="2025-10-17T13:47:35+00:00" />
+  <meta property="article:modified_time" content="2025-10-17T13:47:35+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -120,9 +120,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -139,10 +139,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/2df4f31efbf372153a73358c51c56f72b374e937/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/2df4f31efbf372153a73358c51c56f72b374e937">AdaptInfer/context-review@2df4f31</a>
-on October 16, 2025.
+from <a href="https://github.com/AdaptInfer/context-review/tree/dc8adacffe344d3785f005e1612bc3dd7dd41165">AdaptInfer/context-review@dc8adac</a>
+on October 17, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -2078,18 +2078,18 @@ Wild</strong> <div class="csl-block">Vihari Piratla</div> <em>arXiv</em> (2023-0
 <hr />
 <h3 id="a.0-preliminaries-and-identities">A.0 Preliminaries and identities</h3>
 <ul>
-<li><p><strong>Joint features.</strong> For any pair <span class="math inline">\((x,c)\)</span>, define
+<li><p><strong>Joint features.</strong> For any pair <span class="math inline">\((x,c)\)</span>, define<br />
 <span class="math display">\[
 \psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}.
 \]</span>
 For each indexed training example <span class="math inline">\(a\)</span> (standing in for <span class="math inline">\((i,j)\)</span>), write <span class="math inline">\(\psi_a:=\psi(x_a,c_a)\)</span>.</p></li>
 <li><p><strong>Design/labels/weights.</strong> Stack <span class="math inline">\(N=\sum_i m_i\)</span> training rows:
 <span class="math display">\[
-Z\in\mathbb{R}^{N\times d_x d_c}\ \text{ with rows } Z_a=\psi_a^\top,\qquad
+Z\in\mathbb{R}^{N\times d_x d_c}\ \text{ with rows } Z_a=\psi_a^T,\qquad
 y\in\mathbb{R}^{N},\qquad
 W=\mathrm{diag}(w_a)\in\mathbb{R}^{N\times N},\ w_a\ge 0.
 \]</span>
-Define the (unweighted) Gram matrix (K:=ZZ^) and the weighted Gram
+Define the (unweighted) Gram matrix <span class="math inline">\(K:=ZZ^\top\)</span> and the weighted Gram
 <span class="math display">\[
 K_W:=W^{1/2} K\, W^{1/2} \;=\; W^{1/2} Z Z^\top W^{1/2}.
 \]</span>
@@ -2099,15 +2099,15 @@ For a query <span class="math inline">\((x,c)\)</span>, let <span class="math in
 \mathrm{vec}(A B C)=\big(C^\top\otimes A\big)\mathrm{vec}(B),\quad
 \langle \mathrm{vec}(B),\,x\otimes z\rangle = x^\top B z.
 \]</span></p></li>
-<li><p><strong>Weighted ridge solution.</strong> For any (X^{Np}), ridge objective
+<li><p><strong>Weighted ridge solution.</strong> For any <span class="math inline">\(X\in\mathbb{R}^{N\times p}\)</span>, ridge objective
 <span class="math display">\[
 \min_\beta \ \|W^{1/2}(y-X\beta)\|_2^2+\lambda\|\beta\|_2^2
 \]</span>
-has unique minimizer (=(X^W X+I)<sup>{-1}X</sup>W y) and equivalent dual form
+has unique minimizer <span class="math inline">\(\widehat\beta=(X^\top W X+\lambda I)^{-1}X^\top W y\)</span> and equivalent dual form
 <span class="math display">\[
 \widehat\beta = X^\top W^{1/2}\big(W^{1/2}XX^\top W^{1/2}+\lambda I\big)^{-1}W^{1/2}y.
 \]</span>
-Predictions for a new feature vector (x_) equal
+Predictions for a new feature vector <span class="math inline">\(x_\star\)</span> equal
 <span class="math display">\[
 \widehat f(x_\star)=x_\star^\top \widehat\beta
 \;=\;
@@ -2119,10 +2119,15 @@ This is <strong>kernel ridge regression</strong> (KRR) with kernel <span class="
 </ul>
 <hr />
 <h3 id="a.1-proof-of-proposition-1a-explicit-varying-coefficients-weighted-krr-on-joint-features">A.1 Proof of Proposition 1(A): explicit varying-coefficients ⇔ weighted KRR on joint features</h3>
-<p>Assume the linear, squared-loss setting with <span class="math inline">\(y=\langle \theta(c),x\rangle+\varepsilon\)</span> and <span class="math inline">\(\mathbb{E}[\varepsilon]=0\). Let the varying-coefficients model be \(\theta(c)=B\,\phi(c)\) with \(B\in\mathbb{R}^{d_x\times d_c}\)</span> and ridge penalty <span class="math inline">\(\lambda\|B\|_F^2\)</span>.</p>
-<p><strong>Step 1 (reduce to ridge in joint-feature space).</strong> Vectorize (B) as (=(B)^{d_x d_c}). By the identity above,
+<p>Assume the linear, squared-loss setting with <span class="math inline">\(y=\langle \theta(c),x\rangle+\varepsilon\)</span> and <span class="math inline">\(\mathbb{E}[\varepsilon]=0\)</span>.<br />
+Let the varying-coefficients model be <span class="math inline">\(\theta(c)=B\,\phi(c)\)</span> with <span class="math inline">\(B\in\mathbb{R}^{d_x\times d_c}\)</span> and ridge penalty <span class="math inline">\(\lambda\|B\|_F^2\)</span>.</p>
+<p><strong>Step 1 (reduce to ridge in joint-feature space).</strong><br />
+Vectorize <span class="math inline">\(B\)</span> as <span class="math inline">\(\beta=\mathrm{vec}(B)\in\mathbb{R}^{d_x d_c}\)</span>.<br />
+By the identity above,
 <span class="math display">\[
-x_a^\top B\,\phi(c_a)=\langle \beta,\, x_a\otimes \phi(c_a)\rangle = \langle \beta,\,\psi_a\rangle .
+x_a^T B\,\phi(c_a)
+= \langle \beta,\, x_a\otimes \phi(c_a)\rangle
+= \langle \beta,\,\psi_a\rangle.
 \]</span>
 Thus the weighted objective specialized from (★) is
 <span class="math display">\[
@@ -2130,104 +2135,107 @@ Thus the weighted objective specialized from (★) is
 \ \big\|W^{1/2}\big(y - Z\beta\big)\big\|_2^2 + \lambda \|\beta\|_2^2,
 \]</span>
 which is exactly weighted ridge with design <span class="math inline">\(X\equiv Z\)</span>.</p>
-<p><strong>Step 2 (closed form and prediction).</strong> By the ridge solution,
+<p><strong>Step 2 (closed form and prediction).</strong><br />
+By the ridge solution,
 <span class="math display">\[
-\widehat\beta=(Z^\top W Z+\lambda I)^{-1} Z^\top W y,
+\widehat\beta=(Z^T W Z+\lambda I)^{-1} Z^T W y,
 \]</span>
 and the prediction at a query <span class="math inline">\((x,c)\)</span> with joint feature <span class="math inline">\(\psi(x,c)\)</span> is
 <span class="math display">\[
-\widehat y(x,c)=\psi(x,c)^\top \widehat\beta
+\widehat y(x,c)=\psi(x,c)^T \widehat\beta
 = \underbrace{\big(W^{1/2} Z\, \psi(x,c)\big)}_{k_{(x,c)}}^\top
 \big(W^{1/2} Z Z^\top W^{1/2}+\lambda I\big)^{-1} W^{1/2} y.
 \]</span></p>
-<p><strong>Step 3 (kernel form).</strong> Since <span class="math inline">\(K:=ZZ^\top\)</span> and <span class="math inline">\(K_W:=W^{1/2} K W^{1/2}\)</span>,
+<p><strong>Step 3 (kernel form).</strong><br />
+Since <span class="math inline">\(K:=ZZ^T\)</span> and <span class="math inline">\(K_W:=W^{1/2} K W^{1/2}\)</span>,
 <span class="math display">\[
-\boxed{\ \widehat y(x,c)\;=\; k_{(x,c)}^\top \big(K_W+\lambda I\big)^{-1} W^{1/2}y\ }.
+\boxed{\ \widehat y(x,c)\;=\; k_{(x,c)}^T \big(K_W+\lambda I\big)^{-1} W^{1/2}y\ }.
 \]</span>
-Moreover,
+Moreover, the <span class="math inline">\((a,b)\)</span>-th entry of the kernel matrix <span class="math inline">\(K\)</span> is
 <span class="math display">\[
 K_{ab}=\langle \psi_a,\psi_b\rangle
 =\big\langle x_a\otimes \phi(c_a),\,x_b\otimes \phi(c_b)\big\rangle
 =\langle x_a,x_b\rangle\cdot \langle \phi(c_a),\phi(c_b)\rangle,
 \]</span>
-so (A) is precisely <strong>KRR on joint features</strong> with sample weights <span class="math inline">\(W\)</span>. This proves part (A). ■</p>
+so (A) is precisely <strong>KRR on joint features</strong> with sample weights <span class="math inline">\(W\)</span>.<br />
+This proves part (A). ■</p>
 <hr />
 <h3 id="a.2-proof-of-proposition-1b-linear-icl-kernel-regression">A.2 Proof of Proposition 1(B): linear ICL ⇒ kernel regression</h3>
-<p>We analyze a single attention layer operating on the weighted support set (S(c)), using <strong>linear</strong> maps for queries, keys, and values:
+<p>We analyze a single attention layer operating on the weighted support set <span class="math inline">\(S(c)\)</span>, using <strong>linear</strong> maps for queries, keys, and values:
 <span class="math display">\[
 q(x,c)=Q\,\psi(x,c),\qquad k_a = K\,\psi_a,\qquad v_a=V\,\psi_a,
 \]</span>
 with <span class="math inline">\(Q\in\mathbb{R}^{d_q\times d_\psi}\)</span>, <span class="math inline">\(K\in\mathbb{R}^{d_k\times d_\psi}\)</span>, <span class="math inline">\(V\in\mathbb{R}^{d_v\times d_\psi}\)</span>, <span class="math inline">\(d_\psi=d_x d_c\)</span>. Let the <strong>unnormalized</strong> attention score for index <span class="math inline">\(a\)</span> be
 <span class="math display">\[
-s_a(x,c):=w_a\,\langle q(x,c),k_a\rangle \;=\; w_a\,\psi(x,c)^\top Q^\top K\,\psi_a .
+s_a(x,c):=w_a\,\langle q(x,c),k_a\rangle \;=\; w_a\,\psi(x,c)^T Q^T K\,\psi_a .
 \]</span>
 Define normalized weights <span class="math inline">\(\alpha_a(x,c):=s_a(x,c)/\sum_b s_b(x,c)\)</span> (or any fixed positive normalization; the form below is pointwise in <span class="math inline">\(\{\alpha_a\}\)</span>). The context representation and scalar prediction are
 <span class="math display">\[
-z(x,c)=\sum_a \alpha_a(x,c)\, v_a,\qquad \widehat y(x,c)=u^\top z(x,c).
+z(x,c)=\sum_a \alpha_a(x,c)\, v_a,\qquad \widehat y(x,c)=u^T z(x,c).
 \]</span></p>
 <p>We prove two statements: <strong>(B1)</strong> exact KRR if the attention maps are fixed and only the readout is trained, and <strong>(B2)</strong> kernel regression with the NTK if the attention parameters are trained in the linearized regime.</p>
 <h4 id="a.2.1-b1-fixed-attention-trained-linear-head-exact-krr">A.2.1 (B1) Fixed attention, trained linear head ⇒ exact KRR</h4>
-<p>Assume (Q,K,V) are fixed functions (pretrained or chosen a priori), hence (_a(x,c)) are <strong>deterministic</strong> functions of ((x,c)) and the support set. Define the induced <strong>feature map</strong>
+<p>Assume <span class="math inline">\(Q,K,V\)</span> are fixed functions (pretrained or chosen a priori), hence <span class="math inline">\(\alpha_a(x,c)\)</span> are <strong>deterministic</strong> functions of <span class="math inline">\((x,c)\)</span> and the support set. Define the induced <strong>feature map</strong>
 <span class="math display">\[
 \varphi(x,c):=\sum_a \alpha_a(x,c)\, v_a \;\in\; \mathbb{R}^{d_v}.
 \]</span>
-Stack (_a:=(x_a,c_a)) row-wise into (^{Nd_v}). Training only the readout (u) with weighted ridge,
+Stack <span class="math inline">\(\varphi_a:=\varphi(x_a,c_a)\)</span> row-wise into <span class="math inline">\(\Phi\in\mathbb{R}^{N\times d_v}\)</span>. Training only the readout <span class="math inline">\(u\)</span> with weighted ridge,
 <span class="math display">\[
 \widehat u \in \arg\min_u \ \|W^{1/2}(y-\Phi u)\|_2^2+\lambda \|u\|_2^2
 \]</span>
-yields (u=(^W + I)<sup>{-1}</sup>W y) and predictions
+yields <span class="math inline">\(\widehat u=(\Phi^T W \Phi + \lambda I)^{-1}\Phi^T W y\)</span> and predictions
 <span class="math display">\[
-\widehat y(x,c)=\varphi(x,c)^\top \widehat u
-= \underbrace{\big(W^{1/2}\Phi\,\varphi(x,c)\big)}_{k_{(x,c)}}^\top
-\big(W^{1/2}\Phi\Phi^\top W^{1/2}+\lambda I\big)^{-1} W^{1/2} y.
+\widehat y(x,c)=\varphi(x,c)^T \widehat u
+= \underbrace{\big(W^{1/2}\Phi\,\varphi(x,c)\big)}_{k_{(x,c)}}^T
+\big(W^{1/2}\Phi\Phi^T W^{1/2}+\lambda I\big)^{-1} W^{1/2} y.
 \]</span>
 Therefore,
 <span class="math display">\[
-\boxed{\ \widehat y(x,c)=k_{(x,c)}^\top \big(K_W+\lambda I\big)^{-1}W^{1/2}y\ },
-\quad K_W:=W^{1/2}\underbrace{(\Phi\Phi^\top)}_{=:K}W^{1/2},
+\boxed{\ \widehat y(x,c)=k_{(x,c)}^T \big(K_W+\lambda I\big)^{-1}W^{1/2}y\ },
+\quad K_W:=W^{1/2}\underbrace{(\Phi\Phi^T)}_{=:K}W^{1/2},
 \]</span>
 which is exactly <strong>kernel ridge regression</strong> with kernel
 <span class="math display">\[
 k\big((x,c),(x&#39;,c&#39;)\big)=\langle \varphi(x,c),\varphi(x&#39;,c&#39;)\rangle.
 \]</span>
-Because (v_a=V_a) and (_a(x,c)w_a,(x,c)<sup>Q</sup>K _a), () is a linear transform of a <strong>weighted average of joint features</strong>; hence the kernel is a dot-product on linear transforms of ({_a}). This proves (B1). ■</p>
+Because <span class="math inline">\(v_a=V\psi_a\)</span> and <span class="math inline">\(\alpha_a(x,c)\propto w_a\,\psi(x,c)^T Q^T K \psi_a\)</span>, <span class="math inline">\(\varphi\)</span> is a linear transform of a <strong>weighted average of joint features</strong>; hence the kernel is a dot-product on linear transforms of <span class="math inline">\(\{\psi_a\}\)</span>. This proves (B1). ■</p>
 <h4 id="a.2.2-b2-training-attention-in-the-linearizedntk-regime-kernel-regression-with-ntk">A.2.2 (B2) Training attention in the linearized/NTK regime ⇒ kernel regression with NTK</h4>
-<p>Now let (=(Q,K,V,u)) be trainable, and suppose training uses squared loss with gradient flow (or sufficiently small steps) starting from initialization (<em>0). The <strong>linearized model</strong> around (<em>0) is the first-order Taylor expansion
+<p>Now let <span class="math inline">\(\theta=(Q,K,V,u)\)</span> be trainable, and suppose training uses squared loss with gradient flow (or sufficiently small steps) starting from initialization <span class="math inline">\(\theta_0\)</span>. The <strong>linearized model</strong> around <span class="math inline">\(\theta_0\)</span> is the first-order Taylor expansion
 <span class="math display">\[
-\widehat y_\theta(x,c)\;\approx\;\widehat y_{\theta_0}(x,c)+\nabla_\theta \widehat y_{\theta_0}(x,c)^\top (\theta-\theta_0)
-=: \widehat y_{\theta_0}(x,c) + \phi_{\mathrm{NTK}}(x,c)^\top (\theta-\theta_0),
+\widehat y_\theta(x,c)\;\approx\;\widehat y_{\theta_0}(x,c)+\nabla_\theta \widehat y_{\theta_0}(x,c)^T (\theta-\theta_0)
+=: \widehat y_{\theta_0}(x,c) + \phi_{\mathrm{NTK}}(x,c)^T (\theta-\theta_0),
 \]</span>
-where (</em>{}(x,c):=</em>y_{<em>0}(x,c)) are the <strong>tangent features</strong>. Standard NTK results (for squared loss, gradient flow, and linearization-validity conditions) imply that the learned function equals <strong>kernel regression with the NTK</strong>:
+where <span class="math inline">\(\phi_{\mathrm{NTK}}(x,c):=\nabla_\theta \widehat y_{\theta_0}(x,c)\)</span> are the <strong>tangent features</strong>. Standard NTK results (for squared loss, gradient flow, and linearization-validity conditions) imply that the learned function equals <strong>kernel regression with the NTK</strong>:
 <span class="math display">\[
 k_{\mathrm{NTK}}\big((x,c),(x&#39;,c&#39;)\big)
 := \big\langle \phi_{\mathrm{NTK}}(x,c),\,\phi_{\mathrm{NTK}}(x&#39;,c&#39;)\big\rangle,
 \]</span>
-i.e., predictions have the KRR form with kernel (K</em>{}) on the training set (and explicit ridge if used, or implicit regularization via early stopping).</p>
-<p>It remains to identify the structure of (_{}) for our <strong>linear attention</strong> block and show it lies in the span of <strong>linear transforms of joint features</strong>. Differentiating
-<span class="math inline">\(\widehat y(x,c)=u^\top \sum_a \alpha_a(x,c)\, V\psi_a\)</span> at <span class="math inline">\(\theta_0\)</span> yields four groups of terms:</p>
+i.e., predictions have the KRR form with kernel <span class="math inline">\(K_{\mathrm{NTK}}\)</span> on the training set (and explicit ridge if used, or implicit regularization via early stopping).</p>
+<p>It remains to identify the structure of <span class="math inline">\(\phi_{\mathrm{NTK}}\)</span> for our <strong>linear attention</strong> block and show it lies in the span of <strong>linear transforms of joint features</strong>. Differentiating
+<span class="math inline">\(\widehat y(x,c)=u^T \sum_a \alpha_a(x,c)\, V\psi_a\)</span> at <span class="math inline">\(\theta_0\)</span> yields four groups of terms:</p>
 <ul>
-<li><p><strong>Readout path (<span class="math inline">\(u\)</span>).</strong> (y/u = _a _a(x,c), V_a = _0(x,c)). This is linear in ({_a}).</p></li>
-<li><p><strong>Value path (<span class="math inline">\(V\)</span>).</strong> (y/V = _a _a(x,c), u,_a^). This contributes terms of the form ((uI)_a _a(x,c)_a), i.e., linear in ({_a}).</p></li>
-<li><p><strong>Query/key paths (<span class="math inline">\(Q,K\)</span>).</strong> For linear attention with scores (s_a=w_a,(x,c)<sup>Q</sup>K _a) and normalized (_a=s_a/_b s_b), derivatives of (_a) w.r.t. (Q) and (K) are linear combinations of ((x,c)) and ({_a}):
+<li><p><strong>Readout path (<span class="math inline">\(u\)</span>).</strong> <span class="math inline">\(\partial \widehat y/\partial u = \sum_a \alpha_a(x,c)\, V\psi_a = \varphi_0(x,c)\)</span>. This is linear in <span class="math inline">\(\{\psi_a\}\)</span>.</p></li>
+<li><p><strong>Value path (<span class="math inline">\(V\)</span>).</strong> <span class="math inline">\(\partial \widehat y/\partial V = \sum_a \alpha_a(x,c)\, u\,\psi_a^T\)</span>. This contributes terms of the form <span class="math inline">\((u\otimes I)\sum_a \alpha_a(x,c)\psi_a\)</span>, i.e., linear in <span class="math inline">\(\{\psi_a\}\)</span>.</p></li>
+<li><p><strong>Query/key paths (<span class="math inline">\(Q,K\)</span>).</strong> For linear attention with scores <span class="math inline">\(s_a=w_a\,\psi(x,c)^T Q^T K \psi_a\)</span> and normalized <span class="math inline">\(\alpha_a=s_a/\sum_b s_b\)</span>, derivatives of <span class="math inline">\(\alpha_a\)</span> w.r.t. <span class="math inline">\(Q\)</span> and <span class="math inline">\(K\)</span> are linear combinations of <span class="math inline">\(\psi(x,c)\)</span> and <span class="math inline">\(\{\psi_a\}\)</span>:
 <span class="math display">\[
 \frac{\partial \alpha_a}{\partial Q}\propto
 \sum_b \big[\delta_{ab}-\alpha_b(x,c)\big]\,
-w_a w_b \big( K\psi_a\,\psi(x,c)^\top \big),
+w_a w_b \big( K\psi_a\,\psi(x,c)^T \big),
 \qquad
 \frac{\partial \alpha_a}{\partial K}\propto
 \sum_b \big[\delta_{ab}-\alpha_b(x,c)\big]\,
-w_a w_b \big( \psi(x,c)\,\psi_a^\top Q^\top \big),
+w_a w_b \big( \psi(x,c)\,\psi_a^T Q^T \big),
 \]</span>
-and hence <span class="math inline">\(\partial \widehat y/\partial Q\)</span>, <span class="math inline">\(\partial \widehat y/\partial K\)</span> are finite linear combinations of tensors each bilinear in <span class="math inline">\(\psi(x,c)\)</span> and some <span class="math inline">\(\psi_a\)</span>. Contracting with (u) and (V) produces terms <em>linear</em> in ((x,c)) and linear in the set ({_a}).</p></li>
+and hence <span class="math inline">\(\partial \widehat y/\partial Q\)</span>, <span class="math inline">\(\partial \widehat y/\partial K\)</span> are finite linear combinations of tensors each bilinear in <span class="math inline">\(\psi(x,c)\)</span> and some <span class="math inline">\(\psi_a\)</span>. Contracting with <span class="math inline">\(u\)</span> and <span class="math inline">\(V\)</span> produces terms <em>linear</em> in <span class="math inline">\(\psi(x,c)\)</span> and linear in the set <span class="math inline">\(\{\psi_a\}\)</span>.</p></li>
 </ul>
 <p>Collecting all components, the tangent feature map can be written as
 <span class="math display">\[
 \phi_{\mathrm{NTK}}(x,c)=\mathcal{L}\big(\psi(x,c),\{\psi_a\}\big),
 \]</span>
-where () is a fixed linear operator determined by (_0), (W), and the normalization rule for attention. Consequently, the NTK takes the <strong>dot-product</strong> form
+where <span class="math inline">\(\mathcal{L}\)</span> is a fixed linear operator determined by <span class="math inline">\(\theta_0\)</span>, <span class="math inline">\(W\)</span>, and the normalization rule for attention. Consequently, the NTK takes the <strong>dot-product</strong> form
 <span class="math display">\[
 k_{\mathrm{NTK}}\big((x,c),(x&#39;,c&#39;)\big)=
-\Psi(x,c)^\top\, \mathcal{M}\, \Psi(x&#39;,c&#39;),
+\Psi(x,c)^T\, \mathcal{M}\, \Psi(x&#39;,c&#39;),
 \]</span>
 for some positive semidefinite matrix <span class="math inline">\(\mathcal{M}\)</span> and a finite-dimensional feature stack <span class="math inline">\(\Psi\)</span> that concatenates linear transforms of <span class="math inline">\(\psi(x,c)\)</span> and of the support-set <span class="math inline">\(\{\psi_a\}\)</span>. In particular, <span class="math inline">\(k_{\mathrm{NTK}}\)</span> is a dot-product kernel on <strong>linear transforms of the joint features</strong> (possibly augmented by normalization-dependent combinations). Therefore, training the linear-attention ICL model in the linearized regime equals kernel regression with such a kernel—completing (B2). ■</p>
 <p><strong>Assumptions for A.2.2.</strong> Squared loss; gradient flow (or sufficiently small steps); initialization independent of the data; and a regime where the linearization error stays controlled over training (e.g., small learning rate, sufficient width/depth so that the NTK remains close to its initialization).</p>
@@ -2235,9 +2243,9 @@ for some positive semidefinite matrix <span class="math inline">\(\mathcal{M}\)<
 <h3 id="a.3-proof-of-corollary-1-retrievalgatingweighting-as-kernelmeasure-choices">A.3 Proof of Corollary 1: retrieval/gating/weighting as kernel/measure choices</h3>
 <p>In both A.1 and A.2, predictions have the KRR form
 <span class="math display">\[
-\widehat y(x,c)=k_{(x,c)}^\top \big(K^\sharp + \lambda I\big)^{-1} \mu,
+\widehat y(x,c)=k_{(x,c)}^T \big(K^\sharp + \lambda I\big)^{-1} \mu,
 \]</span>
-where (K^) is a positive semidefinite kernel matrix computed over the support set (e.g., <span class="math inline">\(K_W=W^{1/2}ZZ^\top W^{1/2}\)</span> in A.1 or <span class="math inline">\(W^{1/2}\Phi\Phi^\top W^{1/2}\)</span> / <span class="math inline">\(K_{\mathrm{NTK}}\)</span> in A.2), <span class="math inline">\(k_{(x,c)}\)</span> is the associated query vector, and (=W^{1/2}y) (or an equivalent reweighting).</p>
+where <span class="math inline">\(K^{\sharp}\)</span> is a positive semidefinite kernel matrix computed over the support set (e.g., <span class="math inline">\(K_W=W^{1/2}ZZ^T W^{1/2}\)</span> in A.1 or <span class="math inline">\(W^{1/2}\Phi\Phi^T W^{1/2}\)</span> / <span class="math inline">\(K_{\mathrm{NTK}}\)</span> in A.2), <span class="math inline">\(k_{(x,c)}\)</span> is the associated query vector, and <span class="math inline">\(\mu=W^{1/2}y\)</span> (or an equivalent reweighting).</p>
 <ul>
 <li><p><strong>Retrieval <span class="math inline">\(R(c)\)</span> / gating.</strong> Changing the support set <span class="math inline">\(S(c)\)</span> (e.g., via a retriever or a gating policy) <strong>removes or adds rows/columns</strong> in <span class="math inline">\(K^\sharp\)</span> and entries in <span class="math inline">\(k_{(x,c)}\)</span>. This is equivalent to changing the <strong>empirical measure</strong> over which the kernel smoother is computed (i.e., which samples contribute and how).</p></li>
 <li><p><strong>Weights <span class="math inline">\(w_{ij}(c)\)</span>.</strong> Changing the weights modifies <span class="math inline">\(W\)</span> and hence replaces <span class="math inline">\(K\)</span> by <span class="math inline">\(K_W=W^{1/2} K W^{1/2}\)</span> and <span class="math inline">\(k\)</span> by <span class="math inline">\(k_{(x,c)}=W^{1/2}k\)</span>. This is standard <strong>importance weighting</strong> in kernel regression.</p></li>

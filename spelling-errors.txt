@@ -14,7 +14,7 @@ AUC
 auditability
 auditable
 Autoencoder
-Autoencoders
+autoencoders
 autoregressive
 Baiheng
 BaihengChen
@@ -84,7 +84,7 @@ GPT
 GRU
 Guo
 Hastie
-hte
+HTE
 hyperparameter
 hyperparameters
 hyperprior
@@ -94,8 +94,8 @@ ignorability
 ImageNet
 independencies
 interconnectedness
-interpretability
-interpretable
+Interpretability
+Interpretable
 intraclass
 invariance
 invariances
@@ -114,7 +114,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-Lengerich
+lengerich
 Lepski’s
 Levina
 Lindholm
@@ -146,7 +146,7 @@ Milvus
 minimality
 minimax
 minimizer
-mis
+Mis
 misattribution
 miscalibrated
 missingness
@@ -158,7 +158,7 @@ modularized
 MoICE
 MSE
 MTL
-multimodal
+Multimodal
 Nelder
 Neyman
 NLP
@@ -182,10 +182,10 @@ PCA
 PEFT
 personalization
 PGD
-piecewise
+Piecewise
 pointwise
 Poursabzi
-Pre
+pre
 preprocessing
 pretrained
 pretraining
@@ -256,7 +256,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-Variational
+variational
 VCM
 VCMs
 Vectorization
@@ -276,4 +276,3 @@ Zhang
 Zhiyuan
 Zhou
 Zhu
-ZZ
