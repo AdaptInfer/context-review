@@ -1,6 +1,6 @@
 activations
 adaptively
-Adaptivity
+adaptivity
 adversarially
 ADWIN
 Agentic
@@ -59,12 +59,12 @@ DRO’s
 EDDM
 EIIL
 ELBO
-embeddings
+Embeddings
 encodings
 ensembling
 ERM
 Exchangeability
-explainers
+Explainers
 factuality
 FAISS
 GAM
@@ -84,7 +84,7 @@ GPT
 GRU
 Guo
 Hastie
-HTE
+hte
 hyperparameter
 hyperparameters
 hyperprior
@@ -95,7 +95,7 @@ ImageNet
 independencies
 interconnectedness
 Interpretability
-Interpretable
+interpretable
 intraclass
 invariance
 invariances
@@ -114,7 +114,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-lengerich
+Lengerich
 Lepski’s
 Levina
 Lindholm
@@ -153,12 +153,12 @@ missingness
 misspecified
 MLP
 MNAR
-Modularity
+modularity
 modularized
 MoICE
 MSE
 MTL
-Multimodal
+multimodal
 Nelder
 Neyman
 NLP
@@ -256,7 +256,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCM
 VCMs
 Vectorization

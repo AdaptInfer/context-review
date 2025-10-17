@@ -32,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-17" />
   <meta name="citation_publication_date" content="2025-10-17" />
   <meta property="article:published_time" content="2025-10-17" />
-  <meta name="dc.modified" content="2025-10-17T13:47:35+00:00" />
-  <meta property="article:modified_time" content="2025-10-17T13:47:35+00:00" />
+  <meta name="dc.modified" content="2025-10-17T22:09:51+00:00" />
+  <meta property="article:modified_time" content="2025-10-17T22:09:51+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,9 +113,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/dc8adacffe344d3785f005e1612bc3dd7dd41165/))
+([permalink](https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/))
 was automatically generated
-from [AdaptInfer/context-review@dc8adac](https://github.com/AdaptInfer/context-review/tree/dc8adacffe344d3785f005e1612bc3dd7dd41165)
+from [AdaptInfer/context-review@ac66b0d](https://github.com/AdaptInfer/context-review/tree/ac66b0d295e296c28aab59127de1980357aaaf33)
 on October 17, 2025.
 </em></small>
 
@@ -1067,7 +1067,7 @@ Context-adaptive models provide a natural resolution by treating **measurement s
 
 Figure @fig:sparsity-context illustrates this idea: each cohort contributes a different subset of measurements (lungs, labs, vitals), and explicit adaptivity enables integration across cohorts. By conditioning on measurement availability, we can achieve greater sample efficiency, learning from fewer individuals but with richer heterogeneous features.  
 
-Evaluation of missingness-as-context models should report *mask-stratified metrics*, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with *mask-shift stress tests*, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess *imputation realism* by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct *ignorability sensitivity analyses*, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @10.48550/arXiv.2301.05043]. Finally, include *ablations* that remove mask/indicator inputs—and, for trees, disable default-direction routing—to confirm that gains derive from modeling the mask signal rather than artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: **GRU-D** [@doi:10.48550/arXiv.1606.01865] and **BRITS** [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while **GAIN** [@doi:10.48550/arXiv.1806.02920] and **VAEAC** [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, **XGBoost** supports sparsity-aware default-direction splits, making it straightforward to treat “NA” values as context without preprocessing [@doi:10.1145/2939672.2939785].
+Evaluation of missingness-as-context models should report *mask-stratified metrics*, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with *mask-shift stress tests*, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess *imputation realism* by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct *ignorability sensitivity analyses*, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @doi:10.48550/arXiv.2301.05043]. Finally, include *ablations* that remove mask/indicator inputs—and, for trees, disable default-direction routing—to confirm that gains derive from modeling the mask signal rather than artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: **GRU-D** [@doi:10.48550/arXiv.1606.01865] and **BRITS** [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while **GAIN** [@doi:10.48550/arXiv.1806.02920] and **VAEAC** [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, **XGBoost** supports sparsity-aware default-direction splits, making it straightforward to treat “NA” values as context without preprocessing [@doi:10.1145/2939672.2939785].
 
 ### Context-Aware Efficiency Principles and Design
 
