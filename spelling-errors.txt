@@ -20,6 +20,7 @@ Baiheng
 BaihengChen
 Benchmarking
 Berkson
+bilevel
 bilinear
 biostatistics
 blengerich
@@ -40,7 +41,7 @@ controllability
 convolutional
 counterfactuals
 Counterintuitively
-covariate
+Covariate
 covariates
 Dai
 Danaher
@@ -64,7 +65,7 @@ encodings
 ensembling
 ERM
 Exchangeability
-Explainers
+explainers
 factuality
 FAISS
 GAM
@@ -85,6 +86,7 @@ GRU
 Guo
 Hastie
 hte
+hypernetworks
 hyperparameter
 hyperparameters
 hyperprior
@@ -94,8 +96,8 @@ ignorability
 ImageNet
 independencies
 interconnectedness
-Interpretability
-interpretable
+interpretability
+Interpretable
 intraclass
 invariance
 invariances
@@ -104,7 +106,7 @@ IRM’s
 IRMv
 Jessego
 Jia
-Jiaqi
+jiaqi
 Jingyun
 JTT
 KKT
@@ -114,7 +116,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-Lengerich
+lengerich
 Lepski’s
 Levina
 Lindholm
@@ -146,14 +148,14 @@ Milvus
 minimality
 minimax
 minimizer
-Mis
+mis
 misattribution
 miscalibrated
 missingness
 misspecified
 MLP
 MNAR
-modularity
+Modularity
 modularized
 MoICE
 MSE
@@ -187,7 +189,7 @@ pointwise
 Poursabzi
 pre
 preprocessing
-pretrained
+Pretrained
 pretraining
 priori
 probablybots

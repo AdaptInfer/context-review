@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-17'
+date-meta: '2025-10-21'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-17" />
-  <meta name="citation_publication_date" content="2025-10-17" />
-  <meta property="article:published_time" content="2025-10-17" />
-  <meta name="dc.modified" content="2025-10-17T22:09:51+00:00" />
-  <meta property="article:modified_time" content="2025-10-17T22:09:51+00:00" />
+  <meta name="dc.date" content="2025-10-21" />
+  <meta name="citation_publication_date" content="2025-10-21" />
+  <meta property="article:published_time" content="2025-10-21" />
+  <meta name="dc.modified" content="2025-10-21T21:10:23+00:00" />
+  <meta property="article:modified_time" content="2025-10-21T21:10:23+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/ac66b0d295e296c28aab59127de1980357aaaf33/))
+([permalink](https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/))
 was automatically generated
-from [AdaptInfer/context-review@ac66b0d](https://github.com/AdaptInfer/context-review/tree/ac66b0d295e296c28aab59127de1980357aaaf33)
-on October 17, 2025.
+from [AdaptInfer/context-review@64db1cd](https://github.com/AdaptInfer/context-review/tree/64db1cdfc51fd84519fcb0f839997254fabaa514)
+on October 21, 2025.
 </em></small>
 
 
@@ -275,6 +275,11 @@ We also identify open problems in identifiability, robustness under distribution
 A convenient simplifying assumption in statistical modeling is that observations are independent and identically distributed (i.i.d.). This assumption allows us to use a single model to make predictions across all data points. But in practice, this assumption rarely holds. Data are collected across different individuals, environments, and tasks—each with their own characteristics, constraints, and dynamics. When the i.i.d. assumption breaks down, using a single global model can obscure meaningful heterogeneity.
 
 To model this heterogeneity, a growing class of methods aim to make inference *adaptive to context*. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information—whether covariates, environments, or support sets—to inform sample-specific inference.
+Figure {@fig:overview-bridge} summarizes how statistics, meta-learning, and foundation models
+flow into a unified **context→parameters** view, which we formalize in (★).
+
+![Overview of the theoretical bridge. Three traditions—Statistics (varying-coefficients, local smoothing, hierarchical sharing), Meta-learning (bilevel training, fast adaptation, hypernetworks), and Foundation models (prompted inference / in-context learning)—feed into a unified context→parameters view. The bridge formalizes this connection and highlights shared tuning knobs: context information, inductive bias, and compute.](images/overview.png){#fig:overview-bridge width="90%"}
+
 
 We formalize this by assuming each observation $x_i$ is drawn from a distribution governed by parameters $\theta_i$:
 $$
