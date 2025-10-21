@@ -32,8 +32,8 @@ header-includes: |
   <meta name="dc.date" content="2025-10-21" />
   <meta name="citation_publication_date" content="2025-10-21" />
   <meta property="article:published_time" content="2025-10-21" />
-  <meta name="dc.modified" content="2025-10-21T21:10:23+00:00" />
-  <meta property="article:modified_time" content="2025-10-21T21:10:23+00:00" />
+  <meta name="dc.modified" content="2025-10-21T22:45:40+00:00" />
+  <meta property="article:modified_time" content="2025-10-21T22:45:40+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,9 +113,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/))
+([permalink](https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/))
 was automatically generated
-from [AdaptInfer/context-review@64db1cd](https://github.com/AdaptInfer/context-review/tree/64db1cdfc51fd84519fcb0f839997254fabaa514)
+from [AdaptInfer/context-review@4c29cfa](https://github.com/AdaptInfer/context-review/tree/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a)
 on October 21, 2025.
 </em></small>
 
@@ -365,6 +365,12 @@ Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\vare
 *Positioning and prior art.* Proposition 1 is expository: part (A) is standard ridge⇔kernel duality on joint features; part (B) follows from (i) fixed attention + trained linear head = ridge on fixed features and (ii) NTK linearization ⇒ kernel regression with the network’s NTK. 
 Our contribution is the unified **context-aware** formulation: explicit design knobs via $S(c)$, $\mathcal{R}(\theta;c)$, and compute—and the mapping of retrieval/gating to kernel/measure choices. See transformer ICL as classical estimators [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559] and NTK analyses [@arXiv:1806.07572; @arXiv:1912.02803].
 
+*Limitations*
+This linear, squared-loss bridge captures a large class of explicit and implicit adaptors, but it abstracts away at least three realities:
+(i) non-quadratic losses (e.g., logistic) change the effective kernel/weighting via loss curvature;
+(ii) when the prediction head is nonlinear (e.g., an MLP or attention), it introduces model curvature: the head’s Jacobian/Hessian depends on the input and parameters, so the effective metric and weights change with the representation; the fixed-kernel view from the linear case no longer holds;
+(iii) multi-modal context encoders (text, graphs, images) alter both the neighborhood definition and the regularizer.
+We view these as open extensions to explore beyond the scope of this review.
 
 ### Scope of Review and Relation to Prior Work
 
