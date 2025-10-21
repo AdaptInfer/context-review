@@ -63,8 +63,8 @@
   <meta name="dc.date" content="2025-10-21" />
   <meta name="citation_publication_date" content="2025-10-21" />
   <meta property="article:published_time" content="2025-10-21" />
-  <meta name="dc.modified" content="2025-10-21T21:10:23+00:00" />
-  <meta property="article:modified_time" content="2025-10-21T21:10:23+00:00" />
+  <meta name="dc.modified" content="2025-10-21T22:45:40+00:00" />
+  <meta property="article:modified_time" content="2025-10-21T22:45:40+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -120,9 +120,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -139,9 +139,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/64db1cdfc51fd84519fcb0f839997254fabaa514/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/64db1cdfc51fd84519fcb0f839997254fabaa514">AdaptInfer/context-review@64db1cd</a>
+from <a href="https://github.com/AdaptInfer/context-review/tree/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a">AdaptInfer/context-review@4c29cfa</a>
 on October 21, 2025.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -350,6 +350,12 @@ i.e., a learned <strong>dot-product kernel</strong> on the same joint features. 
 <p><em>Proof in Appendix A.</em></p>
 <p><em>Positioning and prior art.</em> Proposition 1 is expository: part (A) is standard ridge⇔kernel duality on joint features; part (B) follows from (i) fixed attention + trained linear head = ridge on fixed features and (ii) NTK linearization ⇒ kernel regression with the network’s NTK.
 Our contribution is the unified <strong>context-aware</strong> formulation: explicit design knobs via <span class="math inline">\(S(c)\)</span>, <span class="math inline">\(\mathcal{R}(\theta;c)\)</span>, and compute—and the mapping of retrieval/gating to kernel/measure choices. See transformer ICL as classical estimators <span class="citation" data-cites="Humo13Op fo6ln654 PZHprt8G">[<a href="#ref-Humo13Op" role="doc-biblioref">1</a>,<a href="#ref-fo6ln654" role="doc-biblioref">2</a>,<a href="#ref-PZHprt8G" role="doc-biblioref">3</a>]</span> and NTK analyses <span class="citation" data-cites="dJTnXBAv ELrcyIqv">[<a href="#ref-dJTnXBAv" role="doc-biblioref">4</a>,<a href="#ref-ELrcyIqv" role="doc-biblioref">5</a>]</span>.</p>
+<p><em>Limitations</em>
+This linear, squared-loss bridge captures a large class of explicit and implicit adaptors, but it abstracts away at least three realities:
+(i) non-quadratic losses (e.g., logistic) change the effective kernel/weighting via loss curvature;
+(ii) when the prediction head is nonlinear (e.g., an MLP or attention), it introduces model curvature: the head’s Jacobian/Hessian depends on the input and parameters, so the effective metric and weights change with the representation; the fixed-kernel view from the linear case no longer holds;
+(iii) multi-modal context encoders (text, graphs, images) alter both the neighborhood definition and the regularizer.
+We view these as open extensions to explore beyond the scope of this review.</p>
 <h3 id="scope-of-review-and-relation-to-prior-work">Scope of Review and Relation to Prior Work</h3>
 <p>In this review, we examine methods that use context to guide inference, either by specifying how parameters change with covariates or by learning to adapt behavior implicitly.
 We begin with classical models that impose explicit structure, such as varying-coefficient models and multi-task learning, and then turn to more flexible approaches like meta-learning and in-context learning with foundation models.
