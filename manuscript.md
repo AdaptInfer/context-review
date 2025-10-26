@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-21'
+date-meta: '2025-10-26'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-21" />
-  <meta name="citation_publication_date" content="2025-10-21" />
-  <meta property="article:published_time" content="2025-10-21" />
-  <meta name="dc.modified" content="2025-10-21T22:45:40+00:00" />
-  <meta property="article:modified_time" content="2025-10-21T22:45:40+00:00" />
+  <meta name="dc.date" content="2025-10-26" />
+  <meta name="citation_publication_date" content="2025-10-26" />
+  <meta property="article:published_time" content="2025-10-26" />
+  <meta name="dc.modified" content="2025-10-26T20:17:13+00:00" />
+  <meta property="article:modified_time" content="2025-10-26T20:17:13+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a/))
+([permalink](https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/))
 was automatically generated
-from [AdaptInfer/context-review@4c29cfa](https://github.com/AdaptInfer/context-review/tree/4c29cfa85bc5f858d5da0a75a68e44209a2dfd6a)
-on October 21, 2025.
+from [AdaptInfer/context-review@3dd6d32](https://github.com/AdaptInfer/context-review/tree/3dd6d3279480fa45f20c0e095309ce7d74838b5f)
+on October 26, 2025.
 </em></small>
 
 
@@ -534,6 +534,8 @@ Context-aware models can be organized along a spectrum of assumptions about the 
 * **Grouped models**: $\theta_i = \theta_c$ for some finite set of groups.
 * **Smooth models**: $\theta_i = f(c_i)$, with $f$ assumed to be continuous or low-complexity.
 * **Latent models**: $\theta_i \sim P(\theta \mid c_i)$, with $f$ learned implicitly.
+
+![A spectrum of context awareness in modeling, showing global, grouped, smooth, and latent models](images/spectrum_context.png){#fig:spectrum-context width="70%"}
 
 Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. For a discussion of how subpopulation shifts influence generalization, see [@arXiv:2106.04486].
 

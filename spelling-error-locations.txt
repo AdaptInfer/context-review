@@ -95,9 +95,9 @@ content/03.overview.md:118:tradeoff
 content/03.overview.md:118:VCM
 content/03.overview.md:122:arXiv
 content/03.overview.md:122:contrastive
-content/03.overview.md:133:adaptivity
-content/03.overview.md:133:arXiv
-content/03.overview.md:133:subpopulation
+content/03.overview.md:135:adaptivity
+content/03.overview.md:135:arXiv
+content/03.overview.md:135:subpopulation
 content/04.historical.md:19:GLMs
 content/04.historical.md:19:Nelder
 content/04.historical.md:19:Wedderburn

@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 ADWIN
 Agentic
@@ -14,7 +14,7 @@ AUC
 auditability
 auditable
 Autoencoder
-autoencoders
+Autoencoders
 autoregressive
 Baiheng
 BaihengChen
@@ -65,7 +65,7 @@ encodings
 ensembling
 ERM
 Exchangeability
-Explainers
+explainers
 factuality
 FAISS
 GAM
@@ -96,7 +96,7 @@ ignorability
 ImageNet
 independencies
 interconnectedness
-interpretability
+Interpretability
 interpretable
 intraclass
 invariance
@@ -117,7 +117,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-lengerich
+Lengerich
 Lepski’s
 Levina
 Lindholm
@@ -149,7 +149,7 @@ Milvus
 minimality
 minimax
 minimizer
-Mis
+mis
 misattribution
 miscalibrated
 missingness
@@ -175,7 +175,7 @@ OOD
 operationalized
 optimality
 optimizers
-overfitting
+Overfitting
 overflexible
 overparameterized
 parameterization
@@ -185,10 +185,10 @@ PCA
 PEFT
 personalization
 PGD
-piecewise
+Piecewise
 pointwise
 Poursabzi
-Pre
+pre
 preprocessing
 pretrained
 pretraining
@@ -259,7 +259,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCM
 VCMs
 Vectorization
