@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-26'
+date-meta: '2025-10-27'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
   <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-26" />
-  <meta name="citation_publication_date" content="2025-10-26" />
-  <meta property="article:published_time" content="2025-10-26" />
-  <meta name="dc.modified" content="2025-10-26T20:17:13+00:00" />
-  <meta property="article:modified_time" content="2025-10-26T20:17:13+00:00" />
+  <meta name="dc.date" content="2025-10-27" />
+  <meta name="citation_publication_date" content="2025-10-27" />
+  <meta property="article:published_time" content="2025-10-27" />
+  <meta name="dc.modified" content="2025-10-27T18:46:50+00:00" />
+  <meta property="article:modified_time" content="2025-10-27T18:46:50+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/3dd6d3279480fa45f20c0e095309ce7d74838b5f/))
+([permalink](https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/))
 was automatically generated
-from [AdaptInfer/context-review@3dd6d32](https://github.com/AdaptInfer/context-review/tree/3dd6d3279480fa45f20c0e095309ce7d74838b5f)
-on October 26, 2025.
+from [AdaptInfer/context-review@d2c34ac](https://github.com/AdaptInfer/context-review/tree/d2c34ac36bb9f0d832976d402f3fd385eeced26b)
+on October 27, 2025.
 </em></small>
 
 
@@ -721,7 +721,7 @@ $$
 f_{\theta}: \mathcal{X} \rightarrow \mathcal{Z}
 $$
 
-where $\mathcal{X}$ represents the original multimodal input space (e.g., images, text, or audio), and $\mathcal{Z}$ denotes the shared latent space. The context-adaptive nature of representation learning lies in its ability to adjust feature extraction pathways according to the input modality and to align heterogeneous data within a unified semantic space.
+where $\mathcal{X}$ represents the original multimodal input space (e.g., images, text, or audio), and $\mathcal{Z}$ denotes the shared latent space. The context-adaptive nature of representation learning lies in its ability to adjust feature extraction pathways according to the input modality and to align heterogeneous data within a unified semantic space. Recent theoretical work provides a unified explanation of this adaptability. The Contexture Theory formalizes representation learning as approximating the expectation operator induced by the context variable, linking supervised, self-supervised, and manifold learning under a common spectral framework [@doi:10.48550/arXiv.2505.01557]. This perspective highlights that constructing informative context variables can yield greater efficiency than merely scaling model capacity, offering a rigorous theoretical basis for context-aware representation learning.
 
 To infer hidden structures, traditional latent variable models in statistics such as Factor Analysis and Gaussian Mixture Models (GMM) require estimating the posterior distribution $p(z|x)$. However, when the generative process $p_\theta(x|z)$ is highly nonlinear, the posterior becomes intractable. Variational inference approximates the true posterior by introducing a tractable distribution $q(z|x)$ and minimizing their divergence, typically via the Kullback–Leibler (KL) divergence.
 
@@ -1048,7 +1048,7 @@ As context dimensionality and data complexity grow, explicit smoothness assumpti
 **Tree-Based Ensembles.**
 Gradient boosting decision trees (GBDTs) and related ensemble methods are well suited to tabular and mixed-type data. A representative example is Tree Boosted Varying-Coefficient Models, introduced by Zhou and Hooker (2019), where GBDTs are applied to estimate context-dependent coefficient functions within a VCM framework [@doi:10.48550/arXiv.1904.01058]. This approach offers a useful balance among flexibility, predictive accuracy, and interpretability, while typically being easier to train and tune than deep neural networks. More recently, Zakrisson and Lindholm (2024) proposed a tree-based varying coefficient model that incorporates cyclic gradient boosting machines (CGBM). Their method enables dimension-wise early stopping and provides feature importance measures, thereby enhancing interpretability and offering additional regularization [@doi:10.48550/arXiv.2401.05982].
 
-Overall, tree-based VCMs achieve strong predictive performance and retain a model structure that lends itself to interpretation, particularly when combined with tools such as SHAP for explaining model outputs.
+Overall, tree-based VCMs achieve strong predictive performance and retain a model structure that lends itself to interpretation, particularly when combined with tools such as SHAP for explaining model outputs. A recent extension of this line of research is the Bayesian tree-based varying-coefficient model VCBART [@doi:10.1214/24-BA1470]. VCBART integrates the flexibility of Bayesian Additive Regression Trees (BART) into the varying-coefficient framework, allowing the estimation of complex effect modifiers without imposing restrictive functional assumptions or requiring intensive hyperparameter tuning. Compared with classical kernel or spline-based estimators, VCBART provides coherent uncertainty quantification and improved scalability for high-dimensional or multivariate covariate effects. Empirical studies in social and spatial applications show that VCBART effectively captures nonlinear context–response interactions, marking a promising step toward unifying Bayesian inference and ensemble learning within varying-coefficient modeling.
 
 **Deep Neural Networks.**
 For contexts defined by complex, high-dimensional features such as images, text, or sequential data, deep neural networks offer unique advantages for modeling $f(c)$. These architectures can learn adaptive, data-driven representations that capture intricate relationships beyond the scope of classical models. Applications include personalized medicine, natural language processing, and behavioral science, where outcomes may depend on subtle or latent features of the context.

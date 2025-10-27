@@ -172,6 +172,8 @@ content/04.historical.md:176:embeddings
 content/04.historical.md:176:PCA
 content/04.historical.md:176:PCA
 content/04.historical.md:176:subspaces
+content/04.historical.md:182:arXiv
+content/04.historical.md:182:Contexture
 content/04.historical.md:182:multimodal
 content/04.historical.md:184:GMM
 content/04.historical.md:184:Kullback
@@ -404,7 +406,13 @@ content/06.explicit.md:83:Lindholm
 content/06.explicit.md:83:VCM
 content/06.explicit.md:83:Zakrisson
 content/06.explicit.md:83:Zhou
+content/06.explicit.md:85:covariate
+content/06.explicit.md:85:hyperparameter
 content/06.explicit.md:85:SHAP
+content/06.explicit.md:85:VCBART
+content/06.explicit.md:85:VCBART
+content/06.explicit.md:85:VCBART
+content/06.explicit.md:85:VCBART
 content/06.explicit.md:85:VCMs
 content/06.explicit.md:90:adaptivity
 content/06.explicit.md:90:interpretability

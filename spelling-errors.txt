@@ -9,7 +9,7 @@ algorithmically
 ANOVA
 approximators
 Arjovsky
-arXiv
+arxiv
 AUC
 auditability
 auditable
@@ -36,6 +36,7 @@ comovement
 comparator
 composability
 composable
+Contexture
 contrastive
 controllability
 convolutional
@@ -60,12 +61,12 @@ DRO’s
 EDDM
 EIIL
 ELBO
-embeddings
+Embeddings
 encodings
 ensembling
 ERM
 Exchangeability
-explainers
+Explainers
 factuality
 FAISS
 GAM
@@ -91,13 +92,13 @@ hyperparameter
 hyperparameters
 hyperprior
 ICL
-identifiability
+Identifiability
 ignorability
 ImageNet
 independencies
 interconnectedness
-Interpretability
-interpretable
+interpretability
+Interpretable
 intraclass
 invariance
 invariances
@@ -117,7 +118,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-Lengerich
+lengerich
 Lepski’s
 Levina
 Lindholm
@@ -149,7 +150,7 @@ Milvus
 minimality
 minimax
 minimizer
-mis
+Mis
 misattribution
 miscalibrated
 missingness
@@ -175,7 +176,7 @@ OOD
 operationalized
 optimality
 optimizers
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -259,7 +260,8 @@ upweighted
 VAE
 VAEAC
 VAEs
-Variational
+variational
+VCBART
 VCM
 VCMs
 Vectorization
