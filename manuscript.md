@@ -1,11 +1,11 @@
 ---
-title: 'Context-Adaptive Inference: Bridging Statistical and Foundation Models'
+title: 'Context-Adaptive Inference: A Unified Statistical and Foundation-Model View'
 keywords:
 - markdown
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-27'
+date-meta: '2025-10-29'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -25,15 +25,15 @@ header-includes: |
   -->
   <meta name="dc.format" content="text/html" />
   <meta property="og:type" content="article" />
-  <meta name="dc.title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="citation_title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta property="og:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta property="twitter:title" content="Context-Adaptive Inference: Bridging Statistical and Foundation Models" />
-  <meta name="dc.date" content="2025-10-27" />
-  <meta name="citation_publication_date" content="2025-10-27" />
-  <meta property="article:published_time" content="2025-10-27" />
-  <meta name="dc.modified" content="2025-10-27T18:46:50+00:00" />
-  <meta property="article:modified_time" content="2025-10-27T18:46:50+00:00" />
+  <meta name="dc.title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
+  <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
+  <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
+  <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
+  <meta name="dc.date" content="2025-10-29" />
+  <meta name="citation_publication_date" content="2025-10-29" />
+  <meta property="article:published_time" content="2025-10-29" />
+  <meta name="dc.modified" content="2025-10-29T16:44:51+00:00" />
+  <meta property="article:modified_time" content="2025-10-29T16:44:51+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/d2c34ac36bb9f0d832976d402f3fd385eeced26b/))
+([permalink](https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/))
 was automatically generated
-from [AdaptInfer/context-review@d2c34ac](https://github.com/AdaptInfer/context-review/tree/d2c34ac36bb9f0d832976d402f3fd385eeced26b)
-on October 27, 2025.
+from [AdaptInfer/context-review@6bdae7b](https://github.com/AdaptInfer/context-review/tree/6bdae7b91b69d53589f34e66a19f15cb992f6738)
+on October 29, 2025.
 </em></small>
 
 
@@ -262,13 +262,19 @@ Ben Lengerich \<lengerich@wisc.edu\>.
 
 ## Abstract {.page_break_before}
 
-Context-adaptive inference enables models to adjust their behavior across individuals, environments, or tasks. 
-Adaptation may be *explicit*, through parameterized functions of context, or *implicit*, as in foundation models that respond to prompts and support in-context learning. 
-This review synthesizes advances in varying coefficient models and adaptive behavior in foundation models, and discusses how statistical and neural approaches converge in context-aware inference. 
-We highlight how foundation models can serve as flexible encoders of context, and how statistical methods offer structure and interpretability. 
-Building on these links, we propose a common perspective that places explicit and implicit mechanisms on the same spectrum of context use. 
-We also identify open problems in identifiability, robustness under distribution shift, and efficient large-scale adaptation, outlining design principles for methods that are scalable, reliable, and transparent in real-world settings.
+Modern predictive systems are expected to adapt their behavior to the specific situation they are facing. 
+A clinical model should not treat every patient the same; a retrieval-augmented model should change its answer when given different evidence; a mixture-of-experts model should route different inputs to different experts. 
+We call this capability **context-adaptive inference**: before predicting, the system uses information about the current context to specialize its parameters or computation for that instance.
 
+This article provides a unified view of context-adaptive inference across three traditions that are usually treated separately: 
+(i) explicit adaptation in statistics (e.g. varying-coefficient models, local regression, hierarchical sharing), 
+(ii) rapid task-specific adaptation in meta-learning and transfer, and 
+(iii) implicit adaptation in large foundation models via prompting, retrieval, and expert routing. 
+We formalize these approaches under a common objective: to map context $c$ to adapted parameters 
+$\theta(c)$, then to predict via $f(x; \theta(c))$. 
+Under squared loss, linear prediction heads, and fixed features, we prove that explicit parameter adaptation and implicit routing are mathematically equivalent to kernel ridge regression on joint features of inputs and context. 
+Building on this bridge, we propose practical design principles and evaluation metrics including adaptation-efficiency, routing stability, and context-specific robustness to guide when to specialize, how to constrain that specialization, and how to audit context-adaptive models in deployment. 
+Finally, we identify open problems in identifiability, robustness under distribution shift, and efficient large-scale adaptation, outlining design principles for methods that are scalable, reliable, and transparent in real-world settings.
 
 ## Introduction
 
@@ -398,7 +404,7 @@ Table 1 summarizes the scope and coverage of representative surveys.
 *Table 1: Representative surveys and key papers covering context-adaptive inference. Most works focus on a single methodological tradition and do not connect explicit and implicit approaches.*
 
 While existing surveys have reviewed individual components of this landscape—such as varying-coefficient models, meta-learning, or foundation models—they have remained largely siloed.
-This article provides the first comprehensive review that unifies explicit and implicit context-adaptive methods under a common framework.
+This work brings together three traditions—statistical varying-coefficient models, meta-learning / transfer, and foundation-model prompting / retrieval—into a single mathematical view and a practical design checklist.
 By situating classical statistical models, modern machine learning methods, and foundation models along a shared spectrum of context-adaptive inference, we highlight common principles and distinctive challenges.
 The next section outlines the conceptual foundations of context-adaptive inference, preparing the ground for detailed discussions of explicit and implicit modeling approaches in later sections.
 

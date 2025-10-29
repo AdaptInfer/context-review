@@ -1,6 +1,5 @@
-content/01.abstract.md:6:interpretability
-content/01.abstract.md:8:identifiability
-content/01.abstract.md:8:scalable
+content/01.abstract.md:15:identifiability
+content/01.abstract.md:15:scalable
 content/02.introduction.md:5:covariates
 content/02.introduction.md:9:bilevel
 content/02.introduction.md:9:hypernetworks
