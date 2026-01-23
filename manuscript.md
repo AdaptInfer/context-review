@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2025-10-29'
+date-meta: '2026-01-23'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2025-10-29" />
-  <meta name="citation_publication_date" content="2025-10-29" />
-  <meta property="article:published_time" content="2025-10-29" />
-  <meta name="dc.modified" content="2025-10-29T16:44:51+00:00" />
-  <meta property="article:modified_time" content="2025-10-29T16:44:51+00:00" />
+  <meta name="dc.date" content="2026-01-23" />
+  <meta name="citation_publication_date" content="2026-01-23" />
+  <meta property="article:published_time" content="2026-01-23" />
+  <meta name="dc.modified" content="2026-01-23T15:12:53+00:00" />
+  <meta property="article:modified_time" content="2026-01-23T15:12:53+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/6bdae7b91b69d53589f34e66a19f15cb992f6738/))
+([permalink](https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/))
 was automatically generated
-from [AdaptInfer/context-review@6bdae7b](https://github.com/AdaptInfer/context-review/tree/6bdae7b91b69d53589f34e66a19f15cb992f6738)
-on October 29, 2025.
+from [AdaptInfer/context-review@76d7614](https://github.com/AdaptInfer/context-review/tree/76d7614922e1cd1c033813d9949e2d890f108730)
+on January 23, 2026.
 </em></small>
 
 
@@ -1694,7 +1694,7 @@ Several new architectures exemplify how foundation models advance context-sensit
 
 **LMPriors** (Pre-Trained Language Models as Task-Specific Priors) [@doi:10.48550/arXiv.2210.12530] leverages semantic insights from pre-trained models like GPT-3 to guide tasks such as causal inference, feature selection, and reinforcement learning. This method markedly enhances decision accuracy and efficiency without requiring extensive supervised datasets. However, it necessitates careful prompt engineering to mitigate biases and ethical concerns.
 
-**Mixture of In-Context Experts** (MoICE) [@doi:10.48550/arXiv.2210.12530] introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model's reasoning process.
+**Mixture of In-Context Experts** (MoICE) [@doi:10.48550/arXiv.2406.19598] introduces a dynamic routing mechanism within attention heads, utilizing multiple Rotary Position Embeddings (RoPE) angles to effectively capture token positions in sequences. MoICE significantly enhances performance on long-context sequences and retrieval-augmented generation tasks by ensuring complete contextual coverage. Efficiency is achieved through selective router training, and interpretability is improved by explicitly visualizing attention distributions, providing detailed insights into the model's reasoning process.
 
 Collectively, these directions suggest a future in which foundation models evolve from passive representation learners into active, context-sensitive inference engines that unify adaptivity, efficiency, and interpretability within a principled framework.
 

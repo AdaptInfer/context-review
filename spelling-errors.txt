@@ -1,13 +1,13 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 ADWIN
 Agentic
 Akyürek
 algorithmically
 ANOVA
-approximators
+Approximators
 Arjovsky
 arXiv
 AUC
@@ -61,7 +61,7 @@ DRO’s
 EDDM
 EIIL
 ELBO
-embeddings
+Embeddings
 encodings
 ensembling
 ERM
@@ -92,7 +92,7 @@ hyperparameter
 hyperparameters
 hyperprior
 ICL
-identifiability
+Identifiability
 ignorability
 ImageNet
 independencies
@@ -108,7 +108,7 @@ IRMv
 Jacobian
 Jessego
 Jia
-jiaqi
+Jiaqi
 Jingyun
 JTT
 KKT
@@ -161,7 +161,7 @@ modularity
 modularized
 MoICE
 MSE
-mtl
+MTL
 multimodal
 Nelder
 Neyman
@@ -176,7 +176,7 @@ OOD
 operationalized
 optimality
 optimizers
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -189,9 +189,9 @@ PGD
 piecewise
 pointwise
 Poursabzi
-Pre
+pre
 preprocessing
-Pretrained
+pretrained
 pretraining
 priori
 probablybots
