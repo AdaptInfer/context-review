@@ -7,14 +7,14 @@ Agentic
 Akyürek
 algorithmically
 ANOVA
-Approximators
+approximators
 Arjovsky
 arXiv
 AUC
 auditability
 auditable
 Autoencoder
-autoencoders
+Autoencoders
 autoregressive
 Baiheng
 BaihengChen
@@ -42,7 +42,7 @@ controllability
 convolutional
 counterfactuals
 Counterintuitively
-covariate
+Covariate
 covariates
 Dai
 Danaher
@@ -66,7 +66,7 @@ encodings
 ensembling
 ERM
 Exchangeability
-Explainers
+explainers
 factuality
 FAISS
 GAM
@@ -86,13 +86,13 @@ GPT
 GRU
 Guo
 Hastie
-HTE
+hte
 hypernetworks
 hyperparameter
 hyperparameters
 hyperprior
 ICL
-Identifiability
+identifiability
 ignorability
 ImageNet
 independencies
@@ -108,7 +108,7 @@ IRMv
 Jacobian
 Jessego
 Jia
-Jiaqi
+jiaqi
 Jingyun
 JTT
 KKT
@@ -118,7 +118,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-Lengerich
+lengerich
 Lepski’s
 Levina
 Lindholm
@@ -150,7 +150,7 @@ Milvus
 minimality
 minimax
 minimizer
-Mis
+mis
 misattribution
 miscalibrated
 missingness
@@ -161,7 +161,7 @@ modularity
 modularized
 MoICE
 MSE
-MTL
+mtl
 multimodal
 Nelder
 Neyman

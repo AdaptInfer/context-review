@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-01-23'
+date-meta: '2026-04-23'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -29,11 +29,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-01-23" />
-  <meta name="citation_publication_date" content="2026-01-23" />
-  <meta property="article:published_time" content="2026-01-23" />
-  <meta name="dc.modified" content="2026-01-23T15:12:53+00:00" />
-  <meta property="article:modified_time" content="2026-01-23T15:12:53+00:00" />
+  <meta name="dc.date" content="2026-04-23" />
+  <meta name="citation_publication_date" content="2026-04-23" />
+  <meta property="article:published_time" content="2026-04-23" />
+  <meta name="dc.modified" content="2026-04-23T21:00:38+00:00" />
+  <meta property="article:modified_time" content="2026-04-23T21:00:38+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -89,9 +89,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/644b4f2f09d8f7a3b597fd2076dd4137e12b8d94/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/644b4f2f09d8f7a3b597fd2076dd4137e12b8d94/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/644b4f2f09d8f7a3b597fd2076dd4137e12b8d94/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +113,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/76d7614922e1cd1c033813d9949e2d890f108730/))
+([permalink](https://AdaptInfer.github.io/context-review/v/644b4f2f09d8f7a3b597fd2076dd4137e12b8d94/))
 was automatically generated
-from [AdaptInfer/context-review@76d7614](https://github.com/AdaptInfer/context-review/tree/76d7614922e1cd1c033813d9949e2d890f108730)
-on January 23, 2026.
+from [AdaptInfer/context-review@644b4f2](https://github.com/AdaptInfer/context-review/tree/644b4f2f09d8f7a3b597fd2076dd4137e12b8d94)
+on April 23, 2026.
 </em></small>
 
 
@@ -321,6 +321,9 @@ where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots
 - **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
 - **Implicit parameterization:** context alters optimization or internal states without exposing $\theta$ directly (e.g., mixture-of-experts with gates $g(x,c)$; retrieval where $S(c)$ is built by a retriever $R(c)$; in-context learning where a prompt map $P(c)$ conditions a foundation model).
 
+Emerging approaches blur this distinction. Instead of treating prompting (implicit) and fine-tuning (explicit) as separate mechanisms, models can map contextual information—such as a natural language task description—directly into parameter updates. Text-to-LoRA provides a concrete example of this paradigm, where context is encoded and used to generate task-specific parameters, effectively collapsing the boundary between implicit and explicit adaptation [@charakorn2025text].
+
+To formalize this connection, we now return to a unified estimator.
 For convenience, we use a **context encoder** $\phi:\mathcal{C}\to\mathbb{R}^d$ and a similarity/kernel $K(c,c')$. A common instance of (★) is kernel-weighted risk:
 $$
 \sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),
@@ -1640,7 +1643,8 @@ These representations effectively serve as context variables—latent, structure
 #### Dynamic Adaptation Mechanisms
 Foundation models enable dynamic adaptation primarily at inference time, allowing models to respond to new tasks without retraining. The most prominent mechanism is in-context learning (ICL), where models adapt behavior by conditioning on examples in a prompt, enabling rapid few-shot or zero-shot generalization [@doi:10.48550/arXiv.2208.01066].
 
-Scaling is supported by modular architectures such as Mixture-of-Experts (MoE), which route inputs to specialized sub-networks for sparse activation, increasing capacity without proportional compute [@doi:10.48550/arXiv.1701.06538]. Parameter-efficient fine-tuning (PEFT) methods such as LoRA show that models can be adapted by updating less than one percent of weights, achieving near full fine-tuning performance [@doi:10.48550/arXiv.2106.09685].
+Scaling is supported by modular architectures such as Mixture-of-Experts (MoE), which route inputs to specialized sub-networks for sparse activation, increasing capacity without proportional compute [@doi:10.48550/arXiv.1701.06538]. Parameter-efficient fine-tuning (PEFT) methods such as LoRA show that models can be adapted by updating less than one percent of weights, achieving near full fine-tuning performance [@doi:10.48550/arXiv.2106.09685]. 
+While LoRA is traditionally learned via task-specific optimization, recent work replaces this training loop with amortized inference: given a task description, a model can directly predict the corresponding low-rank update. This shifts adaptation from an optimization problem to a learned mapping from context to parameters [@charakorn2025text].
 
 Together, these approaches illustrate how adaptation can be achieved both flexibly and efficiently, balancing generalization and computational constraints.
 
