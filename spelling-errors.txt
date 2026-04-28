@@ -14,7 +14,7 @@ AUC
 auditability
 auditable
 Autoencoder
-Autoencoders
+autoencoders
 autoregressive
 Baiheng
 BaihengChen
@@ -42,7 +42,7 @@ controllability
 convolutional
 counterfactuals
 Counterintuitively
-Covariate
+covariate
 covariates
 Dai
 Danaher
@@ -65,8 +65,9 @@ Embeddings
 encodings
 ensembling
 ERM
+Evoluation
 Exchangeability
-explainers
+Explainers
 factuality
 FAISS
 GAM
@@ -86,7 +87,7 @@ GPT
 GRU
 Guo
 Hastie
-hte
+HTE
 hypernetworks
 hyperparameter
 hyperparameters
@@ -97,7 +98,7 @@ ignorability
 ImageNet
 independencies
 interconnectedness
-interpretability
+Interpretability
 interpretable
 intraclass
 invariance
@@ -108,7 +109,7 @@ IRMv
 Jacobian
 Jessego
 Jia
-jiaqi
+Jiaqi
 Jingyun
 JTT
 KKT
@@ -118,7 +119,7 @@ KV
 latents
 Lauritzen’s
 Leibler
-lengerich
+Lengerich
 Lepski’s
 Levina
 Lindholm
@@ -150,7 +151,7 @@ Milvus
 minimality
 minimax
 minimizer
-mis
+Mis
 misattribution
 miscalibrated
 missingness
@@ -161,8 +162,8 @@ modularity
 modularized
 MoICE
 MSE
-mtl
-multimodal
+MTL
+Multimodal
 Nelder
 Neyman
 NLP
@@ -189,9 +190,9 @@ PGD
 piecewise
 pointwise
 Poursabzi
-pre
+Pre
 preprocessing
-pretrained
+Pretrained
 pretraining
 priori
 probablybots
