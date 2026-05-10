@@ -116,6 +116,18 @@ authors:
     affiliations:
       - Department of Computer Sciences, University of Wisconsin-Madison
     corresponding: false
+  - github:
+    name: Eric P. Xing
+    initials: EPX
+    orcid:
+    twitter:
+    mastodon:
+    mastodon-server:
+    email:
+    affiliations:
+      - Machine Learning Department, Carnegie Mellon University
+      - Mohamed bin Zayed University of Artificial Intelligence
+    corresponding: false
   - github: blengerich
     name: Ben Lengerich
     initials: BL
