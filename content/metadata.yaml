@@ -118,12 +118,12 @@ authors:
     corresponding: false
   - github:
     name: Eric P. Xing
-    initials: EPX
-    orcid:
-    twitter:
+    initials: EX
+    orcid: 0000-0002-3683-4280
+    twitter: ericxing
     mastodon:
     mastodon-server:
-    email:
+    email: epxing@cs.cmu.edu
     affiliations:
       - Machine Learning Department, Carnegie Mellon University
       - Mohamed bin Zayed University of Artificial Intelligence
