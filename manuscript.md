@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-04-28'
+date-meta: '2026-05-22'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -17,6 +17,7 @@ author-meta:
 - Samuel Wales-McGrath
 - Yixin Yang
 - Zhiyuan Li
+- Eric P. Xing
 - Ben Lengerich
 header-includes: |
   <!--
@@ -29,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-04-28" />
-  <meta name="citation_publication_date" content="2026-04-28" />
-  <meta property="article:published_time" content="2026-04-28" />
-  <meta name="dc.modified" content="2026-04-28T02:33:37+00:00" />
-  <meta property="article:modified_time" content="2026-04-28T02:33:37+00:00" />
+  <meta name="dc.date" content="2026-05-22" />
+  <meta name="citation_publication_date" content="2026-05-22" />
+  <meta property="article:published_time" content="2026-05-22" />
+  <meta name="dc.modified" content="2026-05-22T20:17:10+00:00" />
+  <meta property="article:modified_time" content="2026-05-22T20:17:10+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -79,6 +80,11 @@ header-includes: |
   <meta name="citation_author_institution" content="Department of Computer Sciences, University of Wisconsin-Madison" />
   <meta name="citation_author_orcid" content="0009-0006-6016-7381" />
   <meta name="twitter:creator" content="@None" />
+  <meta name="citation_author" content="Eric P. Xing" />
+  <meta name="citation_author_institution" content="Machine Learning Department, Carnegie Mellon University" />
+  <meta name="citation_author_institution" content="Mohamed bin Zayed University of Artificial Intelligence" />
+  <meta name="citation_author_orcid" content="0000-0002-3683-4280" />
+  <meta name="twitter:creator" content="@ericxing" />
   <meta name="citation_author" content="Ben Lengerich" />
   <meta name="citation_author_institution" content="Department of Statistics, University of Wisconsin-Madison" />
   <meta name="citation_author_orcid" content="0000-0001-8690-9554" />
@@ -89,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/4e4fc42568c81245a791d76cb434312c18c4ee6c/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4e4fc42568c81245a791d76cb434312c18c4ee6c/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/4e4fc42568c81245a791d76cb434312c18c4ee6c/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -113,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/4e4fc42568c81245a791d76cb434312c18c4ee6c/))
+([permalink](https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/))
 was automatically generated
-from [AdaptInfer/context-review@4e4fc42](https://github.com/AdaptInfer/context-review/tree/4e4fc42568c81245a791d76cb434312c18c4ee6c)
-on April 28, 2026.
+from [AdaptInfer/context-review@a7c7a4f](https://github.com/AdaptInfer/context-review/tree/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb)
+on May 22, 2026.
 </em></small>
 
 
@@ -235,6 +241,17 @@ on April 28, 2026.
     <br>
   <small>
      Department of Computer Sciences, University of Wisconsin-Madison
+  </small>
+
++ **Eric P. Xing**
+  <br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0000-0002-3683-4280](https://orcid.org/0000-0002-3683-4280)
+    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
+    [ericxing](https://twitter.com/ericxing)
+    <br>
+  <small>
+     Machine Learning Department, Carnegie Mellon University; Mohamed bin Zayed University of Artificial Intelligence
   </small>
 
 + **Ben Lengerich**
@@ -1128,18 +1145,9 @@ In this section, we offer a systematic review of the mechanisms underlying impli
 
 The capacity for implicit adaptation does not originate from a single mechanism, but reflects a range of capabilities grounded in fundamental principles of neural network design. Unlike approaches that adjust parameters by directly mapping context to coefficients, implicit adaptation emerges from the way information is processed within a model, even when the global parameters remain fixed. To provide a basis for understanding more advanced forms of adaptation, such as in-context learning, this section reviews the architectural components that enable context-aware computation. We begin with simple context-as-input models and then discuss the more dynamic forms of conditioning enabled by attention mechanisms.
 
-#### Theoretical Bridge: Architectural Conditioning via Context Inputs
+#### Architectural Conditioning via Context Inputs
 
 In contrast to explicit parameter mapping, the simplest route to implicit adaptation is to feed context directly as part of the input. The simplest form of implicit adaptation appears in neural network models that directly incorporate context as part of their input. In models written as $y_i = g([x_i, c_i]; \Phi)$, context features $c_i$ are concatenated with the primary features $x_i$, and the mapping $g$ is determined by a single set of fixed global weights $\Phi$. Even though these parameters do not change during inference, the network’s nonlinear structure allows it to capture complex interactions. As a result, the relationship between $x_i$ and $y_i$ can vary depending on the specific value of $c_i$.
-
-<!-- Todo: Explore NTKs to make this explicit -->
-The connection is explicit for differentiable models $g$. Consider the model $P(Y | X, C)$ as a varying-coefficient regression model. An explicit estimator for regression parameters will solve for the regression parameter map $\beta_i = f(c_i)$ through
-$$\hat{f} = \text{argmin}_f \sum_i (y_i - x_i \cdot f(c_i))^2,$$
-while a differentiable model (e.g. a neural network) will solve 
-$$\hat{\Phi} = \text{argmin}_\Phi \sum_i (y_i - g([x_i, c_i]; \Phi).$$
-Under mild assumptions, these result in an identical solution for the intermediate regression parameters $\beta$. While the varying-coefficient model solves this explicitly, these can be obtained post-hoc from the differentiable model by differentiating with respect to $c_i$
-$$\beta_i = \frac{\delta}{\delta c} g([x_i, c_i]; \Phi).$$
-This is the first-order Taylor approximation of the model, a locally linear approximation [@doi:10.48550/arXiv.1602.04938] often used in post-hoc interpretation methods.
 
 This basic yet powerful principle is central to many conditional prediction tasks. For example, personalized recommendation systems often combine a user embedding (as context) with item features to predict ratings. Similarly, in multi-task learning frameworks, shared networks learn representations conditioned on task or environment identifiers, which allows a single model to solve multiple related problems [@doi:10.48550/arXiv.1706.05098].
 
@@ -1167,21 +1175,19 @@ Gradient-based meta-learning frameworks such as Model-Agnostic Meta-Learning (MA
 
 In the previous chapter we looked at modeling frameworks with explicit context-adaptive components. The most common implementation is a context encoder, which is learned to map from a task's context to a set of task-specific parameters. The result is an amortized estimator, which predicts the parameters of the downstream model that would have been produced by a classical estimator if sufficient data was collected from that context.
 
-This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task's context to infer the task-specific data distribution and produce a in-context inferences. 
+This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task's context to infer the task-specific data distribution and produce in-context inferences. 
 
-![Evoluation of Statistical Estimation. Classical estimators (left) require sufficiently large context-specific datasets for single-instance learning. Meta-learning and transfer learning (middle) decrease the need for context-specific data collection, but still perform a few rounds of gradient descent on context-specific data. Finally, amortized estimators (right) only use a representation of the data context to produce new model parameters, handling data collection and classical estimation implicitly.](images/estimation_evolution.png){#fig:estimation-evolution width="80%"}  
+![Evolution of Statistical Estimation. Classical estimators (left) require sufficiently large context-specific datasets for single-instance learning. Meta-learning and transfer learning (middle) decrease the need for context-specific data collection, but still perform a few rounds of gradient descent on context-specific data. Finally, amortized estimators (right) only use a representation of the data context to produce new model parameters, handling data collection and classical estimation implicitly.](images/estimation_evolution.png){#fig:estimation-evolution width="80%"}  
 
 In this regime, formal estimators are no longer required after the context encoder is obtained. We assume the context encoder can internally sample the data distribution and perform the necessary estimation steps entirely within a forward pass, similar to how amortized inference infers trajectories for expensive inference procedures. The key question becomes a practical one: When we don't need data, how do we encode the context of our hypothetical data distribution? Ironically, context itself is often hard to parameterize. A clearer representation of data distribution may be a few representative samples from the distribution itself. This leads to the practical implementation of implicit in-context learning with LLMs, where a few samples provided as natural language serve as context for implicit amortized estimation. 
 
 ### In-Context Learning in Foundation Models
 
-The most powerful and, arguably, most enigmatic form of implicit adaptivity is in-context learning (ICL), an emergent capability of large-scale foundation models. This phenomenon has become a central focus of modern AI research, as it represents a significant shift in how models learn and adapt to new tasks. This section provides an expanded review of ICL, beginning with a description of the core phenomenon and how it relates to context-adaptive inference, then deconstructing the key factors that influence its performance, reviewing the leading hypotheses for its underlying mechanisms, and concluding with its current limitations and open questions.
+The most powerful and, arguably, most enigmatic form of implicit adaptivity is in-context learning (ICL), an emergent capability of large-scale foundation models. This phenomenon has become a central focus of modern AI research, as it represents a significant shift in how models learn and adapt to new tasks. This section provides an expanded review of ICL, beginning with a description of the core phenomenon, then deconstructing the key factors that influence its performance, reviewing the leading hypotheses for its underlying mechanisms, and concluding with its current limitations and open questions.
 
 #### The Phenomenon of Few-Shot In-Context Learning
 
 First systematically demonstrated in large language models such as GPT-3 [@doi:10.48550/arXiv.2005.14165], ICL is the ability of a model to perform a new task after being conditioned on just a few examples provided in its input prompt. Critically, this adaptation occurs entirely within a single forward pass, without any updates to the model's weights. For instance, a model can be prompted with a few English-to-French translation pairs and then successfully translate a new word, effectively learning the task on the fly. This capability supports a broad range of applications, including few-shot classification, following complex instructions, and even inducing and applying simple algorithms from examples. Subsequent work has shown that the ability to generalize from few in-context examples can itself be enhanced through meta-training. MetaICL explicitly trains models across diverse meta-tasks, teaching them to infer and adapt within context at test time without gradient updates, thereby strengthening the implicit adaptability of large language models [@doi:10.48550/arXiv.2110.15943].
-
-This behavior runs against the grain of other context-adaptive inference methods. 
 
 #### Deconstructing ICL: Key Influencing Factors
 
