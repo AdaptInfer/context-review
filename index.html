@@ -16,7 +16,7 @@
   <meta name="author" content="Zhiyuan Li" />
   <meta name="author" content="Eric P. Xing" />
   <meta name="author" content="Ben Lengerich" />
-  <meta name="dcterms.date" content="2026-05-22" />
+  <meta name="dcterms.date" content="2026-06-28" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: A Unified Statistical and Foundation-Model View</title>
   <style>
@@ -61,11 +61,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-05-22" />
-  <meta name="citation_publication_date" content="2026-05-22" />
-  <meta property="article:published_time" content="2026-05-22" />
-  <meta name="dc.modified" content="2026-05-22T20:17:10+00:00" />
-  <meta property="article:modified_time" content="2026-05-22T20:17:10+00:00" />
+  <meta name="dc.date" content="2026-06-28" />
+  <meta name="citation_publication_date" content="2026-06-28" />
+  <meta property="article:published_time" content="2026-06-28" />
+  <meta name="dc.modified" content="2026-06-28T21:27:10+00:00" />
+  <meta property="article:modified_time" content="2026-06-28T21:27:10+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -126,9 +126,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -145,10 +145,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/a7c7a4f0ba8aea692ae9f94ca86eea6dfa82a1cb">AdaptInfer/context-review@a7c7a4f</a>
-on May 22, 2026.
+from <a href="https://github.com/AdaptInfer/context-review/tree/e7ffb3b0137f3379aa04e561c0c5b9619f09c771">AdaptInfer/context-review@e7ffb3b</a>
+on June 28, 2026.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -332,7 +332,7 @@ where <span class="math inline">\(\ell\)</span> is a proper loss (e.g., squared,
 <p><strong>How context enters.</strong><br />
 - <strong>Explicit parameterization:</strong> a map <span class="math inline">\(f:\mathcal{C}\to\Theta\)</span> sets <span class="math inline">\(\theta_i=f(c_i)\)</span> (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here <span class="math inline">\(\mathcal{R}(\theta;c)\)</span> typically regularizes <span class="math inline">\(f\)</span> (e.g., Lipschitz over <span class="math inline">\(\mathcal{C}\)</span>, group lasso, low-rank).
 - <strong>Implicit parameterization:</strong> context alters optimization or internal states without exposing <span class="math inline">\(\theta\)</span> directly (e.g., mixture-of-experts with gates <span class="math inline">\(g(x,c)\)</span>; retrieval where <span class="math inline">\(S(c)\)</span> is built by a retriever <span class="math inline">\(R(c)\)</span>; in-context learning where a prompt map <span class="math inline">\(P(c)\)</span> conditions a foundation model).</p>
-<p>Emerging approaches blur this distinction. Instead of treating prompting (implicit) and fine-tuning (explicit) as separate mechanisms, models can map contextual information—such as a natural language task description—directly into parameter updates. Text-to-LoRA provides a concrete example of this paradigm, where context is encoded and used to generate task-specific parameters, effectively collapsing the boundary between implicit and explicit adaptation <span class="citation" data-cites="294si67V">[<a href="#ref-294si67V" role="doc-biblioref">1</a>]</span>.</p>
+<p>Emerging approaches blur this distinction. Instead of treating prompting (implicit) and fine-tuning (explicit) as separate mechanisms, models can map contextual information—such as a natural language task description—directly into parameter updates. Text-to-LoRA provides a concrete example of this paradigm, where context is encoded and used to generate task-specific parameters, effectively collapsing the boundary between implicit and explicit adaptation <span class="citation" data-cites="b3XMvGEE">[<a href="#ref-b3XMvGEE" role="doc-biblioref">1</a>]</span>.</p>
 <p>To formalize this connection, we now return to a unified estimator.
 For convenience, we use a <strong>context encoder</strong> <span class="math inline">\(\phi:\mathcal{C}\to\mathbb{R}^d\)</span> and a similarity/kernel <span class="math inline">\(K(c,c&#39;)\)</span>. A common instance of (★) is kernel-weighted risk:
 <span class="math display">\[
@@ -1321,7 +1321,7 @@ and serve as practical diagnostics for evaluating real-world adaptivity across d
 <h4 id="dynamic-adaptation-mechanisms">Dynamic Adaptation Mechanisms</h4>
 <p>Foundation models enable dynamic adaptation primarily at inference time, allowing models to respond to new tasks without retraining. The most prominent mechanism is in-context learning (ICL), where models adapt behavior by conditioning on examples in a prompt, enabling rapid few-shot or zero-shot generalization <span class="citation" data-cites="R7y5TKp9">[<a href="#ref-R7y5TKp9" role="doc-biblioref">154</a>]</span>.</p>
 <p>Scaling is supported by modular architectures such as Mixture-of-Experts (MoE), which route inputs to specialized sub-networks for sparse activation, increasing capacity without proportional compute <span class="citation" data-cites="mFiH1ERh">[<a href="#ref-mFiH1ERh" role="doc-biblioref">223</a>]</span>. Parameter-efficient fine-tuning (PEFT) methods such as LoRA show that models can be adapted by updating less than one percent of weights, achieving near full fine-tuning performance <span class="citation" data-cites="Pf2hk1xb">[<a href="#ref-Pf2hk1xb" role="doc-biblioref">9</a>]</span>.
-While LoRA is traditionally learned via task-specific optimization, recent work replaces this training loop with amortized inference: given a task description, a model can directly predict the corresponding low-rank update. This shifts adaptation from an optimization problem to a learned mapping from context to parameters <span class="citation" data-cites="294si67V">[<a href="#ref-294si67V" role="doc-biblioref">1</a>]</span>.</p>
+While LoRA is traditionally learned via task-specific optimization, recent work replaces this training loop with amortized inference: given a task description, a model can directly predict the corresponding low-rank update. This shifts adaptation from an optimization problem to a learned mapping from context to parameters <span class="citation" data-cites="b3XMvGEE">[<a href="#ref-b3XMvGEE" role="doc-biblioref">1</a>]</span>.</p>
 <p>Together, these approaches illustrate how adaptation can be achieved both flexibly and efficiently, balancing generalization and computational constraints.</p>
 <h4 id="bridging-with-statistical-and-causal-reasoning">Bridging with Statistical and Causal Reasoning</h4>
 <p>An emerging research direction integrates the representational capacity of foundation models with the rigor of statistical and causal inference. Language models can already extract relational patterns from text to propose or critique causal graphs <span class="citation" data-cites="6ALrEKtt">[<a href="#ref-6ALrEKtt" role="doc-biblioref">224</a>]</span>. Methods such as LMPriors treat foundation models as task-specific priors, improving sample efficiency in estimation and decision making <span class="citation" data-cites="Xtwwrjzy">[<a href="#ref-Xtwwrjzy" role="doc-biblioref">225</a>]</span>. Models can also generate natural-language rationales that clarify predictions and summarize statistical findings, enhancing interpretability and transparency <span class="citation" data-cites="RvAOKYai">[<a href="#ref-RvAOKYai" role="doc-biblioref">180</a>]</span>.</p>
@@ -1403,8 +1403,8 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-294si67V" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline"><strong>Text-to-LoRA: Instant Transformer Adaption</strong> <div class="csl-block">Rujikorn Charakorn, Edoardo Cetin, Yujin Tang, Robert Lange</div> <em>International Conference on Machine Learning</em> (2025) <a href="https://openreview.net/forum?id=zWskCdu3QA">https://openreview.net/forum?id=zWskCdu3QA</a></div>
+<div id="ref-b3XMvGEE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline"><strong>Text-to-LoRA: Instant Transformer Adaption</strong> <div class="csl-block">Rujikorn Charakorn, Edoardo Cetin, Yujin Tang, Robert Tjarko Lange</div> <em>arXiv</em> (2025) <a href="https://doi.org/hb8xx2">https://doi.org/hb8xx2</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2506.06105">10.48550/arxiv.2506.06105</a></div></div>
 </div>
 <div id="ref-Humo13Op" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline"><strong>Transformers learn in-context by gradient descent</strong> <div class="csl-block">Johannes von Oswald, Eyvind Niklasson, Ettore Randazzo, JoÃ£o Sacramento, Alexander Mordvintsev, Andrey Zhmoginov, Max Vladymyrov</div> <em>arXiv</em> (2023-06-01) <a href="https://arxiv.org/abs/2212.07677">https://arxiv.org/abs/2212.07677</a></div>
@@ -1494,7 +1494,7 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>Nouvelles méthodes pour la détermination des orbites des comètes</strong> <div class="csl-block">Adrien-Marie Legendre</div> <em>Courcier</em> (1805)</div>
 </div>
 <div id="ref-vKtb27Ba" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Theoria motus corporum coelestium in sectionibus conicis solem ambientium</strong> <div class="csl-block">Carl Friedrich Gauss</div> <em>Perthes &amp; Besser</em> (1809)</div>
+<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Theoria motus corporum coelestium in sectionibus conicis solem ambientium</strong> <div class="csl-block">Carl Friedrich Gauss</div> <em>Perthes &amp; Besser</em> (1809) <a href="https://archive.org/details/bub_gb_ORUOAAAAQAAJ">https://archive.org/details/bub_gb_ORUOAAAAQAAJ</a></div>
 </div>
 <div id="ref-kXBVO9y8" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>Generalized Linear Models</strong> <div class="csl-block">JA Nelder, RWM Wedderburn</div> <em>Journal of the Royal Statistical Society. Series A (General)</em> (1972) <a href="https://doi.org/dhq253">https://doi.org/dhq253</a> <div class="csl-block">DOI: <a href="https://doi.org/10.2307/2344614">10.2307/2344614</a></div></div>
@@ -1596,13 +1596,13 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <div class="csl-left-margin">64. </div><div class="csl-right-inline"><strong>Some aspects of the sequential design of experiments</strong> <div class="csl-block">Herbert Robbins</div> <em>Bulletin of the American Mathematical Society</em> (1952) <a href="https://doi.org/c325nh">https://doi.org/c325nh</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1090/s0002-9904-1952-09620-8">10.1090/s0002-9904-1952-09620-8</a></div></div>
 </div>
 <div id="ref-jlS72VrS" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">65. </div><div class="csl-right-inline"><strong>Reinforcement Learning: An Introduction</strong> <div class="csl-block">Richard S Sutton, Andrew G Barto</div> <em>MIT Press</em> (1998) <div class="csl-block">ISBN: 978-0-262-19398-6</div></div>
+<div class="csl-left-margin">65. </div><div class="csl-right-inline"><strong>Reinforcement Learning: An Introduction</strong> <div class="csl-block">Richard S Sutton, Andrew G Barto</div> <em>MIT Press</em> (1998) <a href="https://mitpress.mit.edu/9780262193986/reinforcement-learning/">https://mitpress.mit.edu/9780262193986/reinforcement-learning/</a> <div class="csl-block">ISBN: 978-0-262-19398-6</div></div>
 </div>
 <div id="ref-17mBgrHWB" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">66. </div><div class="csl-right-inline"><strong>Finite-time Analysis of the Multiarmed Bandit Problem</strong> <div class="csl-block">Peter Auer, Nicolò Cesa-Bianchi, Paul Fischer</div> <em>Machine Learning</em> (2002-05) <a href="https://doi.org/dxkxgv">https://doi.org/dxkxgv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1023/a:1013689704352">10.1023/a:1013689704352</a></div></div>
 </div>
 <div id="ref-SldOo5zA" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">67. </div><div class="csl-right-inline"><strong>A Markovian Decision Process</strong> <div class="csl-block">Richard Bellman</div> <em>Journal of Mathematics and Mechanics</em> (1957)</div>
+<div class="csl-left-margin">67. </div><div class="csl-right-inline"><strong>A Markovian Decision Process</strong> <div class="csl-block">Richard Bellman</div> <em>Journal of Mathematics and Mechanics</em> (1957) <a href="https://www.jstor.org/stable/24900506">https://www.jstor.org/stable/24900506</a></div>
 </div>
 <div id="ref-jggKMQFt" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">68. </div><div class="csl-right-inline"><strong>Learning from Delayed Rewards</strong> <div class="csl-block">Christopher John Cornish Hellaby Watkins</div> <em>King's College, University of Cambridge</em> (1989)</div>
@@ -1956,7 +1956,7 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <div class="csl-left-margin">184. </div><div class="csl-right-inline"><strong>Manipulating and Measuring Model Interpretability</strong> <div class="csl-block">Forough Poursabzi-Sangdeh, Daniel G Goldstein, Jake M Hofman, Jennifer Wortman Vaughan, Hanna Wallach</div> <em>arXiv</em> (2018) <a href="https://doi.org/g958zk">https://doi.org/g958zk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.1802.07810">10.48550/arxiv.1802.07810</a></div></div>
 </div>
 <div id="ref-15RY4QKp3" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">185. </div><div class="csl-right-inline"><strong>Principles of risk minimization for learning theory</strong> <div class="csl-block">V Vapnik</div> <em>Advances in Neural Information Processing Systems 5 (NIPS'91)</em> (1991) <a href="https://dl.acm.org/doi/10.5555/2986916.2987018">https://dl.acm.org/doi/10.5555/2986916.2987018</a> <div class="csl-block">ISBN: 1558602224</div></div>
+<div class="csl-left-margin">185. </div><div class="csl-right-inline"><strong>Principles of risk minimization for learning theory</strong> <div class="csl-block">V Vapnik</div> <em>Advances in Neural Information Processing Systems 5 (NIPS'91)</em> (1991) <a href="https://proceedings.neurips.cc/paper/1991/hash/ff4d5fbbafdf976cfdc032e3bde78de5-Abstract.html">https://proceedings.neurips.cc/paper/1991/hash/ff4d5fbbafdf976cfdc032e3bde78de5-Abstract.html</a> <div class="csl-block">ISBN: 1558602224</div></div>
 </div>
 <div id="ref-1DeCFT6PA" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">186. </div><div class="csl-right-inline"><strong>Invariant Risk Minimization</strong> <div class="csl-block">Martin Arjovsky, LÃ©on Bottou, Ishaan Gulrajani, David Lopez-Paz</div> <em>arXiv</em> (2020-03-31) <a href="https://arxiv.org/abs/1907.02893">https://arxiv.org/abs/1907.02893</a></div>
@@ -2010,7 +2010,7 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <div class="csl-left-margin">202. </div><div class="csl-right-inline"><strong>Bayesian Forecasting in Economics and Finance: A Modern Review</strong> <div class="csl-block">Gael M Martin, David T Frazier, Worapree Maneesoonthorn, Ruben Loaiza-Maya, Florian Huber, Gary Koop, John Maheu, Didier Nibbering, Anastasios Panagiotelis</div> <em>arXiv</em> (2022) <a href="https://doi.org/g96dmk">https://doi.org/g96dmk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2212.03471">10.48550/arxiv.2212.03471</a></div></div>
 </div>
 <div id="ref-4aDIdh6z" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">203. </div><div class="csl-right-inline"><strong>Bayesian Dynamic Factor Models for High-dimensional Matrix-valued Time Series</strong> <div class="csl-block">Wei Zhang</div> <em>arXiv</em> (2024) <a href="https://doi.org/g96dmm">https://doi.org/g96dmm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2409.08354">10.48550/arxiv.2409.08354</a></div></div>
+<div class="csl-left-margin">203. </div><div class="csl-right-inline"><strong>Bayesian Dynamic Factor Models for High-Dimensional Matrix-Valued Time Series</strong> <div class="csl-block">Joshua CC Chan, Wei Zhang</div> <em>arXiv</em> (2024) <a href="https://doi.org/g96dmm">https://doi.org/g96dmm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.48550/arxiv.2409.08354">10.48550/arxiv.2409.08354</a></div></div>
 </div>
 <div id="ref-E4f9DQPu" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">204. </div><div class="csl-right-inline"><strong>International Asset Allocation With Regime Shifts</strong> <div class="csl-block">Andrew Ang, Geert Bekaert</div> <em>Review of Financial Studies</em> (2002-07) <a href="https://doi.org/b535qr">https://doi.org/b535qr</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/rfs/15.4.1137">10.1093/rfs/15.4.1137</a></div></div>
@@ -2034,7 +2034,7 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 <div class="csl-left-margin">210. </div><div class="csl-right-inline"><strong>A Multi-target Bayesian Transformer Framework for Predicting Cardiovascular Disease Biomarkers during Pandemics</strong> <div class="csl-block">Trusting Inekwe, Winnie Mkandawire, Emmanuel Agu, Andres Colubri</div> <em>arXiv</em> (2025-11-07) <a href="https://arxiv.org/abs/2509.01794">https://arxiv.org/abs/2509.01794</a></div>
 </div>
 <div id="ref-RkqVE8TP" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">211. </div><div class="csl-right-inline"><strong>Bayesian Dynamic Factor Models for High-dimensional Matrix-valued Time Series</strong> <div class="csl-block">Wei Zhang</div> <em>arXiv</em> (2025-08-11) <a href="https://arxiv.org/abs/2409.08354">https://arxiv.org/abs/2409.08354</a></div>
+<div class="csl-left-margin">211. </div><div class="csl-right-inline"><strong>Bayesian Dynamic Factor Models for High-Dimensional Matrix-Valued Time Series</strong> <div class="csl-block">Joshua CC Chan, Wei Zhang</div> <em>arXiv</em> (2026-06-10) <a href="https://arxiv.org/abs/2409.08354">https://arxiv.org/abs/2409.08354</a></div>
 </div>
 <div id="ref-nTk9nk8h" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">212. </div><div class="csl-right-inline"><strong>Bayesian Models for Joint Selection of Features and Auto-Regressive Lags: Theory and Applications in Environmental and Financial Forecasting</strong> <div class="csl-block">Alokesh Manna, Sujit K Ghosh</div> <em>arXiv</em> (2025-08-18) <a href="https://arxiv.org/abs/2508.10055">https://arxiv.org/abs/2508.10055</a></div>
