@@ -1,19 +1,5 @@
 [
   {
-    "id": "charakorn2025text",
-    "type": "paper-conference",
-    "title": "Text-to-LoRA: Instant Transformer Adaption",
-    "author": [
-      { "family": "Charakorn", "given":  "Rujikorn"},
-      { "family": "Cetin", "given":  "Edoardo"},
-      { "family": "Tang", "given":  "Yujin"},
-      { "family": "Lange", "given":  "Robert"}
-    ],
-    "container-title": "International Conference on Machine Learning",
-    "issued": {"date-parts":  [[2025]]},
-    "URL": "https://openreview.net/forum?id=zWskCdu3QA"
-  },
-  {
     "id": "higgins2017betavae",
     "type": "paper-conference",
     "title": "beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework",
@@ -58,7 +44,7 @@
   "page": "831–838",
   "number-of-pages": "8",
   "ISBN": "1558602224",
-  "URL": "https://dl.acm.org/doi/10.5555/2986916.2987018",
+  "URL": "https://proceedings.neurips.cc/paper/1991/hash/ff4d5fbbafdf976cfdc032e3bde78de5-Abstract.html",
   "abstract": "Learning is posed as a problem of function estimation, for which two principles of solution are considered: empirical risk minimization and structural risk minimization. These two principles are applied to two different statements of the function estimation problem: global and local. Systematic improvements in prediction power are illustrated in application to zip-code recognition.",
   "container-title": "Advances in Neural Information Processing Systems 5 (NIPS'91)"
   },
@@ -92,6 +78,7 @@
   ],
   "publisher": "Perthes & Besser",
   "publisher-place": "Hamburg",
+  "URL": "https://archive.org/details/bub_gb_ORUOAAAAQAAJ",
   "issued": {"date-parts": [[1809]]}
   },
   {
@@ -146,6 +133,7 @@
   "publisher": "MIT Press",
   "publisher-place": "Cambridge, MA",
   "ISBN": "978-0-262-19398-6",
+  "URL": "https://mitpress.mit.edu/9780262193986/reinforcement-learning/",
   "issued": {"date-parts": [[1998]]}
 },
 {
@@ -156,8 +144,12 @@
     {"family": "Bellman", "given": "Richard"}
   ],
   "container-title": "Journal of Mathematics and Mechanics",
+  "volume": "6",
+  "issue": "5",
   "page": "679–684",
-  "publisher": "JSTOR",
+  "ISSN": "0095-9057",
+  "publisher": "Indiana University Mathematics Department",
+  "URL": "https://www.jstor.org/stable/24900506",
   "issued": {"date-parts": [[1957]]}
 },
 {
