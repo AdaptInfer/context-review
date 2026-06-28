@@ -8,6 +8,7 @@ content/02.introduction.md:23:adaptivity
 content/02.introduction.md:43:Lipschitz
 content/02.introduction.md:43:parameterization
 content/02.introduction.md:44:parameterization
+content/02.introduction.md:46:arXiv
 content/02.introduction.md:62:Exchangeability
 content/02.introduction.md:63:Lipschitz
 content/02.introduction.md:64:Identifiability
@@ -821,6 +822,7 @@ content/11.future_trends.md:16:ICL
 content/11.future_trends.md:18:arXiv
 content/11.future_trends.md:18:arXiv
 content/11.future_trends.md:18:PEFT
+content/11.future_trends.md:19:arXiv
 content/11.future_trends.md:24:arXiv
 content/11.future_trends.md:24:arXiv
 content/11.future_trends.md:24:arXiv
