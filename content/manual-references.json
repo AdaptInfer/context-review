@@ -176,5 +176,20 @@
     "volume": "22",
     "issued": {"date-parts": [[2009]]},
     "URL": "https://proceedings.neurips.cc/paper_files/paper/2009/hash/7bcdf75ad237b8e02e301f4091fb6bc8-Abstract.html"
+  },
+  {
+    "id": "hothorn2015partykit",
+    "type": "article-journal",
+    "title": "partykit: A Modular Toolkit for Recursive Partytioning in R",
+    "author": [
+      {"family": "Hothorn", "given": "Torsten"},
+      {"family": "Zeileis", "given": "Achim"}
+    ],
+    "container-title": "Journal of Machine Learning Research",
+    "volume": "16",
+    "issue": "118",
+    "page": "3905-3909",
+    "issued": {"date-parts": [[2015]]},
+    "URL": "https://jmlr.org/papers/v16/hothorn15a.html"
   }
 ]
