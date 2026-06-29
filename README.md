@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/AdaptInfer/context-review/tree/gh-pages) branch hosts the contents of this directory at <https://AdaptInfer.github.io/context-review/>.
-The permalink for this webpage version is <https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/>.
+The permalink for this webpage version is <https://AdaptInfer.github.io/context-review/v/fd83fa87bb80ca000dd661bcfb7efffe51e945af/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://AdaptInfer.github.io/context-review/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`e7ffb3b0137f3379aa04e561c0c5b9619f09c771`](https://github.com/AdaptInfer/context-review/commit/e7ffb3b0137f3379aa04e561c0c5b9619f09c771).
+[`fd83fa87bb80ca000dd661bcfb7efffe51e945af`](https://github.com/AdaptInfer/context-review/commit/fd83fa87bb80ca000dd661bcfb7efffe51e945af).
