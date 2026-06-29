@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-06-28'
+date-meta: '2026-06-29'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-06-28" />
-  <meta name="citation_publication_date" content="2026-06-28" />
-  <meta property="article:published_time" content="2026-06-28" />
-  <meta name="dc.modified" content="2026-06-28T21:27:10+00:00" />
-  <meta property="article:modified_time" content="2026-06-28T21:27:10+00:00" />
+  <meta name="dc.date" content="2026-06-29" />
+  <meta name="citation_publication_date" content="2026-06-29" />
+  <meta property="article:published_time" content="2026-06-29" />
+  <meta name="dc.modified" content="2026-06-29T15:04:25+00:00" />
+  <meta property="article:modified_time" content="2026-06-29T15:04:25+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/fd83fa87bb80ca000dd661bcfb7efffe51e945af/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fd83fa87bb80ca000dd661bcfb7efffe51e945af/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/fd83fa87bb80ca000dd661bcfb7efffe51e945af/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/e7ffb3b0137f3379aa04e561c0c5b9619f09c771/))
+([permalink](https://AdaptInfer.github.io/context-review/v/fd83fa87bb80ca000dd661bcfb7efffe51e945af/))
 was automatically generated
-from [AdaptInfer/context-review@e7ffb3b](https://github.com/AdaptInfer/context-review/tree/e7ffb3b0137f3379aa04e561c0c5b9619f09c771)
-on June 28, 2026.
+from [AdaptInfer/context-review@fd83fa8](https://github.com/AdaptInfer/context-review/tree/fd83fa87bb80ca000dd661bcfb7efffe51e945af)
+on June 29, 2026.
 </em></small>
 
 
@@ -542,7 +542,7 @@ Partition models extend the contextualized framework by assuming that parameters
 $$
 \{\widehat{\theta}_0, \dots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \dots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) + \lambda \sum_{i = 2}^N \|\theta_i - \theta_{i-1}\| \right).
 $$
-By encouraging piecewise-constant structures, partition models get closer to personalized modeling, balancing fit and parsimony, moving closer to personalized inference, trading off flexibility for interpretability.
+By encouraging piecewise-constant structures, partition models get closer to personalized modeling, balancing fit and parsimony, moving closer to personalized inference, trading off flexibility for interpretability. When the parameters being partitioned define a network, the support itself can jump across blocks, yielding varying-coefficient varying-structure models whose graph topology rewires with context, whether over time or along a branching biological lineage [@doi:10.1214/12-EJS739; @doi:10.1093/bioinformatics/btr239].
 
 ### Fine-tuned Models and Transfer Learning
 
@@ -1032,6 +1032,9 @@ The origins of structurally constrained models can be traced to early work on co
 As high-dimensional data became common, scalable estimation procedures emerged to make these ideas practical. Meinshausen and Bühlmann (2006) proposed neighborhood selection, recasting graph recovery as a series of sparse regression problems that infer conditional dependencies node by node [@doi:10.1214/009053606000000281]. Shortly thereafter, Friedman, Hastie, and Tibshirani (2008) developed the graphical lasso, a convex penalized likelihood method that directly estimates sparse precision matrices [@doi:10.1093/biostatistics/kxm045]. These contributions showed that sparsity-inducing penalties could recover large network structures reliably, thereby providing concrete tools for estimating $f(c)$ when context corresponds to a structured dependency pattern such as a graph.
 
 Building on these advances, later research recognized that networks themselves may vary across contexts. Guo, Levina, Michailidis, and Zhu (2011) introduced penalties that jointly estimate multiple graphical models, encouraging sparsity within each network while borrowing strength across related groups [@doi:10.1093/biomet/asq060]. Danaher, Wang, and Witten (2014) extended this framework with the Joint Graphical Lasso, which balances shared structure and context-specific edges across multiple populations [@doi:10.1111/rssb.12033]. These developments illustrate how structured regularization transforms explicit adaptivity into a principled strategy: instead of estimating networks independently, one can pool information selectively across contexts (where context $c$ is the group or task identity), making the estimation of the parameter function $f(c)$ both interpretable and statistically efficient.
+
+**Varying-Coefficient Varying-Structure Models.**
+The methods above pool information across a fixed set of discrete networks, but in many systems the network itself rewires as an underlying context such as time or developmental stage advances. Kolar and Xing formalized this regime as the varying-coefficient varying-structure (VCVS) graphical model, in which both the edge set and the edge weights of a Gaussian graphical model are treated as functions of context rather than fixed quantities [@doi:10.1214/12-EJS739]. When the context is time and the structure changes abruptly, a temporally smoothed $\ell_1$ penalty recovers both the changepoints and the precision matrix on each piecewise-constant block, and these were the first estimators of this kind shown to be sparsistent with established convergence rates [@doi:10.1214/12-EJS739; @kolar2009sparsistent]. When structure instead drifts smoothly, kernel reweighting and total-variation penalties estimate a separate network at each point along the context axis, as in the TESLA method and related time-varying network estimators applied to rewiring gene-regulatory and political networks [@doi:10.1073/pnas.0901910106; @doi:10.1214/09-AOAS308]. The context need not be temporal: TREEGL estimates a tree of networks evolving along a branching biological lineage, borrowing strength between a parent cell type and its descendants while exposing the edges that switch at each division [@doi:10.1093/bioinformatics/btr239]. Pushing the idea further, personalized regression and Bayesian edge-regression models let structure vary at the level of the individual sample, recovering subject-specific networks indexed by clinical covariates or latent similarity rather than by a shared group label [@doi:10.1093/bioinformatics/bty250; @doi:10.1080/01621459.2021.2000866]. The unifying move across these methods is to make the discrete graph structure, and not only the continuous coefficients, an explicit function of context $f(c)$, which is what separates VCVS models from smooth varying-coefficient models that hold the support fixed.
 
 **Piecewise-Constant and Partition-Based Models.**
 Here, model parameters are allowed to remain constant within specific regions or clusters of the context space, rather than vary smoothly. Approaches include classical grouped estimators and modern partition models, which may learn changepoints using regularization tools like total variation penalties or the fused lasso. This framework is particularly effective for data with abrupt transitions or heterogeneous subgroups.
