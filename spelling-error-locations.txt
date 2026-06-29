@@ -68,6 +68,11 @@ content/03.overview.md:56:hte
 content/03.overview.md:59:CATE
 content/03.overview.md:60:hte
 content/03.overview.md:60:hte
+content/03.overview.md:70:covariate
+content/03.overview.md:70:interpretable
+content/03.overview.md:70:partykit
+content/03.overview.md:70:recursing
+content/03.overview.md:70:toolkits
 content/03.overview.md:75:covariate
 content/03.overview.md:88:tradeoff
 content/03.overview.md:92:adaptivity
@@ -376,6 +381,9 @@ content/06.explicit.md:45:VCVS
 content/06.explicit.md:45:Xing
 content/06.explicit.md:47:Piecewise
 content/06.explicit.md:48:changepoints
+content/06.explicit.md:48:partykit
+content/06.explicit.md:48:recursing
+content/06.explicit.md:48:Toolkits
 content/06.explicit.md:52:adaptivity
 content/06.explicit.md:52:adaptivity
 content/06.explicit.md:53:piecewise
