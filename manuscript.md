@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-02" />
   <meta name="citation_publication_date" content="2026-07-02" />
   <meta property="article:published_time" content="2026-07-02" />
-  <meta name="dc.modified" content="2026-07-02T03:46:51+00:00" />
-  <meta property="article:modified_time" content="2026-07-02T03:46:51+00:00" />
+  <meta name="dc.modified" content="2026-07-02T06:42:34+00:00" />
+  <meta property="article:modified_time" content="2026-07-02T06:42:34+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/94a332da1bbac8bc6ae7096b0a52dadff5801c9a/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/94a332da1bbac8bc6ae7096b0a52dadff5801c9a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/94a332da1bbac8bc6ae7096b0a52dadff5801c9a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/))
+([permalink](https://AdaptInfer.github.io/context-review/v/94a332da1bbac8bc6ae7096b0a52dadff5801c9a/))
 was automatically generated
-from [AdaptInfer/context-review@d976ae5](https://github.com/AdaptInfer/context-review/tree/d976ae5e715ed29b9822fdc19587f683856df903)
+from [AdaptInfer/context-review@94a332d](https://github.com/AdaptInfer/context-review/tree/94a332da1bbac8bc6ae7096b0a52dadff5801c9a)
 on July 2, 2026.
 </em></small>
 
@@ -313,7 +313,7 @@ In population models, the assumption is that $\theta_i=\theta$ for all $i$. In c
 $$
 \theta_i=f(c_i)\quad\text{or}\quad \theta_i\sim P(\theta\mid c_i),
 $$
-where $c_i$ captures the relevant covariates or environment for observation $i$. The goal is to estimate either a deterministic function $f$ or a conditional distribution over parameters.
+where $c_i$ captures the relevant covariates or environment for observation $i$. The goal is to estimate either a deterministic function $f$ or a conditional distribution over parameters. This sample-specific view, in which each observation carries its own parameters tied to its context, traces to early work on time-varying and varying-coefficient network estimation [@doi:10.1073/pnas.0901910106; @doi:10.1093/bioinformatics/btp192; @kolar2009sparsistent].
 
 This shift raises new modeling challenges. Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. And as adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we need tools to recover, interpret, or constrain the underlying parameter variation.
 
@@ -332,7 +332,7 @@ $$
 \underbrace{\mathcal{R}(\theta;\,c)}_{\text{context-structured regularization}},
 \tag{★}
 $$
-where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a **support set** selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.).
+where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a **support set** selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.). This decomposition into a context-dependent loss and a context-structured regularizer was studied systematically for time-varying and varying-coefficient network estimation [@kolar2009sparsistent; @doi:10.1214/09-AOAS308].
 
 **How context enters.**  
 - **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
@@ -415,7 +415,7 @@ Table 1 summarizes the scope and coverage of representative surveys.
 
 | Survey | Topic Focus | Scope | Coverage of Adaptivity | Gap Relative to This Work |
 |--------|-------------|-------|-------------------------|----------------------------|
-| Statistical Methods with Varying Coefficient Models[@doi:10.4310/sii.2008.v1.n1.a15] | Varying-coefficient modeling | Classical statistical modeling, with parameters expressed as functions of covariates | Explicit adaptivity: parameters change smoothly with context via \(f(c)\) | Limited to explicit, parametric formulations; no connection to neural or emergent adaptation |
+| Statistical Methods with Varying Coefficient Models[@doi:10.4310/sii.2008.v1.n1.a15; @kolar2009sparsistent] | Varying-coefficient modeling | Classical statistical modeling, with parameters expressed as functions of covariates | Explicit adaptivity: parameters change smoothly with context via \(f(c)\) | Limited to explicit, parametric formulations; no connection to neural or emergent adaptation |
 | A Survey of Deep Meta-Learning[@doi:10.48550/arXiv.2010.03522] | Meta-learning | Neural meta-learning methods for cross-task adaptation | Task-level adaptivity: models learn to generalize quickly across tasks | Focused on task switching; does not integrate explicit parameter modeling or implicit foundation model adaptation |
 | LoRA: Low-Rank Adaptation of Large Language Models[@doi:10.48550/arXiv.2106.09685] | Parameter-efficient adaptation | Adaptation of large pretrained transformer models via low-rank updates while freezing base weights | Implicit adaptivity via parameter-efficient updates, enabling contextual adaptation without full fine-tuning | Strong in efficient adaptation mechanism, but narrow in scope; does not address explicit contextual structure or cross-domain generalization |
 | Foundational Models Defining a New Era in Vision: A Survey and Outlook[@doi:10.48550/arXiv.2307.13721] | Vision-based foundation models | Architectures, multimodal integration, prompting, fusion in vision models | Implicit adaptivity in vision contexts, via prompt or fusion mechanisms across visual tasks | Domain-specific focus limits generalization; less discussion on theoretical adaptation across modalities |
@@ -511,14 +511,14 @@ These early methods relax global homogeneity yet still rely on discrete partitio
 
 #### Distance-Regularized Estimation
 
-A more flexible alternative assumes that observations with similar contexts should have similar parameters. This is encoded as a regularization penalty that discourages large differences in $\theta_i$ for nearby $c_i$:
+A more flexible alternative assumes that observations with similar contexts should have similar parameters [@doi:10.1073/pnas.0901910106]. This is encoded as a regularization penalty that discourages large differences in $\theta_i$ for nearby $c_i$:
 
 $$
 \{\widehat{\theta}_0, \ldots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \ldots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) - \sum_{i,j} \frac{\|\theta_i - \theta_j\|}{D(c_i, c_j)} \right),
 $$
 
 where $D(c_i, c_j)$ is a distance metric between contexts. This approach allows for smoother parameter variation but requires careful choice of $D$ and regularization strength $\lambda$ to balance bias and variance.  
-The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff.
+The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff. Kernel-reweighted and Parzen-window estimators are concrete instances that reweight neighboring observations to recover a distinct parameter set or network at each context [@doi:10.1093/bioinformatics/btp192; @song2009tvdbn], and the smooth versus abruptly changing regimes of such estimators have been analyzed for time-varying networks [@doi:10.1214/09-AOAS308].
 
 ### Parametric and Semi-parametric Varying-Coefficient Models
 
@@ -528,7 +528,7 @@ $$
 $$
 This formulation can be interpreted as a special case of distance-regularized estimation where the distance metric is Euclidean. Related developments in graphical models extend this idea to structured dependencies [@doi:10.1080/01621459.2021.2000866].
 
-Semi-parametric VCMs relax the linearity assumption by requiring only that parameter variation be smooth. This is commonly encoded through kernel weighting, where the relevance of each sample is determined by its similarity in the covariate space [@doi:10.1214/aos/1017939139; @arxiv:2103.00315]. These models are more flexible but may fail when the true relationship between covariates and parameters is discontinuous.
+Semi-parametric VCMs relax the linearity assumption by requiring only that parameter variation be smooth. This is commonly encoded through kernel weighting, where the relevance of each sample is determined by its similarity in the covariate space [@doi:10.1214/aos/1017939139; @arxiv:2103.00315]. These models are more flexible but may fail when the true relationship between covariates and parameters is discontinuous. When the parameters index a network whose structure itself changes with context, varying-coefficient models extend to varying-coefficient varying-structure models, in which both the edge set and the edge weights depend on context, an extension discussed further below [@kolar2009sparsistent; @doi:10.1214/12-EJS739].
 
 ### Contextualized Models
 
@@ -1017,11 +1017,11 @@ The most basic response to heterogeneity is to split the data into subgroups and
 
 The first improvement keeps discrete groups but couples their estimates. Distance-regularized estimation asks that observations with similar contexts have similar parameters, penalizing differences in $\theta_i$ in proportion to context distance, while fused-lasso and total-variation penalties shrink differences between adjacent groups so that estimates borrow strength from their neighbors [@doi:10.1214/09-AOAS308]. The effect is to lower the effective data requirement per group: a sparsely observed context inherits information from well-observed relatives rather than standing alone.
 
-The same idea carries over from regressors to network estimators. The graphical-model lineage established that a parameter can be an estimated network: zeros in the inverse covariance matrix encode conditional independencies [@doi:10.2307/2528966; @doi:10.1093/oso/9780198522195.001.0001], and neighborhood selection and the graphical lasso recover sparse structure directly from data [@doi:10.1214/009053606000000281; @doi:10.1093/biostatistics/kxm045]. Sharing then couples networks across a discrete set of conditions. Guo et al. jointly estimate several graphical models, encouraging sparsity within each while borrowing strength across related groups [@doi:10.1093/biomet/asq060], and the Joint Graphical Lasso balances shared structure against group-specific edges across populations [@doi:10.1111/rssb.12033]. Bayesian formulations achieve the same pooling through priors rather than penalties: lattice and Markov-random-field spike-and-slab priors learn when edges should be shared across neighboring sites or sample groups, and quantify how similar the resulting networks are [@doi:10.1198/jasa.2011.tm10465; @doi:10.1080/01621459.2014.896806].
+The same idea carries over from regressors to network estimators. The graphical-model lineage established that a parameter can be an estimated network: zeros in the inverse covariance matrix encode conditional independencies [@doi:10.2307/2528966; @doi:10.1093/oso/9780198522195.001.0001], and neighborhood selection and the graphical lasso recover sparse structure directly from data [@doi:10.1214/009053606000000281; @doi:10.1093/biostatistics/kxm045], with later extensions estimating this structure when each node carries a vector of attributes rather than a scalar [@arxiv:1210.7665]. Sharing then couples networks across a discrete set of conditions. Guo et al. jointly estimate several graphical models, encouraging sparsity within each while borrowing strength across related groups [@doi:10.1093/biomet/asq060], and the Joint Graphical Lasso balances shared structure against group-specific edges across populations [@doi:10.1111/rssb.12033]. Bayesian formulations achieve the same pooling through priors rather than penalties: lattice and Markov-random-field spike-and-slab priors learn when edges should be shared across neighboring sites or sample groups, and quantify how similar the resulting networks are [@doi:10.1198/jasa.2011.tm10465; @doi:10.1080/01621459.2014.896806].
 
 ### Learning the Group Boundaries
 
-Thus far group-based modeling has required knowing which groups to model ahead of estimation. The next step lets the data decide where the boundaries fall. Model-based recursive partitioning fits a parametric model, tests its coefficients for instability across candidate context variables, and splits on the variable with the strongest instability before recursing, so the partition is chosen by the data rather than pre-specified [@doi:10.1198/106186008X319331]; toolkits such as partykit fit a parametric model within each leaf [@hothorn2015partykit]. In the network case the same move recovers where structure changes. Varying-coefficient varying-structure (VCVS) graphical models treats both the edge set and the edge weights as functions of context, and when structure changes abruptly a temporally smoothed penalty recovers the changepoints together with the precision matrix on each block, the first such estimators shown to be sparsistent with established convergence rates [@doi:10.1214/12-EJS739; @kolar2009sparsistent]. TREEGL extends this to a tree of networks that switch along a branching biological lineage, borrowing strength between a parent cell type and its descendants while exposing the edges that change at each division [@doi:10.1093/bioinformatics/btr239].
+Thus far group-based modeling has required knowing which groups to model ahead of estimation. The next step lets the data decide where the boundaries fall. Model-based recursive partitioning fits a parametric model, tests its coefficients for instability across candidate context variables, and splits on the variable with the strongest instability before recursing, so the partition is chosen by the data rather than pre-specified [@doi:10.1198/106186008X319331]; toolkits such as partykit fit a parametric model within each leaf [@hothorn2015partykit]. In the network case the same move recovers where structure changes. Varying-coefficient varying-structure (VCVS) graphical models treats both the edge set and the edge weights as functions of context, and when structure changes abruptly a temporally smoothed penalty recovers the changepoints together with the precision matrix on each block, the first such estimators shown to be sparsistent with established convergence rates [@doi:10.1214/12-EJS739; @kolar2009sparsistent]. TREEGL extends this to a tree of networks that switch along a branching biological lineage, borrowing strength between a parent cell type and its descendants while exposing the edges that change at each division [@doi:10.1093/bioinformatics/btr239; @doi:10.1371/journal.pcbi.1003713].
 
 Viewing a partition as explicit routing clarifies what these splits accomplish. Each split of the context space sends samples to a distinct parameter vector, so the boundaries encode exactly where parameters are shared and where they are separated. Hierarchical partitions capture heterogeneity at two levels, sample-level variation within a context and task-level switching across contexts, which connects partition-based models to multi-task learning (Figure {@fig:context-splits}). This explicit routing is the structured counterpart of the implicit routing performed by mixture-of-experts and attention layers in the next section, where the same shared-versus-separated decision is made inside the network rather than by an overt split. 
 
@@ -1037,7 +1037,7 @@ $$
 
 where $K_\lambda$ measures similarity between contexts and $\ell$ is the per-sample log-likelihood, so prediction at $c^\ast$ is a similarity-weighted combination of nearby observations. Because every sample contributes in proportion to its context similarity, no single group needs to be large; the neighborhood supplies the data. Reproducing-kernel methods extend this to higher dimensions while retaining guarantees, for example penalized RKHS estimators for partially varying-coefficient models that separate constant from smoothly varying effects with minimax prediction rates and consistent structure selection [@doi:10.1016/j.csda.2020.107039], and the same machinery underlies generalized additive models. This locally weighted view is also the thread a later section follows to show that transformers performing in-context learning realize the same estimator, with a learned attention kernel taking the place of $K_\lambda$.
 
-Similarity can be defined over a topology rather than a continuous covariate. Spatially varying-coefficient models let local effects change gradually across adjacent regions [@doi:10.48550/arXiv.2410.07229; @doi:10.48550/arXiv.2502.14651], the network varying-coefficient model learns latent node positions and coefficient functions on a graph [@doi:10.1080/01621459.2025.2470481], and Laplacian or nested-group penalties encode smoothness over temporal, hierarchical, or multilevel structure. The network-valued case appears here too: kernel reweighting and total-variation penalties estimate a separate network at each point along a context axis, as in TESLA and related time-varying network estimators for rewiring gene-regulatory and political networks [@doi:10.1073/pnas.0901910106; @doi:10.1214/09-AOAS308], and covariate-dependent Bayesian graph learning lets network structure vary smoothly with observed covariates through a dual spike-and-slab prior that selects at node, covariate, and local levels [@doi:10.1093/biomtc/ujaf053].
+Similarity can be defined over a topology rather than a continuous covariate. Spatially varying-coefficient models let local effects change gradually across adjacent regions [@doi:10.48550/arXiv.2410.07229; @doi:10.48550/arXiv.2502.14651], the network varying-coefficient model learns latent node positions and coefficient functions on a graph [@doi:10.1080/01621459.2025.2470481], and Laplacian or nested-group penalties encode smoothness over temporal, hierarchical, or multilevel structure. The network-valued case appears here too: kernel reweighting and total-variation penalties estimate a separate network at each point along a context axis, as in TESLA and related kernel-reweighted and time-varying network estimators for rewiring gene-regulatory and political networks [@doi:10.1073/pnas.0901910106; @doi:10.1214/09-AOAS308; @doi:10.1093/bioinformatics/btp192; @song2009tvdbn; @kolar2011timevarying], and covariate-dependent Bayesian graph learning lets network structure vary smoothly with observed covariates through a dual spike-and-slab prior that selects at node, covariate, and local levels [@doi:10.1093/biomtc/ujaf053].
 
 ### Structured Parametric Maps
 

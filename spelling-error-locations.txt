@@ -5,6 +5,7 @@ content/02.introduction.md:9:bilevel
 content/02.introduction.md:9:hypernetworks
 content/02.introduction.md:21:covariates
 content/02.introduction.md:23:adaptivity
+content/02.introduction.md:40:regularizer
 content/02.introduction.md:43:Lipschitz
 content/02.introduction.md:43:parameterization
 content/02.introduction.md:44:parameterization
@@ -74,6 +75,9 @@ content/03.overview.md:77:interpretable
 content/03.overview.md:77:partykit
 content/03.overview.md:77:recursing
 content/03.overview.md:77:toolkits
+content/03.overview.md:90:Parzen
+content/03.overview.md:90:reweight
+content/03.overview.md:90:reweighted
 content/03.overview.md:90:tradeoff
 content/03.overview.md:94:adaptivity
 content/03.overview.md:94:covariates
@@ -336,6 +340,7 @@ content/06.explicit.md:7:mtl
 content/06.explicit.md:7:MTL
 content/06.explicit.md:9:adaptivity
 content/06.explicit.md:9:VCM
+content/06.explicit.md:25:arxiv
 content/06.explicit.md:25:biostatistics
 content/06.explicit.md:25:Guo
 content/06.explicit.md:25:independencies
@@ -361,6 +366,7 @@ content/06.explicit.md:45:covariate
 content/06.explicit.md:45:covariate
 content/06.explicit.md:45:covariate
 content/06.explicit.md:45:covariates
+content/06.explicit.md:45:reweighted
 content/06.explicit.md:45:reweighting
 content/06.explicit.md:49:arXiv
 content/06.explicit.md:49:arXiv
