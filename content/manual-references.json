@@ -191,5 +191,34 @@
     "page": "3905-3909",
     "issued": {"date-parts": [[2015]]},
     "URL": "https://jmlr.org/papers/v16/hothorn15a.html"
+  },
+  {
+    "id": "song2009tvdbn",
+    "type": "paper-conference",
+    "title": "Time-Varying Dynamic Bayesian Networks",
+    "author": [
+      {"family": "Song", "given": "Le"},
+      {"family": "Kolar", "given": "Mladen"},
+      {"family": "Xing", "given": "Eric P."}
+    ],
+    "container-title": "Advances in Neural Information Processing Systems",
+    "volume": "22",
+    "page": "1732-1740",
+    "issued": {"date-parts": [[2009]]},
+    "URL": "https://papers.nips.cc/paper/2009/hash/a67f096809415ca1c9f112d96d27689b-Abstract.html"
+  },
+  {
+    "id": "kolar2011timevarying",
+    "type": "paper-conference",
+    "title": "On Time Varying Undirected Graphs",
+    "author": [
+      {"family": "Kolar", "given": "Mladen"},
+      {"family": "Xing", "given": "Eric P."}
+    ],
+    "container-title": "Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics",
+    "volume": "15",
+    "page": "407-415",
+    "issued": {"date-parts": [[2011]]},
+    "URL": "https://proceedings.mlr.press/v15/kolar11a.html"
   }
 ]
