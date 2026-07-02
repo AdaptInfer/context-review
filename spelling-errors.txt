@@ -58,13 +58,12 @@ EDDM
 EIIL
 ELBO
 embeddings
-encodings
 ensembling
 ericxing
 ERM
 Exchangeability
 explainability
-Explainers
+explainers
 factuality
 FAISS
 GAM
@@ -94,7 +93,7 @@ ImageNet
 importances
 independencies
 interconnectedness
-interpretability
+Interpretability
 interpretable
 intraclass
 invariance
@@ -110,7 +109,7 @@ Jingyun
 jittering
 JTT
 KKT
-kolar
+Kolar
 KRR
 Kullback
 KV
@@ -155,7 +154,7 @@ modularity
 modularized
 MoICE
 MSE
-MTL
+mtl
 multimodal
 Nelder
 Neyman
@@ -169,7 +168,6 @@ OGD
 OOD
 operationalized
 optimality
-optimizers
 overfitting
 overflexible
 overparameterized
@@ -186,7 +184,7 @@ pointwise
 Poursabzi
 pre
 preprocessing
-Pretrained
+pretrained
 pretraining
 priori
 probablybots
@@ -238,6 +236,7 @@ subpopulation
 subpopulations
 subspaces
 summarization
+supremum
 swappable
 TabICL
 TCAV
@@ -253,13 +252,12 @@ UCB
 underdetermined
 underfits
 underrepresenting
-unmodeled
 unnormalized
 upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCBART
 VCM
 VCMs

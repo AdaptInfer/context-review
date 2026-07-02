@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-07-01'
+date-meta: '2026-07-02'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-01" />
-  <meta name="citation_publication_date" content="2026-07-01" />
-  <meta property="article:published_time" content="2026-07-01" />
-  <meta name="dc.modified" content="2026-07-01T05:20:52+00:00" />
-  <meta property="article:modified_time" content="2026-07-01T05:20:52+00:00" />
+  <meta name="dc.date" content="2026-07-02" />
+  <meta name="citation_publication_date" content="2026-07-02" />
+  <meta property="article:published_time" content="2026-07-02" />
+  <meta name="dc.modified" content="2026-07-02T03:46:51+00:00" />
+  <meta property="article:modified_time" content="2026-07-02T03:46:51+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c0629516104f9e749147dce042e345519f64862d/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c0629516104f9e749147dce042e345519f64862d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c0629516104f9e749147dce042e345519f64862d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/c0629516104f9e749147dce042e345519f64862d/))
+([permalink](https://AdaptInfer.github.io/context-review/v/d976ae5e715ed29b9822fdc19587f683856df903/))
 was automatically generated
-from [AdaptInfer/context-review@c062951](https://github.com/AdaptInfer/context-review/tree/c0629516104f9e749147dce042e345519f64862d)
-on July 1, 2026.
+from [AdaptInfer/context-review@d976ae5](https://github.com/AdaptInfer/context-review/tree/d976ae5e715ed29b9822fdc19587f683856df903)
+on July 2, 2026.
 </em></small>
 
 
@@ -1275,7 +1275,21 @@ These considerations motivate a growing search for techniques that can make the 
 
 ## Evaluation and Design Principles for Context-Adaptive Inference
 
-The two preceding sections described how adaptation is built, explicitly through a structured $f(c)$ and implicitly through emergent computation in large models. Both paradigms raise the same three practical questions once a model is deployed: how cheaply it adapts, how stably it routes a context to the right behavior, and how well that behavior holds up when the context shifts. This section collects the design and evaluation principles that answer these questions. 
+The two preceding sections described how adaptation is built, explicitly through a structured $f(c)$ and implicitly through emergent computation in large models. Both paradigms raise the same three practical questions once a model is deployed: how cheaply it adapts, how stably it routes a context to the right behavior, and how well that behavior holds up when the context shifts. This section collects the design and evaluation principles that answer these questions. For each section we pair the design principle with a way to measure it, and formalize it as a metric.
+
+### Measuring Context-Conditional Performance
+
+Every metric below builds on a single quantity: performance conditioned on context. Let $\mathcal{C}$ denote the context space and $\mathcal{D}_{\mathrm{test}}$ a test distribution over $(x, y, c)$. For a predictor $\hat{f}$, define the context-conditional risk as
+
+$$
+\mathcal{R}(\hat{f}\mid c)
+= \mathbb{E}\!\left[\, \ell\big(\hat{f}(x,c), y\big) \,\middle|\, c \,\right],
+\qquad
+\mathcal{R}(\hat{f})
+= \mathbb{E}_{c\sim \mathcal{D}_{\mathrm{test}}}\!\left[\, \mathcal{R}(\hat{f}\mid c) \,\right].
+$$
+
+A single aggregate risk hides exactly the heterogeneity these models exist to capture, so a context-stratified evaluation reports $\mathcal{R}(\hat{f}\mid c)$ across predefined bins or via a smoothed estimate $\int \mathcal{R}(\hat{f}\mid c)\,\mathrm{d}\Pi(c)$ for a reference measure $\Pi$ that weights regions of the context space. Evaluations for adaptation efficiency, routing stability, and context-specific robustness build on this conditional risk.
 
 ### Adaptation Efficiency
 
@@ -1283,21 +1297,65 @@ The efficiency of a context-adaptive method hinges on design choices that trade 
 
 One central principle is the use of sparsity assumptions to limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of parameters to be zero simultaneously [@doi:10.1111/j.1467-9868.2005.00532.x], hierarchical regularization that applies different strengths of shrinkage to varying levels of context specificity [@doi:10.1017/CBO9780511790942], and adaptive thresholding that adjusts sparsity levels in accordance with context complexity.
 
-Efficiency can also be enhanced through computational strategies that allocate resources adaptively. Early stopping terminates optimization for contexts where convergence occurs rapidly [@doi:10.48550/arXiv.1606.04838], while context-dependent sampling employs different sampling schemes across contexts [@doi:10.48550/arXiv.1809.09582]. Caching and warm-starting further accelerate optimization by reusing solutions from similar contexts, which is particularly effective when contexts vary smoothly [@doi:10.1561/2200000016].
+Efficiency can also be enhanced through computational strategies that allocate resources adaptively. Early stopping terminates optimization for contexts where convergence occurs rapidly [@doi:10.48550/arXiv.1606.04838], while context-dependent sampling employs different sampling schemes across contexts [@doi:10.48550/arXiv.1809.09582]. Caching and warm-starting further accelerate optimization by reusing solutions from similar contexts, which is particularly effective when contexts vary smoothly [@doi:10.1561/2200000016]. Related context-dependent computation appears in adaptive batching, per-context learning rates, and multi-fidelity pipelines that allocate compute and precision by context complexity.
 
-A further consideration is the balance between efficiency and interpretability. Linear context functions are highly interpretable but may require many parameters, while explicit context encodings improve transparency at the potential cost of higher computational overhead, and local context modeling provides fine-grained interpretability but can be less scalable. These trade-offs should be weighed against application-specific requirements. Advanced adaptive optimizers such as Adam can efficiently train complex, nonlinear models, but the resulting systems may be less interpretable than simpler alternatives [@doi:10.48550/arXiv.1412.6980]. In practice, context-dependent computation of this kind appears in adaptive batching, per-context learning rates, and multi-fidelity optimization pipelines that adjust compute and precision according to context complexity.
+These efficiency choices also interact with interpretability: sparse, linear context maps stay auditable, while amortized encoders trade transparency for scale, a trade-off we return to in the interpretability section.
+
+To make these gains measurable, let $S_k(c)=\{(x_j, y_j, c)\}_{j=1}^k$ denote $k$ examples available within context $c$, and define the adaptation efficiency as
+
+$$
+\mathrm{AE}_k(c)
+= \mathcal{R}(\hat{f}_0 \mid c)
+- \mathcal{R}(\hat{f}_{S_k} \mid c),
+\qquad
+\mathrm{AE}_k
+= \mathbb{E}_{c}\!\left[\, \mathrm{AE}_k(c) \,\right],
+$$
+
+where $\hat{f}_0$ is the non-adapted baseline and $\hat{f}_{S_k}$ the adapted predictor; the curve $k \mapsto \mathrm{AE}_k$ summarizes few-shot adaptation gains across context sizes. A closely related quantity measures how much of this efficiency carries between contexts. For a shared representation $\phi$ transferred from source to target contexts $\mathcal{C}_{\mathrm{src}} \to \mathcal{C}_{\mathrm{tgt}}$, the transfer gain is
+
+$$
+\mathrm{TG}(\phi)
+= \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\mathrm{scratch}}\big)
+- \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\phi}\big),
+$$
+
+the risk reduction from transferring $\phi$ rather than training from scratch, so that positive values indicate useful transfer, matching the sign convention of $\mathrm{AE}_k$. This is the same efficiency argument that motivates the amortized context encoders of the previous sections.
 
 ### Routing Stability
 
-Both paradigms decide, for a given context, which parameters or which experts govern the prediction. Explicit models make this decision overtly, through the partition splits and hierarchical routing of the discrete rung, where a boundary in context space sends a sample to one local model rather than another. Implicit models make the same decision internally, through the gating of a mixture of experts or the attention weights of a transformer. In either case the decision is a function of context, and its stability is a property worth measuring: small perturbations of the context should not cause erratic changes in which behavior is selected, or predictions become unpredictable near routing boundaries.
+Both paradigms decide, for a given context, which parameters or which experts govern the prediction. Explicit models make this decision overtly, through the partitions or context encoders that map context to model parameters. Implicit models make the same decision internally, through the gating of a mixture of experts or the attention weights of a transformer. In either case the decision is a function of context, and its stability is a property worth measuring: small perturbations of the context should not cause erratic changes in which behavior is selected, or predictions become unpredictable near routing boundaries.
 
-Instability is easiest to see at the boundaries. A partition model can flip a sample between adjacent leaves under a negligible change in a splitting variable, and an in-context learner can change its answer under a reordering or reformatting of the same prompt examples, a sensitivity documented for in-context learning where the distribution and arrangement of examples can matter more than their content [@doi:10.48550/arXiv.2202.12837]. Reporting routing stability therefore means probing the model with controlled perturbations of the context that should be behavior-preserving, such as reordering exchangeable examples, jittering a continuous context near a learned split, or relabeling an equivalent measurement policy, and measuring how much the selected behavior and the resulting prediction move. Smoothly routed models degrade gracefully across these perturbations; sharply partitioned or brittle ones do not, and the difference is a design choice as much as a diagnostic.
+Instability is easiest to see at the boundaries. A partition model can flip a sample between adjacent leaves under a negligible change in a splitting variable, and an in-context learner can change its answer under a reordering or reformatting of the same prompt examples, a sensitivity documented for in-context learning where the distribution and arrangement of examples can matter more than their content [@doi:10.48550/arXiv.2202.12837]. Reporting routing stability therefore means probing the model with perturbations that should be behavior-preserving, such as reordering exchangeable examples, jittering a continuous context near a learned split, or relabeling an equivalent measurement policy, and measuring how much the selected behavior and the resulting prediction move. Smoothly routed models degrade gracefully across these perturbations; sharply partitioned or brittle ones do not, and the difference is a design choice as much as a diagnostic.
+
+This admits a single measure across both discrete and continuous perturbations. Let $\rho(c)$ denote the routing decision the model exposes, whether gate weights, a leaf assignment, or the adapted parameters $\theta(c)$, and let $\Pi_c$ be a family of behavior-preserving perturbations of context $c$. The routing stability at $c$ is the expected movement of that decision under perturbation,
+
+$$
+\mathrm{RSt}(c)
+= \mathbb{E}_{\pi \sim \Pi_c}\,
+d\big(\rho(c),\, \rho(\pi(c))\big),
+$$
+
+with a supremum over $\Pi_c$ giving the worst-case variant. Discrete invariances such as reordering exchangeable examples enter through $\Pi_c$ directly; for continuous perturbations, normalizing by the context displacement $D(c, \pi(c))$ recovers a local Lipschitz constant of the routing map, which is the smoothness reading of stability for continuous contexts.
 
 ### Context-Specific Robustness
 
-The final axis asks whether adaptation still helps when the context distribution at test time differs from training. For explicit models, the sharpest version of this question arises when context is the pattern of observed measurements, because the deployment environment routinely presents measurement policies that were rare or absent during training. Evaluation of missingness-as-context models should report mask-stratified metrics, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with mask-shift stress tests, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess imputation realism by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct ignorability sensitivity analyses, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @doi:10.48550/arXiv.2301.05043]. Finally, include ablations that remove mask or indicator inputs, and, for trees, disable default-direction routing, to confirm that gains derive from modeling the mask signal rather than from artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: GRU-D [@doi:10.48550/arXiv.1606.01865] and BRITS [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while GAIN [@doi:10.48550/arXiv.1806.02920] and VAEAC [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, XGBoost supports sparsity-aware default-direction splits, making it straightforward to treat missing values as context without preprocessing [@doi:10.1145/2939672.2939785].
+The final major evaluation type asks whether adaptation still helps when the context distribution at test time differs from training. Context shift takes many forms, including new subpopulations, drifting covariates, and unseen measurement policies. For explicit models it is easiest to make concrete when context is the pattern of observed measurements, since the deployment environment routinely presents measurement policies that were rare or absent during training; we use missingness-as-context as the running example. Evaluation of missingness-as-context models should report mask-stratified metrics, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with mask-shift stress tests, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess imputation realism by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct ignorability sensitivity analyses, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @doi:10.48550/arXiv.2301.05043]. Finally, include ablations that remove mask or indicator inputs, and, for trees, disable default-direction routing, to confirm that gains derive from modeling the mask signal rather than from artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: GRU-D [@doi:10.48550/arXiv.1606.01865] and BRITS [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while GAIN [@doi:10.48550/arXiv.1806.02920] and VAEAC [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, XGBoost supports sparsity-aware default-direction splits, making it straightforward to treat missing values as context without preprocessing [@doi:10.1145/2939672.2939785].
 
-Implicit models face the same issue in a different form. In-context learning adapts within a single forward pass, but that adaptation is opaque and can be brittle: performance is sensitive to small changes in the prompt, and reliability under distribution shift is hard to guarantee or to audit. Recent surveys frame the open questions as developing a more complete theoretical account of when in-context learning fails, improving its reliability, and establishing methods for controlling its behavior in high-stakes applications [@doi:10.48550/arXiv.2301.00234]. The evaluation logic carries over from the explicit case: stratify performance by the kind of context, stress-test under context shift, and ablate the adaptive signal to confirm that the model is using context as intended rather than exploiting an artifact. Read this way, the mask-shift stress test for an explicit model and the prompt-perturbation test for an in-context learner are the same experiment applied to two realizations of $f(c)$.
+Implicit models face the same issue in a different form. In-context learning adapts within a single forward pass, but that adaptation is opaque and can be brittle: performance is sensitive to small changes in the prompt, and reliability under distribution shift is hard to guarantee or to audit. Recent surveys frame the open questions as developing a more complete theoretical account of when in-context learning fails, improving its reliability, and establishing methods for controlling its behavior in high-stakes applications [@doi:10.48550/arXiv.2301.00234]. The evaluation logic carries over from the explicit case: stratify performance by the kind of context, stress-test under context shift, and ablate the adaptive signal to confirm that the model is using context as intended rather than exploiting an artifact. From this perspective, the mask-shift stress test for an explicit model and the prompt-perturbation test for an in-context learner are the same experiment applied to two realizations of $f(c)$.
+
+The degradation these tests reveal can be summarized in a single score. Let $Q$ denote a family of admissible context shifts, for example $f$-divergence or Wasserstein balls over context marginals; the robustness score
+
+$$
+\mathrm{RS}(\hat{f}; Q)
+= \sup_{\widetilde{\mathcal{D}}\in Q}
+\left[
+\mathcal{R}_{\widetilde{\mathcal{D}}}(\hat{f})
+- \mathcal{R}_{\mathcal{D}_{\mathrm{test}}}(\hat{f})
+\right]
+$$
+
+reports the worst-case excess risk over that family, with higher values indicating greater sensitivity to contextual change.
 
 
 ## Toward Explicit Modeling of Implicit Adaptivity: Local Models, Surrogates and Post Hoc Approximations
@@ -1491,9 +1549,9 @@ Collectively, these approaches demonstrate a continuum from fully supervised env
 
 
 
-## Applications, Case Studies, Evaluation Metrics, and Tools
+## Applications, Case Studies, and Tools
 
-This section surveys how context-adaptive methods manifest across domains, how their performance is assessed, and what tools enable them in practice.
+This section surveys how context-adaptive methods manifest across domains and what tools enable them in practice.
 
 ### Implementation Across Sectors
 
@@ -1511,97 +1569,13 @@ In healthcare applications, context-aware efficiency enables adaptive imaging pr
 
 Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing based on volatility regimes and transaction costs, as studied in regime-switching portfolio models [@doi:10.1093/rfs/15.4.1137].
 
-Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@doi:10.1109/TR.2016.2570568]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across different product categories and market conditions.
+Industrial applications benefit from context-aware efficiency through predictive maintenance systems that adapt maintenance schedules based on equipment context including age, usage patterns, and environmental conditions [@doi:10.1109/TR.2016.2570568]; recent surveys of predictive maintenance in Industry 4.0 identify architectures that integrate sensor data, remaining-useful-life models, and context-aware scheduling policies [@doi:10.1016/j.cie.2020.106889; @doi:10.1109/WETICE57085.2023.10477842]. Quality control implements context-dependent sampling strategies that focus computational resources on high-risk production batches, and inventory management uses context-aware forecasting to optimize stock levels across product categories and market conditions, outperforming traditional forecasts in retail settings [@doi:10.1080/13675567.2025.2566806].
 
 A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
-
-### Formal Metrics for Evaluating Context-Aware Performance
-
-Building on the theoretical framework introduced in earlier sections, we now formalize the evaluation criteria used to quantify context-adaptive behavior.  
-These metrics capture predictive accuracy, adaptation efficiency, transferability, and robustness under contextual variation.
-
-Let $\mathcal{C}$ denote the context space and $\mathcal{D}_{\mathrm{test}}$ a test distribution over $(x, y, c)$.  
-For a predictor $\hat{f}$, define the context-conditional risk as
-
-$$
-\mathcal{R}(\hat{f}\mid c)
-= \mathbb{E}\!\left[\, \ell\big(\hat{f}(x,c), y\big) \,\middle|\, c \,\right],
-\qquad
-\mathcal{R}(\hat{f})
-= \mathbb{E}_{c\sim \mathcal{D}_{\mathrm{test}}}\!\left[\, \mathcal{R}(\hat{f}\mid c) \,\right].
-$$
-
-A context-stratified evaluation reports $\mathcal{R}(\hat{f}\mid c)$ across predefined bins or via a smoothed estimate  
-$\int \mathcal{R}(\hat{f}\mid c)\,\mathrm{d}\Pi(c)$ for a reference measure $\Pi$ that weights regions of the context space.
-
-#### Adaptation Efficiency
-
-To evaluate how rapidly a model benefits from in-context examples,  
-let $S_k(c)=\{(x_j, y_j, c)\}_{j=1}^k$ denote $k$ examples available within context $c$.  
-Define the adaptation efficiency as
-
-$$
-\mathrm{AE}_k(c)
-= \mathcal{R}(\hat{f}_0 \mid c)
-- \mathcal{R}(\hat{f}_{S_k} \mid c),
-\qquad
-\mathrm{AE}_k
-= \mathbb{E}_{c}\!\left[\, \mathrm{AE}_k(c) \,\right],
-$$
-
-where $\hat{f}_0$ is the non-adapted baseline and $\hat{f}_{S_k}$ the adapted predictor.  
-The function $k \mapsto \mathrm{AE}_k$ summarizes few-shot adaptation gains across different context sizes.
-
-#### Transfer Performance
-
-Transfer across source and target contexts, $\mathcal{C}_{\mathrm{src}} \to \mathcal{C}_{\mathrm{tgt}}$,  
-with shared representation $\phi$, can be measured by
-
-$$
-\mathrm{TP}(\phi)
-= \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\phi}\big)
-- \mathcal{R}_{\mathcal{C}_{\mathrm{tgt}}}\!\big(\hat{f}_{\mathrm{scratch}}\big),
-$$
-
-quantifying performance retained when transferring $\phi$ from source to target contexts compared with training from scratch.
-
-#### Robustness to Context Shift
-
-To assess stability under distributional perturbations,  
-let $Q$ denote a family of admissible context shifts (e.g., $f$-divergence or Wasserstein balls over context marginals).  
-Then the robustness score is defined as
-
-$$
-\mathrm{RS}(\hat{f}; Q)
-= \sup_{\widetilde{\mathcal{D}}\in Q}
-\left[
-\mathcal{R}_{\widetilde{\mathcal{D}}}(\hat{f})
-- \mathcal{R}_{\mathcal{D}_{\mathrm{test}}}(\hat{f})
-\right],
-$$
-
-where higher values indicate greater sensitivity to contextual changes.
-
-These metrics provide a unified quantitative view of context-aware performance.  
-They complement the theoretical efficiency results developed in Section 4  
-and serve as practical diagnostics for evaluating real-world adaptivity across diverse applications.
-
-### Context-Aware Efficiency in Practice
-
-The principles of context-aware efficiency find practical applications across diverse domains, demonstrating how computational and statistical efficiency can be achieved through intelligent context utilization.
-
-In healthcare applications, context-aware efficiency enables adaptive imaging protocols that adjust scan parameters based on patient context such as age, symptoms, and medical history, reducing unnecessary radiation exposure. Personalized screening schedules optimize screening frequency based on individual risk factors and previous results, while resource allocation systems efficiently distribute limited healthcare resources based on patient acuity and context.
-
-Financial services leverage context-aware efficiency principles in risk assessment by adapting risk models based on market conditions, economic indicators, and individual borrower characteristics. Fraud detection systems use context-dependent thresholds and sampling strategies to balance detection accuracy with computational cost, while portfolio optimization dynamically adjusts rebalancing frequency based on market volatility and transaction costs [@doi:10.1109/TR.2016.2570568].
-
-Industrial applications derive clear benefits from context-aware efficiency. In predictive maintenance, systems adapt maintenance schedules using equipment context such as age, usage history, and environmental conditions. For example, recent surveys of predictive maintenance in Industry 4.0 identify architectures that integrate sensor data, remaining-useful-life models, and context-aware scheduling policies [@doi:10.1016/j.cie.2020.106889; @doi:10.1109/WETICE57085.2023.10477842]. In quality control, context-dependent sampling directs inspection efforts to high-risk units, reducing waste and computational cost. Inventory management likewise benefits from context-aware forecasting models that incorporate demand volatility, seasonality, and external signals; recent work shows that such approaches outperform traditional forecasts in retail settings [@doi:10.1080/13675567.2025.2566806].
-
-A notable example of context-aware efficiency is adaptive clinical trial design, where trial parameters are dynamically adjusted based on accumulating evidence while maintaining statistical validity. Population enrichment refines patient selection criteria based on early trial results, and dose finding optimizes treatment dosages based on individual patient responses and safety profiles. These applications demonstrate how context-aware efficiency principles can lead to substantial improvements in both computational performance and real-world outcomes.
-
 
 ### Contextualized Network Inference
 
-One domain where context-adaptive models have shown particular promise is in network inference for genomics. Traditional approaches assume that all samples can be pooled into a single network, or that cohorts can be partitioned into homogeneous groups. These assumptions are often unrealistic: cancer, for example, exhibits both cross-patient heterogeneity and within-patient shifts in gene regulation. 
+One domain where context-adaptive models have shown particular promise is in network inference for genomics. Traditional approaches assume that all samples can be pooled into a single network, or that cohorts can be partitioned into homogeneous groups. These assumptions are often unrealistic: cancer, for example, exhibits both cross-patient heterogeneity and within-patient shifts in gene regulation.
 
 Contextualized network models address this challenge by learning archetypal networks and then representing each sample as a mixture of these archetypes, weighted by its observed context. This formulation allows researchers to move beyond average-case networks and uncover mechanisms of disease, heterogeneity across patients, driver mutations, and structural hazards.
 
@@ -1609,8 +1583,7 @@ Such contextualized networks have been applied in TCGA cancer genomics to identi
 
 ![Contextualized networks enable inference of archetypal and sample-specific mixtures, unlocking new biological insights such as mechanisms of disease, disease heterogeneity, structural hazards, and driver mutations.](images/contextualized_networks.png){#fig:contextualized-networks width="90%"}
 
-
-### Performance Evaluation
+### Empirical Evaluation in Practice
 
 Evaluating context-adaptive models requires careful consideration of predictive accuracy, robustness to variability, and scalability, with the emphasis varying by domain. Key aspects of performance evaluation include the choice of metrics, the handling of uncertainty, and assessment under stress or rare-event conditions.
 
@@ -1618,7 +1591,7 @@ In healthcare, evaluation prioritizes patient-specific predictive accuracy and c
 
 In finance and macro forecasting, performance evaluation emphasizes predictive accuracy under volatile conditions and resilience to structural breaks. Metrics such as root mean squared forecast error (RMSFE), log-likelihood, and stress-test performance are commonly used to assess how well models handle crises or abrupt shifts in data [@arXiv:2409.08354; @arXiv:2508.10055]. Probabilistic metrics, including posterior predictive checks and uncertainty bounds, provide additional insight into the reliability of forecasts, while chaos-informed diagnostics can highlight vulnerabilities to extreme events [@arXiv:2406.12274].
 
-Across domains, consistent patterns emerge. Context-adaptive models outperform static baselines when variability is structured and partially predictable, but performance can degrade in data-sparse regimes or under unmodeled abrupt changes [@arXiv:2303.02781v1]. Evaluations therefore combine error-based measures, probabilistic calibration, and robustness tests to give a holistic view of model performance. The focus should be on these evaluation criteria, rather than the models themselves, to understand where and why context-adaptive approaches provide real advantages. Hence, evaluation protocols must jointly assess accuracy, calibration, and transferability under context perturbations.
+Across domains, consistent patterns emerge. Context-adaptive models outperform static baselines when variability is structured and partially predictable, but require sufficient examples of the desired adaptation behavior across contexts. Even if the dataset is large, if there are insufficient contexts to show context-specific adaptation, the model will fail to generalize across contexts. Thus, learning context-adaptive models requires special attention not only to the number of samples, but also to the number of distinct contexts and the distribution of contexts that samples are drawn from [@doi:10.1073/pnas.2411930122].
 
 ### Survey of Tools
 
