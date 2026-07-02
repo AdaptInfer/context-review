@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum of Context-Awareness</title>
+    <style>
+        body {
+            font-family: 'Latin Modern Roman', 'Computer Modern', 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 1400px;
+        }
+        .spectrum {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .model-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .formula {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+            text-align: center;
+            height: 30px;
+        }
+        .plot-container {
+            width: 100%;
+            aspect-ratio: 1;
+            border: 2px solid #d0d0d0;
+            border-radius: 12px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        .description {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spectrum">
+            <div class="model-box">
+                <div class="title">Global</div>
+                <div class="formula">θ<sub>i</sub> = θ</div>
+                <div class="plot-container">
+                    <canvas id="global"></canvas>
+                </div>
+                <div class="description">Single shared<br>parameter for all</div>
+            </div>
+            
+            <div class="model-box">
+                <div class="title">Grouped</div>
+                <div class="formula">θ<sub>i</sub> = θ<sub>c</sub></div>
+                <div class="plot-container">
+                    <canvas id="grouped"></canvas>
+                </div>
+                <div class="description">Discrete clusters,<br>finite partitions</div>
+            </div>
+            
+            <div class="model-box">
+                <div class="title">Smooth</div>
+                <div class="formula">θ<sub>i</sub> = <i>f</i>(<i>c<sub>i</sub></i>)</div>
+                <div class="plot-container">
+                    <canvas id="smooth"></canvas>
+                </div>
+                <div class="description">Continuous mapping,<br>regularized structure</div>
+            </div>
+            
+            <div class="model-box">
+                <div class="title">Latent</div>
+                <div class="formula">θ<sub>i</sub> ~ <i>P</i>(θ | <i>c<sub>i</sub></i>)</div>
+                <div class="plot-container">
+                    <canvas id="latent"></canvas>
+                </div>
+                <div class="description">Learned implicit<br>representations</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            red: '#e74c3c',
+            blue: '#3498db',
+            green: '#2ecc71'
+        };
+
+        // 3D projection utilities
+        function project3D(x, y, z, width, height) {
+            // Normalize coordinates to [-0.5, 0.5] for centering
+            const nx = x - 0.5;
+            const nz = z - 0.5;
+            const ny = y - 0.5;
+            
+            // Scale to fit canvas
+            const scale = Math.min(width, height) * 0.5;
+            const offsetX = width / 2;
+            const offsetY = height / 2;
+            
+            // Isometric-like projection - centered vertically
+            const projX = offsetX + (nx - nz * 0.5) * scale;
+            const projY = offsetY - (ny * scale + nz * scale * 0.5);
+            
+            return { x: projX, y: projY, depth: z - y };
+        }
+
+        function drawAxes3D(ctx, width, height) {
+            const origin = project3D(0, 0, 0, width, height);
+            const xEnd = project3D(1.2, 0, 0, width, height);
+            const yEnd = project3D(0, 1.2, 0, width, height);
+            const zEnd = project3D(0, 0, 1.2, width, height);
+            
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 2;
+            
+            // X axis
+            ctx.beginPath();
+            ctx.moveTo(origin.x, origin.y);
+            ctx.lineTo(xEnd.x, xEnd.y);
+            ctx.stroke();
+            
+            // Y axis
+            ctx.beginPath();
+            ctx.moveTo(origin.x, origin.y);
+            ctx.lineTo(yEnd.x, yEnd.y);
+            ctx.stroke();
+            
+            // Z axis
+            ctx.beginPath();
+            ctx.moveTo(origin.x, origin.y);
+            ctx.lineTo(zEnd.x, zEnd.y);
+            ctx.stroke();
+            
+            // Arrows
+            ctx.fillStyle = '#999';
+            drawArrow(ctx, xEnd.x, xEnd.y, Math.atan2(xEnd.y - origin.y, xEnd.x - origin.x));
+            drawArrow(ctx, yEnd.x, yEnd.y, Math.atan2(yEnd.y - origin.y, yEnd.x - origin.x));
+            drawArrow(ctx, zEnd.x, zEnd.y, Math.atan2(zEnd.y - origin.y, zEnd.x - origin.x));
+        }
+
+        function drawArrow(ctx, x, y, angle) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(-10, -5);
+            ctx.lineTo(-10, 5);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function drawPoint3D(ctx, x, y, z, color, width, height, size = 6) {
+            const proj = project3D(x, y, z, width, height);
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(proj.x, proj.y, size, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Add subtle shadow
+            ctx.fillStyle = 'rgba(0,0,0,0.1)';
+            ctx.beginPath();
+            ctx.arc(proj.x + 2, proj.y + 2, size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawGlobal() {
+            const canvas = document.getElementById('global');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = canvas.offsetWidth * 2;
+            const height = canvas.height = canvas.offsetHeight * 2;
+
+            ctx.clearRect(0, 0, width, height);
+            drawAxes3D(ctx, width, height);
+
+            // Draw a flat plane at y = 0.45
+            const planeY = 0.45;
+            ctx.fillStyle = 'rgba(41, 128, 185, 0.3)';
+            ctx.strokeStyle = '#2980b9';
+            ctx.lineWidth = 2;
+            
+            const corners = [
+                project3D(0, planeY, 0, width, height),
+                project3D(1, planeY, 0, width, height),
+                project3D(1, planeY, 1, width, height),
+                project3D(0, planeY, 1, width, height)
+            ];
+            
+            ctx.beginPath();
+            ctx.moveTo(corners[0].x, corners[0].y);
+            corners.forEach(c => ctx.lineTo(c.x, c.y));
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // Data points
+            const points = [
+                {x: 0.15, y: 0.25, z: 0.2, color: colors.red},
+                {x: 0.2, y: 0.3, z: 0.3, color: colors.red},
+                {x: 0.25, y: 0.2, z: 0.25, color: colors.red},
+                {x: 0.45, y: 0.5, z: 0.5, color: colors.blue},
+                {x: 0.5, y: 0.45, z: 0.55, color: colors.blue},
+                {x: 0.55, y: 0.52, z: 0.48, color: colors.blue},
+                {x: 0.75, y: 0.75, z: 0.7, color: colors.green},
+                {x: 0.8, y: 0.7, z: 0.75, color: colors.green},
+                {x: 0.85, y: 0.78, z: 0.8, color: colors.green}
+            ];
+
+            points.forEach(p => drawPoint3D(ctx, p.x, p.y, p.z, p.color, width, height));
+        }
+
+        function drawGrouped() {
+            const canvas = document.getElementById('grouped');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = canvas.offsetWidth * 2;
+            const height = canvas.height = canvas.offsetHeight * 2;
+
+            ctx.clearRect(0, 0, width, height);
+            drawAxes3D(ctx, width, height);
+
+            // Three separate planes for three groups
+            const planes = [
+                { xMin: 0, xMax: 0.35, y: 0.25, color: 'rgba(231, 76, 60, 0.25)', stroke: colors.red },
+                { xMin: 0.35, xMax: 0.65, y: 0.48, color: 'rgba(52, 152, 219, 0.25)', stroke: colors.blue },
+                { xMin: 0.65, xMax: 1, y: 0.74, color: 'rgba(46, 204, 113, 0.25)', stroke: colors.green }
+            ];
+
+            planes.forEach(plane => {
+                ctx.fillStyle = plane.color;
+                ctx.strokeStyle = plane.stroke;
+                ctx.lineWidth = 2;
+                
+                const corners = [
+                    project3D(plane.xMin, plane.y, 0, width, height),
+                    project3D(plane.xMax, plane.y, 0, width, height),
+                    project3D(plane.xMax, plane.y, 1, width, height),
+                    project3D(plane.xMin, plane.y, 1, width, height)
+                ];
+                
+                ctx.beginPath();
+                ctx.moveTo(corners[0].x, corners[0].y);
+                corners.forEach(c => ctx.lineTo(c.x, c.y));
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+            });
+
+            const points = [
+                {x: 0.15, y: 0.25, z: 0.2, color: colors.red},
+                {x: 0.2, y: 0.3, z: 0.3, color: colors.red},
+                {x: 0.25, y: 0.2, z: 0.25, color: colors.red},
+                {x: 0.45, y: 0.5, z: 0.5, color: colors.blue},
+                {x: 0.5, y: 0.45, z: 0.55, color: colors.blue},
+                {x: 0.55, y: 0.52, z: 0.48, color: colors.blue},
+                {x: 0.75, y: 0.75, z: 0.7, color: colors.green},
+                {x: 0.8, y: 0.7, z: 0.75, color: colors.green},
+                {x: 0.85, y: 0.78, z: 0.8, color: colors.green}
+            ];
+
+            points.forEach(p => drawPoint3D(ctx, p.x, p.y, p.z, p.color, width, height));
+        }
+
+        function drawSmooth() {
+            const canvas = document.getElementById('smooth');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = canvas.offsetWidth * 2;
+            const height = canvas.height = canvas.offsetHeight * 2;
+
+            ctx.clearRect(0, 0, width, height);
+            drawAxes3D(ctx, width, height);
+
+            // Draw smooth surface as single mesh
+            const resolution = 15;
+            ctx.fillStyle = 'rgba(41, 128, 185, 0.3)';
+            ctx.strokeStyle = '#2980b9';
+            ctx.lineWidth = 2;
+
+            // Collect all surface points
+            const surfacePoints = [];
+            for (let i = 0; i <= resolution; i++) {
+                const row = [];
+                for (let j = 0; j <= resolution; j++) {
+                    const x = i / resolution;
+                    const z = j / resolution;
+                    const y = 0.2 + 0.6 * (1 / (1 + Math.exp(-10 * (x - 0.5))));
+                    row.push(project3D(x, y, z, width, height));
+                }
+                surfacePoints.push(row);
+            }
+
+            // Draw filled surface
+            for (let i = 0; i < resolution; i++) {
+                for (let j = 0; j < resolution; j++) {
+                    ctx.fillStyle = 'rgba(41, 128, 185, 0.3)';
+                    ctx.beginPath();
+                    ctx.moveTo(surfacePoints[i][j].x, surfacePoints[i][j].y);
+                    ctx.lineTo(surfacePoints[i+1][j].x, surfacePoints[i+1][j].y);
+                    ctx.lineTo(surfacePoints[i+1][j+1].x, surfacePoints[i+1][j+1].y);
+                    ctx.lineTo(surfacePoints[i][j+1].x, surfacePoints[i][j+1].y);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+
+            // Draw outline only
+            ctx.strokeStyle = '#2980b9';
+            ctx.lineWidth = 2;
+            
+            // Front edge
+            ctx.beginPath();
+            for (let i = 0; i <= resolution; i++) {
+                const p = surfacePoints[i][0];
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            // Back edge
+            ctx.beginPath();
+            for (let i = 0; i <= resolution; i++) {
+                const p = surfacePoints[i][resolution];
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            // Left edge
+            ctx.beginPath();
+            for (let j = 0; j <= resolution; j++) {
+                const p = surfacePoints[0][j];
+                if (j === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            // Right edge
+            ctx.beginPath();
+            for (let j = 0; j <= resolution; j++) {
+                const p = surfacePoints[resolution][j];
+                if (j === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+
+            const points = [
+                {x: 0.15, y: 0.25, z: 0.2, color: colors.red},
+                {x: 0.2, y: 0.3, z: 0.3, color: colors.red},
+                {x: 0.25, y: 0.2, z: 0.25, color: colors.red},
+                {x: 0.45, y: 0.5, z: 0.5, color: colors.blue},
+                {x: 0.5, y: 0.45, z: 0.55, color: colors.blue},
+                {x: 0.55, y: 0.52, z: 0.48, color: colors.blue},
+                {x: 0.75, y: 0.75, z: 0.7, color: colors.green},
+                {x: 0.8, y: 0.7, z: 0.75, color: colors.green},
+                {x: 0.85, y: 0.78, z: 0.8, color: colors.green}
+            ];
+
+            points.forEach(p => drawPoint3D(ctx, p.x, p.y, p.z, p.color, width, height));
+        }
+
+        function drawLatent() {
+            const canvas = document.getElementById('latent');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = canvas.offsetWidth * 2;
+            const height = canvas.height = canvas.offsetHeight * 2;
+
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw 1-2 subtle faded axes to suggest high-dimensional space
+            ctx.save();
+            ctx.globalAlpha = 0.25;
+            ctx.strokeStyle = '#bbb';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([5, 5]);
+            
+            const origin = project3D(0, 0, 0, width, height);
+            const extra1 = project3D(-0.25, 0.25, 0.25, width, height);
+            ctx.beginPath();
+            ctx.moveTo(origin.x, origin.y);
+            ctx.lineTo(extra1.x, extra1.y);
+            ctx.stroke();
+            
+            ctx.setLineDash([]);
+            ctx.restore();
+            
+            drawAxes3D(ctx, width, height);
+
+            // Draw ground plane for shadow
+            ctx.fillStyle = 'rgba(200, 200, 200, 0.12)';
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 1;
+            
+            const groundY = 0.05;
+            const groundCorners = [
+                project3D(0, groundY, 0, width, height),
+                project3D(1, groundY, 0, width, height),
+                project3D(1, groundY, 1, width, height),
+                project3D(0, groundY, 1, width, height)
+            ];
+            
+            ctx.beginPath();
+            ctx.moveTo(groundCorners[0].x, groundCorners[0].y);
+            groundCorners.forEach(c => ctx.lineTo(c.x, c.y));
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            const resolution = 15;
+            
+            // Draw shadow on ground
+            const shadowPoints = [];
+            for (let i = 0; i <= resolution; i++) {
+                const row = [];
+                for (let j = 0; j <= resolution; j++) {
+                    const x = i / resolution;
+                    const z = j / resolution;
+                    row.push(project3D(x, groundY, z, width, height));
+                }
+                shadowPoints.push(row);
+            }
+
+            for (let i = 0; i < resolution; i++) {
+                for (let j = 0; j < resolution; j++) {
+                    ctx.fillStyle = 'rgba(41, 128, 185, 0.15)';
+                    ctx.beginPath();
+                    ctx.moveTo(shadowPoints[i][j].x, shadowPoints[i][j].y);
+                    ctx.lineTo(shadowPoints[i+1][j].x, shadowPoints[i+1][j].y);
+                    ctx.lineTo(shadowPoints[i+1][j+1].x, shadowPoints[i+1][j+1].y);
+                    ctx.lineTo(shadowPoints[i][j+1].x, shadowPoints[i][j+1].y);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+
+            // Draw 2 very faint uncertainty surfaces
+            for (let s = 0; s < 2; s++) {
+                const offset = (s === 0 ? -0.04 : 0.04);
+                const ghostPoints = [];
+                
+                for (let i = 0; i <= resolution; i++) {
+                    const row = [];
+                    for (let j = 0; j <= resolution; j++) {
+                        const x = i / resolution;
+                        const z = j / resolution;
+                        const y = 0.2 + 0.6 * (1 / (1 + Math.exp(-10 * (x - 0.5)))) + offset;
+                        row.push(project3D(x, y, z, width, height));
+                    }
+                    ghostPoints.push(row);
+                }
+
+                for (let i = 0; i < resolution; i++) {
+                    for (let j = 0; j < resolution; j++) {
+                        ctx.fillStyle = 'rgba(100, 140, 200, 0.08)';
+                        ctx.beginPath();
+                        ctx.moveTo(ghostPoints[i][j].x, ghostPoints[i][j].y);
+                        ctx.lineTo(ghostPoints[i+1][j].x, ghostPoints[i+1][j].y);
+                        ctx.lineTo(ghostPoints[i+1][j+1].x, ghostPoints[i+1][j+1].y);
+                        ctx.lineTo(ghostPoints[i][j+1].x, ghostPoints[i][j+1].y);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                }
+            }
+
+            // Main surface
+            const mainPoints = [];
+            for (let i = 0; i <= resolution; i++) {
+                const row = [];
+                for (let j = 0; j <= resolution; j++) {
+                    const x = i / resolution;
+                    const z = j / resolution;
+                    const y = 0.2 + 0.6 * (1 / (1 + Math.exp(-10 * (x - 0.5))));
+                    row.push(project3D(x, y, z, width, height));
+                }
+                mainPoints.push(row);
+            }
+
+            for (let i = 0; i < resolution; i++) {
+                for (let j = 0; j < resolution; j++) {
+                    ctx.fillStyle = 'rgba(41, 128, 185, 0.45)';
+                    ctx.beginPath();
+                    ctx.moveTo(mainPoints[i][j].x, mainPoints[i][j].y);
+                    ctx.lineTo(mainPoints[i+1][j].x, mainPoints[i+1][j].y);
+                    ctx.lineTo(mainPoints[i+1][j+1].x, mainPoints[i+1][j+1].y);
+                    ctx.lineTo(mainPoints[i][j+1].x, mainPoints[i][j+1].y);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+
+            // Outline
+            ctx.strokeStyle = '#2980b9';
+            ctx.lineWidth = 2;
+            
+            ctx.beginPath();
+            for (let i = 0; i <= resolution; i++) {
+                const p = mainPoints[i][0];
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let i = 0; i <= resolution; i++) {
+                const p = mainPoints[i][resolution];
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let j = 0; j <= resolution; j++) {
+                const p = mainPoints[0][j];
+                if (j === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let j = 0; j <= resolution; j++) {
+                const p = mainPoints[resolution][j];
+                if (j === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+
+            // A few projection lines
+            ctx.strokeStyle = 'rgba(100, 100, 100, 0.25)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            
+            [3, 7, 11].forEach(i => {
+                [3, 11].forEach(j => {
+                    const surfacePoint = mainPoints[i][j];
+                    const shadowPoint = shadowPoints[i][j];
+                    ctx.beginPath();
+                    ctx.moveTo(surfacePoint.x, surfacePoint.y);
+                    ctx.lineTo(shadowPoint.x, shadowPoint.y);
+                    ctx.stroke();
+                });
+            });
+            ctx.setLineDash([]);
+
+            const points = [
+                {x: 0.15, y: 0.25, z: 0.2, color: colors.red},
+                {x: 0.2, y: 0.3, z: 0.3, color: colors.red},
+                {x: 0.25, y: 0.2, z: 0.25, color: colors.red},
+                {x: 0.45, y: 0.5, z: 0.5, color: colors.blue},
+                {x: 0.5, y: 0.45, z: 0.55, color: colors.blue},
+                {x: 0.55, y: 0.52, z: 0.48, color: colors.blue},
+                {x: 0.75, y: 0.75, z: 0.7, color: colors.green},
+                {x: 0.8, y: 0.7, z: 0.75, color: colors.green},
+                {x: 0.85, y: 0.78, z: 0.8, color: colors.green}
+            ];
+
+            // Draw main points
+            points.forEach(p => drawPoint3D(ctx, p.x, p.y, p.z, p.color, width, height, 7));
+        }
+
+        drawGlobal();
+        drawGrouped();
+        drawSmooth();
+        drawLatent();
+
+        window.addEventListener('resize', () => {
+            drawGlobal();
+            drawGrouped();
+            drawSmooth();
+            drawLatent();
+        });
+    </script>
+</body>
+</html>
