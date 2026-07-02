@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-02" />
   <meta name="citation_publication_date" content="2026-07-02" />
   <meta property="article:published_time" content="2026-07-02" />
-  <meta name="dc.modified" content="2026-07-02T22:02:07+00:00" />
-  <meta property="article:modified_time" content="2026-07-02T22:02:07+00:00" />
+  <meta name="dc.modified" content="2026-07-02T22:28:45+00:00" />
+  <meta property="article:modified_time" content="2026-07-02T22:28:45+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/a24af925b43e80268a6aa3ecbaea044eac7b8dc3/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a24af925b43e80268a6aa3ecbaea044eac7b8dc3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/a24af925b43e80268a6aa3ecbaea044eac7b8dc3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/a24af925b43e80268a6aa3ecbaea044eac7b8dc3/))
+([permalink](https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/))
 was automatically generated
-from [AdaptInfer/context-review@a24af92](https://github.com/AdaptInfer/context-review/tree/a24af925b43e80268a6aa3ecbaea044eac7b8dc3)
+from [AdaptInfer/context-review@346e79e](https://github.com/AdaptInfer/context-review/tree/346e79e620844136f339381f82cde3c892db534d)
 on July 2, 2026.
 </em></small>
 
@@ -317,7 +317,7 @@ where $c_i$ captures the relevant covariates or environment for observation $i$.
 
 These provide new tools for understanding personalized and context-adaptive systems, but also present new modeling challenges. Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. 
 
-This problem regularly appears in disciplines that rely on observational data, including biology, medicine, finance, and the social sciences. As such, developments have come from many diverse research threads. The sample-specific view, where each sample carries its own parameters $\theta_i$, descends from mixed-effects and local-likelihood estimation [@doi:10.1080/01621459.1987.10478466]. Letting parameters vary across discrete groups defined by categorical side information was introduced with mixed-effects models [@Henderson1950Genetic]. Letting parameters vary smoothly as a function of an observed covariate $c_i$ was introduced with varying-coefficient models [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Extensions to the high-dimensional, structured settings were made in work on time-varying and varying-coefficient network estimation [@doi:10.1073/pnas.0901910106; @doi:10.1093/bioinformatics/btp192; @kolar2009sparsistent]. As adaptivity becomes more implicit (e.g., via neural networks or black-box inference), we also need new tools to recover, interpret, or constrain the underlying parameter variation.
+This problem regularly appears in disciplines that rely on observational data, including biology, medicine, finance, and the social sciences. As such, developments have come from many diverse research threads. The sample-specific view, where each sample carries its own parameters $\theta_i$, descends from mixed-effects and local-likelihood estimation [@doi:10.1080/01621459.1987.10478466]. Letting parameters vary across discrete groups defined by categorical side information was introduced with mixed-effects models [@Henderson1950Genetic]. Letting parameters vary smoothly as a function of an observed covariate $c_i$ was introduced with varying-coefficient models [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Extensions to the high-dimensional, structured settings were made in work on time-varying and varying-coefficient network estimation [@doi:10.1073/pnas.0901910106; @doi:10.1093/bioinformatics/btp192; @kolar2009sparsistent]. As adaptivity becomes more implicit (e.g., via neural networks or black-box inference), new tools will be required to recover, interpret, or constrain the underlying parameter variation.
 
 ### Problem Setup and Notation
 

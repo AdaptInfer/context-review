@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 ADWIN
 Agentic
@@ -41,7 +41,7 @@ convolutional
 counterfactuals
 Counterintuitively
 covariate
-covariates
+Covariates
 Dai
 DDM
 decodable
@@ -57,7 +57,7 @@ DRO’s
 EDDM
 EIIL
 ELBO
-Embeddings
+embeddings
 ensembling
 ericxing
 ERM
@@ -146,15 +146,15 @@ minimizer
 mis
 misattribution
 miscalibrated
-Missingness
+missingness
 misspecified
 MLP
 MNAR
-modularity
+Modularity
 modularized
 MoICE
 MSE
-mtl
+MTL
 multimodal
 Nelder
 Neyman
@@ -168,7 +168,7 @@ OGD
 OOD
 operationalized
 optimality
-overfitting
+Overfitting
 overflexible
 overparameterized
 parameterization
@@ -185,7 +185,7 @@ pointwise
 Poursabzi
 pre
 preprocessing
-pretrained
+Pretrained
 pretraining
 priori
 probablybots
