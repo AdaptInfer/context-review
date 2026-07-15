@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-15" />
   <meta name="citation_publication_date" content="2026-07-15" />
   <meta property="article:published_time" content="2026-07-15" />
-  <meta name="dc.modified" content="2026-07-15T06:16:53+00:00" />
-  <meta property="article:modified_time" content="2026-07-15T06:16:53+00:00" />
+  <meta name="dc.modified" content="2026-07-15T06:26:49+00:00" />
+  <meta property="article:modified_time" content="2026-07-15T06:26:49+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/))
+([permalink](https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/))
 was automatically generated
-from [AdaptInfer/context-review@1098a31](https://github.com/AdaptInfer/context-review/tree/1098a31560f767cb73b0a57ce3d56e85f0929319)
+from [AdaptInfer/context-review@c423711](https://github.com/AdaptInfer/context-review/tree/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1)
 on July 15, 2026.
 </em></small>
 
@@ -827,7 +827,7 @@ A canonical example is the mixture-of-experts framework, where a gating network 
 ### 4. Adaptivity implies selectivity
 Adaptation must not occur indiscriminately. Overreacting to noise leads to overfitting, defeating the purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence.
 
-Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2410.03306], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2204.02610]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation.
+Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2109.12746], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2204.02610]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation.
 
 ### 5. Adaptivity is bounded by data efficiency
 Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the availability of data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting to idiosyncratic patterns. This limitation transcends individual methods and reflects a general statistical truth.
@@ -1658,7 +1658,7 @@ Mechanistic studies further identify induction heads within transformer attentio
 #### Reliability, Calibration, and Context-Sensitive Evaluation
 As adaptive models become more flexible, ensuring calibration and reliability across shifting contexts becomes crucial. Deep neural networks, including LLMs, are often miscalibrated, producing overconfident probabilities misaligned with true accuracy [@doi:10.48550/arXiv.1706.04599].
 
-Future research will increasingly embed uncertainty quantification into adaptive pipelines through deep ensembles, Bayesian ensembling, or conformal prediction to produce valid confidence intervals [@doi:10.48550/arXiv.2012.07421]. Evaluation protocols must also stress robustness under distributional shifts, testing whether models can sustain performance and express uncertainty under novel or adversarial conditions [@doi:10.48550/arXiv.2211.09110].
+Future research will increasingly embed uncertainty quantification into adaptive pipelines through deep ensembles, Bayesian ensembling, or conformal prediction to produce valid confidence intervals [@doi:10.48550/arXiv.1612.01474; @doi:10.48550/arXiv.2107.07511]. Evaluation protocols must also stress robustness under distributional shifts, testing whether models can sustain performance and express uncertainty under novel or adversarial conditions [@doi:10.48550/arXiv.2211.09110; @doi:10.48550/arXiv.2012.07421].
 
 By embedding calibration and robustness within design, adaptive inference can evolve toward a more trustworthy, auditable, and context-aware standard.
 
