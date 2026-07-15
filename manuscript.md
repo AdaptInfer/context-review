@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-07-02'
+date-meta: '2026-07-15'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-02" />
-  <meta name="citation_publication_date" content="2026-07-02" />
-  <meta property="article:published_time" content="2026-07-02" />
-  <meta name="dc.modified" content="2026-07-02T22:28:45+00:00" />
-  <meta property="article:modified_time" content="2026-07-02T22:28:45+00:00" />
+  <meta name="dc.date" content="2026-07-15" />
+  <meta name="citation_publication_date" content="2026-07-15" />
+  <meta property="article:published_time" content="2026-07-15" />
+  <meta name="dc.modified" content="2026-07-15T06:16:53+00:00" />
+  <meta property="article:modified_time" content="2026-07-15T06:16:53+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/346e79e620844136f339381f82cde3c892db534d/))
+([permalink](https://AdaptInfer.github.io/context-review/v/1098a31560f767cb73b0a57ce3d56e85f0929319/))
 was automatically generated
-from [AdaptInfer/context-review@346e79e](https://github.com/AdaptInfer/context-review/tree/346e79e620844136f339381f82cde3c892db534d)
-on July 2, 2026.
+from [AdaptInfer/context-review@1098a31](https://github.com/AdaptInfer/context-review/tree/1098a31560f767cb73b0a57ce3d56e85f0929319)
+on July 15, 2026.
 </em></small>
 
 
@@ -550,7 +550,7 @@ When the parameters being partitioned define a network, the support itself can j
 
 ### Fine-tuned Models and Transfer Learning
 
-Another practical strategy for handling heterogeneity is fine-tuning. A global population model is first estimated, and then a smaller set of parameters is updated for particular subpopulations. This idea underlies transfer learning, where large pre-trained models are adapted to new tasks with limited additional training [@doi:10.48550/arXiv.2206.02058]. Fine-tuning balances the bias–variance tradeoff by borrowing statistical strength from large datasets while preserving flexibility for local adaptation. This notion was already recognized in early VCM literature as a form of semi-parametric estimation [@doi:10.1214/aos/1017939139].
+Another practical strategy for handling heterogeneity is fine-tuning. A global population model is first estimated, and then a smaller set of parameters is updated for particular subpopulations. This idea underlies transfer learning, where large pre-trained models are adapted to new tasks with limited additional training [@doi:10.1109/TKDE.2009.191]. Fine-tuning balances the bias–variance tradeoff by borrowing statistical strength from large datasets while preserving flexibility for local adaptation. This notion was already recognized in early VCM literature as a form of semi-parametric estimation [@doi:10.1214/aos/1017939139].
 
 ### Models for Explicit Subgroup Separation
 
@@ -567,7 +567,7 @@ Context-aware models can be organized along a spectrum of assumptions about the 
 
 ![A spectrum of context awareness in modeling, showing global, grouped, smooth, and latent models](images/spectrum_context.png){#fig:spectrum-context width="70%"}
 
-Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. For a discussion of how subpopulation shifts influence generalization, see [@arXiv:2106.04486].
+Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. 
 
 
 ### Independent and identically distributed samples
@@ -827,7 +827,7 @@ A canonical example is the mixture-of-experts framework, where a gating network 
 ### 4. Adaptivity implies selectivity
 Adaptation must not occur indiscriminately. Overreacting to noise leads to overfitting, defeating the purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence.
 
-Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2410.03306], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2310.04941]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation.
+Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2410.03306], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2204.02610]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation.
 
 ### 5. Adaptivity is bounded by data efficiency
 Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the availability of data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting to idiosyncratic patterns. This limitation transcends individual methods and reflects a general statistical truth.
@@ -876,7 +876,7 @@ The efficiency of context-adaptive methods hinges on several key design principl
 
 Context-aware efficiency often relies on sparsity assumptions that limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of context-dependent parameters to be zero simultaneously [@doi:10.1111/j.1467-9868.2005.00532.x], hierarchical regularization that applies different regularization strengths to different levels of context specificity [@doi:10.1111/j.2517-6161.1996.tb02080.x; @doi:10.1017/CBO9780511790942], and adaptive thresholding that dynamically adjusts sparsity levels based on context complexity.
 
-Efficient context-adaptive inference can be achieved through computational strategies that allocate resources based on context. Early stopping terminates optimization early for contexts where convergence is rapid [@doi:10.48550/arXiv.1606.04838], while context-dependent sampling uses different sampling strategies for different contexts [@doi:10.48550/arXiv.1809.09582]. Caching and warm-starting leverage solutions from similar contexts to accelerate optimization, particularly effective when contexts exhibit smooth variation [@doi:10.1561/2200000016].
+Efficient context-adaptive inference can be achieved through computational strategies that allocate resources based on context. Early stopping terminates optimization early for contexts where convergence is rapid [@doi:10.48550/arXiv.1606.04838]. Context-dependent sampling uses different sampling strategies for different contexts [@doi:10.18653/v1/2024.findings-naacl.122]. Caching and warm-starting leverage solutions from similar contexts to accelerate optimization, particularly effective when contexts exhibit smooth variation [@doi:10.1561/2200000016].
 
 The design of context-aware methods often involves balancing computational efficiency with interpretability. Linear context functions are more interpretable but may require more parameters, while explicit context encoding improves interpretability but may increase computational cost. Local context modeling provides better interpretability but may be less efficient for large-scale applications. These trade-offs must be carefully considered based on the specific requirements of the application domain, as demonstrated in recent work on adaptive optimization methods [@doi:10.48550/arXiv.1412.6980].
 
@@ -1546,12 +1546,6 @@ Collectively, these approaches demonstrate a continuum from fully supervised env
 
 
 
-<!-- - Just Train Twice: Improving Group Robustness without Training Group Information [@arXiv:2002.10384]
-- Environment Inference for Invariant Learning [@arXiv:2110.14048]
-- Distributionally Robust Neural Networks for Group Shifts [@arXiv:1911.08731] -->
-
-
-
 ## Applications, Case Studies, and Tools
 
 This section surveys how context-adaptive methods manifest across domains and what tools enable them in practice.
@@ -1590,9 +1584,9 @@ Such contextualized networks have been applied in TCGA cancer genomics to identi
 
 Evaluating context-adaptive models requires careful consideration of predictive accuracy, robustness to variability, and scalability, with the emphasis varying by domain. Key aspects of performance evaluation include the choice of metrics, the handling of uncertainty, and assessment under stress or rare-event conditions.
 
-In healthcare, evaluation prioritizes patient-specific predictive accuracy and calibrated uncertainty. Common metrics include mean squared error (MSE), concordance indices (C-index), and calibration curves, which measure how well models capture longitudinal patient trajectories and provide reliable uncertainty estimates. Multi-target Bayesian approaches and survival models demonstrate the importance of capturing correlations across outcomes and assessing credible interval coverage to quantify predictive confidence [@arXiv:2509.08183; @arXiv:2509.01794]. Evaluations in this domain also highlight trade-offs between model complexity, interpretability, and computational feasibility, since high-fidelity patient-level predictions can be costly to compute.
+In healthcare, evaluation prioritizes patient-specific predictive accuracy and calibrated uncertainty. Common metrics include mean squared error (MSE), concordance indices (C-index), and calibration curves, which measure how well models capture longitudinal patient trajectories and provide reliable uncertainty estimates. Multi-target Bayesian approaches and survival models demonstrate the importance of capturing correlations across outcomes and assessing credible interval coverage to quantify predictive confidence [@arXiv:2509.01794]. Evaluations in this domain also highlight trade-offs between model complexity, interpretability, and computational feasibility, since high-fidelity patient-level predictions can be costly to compute.
 
-In finance and macro forecasting, performance evaluation emphasizes predictive accuracy under volatile conditions and resilience to structural breaks. Metrics such as root mean squared forecast error (RMSFE), log-likelihood, and stress-test performance are commonly used to assess how well models handle crises or abrupt shifts in data [@arXiv:2409.08354; @arXiv:2508.10055]. Probabilistic metrics, including posterior predictive checks and uncertainty bounds, provide additional insight into the reliability of forecasts, while chaos-informed diagnostics can highlight vulnerabilities to extreme events [@arXiv:2406.12274].
+In finance and macro forecasting, performance evaluation emphasizes predictive accuracy under volatile conditions and resilience to structural breaks. Metrics such as root mean squared forecast error (RMSFE), log-likelihood, and stress-test performance are commonly used to assess how well models handle crises or abrupt shifts in data [@arXiv:2409.08354; @arXiv:2508.10055]. Probabilistic metrics, including posterior predictive checks and uncertainty bounds, provide additional insight into the reliability of forecasts, while chaos-informed diagnostics can highlight vulnerabilities to extreme events [@arXiv:2509.08183].
 
 Across domains, consistent patterns emerge. Context-adaptive models outperform static baselines when variability is structured and partially predictable, but require sufficient examples of the desired adaptation behavior across contexts. Even if the dataset is large, if there are insufficient contexts to show context-specific adaptation, the model will fail to generalize across contexts. Thus, learning context-adaptive models requires special attention not only to the number of samples, but also to the number of distinct contexts and the distribution of contexts that samples are drawn from [@doi:10.1073/pnas.2411930122].
 
@@ -1644,7 +1638,7 @@ While LoRA is traditionally learned via task-specific optimization, recent work 
 Together, these approaches illustrate how adaptation can be achieved both flexibly and efficiently, balancing generalization and computational constraints.
 
 #### Bridging with Statistical and Causal Reasoning
-An emerging research direction integrates the representational capacity of foundation models with the rigor of statistical and causal inference. Language models can already extract relational patterns from text to propose or critique causal graphs [@doi:10.48550/arXiv.2305.07171]. Methods such as LMPriors treat foundation models as task-specific priors, improving sample efficiency in estimation and decision making [@doi:10.48550/arXiv.2210.12530]. Models can also generate natural-language rationales that clarify predictions and summarize statistical findings, enhancing interpretability and transparency [@doi:10.48550/arXiv.2310.05797].
+An emerging research direction integrates the representational capacity of foundation models with the rigor of statistical and causal inference. Methods such as LMPriors treat foundation models as task-specific priors, improving sample efficiency in estimation and decision making [@doi:10.48550/arXiv.2210.12530]. Models can also generate natural-language rationales that clarify predictions and summarize statistical findings, enhancing interpretability and transparency [@doi:10.48550/arXiv.2310.05797].
 
 Consequently, foundation models serve as bridges between flexible representation learning and principled inference, offering a path toward adaptive systems that are both data-efficient and theoretically grounded.
 
@@ -1700,16 +1694,16 @@ Collectively, these directions suggest a future in which foundation models evolv
 
 ## Open Problems
 
-Rapid advances in context-adaptive modeling have created unprecedented opportunities while revealing fundamental challenges. This chapter identifies the central methodological questions and the broader ethical and societal challenges that will shape the future trajectory of context-adaptive inference. We begin by examining five interrelated technical questions—on modularity, the benefits of explicit structure, the level of abstraction, theoretical and practical barriers, and interpretability trade-offs—that together define the frontier of adaptive modeling research. We then turn to the broader outlook, focusing on the ethical and societal implications of deploying these powerful adaptive systems.
+Rapid advances in context-adaptive modeling have created unprecedented opportunities while revealing fundamental challenges. This chapter identifies the central methodological questions and the broader ethical and societal challenges that will shape the future trajectory of context-adaptive inference. We begin by examining four interrelated technical questions—on modularity, the benefits of explicit structure, theoretical and practical barriers, and interpretability trade-offs—that together define the frontier of adaptive modeling research. We then turn to the broader outlook, focusing on the ethical and societal implications of deploying these powerful adaptive systems.
 
 ### Open Research Questions
 
-Recent advances have broadened the scope of adaptive inference, but many questions remain unresolved. These open problems span five domains: (i) modularity and reusability of adaptive components, (ii) the conditions under which explicit structure improves robustness and generalization, (iii) the appropriate level of abstraction for intervention, (iv) theoretical, computational, and data-related barriers to adoption, and (v) the tension between interpretable-by-design and post-hoc interpretability. Together, these questions delineate a research agenda that bridges theoretical statistics, machine learning, and applied modeling, combining methodological depth with practical impact.
+Recent advances have broadened the scope of adaptive inference, but many questions remain unresolved. These open problems span four domains: (i) modularity and reusability of adaptive components, (ii) the conditions under which explicit structure improves robustness and generalization, (iii) theoretical, computational, and data-related barriers to adoption, and (iv) the tension between interpretable-by-design and post-hoc interpretability. Together, these questions delineate a research agenda that bridges theoretical statistics, machine learning, and applied modeling, combining methodological depth with practical impact.
 
-First, researchers need to examine whether skills and routines can be modularized in a way that allows portability across tasks without interference. Second, the field must clarify under what conditions explicit structure provides measurable benefits. Third, it remains unclear at which level of abstraction such structure should be imposed, whether at the level of parameters, functions, or latent factors. Fourth, adoption is limited by both theoretical and practical barriers, including identifiability, generalization, and computational feasibility. Finally, the community must address the tension between building models that are interpretable from the start and those that rely on post-hoc explanations. The following subsections provide a more detailed discussion of these five questions.
+First, researchers need to examine whether skills and routines can be modularized in a way that allows portability across tasks without interference. Second, the field must clarify under what conditions explicit structure provides measurable benefits. Third, adoption is limited by both theoretical and practical barriers, including identifiability, generalization, and computational feasibility. Finally, the community must address the tension between building models that are interpretable from the start and those that rely on post-hoc explanations. The following subsections provide a more detailed discussion of these four questions.
 
 #### Can Reusable Modules Enable Portability Across Tasks?
-A central question is whether the skills or routines acquired by large models can be isolated and reused as portable modules across tasks without reducing overall performance [@doi:10.48550/arXiv.2108.07258]. The vision of modularity is to build an ecosystem of specialized components that can be composed when needed, instead of training a new large model for each task. Promising approaches operate at different levels: (i) representation-level constraints such as concept bottlenecks enforcing human-understandable features; (ii) memory-based mechanisms such as prototype libraries for case retrieval; and (iii) architecture-level designs such as sparse adapters or routing networks that activate context-relevant modules [@doi:10.48550/arXiv.2404.13628; @doi:10.48550/arXiv.2311.16142].
+A central question is whether the skills or routines acquired by large models can be isolated and reused as portable modules across tasks without reducing overall performance [@doi:10.48550/arXiv.2108.07258]. The vision of modularity is to build an ecosystem of specialized components that can be composed when needed, instead of training a new large model for each task. Promising approaches operate at different levels: (i) representation-level constraints such as concept bottlenecks enforcing human-understandable features; (ii) memory-based mechanisms such as prototype libraries for case retrieval; and (iii) architecture-level designs such as sparse adapters or routing networks that activate context-relevant modules [@doi:10.48550/arXiv.2404.13628].
 
 Applications illustrate the promise of this research. In healthcare, diagnostic modules could be reused across diseases. In natural language processing, syntax-aware modules might be applied across languages. However, modularity also introduces risks: interactions between modules may cause interference or instability in generalization, and poorly aligned components may propagate or amplify existing biases. Future work should therefore design evaluation protocols that test not only portability and composability, but also isolation of unintended side effects and robustness to distribution shift [@doi:10.48550/arXiv.2407.21783].
 
@@ -1718,18 +1712,13 @@ Clarifying the theoretical and practical benefits of explicit structure is an im
 
 To advance this agenda, systematic comparisons with implicit approaches are needed. Stress testing under covariate shift, concept drift, long-tail distributions, and adversarial correlations is particularly important, and benchmarks such as WILDS provide a useful starting point [@doi:10.48550/arXiv.2012.07421]. At the same time, researchers must weigh the costs of explicit structure. These costs include additional annotation, increased hyperparameter complexity, and potential reductions in in-domain accuracy [@doi:10.48550/arXiv.2004.07780, @doi:10.48550/arXiv.1911.08731]. A comprehensive evaluation framework that quantifies both theoretical guarantees and practical trade-offs remains to be established.
 
-#### At What Level of Abstraction Should Explicit Structure Be Imposed?
-Determining the appropriate level of abstraction for intervention remains a challenge. Parameter-level edits provide precise control but are brittle and can have unpredictable side effects [@doi:10.48550/arXiv.2212.10559]. Concept-level interventions provide stability and interpretability but may fail to capture the model’s internal computations in full detail [@doi:10.48550/arXiv.1807.03124].
-
-Intermediate levels may offer a balance. For example, function-level interventions or local surrogate models can capture mid-level abstractions that combine precision with stability. More importantly, future work should aim to develop methods that allow translation across levels. For instance, low-level parameter edits could be distilled into high-level conceptual summaries, while abstract concepts might be operationalized through concrete parameter changes. Such tools would make adaptive models more interpretable and more controllable in practice.
-
 #### What Theoretical and Practical Barriers Remain?
 Several barriers continue to limit the adoption of adaptive models. On the theoretical side, researchers have yet to establish strong guarantees for identifiability and generalization under distribution shift [@doi:10.48550/arXiv.1911.08731]. Extending these guarantees to high-dimensional and multimodal data remains an unsolved challenge.
 
 Practical barriers are equally important. Training and deploying adaptive models requires significant computational and memory resources. Data limitations, such as biased sampling and noisy feedback, reduce reliability. Evaluation frameworks remain centered on accuracy, with insufficient attention to fairness, stability, and long-term robustness. Finally, the absence of standardized tools and implementation guidelines prevents many practitioners from applying state-of-the-art methods beyond research settings [@doi:10.3390/publications13020019].
 
 #### Interpretable-by-Design vs Post-hoc Interpretability: What Is the Right Path Forward?
-A final open question concerns the balance between interpretable-by-design approaches and post-hoc interpretability. Interpretable-by-design models, such as varying coefficient models, provide transparency and faithfulness from the outset but may restrict predictive performance [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Post-hoc methods allow powerful foundation models to be explained after training, but explanations may be incomplete or unfaithful to the model’s internal reasoning [@doi:10.48550/arXiv.2108.07258].
+A final open question concerns the balance between interpretable-by-design approaches and post-hoc interpretability. Interpretable-by-design models, such as varying coefficient models, provide transparency and faithfulness from the outset but may restrict predictive performance [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Post-hoc methods allow powerful foundation models to be explained after training, but explanations may be incomplete or unfaithful to the model’s internal reasoning [@doi:10.48550/arXiv.2108.07258; @doi:10.48550/arXiv.2605.29358].
 
 Progress in both directions suggests that the future lies in integration rather than a binary choice. Hybrid models may embed interpretable structures at their core while using post-hoc tools for flexibility. Promising directions include benchmarks that jointly evaluate adaptivity and interpretability, as well as human-in-the-loop workflows that allow domain experts to constrain and validate model adaptation in practice.
 
@@ -1749,7 +1738,7 @@ This review established a unifying framework for understanding context-adaptive 
 
 Across the literature, a consistent pattern emerges: adaptivity becomes effective when context, computation, and interpretation are aligned. The principles of context-aware efficiency integrate these aspects, clarifying when adaptation enhances robustness and when it introduces instability. Within this perspective, model design choices can be connected to measurable outcomes such as data efficiency, modularity, and transferability, grounding the abstract notion of adaptivity in verifiable performance.
 
-The unified view presented in this review connects statistical inference with ideas from machine learning and cognitive modeling, where adaptive reasoning and context-sensitive generalization are regarded as key components of intelligent behavior. Cognitive theories have long emphasized that efficient adaptation arises from internal models that balance precision and flexibility, an idea now mirrored in recent computational analyses of in-context learning [@doi:10.48550/arXiv.2506.17859]. By bridging these perspectives, this framework provides both a conceptual foundation and a practical guide for developing adaptive systems that are interpretable, reliable, and scalable.
+The unified view presented in this review connects statistical inference with ideas from machine learning and cognitive modeling, where adaptive reasoning and context-sensitive generalization are regarded as key components of intelligent behavior. Cognitive theories have long emphasized that efficient adaptation arises from internal models that balance precision and flexibility, an idea now mirrored in recent computational analyses of in-context learning [@doi:10.48550/arXiv.2507.16003]. By bridging these perspectives, this framework provides both a conceptual foundation and a practical guide for developing adaptive systems that are interpretable, reliable, and scalable.
 
 #### Context-Aware Efficiency: A Unifying Framework
 
@@ -1757,7 +1746,7 @@ The principles of context-aware efficiency emerge as a unifying theme across the
 
 Several fundamental insights emerge from our analysis. Rather than being a nuisance parameter, context provides information that can be leveraged to improve both statistical and computational efficiency. Methods that adapt their computational strategy based on context often achieve better performance than those that use fixed approaches. The design of context-aware methods requires careful consideration of how to balance computational efficiency with interpretability and regulatory compliance.
 
-Recent studies also demonstrate that context-adaptive strategies can emerge spontaneously in large models trained on diverse tasks, linking computational efficiency to rational inference principles [@doi:10.48550/arXiv.2507.16003]. These findings suggest that implicit adaptation can serve as a computational analog of Bayesian updating, where context dynamically reweights prior knowledge to improve generalization. Similar ideas have been explored in meta-learning frameworks such as MetaICL, which meta-trains language models to acquire reusable adaptation strategies through exposure to varied task distributions [@doi:10.48550/arXiv.2110.15943].
+Recent studies also demonstrate that context-adaptive strategies can emerge spontaneously in large models trained on diverse tasks, linking computational efficiency to rational inference principles [@doi:10.48550/arXiv.2506.17859]. These findings suggest that implicit adaptation can serve as a computational analog of Bayesian updating, where context dynamically reweights prior knowledge to improve generalization. Similar ideas have been explored in meta-learning frameworks such as MetaICL, which meta-trains language models to acquire reusable adaptation strategies through exposure to varied task distributions [@doi:10.48550/arXiv.2110.15943].
 
 Future research in context-aware efficiency should focus on developing methods that can efficiently handle high-dimensional, multimodal context information, creating systems that can adaptively allocate computational resources based on context complexity and urgency, investigating how efficiency principles learned in one domain can be transferred to others, and ensuring that context-aware efficiency methods can be deployed in regulated environments while maintaining interpretability [@doi:10.48550/arXiv.2510.04618].
 
