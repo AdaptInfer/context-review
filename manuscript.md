@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-07-15'
+date-meta: '2026-07-20'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-15" />
-  <meta name="citation_publication_date" content="2026-07-15" />
-  <meta property="article:published_time" content="2026-07-15" />
-  <meta name="dc.modified" content="2026-07-15T06:26:49+00:00" />
-  <meta property="article:modified_time" content="2026-07-15T06:26:49+00:00" />
+  <meta name="dc.date" content="2026-07-20" />
+  <meta name="citation_publication_date" content="2026-07-20" />
+  <meta property="article:published_time" content="2026-07-20" />
+  <meta name="dc.modified" content="2026-07-20T04:53:39+00:00" />
+  <meta property="article:modified_time" content="2026-07-20T04:53:39+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1/))
+([permalink](https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/))
 was automatically generated
-from [AdaptInfer/context-review@c423711](https://github.com/AdaptInfer/context-review/tree/c423711f8f8c7650fb5b5db8586c4ad9fa2052d1)
-on July 15, 2026.
+from [AdaptInfer/context-review@bf07985](https://github.com/AdaptInfer/context-review/tree/bf079859e71b3d4ae8355048adbd8ce81303a6c2)
+on July 20, 2026.
 </em></small>
 
 
@@ -297,14 +297,24 @@ Finally, we identify open problems in identifiability, robustness under distribu
 
 A convenient simplifying assumption in statistical modeling is that observations are independent and identically distributed (i.i.d.). This assumption allows us to use a single model to make predictions across all data points. But in practice, this assumption rarely holds. Data are collected across different individuals, environments, and tasks—each with their own characteristics, constraints, and dynamics. When the i.i.d. assumption breaks down, using a single global model can obscure meaningful heterogeneity.
 
-To model this heterogeneity, a growing class of methods aim to make inference *adaptive to context*. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information—whether covariates, environments, or support sets—to inform sample-specific inference.
-Figure {@fig:overview-bridge} summarizes how statistics, meta-learning, and foundation models
-flow into a unified **context→parameters** view, which we formalize in (★).
+Even when a global model fits aggregate data well, it can hide systematic failure modes. When one subpopulation dominates, the fit is biased toward it and the minority is underrepresented in both fit and prediction (mode collapse). Small but extreme groups can distort a parameter-averaged fit, as in ordinary least squares (outlier sensitivity). When several subpopulations are equally represented, the global model may fit none of them, converging instead to a non-existent average case (phantom populations). Most consequentially, aggregate trends can reverse within subgroups, so the global fit misrepresents the true relationship entirely (hidden confounding, or Simpson's paradox; Figure {@fig:population-failures}).
+
+![Failure Modes of Population Models. Illustrative schematics of common failure types when fitting a single global model to heterogeneous data. 
+(A) **Mode Collapse**: the dominant group drives the fit, underrepresenting the minority. 
+(B) **Outlier Sensitivity**: extreme points distort the global line, shifting predictions away from the majority. 
+(C) **Phantom Populations**: the global fit represents no actual subgroup, but an artificial average. 
+(D) **Hidden Confounding / Simpson’s Paradox**: aggregate trends reverse subgroup trends, obscuring true relationships.](images/population_failures.png){#fig:population-failures width="80%"}
+
+The last case is the classical demonstration that heterogeneity cannot be resolved from the outcome data alone: recovering the true subgroup relationships requires conditioning on the contextual side information that distinguishes these groups, i.e. the "no unmeasured confounding" assumption. These are just a few examples based on statistical primitives that illustrate how heterogeneity in data confounds traditional estimators and undermines basic machine learning assumptions. 
+
+To model under heterogeneity, a growing class of methods aim to make inference adaptive to context. These include varying-coefficient models in statistics, transfer and meta-learning in machine learning, and in-context learning in large foundation models. Though these approaches arise from different traditions, they share a common goal: to use contextual information—whether covariates, environments, or support sets—to inform sample-specific inference.
+
+Throughout this work, we rely on statistical primitives to characterize heterogeneity in data, build intuition about what types of models can learn under heterogeneity, and understand how context-adaptive learning occurs. These insights reveal overarching principles in model design and data composition that enable context-adaptive inference, which apply simultaneously to statistical and large-scale foundation models. Figure {@fig:overview-bridge} summarizes how statistics, meta-learning, and foundation models are all unified by a *context→parameters* view, later formalized in Eq. {@eq:unified}.
 
 ![Overview of the theoretical bridge. Three traditions—Statistics (varying-coefficients, local smoothing, hierarchical sharing), Meta-learning (bilevel training, fast adaptation, hypernetworks), and Foundation models (prompted inference / in-context learning)—feed into a unified context→parameters view. The bridge formalizes this connection and highlights shared tuning knobs: context information, inductive bias, and compute.](images/overview.png){#fig:overview-bridge width="90%"}
 
  
-We formalize this by assuming each observation $x_i$ is drawn from a distribution governed by parameters $\theta_i$:
+Heterogeneity, the basic idea that samples are not identically distributed, is the foundation for the problems and methods addressed in this work. We formalize heterogeneity by assuming each observation $x_i$ is drawn from a sample-specific distribution governed by parameters $\theta_i$:
 $$
 x_i \sim P(x;\,\theta_i).
 $$
@@ -317,95 +327,21 @@ where $c_i$ captures the relevant covariates or environment for observation $i$.
 
 These provide new tools for understanding personalized and context-adaptive systems, but also present new modeling challenges. Estimating a unique $\theta_i$ from a single observation is ill-posed without structural regularization—smoothness, sparsity, shared representations, or latent grouping. 
 
-This problem regularly appears in disciplines that rely on observational data, including biology, medicine, finance, and the social sciences. As such, developments have come from many diverse research threads. The sample-specific view, where each sample carries its own parameters $\theta_i$, descends from mixed-effects and local-likelihood estimation [@doi:10.1080/01621459.1987.10478466]. Letting parameters vary across discrete groups defined by categorical side information was introduced with mixed-effects models [@Henderson1950Genetic]. Letting parameters vary smoothly as a function of an observed covariate $c_i$ was introduced with varying-coefficient models [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Extensions to the high-dimensional, structured settings were made in work on time-varying and varying-coefficient network estimation [@doi:10.1073/pnas.0901910106; @doi:10.1093/bioinformatics/btp192; @kolar2009sparsistent]. As adaptivity becomes more implicit (e.g., via neural networks or black-box inference), new tools will be required to recover, interpret, or constrain the underlying parameter variation.
+This problem regularly appears in disciplines that rely on observational data, including biology, medicine, finance, language modeling, and the social sciences. As such, developments have come from many diverse research threads. The sample-specific view, where each sample carries its own parameters $\theta_i$, descends from mixed-effects and local-likelihood estimation [@doi:10.1080/01621459.1987.10478466]. Letting parameters vary across discrete groups defined by categorical side information was introduced with mixed-effects models [@Henderson1950Genetic]. Letting parameters vary smoothly as a function of an observed covariate $c_i$ was introduced with varying-coefficient models [@doi:10.1111/j.2517-6161.1993.tb01939.x]. Extensions to the high-dimensional, structured settings were made in work on time-varying and varying-coefficient network estimation [@doi:10.1073/pnas.0901910106; @doi:10.1093/bioinformatics/btp192; @kolar2009sparsistent]. As adaptivity becomes more implicit (e.g., via neural networks or black-box inference), new tools will be required to recover, interpret, or constrain the underlying parameter variation.
 
-### Problem Setup and Notation
+### Scope and Relation to Prior Work
 
-We study supervised prediction with units $i=1,\dots,n$. Each unit has a **context** $c_i\in\mathcal{C}$ (e.g., patient/user/site/time) and observed data $\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}$ with $x_{ij}\in\mathcal{X}$ and $y_{ij}\in\mathcal{Y}$. Predictions come from a model family $\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}$ (e.g., linear model, neural net, probabilistic model).
+In this work, we first review methods that use context to guide inference, either by specifying how parameters change with covariates or by learning to adapt behavior implicitly. 
+We begin with classical models that impose explicit structure, such as varying-coefficient models and multi-task learning, and then turn to more flexible approaches like meta-learning and in-context learning with foundation models that fully subsume traditional estimation and inference.
 
-In **global** (i.i.d.) models, $\theta_i\equiv\theta^\star$. In **context-adaptive** models, parameters vary with context:
-$\theta_i=f(c_i)$ or $\theta_i\sim P(\theta\mid c_i)$.
+Although these approaches arise from different traditions, they share a common goal: to tailor inference to the local characteristics of each observation or task. 
+We formalize this connection through a theoretical bridge, finding that they rely on strikingly similar estimators both explicitly and in-context.
+We then use this unified perspective to propose principles for designing, evaluating, and interpreting context-adaptive models. 
 
-For a new unit with context $c$, we write a unified empirical objective:
-$$
-\widehat{\theta}(c)\in\arg\min_{\theta\in\Theta}\;
-\underbrace{\sum_{(i,j)\in S(c)} \ell\!\big(h_\theta(x_{ij}),y_{ij}\big)}_{\text{context-dependent support}}
-\;+\;
-\underbrace{\mathcal{R}(\theta;\,c)}_{\text{context-structured regularization}},
-\tag{★}
-$$
-where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a **support set** selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.). This decomposition pairs a context-weighted loss, as in local likelihood and kernel-weighted estimation [@doi:10.1080/01621459.1987.10478466], with a context-structured regularizer from the penalized-estimation literature. [@kolar2009sparsistent] and [@doi:10.1214/09-AOAS308] applied it to structured, high-dimensional context-varying estimation and established the sparsistency guarantees that make it a central tool for context-adaptive modeling.
-
-**How context enters.**  
-- **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
-- **Implicit parameterization:** context alters optimization or internal states without exposing $\theta$ directly (e.g., mixture-of-experts with gates $g(x,c)$; retrieval where $S(c)$ is built by a retriever $R(c)$; in-context learning where a prompt map $P(c)$ conditions a foundation model).
-
-Emerging approaches blur this distinction. Instead of treating prompting (implicit) and fine-tuning (explicit) as separate mechanisms, models can map contextual information—such as a natural language task description—directly into parameter updates. Text-to-LoRA provides a concrete example of this paradigm, where context is encoded and used to generate task-specific parameters, effectively collapsing the boundary between implicit and explicit adaptation [@doi:10.48550/arXiv.2506.06105].
-
-To formalize this connection, we now return to a unified estimator.
-For convenience, we use a **context encoder** $\phi:\mathcal{C}\to\mathbb{R}^d$ and a similarity/kernel $K(c,c')$. A common instance of (★) is kernel-weighted risk:
-$$
-\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),
-\qquad
-w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
-$$
-
-**Granularity.** We refer to adaptation granularity $g\in\{\text{group},\text{unit},\text{example}\}$ and to three design “knobs” we will revisit:  
-1) **Information** via $S(c)$ or $P(c)$ (what context is exposed),  
-2) **Inductive bias** via $\mathcal{R}(\theta;c)$ (how parameters may vary),  
-3) **Compute** via warm-starts/caching/steps (how aggressively we solve (★) at test time).
-
-**Standing assumptions (used as needed).**  
-(i) *Exchangeability within context:* conditional on $(\theta_i,c_i)$, $(x_{ij},y_{ij})$ are i.i.d.  
-(ii) *Regularity:* either $\theta=f(c)$ with $f$ in a regular class (e.g., Lipschitz/sparse/low-rank) or retrieval weights $w_{ij}(c)$ are bounded and locally normalized.  
-(iii) *Identifiability/stability:* $\ell$ is convex in model outputs and $\mathcal{R}$ yields a unique or stable minimizer.  
-(iv) *Resource tracking:* we track $|S(c)|$, optimization steps, and memory to compare **adaptation efficiency**.
-
-With this notation in place, we now formalize the link between explicit and implicit context adaptation. This link has been contributed in pieces across recent work; here we unify those results.
-
-### Theoretical Bridge
-
-Recent theoretical work suggests that “explicit” context models (e.g., varying-coefficients, hierarchical/multitask) and “implicit” mechanisms (e.g., in-context learning via attention) often implement the same estimator class under squared loss, differing mainly in how they encode neighborhoods and regularization. Using the notation above, we make this precise.
-
-**Proposition 1 (Explicit varying-coefficients and linear ICL coincide with kernel ridge on joint features in the linear squared-loss setting).**  
-Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\varepsilon$ with $\mathbb{E}[\varepsilon]=0$. Let
-(i) a context encoder $\phi:\mathcal{C}\to\mathbb{R}^{d_c}$,
-(ii) joint features $\psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}$,
-(iii) a context-dependent support set $S(c)$ with nonnegative weights $w_{ij}(c)$.
-
-- **(A) Explicit varying-coefficients.** Let $\theta(c)=B\,\phi(c)$ with $B\in\mathbb{R}^{d_x\times d_c}$ and ridge penalty $\lambda\lVert B\rVert_F^2$. The weighted ridge solution yields
-  $$
-  \widehat y(x,c)=k_{(x,c)}^\top \big(K+\lambda I\big)^{-1} y,\quad
-  K_{ab}=\langle \psi_a,\psi_b\rangle=\langle x_a,x_b\rangle\cdot\langle \phi(c_a),\phi(c_b)\rangle,
-  $$
-  i.e., **kernel ridge regression (KRR)** on joint features.
-
-- **(B) Implicit adaptation via linear ICL.** Let a single linear attention layer consume the weighted support set $S(c)$ with linear $q=Q\psi$, $k=K\psi$, $v=V\psi$ and a linear readout. With attention weights proportional to $w_{ij}(c)\cdot \langle q,k_{ij}\rangle$, the induced predictor equals KRR with kernel
-  $$
-  k\big((x,c),(x',c')\big)=\langle q(x,c),k(x',c')\rangle,
-  $$
-  i.e., a learned **dot-product kernel** on the same joint features. If attention parameters are trained in the linearized/NTK regime, learning equals kernel regression with the network’s NTK, which is again a dot-product kernel on linear transforms of $\psi$.
-
-**Corollary 1 (Retrieval, gating, and weighting are kernel/measure choices).** Choosing $S(c)$ via a retriever $R(c)$, or gating in a mixture-of-experts, corresponds to changing the kernel and/or the empirical measure (weights $w_{ij}(c)$) used by KRR on $\psi$.
-
-*Proof in Appendix A.*  
-
-*Positioning and prior art.* Proposition 1 is expository: part (A) is standard ridge⇔kernel duality on joint features; part (B) follows from (i) fixed attention + trained linear head = ridge on fixed features and (ii) NTK linearization ⇒ kernel regression with the network’s NTK. 
-Our contribution is the unified **context-aware** formulation: explicit design knobs via $S(c)$, $\mathcal{R}(\theta;c)$, and compute—and the mapping of retrieval/gating to kernel/measure choices. See transformer ICL as classical estimators [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559] and NTK analyses [@arXiv:1806.07572; @arXiv:1912.02803].
-
-*Limitations*
-This linear, squared-loss bridge captures a large class of explicit and implicit adaptors, but it abstracts away at least three realities:
-(i) non-quadratic losses (e.g., logistic) change the effective kernel/weighting via loss curvature;
-(ii) when the prediction head is nonlinear (e.g., an MLP or attention), it introduces model curvature: the head’s Jacobian/Hessian depends on the input and parameters, so the effective metric and weights change with the representation; the fixed-kernel view from the linear case no longer holds;
-(iii) multi-modal context encoders (text, graphs, images) alter both the neighborhood definition and the regularizer.
-We view these as open extensions to explore beyond the scope of this review.
-
-### Scope of Review and Relation to Prior Work
-
-In this review, we examine methods that use context to guide inference, either by specifying how parameters change with covariates or by learning to adapt behavior implicitly. 
-We begin with classical models that impose explicit structure, such as varying-coefficient models and multi-task learning, and then turn to more flexible approaches like meta-learning and in-context learning with foundation models. 
-Though these methods arise from different traditions, they share a common goal: to tailor inference to the local characteristics of each observation or task. 
-Along the way, we highlight recurring themes: complex models often decompose into simpler, context-specific components; foundation models can both adapt to and generate context; and context-awareness challenges classical assumptions of homogeneity. 
+Along the way, we highlight recurring themes: 
+1. Complex models often decompose into simpler, context-specific components;
+2. Models that accommodate more heterogeneity outperform task-specific predictors by consuming much larger datasets; and 
+3. Inference-time programmability is a driving force behind broad model adoption.
 These perspectives offer a unifying lens on recent advances and open new directions for building adaptive, interpretable, and personalized models.
 
 #### Related Surveys and Reviews
@@ -425,606 +361,172 @@ Table 1 summarizes the scope and coverage of representative surveys.
 
 *Table 1: Representative surveys and key papers covering context-adaptive inference. Most works focus on a single methodological tradition and do not connect explicit and implicit approaches.*
 
-While existing surveys have reviewed individual components of this landscape—such as varying-coefficient models, meta-learning, or foundation models—they have remained largely siloed.
-This work brings together three traditions—statistical varying-coefficient models, meta-learning / transfer, and foundation-model prompting / retrieval—into a single mathematical view and a practical design checklist.
-By situating classical statistical models, modern machine learning methods, and foundation models along a shared spectrum of context-adaptive inference, we highlight common principles and distinctive challenges.
-The next section outlines the conceptual foundations of context-adaptive inference, preparing the ground for detailed discussions of explicit and implicit modeling approaches in later sections.
+While existing surveys have reviewed individual components of this landscape the unifying context-adaptive view remains unexplored.
+This perspective unifies several disparate research threads: Statistical varying-coefficient models, meta-learning / transfer learning, and foundation-model prompting / retrieval.
+By situating classical statistical models, modern machine learning methods, and foundation models along a shared spectrum of context-adaptive inference, we are able to highlight common principles and distinctive challenges.
+The sections that follow trace the historical evolution of statistical methods toward context-adaptive inference, develop the explicit and implicit modeling approaches in detail, outline the core theoretical bridge between these threads, and distill the principles that govern when adaptation helps and how to measure it.
 
 
-## From Population Assumptions to Context-Adaptive Inference
+## Evolution of Statistical Modeling
 
+Here we provide a general review of how data collection and statistical methods have co-evolved to accommodate increasing data volume, dimensionality, and multi-modality. In parallel, data heterogeneity becomes increasingly problematic as larger data spaces are sampled, and context-adaptivity becomes increasingly essential. Several statistical concepts essential to context-adaptive modeling appear from disparate research threads, such as hierarchical structure and multi-task learning, and are only later unified in context-adaptive approaches.
 
-Most statistical and machine learning models begin with a foundational assumption: that all samples are drawn independently and identically from a shared population distribution. This assumption simplifies estimation and enables generalization from limited data, but it collapses in the presence of meaningful heterogeneity.
-
-In practice, data often reflect differences across individuals, environments, or conditions. These differences may stem from biological variation, temporal drift, site effects, or shifts in measurement context. Treating heterogeneous data as if it were homogeneous can obscure real effects, inflate variance, and lead to brittle predictions. As data grows more complex, the failure of this assumption not only limits accuracy but also obscures causal and contextual relationships underlying modern inference.
-
-### Failure Modes of Population Models
-
-Even when traditional models appear to fit aggregate data well, they may hide systematic failure modes.
-
-**Mode Collapse**  
-When one subpopulation is much larger than another, standard models are biased toward the dominant group, underrepresenting the minority group in both fit and predictions.
-
-**Outlier Sensitivity**  
-In the parameter-averaging regime, small but extreme groups can disproportionately distort the global model, especially in methods like ordinary least squares.
-
-**Phantom Populations**  
-When multiple subpopulations are equally represented, the global model may fit none of them well, instead converging to a solution that represents a non-existent average case.
-
-![Failure Modes of Population Models. Illustrative schematics of common failure types when fitting a single global model to heterogeneous data. 
-(A) **Mode Collapse**: the dominant group drives the fit, underrepresenting the minority. 
-(B) **Outlier Sensitivity**: extreme points distort the global line, shifting predictions away from the majority. 
-(C) **Phantom Populations**: the global fit represents no actual subgroup, but an artificial average. 
-(D) **Hidden Confounding / Simpson’s Paradox**: aggregate trends reverse subgroup trends, obscuring true relationships.](images/population_failures.png){#fig:population-failures width="80%"}
-
-
-These behaviors reflect a deeper problem: the assumption of identically distributed samples is not just incorrect, but actively harmful in heterogeneous settings.
-
-
-### Toward Context-Aware Models
-
-To account for heterogeneity, we must relax the assumption of shared parameters and allow the data-generating process to vary across samples. A general formulation assumes each observation is governed by its own latent parameters:
-$$
-x_i \sim P(x; \theta_i),
-$$
-
-However, estimating $N$ free parameters from $N$ samples is underdetermined. 
-Context-aware approaches resolve this by introducing structure on how parameters vary, often by assuming that $\theta_i$ depends on an observed context $c_i$:
-
-$$
-\theta_i = f(c_i) \quad \text{or} \quad \theta_i \sim P(\theta \mid c_i).
-$$
-
-This formulation makes the model estimable, but it raises new challenges. 
-How should $f$ be chosen? How smooth, flexible, or structured should it be? The remainder of this review explores different answers to this question, and shows how implicit and explicit representations of context can lead to powerful, personalized models.
-
-
-A classical example of this challenge arises in causal inference. 
-Following the Neyman–Rubin potential outcomes framework, we let $Y(1)$ and $Y(0)$ denote 
-the outcomes that would be observed under treatment and control, respectively. 
-The average treatment effect (ATE) is then $E[Y(1) - Y(0)]$, or more generally the conditional 
-average treatment effect (CATE) given covariates. 
-Standard approaches often condition only on $X$, while heterogeneous treatment effect (HTE) 
-models incorporate additional context $C$ to capture systematic variation across subpopulations 
-(Figure {@fig:hte-context}).
-
-![Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on $X$, 
-implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) 
-that allows treatment effects to vary systematically with additional context $C$.](images/hte.png){#fig:hte-context width="70%"}
-
-These models highlight both the promise and the challenges of choosing and estimating $f(c)$.
-
-### Classical Remedies: Grouped and Distance-Based Models
-
-Before diving into flexible estimators of $f(c)$, we review early modeling strategies that attempt to break away from homogeneity.
-
-#### Conditional and Clustered Models
-
-One approach is to group observations into C contexts, either by manually defining conditions (e.g. male vs. female) or using unsupervised clustering. Each group is then assigned a distinct parameter vector:
-
-$$
-\{\widehat{\theta}_0, \ldots, \widehat{\theta}_C\} = \arg\max_{\theta_0, \ldots, \theta_C} \sum_{c \in \mathcal{C}} \ell(X_c; \theta_c),
-$$
-where $\ell(X; \theta)$ is the log-likelihood of $\theta$ on $X$ and $c$ specifies the covariate group that samples are assigned to. This reduces variance but limits granularity. It assumes that all members of a group share the same distribution and fails to capture variation within a group.
-
-Partitions can also be learned in a supervised, model-based way: model-based recursive partitioning fits a parametric model and splits the covariate space wherever its coefficients show the strongest instability, recursing to produce interpretable subgroups, with toolkits such as partykit providing standard implementations [@doi:10.1198/106186008X319331; @hothorn2015partykit].
-
-These early methods relax global homogeneity yet still rely on discrete partitions, motivating smoother and more flexible formulations explored in the next sections.
-
-#### Distance-Regularized Estimation
-
-A more flexible alternative assumes that observations with similar contexts should have similar parameters [@doi:10.1073/pnas.0901910106]. This is encoded as a regularization penalty that discourages large differences in $\theta_i$ for nearby $c_i$:
-
-$$
-\{\widehat{\theta}_0, \ldots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \ldots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) - \sum_{i,j} \frac{\|\theta_i - \theta_j\|}{D(c_i, c_j)} \right),
-$$
-
-where $D(c_i, c_j)$ is a distance metric between contexts. This approach allows for smoother parameter variation but requires careful choice of $D$ and regularization strength $\lambda$ to balance bias and variance.  The choice of distance metric D and regularization strength λ controls the bias–variance tradeoff. Kernel-reweighted and Parzen-window estimators are concrete instances that reweight neighboring observations to recover a distinct parameter set or network at each context [@doi:10.1093/bioinformatics/btp192; @song2009tvdbn], and the smooth versus abruptly changing regimes of such estimators have been analyzed for time-varying networks [@doi:10.1214/09-AOAS308].
-
-### Parametric and Semi-parametric Varying-Coefficient Models
-
-Varying-coefficient models (VCMs) provide one of the earliest formal frameworks for explicit adaptivity. Parametric VCMs assume that parameters vary linearly with covariates, a restrictive but interpretable assumption [@doi:10.1111/j.2517-6161.1993.tb01939.x]. The estimation can be written as
-$$
-\widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i).
-$$
-This formulation can be interpreted as a special case of distance-regularized estimation where the distance metric is Euclidean. Related developments in graphical models extend this idea to structured dependencies [@doi:10.1080/01621459.2021.2000866].
-
-Semi-parametric VCMs relax the linearity assumption by requiring only that parameter variation be smooth. This is commonly encoded through kernel weighting, where the relevance of each sample is determined by its similarity in the covariate space [@doi:10.1214/aos/1017939139; @arxiv:2103.00315]. These models are more flexible but may fail when the true relationship between covariates and parameters is discontinuous. When the parameters index a network whose structure itself changes with context, varying-coefficient models extend to varying-coefficient varying-structure models, in which both the edge set and the edge weights depend on context, an extension discussed further below [@kolar2009sparsistent; @doi:10.1214/12-EJS739].
-
-### Contextualized Models
-
-Contextualized models [@doi:10.48550/arXiv.2310.11340] take a fully non-parametric approach. They assume that parameters are functions of context, $f(c)$, but do not restrict the form of $f$. Instead, $f$ is estimated directly, often with deep neural networks as function approximators:
-$$
-\widehat{f} = \arg \max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)).
-$$
-This flexible approximation has enabled contextualized models to be applied to a wide range of across model types and application areas, including personalized disease analysis [@doi:10.1073/pnas.2411930122; @doi:10.48550/arXiv.2111.01104; @doi:10.1101/2020.06.25.20140053], heterogeneous treatment effect estimation [@doi:10.1016/j.jbi.2022.104086; @doi:10.48550/arXiv.2310.07918; @doi:10.48550/arXiv.2411.10645; @doi:10.48550/arXiv.1705.10301], drug development [@doi:10.64898/2026.05.11.724149], and contextual feature selection [@doi:10.48550/arXiv.2312.14254] and explainability [@doi:10.48550/arXiv.1705.10301]. These examples highlight how contextual signals can drive adaptation without assuming a fixed functional form. The contextualized.ml Python package provides standard implementations [@doi:10.21105/joss.06469]. 
-
-### Partition and Latent-Structure Models
-
-Partition models extend the contextualized framework by assuming that parameters can be divided into homogeneous groups, while leaving group boundaries to be inferred. This design is useful for capturing abrupt changes over covariates such as time. Estimation typically balances the likelihood with a penalty on parameter differences between adjacent samples, often expressed through a Total Variation (TV) penalty [@doi:10.1214/09-AOAS308]:
-$$
-\{\widehat{\theta}_0, \dots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \dots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) + \lambda \sum_{i = 2}^N \|\theta_i - \theta_{i-1}\| \right).
-$$
-By encouraging piecewise-constant structures, partition models get closer to personalized modeling, balancing fit and parsimony, moving closer to personalized inference, trading off flexibility for interpretability. 
-When the parameters being partitioned define a network, the support itself can jump across blocks, yielding varying-coefficient varying-structure models whose graph topology rewires with context, whether over time or along a branching biological lineage [@doi:10.1214/12-EJS739; @doi:10.1093/bioinformatics/btr239].
-
-### Fine-tuned Models and Transfer Learning
-
-Another practical strategy for handling heterogeneity is fine-tuning. A global population model is first estimated, and then a smaller set of parameters is updated for particular subpopulations. This idea underlies transfer learning, where large pre-trained models are adapted to new tasks with limited additional training [@doi:10.1109/TKDE.2009.191]. Fine-tuning balances the bias–variance tradeoff by borrowing statistical strength from large datasets while preserving flexibility for local adaptation. This notion was already recognized in early VCM literature as a form of semi-parametric estimation [@doi:10.1214/aos/1017939139].
-
-### Models for Explicit Subgroup Separation
-
-Most adaptive methods encourage parameters for similar contexts to converge, but recent work explores the opposite: ensuring that models for distinct subgroups remain separated. This prevents minority subgroups from collapsing into majority patterns. Such “negative information sharing” is often implemented by learning representations that disentangle subgroup structure, bridging statistical partitioning with adversarial or contrastive learning objectives [@doi:10.48550/arXiv.1910.06939].
-
-### A Spectrum of Context-Awareness
-
-Context-aware models can be organized along a spectrum of assumptions about the relationship between context and parameters:
-
-* **Global models**: $\theta_i = \theta$ for all $i$.
-* **Grouped models**: $\theta_i = \theta_c$ for some finite set of groups.
-* **Smooth models**: $\theta_i = f(c_i)$, with $f$ assumed to be continuous or low-complexity.
-* **Latent models**: $\theta_i \sim P(\theta \mid c_i)$, with $f$ learned implicitly.
-
-![A spectrum of context awareness in modeling, showing global, grouped, smooth, and latent models](images/spectrum_context.png){#fig:spectrum-context width="70%"}
-
-Each formulation encodes different beliefs about parameter variation. The next section formalizes these principles and examines general strategies for adaptivity in statistical modeling. 
-
+We trace this co-evolution through a sequence of data regimes. Each regime broke a homogeneity assumption that its predecessor relied on, and each break provoked a more adaptive response, until parameters themselves had to be treated as functions of context. 
 
 ### Independent and identically distributed samples
 
-The initial research data mostly came from strictly designed experiments, such as agricultural field trials or psychological experiments. The characteristics of such data are small scale and simple structure. Researchers usually assume that each observation is independent of one another and identically distributed [@Fisher1949Design]. Under this setting, there is no dependency among the data, and researchers mainly focus on the overall average level or effect.
+The earliest research data came largely from tightly designed experiments, such as agricultural field trials or psychological studies, which were small in scale and simple in structure. Observations were treated as independent and identically distributed [@Fisher1949Design], with no dependency between units, so inference targeted a single population-level average or effect. This is the regime in which one global parameter suffices, and every method below can be read as a later attempt to relax it.
 
-Linear models emerged as the fundamental approach to conduct statistical analysis for such data. One of the first methods in the development of linear models, the method of least squares, was first published in a work by Legendre [@Legendre1805Comets] and later independently developed and justified by Gauss [@Gauss1809Ambientium]. By reducing the squared deviations between predictions and results, this method offered a general framework for fitting a regression line via observed data. The estimator is expressed as follows:
-
-$$
-\hat{\beta} = \arg\min_{\beta} \sum_{i=1}^{n} \bigl( y_i - x_i^{\top}\beta \bigr)^{2}
-$$
-
-which has a closed-form solution,
+Linear models were the foundational tool. The method of least squares, first published by Legendre [@Legendre1805Comets] and later justified by Gauss [@Gauss1809Ambientium], fits a regression line by minimizing squared deviations,
 
 $$
-\hat{\beta} = (X^{\top}X)^{-1}X^{\top}y
+\hat{\beta} = \arg\min_{\beta} \sum_{i=1}^{n} \bigl( y_i - x_i^{\top}\beta \bigr)^{2},
 $$
 
-This offered a systematic procedure for predicting unknown parameters from independently and identically distributed data, which builds the foundation of regression analysis.
-
-The establishment of generalized linear models (GLMs) expanded the concepts of linear regression to non-Gaussian outcomes. Nelder and Wedderburn [@doi:10.2307/2344614] initiated the central concept of connecting the mean of the response variable to a linear predictor through a link function, which was later formalized into the now-standard compact notation [@doi:10.1007/978-1-4899-3242-6]:
+giving a systematic procedure for estimating a shared parameter vector from i.i.d. data. Generalized linear models (GLMs) extended this reach to non-Gaussian outcomes. Nelder and Wedderburn connected the mean of the response to a linear predictor through a link function [@doi:10.2307/2344614], later formalized into the now-standard compact notation [@doi:10.1007/978-1-4899-3242-6],
 
 $$
-g(\mu_i) = \eta_i
+g(\mu_i) = x_i^\top \beta,
 $$
 
-Before this unified general framework, one of the first instances was the use of the logistic function for binary data. Berkson advocated its application to biomedical dose–response studies, illustrating how the probabilities of success or failure in experimental settings could be captured by the link formulation [@doi:10.1080/01621459.1944.10500699]. Based on this, logistic regression was formalized as a regression model for binary sequences, establishing the logit link [@doi:10.1111/j.2517-6161.1958.tb00292.x]:
-
-$$
-\log \frac{p_i}{1-p_i} = x_i^\top \beta
-$$
-
-For count data, Poisson regression was introduced within the GLM framework, employing the log link [@doi:10.2307/2344614]:
-
-$$
-\log(\mu_i) = x_i^\top \beta
-$$
-
-These developments strengthened GLMs as a unifying framework for a variety of independently and identically distributed data types by extending linear modeling to categorical and count outcomes.
-
-Alongside regression, analysis of variance (ANOVA) was another early milestone of statistical methodology. The development of ANOVA introduced the concept of splitting total variance into components related to within-group and between-group differences [@Fisher1925Research]. The central idea for ANOVA was the F ratio,
-
-$$
-F = \frac{MS_{\text{Between}}}{MS_{\text{Within}}}
-$$
-
-which provided a consistent framework for determining the significance of differences between group means and established the foundation of data analysis in modern experiments.
-
-Together, these early statistical frameworks provided the foundation for analysis of independently and identically distributed data. However, as studies became more complex and observations were no longer truly independent, new methods were needed, leading to the development of hierarchical models.
+which recovers logistic regression for binary outcomes, following Berkson's dose-response work and its formalization for binary sequences [@doi:10.1080/01621459.1944.10500699; @doi:10.1111/j.2517-6161.1958.tb00292.x], and Poisson regression for counts, all within one framework [@doi:10.2307/2344614]. Alongside regression, analysis of variance (ANOVA) partitioned total variability into within-group and between-group components and tested group differences through the F ratio [@Fisher1925Research]. Together these frameworks handled independent data well, but they assumed a single parameter set shared by every unit. As studies grew and observations stopped being independent, that assumption was the first to break.
 
 ### Hierarchical data
 
-With the expansion of research fields, a hierarchical structure gradually emerges in the collected empirical data. For example, bull is nested in sire and herd [@doi:10.1080/00288233.1981.10420865]; the respondents are nested within the population of subjects [@doi:10.1037/h0040957]; and repeated measurements of the same object at different time points also make the data show longitudinal correlation. This type of data is more complex than independent and identically distributed samples. It not only has differences among groups but also needs to take into account the changes of individuals over time simultaneously. The observed values are no longer completely independent of each other, but there exists a distinct hierarchical effect.
+As research expanded, collected data increasingly carried hierarchical structure. Students are nested within classrooms and schools [@doi:10.2307/2112482], respondents within populations of subjects [@doi:10.1037/h0040957], and repeated measurements within individuals over time. Such data are no longer independent: they carry systematic between-group differences and within-individual correlation. This regime forced the first genuine departure from a single shared parameter, letting parameters vary across groups.
 
-Early work on hierarchical dependence started with the introduction of linear models that contain both fixed and random effects to estimate genetic parameters [@Henderson1950Genetic]. This approach laid the statistical basis for partitioning variability into systematic and random components, which became the basis for how intraclass correlation would later be understood and applied. A general form of the linear models can be written as:
-
-$$
-y_{ij} = \mu + u_j + \varepsilon_{ij}, \quad u_j \sim N(0, \sigma_u^2), \quad \varepsilon_{ij} \sim N(0, \sigma^2)
-$$
-
-Around the same period, it became clear that comparative rate estimation in clinical and epidemiological studies depends on the structure of sampled subgroups, with heterogeneity in source populations affecting inference in widespread use [@doi:10.1093/jnci/11.6.1269]. Building on this recognition of heterogeneity, applications expanded to repeated measurements and longitudinal structures; restricted maximum likelihood estimation was introduced to advance the framework and improve variance component inference in unbalanced settings [@doi:10.1093/biomet/58.3.545]. This methodological foundation enabled the formulation of linear mixed-effects models (LMMs) that combined fixed effects for population-level trends with random effects for subject- or group-specific deviations [@doi:10.2307/2529876]. In matrix notation, these models take the form
+Work on hierarchical dependence began with linear models combining fixed and random effects to estimate genetic parameters [@Henderson1950Genetic], partitioning variability into systematic and random components. Recognition that comparative rate estimation depends on the composition of sampled subgroups reinforced the point that heterogeneity in source populations affects inference [@doi:10.1093/jnci/11.6.1269]. Restricted maximum likelihood improved variance-component inference in unbalanced settings [@doi:10.1093/biomet/58.3.545], enabling the linear mixed-effects model (LMM) that pairs population-level fixed effects with group-specific random deviations [@doi:10.2307/2529876],
 
 $$
-y = X\beta + Zu + \varepsilon, \quad u \sim N(0, G), \quad \varepsilon \sim N(0, R)
+y = X\beta + Zu + \varepsilon, \quad u \sim N(0, G), \quad \varepsilon \sim N(0, R).
 $$
 
-and later became widely used in the field of biostatistics and social sciences. To extend mixed-effects modeling beyond Gaussian responses, practical estimation procedures for generalized linear models with random effects were proposed, enabling the application of link functions to clustered binary, count, or categorical outcomes [@doi:10.1093/biomet/78.4.719]. Further methodological advances introduced penalized quasi-likelihood and approximate inference techniques that made practical application feasible in many fields, especially medical and biological fields [@doi:10.1080/01621459.1993.10594284]. These developments gave rise to Generalized Linear Mixed Models (GLMMs), formulated as
+Extensions carried this beyond Gaussian responses: practical estimation for generalized linear mixed models applied link functions to clustered binary, count, or categorical outcomes [@doi:10.1093/biomet/78.4.719], with penalized quasi-likelihood making application feasible in medical and biological settings [@doi:10.1080/01621459.1993.10594284]. In parallel, Bayesian hierarchical modeling linked parameters across groups through priors [@doi:10.1111/j.2517-6161.1972.tb00885.x],
 
 $$
-g(\mu_i) = x_i^\top \beta + z_i^\top u
+y_{ij} \mid \theta_j \sim p(y_{ij} \mid \theta_j), \quad \theta_j \sim p(\theta_j \mid \phi), \quad \phi \sim p(\phi),
 $$
 
-combining link functions with both fixed ($\beta$) and random ($u$) effects. As mixed-effects approaches developed rapidly, the conceptual foundation of Bayesian hierarchical modeling—in which multilevel structures with prior distributions link parameters across groups—had already been articulated [@doi:10.1111/j.2517-6161.1972.tb00885.x]:
+though it became practical only once Gibbs sampling [@doi:10.1109/TPAMI.1984.4767596] and later Markov chain Monte Carlo methods [@doi:10.1201/b16018] supplied the needed computation. These developments let parameters be indexed by group, the first crack toward $\theta_i = f(c_i)$. The variation, however, was still tied to discrete, pre-specified groupings rather than to arbitrary context.
+
+### Functional and high-dimensional data
+
+Through the 1980s and 1990s, observations increasingly arrived as entire curves or functions, such as time series, spectra, or images, rather than fixed-length vectors. Functional data analysis treats each observation as a smooth function $x_i(t)$ over a continuum and represents it with basis expansions [@doi:10.1002/0470013192.bsa239]. This continuous view demanded more flexible regression, and generalized additive models let each predictor act through an estimated smooth function while retaining interpretability [@doi:10.1214/ss/1177013604],
 
 $$
-y_{ij} \mid \theta_j \sim p(y_{ij} \mid \theta_j), \quad \theta_j \sim p(\theta_j \mid \phi), \quad \phi \sim p(\phi)
+y_i = \alpha + \sum_{j=1}^p f_j(x_{ij}) + \varepsilon_i,
 $$
 
-Nevertheless, it wasn't until later that the Bayesian hierarchical model had practical influence. In the 1980s, the demonstration of the practical use of Gibbs sampling in image analysis paved the way for adoption in hierarchical Bayesian modeling [@doi:10.1109/TPAMI.1984.4767596]. Later, advances in Markov chain Monte Carlo methods provided the computational tools necessary to fit Bayesian hierarchical models and made Bayesian hierarchical modeling practical for applied researchers [@doi:10.1201/b16018].
+so the data, rather than a fixed linear form, determine the shape of each effect. As dimensionality kept growing, for example with genomic or imaging data, the burden shifted from specifying features to learning them. Representation learning generalizes classical dimension reduction such as PCA to nonlinear, data-driven embeddings [@doi:10.1109/TPAMI.2013.50], with neural autoencoders as the prototypical case: an encoder maps each input to a low-dimensional code and a decoder reconstructs it, so the model adapts its own feature extraction to complex data. In this regime, heterogeneity no longer lives in a hand-specified design but in a learned representation, which raises the question of how that representation should itself depend on context.
 
-Collectively, these developments shifted statistical modeling from independence assumptions to explicitly capturing correlation and hierarchical structure. As methods for nested data improved, new problems arose with functional, continuous, and high-dimensional observations. This led to the development of approaches for curves, trajectories, and large feature spaces, which in turn led to functional data analysis and high-dimensional inference.
+### Heterogeneous tasks and scarce data
 
-### Functional types and high-dimensional data
-
-As data collection advanced into the 1980s and 1990s, researchers began encountering observations that are entire curves or functions (e.g., time series, spectra, images) rather than fixed-dimensional vectors. Functional Data Analysis (FDA) [@doi:10.1002/0470013192.bsa239] treats each observation as a smooth function $x_i(t)$ defined over a continuum (time, wavelength, etc.). Typical FDA methods use basis expansions (e.g., Fourier or spline bases) to represent $x_i(t)$ and perform tasks such as functional principal component analysis. This emphasis on continuous predictors demanded flexible regression tools. Generalized Additive Models (GAMs) [@doi:10.1214/ss/1177013604] were developed to capture nonlinear effects while retaining interpretability. In a GAM, the response is modeled as
+As computation became cheap and universal, models could be estimated faster than data could be collected for each task. To accommodate, statistical learning shifted toward sharing information across problems, especially when each problem individually carried little data. Multi-task learning jointly models related tasks so that information useful for one aids the others [@doi:10.1023/A:1007379606734],
 
 $$
-y_i = \alpha + \sum_{j=1}^p f_j(x_{ij}) + \varepsilon_i
+\min_{W}\sum_{t=1}^T \sum_{i=1}^{n_t} \ell\bigl(y_i^t, f(x_i^t;w^t)\bigr) + \lambda\,\Omega(W),
 $$
 
-where each $f_j$ is an estimated smooth function (often implemented with splines or kernels). GAMs then generalize linear models by allowing the data to determine the shape of each predictor’s effect. For example, a GAM can automatically reveal a U-shaped or threshold effect in a covariate, which a purely linear model would miss.
-
-As data dimensionality and complexity continued to grow (for instance with genomic or imaging data), there was a shift toward automated feature learning. Representation learning [@doi:10.1109/TPAMI.2013.50] generalizes classical dimension reduction (like PCA) to nonlinear, data-driven embeddings. Neural autoencoders are a prototypical example: one trains an encoder network $h_\phi(x)$ and a decoder $g_\theta(z)$ by minimizing reconstruction error,
-
-
-$$
-(\theta^{\\ast},\phi^{\\ast}) = \arg\min_{\theta,\phi}\sum_{i=1}^n |x_i - g_\theta(h_\phi(x_i))|^2
-$$
-
-Here $z_i = h_\phi(x_i)$ is a low-dimensional code capturing the essential structure of $x_i$. With linear networks this recovers PCA, but in general the learned code can represent highly nonlinear features. Modern representation learning methods (e.g., deep autoencoders, variational autoencoders, deep embedding networks) therefore enable models to adapt their feature extraction to complex, high-dimensional data in a context-dependent way [@doi:10.1109/TPAMI.2013.50]. By learning bases and transformations from the data itself, these methods built on the ideas of FDA and GAMs to handle the evolving scale and richness of scientific data.
-
-### Heterogeneous tasks and sparse data
-
-With the proliferation of diverse tasks and domains, statistical learning shifted toward methods that transfer information across problems. Multi-task learning (MTL) [@doi:10.1023/A:1007379606734] arose in response: it jointly models related tasks to improve performance, especially when each task has limited data. Concretely, if we have $T$ tasks with data $(X^t,Y^t)$ for $t=1,\dots,T$, one can learn task-specific models $w^t$ by minimizing a coupled objective, for example
-
-$$
-\min_{W}\sum_{t=1}^T \sum_{i=1}^{n_t} \ell(y_i^t, f(x_i^t;w^t)) + \lambda\,\Omega(W)
-$$
-
-where $W=[w^1,\dots,w^T]$ collects all task parameters and $\Omega(W)$ is a regularizer that enforces shared structure (e.g., penalizing deviations from a common parameter). This formulation lets tasks share a representation or bias: information useful for one task can aid others. Transfer learning extends this idea between domains wherein a model learned on a large source dataset is adapted to a target domain with little labeled data [@doi:10.1109/TKDE.2009.191]. For instance, a convolutional neural network pretrained on ImageNet can be fine-tuned on a small medical imaging dataset, effectively reusing learned features to improve accuracy with scarce data.
-
-Another fundamental challenge is distribution shift between training and deployment. Covariate shift occurs when the input distribution $p(x)$ changes but the conditional $p(y|x)$ remains the same. In this case one can correct the loss by importance weighting. Denote $p_{\mathrm{train}}(x)$ and $p_{\mathrm{test}}(x)$ the feature distributions; then
-
-$$
-\mathbb{E}_{x\sim p_{\mathrm{test}}}[\ell(f(x),y)]
-= \mathbb{E}_{x\sim p_{\mathrm{train}}}\Bigl[\tfrac{p_{\mathrm{test}}(x)}{p_{\mathrm{train}}(x)}\,\ell(f(x),y)\Bigr], \quad
-w(x) = \frac{p_{\mathrm{test}}(x)}{p_{\mathrm{train}}(x)}
-$$
-
-More generally, domain adaptation methods address cases where both $p(x)$ and $p(y|x)$ differ across source and target domains. Techniques such as kernel mean matching, adversarial domain-invariant representations, or graph-based alignment were developed to tackle these shifts. These methods emerged as data collection became distributed across different environments (e.g., new sensors, populations, or changing conditions), requiring models that adapt to new contexts beyond the original training distribution.
-
-Finally, the combination of many tasks and very few examples per task has given rise to few-shot learning. In few-shot learning [@doi:10.1145/3386252], the goal is to generalize to new classes or tasks from only a handful of labeled examples. Modern approaches typically leverage prior experience across tasks or classes. Metric-based methods, such as Matching Networks and Prototypical Networks [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175], learn an embedding $\phi(x)$ so that samples from the same class cluster together. A novel class can then be represented by the mean of its few support examples in this latent space. Alternatively, meta-learning algorithms train on many simulated few-shot tasks so the model learns to adapt quickly. These few-shot and meta-learning frameworks explicitly confront data scarcity by transferring inductive biases across tasks, enabling effective learning in regimes far beyond the traditional large-sample assumptions.
+where $W$ collects task parameters and $\Omega(W)$ enforces shared structure. Transfer learning extends the idea across domains, adapting a model trained on a large source to a target with few labels [@doi:10.1109/TKDE.2009.191], as when an ImageNet-pretrained network is fine-tuned on a small medical imaging set. Distribution shift between training and deployment introduced a further challenge: under covariate shift the input distribution changes while the conditional stays fixed, correctable by importance weighting, and more general domain adaptation handles shifts in both the input and the conditional through techniques such as kernel mean matching or adversarial domain-invariant representations. Pushing to the extreme of many tasks with only a handful of examples each yields few-shot learning [@doi:10.1145/3386252], where metric-based methods embed inputs so that same-class samples cluster [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175] and meta-learning trains across simulated tasks so a model learns to adapt quickly. These frameworks confront scarcity by transferring inductive bias across tasks, making the task itself a form of context and adaptation an explicit goal, a thread the implicit-adaptivity section develops in full.
 
 ### Online and interactive data
 
-In the Internet era, the way data is collected has undergone significant changes. User behavior data, sensor data, and platform experimental data exhibit the characteristics of streaming and interactivity [@doi:10.1145/1772690.1772758]. The generation of dynamic data poses new challenges to model construction and problem-solving. Data is not collected all at once but is generated in real time and is often related to the feedback loop of the system [@doi:10.1115/1.3662552]. This type of data is more dynamic and complex compared to traditional experimental or measurement data, involving both time dependence and continuous influence from the environment and interaction.
+In the Internet era, data increasingly arrived as streams shaped by interaction and feedback [@doi:10.1115/1.3662552], breaking the assumption that a fixed distribution can be sampled once. Online learning addresses this through the online convex optimization framework, where a learner updates a decision each round against an adversarially revealed loss and is judged by its regret relative to the best fixed decision in hindsight [@doi:10.48550/arXiv.1802.02871; @doi:10.1561/2200000018]; online gradient descent achieves sublinear regret in this setting. Because real streams are non-stationary, the input-output relationship can itself drift over time [@doi:10.1145/2523813], motivating drift-detection and adaptive-windowing methods that reset or reweight the model when the error distribution shifts [@doi:10.1007/978-3-540-28645-5_29; @Baena2006EarlyDrift; @doi:10.1145/1557019.1557041].
 
-A natural starting point to address this challenge is the concept of online learning [@doi:10.48550/arXiv.1802.02871]. A foundational formulation is the Online Convex Optimization (OCO) framework [@doi:10.1561/2200000018]. At each round $t = 1, \dots, T$, the learner selects a decision $x_t \in F$, where $F \subset \mathbb{R}^n$ is a convex decision set. The environment then reveals a convex loss function $c_t : F \to \mathbb{R}$, and the learner incurs loss $c_t(x_t)$. The central performance measure is the regret, defined as:
-
-$$
-R(T) = \sum_{t=1}^{T} c_t(x_t) - \min_{x \in F} \sum_{t=1}^{T} c_t(x)
-$$
-
-which compares the learner’s cumulative loss with that of the best fixed decision in hindsight. A simple and influential algorithm in this framework is Online Gradient Descent (OGD). Given a subgradient $g_t \in \partial c_t(x_t)$, OGD performs a gradient step followed by projection back onto the feasible set:
+In this regime, context becomes something the system must act on. The multi-armed bandit formalizes the exploration-exploitation trade-off under partial feedback [@doi:10.1090/S0002-9904-1952-09620-8], with classic strategies such as $\epsilon$-greedy [@Sutton1998RLIntroduction] and upper-confidence-bound selection [@doi:10.1023/A:1013689704352]. Their key limitation, ignoring side information, leads directly to contextual bandits, where the agent observes a context $x_t$ each round and learns a policy mapping context to action. A representative algorithm, LinUCB [@doi:10.1145/1772690.1772758], assumes a linear context-reward relationship and selects
 
 $$
-x_{t+1} = \Pi_F(x_t - \eta_t g_t)
+a_t = \arg\max_{a \in \mathcal{A}} \left( x_t^\top \hat{\theta}_a + \alpha \sqrt{x_t^\top A_a^{-1} x_t} \right),
 $$
 
-where $\eta_t$ is a step size and $\Pi_F$ denotes projection onto $F$. With appropriately chosen step sizes, OGD achieves the classic bound $R(T) = O(\sqrt{T})$, implying vanishing average regret. This framework provides the mathematical foundation for more complex online methods, such as bandits and reinforcement learning.
+personalizing decisions to the observed environment, as in news recommendation and adaptive experimentation. When actions also influence future contexts, reinforcement learning generalizes this to sequential decisions through Markov decision processes [@Bellman1957Markovian], with value-based [@Watkins1989Learning] and policy-based [@doi:10.1023/a:1022672621406; @doi:10.1109/tsmc.1983.6313077] solutions enabling applications from game-playing to robotics [@doi:10.1038/nature14236]. Across this progression, adaptivity to context and feedback moves from a modeling convenience to the central object.
 
-While OCO provides guarantees with respect to a fixed comparator, real-world data streams rarely remain stationary. The statistical relationship between inputs $x$ and outputs $y$ can change over time. This phenomenon is known as concept drift [@doi:10.1145/2523813]. To cope with drift, online adaptive learning methods augment the basic OCO paradigm by explicitly adapting to distributional changes. A representative technique for drift detection is the Drift Detection Method (DDM) [@doi:10.1007/978-3-540-28645-5_29]. It monitors the online error rate $\hat{p}\_i$ after $i$ samples together with its standard deviation $s\_i$. The method keeps track of the minimum values observed $(p\_{\min}, s\_{\min})$, and raises an alarm when
+### Multimodal data and large-scale pretraining
 
+Digitalization brought data spanning several modalities at once, including images [@doi:10.1088/2040-8978/17/7/073001], audio [@doi:10.1121/1.1912679], and text [@doi:10.1145/361219.361220]. These sources are not only high-dimensional but structurally distinct: text is discrete and symbolic, images are spatially organized, and audio is a continuous waveform. Modeling them together requires establishing correspondences across modalities, building shared latent spaces, and adjusting inter-modal dependencies by task. Representation learning supplies the shared latent space by mapping heterogeneous inputs into a common representation, and recent theory frames this adaptability directly in terms of context: the Contexture Theory casts representation learning as approximating the expectation operator induced by a context variable, unifying supervised, self-supervised, and manifold learning under one spectral view and showing that constructing informative context can be more efficient than merely scaling capacity [@doi:10.48550/arXiv.2505.01557].
+
+Scaling this further, web-scale collection produced massive, weakly supervised, cross-domain corpora, such as large text collections [@doi:10.48550/arXiv.1810.04805] and image-text alignment data [@doi:10.48550/arXiv.2103.00020], gathered under open conditions without explicit task labels. The modeling goal shifts from fitting one distribution to extracting patterns that remain stable across heterogeneous contexts, which is the premise of foundation models: general-purpose systems pretrained at scale and adapted to downstream tasks with little additional supervision [@doi:10.48550/arXiv.2108.07258]. Model performance follows predictable power laws in parameter count, dataset size, and compute, leading to the large-scale pretraining regime common today [@doi:10.48550/arXiv.2001.08361; @doi:10.48550/arXiv.2203.15556]. Pretraining is often carried out through masked-language modeling or causal language modeling. These objectives use a variable mask to corrupt the input data, and require the model to reconstruct the corrupted tokens given the uncorrupted tokens. This gives a joint distribution over the entire sample
 $$
-\hat{p}_i + s_i \geq p_{\min} + \alpha \cdot s_{\min}
-$$
-
-for a predefined threshold $\alpha$. This statistical test signals when the current error distribution significantly deviates from the past minimum, indicating concept drift. The old model is then discarded, and a new model is trained using the data accumulated since the warning level (i.e., from $k_w$ to $k_d$). After reinitialization, $(p_{\min}, s_{\min})$ are reset, and the updated model continues processing the incoming stream. Beyond DDM, the Early Drift Detection Method (EDDM) [@Baena2006EarlyDrift] monitors the distribution of distances between errors, making it more sensitive to gradual drifts. Ensemble-based methods such as Bagging-ADWIN and Boosting-ADWIN [@doi:10.1145/1557019.1557041], which couple classical ensemble learning with adaptive sliding windows, have also demonstrated strong performance on evolving data streams.
-
-Though adaptive learning addresses the challenge of non-stationarity, it still operates under a full-information feedback model: after each round, the entire loss function $c_t(\cdot)$ is revealed. In many interactive systems, however, such complete feedback is unavailable. This setting motivates the study of partial-information online learning, captured by the classic Multi-Armed Bandit (MAB) framework [@doi:10.1090/S0002-9904-1952-09620-8]. Within the MAB, the agent repeatedly chooses among a finite set of actions (“arms”) and receives the reward of that arm. The central challenge is the exploration–exploitation trade-off. Classical strategies include $\epsilon$-greedy [@Sutton1998RLIntroduction], which with probability $1-\epsilon$ selects the current best arm and with probability $\epsilon$ explores. Upper Confidence Bound (UCB) algorithms [@doi:10.1023/A:1013689704352] emphasize the “Optimism in the Face of Uncertainty,” where at each round $t$ with arm $a$:
-
-$$
-\mathrm{UCB}_a(t) = \hat{\mu}_a + \sqrt{\frac{2\ln t}{n_a}}
+\log p(x) = \sum_{t=1}^T \log p(x_t \mid x_{<t}),
 $$
 
-The arm $\arg\max_a \mathrm{UCB}_a(t)$ is chosen at each round, achieving sublinear regret. Their key limitation—ignoring contextual side information—leads naturally to Contextual Bandits. Formally, at each round $t$, the agent now observes a context $x_t$ and the goal is to learn a policy $\pi : X \to A$ that maximizes expected cumulative reward. A representative algorithm is LinUCB, which assumes a linear relationship between context and reward; at round $t$, LinUCB selects
+and allows context to be flexibly specified. This allows adaptation to occur over a wide range of contexts at inference time, without weight updates: given a prompt of examples $(x_1, y_1), \dots, (x_k, y_k)$ and a query $x_{k+1}$, the model predicts
 
 $$
-a_t = \arg \max_{a \in \mathcal{A}} \left( x_t^\top \hat{\theta}_a + \alpha \sqrt{x_t^\top A_a^{-1} x_t} \right)
+\hat{y}_{k+1} = \arg\max_{y_{k+1}} p(y_{k+1} \mid x_{k+1}, y_k, x_k, \dots y_1, x_1),
 $$
 
-where $\hat{\theta}_a$ is the estimated weight and $A_a$ is the design matrix. Contextual bandits improve by personalizing decisions to the observed environment. They have been widely applied in news recommendation and adaptive experimentation. However, CB assumes actions do not affect future contexts, which motivates the richer framework of reinforcement learning.
+with the same fixed $\theta^\star$. This emergent capability, in-context learning, is the basis for the implicit context-adaptive view explored in subsequent sections.
 
-RL formalizes sequential decision-making under uncertainty through the lens of Markov Decision Processes (MDPs) [@Bellman1957Markovian]. An MDP is defined by a state space $S$, an action space $A$, transition dynamics $P(s' \mid s, a)$, a reward function $r(s, a)$, and a discount factor $\gamma \in [0, 1)$. At each step $t$, the agent observes a state $s_t$, selects an action $a_t \sim \pi(\cdot \mid s_t)$, receives a reward $r_t$, and transitions to a new state $s_{t+1}$. The goal is to learn a policy $\pi$ that maximizes the expected cumulative discounted reward:
+### From heterogeneity to context
 
-$$
-J(\pi) = \mathbb{E}_{\pi} \left[ \sum_{t=0}^{\infty} \gamma^t r_t \right]
-$$
-
-Classical solution approaches include value-based methods (e.g., Q-learning) [@Watkins1989Learning], which estimate action-value functions and act greedily with respect to them, and policy-based methods (e.g., policy gradient, actor–critic) [@doi:10.1023/a:1022672621406] [@doi:10.1109/tsmc.1983.6313077], which directly optimize the policy parameters via stochastic gradient ascent. These methods establish theoretical guarantees and have enabled applications ranging from game-playing (e.g., Go, Atari) [@doi:10.1038/nature14236] to robotics.
-
-The trajectory from online convex optimization to reinforcement learning highlights how the statistical study of streaming, interactive data has evolved into increasingly expressive frameworks for context-adaptive inference. As data collection becomes more interactive and non-stationary, the ability to learn from context and feedback loops is central to adaptive intelligence. This theme naturally connects to the next section on multimodal data, where adaptivity must also span across modalities.
-
-### Multimodal data
-
-With the advancement of the digitalization process, research and application have begun to simultaneously involve various types of data such as images [@doi:10.1088/2040-8978/17/7/073001], audio [@doi:10.1121/1.1912679], and text [@doi:10.1145/361219.361220]. These data are not only high-dimensional but also show clear structural and representational differences. Text consists of discrete symbolic sequences that contain semantic and grammatical structures; images are spatially organized pixel matrices that reflect local spatial correlations and global patterns; and audio is a continuous waveform signal that captures dynamic temporal characteristics. Compared with earlier single-type numerical or functional data, multimodal data are more heterogeneous and complex. New challenges asked researchers to explore how to establish semantic correspondences across modalities for cross-modal alignment, build joint models through shared latent spaces, and dynamically adjust inter-modal dependencies according to different tasks or contexts.
-
-From a statistical perspective, representation learning [@doi:10.1109/TPAMI.2013.50] can be regarded as a generalization of traditional linear dimension reduction techniques such as Principal Component Analysis (PCA) and Factor Analysis (FA). While PCA and FA aim to identify low-dimensional subspaces that capture maximum variance or shared covariance structure through linear projections, representation learning extends this idea to nonlinear mappings that can model highly complex and structured data. Representation learning addresses this challenge by automatically learning low-dimensional embeddings that map complex observations into a shared latent space. The basic idea is to learn a nonlinear mapping
-
-$$
-f_{\theta}: \mathcal{X} \rightarrow \mathcal{Z}
-$$
-
-where $\mathcal{X}$ represents the original multimodal input space (e.g., images, text, or audio), and $\mathcal{Z}$ denotes the shared latent space. The context-adaptive nature of representation learning lies in its ability to adjust feature extraction pathways according to the input modality and to align heterogeneous data within a unified semantic space. Recent theoretical work provides a unified explanation of this adaptability. The Contexture Theory formalizes representation learning as approximating the expectation operator induced by the context variable, linking supervised, self-supervised, and manifold learning under a common spectral framework [@doi:10.48550/arXiv.2505.01557]. This perspective highlights that constructing informative context variables can yield greater efficiency than merely scaling model capacity, offering a rigorous theoretical basis for context-aware representation learning.
-
-To infer hidden structures, traditional latent variable models in statistics such as Factor Analysis and Gaussian Mixture Models (GMM) require estimating the posterior distribution $p(z|x)$. However, when the generative process $p_\theta(x|z)$ is highly nonlinear, the posterior becomes intractable. Variational inference approximates the true posterior by introducing a tractable distribution $q(z|x)$ and minimizing their divergence, typically via the Kullback–Leibler (KL) divergence.
-
-Amortized inference introduces a major innovation by parameterizing the approximate posterior as a learnable function $q_\phi(z|x)$ shared across all samples. This amortizes the cost of inference, enabling efficient posterior estimation via a neural network encoder. Variational Autoencoders (VAEs) [@arXiv:1312.6114] can be regarded as nonlinear extensions of classical latent variable models. VAEs jointly train the generative model $p_\theta(x|z)$ and the inference model $q_\phi(z|x)$ by maximizing the Evidence Lower Bound (ELBO):
-
-$$
-\mathcal{L}(\theta, \phi; x) = \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}[q_\phi(z|x) \,||\, p(z)]
-$$
-
-The model can dynamically adjust posterior estimation $q_\phi(z|x)$ according to input characteristics or modality, achieving efficient and scalable probabilistic reasoning.
-
-In many real-world scenarios, the amount of labeled data for each task may be limited. Meta-learning, or learning to learn, provides a framework for acquiring inductive knowledge that enables rapid adaptation to new tasks with few examples. The central idea is to learn a meta-model that captures transferable structures across tasks and can quickly adjust its parameters when facing a new context. It involves a two-level optimization process:
-
-$$
-\min_{\theta} \sum_{T_i \sim p(T)} \mathcal{L}_{T_i}\big(U(\theta, T_i)\big)
-$$
-
-where $\theta$ denotes the meta-parameters shared across tasks, $T_i$ represents individual tasks sampled from a task distribution $p(T)$, and $U(\theta, T_i)$ indicates the task-specific adaptation process, such as gradient updates.
-
-Two main paradigms have been developed. Gradient-based meta-learning, exemplified by Model-Agnostic Meta-Learning (MAML) [@doi:10.48550/arXiv.1703.03400], optimizes an initialization of $\theta$ that allows fast convergence on new tasks with a few gradient steps. In contrast, metric-based meta-learning [@doi:10.48550/arXiv.1703.05175] focuses on learning a task-invariant representation space in which samples from the same class or semantic context remain close in distance metrics.
-
-Meta-learning can be viewed as a hierarchical model where the outer loop learns the hyperprior over tasks and the inner loop performs task-specific inference. The model internalizes the variability across tasks into shared meta-parameters and dynamically adjusts its learning strategy when exposed to new contextual distributions. Such an approach bridges the gap between multi-task learning and context-aware adaptation, providing a scalable solution for heterogeneous and data-sparse environments.
-
-### Large-scale pre-trained data
-
-With the rapid expansion of digital ecosystems and the emergence of web-scale data collection, research has entered a new stage characterized by massive, heterogeneous, and weakly supervised datasets. In recent years, a vast amount of cross-domain data has been centrally collected—such as large-scale text corpora [@doi:10.48550/arXiv.1810.04805] and multimodal alignment data [@doi:10.48550/arXiv.2103.00020] that combine text, images, audio, and sound—representing an unprecedented scale and diversity of information sources. Unlike earlier multimodal datasets that were carefully curated for specific experimental designs, these pretraining datasets are gathered under open, non-controlled conditions and often lack explicit task labels or unified structures.
-
-The central modeling challenge has shifted from fitting a single data distribution to extracting transferable and generalizable patterns that remain stable across heterogeneous contexts. This transition has motivated the development of foundation models and related adaptive paradigms, which aim to capture universal representations, perform context-dependent inference, and achieve robust generalization across domains.
-
-Foundation models [@doi:10.48550/arXiv.2108.07258] represent a fundamental paradigm shift in machine learning toward building universal systems trained on massive and heterogeneous data sources. Unlike earlier models that were designed for specific tasks or modalities, foundation models learn general-purpose representations through large-scale pretraining, which can be adapted to downstream tasks with minimal fine-tuning. Given a massive dataset $\mathcal{D} = \lbrace x_i \rbrace_{i=1}^N$ sampled from diverse domains, the objective is to learn a parameterized function $f_\theta$ that captures broadly transferable patterns:
-
-$$
-\theta^* = \arg\min_\theta \; \mathbb{E}_{x \sim \mathcal{D}} \, \ell(f_\theta(x))
-$$
-
-where $\ell$ represents a pretraining objective such as next-token prediction or contrastive alignment.
-
-The context-adaptive nature of foundation models arises from their ability to integrate knowledge from large and diverse data distributions, enabling emergent behaviors such as cross-modal transfer, domain generalization, and zero-shot reasoning. They thus redefine the notion of generalization—from fitting within a context to adapting across contexts—by embedding statistical invariances into large-scale learned representations.
-
-In-context learning (ICL) [@doi:10.48550/arXiv.2301.00234] describes the ability of large language or multimodal models to adapt to new tasks through contextual examples provided at inference time, without updating model parameters. Given a prompt sequence $\lbrace(x_i, y_i)\rbrace_{i=1}^k$ followed by a query $x_{k+1}$, the model generates a prediction $\hat{y}_{k+1}$ by conditioning on the in-context information:
-
-$$
-\hat{y}_{k+1} = f_\theta(x_{k+1} \mid x_1, y_1, \dots, x_k, y_k)
-$$
-
-This phenomenon suggests that pretrained models can perform implicit meta-learning within their internal representations, dynamically adjusting inference behavior according to contextual input. From a statistical perspective, ICL transforms the adaptation process from an external optimization (parameter update) to an internal inference mechanism conditioned on observed data, thus embodying a new form of context-adaptive reasoning.
-
-
-
-## Principles of Context-Adaptive Inference
-
-What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is beneficial. This section formalizes the core principles that underlie adaptive modeling and situates them within both classical statistics and recent advances in machine learning.
-
-Adaptivity is best understood as a structured set of design principles rather than a single mechanism. Each principle described below highlights a different axis along which models can incorporate or restrict adaptation. Flexibility captures the representational capacity needed for adaptation, while signals of heterogeneity determine when adaptation is justified. Modularity helps organize adaptation into interpretable and transferable units, and selectivity guards against overfitting by controlling when adaptation is triggered. Data efficiency limits how finely we can adapt in practice, and tradeoffs remind us that adaptation is never free of cost. Together, these principles delineate both the potential and the pitfalls of adaptive systems.
-
-We organize this section around six core principles: flexibility, heterogeneity signals, modularity, selectivity, data efficiency, and tradeoffs. Afterward, we discuss failure modes and conclude with a synthesis that connects these ideas to practical implications.
-
-### 1. Adaptivity requires flexibility
-The first principle concerns model capacity. A model must be able to represent multiple behaviors if it is to adapt. Without sufficient representational richness, adaptation becomes superficial, amounting only to noise-fitting rather than meaningful personalization. Flexibility provides the foundation for models to express diverse responses across individuals, groups, or environments, rather than enforcing a single global rule.
-
-Flexibility may arise from different modeling strategies. In classical statistics, regression models with interaction effects explicitly capture how predictors influence outcomes differently across contexts, while hierarchical and multilevel models let effects vary systematically across groups. Varying-coefficient models extend this further by allowing regression coefficients to evolve smoothly with contextual covariates [@doi:10.1111/j.2517-6161.1993.tb01939.x]. In machine learning, meta-learning and mixture-of-experts architectures [@doi:10.1162/neco.1991.3.1.79] offer dynamic allocation of capacity, training models to specialize on tasks or inputs as needed. Together, these approaches illustrate the common principle that without flexibility, adaptation has no meaningful space in which to operate.
-
-### 2. Adaptivity requires a signal of heterogeneity
-Flexibility alone is not enough; a model also requires observable signals that indicate how and why adaptation should occur. Without such signals, adaptive systems risk reacting to random fluctuations rather than capturing meaningful structure. In statistics, varying-coefficient regressions illustrate this idea by allowing parameters to change smoothly with observed covariates [@doi:10.1111/j.2517-6161.1993.tb01939.x], while hierarchical models assume systematic group differences that provide a natural signal for adaptive pooling.
-
-In machine learning, contextual bandits adapt decisions to side information that characterizes the current environment, while benchmarks like WILDS highlight that real-world datasets often contain distributional shifts and subgroup heterogeneity [@doi:10.48550/arXiv.2012.07421]. Recent work extends this further, modeling time-varying changes in continuous temporal domain generalization [@doi:10.48550/arXiv.2405.16075] or leveraging diversity across experts to separate stable from unstable patterns [@doi:10.48550/arXiv.2410.17020]. Across applications, from medicine to online platforms, heterogeneity signals provide the essential cues that justify adaptation.
-
-### 3. Modularity improves adaptivity
-Organizing adaptation into modular units improves interpretability and robustness. Instead of spreading changes across an entire system, modularity restricts variation to well-defined subcomponents that can be recombined, reused, or replaced. This structure provides three advantages: targeted adaptation, transferability across tasks, and disentanglement of variation sources.
-
-A canonical example is the mixture-of-experts framework, where a gating network routes inputs to specialized experts trained for different data regimes [@doi:10.1162/neco.1991.3.1.79]. By decomposing capacity in this way, models not only gain efficiency but also clarify which components are responsible for specific adaptive behaviors. Recent advances extend this principle in modern architectures: modular domain experts [@doi:10.48550/arXiv.2410.10181], adapter libraries for large language models [@doi:10.48550/arXiv.2405.11157], and mixtures of LoRA experts [@doi:10.48550/arXiv.2404.13628]. In applications ranging from language processing to computer vision, modularity has become a cornerstone of scalable adaptivity.
-
-### 4. Adaptivity implies selectivity
-Adaptation must not occur indiscriminately. Overreacting to noise leads to overfitting, defeating the purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence.
-
-Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2109.12746], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2204.02610]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation.
-
-### 5. Adaptivity is bounded by data efficiency
-Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the availability of data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting to idiosyncratic patterns. This limitation transcends individual methods and reflects a general statistical truth.
-
-Meta-learning research illustrates this tension, as few-shot frameworks show both the promise of cross-task generalization and the sharp degradation that occurs when task diversity or sample size is insufficient [@doi:10.48550/arXiv.1810.02334]. Bayesian analyses of scaling laws for in-context learning formalize how the reliability of adaptation grows with data [@doi:10.48550/arXiv.2410.16531]. To mitigate these limits, modular reuse strategies have been developed, including adapter libraries [@doi:10.48550/arXiv.2405.11157] and modular domain experts. Practical applications, from medicine to recommendation systems, highlight the same lesson: adaptation cannot outpace the data that supports it.
-
-### 6. Adaptivity is not a free lunch
-Adaptivity brings benefits yet inevitably incurs costs. It can reduce bias and improve personalization, but at the expense of variance, computational resources, and stability. A model that adapts too readily may become fragile, inconsistent across runs, or difficult to interpret.
-
-In statistical terms, this tension is captured by the classic bias and variance tradeoff [@doi:10.1109/72.788640]: increasing flexibility reduces systematic error but simultaneously increases estimation variance, especially in small-sample settings. Adaptive methods expand flexibility, which means they must also contend with this cost unless constrained by strong regularization or selectivity. In machine learning practice, these tradeoffs surface in multiple ways. Sparse expert models illustrate them clearly: while they scale efficiently, routing instability can cause experts to collapse or remain underused, undermining reliability [@doi:10.48550/arXiv.2406.18219]. Test-time adaptation can boost performance under distribution shift but may destabilize previously well-calibrated predictions. These examples show that adaptation is powerful but never free.
-
-### When Adaptivity Fails: Common Failure Modes
-The six principles describe when adaptation should succeed, but in practice, failures remain common. Understanding these failure modes is crucial for designing safeguards, as they reveal the vulnerabilities of adaptive methods when principles are ignored or misapplied. Failure does not imply that models lack adaptivity, but that adaptation proceeds in unstable or unjustified ways.
-
-**Spurious adaptation.** Models sometimes adapt to unstable or confounded features that correlate with outcomes only transiently. This phenomenon is closely related to shortcut learning in deep networks, where spurious correlations masquerade as useful signals [@doi:10.48550/arXiv.2004.07780; @doi:10.48550/arXiv.2012.07421]. Such adaptation may appear effective during training but fails catastrophically under distribution shift. The lesson here is that models must rely on stable signals of heterogeneity, not superficial correlations.
-
-**Overfitting in low-data contexts.** Fine-grained adaptation requires sufficient signal. When the available data are limited, adaptive models tend to inflate variance and personalize to noise rather than meaningful structure. Meta-learning research illustrates this tension: although few-shot methods aim to generalize with minimal samples, they often degrade sharply when task diversity is low or heterogeneity is weak [@doi:10.48550/arXiv.1810.02334]. This failure mode underscores the principle that data efficiency sets unavoidable limits on adaptivity.
-
-**Modularity mis-specification.** Although modularity can improve interpretability and transfer, poorly designed modules or unstable routing mechanisms can create new sources of error. Group-shift robustness studies reveal that when partitions are misaligned with true structure, adaptive pooling can worsen disparities across groups [@doi:10.48550/arXiv.1911.08731]. Similarly, analyses of mixture-of-experts models show that mis-specified routing can cause experts to collapse or remain underutilized [@doi:10.48550/arXiv.2406.18219]. These cases highlight that modularity is beneficial only when aligned with meaningful heterogeneity.
-
-**Feedback loops.** Adaptive models can also alter the very distributions they rely on, especially in high-stakes applications such as recommendation, hiring, or credit scoring. This creates feedback loops where bias is reinforced rather than corrected. For example, an adaptive recommender system that over-personalizes may restrict exposure to diverse content, reshaping user behavior in ways that amplify initial bias. The selective labels problem in algorithmic evaluation illustrates how unobserved counterfactuals complicate learning from adaptively collected data [@doi:10.1145/3097983.3098066]. These examples show that adaptation must be evaluated with attention to long-term interactions, not only short-term accuracy.
-
-Taken together, these failure modes illustrate that adaptivity is double-edged: the same mechanisms that enable personalization and robustness can also entrench bias, waste data efficiency, or destabilize models if not carefully designed and monitored.
-
-![Failure Modes of Context-Adaptive Models.
-(A) **Mode Collapse**: adaptive fits diverge from the true stable relationship.
-(B) **Overfitting in Low-Data Contexts**: adaptation follows noise rather than signal.
-(C) **Modularity Mis-Specification**: incorrect partitions obscure the true structure.
-(D) **Feedback Loops**: adaptive decisions reshape the very data they rely on.](images/adaptive_failures.png){#fig:adaptive-failures width="80%"}
-
-Having examined when and why adaptivity fails, we now synthesize these insights into a set of guiding principles for practical model design.
-
-### Synthesis and Implications
-The principles and failure modes together provide a coherent framework for context-adaptive inference. Flexibility and heterogeneity define the capacity and justification for adaptation, ensuring that models have room to vary and meaningful signals to guide that variation. Modularity and selectivity organize adaptation into structured, interpretable, and disciplined forms, while data efficiency and tradeoffs impose the practical limits that prevent overreach. Failure modes remind us that these principles are not optional: neglecting them can lead to spurious adaptation, instability, or entrenched bias.
-
-For practitioners, these insights translate into a design recipe. Begin by ensuring sufficient flexibility, but constrain it through modular structures that make adaptation interpretable and transferable. Seek out reliable signals of heterogeneity that justify adaptation, and incorporate explicit mechanisms of selectivity to guard against noise. Respect the limits imposed by data efficiency, recognizing that fine-grained personalization requires sufficient statistical support. Always weigh the tradeoffs explicitly, balancing personalization against stability, efficiency against interpretability, and short-term gains against long-term robustness. Evaluation criteria should extend beyond predictive accuracy to include calibration, fairness across subgroups, stability under distributional shift, and resilience to feedback loops.
-
-By connecting classical statistical models with modern adaptive architectures, this framework provides both a conceptual map and practical guidance. It highlights that context-adaptive inference is not a single technique but a set of principles that shape how adaptivity should be designed and deployed. When applied responsibly, these principles enable models that are flexible yet disciplined, personalized yet robust, and efficient yet interpretable. Building on these conceptual principles, we next examine how context-adaptive inference can be made computationally and statistically efficient.
-
-
-
-
-### Context-Aware Efficiency Principles and Design
-
-The efficiency of context-adaptive methods hinges on several key design principles that balance computational tractability with statistical accuracy. These principles guide the development of methods that can scale to large datasets while maintaining interpretability and robustness.
-
-Context-aware efficiency often relies on sparsity assumptions that limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of context-dependent parameters to be zero simultaneously [@doi:10.1111/j.1467-9868.2005.00532.x], hierarchical regularization that applies different regularization strengths to different levels of context specificity [@doi:10.1111/j.2517-6161.1996.tb02080.x; @doi:10.1017/CBO9780511790942], and adaptive thresholding that dynamically adjusts sparsity levels based on context complexity.
-
-Efficient context-adaptive inference can be achieved through computational strategies that allocate resources based on context. Early stopping terminates optimization early for contexts where convergence is rapid [@doi:10.48550/arXiv.1606.04838]. Context-dependent sampling uses different sampling strategies for different contexts [@doi:10.18653/v1/2024.findings-naacl.122]. Caching and warm-starting leverage solutions from similar contexts to accelerate optimization, particularly effective when contexts exhibit smooth variation [@doi:10.1561/2200000016].
-
-The design of context-aware methods often involves balancing computational efficiency with interpretability. Linear context functions are more interpretable but may require more parameters, while explicit context encoding improves interpretability but may increase computational cost. Local context modeling provides better interpretability but may be less efficient for large-scale applications. These trade-offs must be carefully considered based on the specific requirements of the application domain, as demonstrated in recent work on adaptive optimization methods [@doi:10.48550/arXiv.1412.6980].
-
-### Adaptivity is bounded by data efficiency
-
-Recent work underscores a practical limit: stronger adaptivity demands more informative data per context. When contexts are fine-grained or rapidly shifting, the effective sample size within each context shrinks, and models risk overfitting local noise rather than learning stable, transferable structure. Empirically, few-shot behaviors in foundation models improve with scale yet remain sensitive to prompt composition and example distribution, indicating that data efficiency constraints persist even when capacity is abundant [@doi:10.48550/arXiv.2005.14165; @doi:10.48550/arXiv.2206.07682; @doi:10.48550/arXiv.2202.12837]. Complementary scaling studies quantify how performance depends on data, model size, and compute, implying that adaptive behaviors are ultimately limited by sample budgets per context and compute allocation [@doi:10.48550/arXiv.2001.08361; @doi:10.48550/arXiv.2203.15556; @doi:10.48550/arXiv.2410.16531]. In classical and modern pipelines alike, improving data efficiency hinges on pooling information across related contexts (via smoothness, structural coupling, or amortized inference) while enforcing capacity control and early stopping to avoid brittle, context-specific artifacts [@doi:10.48550/arXiv.1606.04838]. These considerations motivate interpretation methods that report not only attributions but also context-conditional uncertainty and stability, clarifying when adaptive behavior is supported by evidence versus when it reflects data scarcity.
-
-#### Formalization: data-efficiency constraints on adaptivity
-
-Let contexts take values in a measurable space $\mathcal{C}$, and suppose the per-context parameter is $\theta(c) \in \Theta$.  
-For observation $(x,y,c)$, consider a conditional model $p_\theta(y \mid x,c)$ with loss $\ell(\theta; x,y,c)$.  
-For a context neighborhood $\mathcal{N}_\delta(c) = \{c': d(c,c') \le \delta\}$ under metric $d$, define the effective sample size available to estimate $\theta(c)$ by
-
-$$
-N_{\text{eff}}(c,\delta)
-= \sum_{i=1}^n w_\delta(c_i,c),
-\quad
-w_\delta(c_i,c) \propto K\!\left(\frac{d(c_i,c)}{\delta}\right),
-\quad
-\sum_i w_\delta(c_i,c)=1,
-$$
-
-where $K$ is a kernel.  
-A kernel-regularized estimator with smoothness penalty
-
-$$
-\mathcal{R}(\theta) = \int \|\nabla_c \theta(c)\|^2\,\mathrm{d}c
-$$
-
-solves
-
-$$
-\widehat{\theta}
-= \arg\min_{\theta \in \Theta}
-\frac{1}{n} \sum_{i=1}^n \ell(\theta; x_i, y_i, c_i)
-+ \lambda\, \mathcal{R}(\theta).
-$$
-
-Assuming local Lipschitzness in $c$ and $L$-smooth, $\mu$-strongly convex risk in $\theta$, a standard bias–variance decomposition yields for each component $j$
-
-$$
-\mathbb{E}\!\left[\|\widehat{\theta}j(c) - \theta_j(c)\|^2\right]
-\lesssim
-\underbrace{\frac{\sigma^2}{N_{\text{eff}}(c,\delta)}}_{\text{variance}}
-+ \underbrace{\delta^{2\alpha}}_{\text{approx. bias}}
-+ \underbrace{\lambda^2}_{\text{reg. bias}},
-\quad \alpha > 0,
-$$
-
-which exhibits the adaptivity–data trade-off: finer locality (small $\delta$) increases resolution but reduces $N_{\text{eff}}$, inflating variance.  
-Practical procedures pick $\delta$ and $\lambda$ to balance these terms (e.g., via validation), and amortized approaches replace $\theta(c)$ by $f_\phi(c)$ with shared parameters $\phi$ to increase $N_{\text{eff}}$ through parameter sharing.
-For computation, an early-stopped first-order method with step size $\eta$ and $T(c)$ context-dependent iterations satisfies (for smooth, strongly convex risk) the bound
-
-$$
-\mathcal{L}\!\big(\theta^{(T(c))}\big) - \mathcal{L}\!\big(\theta^{\star}\big)
-\;\le\;
-(1-\eta\mu)^{T(c)}\!\left(\mathcal{L}\!\big(\theta^{(0)}\big) - \mathcal{L}\!\big(\theta^{\star}\big)\right)
-+ \frac{\eta L \sigma^2}{2\mu\,N_{\text{eff}}(c,\delta)}\,.
-$$
-
-linking compute allocation $T(c)$ and data availability $N_{\text{eff}}(c,\delta)$ to the attainable excess risk at context $c$.
-
-### Formal optimization view of context-aware efficiency
-
-Let $f_\phi : \mathcal{X} \times \mathcal{C} \to \mathcal{Y}$ be a context-conditioned predictor with shared parameters $\phi$.  
-Given per-context compute budgets $T(c)$ and a global regularizer $\Omega(\phi)$, a resource-aware training objective is
-
-$$
-\min_{\phi}\;
-\mathbb{E}_{(x,y,c)\sim \mathcal{D}}
-\ell\big(f_\phi(x,c),y\big)
-+ \lambda\,\Omega(\phi)
-\quad
-\text{s.t.}\quad
-\mathbb{E}_{c}\,\mathcal{C}\big(f_\phi; T(c), c\big) \le B,
-$$
-
-where $\mathcal{C}(\cdot)$ models compute or latency.  
-The Lagrangian relaxation is
-
-$$
-\min_{\phi}\;
-\mathbb{E}_{(x,y,c)}
-\ell\big(f_\phi(x,c),y\big)
-+ \lambda\,\Omega(\phi)
-+ \gamma\,\mathbb{E}_{c}\,\mathcal{C}\big(f_\phi; T(c), c\big),
-$$
-
-which trades off accuracy and compute via $\gamma$.  
-For mixture-of-experts or sparsity-inducing designs, let $\phi = (\phi_1, \ldots, \phi_M)$ and define a gating function $\pi_\phi(m \mid c)$.  
-A compute-aware sparsity penalty can be written as
-
-$$
-\Omega(\phi)
-= \sum_{m=1}^M \alpha_m\,\|\phi_m\|_2^2
-+ \tau\, \mathbb{E}_{c} \sum_{m=1}^M \pi_\phi(m\mid c),
-$$
-
-encouraging few active modules per context.  
-Under smoothness and strong convexity, the optimality conditions yield the KKT stationarity conditions
-
-$$
-\nabla_\phi \Big( \mathbb{E}\,\ell
-+ \lambda\,\Omega
-+ \gamma\,\mathbb{E}_c\,\mathcal{C} \Big)
-= 0,
-\quad
-\gamma\,\big( \mathbb{E}_c\,\mathcal{C} - B \big) = 0,
-\quad
-\gamma \ge 0.
-$$
-
-This perspective clarifies that context-aware efficiency arises from jointly selecting representation sharing, per-context compute allocation $T(c)$, and sparsity in active submodules subject to resource budgets.
-
-Together, these efficiency principles and formal analyses bridge conceptual foundations with implementation. In the next section, we turn to explicit adaptive models that instantiate these ideas through structured parameterization and estimation.
+This history is a progressive erosion of the i.i.d. baseline. Each regime adds a source of heterogeneity that a single global parameter could not accommodate: dependence across groups, structure in high dimensions, variation across tasks, drift and feedback over time, and finally differences across modalities and domains at web scale. The recurring response was to let parameters vary, first across known groups, then smoothly across covariates, then across tasks and data modalities. The following sections explore this progression through the $\theta_i = f(c_i)$ formalism introduced earlier, where models are learned functions of arbitrary context. 
 
 
 ## Explicit Adaptivity: Structured Estimation of $f(c)$
 
-In classical statistical modeling, all observations are typically assumed to share a common set of parameters. However, modern datasets often display significant heterogeneity across individuals, locations, or experimental conditions, making this assumption unrealistic in many real-world applications. To better capture such heterogeneity, recent approaches model parameters as explicit functions of observed context, formalized as $\theta_i = f(c_i)$, where $f$ maps each context to a sample-specific parameter [@doi:10.1111/j.2517-6161.1993.tb01939.x].
+To better capture heterogeneity across contexts, some recent approaches model parameters as explicit functions of observed context, formalized as $\theta_i = f(c_i)$, where $f$ maps each context to a sample-specific parameter [@doi:10.1111/j.2517-6161.1993.tb01939.x].
 
-A familiar example of explicit adaptivity is multi-task learning, where context is defined by task identity. Traditional multi-task learning (left) assigns each task its own head on top of shared representations, while context-flagged models (right) pass task identity directly as an input, enabling richer parameter sharing. This illustrates how explicit conditioning on context variables can unify tasks within a single model and provides an intuitive entry point to more general forms of explicit adaptivity (Figure {@fig:mtl-context}).
+A familiar example of explicit adaptivity is multi-task learning, where context is defined by a task flag or identity. Traditional multi-task learning (left) assigns each task its own head on top of shared representations, while context-flagged models (right) pass task identity directly as an input, enabling richer parameter sharing. This illustrates how explicit conditioning on context variables can unify tasks within a single model and provides an intuitive entry point to more general forms of explicit adaptivity (Figure {@fig:mtl-context}).
 
 ![Multi-task learning as explicit adaptivity. In traditional MTL (left), each task has its own head on top of shared layers. In context-flagged models (right), the task identity is provided as an input, enabling a shared model to adapt across tasks.](images/mtl_context.png){#fig:mtl-context width="75%"}
 
-The workhorse formalism for explicit adaptivity is the varying-coefficient model (VCM), which writes each regression coefficient as a function of context [@doi:10.1111/j.2517-6161.1993.tb01939.x; @doi:10.3390/publications13020019]:
+The canonical formalism for explicit adaptivity is the varying-coefficient model (VCM), which writes each regression coefficient as a function of context [@doi:10.1111/j.2517-6161.1993.tb01939.x; @doi:10.3390/publications13020019]:
 
 $$
 y_i = \sum_{j=1}^{p} \beta_j(c_i)\, x_{ij} + \varepsilon_i .
 $$
 
-Every method in this section is, at its core, a different way to estimate the maps $\beta_j(\cdot)$, or more generally $f(\cdot)$. We organize them along an axis of increasingly sophisticated statistical and machine-learning concepts. Each step forward increases the power of context-specific, personalized inference by borrowing strength from related samples and groups. Read the other way, each step lowers the amount of data that must be collected for any single group, because information flows in from neighboring contexts rather than being estimated in isolation. The progression runs from subgroups that share nothing, through mechanisms that share progressively more, to fully learned functions of context: kernel localization that dissolves boundaries entirely, structured parametric maps that learn which context features matter, and finally contextualized models that learn arbitrary context dependencies. Running alongside this is a parallel case in which the models being adapted become increasingly sophisticated, going from linear models to graphical models whose structure, and not only its values, follows context.
+Every method in this section is, at its core, a different way to estimate the maps $\beta_j(\cdot)$, or more generally $f(\cdot)$. We organize them along an axis of increasingly sophisticated statistical and machine-learning concepts. This progression traces a spectrum of assumptions about how parameters relate to context, from none to fully learned:
+
+* Global models: $\theta_i = \theta$ for all $i$.
+* Grouped models: $\theta_i = \theta_c$ for a finite set of groups.
+* Smooth models: $\theta_i = f(c_i)$, with $f$ continuous or low-complexity.
+* Latent models: $\theta_i \sim P(\theta \mid c_i)$, with $f$ learned implicitly.
+
+![A spectrum of context awareness in modeling, showing global, grouped, smooth, and latent models](images/spectrum_context.png){#fig:spectrum-context width="70%"}
+
+Each step forward increases the power of context-specific, personalized inference by borrowing strength from related samples and groups. Each step also lowers the amount of data that must be collected for any single context, because information flows in from neighboring contexts rather than being estimated in isolation. 
+
+The sections below start from subgroups that share nothing, through mechanisms that share progressively more, to fully learned functions of context: kernel localization that dissolves boundaries entirely, structured parametric maps that learn which context features matter, and finally contextualized models that learn arbitrary context dependencies. Running alongside this is a parallel case in which the models being adapted become increasingly sophisticated, going from linear models to graphical models whose structure, and not only its values, follows context.
 
 ### Independent Subgroups
 
-The most basic response to heterogeneity is to split the data into subgroups and fit each one on its own. Conditional and clustered models define groups by hand, for example by sex or site, or by unsupervised clustering, and estimate a separate parameter vector within each group with no sharing between them. This removes the bias of a single global fit, but it is the most data-hungry option available: each group is estimated only from its own samples, so small groups are estimated poorly and unseen groups not at all. Every later step can be read as a way to relax this isolation, buying more reliable per-group estimates from less per-group data.
+The most basic response to heterogeneity is to split the data into subgroups and fit each one on its own. Conditional and clustered models define groups by hand, for example by sex or site, or by unsupervised clustering, and estimate a separate parameter vector within each group with no sharing between them,
+
+$$
+\{\widehat{\theta}_0, \ldots, \widehat{\theta}_C\} = \arg\max_{\theta_0, \ldots, \theta_C} \sum_{c \in \mathcal{C}} \ell(X_c; \theta_c),
+$$
+
+where $\ell(X_c; \theta_c)$ is the log-likelihood of $\theta_c$ on the samples assigned to group $c$. This removes the bias of a single global fit, but it is the most data-hungry option available: each group is estimated only from its own samples, so small groups are estimated poorly and unseen groups not at all. Every later step can be read as a way to relax this isolation, buying more reliable per-group estimates from less per-group data.
 
 ### Sharing Across Groups
 
-The first improvement keeps discrete groups but couples their estimates. Distance-regularized estimation asks that observations with similar contexts have similar parameters, penalizing differences in $\theta_i$ in proportion to context distance, while fused-lasso and total-variation penalties shrink differences between adjacent groups so that estimates borrow strength from their neighbors [@doi:10.1214/09-AOAS308]. The effect is to lower the effective data requirement per group: a sparsely observed context inherits information from well-observed relatives rather than standing alone.
+The first improvement keeps discrete groups but couples their estimates. Distance-regularized estimation asks that observations with similar contexts have similar parameters, penalizing differences in $\theta_i$ in proportion to context distance,
+
+$$
+\{\widehat{\theta}_0, \ldots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \ldots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) - \sum_{i,j} \frac{\|\theta_i - \theta_j\|}{D(c_i, c_j)} \right),
+$$
+
+where $D(c_i, c_j)$ is a distance metric between contexts, while fused-lasso and total-variation penalties shrink differences between adjacent groups so that estimates borrow strength from their neighbors [@doi:10.1214/09-AOAS308]. The effect is to lower the effective data requirement per group: a sparsely observed context inherits information from well-observed relatives rather than standing alone.
 
 The same idea carries over from regressors to network estimators. The graphical-model lineage established that a parameter can be an estimated network: zeros in the inverse covariance matrix encode conditional independencies [@doi:10.2307/2528966; @doi:10.1093/oso/9780198522195.001.0001], and neighborhood selection and the graphical lasso recover sparse structure directly from data [@doi:10.1214/009053606000000281; @doi:10.1093/biostatistics/kxm045], with later extensions estimating this structure when each node carries a vector of attributes rather than a scalar [@arxiv:1210.7665]. 
 
 Most of the graph estimators above use regularizers to enforce graph structure. A direct extension is to regularize networks across groups, which couples the estimation tasks and enables information sharing. Guo et al. jointly estimate several graphical models, encouraging sparsity within each while borrowing strength across related groups [@doi:10.1093/biomet/asq060], and the Joint Graphical Lasso balances shared structure against group-specific edges across populations [@doi:10.1111/rssb.12033]. Bayesian formulations achieve the same pooling through priors rather than penalties: lattice and Markov-random-field spike-and-slab priors learn when edges should be shared across neighboring sites or sample groups, and quantify how similar the resulting networks are [@doi:10.1198/jasa.2011.tm10465; @doi:10.1080/01621459.2014.896806].
 
+### Separating Subgroups
+
+The methods so far encourage parameters for similar contexts to converge. A converse design goal sometimes matters more: keeping the models for distinct subgroups separated so that minority subgroups do not collapse into majority patterns. This negative information sharing is typically implemented by learning representations that disentangle subgroup structure, connecting statistical partitioning with adversarial or contrastive objectives [@doi:10.48550/arXiv.1910.06939].
+
 ### Learning the Group Boundaries
 
-Thus far group-based modeling has required knowing which groups to model ahead of estimation. The next step lets the data decide where the boundaries fall. Model-based recursive partitioning fits a parametric model, tests its coefficients for instability across candidate context variables, and splits on the variable with the strongest instability before recursing, so the partition is chosen by the data rather than pre-specified [@doi:10.1198/106186008X319331]; toolkits such as partykit fit a parametric model within each leaf [@hothorn2015partykit]. In the network case the same move recovers where structure changes. Varying-coefficient varying-structure (VCVS) graphical models treats both the edge set and the edge weights as functions of context, and when structure changes abruptly a temporally smoothed penalty recovers the changepoints together with the precision matrix on each block, the first such estimators shown to be sparsistent with established convergence rates [@doi:10.1214/12-EJS739; @kolar2009sparsistent]. TREEGL extends this to a tree of networks that switch along a branching biological lineage, borrowing strength between a parent cell type and its descendants while exposing the edges that change at each division [@doi:10.1093/bioinformatics/btr239; @doi:10.1371/journal.pcbi.1003713].
+Thus far group-based modeling has required knowing which groups to model ahead of estimation. The next step lets the data decide where the boundaries fall. When samples are ordered along a context such as time, a total-variation penalty on successive parameters yields piecewise-constant estimates whose breakpoints are inferred rather than fixed,
+
+$$
+\{\widehat{\theta}_0, \dots, \widehat{\theta}_N\} = \arg\max_{\theta_0, \dots, \theta_N} \left( \sum_i \ell(x_i; \theta_i) + \lambda \sum_{i = 2}^N \|\theta_i - \theta_{i-1}\| \right),
+$$
+
+with the penalty strength $\lambda$ trading the number of breaks against fit. Model-based recursive partitioning fits a parametric model, tests its coefficients for instability across candidate context variables, and splits on the variable with the strongest instability before recursing, so the partition is chosen by the data rather than pre-specified [@doi:10.1198/106186008X319331]; toolkits such as partykit fit a parametric model within each leaf [@hothorn2015partykit]. In the network case the same move recovers where structure changes. Varying-coefficient varying-structure (VCVS) graphical models treats both the edge set and the edge weights as functions of context, and when structure changes abruptly a temporally smoothed penalty recovers the changepoints together with the precision matrix on each block, the first such estimators shown to be sparsistent with established convergence rates [@doi:10.1214/12-EJS739; @kolar2009sparsistent]. TREEGL extends this to a tree of networks that switch along a branching biological lineage, borrowing strength between a parent cell type and its descendants while exposing the edges that change at each division [@doi:10.1093/bioinformatics/btr239; @doi:10.1371/journal.pcbi.1003713].
 
 Viewing a partition as explicit routing clarifies what these splits accomplish. Each split of the context space sends samples to a distinct parameter vector, so the boundaries encode exactly where parameters are shared and where they are separated. Hierarchical partitions capture heterogeneity at two levels, sample-level variation within a context and task-level switching across contexts, which connects partition-based models to multi-task learning (Figure {@fig:context-splits}). This explicit routing is the structured counterpart of the implicit routing performed by mixture-of-experts and attention layers in the next section, where the same shared-versus-separated decision is made inside the network rather than by an overt split. 
 
@@ -1032,7 +534,7 @@ Viewing a partition as explicit routing clarifies what these splits accomplish. 
 
 ### Dissolving the Boundaries with Kernels
 
-Partitions, however they are drawn, still impose hard boundaries. Kernel and locally weighted methods remove them, estimating a separate model at each query context from a similarity-weighted neighborhood of samples. This is the classical varying-coefficient setting, where coefficients are smooth functions of a low-dimensional context estimated with kernel smoothing, local polynomials, or penalized splines. For a query context $c^\ast$, a semiparametric VCM solves
+Partitions, however they are drawn, still impose hard boundaries. Kernel and locally weighted methods remove them, estimating a separate model at each query context from a similarity-weighted neighborhood of samples. This is the classical varying-coefficient setting, where coefficients are smooth functions of a low-dimensional context estimated with kernel smoothing, local polynomials, or penalized splines [@doi:10.1214/aos/1017939139; @arxiv:2103.00315]. For a query context $c^\ast$, a semiparametric VCM solves
 
 $$
 \widehat{\theta}(c^\ast) = \arg\max_{\theta} \sum_{i=1}^n K_\lambda(c_i, c^\ast)\,\ell(x_i; \theta),
@@ -1044,11 +546,17 @@ Similarity can be defined over a topology rather than a continuous covariate. Sp
 
 ### Structured Parametric Maps
 
-Kernel methods treat the context dimensions symmetrically through the similarity metric. The next step learns which dimensions matter. Structured parametric VCMs impose form on $f$, from the linear map $\theta_i = A c_i$ to sparsity and group penalties on the coefficient functions, so that estimation both adapts the parameters and identifies the context features driving that adaptation. Tree-based ensembles are the high-capacity realization of this idea for tabular and mixed-type data: Tree Boosted Varying-Coefficient Models estimate context-dependent coefficients with gradient-boosted trees, balancing flexibility, accuracy, and interpretability while remaining easier to tune than deep networks [@doi:10.48550/arXiv.1904.01058]; cyclic gradient boosting adds dimension-wise early stopping and feature-importance measures [@doi:10.48550/arXiv.2401.05982]; and VCBART embeds Bayesian Additive Regression Trees into the varying-coefficient framework, estimating complex effect modifiers with coherent uncertainty quantification and good scaling in high dimensions [@doi:10.1214/24-BA1470]. What these share is a readout of context relevance, through split statistics, feature importances, or posterior inclusion, that the kernel view does not provide.
+Kernel methods treat the context dimensions symmetrically through the similarity metric. The next step learns which dimensions matter. Structured parametric VCMs impose form on $f$. The simplest is a linear map $\theta_i = A c_i$, estimated by
+
+$$
+\widehat{A} = \arg\max_A \sum_i \ell(x_i; A c_i),
+$$
+
+where sparsity and group penalties such as the L1 lasso can be imposed on the coefficient function to identify the context features driving adaptation [@doi:10.1111/j.2517-6161.1996.tb02080.x]. Tree-based ensembles extend this to tabular and mixed-type data: Tree Boosted Varying-Coefficient Models estimate context-dependent coefficients with gradient-boosted trees, balancing flexibility, accuracy, and interpretability while remaining easier to tune than deep networks [@doi:10.48550/arXiv.1904.01058]; cyclic gradient boosting adds dimension-wise early stopping and feature-importance measures [@doi:10.48550/arXiv.2401.05982]; and VCBART embeds Bayesian Additive Regression Trees into the varying-coefficient framework, estimating complex effect modifiers with coherent uncertainty quantification and good scaling in high dimensions [@doi:10.1214/24-BA1470]. What these share is a readout of context relevance, through split statistics, feature importances, or posterior inclusion, that the kernel view does not provide.
 
 ### From Composition to Learned Functions
 
-The boundary between parametric and nonparametric adaptivity is porous. If we fit simple parametric models within each context, for observed contexts $c$ or latent subcontexts $Z$, and then aggregate across contexts, the resulting conditional
+The jump from parametric to nonparametric adaptivity is straightforward. If we fit simple parametric models within each context, for observed contexts $c$ or latent subcontexts $Z$, and then aggregate across contexts, the resulting conditional
 
 $$
 P(Y\mid X,C) \;=\; \int P(Y\mid X,C,Z)\, dP(Z\mid C)
@@ -1062,7 +570,13 @@ This perspective motivates flexible function approximators: trees and neural net
 
 ### Contextualized Models: Arbitrary Functions of Context
 
-For contexts defined by high-dimensional or unstructured features such as images, text, or sequences, deep neural networks approximate $f(c)$ without committing to a fixed basis, partition, or similarity metric. A network can consume context as input and let its nonlinear layers induce context-dependent behavior, the pattern that reappears for implicit models in the next section; it can generate the parameters of another model directly, as in hypernetworks, which give an explicit deep-net realization of $\theta = f(c)$ [@doi:10.48550/arXiv.1609.09106]; or it can modulate a shared backbone through feature-wise affine transformations supplied by context, as in FiLM [@doi:10.48550/arXiv.1709.07871]. Taking this to its limit yields contextualized models, which treat $f$ as an unrestricted map learned end-to-end and estimate it directly, capturing complex functions of context including the feature interactions that the structured maps above cannot express [@doi:10.48550/arXiv.2310.11340]. A single deep encoder reads a sample's context and emits the parameters of its downstream model, so estimation is amortized across contexts: the cost is paid once during training, and inference for a new context is a forward pass that needs no per-group data at all. The formulation spans model types and domains, including personalized disease models [@doi:10.1073/pnas.2411930122; @doi:10.48550/arXiv.2111.01104], heterogeneous treatment effects [@doi:10.1016/j.jbi.2022.104086; @doi:10.48550/arXiv.2310.07918], drug development [@doi:10.64898/2026.05.11.724149], and contextual feature selection [@doi:10.48550/arXiv.2312.14254], with standard implementations in the contextualized.ml package [@doi:10.21105/joss.06469]. The network-valued thread reaches the same endpoint: personalized regression and Bayesian edge-regression models learn a map from a sample's covariates or latent similarity to its own network, recovering subject-specific structure rather than a shared group label [@doi:10.1093/bioinformatics/bty250; @doi:10.1080/01621459.2021.2000866]. Because the encoder infers parameters from context alone, it is the explicit object the next section reaches back to when it interprets an amortized context encoder as the bridge to in-context learning.
+For contexts defined by high-dimensional or unstructured features such as images, text, or sequences, deep neural networks approximate $f(c)$ without committing to a fixed basis, partition, or similarity metric. A network can consume context as input and let its nonlinear layers induce context-dependent behavior, the pattern that reappears for implicit models in the next section; it can generate the parameters of another model directly, as in hypernetworks, which give an explicit deep-net realization of $\theta = f(c)$ [@doi:10.48550/arXiv.1609.09106]; or it can modulate a shared backbone through feature-wise affine transformations supplied by context, as in FiLM [@doi:10.48550/arXiv.1709.07871]. Taking this to its limit yields contextualized models, which treat $f$ as an unrestricted map learned end-to-end and estimate it directly,
+
+$$
+\widehat{f} = \arg\max_{f \in \mathcal{F}} \sum_i \ell(x_i; f(c_i)),
+$$
+
+capturing complex functions of context including the feature interactions that the structured maps above cannot express [@doi:10.48550/arXiv.2310.11340]. A single deep encoder reads a sample's context and emits the parameters of its downstream model, so estimation is amortized across contexts: the cost is paid once during training, and inference for a new context is a forward pass that needs no per-group data at all. The formulation spans model types and domains, including personalized disease models [@doi:10.1073/pnas.2411930122; @doi:10.48550/arXiv.2111.01104; @doi:10.1101/2020.06.25.20140053], heterogeneous treatment effects [@doi:10.1016/j.jbi.2022.104086; @doi:10.48550/arXiv.2310.07918; @doi:10.48550/arXiv.2411.10645], contextual feature selection and explainability [@doi:10.48550/arXiv.2312.14254; @doi:10.48550/arXiv.1705.10301], and drug development [@doi:10.64898/2026.05.11.724149], with standard implementations in the contextualized.ml package [@doi:10.21105/joss.06469]. The network-valued thread reaches the same endpoint: personalized regression and Bayesian edge-regression models learn a map from a sample's covariates or latent similarity to its own network, recovering subject-specific structure rather than a shared group label [@doi:10.1093/bioinformatics/bty250; @doi:10.1080/01621459.2021.2000866]. Because the encoder infers parameters from context alone, it is the explicit object the next section reaches back to when it interprets an amortized context encoder as the bridge to in-context learning.
 
 ### Beyond Covariates: What Serves as Context
 
@@ -1100,8 +614,6 @@ Finally, the gap between methodological innovation and practical deployment rema
 
 
 ## Implicit Adaptivity: Emergent Contextualization in Complex Models
-
-**Introduction: From Explicit to Implicit Adaptivity.**
 
 Traditional models often describe how parameters change by directly specifying a function of context, for example through expressions like $\theta_i = f(c_i)$, where the link between context $c_i$ and parameters $\theta_i$ is fully explicit. In contrast, many modern machine learning systems adapt in fundamentally different ways. Large neural network architectures, particularly foundation models that are now central to state-of-the-art AI research [@doi:10.48550/arXiv.2108.07258], exhibit forms of adaptation that do not arise from any predefined mapping. Instead, their flexibility emerges from the interaction between model structure and the breadth of training data—an effect we refer to as implicit adaptivity. They show a capacity for adaptation that does not arise from any predefined mapping. Instead, their flexibility emerges naturally from the structure of the model and the breadth of the data seen during training. This phenomenon is known as implicit adaptivity. This emergent phenomenon, referred to as implicit adaptivity, highlights how learning and inference can become intertwined within the model itself. Attention 
 
@@ -1155,7 +667,7 @@ The most powerful and, arguably, most enigmatic form of implicit adaptivity is i
 
 #### The Phenomenon of Few-Shot In-Context Learning
 
-First systematically demonstrated in large language models such as GPT-3 [@doi:10.48550/arXiv.2005.14165], ICL is the ability of a model to perform a new task after being conditioned on just a few examples provided in its input prompt. Critically, this adaptation occurs entirely within a single forward pass, without any updates to the model's weights. For instance, a model can be prompted with a few English-to-French translation pairs and then successfully translate a new word, effectively learning the task on the fly. This capability supports a broad range of applications, including few-shot classification, following complex instructions, and even inducing and applying simple algorithms from examples. Subsequent work has shown that the ability to generalize from few in-context examples can itself be enhanced through meta-training. MetaICL explicitly trains models across diverse meta-tasks, teaching them to infer and adapt within context at test time without gradient updates, thereby strengthening the implicit adaptability of large language models [@doi:10.48550/arXiv.2110.15943].
+First systematically demonstrated in large language models such as GPT-3 [@doi:10.48550/arXiv.2005.14165], ICL is the ability of a model to perform a new task after being conditioned on just a few examples provided in its input prompt. Critically, this adaptation occurs entirely within a single forward pass, without any updates to the model's weights. For instance, a model can be prompted with a few English-to-French translation pairs and then successfully translate a new word, effectively learning the task on the fly. This capability supports a broad range of applications, including few-shot classification, following complex instructions, and even inducing and applying simple algorithms from examples. Subsequent work has shown that the ability to generalize from few in-context examples can itself be enhanced through meta-training. MetaICL explicitly trains models across diverse meta-tasks, teaching them to infer and adapt within context at test time without gradient updates, thereby strengthening the implicit adaptability of large language models [@doi:10.48550/arXiv.2110.15943]. TabICL introduces a foundation model architecture for large-scale tabular data, showing that in-context learning can efficiently scale to structured datasets via column-row attention mechanisms [@doi:10.48550/arXiv.2502.05564]. These results suggest that implicit adaptivity generalizes beyond text or vision into the broader landscape of structured scientific data.
 
 #### Deconstructing ICL: Key Influencing Factors
 
@@ -1184,12 +696,30 @@ From a more mechanistic, architectural perspective, researchers have identified 
 
 Despite its remarkable capabilities, ICL faces significant limitations with respect to transparency, explicit control, and robustness. The adaptation process is opaque, making it difficult to debug or predict failure modes. Furthermore, performance can be brittle and highly sensitive to small changes in the prompt. As summarized in recent surveys, key open questions include developing a more complete theoretical understanding of ICL, improving its reliability, and establishing methods for controlling its behavior in high-stakes applications [@doi:10.48550/arXiv.2301.00234].
 
-### Theoretical Bridges Between Varying-Coefficient Models and In-Context Learning
+### Comparative Synthesis: Implicit versus Explicit Adaptivity
 
-Recent theoretical work has uncovered deep connections between classical varying-coefficient models and the mechanisms underlying in-context learning in transformers. 
-Although these approaches arise from different traditions — one grounded in semi-parametric statistics, the other in large-scale deep learning — they can implement strikingly similar estimators. 
+Implicit and explicit strategies reflect two complementary philosophies for modeling heterogeneity, each with distinct strengths and trade-offs. The optimal choice between these approaches depends on the goals of analysis, the structure and scale of available data, and the need for interpretability or regulatory compliance in the application domain.
+
+**Implicit Adaptivity.**
+The principal advantage of implicit methods lies in their remarkable flexibility and scalability. Leveraging large-scale pre-training on diverse datasets, these models can effectively adapt to high-dimensional and unstructured contexts, such as raw text, images, or other complex sensory data, where explicitly specifying a context function $f(c)$ is infeasible. Because adaptation is performed internally during the model’s forward pass, inference is both rapid and adaptable. However, the mechanisms underlying this adaptability are typically opaque, making it challenging to interpret or control the model’s decision process. In applications like healthcare or autonomous systems, this lack of transparency can hinder trust, validation, and responsible deployment.
+
+**Explicit Adaptivity.**
+In contrast, explicit models provide direct, interpretable mappings from context to parameters through functions such as $f(c)$. This structure supports clear visualization, statistical analysis, and the formulation of scientific hypotheses. It also enables more direct scrutiny and control of the model’s reasoning. Nevertheless, explicit methods rely heavily on domain expertise to specify an appropriate functional form, and may struggle to accommodate unstructured or highly complex context spaces. If the assumed structure is misspecified, the model’s performance and generalizability can be severely limited.
+
+In summary, these two paradigms illustrate a fundamental trade-off between expressive capacity and transparent reasoning. Practitioners should carefully weigh these considerations, often choosing or blending approaches based on the unique demands of the task. For clarity, a comparative table or figure can further highlight the strengths and limitations of each strategy across various real-world applications.
+
+### Open Challenges and the Motivation for Interpretability
+
+The rise of powerful implicit adaptation methods, particularly in-context learning, raises critical open research questions regarding their diagnosis, control, and reliability. As these models are deployed in increasingly high-stakes applications, understanding their failure modes is not just an academic exercise but a practical necessity [@doi:10.48550/arXiv.2108.07258]. It is important to develop systematic methods for assessing when and why in-context learning is likely to fail, and to create techniques for interpreting and, where possible, steering the adaptation process. Prompting strategies such as chain-of-thought demonstrate that structured context can sometimes steer internal computation, providing limited but useful handles on model behavior [@doi:10.48550/arXiv.2201.11903]. A thorough understanding of the theoretical limits and practical capabilities of implicit adaptivity remains a central topic for ongoing research.
+
+These considerations motivate a growing search for techniques that can make the adaptation process more transparent by "making the implicit explicit." Such methods aim to bridge the gap between the powerful but opaque capabilities of implicit models and the need for trustworthy, reliable AI. This research can be broadly categorized into several areas, including post-hoc interpretability approaches that seek to explain individual predictions [@doi:10.3390/e23010018], surrogate modeling where a simpler, interpretable model is trained to mimic the complex model's behavior, and strategies for extracting modular structure from trained models. A prime example of the latter is the line of work probing language models to determine if they have learned factual knowledge in a structured, accessible way [@doi:10.48550/arXiv.1909.01066]. By surfacing the latent structure inside these systems, researchers can enhance trust, promote modularity, and improve the readiness of adaptive models for deployment in real-world settings. This line of work provides a conceptual transition to subsequent sections, which explore the integration of interpretability with adaptive modeling.
+
+
+## Theoretical Bridges Between Varying-Coefficient Models and In-Context Learning
+
+Recent theoretical work suggests that “explicit” context models (e.g., varying-coefficients, hierarchical/multitask) and “implicit” mechanisms (e.g., in-context learning via attention) often implement the same estimator class under squared loss, differing mainly in how they encode neighborhoods and regularization. 
+Although these approaches arise from different traditions — one grounded in semi-parametric statistics, the other in large-scale deep learning — they implement strikingly similar estimators. 
 This section formalizes these parallels and reviews key theoretical results establishing these bridges.
-
 #### Varying-Coefficient Models as Kernel Regression
 
 Consider a semi-parametric varying-coefficient model in which each observation is governed by a parameter vector $\theta_i$ that depends smoothly on context $c_i$. 
@@ -1219,7 +749,7 @@ $$
 \widehat{f}(x^\ast, c^\ast) = \sum_{i=1}^n \alpha_i(c^\ast)\, y_i,
 $$
 
-where $\alpha_i(c^\ast)$ are normalized kernel weights determined entirely by the context similarities and the regularization parameter $\lambda$.
+where $\alpha_i(c^\ast)$ are normalized kernel weights determined entirely by the context similarities and the regularization parameter $\lambda$. This context-space kernel smoother is a special case of Proposition 1 from the introduction in which the input-space kernel is held fixed, so only context similarity is allowed to vary; the full proof is given in Appendix A.
 
 #### Transformers as Ridge and Kernel Regressors In-Context
 
@@ -1237,11 +767,11 @@ Building on this finding, von Oswald et al. (2023) show that gradient-based trai
 
 Dai et al. (2023) provide a complementary theoretical view, arguing that transformers can implicitly implement compositional function families through their attention layers, and that in-context learning arises naturally from this functional representation [@doi:10.48550/arXiv.2212.10559].
 
-Finally, Reuter et al. (2025) propose a compelling Bayesian interpretation: transformers trained under in-context learning can perform full Bayesian inference for common statistical models such as generalized linear models and latent factor models. Concretely, they train transformers to infer complex posterior distributions in context, showing that the in-context forward pass can approximate posterior sampling comparable to MCMC or variational inference methods [@doi:10.48550/arXiv.2501.16825].
+Finally, Reuter et al. (2025) propose a compelling Bayesian interpretation: transformers trained under in-context learning can perform full Bayesian inference for common statistical models such as generalized linear models and latent factor models. Concretely, they train transformers to infer complex posterior distributions in context, showing that the in-context forward pass can approximate posterior sampling comparable to MCMC or variational inference methods [@doi:10.48550/arXiv.2501.16825]. 
 
 In all these cases, the support set within the prompt plays an analogous role to the neighborhood in context space in varying-coefficient models. The query token’s prediction is formed by aggregating information from the support tokens via learned similarity weights, realized by the attention mechanism rather than an explicitly defined kernel function.
 
-#### Synthesis: Two Paths to the Same Estimators
+#### Two Paths to the Same Estimators
 
 Taken together, these results reveal a common form:
 
@@ -1254,35 +784,169 @@ where the weights $\alpha_i(c^\ast)$ depend on the relationship between the quer
 - In varying-coefficient models, $\alpha_i(c^\ast)$ are determined explicitly by a user-chosen kernel $K_\lambda$.
 - In transformers, $\alpha_i(c^\ast)$ emerge implicitly from the learned attention patterns and internal computations after pretraining.
 
-Both perspectives yield estimators of the same functional form, with explicit kernel weighting in VCMs and learned attention weighting in transformers. This correspondence motivates a unified view of context-adaptive inference, combining the interpretability of explicit modeling with the flexibility and scale of implicit computation. This bridge motivates a unified framework for studying context-adaptive inference: explicit methods provide interpretability and structure, while implicit methods provide flexibility and scalability. Understanding how these two meet offers a promising path toward adaptive, interpretable models at scale. This unified perspective is also extending to structured and tabular domains. TabICL introduces a foundation model architecture for large-scale tabular data, showing that in-context learning can efficiently scale to structured datasets via column-row attention mechanisms [@doi:10.48550/arXiv.2502.05564]. These results suggest that implicit adaptivity generalizes beyond text or vision into the broader landscape of structured scientific data.
+Both perspectives yield estimators of the same functional form, with explicit kernel weighting in VCMs and learned attention weighting in transformers. This correspondence motivates a unified view of context-adaptive inference, combining the interpretability of explicit modeling with the flexibility and scale of implicit computation. 
+
+### Theoretical Bridge
+
+In practice, explicit methods provide interpretability and structure, while implicit methods provide flexibility and scalability. Understanding how explicit and implicit methods correspond offers a promising path toward adaptive, interpretable models at scale. Here, we focus on developing a generalized functional form that covers both explicit and implicit adaptation modes with a deep theoretical connection.
+
+We study supervised prediction with units $i=1,\dots,n$. Each unit has a context $c_i\in\mathcal{C}$ (e.g., patient/user/site/time) and observed data $\mathcal{D}_i=\{(x_{ij},y_{ij})\}_{j=1}^{m_i}$ with $x_{ij}\in\mathcal{X}$ and $y_{ij}\in\mathcal{Y}$. Predictions come from a model family $\mathcal{H}=\{h_\theta:\mathcal{X}\to\mathcal{Y}\mid \theta\in\Theta\}$ (e.g., linear model, neural net, probabilistic model).
+
+In global (i.i.d.) models, $\theta_i\equiv\theta^\star$. In context-adaptive models, parameters vary with context:
+$\theta_i=f(c_i)$ or $\theta_i\sim P(\theta\mid c_i)$.
+
+For a new unit with context $c$, we write a unified empirical objective:
+$$
+\widehat{\theta}(c)\in\arg\min_{\theta\in\Theta}\;
+\underbrace{\sum_{(i,j)\in S(c)} \ell\!\big(h_\theta(x_{ij}),y_{ij}\big)}_{\text{context-dependent support}}
+\;+\;
+\underbrace{\mathcal{R}(\theta;\,c)}_{\text{context-structured regularization}},
+$$ {#eq:unified}
+where $\ell$ is a proper loss (e.g., squared, logistic), $S(c)\subseteq\{1,\dots,n\}\times\mathbb{N}$ is a support set selected for context $c$, and $\mathcal{R}(\theta;c)$ encodes how parameters are allowed to vary with context (smoothness, sparsity, low-rank, hierarchy, etc.). This decomposition pairs a context-weighted loss, as in local likelihood and kernel-weighted estimation [@doi:10.1080/01621459.1987.10478466], with a context-structured regularizer from the penalized-estimation literature.
+This form has been applied to structured, high-dimensional context-varying estimation and comes with sparsistency guarantees that make it a central tool for context-adaptive modeling [@kolar2009sparsistent; @doi:10.1214/09-AOAS308].
+
+This form provides two ways to inject contextual information:
+- **Explicit parameterization:** a map $f:\mathcal{C}\to\Theta$ sets $\theta_i=f(c_i)$ (e.g., varying-coefficients, hierarchical Bayes, multi-task/meta-learning). Here $\mathcal{R}(\theta;c)$ typically regularizes $f$ (e.g., Lipschitz over $\mathcal{C}$, group lasso, low-rank).
+- **Implicit parameterization:** context alters optimization or internal states without exposing $\theta$ directly (e.g., mixture-of-experts with gates $g(x,c)$; retrieval where $S(c)$ is built by a retriever; in-context learning where a prompt map $S(c)$ conditions a foundation model).
+
+Emerging approaches blur this distinction. Instead of treating prompting (implicit) and fine-tuning (explicit) as separate mechanisms, models can map contextual information, such as a natural language task description, directly into parameter updates. Text-to-LoRA provides a concrete example of this paradigm, where context is encoded and used to generate task-specific parameters, effectively collapsing the boundary between implicit and explicit adaptation [@doi:10.48550/arXiv.2506.06105].
+
+To formalize this connection, we now return to a unified estimator.
+For convenience, we use a context encoder $\phi:\mathcal{C}\to\mathbb{R}^d$ and a similarity/kernel $K(c,c')$. A common instance of Eq. {@eq:unified} is kernel-weighted risk:
+$$
+\sum_{i,j} w_{ij}(c)\,\ell\!\big(h_\theta(x_{ij}),y_{ij}\big)\;+\;\mathcal{R}(\theta),
+\qquad
+w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
+$$
+
+Adaptivity across estimation and inference are governed defined by three tools that can be applied independently:
+1) **Information** via $S(c)$ (what context is exposed),  
+2) **Inductive bias** via $\mathcal{R}(\theta;c)$ (how parameters may vary),  
+3) **Compute** via warm-starts/caching/steps (how aggressively we solve Eq. {@eq:unified} at test time).
+
+#### Proof Overview
+
+To formalize this link between explicit and implicit context adaptation, we require a few assumptions.
+
+1. *Exchangeability within context:* conditional on $(\theta_i,c_i)$, $(x_{ij},y_{ij})$ are i.i.d.  
+2. *Regularity:* either $\theta=f(c)$ with $f$ in a regular class (e.g., Lipschitz/sparse/low-rank) or retrieval weights $w_{ij}(c)$ are bounded and locally normalized.  
+3. *Identifiability/stability:* $\ell$ is convex in model outputs and $\mathcal{R}$ yields a unique or stable minimizer.  
+4. *Resource tracking:* we track $|S(c)|$, optimization steps, and memory to compare **adaptation efficiency**.
+
+**Proposition 1 (Explicit varying-coefficients and linear ICL coincide with kernel ridge on joint features in the linear squared-loss setting).**  
+Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\varepsilon$ with $\mathbb{E}[\varepsilon]=0$. Let
+(i) a context encoder $\phi:\mathcal{C}\to\mathbb{R}^{d_c}$,
+(ii) joint features $\psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}$,
+(iii) a context-dependent support set $S(c)$ with nonnegative weights $w_{ij}(c)$.
+
+- **(A) Explicit varying-coefficients.** Let $\theta(c)=B\,\phi(c)$ with $B\in\mathbb{R}^{d_x\times d_c}$ and ridge penalty $\lambda\lVert B\rVert_F^2$. The weighted ridge solution yields
+  $$
+  \widehat y(x,c)=k_{(x,c)}^\top \big(K+\lambda I\big)^{-1} y,\quad
+  K_{ab}=\langle \psi_a,\psi_b\rangle=\langle x_a,x_b\rangle\cdot\langle \phi(c_a),\phi(c_b)\rangle,
+  $$
+  i.e., **kernel ridge regression (KRR)** on joint features.
+
+- **(B) Implicit adaptation via linear ICL.** Let a single linear attention layer consume the weighted support set $S(c)$ with linear $q=Q\psi$, $k=K\psi$, $v=V\psi$ and a linear readout. With attention weights proportional to $w_{ij}(c)\cdot \langle q,k_{ij}\rangle$, the induced predictor equals KRR with kernel
+  $$
+  k\big((x,c),(x',c')\big)=\langle q(x,c),k(x',c')\rangle,
+  $$
+  i.e., a learned **dot-product kernel** on the same joint features. If attention parameters are trained in the linearized/NTK regime, learning equals kernel regression with the network’s NTK, which is again a dot-product kernel on linear transforms of $\psi$.
+
+**Corollary 1 (Retrieval, gating, and weighting are kernel/measure choices).** Choosing $S(c)$ via a retriever $R(c)$, or gating in a mixture-of-experts, corresponds to changing the kernel and/or the empirical measure (weights $w_{ij}(c)$) used by KRR on $\psi$.
+
+*Full proof in Appendix A.* 
+
+#### Positioning and prior art
+Proposition 1 is expository: part (A) is standard ridge $\leftrightarrow$ kernel duality on joint features; part (B) follows from (i) fixed attention + trained linear head = ridge on fixed features and (ii) NTK linearization $\rightarrow$ kernel regression with the network’s NTK. 
+Our contribution is the unified context-aware formulation: explicit design tools via $S(c)$, $\mathcal{R}(\theta;c)$, and compute, and the mapping of retrieval/gating to kernel/measure choices. See transformer ICL as classical estimators [@arXiv:2212.07677; @arXiv:2208.01066; @arXiv:2212.10559] and NTK analyses [@arXiv:1806.07572; @arXiv:1912.02803].
+
+#### Limitations
+This linear, squared-loss bridge captures a large class of explicit and implicit adaptors, but it abstracts away at least three realities:
+(i) non-quadratic losses (e.g., logistic) change the effective kernel/weighting via loss curvature;
+(ii) when the prediction head is nonlinear (e.g., an MLP or attention), it introduces model curvature: the head’s Jacobian/Hessian depends on the input and parameters, so the effective metric and weights change with the representation; the fixed-kernel view from the linear case no longer holds;
+(iii) multi-modal context encoders (text, graphs, images) alter both the neighborhood definition and the regularizer.
+We view these as open extensions to explore beyond the scope of this review.
 
 
-### Comparative Synthesis: Implicit versus Explicit Adaptivity
+## Principles of Context-Adaptive Inference
 
-Implicit and explicit strategies reflect two complementary philosophies for modeling heterogeneity, each with distinct strengths and trade-offs. The optimal choice between these approaches depends on the goals of analysis, the structure and scale of available data, and the need for interpretability or regulatory compliance in the application domain.
+What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is beneficial. This section formalizes the core principles that underlie adaptive modeling and situates them within both classical statistics and recent advances in machine learning.
 
-**Implicit Adaptivity.**
-The principal advantage of implicit methods lies in their remarkable flexibility and scalability. Leveraging large-scale pre-training on diverse datasets, these models can effectively adapt to high-dimensional and unstructured contexts, such as raw text, images, or other complex sensory data, where explicitly specifying a context function $f(c)$ is infeasible. Because adaptation is performed internally during the model’s forward pass, inference is both rapid and adaptable. However, the mechanisms underlying this adaptability are typically opaque, making it challenging to interpret or control the model’s decision process. In applications like healthcare or autonomous systems, this lack of transparency can hinder trust, validation, and responsible deployment.
+Adaptivity is best understood as a structured set of design principles rather than a single mechanism, each a different axis along which a model can incorporate or restrict adaptation. We organize the section around six: flexibility, heterogeneity signals, modularity, selectivity, data efficiency, and tradeoffs.
 
-**Explicit Adaptivity.**
-In contrast, explicit models provide direct, interpretable mappings from context to parameters through functions such as $f(c)$. This structure supports clear visualization, statistical analysis, and the formulation of scientific hypotheses. It also enables more direct scrutiny and control of the model’s reasoning. Nevertheless, explicit methods rely heavily on domain expertise to specify an appropriate functional form, and may struggle to accommodate unstructured or highly complex context spaces. If the assumed structure is misspecified, the model’s performance and generalizability can be severely limited.
+These principles are realized by the two main method families in different ways. Explicit methods specify the map $\theta=f(c)$ directly and estimate it with structured regularizers; implicit methods let the same adaptation emerge inside a large model's forward pass. The principles we propose are grounded in Eq. {@eq:unified} so they are generally applicable.
 
-In summary, these two paradigms illustrate a fundamental trade-off between expressive capacity and transparent reasoning. Practitioners should carefully weigh these considerations, often choosing or blending approaches based on the unique demands of the task. For clarity, a comparative table or figure can further highlight the strengths and limitations of each strategy across various real-world applications.
+### 1. Adaptivity requires flexibility
+The first principle concerns model capacity. A model must be able to represent multiple behaviors if it is to adapt. Without sufficient representational richness, adaptation becomes superficial, amounting only to noise-fitting rather than meaningful personalization. Flexibility provides the foundation for models to express diverse responses across individuals, groups, or environments, rather than enforcing a single global rule.
 
-### Open Challenges and the Motivation for Interpretability
+Flexibility may arise from different modeling strategies. In classical statistics, regression models with interaction effects explicitly capture how predictors influence outcomes differently across contexts, while hierarchical and multilevel models let effects vary systematically across groups. Varying-coefficient models extend this further by allowing regression coefficients to evolve smoothly with contextual covariates [@doi:10.1111/j.2517-6161.1993.tb01939.x]. In machine learning, meta-learning and mixture-of-experts architectures [@doi:10.1162/neco.1991.3.1.79] offer dynamic allocation of capacity, training models to specialize on tasks or inputs as needed. Without flexibility, adaptation has no space in which to operate. In Eq. {@eq:unified}, flexibility is the expressiveness of the model family $\{h_\theta\}$ and the room left for $\theta(c)$ to move; the explicit and implicit sections trace two routes to it, structured maps $f(c)$ and large architectures that discover it emergently through internal weights.
 
-The rise of powerful implicit adaptation methods, particularly in-context learning, raises critical open research questions regarding their diagnosis, control, and reliability. As these models are deployed in increasingly high-stakes applications, understanding their failure modes is not just an academic exercise but a practical necessity [@doi:10.48550/arXiv.2108.07258]. It is important to develop systematic methods for assessing when and why in-context learning is likely to fail, and to create techniques for interpreting and, where possible, steering the adaptation process. Prompting strategies such as chain-of-thought demonstrate that structured context can sometimes steer internal computation, providing limited but useful handles on model behavior [@doi:10.48550/arXiv.2201.11903]. A thorough understanding of the theoretical limits and practical capabilities of implicit adaptivity remains a central topic for ongoing research.
+### 2. Adaptivity requires a signal of heterogeneity
+Flexibility alone is not enough; a model also requires observable signals that indicate how and why adaptation should occur. Without such signals, adaptive systems risk reacting to random fluctuations rather than capturing meaningful structure. In statistics, varying-coefficient regressions illustrate this idea by allowing parameters to change smoothly with observed covariates [@doi:10.1111/j.2517-6161.1993.tb01939.x], while hierarchical models assume systematic group differences that provide a natural signal for adaptive pooling.
 
-These considerations motivate a growing search for techniques that can make the adaptation process more transparent by "making the implicit explicit." Such methods aim to bridge the gap between the powerful but opaque capabilities of implicit models and the need for trustworthy, reliable AI. This research can be broadly categorized into several areas, including post-hoc interpretability approaches that seek to explain individual predictions [@doi:10.3390/e23010018], surrogate modeling where a simpler, interpretable model is trained to mimic the complex model's behavior, and strategies for extracting modular structure from trained models. A prime example of the latter is the line of work probing language models to determine if they have learned factual knowledge in a structured, accessible way [@doi:10.48550/arXiv.1909.01066]. By surfacing the latent structure inside these systems, researchers can enhance trust, promote modularity, and improve the readiness of adaptive models for deployment in real-world settings. This line of work provides a conceptual transition to subsequent sections, which explore the integration of interpretability with adaptive modeling.
+In machine learning, contextual bandits adapt decisions to side information that characterizes the current environment, while benchmarks like WILDS highlight that real-world datasets often contain distributional shifts and subgroup heterogeneity [@doi:10.48550/arXiv.2012.07421]. Recent work extends this further, modeling time-varying changes in continuous temporal domain generalization [@doi:10.48550/arXiv.2405.16075] or using diversity across experts to separate stable from unstable patterns [@doi:10.48550/arXiv.2410.17020]. Across applications, from medicine to online platforms, signals that indicate heterogeneity or distribution shift drive adaptation.
+
+Causal inference is a canonical example. In the Neyman-Rubin potential-outcomes framework, the average treatment effect $E[Y(1) - Y(0)]$ assumes one effect shared across the population. If the underlying population contains multiple groups (heterogeneous) and the effect differs between groups, the average estimator is confounded. Recovering heterogeneous treatment effects across groups requires side information $C$ about group membership, i.e. "no unmeasured confounding" (Figure {@fig:hte-context}). 
+
+![Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on $X$, 
+implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) 
+that allows treatment effects to vary systematically with additional context $C$.](images/hte.png){#fig:hte-context width="70%"}
+
+In Eq. {@eq:unified}, this principle is encoded by $S(c)$: a signal of heterogeneity is what makes the support set localized rather than an arbitrary neighborhood.
+
+### 3. Modularity improves adaptivity
+Organizing adaptation into modular units improves interpretability and robustness. Instead of spreading changes across an entire system, modularity restricts variation to well-defined subcomponents that can be recombined, reused, or replaced. This structure provides three advantages: targeted adaptation, transferability across tasks, and disentanglement of variation sources.
+
+A canonical example is the mixture-of-experts framework, where a gating network routes inputs to specialized experts trained for different data regimes [@doi:10.1162/neco.1991.3.1.79]. By decomposing capacity in this way, models not only gain efficiency but also clarify which components are responsible for specific adaptive behaviors. Recent advances extend this principle in modern architectures: modular domain experts [@doi:10.48550/arXiv.2410.10181], adapter libraries for large language models [@doi:10.48550/arXiv.2405.11157], and mixtures of LoRA experts [@doi:10.48550/arXiv.2404.13628]. In applications from language processing to computer vision, modularity is now central to scaling adaptation. 
+
+In Eq. {@eq:unified}, $\mathcal{R}(\theta;c)$ structures on how $\theta$ may vary, e.g. through block, low-rank, or n-experts constraints $\mathcal{R}(\theta;c)$.
+
+### 4. Adaptivity implies selectivity
+Adaptation must not occur indiscriminately. Overreacting to noise leads to overfitting, defeating the purpose of adaptation. Selectivity provides the discipline that ensures adaptive mechanisms respond only when supported by reliable evidence.
+
+Classical statistics formalized this principle through methods such as Lepski’s rule for bandwidth selection, which balances bias and variance in nonparametric estimation [@doi:10.1214/aos/1030741083]. Aggregation methods such as the weighted majority algorithm show how selective weighting of multiple models can improve robustness [@doi:10.1006/inco.1994.1009]. In modern machine learning, Bayesian rules can activate test-time updates only when uncertainty is manageable [@doi:10.48550/arXiv.2109.12746], while confidence-based strategies prevent unstable adjustments by holding back adaptation under weak signals [@doi:10.48550/arXiv.2204.02610]. Sparse expert models apply the same principle architecturally, activating only a few experts for easy inputs but engaging more capacity for difficult cases [@doi:10.48550/arXiv.2403.07652]. These safeguards demonstrate that good adaptation is selective adaptation. 
+
+in Eq. {@eq:unified}, the regularizer $\mathcal{R}(\theta;c)$ may also act as a brake, deciding when the support set is allowed to pull $\theta(c)$ away from a shared value, whether through a bandwidth, a confidence threshold, or a sparse gate.
+
+### 5. Adaptivity is bounded by data efficiency and data volume
+Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the amount of relevant data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting. This basic statistical constraint is the fundamental bias-variance tradeoff [@doi:10.1109/72.788640], but it occurs more acutely in context-adaptive models due to (i) the expectation that information will transfer from well-samples contexts to under-sampled contexts and (ii) the ability of context-adaptive models to sample much larger and more heterogeneous data spaces from loosely connected tasks. 
+
+The traditional way of addressing this is Eq. {@eq:unified}'s regularization term $\mathcal{R}(\theta;c)$: increasing regularization lowers variance, compute, and instability, but raises bias. Unlike traditional models, context-adaptive models can also address this by expanding datasets to train across more diverse contexts, increasing the effective size of $S(c)$ to combat variance.
+
+![Context-adaptive models use context signals to understand specific subpopulations or tasks (e.g. modeling thyroid cancer patients) within broader, heterogeneous populations or task sets (e.g. all cancer patients) during training. At inference time, context localizes the model to a specific predictive task. Context-adaptive models have higher variance than task-specific models, but context allows the model to ingest larger and more heterogeneous datasets, offsetting this cost.](images/data_expansion.png){#fig:estimation-evolution width="80%"}  
+
+A recent analysis on varying-coefficient models explores scaling laws for context-adaptive models in terms of two axes: "vertical scaling," the traditional mode where model performance improves with task-specific samples, and "horizontal scaling," where model performance improves by incorporating samples from new tasks [@doi:10.1073/pnas.2411930122]. This analysis found that (i) under a fixed sample budget, horizontal scaling can outperform vertical scaling (ii) this happens at a critical point where the model has seen sufficiently many tasks, and begins to generalize to new tasks.
+
+Meta-learning research also illustrates this tension, as few-shot frameworks show both the promise of cross-task generalization and the sharp degradation that occurs when task diversity or sample size is insufficient [@doi:10.48550/arXiv.1810.02334]. Bayesian analyses of scaling laws for in-context learning formalize how the reliability of adaptation grows with data [@doi:10.48550/arXiv.2410.16531]. More generally, context-adaptive models present new opportunities for study design, allowing controlled task-specific data collection to be substituted for large heterogeneous data from diverse sources.
+
+### When Adaptivity Fails: Common Failure Modes
+The six principles describe when adaptation should succeed, but in practice, failures remain common. Understanding these failure modes is important for designing safeguards, since they reveal how adaptive methods break when principles are ignored or misapplied. Failure does not imply that models lack adaptivity, but that adaptation proceeds in unstable or unjustified ways.
+
+**Spurious adaptation.** Models sometimes adapt to unstable or confounded features that predict the outcome within the training environments but do not hold across them. This is closely related to shortcut learning in deep networks, where spurious correlations masquerade as useful signals [@doi:10.48550/arXiv.2004.07780; @doi:10.48550/arXiv.2012.07421]. Crucially, this is not a symptom of mis-tuned complexity: the offending correlation can be strong, low-variance, and stable under more data, and a model with more or fewer parameters latches onto the same shortcut. What fails is the direction of adaptation, not its degree. In terms of Eq. {@eq:unified}, when the regularizer $\mathcal{R}(\theta;c)$ does not constrain adaptation toward invariant structure, the estimator conditions on whichever context feature most reduces in-distribution loss, so a model that is over-eager to adapt by design will prefer a strong spurious signal to a weaker stable one. The failure surfaces only when the environment shifts and the correlation reverses or disappears. Unlike overfitting, collecting more data from the same distribution does not remove it; only a change of training environments or an explicit invariance constraint does, the remedy taken up in the context-invariant section.
+
+**Overfitting in low-data contexts.** Fine-grained adaptation requires sufficient signal. When the available data are limited, adaptive models inflate variance and personalize to noise rather than meaningful structure. Meta-learning research illustrates this tension: although few-shot methods aim to generalize with minimal samples, they often degrade sharply when task diversity is low or heterogeneity is weak [@doi:10.48550/arXiv.1810.02334]. Unlike spurious adaptation, this failure is related to capacity: the underlying structure is real but the support $S(c)$ is too small to resolve it, so more data, stronger regularization, or coarser contexts are needed. This underscores how data efficiency sets unavoidable limits on adaptivity.
+
+**Modularity mis-specification.** Although modularity can improve interpretability and transfer, poorly designed modules or unstable routing mechanisms can create new sources of error. Group-shift robustness studies reveal that when partitions are misaligned with true structure, adaptive pooling can worsen disparities across groups [@doi:10.48550/arXiv.1911.08731]. Similarly, analyses of mixture-of-experts models show that mis-specified routing can cause experts to collapse or remain underutilized [@doi:10.48550/arXiv.2406.18219]. These cases highlight that modularity is beneficial only when aligned with meaningful heterogeneity.
+
+**Feedback loops.** Adaptive models can also alter the very distributions they rely on, especially in high-stakes applications such as recommendation, hiring, or credit scoring. This creates feedback loops where bias is reinforced rather than corrected. For example, an adaptive recommender system that over-personalizes may restrict exposure to diverse content, reshaping user behavior in ways that amplify initial bias. The selective labels problem in algorithmic evaluation illustrates how unobserved counterfactuals complicate learning from adaptively collected data [@doi:10.1145/3097983.3098066]. These examples show that adaptation must be evaluated with attention to long-term interactions, not only short-term accuracy.
+
+![Failure Modes of Context-Adaptive Models.
+(A) **Spurious Adaptation**: the fit tracks a feature that predicts in the training environment but reverses under shift.
+(B) **Overfitting in Low-Data Contexts**: adaptation follows noise rather than signal.
+(C) **Modularity Mis-Specification**: incorrect partitions obscure the true structure.
+(D) **Feedback Loops**: adaptive decisions reshape the very data they rely on.](images/adaptive_failures.png){#fig:adaptive-failures width="80%"}
+
+### Implications
+For practitioners, these insights translate into a design recipe. Begin by ensuring sufficient flexibility, but constrain it through modular structures that make adaptation interpretable and transferable. Seek out reliable signals of heterogeneity that justify adaptation, and incorporate explicit mechanisms of selectivity to guard against noise. Respect the limits imposed by data efficiency, recognizing that fine-grained personalization requires sufficient statistical support. Always weigh the tradeoffs explicitly, balancing personalization against stability, efficiency against interpretability, and short-term gains against long-term robustness. Evaluation criteria should extend beyond predictive accuracy to include calibration, fairness across subgroups, stability under distributional shift, and resilience to feedback loops.
 
 
-## Evaluation and Design Principles for Context-Adaptive Inference
+## Evaluation of Context-Adaptive Models
 
-The two preceding sections described how adaptation is built, explicitly through a structured $f(c)$ and implicitly through emergent computation in large models. Both paradigms raise the same three practical questions once a model is deployed: how cheaply it adapts, how stably it routes a context to the right behavior, and how well that behavior holds up when the context shifts. This section collects the design and evaluation principles that answer these questions. For each section we pair the design principle with a way to measure it, and formalize it as a metric.
+The preceding sections described how context-adaptive models are built, explicitly through a structured $f(c)$ and implicitly through emergent computation in large models. Both paradigms raise the same three practical questions once a model is deployed: how cheaply it adapts, how stably it routes a context to the right behavior, and how well that behavior holds up when the context shifts. This section collects the design principles and proposes formal evaluation metrics that answer these questions.
 
 ### Measuring Context-Conditional Performance
 
-Every metric below builds on a single quantity: performance conditioned on context. Let $\mathcal{C}$ denote the context space and $\mathcal{D}_{\mathrm{test}}$ a test distribution over $(x, y, c)$. For a predictor $\hat{f}$, define the context-conditional risk as
+We base every metric below on a single straightforward quantity: performance conditioned on context. Let $\mathcal{C}$ denote the context space and $\mathcal{D}_{\mathrm{test}}$ a test distribution over $(x, y, c)$. For a predictor $\hat{f}$, define the context-conditional risk as
 
 $$
 \mathcal{R}(\hat{f}\mid c)
@@ -1292,7 +956,7 @@ $$
 = \mathbb{E}_{c\sim \mathcal{D}_{\mathrm{test}}}\!\left[\, \mathcal{R}(\hat{f}\mid c) \,\right].
 $$
 
-A single aggregate risk hides exactly the heterogeneity these models exist to capture, so a context-stratified evaluation reports $\mathcal{R}(\hat{f}\mid c)$ across predefined bins or via a smoothed estimate $\int \mathcal{R}(\hat{f}\mid c)\,\mathrm{d}\Pi(c)$ for a reference measure $\Pi$ that weights regions of the context space. Evaluations for adaptation efficiency, routing stability, and context-specific robustness build on this conditional risk.
+A single aggregate risk hides exactly the heterogeneity these models exist to capture, so a context-stratified evaluation reports $\mathcal{R}(\hat{f}\mid c)$ across predefined bins or via a smoothed estimate $\int \mathcal{R}(\hat{f}\mid c)\,\mathrm{d}\Pi(c)$ for a reference measure $\Pi$ that weights regions of the context space. 
 
 ### Adaptation Efficiency
 
@@ -1301,8 +965,6 @@ The efficiency of a context-adaptive method hinges on design choices that trade 
 One central principle is the use of sparsity assumptions to limit the number of context-dependent parameters. This can be achieved through group sparsity, which encourages entire groups of parameters to be zero simultaneously [@doi:10.1111/j.1467-9868.2005.00532.x], hierarchical regularization that applies different strengths of shrinkage to varying levels of context specificity [@doi:10.1017/CBO9780511790942], and adaptive thresholding that adjusts sparsity levels in accordance with context complexity.
 
 Efficiency can also be enhanced through computational strategies that allocate resources adaptively. Early stopping terminates optimization for contexts where convergence occurs rapidly [@doi:10.48550/arXiv.1606.04838], while context-dependent sampling employs different sampling schemes across contexts [@doi:10.48550/arXiv.1809.09582]. Caching and warm-starting further accelerate optimization by reusing solutions from similar contexts, which is particularly effective when contexts vary smoothly [@doi:10.1561/2200000016]. Related context-dependent computation appears in adaptive batching, per-context learning rates, and multi-fidelity pipelines that allocate compute and precision by context complexity.
-
-These efficiency choices also interact with interpretability: sparse, linear context maps stay auditable, while amortized encoders trade transparency for scale, a trade-off we return to in the interpretability section.
 
 To make these gains measurable, let $S_k(c)=\{(x_j, y_j, c)\}_{j=1}^k$ denote $k$ examples available within context $c$, and define the adaptation efficiency as
 
@@ -1325,11 +987,57 @@ $$
 
 the risk reduction from transferring $\phi$ rather than training from scratch, so that positive values indicate useful transfer, matching the sign convention of $\mathrm{AE}_k$. This is the same efficiency argument that motivates the amortized context encoders of the previous sections.
 
+#### Formalization: data limits on adaptation efficiency
+
+These gains are ultimately bounded by how much data each context supplies. Let contexts lie in a metric space $(\mathcal{C}, d)$, let the per-context parameter be $\theta(c)$, and for an observation $(x,y,c)$ let $p_\theta(y\mid x,c)$ be a conditional model with loss $\ell(\theta;x,y,c)$. For a neighborhood $\mathcal{N}_\delta(c)=\{c':d(c,c')\le\delta\}$, the effective sample size available to estimate $\theta(c)$ is
+
+$$
+N_{\text{eff}}(c,\delta)=\sum_{i=1}^n w_\delta(c_i,c),
+\qquad
+w_\delta(c_i,c)\propto K\!\left(\frac{d(c_i,c)}{\delta}\right),
+\qquad
+\sum_i w_\delta(c_i,c)=1,
+$$
+
+for a kernel $K$. A kernel-regularized estimator with smoothness penalty
+
+$$
+\mathcal{R}(\theta)=\int\|\nabla_c\theta(c)\|^2\,\mathrm{d}c
+$$
+
+solves
+
+$$
+\widehat{\theta}=\arg\min_{\theta\in\Theta}\;\frac{1}{n}\sum_{i=1}^n \ell(\theta;x_i,y_i,c_i)+\lambda\,\mathcal{R}(\theta).
+$$
+
+Under local Lipschitzness in $c$ and an $L$-smooth, $\mu$-strongly convex risk in $\theta$, a standard bias–variance decomposition yields for each component $j$
+
+$$
+\mathbb{E}\!\left[\|\widehat{\theta}_j(c)-\theta_j(c)\|^2\right]
+\lesssim
+\underbrace{\frac{\sigma^2}{N_{\text{eff}}(c,\delta)}}_{\text{variance}}
++\underbrace{\delta^{2\alpha}}_{\text{approx. bias}}
++\underbrace{\lambda^2}_{\text{reg. bias}},
+\qquad \alpha>0.
+$$
+
+Finer locality (small $\delta$) sharpens resolution but shrinks $N_{\text{eff}}$ and inflates variance; this is the quantitative form of the adaptation–data tradeoff, and amortized encoders raise $N_{\text{eff}}$ by sharing $\theta(c)=f_\phi(c)$ across contexts. Compute enters through the same neighborhood: an early-stopped first-order method with step size $\eta$ and $T(c)$ context-dependent iterations satisfies
+
+$$
+\mathcal{L}\!\big(\theta^{(T(c))}\big)-\mathcal{L}\!\big(\theta^{\star}\big)
+\le
+(1-\eta\mu)^{T(c)}\!\left(\mathcal{L}\!\big(\theta^{(0)}\big)-\mathcal{L}\!\big(\theta^{\star}\big)\right)
++\frac{\eta L\sigma^2}{2\mu\,N_{\text{eff}}(c,\delta)},
+$$
+
+linking the compute budget $T(c)$ and data availability $N_{\text{eff}}(c,\delta)$ to the attainable excess risk at context $c$.
+
 ### Routing Stability
 
-Both paradigms decide, for a given context, which parameters or which experts govern the prediction. Explicit models make this decision overtly, through the partitions or context encoders that map context to model parameters. Implicit models make the same decision internally, through the gating of a mixture of experts or the attention weights of a transformer. In either case the decision is a function of context, and its stability is a property worth measuring: small perturbations of the context should not cause erratic changes in which behavior is selected, or predictions become unpredictable near routing boundaries.
+Both explicit and implicit models adapt by choosing which parameters or which experts govern the prediction. Explicit models make this decision overtly, through the partitions or context encoders that map context to model parameters. Implicit models make the same decision internally, through the gating of a mixture of experts or the attention weights of a transformer. In either case the decision is a function of context, and the stability of this function plays a key role in generalization: small perturbations of the context should not cause erratic changes in which behavior is selected, or predictions become unpredictable near routing boundaries.
 
-Instability is easiest to see at the boundaries. A partition model can flip a sample between adjacent leaves under a negligible change in a splitting variable, and an in-context learner can change its answer under a reordering or reformatting of the same prompt examples, a sensitivity documented for in-context learning where the distribution and arrangement of examples can matter more than their content [@doi:10.48550/arXiv.2202.12837]. Reporting routing stability therefore means probing the model with perturbations that should be behavior-preserving, such as reordering exchangeable examples, jittering a continuous context near a learned split, or relabeling an equivalent measurement policy, and measuring how much the selected behavior and the resulting prediction move. Smoothly routed models degrade gracefully across these perturbations; sharply partitioned or brittle ones do not, and the difference is a design choice as much as a diagnostic.
+Instability is easiest to see at the boundaries. A partition model can flip a sample between adjacent leaves under a negligible change in a splitting variable, and an in-context learner can change its answer under a reordering or reformatting of the same prompt examples, a sensitivity documented for in-context learning where the distribution and arrangement of examples can matter more than their content [@doi:10.48550/arXiv.2202.12837]. In sparse expert models routing instability can cause experts to collapse or remain underused, undermining reliability [@doi:10.48550/arXiv.2406.18219]. Reporting routing stability therefore means probing the model with perturbations that should be behavior-preserving, such as reordering exchangeable examples, jittering a continuous context near a learned split, or relabeling an equivalent measurement policy, and measuring how much the selected behavior and the resulting prediction move. Smoothly routed models degrade gracefully across these perturbations while sharply partitioned or brittle ones do not. The difference is a design choice as much as a diagnostic.
 
 This admits a single measure across both discrete and continuous perturbations. Let $\rho(c)$ denote the routing decision the model exposes, whether gate weights, a leaf assignment, or the adapted parameters $\theta(c)$, and let $\Pi_c$ be a family of behavior-preserving perturbations of context $c$. The routing stability at $c$ is the expected movement of that decision under perturbation,
 
@@ -1343,7 +1051,7 @@ with a supremum over $\Pi_c$ giving the worst-case variant. Discrete invariances
 
 ### Context-Specific Robustness
 
-The final major evaluation type asks whether adaptation still helps when the context distribution at test time differs from training. Context shift takes many forms, including new subpopulations, drifting covariates, and unseen measurement policies. For explicit models it is easiest to make concrete when context is the pattern of observed measurements, since the deployment environment routinely presents measurement policies that were rare or absent during training; we use missingness-as-context as the running example. Evaluation of missingness-as-context models should report mask-stratified metrics, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with mask-shift stress tests, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess imputation realism by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct ignorability sensitivity analyses, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @doi:10.48550/arXiv.2301.05043]. Finally, include ablations that remove mask or indicator inputs, and, for trees, disable default-direction routing, to confirm that gains derive from modeling the mask signal rather than from artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: GRU-D [@doi:10.48550/arXiv.1606.01865] and BRITS [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while GAIN [@doi:10.48550/arXiv.1806.02920] and VAEAC [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, XGBoost supports sparsity-aware default-direction splits, making it straightforward to treat missing values as context without preprocessing [@doi:10.1145/2939672.2939785].
+The final major evaluation type asks whether adaptation still helps when the context distribution at test time differs from training. Context shift takes many forms, including new subpopulations, drifting covariates, and unseen measurement policies. For explicit models it is easiest to make concrete when context is the pattern of observed measurements, since the deployment environment routinely presents measurement policies that were rare or absent during training; we use missingness-as-context as the running example (i.e. input dropout). Evaluation of missingness-as-context models should report mask-stratified metrics, including worst-group performance, following group-robust evaluation practice [@doi:10.48550/arXiv.1911.08731; @doi:10.48550/arXiv.2012.07421]. Robustness should be probed with mask-shift stress tests, training under one measurement policy and testing under another, to quantify degradation and the benefit of contextualization, as formalized in the Domain Adaptation under Missingness Shift (DAMS) setting [@doi:10.48550/arXiv.2211.02093; @doi:10.48550/arXiv.2012.07421]. When imputation is used, authors should assess imputation realism by holding out observed entries under realistic mask distributions and reporting MAE/RMSE and calibration for $p(x_{\text{missing}}\mid x_{\text{observed}})$ [@doi:10.48550/arXiv.1806.02382; @doi:10.48550/arXiv.1806.02920]. For causal or estimation applications, conduct ignorability sensitivity analyses, contrasting MAR-based results with pattern-mixture or selection-model analyses under plausible MNAR mechanisms [@doi:10.2307/2337120; @doi:10.48550/arXiv.2301.05043]. Finally, include ablations that remove mask or indicator inputs, and, for trees, disable default-direction routing, to confirm that gains derive from modeling the mask signal rather than from artifacts [@doi:10.48550/arXiv.1603.02754; @doi:10.48550/arXiv.2211.09259]. Practical implementations of these ideas are widely available: GRU-D [@doi:10.48550/arXiv.1606.01865] and BRITS [@doi:10.48550/arXiv.1805.10572] provide mask- and time-aware sequence models, while GAIN [@doi:10.48550/arXiv.1806.02920] and VAEAC [@doi:10.48550/arXiv.1806.02382] offer open-source code for imputation under arbitrary masks. For tree ensembles, XGBoost supports sparsity-aware default-direction splits, making it straightforward to treat missing values as context without preprocessing [@doi:10.1145/2939672.2939785].
 
 Implicit models face the same issue in a different form. In-context learning adapts within a single forward pass, but that adaptation is opaque and can be brittle: performance is sensitive to small changes in the prompt, and reliability under distribution shift is hard to guarantee or to audit. Recent surveys frame the open questions as developing a more complete theoretical account of when in-context learning fails, improving its reliability, and establishing methods for controlling its behavior in high-stakes applications [@doi:10.48550/arXiv.2301.00234]. The evaluation logic carries over from the explicit case: stratify performance by the kind of context, stress-test under context shift, and ablate the adaptive signal to confirm that the model is using context as intended rather than exploiting an artifact. From this perspective, the mask-shift stress test for an explicit model and the prompt-perturbation test for an in-context learner are the same experiment applied to two realizations of $f(c)$.
 
@@ -1363,14 +1071,14 @@ reports the worst-case excess risk over that family, with higher values indicati
 
 ## Toward Explicit Modeling of Implicit Adaptivity: Local Models, Surrogates and Post Hoc Approximations
 
-### Motivation
 Building on the prior discussion of implicit adaptivity, this section examines methods that expose, approximate, or control those adaptive mechanisms.  
 Implicit adaptivity allows powerful models, including foundation models, to adjust behavior without explicitly representing a mapping from context to parameters [@doi:10.48550/arXiv.2108.07258]. This flexibility obscures the underlying mechanisms of adaptation, hindering modular reuse and systematic auditing. Making adaptivity explicit improves alignment with downstream goals, enables modular composition, and supports debugging and error attribution. It also fits the call for a more rigorous science of interpretability with defined objectives and evaluation criteria [@doi:10.48550/arXiv.1702.08608; @doi:10.48550/arXiv.2402.02870].  
 This chapter reviews practical approaches for surfacing structure, the assumptions they rely on, and how to evaluate their faithfulness and utility.
 
 
-**From Implicit to Explicit Adaptivity**  
-Implicit adaptivity is hidden, flexible, and hard to audit, while explicit adaptivity surfaces modular structure that is structured, auditable, and controllable. The transition highlights three key trade-offs developed in this section: **Fidelity vs. Interpretability**, **Local vs. Global Scope**, and **Approximation vs. Control**.  
+### From Implicit to Explicit Adaptivity
+
+Implicit adaptivity is hidden, flexible, and hard to audit, while explicit adaptivity surfaces modular structure that is structured, auditable, and controllable. The transition highlights three key trade-offs developed in this section: Fidelity vs. Interpretability, Local vs. Global Scope, and Approximation vs. Control.  
 
 ![From Implicit to Explicit Adaptivity. A black-box model (left) represents implicit adaptation, which is hidden and opaque. Making adaptivity explicit (right) exposes structured components that can be inspected and controlled. The axes below highlight the trade-offs between fidelity and interpretability, local and global scope, and approximation and control.](images/explicit_from_implicit.png){#fig:implicit-to-explicit width="80%"}  
 
@@ -1413,7 +1121,7 @@ For amortized inference systems (e.g., VAEs), the encoder $q_{\phi}(\theta\mid x
 While amortization diagnostics target model faithfulness, disentanglement aims to expose interpretable subspaces aligned with distinct contextual factors. The aim is to expose factors that align with distinct contextual causes, making changes traceable and controllable. $\beta$-VAE encourages more factorized latents [@higgins2017betavae], while the Deep Variational Information Bottleneck promotes predictive minimality that can suppress spurious context [@doi:10.48550/arXiv.1612.00410]. Concept-based methods such as TCAV and ACE map latent directions to human concepts and test sensitivity at the concept level [@doi:10.48550/arXiv.1711.11279; @doi:10.48550/arXiv.1902.03129]. Fully unsupervised disentanglement is often ill-posed without inductive bias or weak supervision [@doi:10.48550/arXiv.1811.12359]. Quantitative evaluation of disentanglement can follow established metrics that assess factor independence, completeness, and informativeness [@eastwood2018a]. Reports should include concept validity tests, factor stability across runs, and simple interventions that demonstrate controllability.
 
 #### Parameter Extraction and Probing
-This family locates where adaptation is encoded and exposes handles for inspection or edits. Linear probes test what is linearly decodable from intermediate layers [@doi:10.48550/arXiv.1610.01644]; edge probing examines specific linguistic structure in contextualized representations [@doi:10.48550/arXiv.1905.06316]. Model editing methods such as ROME can modify stored factual associations directly in weights [@doi:10.48550/arXiv.2202.05262], while “knowledge neurons” seek units linked to particular facts [@doi:10.48550/arXiv.2104.08696]. Evaluation involves quantifying pre- and post-edit behavior, assessing locality and persistence, and documenting side effects on unrelated capabilities. Collectively, these methods transform hidden internal adaptations into analyzable modular components.
+This family locates where adaptation is encoded and exposes handles for inspection or edits. Linear probes test what is linearly decodable from intermediate layers [@doi:10.48550/arXiv.1610.01644]; edge probing examines specific linguistic structure in contextualized representations [@doi:10.48550/arXiv.1905.06316]. Model editing methods such as ROME can modify stored factual associations directly in weights [@doi:10.48550/arXiv.2202.05262], while “knowledge neurons” seek units linked to particular facts [@doi:10.48550/arXiv.2104.08696]. Sparse autoencoders go beyond specific neurons, extracting high-level concepts as groups of activations in language models [@doi:10.48550/arXiv.2605.29358]. This method also permits concept-level control of LLM behavior. Evaluation for all of these methods involves quantifying pre- and post-edit behavior, assessing locality and persistence, and documenting side effects on unrelated capabilities. Collectively, these methods transform hidden internal adaptations into analyzable modular components.
 
 #### LLMs as Post-hoc Explainers
 Recent work uses in-context prompting to elicit rationales, counterfactuals, or error hypotheses from large language models for a target system [@doi:10.48550/arXiv.2310.05797]. These explanations can be useful but must be validated for faithfulness, for example by checking agreement with surrogate attributions, reproducing input–output behavior, and testing stability to prompt variations. Explanations should be treated as statistical estimators with stated objectives and evaluation criteria [@doi:10.48550/arXiv.2402.02870].
@@ -1427,7 +1135,7 @@ High-fidelity surrogates capture the target model’s behavior more accurately, 
 
 $$
 \min_{g\in\mathcal G}\ \underbrace{\phi_{\text{fid}}(g;U)}_{\text{faithfulness on use set }U}
-+ \lambda\\underbrace{\psi_{\text{simplicity}}(g)}_{\text{sparsity / size / semantic load}},
++ \lambda\ \underbrace{\psi_{\text{simplicity}}(g)}_{\text{sparsity / size / semantic load}},
 $$
 
 where $\phi_{\text{fid}}$ can be local $R^2$, AUC, or rank correlation with $h$, and $\psi_{\text{simplicity}}$ can be sparsity, tree depth, rule count, or active concept count. If a simple surrogate underfits, consider structured regularization (e.g., monotonic constraints, grouped sparsity, concept bottlenecks). If a complex surrogate is needed, accompany it with readable summaries (partial dependence snapshots, distilled rule sets, compact concept reports).
@@ -1445,18 +1153,7 @@ with local experts $g_k$ and soft assignment $w_k$. Report the neighborhood defi
 #### Approximation vs. Control
 Coarse modularization makes control and auditing simpler because edits act on a small number of levers, yet residual error can be large. Fine-grained extraction, such as neuron- or weight-level edits, can achieve precise behavioral changes but may introduce unintended side effects. Define the intended edit surface in advance (concepts, features, prototypes, submodules, parameters). For coarse modules, measure the residual gap to the base model and verify that edits improve target behavior without harming unaffected cases. For fine-grained edits, quantify locality and collateral effects using a held-out audit suite with counterfactuals, canary tasks, and out-of-distribution probes. Maintain versioned edits, enable rollback, and document the scope of validity.
 
-These trade-offs are not merely design choices but determine the operational boundaries within which explicit representations can remain faithful to the original adaptive system.
-
-### Open Research Directions
-
-#### Reusable Modules
-The challenge of isolating reusable routines parallels the quest for parameter-efficient fine-tuning in large models, where adaptation must remain modular yet composable. A central question is whether we can isolate portable skills or routines from large models and reuse them across tasks without degrading overall capability [@doi:10.48550/arXiv.2108.07258]. Concretely, a reusable module should satisfy portability, isolation, composability, and stability. Promising directions include concept bottlenecks that expose human-aligned interfaces, prototype libraries as swappable reference sets, sparse adapters that confine changes to limited parameter subsets, and routing mechanisms that select modules based on context. Evaluation should track transfer performance, sample efficiency, interference on held-out capabilities, and robustness under domain shift.
-
-#### Performance Gains
-When does making structure explicit improve robustness or efficiency compared to purely implicit adaptation? Benefits are most likely when domain priors are reliable, data are scarce, or safety constraints limit free-form behavior. Explicit structure is promising when context topology is known (spatial or graph), when spurious correlations should be suppressed, and when explanations must be auditable. To assess this, fix capacity and training budget and vary only the explicit structure (prototypes, disentanglement, bottlenecks). Stress tests should cover diverse distributional challenges, including covariate shift, concept shift, long-tail classes, and adversarially correlated features. Account for costs such as concept annotation, extra hyperparameters, and potential in-domain accuracy loss.
-
-#### Abstraction Level
-Another open issue is the appropriate level at which to represent structure: parameters (weights, neurons), functions (local surrogates, concept scorers, routing policies), or latent causes (disentangled or causal factors). Benchmarking under fixed capacity and identical data regimes is essential to isolate the contribution of explicit structure from mere model scaling effects. Choose based on the use case. For safety patches, lower-level handles allow precise edits but require guardrails and monitoring. For scientific or policy communication, function- or concept-level interfaces are often more stable and auditable. Optimize three objectives in tension: faithfulness to the underlying model, usability for the target audience, and stability under shift. Tooling should support movement between levels (e.g., distilling weight-level edits into concept summaries or lifting local surrogates into compact global reports). Selecting the proper level of abstraction thus defines not only interpretability but also the feasible scope of control.
+These trade-offs determine the operational boundaries where explicit representations can remain faithful to the original adaptive system.
 
 ### Evaluation and Reporting Standards for Classical Post-hoc Methods
 LIME, SHAP, and gradient-based methods such as Integrated Gradients and DeepLIFT remain common tools for context-adaptive interpretation. Their usefulness depends on careful design and transparent reporting. Explanations should be treated as statistical estimators with stated objectives and evaluation criteria [@doi:10.48550/arXiv.1702.08608; @doi:10.48550/arXiv.2402.02870]. Carmichael & Scheirer (2021) further propose a principled evaluation framework for feature-additive explainers, enabling measurement of misattribution even under known ground-truth additive models [@doi:10.48550/arXiv.2106.08376].
@@ -1646,7 +1343,7 @@ Consequently, foundation models serve as bridges between flexible representation
 While current foundation models already enable impressive forms of adaptivity, the next phase of research looks toward methods that will shape the future of contextualized adaptive inference. These directions point ahead, emphasizing how models may be adapted, combined, and evaluated. The aim is not only greater power, but also more transparency and reliability in high-stakes settings. We highlight three forward-looking methodological trends: modular fine tuning and compositional adaptation, mechanistic insights into in-context learning, and new frameworks for reliability and calibration.
 
 #### Modular Fine-Tuning and Compositional Adaptation
-Parameter-efficient fine-tuning approaches such as adapters and LoRA show that large models can be customized by updating only a small subset of parameters while preserving pretrained knowledge [@doi:10.48550/arXiv.2106.09685]. Future systems are expected to expand these ideas into compositional strategies, dynamically combining specialized modules optimized for different domains or contexts [@doi:10.48550/arXiv.2005.00247].
+Parameter-efficient fine-tuning approaches such as adapters and LoRA show that large models can be customized by updating only a small subset of parameters while preserving pretrained knowledge [@doi:10.48550/arXiv.2106.09685]. Future systems are expected to expand these ideas into compositional strategies, dynamically combining specialized modules optimized for different domains or contexts [@doi:10.48550/arXiv.2005.00247]. Modular reuse strategies have been proposed, including adapter libraries [@doi:10.48550/arXiv.2405.11157] and modular domain experts. 
 
 Recent findings suggest that merging multiple LoRA modules can even outperform full fine-tuning, signaling a paradigm where adaptation arises from modular reuse rather than retraining [@doi:10.48550/arXiv.2402.15414]. Compositional adaptation thus points toward building libraries of reusable context-specific skills that can be flexibly assembled for new tasks.
 
@@ -1703,12 +1400,12 @@ Recent advances have broadened the scope of adaptive inference, but many questio
 First, researchers need to examine whether skills and routines can be modularized in a way that allows portability across tasks without interference. Second, the field must clarify under what conditions explicit structure provides measurable benefits. Third, adoption is limited by both theoretical and practical barriers, including identifiability, generalization, and computational feasibility. Finally, the community must address the tension between building models that are interpretable from the start and those that rely on post-hoc explanations. The following subsections provide a more detailed discussion of these four questions.
 
 #### Can Reusable Modules Enable Portability Across Tasks?
-A central question is whether the skills or routines acquired by large models can be isolated and reused as portable modules across tasks without reducing overall performance [@doi:10.48550/arXiv.2108.07258]. The vision of modularity is to build an ecosystem of specialized components that can be composed when needed, instead of training a new large model for each task. Promising approaches operate at different levels: (i) representation-level constraints such as concept bottlenecks enforcing human-understandable features; (ii) memory-based mechanisms such as prototype libraries for case retrieval; and (iii) architecture-level designs such as sparse adapters or routing networks that activate context-relevant modules [@doi:10.48550/arXiv.2404.13628].
+A central question is whether the skills or routines acquired by large models can be isolated and reused as portable modules across tasks without reducing overall performance [@doi:10.48550/arXiv.2108.07258]. The vision of modularity is to build an ecosystem of specialized components that can be composed when needed, instead of training a new large model for each task. Concretely, a reusable module should satisfy portability, isolation, composability, and stability. Promising approaches operate at different levels: (i) representation-level constraints such as concept bottlenecks enforcing human-understandable features; (ii) memory-based mechanisms such as prototype libraries for case retrieval; and (iii) architecture-level designs such as sparse adapters or routing networks that activate context-relevant modules [@doi:10.48550/arXiv.2404.13628].
 
 Applications illustrate the promise of this research. In healthcare, diagnostic modules could be reused across diseases. In natural language processing, syntax-aware modules might be applied across languages. However, modularity also introduces risks: interactions between modules may cause interference or instability in generalization, and poorly aligned components may propagate or amplify existing biases. Future work should therefore design evaluation protocols that test not only portability and composability, but also isolation of unintended side effects and robustness to distribution shift [@doi:10.48550/arXiv.2407.21783].
 
 #### What Are the Theoretical and Practical Benefits of Explicit Structure?
-Clarifying the theoretical and practical benefits of explicit structure is an important open question. Implicit adaptation is highly flexible, but explicit structure may provide stronger guarantees of robustness and generalization under distribution shift. Practical benefits include greater interpretability, improved debugging, and the ability to incorporate domain knowledge directly.
+Clarifying the theoretical and practical benefits of explicit structure is an important open question. Implicit adaptation is highly flexible, but explicit structure may provide stronger guarantees of robustness and generalization under distribution shift. Benefits are most likely when domain priors are reliable, data are scarce, or safety constraints limit free-form behavior. Explicit structure is promising when context topology is known (spatial or graph), when spurious correlations should be suppressed, and when explanations must be auditable. Practical benefits include greater interpretability, improved debugging, and the ability to incorporate domain knowledge directly. 
 
 To advance this agenda, systematic comparisons with implicit approaches are needed. Stress testing under covariate shift, concept drift, long-tail distributions, and adversarial correlations is particularly important, and benchmarks such as WILDS provide a useful starting point [@doi:10.48550/arXiv.2012.07421]. At the same time, researchers must weigh the costs of explicit structure. These costs include additional annotation, increased hyperparameter complexity, and potential reductions in in-domain accuracy [@doi:10.48550/arXiv.2004.07780, @doi:10.48550/arXiv.1911.08731]. A comprehensive evaluation framework that quantifies both theoretical guarantees and practical trade-offs remains to be established.
 
@@ -1729,6 +1426,10 @@ Emerging paradigms such as Agentic Context Engineering (ACE) push this vision fu
 Another set of challenges arises from the dynamic interaction between adaptive models and their environments. Feedback loops may amplify small initial biases, leading to systematic disadvantages for certain groups over time. Examples can be seen in credit scoring, hiring, and online recommendation systems, where early decisions influence future data collection and can entrench inequalities [@doi:10.1145/3097983.3098066]. Addressing these risks requires methods that anticipate long-term effects, including simulation studies, formal analyses of dynamic systems, and model designs that incorporate fairness constraints directly during learning.
 
 Looking ahead, the long-term vision for adaptive modeling is to develop systems that are not only powerful but also trustworthy. Progress requires moving beyond accuracy as the dominant evaluation criterion to include fairness, stability, and transparency. Human oversight should be an integral part of adaptive pipelines, enabling experts to guide and validate model behavior in practice. Sustainability is another important dimension, as the computational and environmental costs of adaptive models continue to grow. By combining technical innovation with responsible deployment, the field can ensure that adaptive inference contributes to both scientific progress and societal benefit.
+
+
+
+
 
 
 ## Conclusion
@@ -1845,7 +1546,7 @@ x_a^T B\,\phi(c_a)
 = \langle \beta,\, x_a\otimes \phi(c_a)\rangle
 = \langle \beta,\,\psi_a\rangle.
 $$
-Thus the weighted objective specialized from (★) is
+Thus the weighted objective specialized from Eq. {@eq:unified} is
 $$
 \min_{\beta\in\mathbb{R}^{d_x d_c}}
 \ \big\|W^{1/2}\big(y - Z\beta\big)\big\|_2^2 + \lambda \|\beta\|_2^2,
