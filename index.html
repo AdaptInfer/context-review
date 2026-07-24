@@ -16,7 +16,7 @@
   <meta name="author" content="Zhiyuan Li" />
   <meta name="author" content="Eric P. Xing" />
   <meta name="author" content="Ben Lengerich" />
-  <meta name="dcterms.date" content="2026-07-20" />
+  <meta name="dcterms.date" content="2026-07-24" />
   <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Context-Adaptive Inference: A Unified Statistical and Foundation-Model View</title>
   <style>
@@ -61,11 +61,11 @@
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-20" />
-  <meta name="citation_publication_date" content="2026-07-20" />
-  <meta property="article:published_time" content="2026-07-20" />
-  <meta name="dc.modified" content="2026-07-20T04:53:39+00:00" />
-  <meta property="article:modified_time" content="2026-07-20T04:53:39+00:00" />
+  <meta name="dc.date" content="2026-07-24" />
+  <meta name="citation_publication_date" content="2026-07-24" />
+  <meta property="article:published_time" content="2026-07-24" />
+  <meta name="dc.modified" content="2026-07-24T20:00:37+00:00" />
+  <meta property="article:modified_time" content="2026-07-24T20:00:37+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -126,9 +126,9 @@
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -152,10 +152,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/">permalink</a>)
+(<a href="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/AdaptInfer/context-review/tree/bf079859e71b3d4ae8355048adbd8ce81303a6c2">AdaptInfer/context-review@bf07985</a>
-on July 20, 2026.
+from <a href="https://github.com/AdaptInfer/context-review/tree/0d388013054f27e9b4ca24bd027d3dc34a6947e6">AdaptInfer/context-review@0d38801</a>
+on July 24, 2026.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -600,7 +600,7 @@ P(Y\mid X,C) \;=\; \int P(Y\mid X,C,Z)\, dP(Z\mid C)
 <p>Gradient-based meta-learning frameworks such as Model-Agnostic Meta-Learning (MAML) illustrate this principle. In these frameworks, the model discovers a set of initial parameters that can be quickly adapted to a new task with only a small number of gradient updates <span class="citation" data-cites="JE5FRU4v">[<a href="#ref-JE5FRU4v" role="doc-biblioref">115</a>]</span>. Training proceeds in a nested loop: the inner loop simulates adaptation to individual tasks, while the outer loop updates the initial parameters to improve adaptability across tasks. As a result, the capacity for adaptation becomes encoded in the meta-learned parameters themselves. When confronted with a new task at inference, the model can rapidly achieve strong performance using just a few examples, without the need for a hand-crafted mapping from context to parameters. In this view, the capacity to adapt becomes encoded in the meta-learned parameters themselves, enabling rapid generalization from few examples without a hand-crafted map from context to coefficients and standing in clear contrast to explicit approaches.</p>
 <h4 id="amortized-estimation-context-encoders">Amortized Estimation: Context Encoders</h4>
 <p>The contextualized models at the end of the previous section already learned a context encoder, a map from a task’s context to a set of task-specific parameters. The result is an amortized estimator, which predicts the parameters of the downstream model that would have been produced by a classical estimator if sufficient data were collected under that context. Here we take the same object and ask what happens as the encoder absorbs progressively more of the estimation pipeline.</p>
-<p>This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task’s context to infer the task-specific data distribution and produce in-context inferences.</p>
+<p>This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task’s context to infer the task-specific data distribution and produce in-context inferences (Figure <a href="#fig:estimation-evolution">8</a>).</p>
 <div id="fig:estimation-evolution" class="fignos">
 <figure>
 <img src="images/estimation_evolution.png" style="width:80.0%" alt="Figure 8: Evolution of Statistical Estimation. Classical estimators (left) require sufficiently large context-specific datasets for single-instance learning. Meta-learning and transfer learning (middle) decrease the need for context-specific data collection, but still perform a few rounds of gradient descent on context-specific data. Finally, amortized estimators (right) only use a representation of the data context to produce new model parameters, handling data collection and classical estimation implicitly." />
@@ -784,8 +784,8 @@ that allows treatment effects to vary systematically with additional context <sp
 <p>in Eq. <a href="#eq:unified">1</a>, the regularizer <span class="math inline">\(\mathcal{R}(\theta;c)\)</span> may also act as a brake, deciding when the support set is allowed to pull <span class="math inline">\(\theta(c)\)</span> away from a shared value, whether through a bandwidth, a confidence threshold, or a sparse gate.</p>
 <h3 id="adaptivity-is-bounded-by-data-efficiency-and-data-volume">5. Adaptivity is bounded by data efficiency and data volume</h3>
 <p>Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the amount of relevant data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting. This basic statistical constraint is the fundamental bias-variance tradeoff <span class="citation" data-cites="bWiWgPrK">[<a href="#ref-bWiWgPrK" role="doc-biblioref">153</a>]</span>, but it occurs more acutely in context-adaptive models due to (i) the expectation that information will transfer from well-samples contexts to under-sampled contexts and (ii) the ability of context-adaptive models to sample much larger and more heterogeneous data spaces from loosely connected tasks.</p>
-<p>The traditional way of addressing this is Eq. <a href="#eq:unified">1</a>’s regularization term <span class="math inline">\(\mathcal{R}(\theta;c)\)</span>: increasing regularization lowers variance, compute, and instability, but raises bias. Unlike traditional models, context-adaptive models can also address this by expanding datasets to train across more diverse contexts, increasing the effective size of <span class="math inline">\(S(c)\)</span> to combat variance.</p>
-<div id="fig:estimation-evolution" class="fignos">
+<p>The traditional way of addressing this is Eq. <a href="#eq:unified">1</a>’s regularization term <span class="math inline">\(\mathcal{R}(\theta;c)\)</span>: increasing regularization lowers variance, compute, and instability, but raises bias. Unlike traditional models, context-adaptive models can also address this by expanding datasets to train across more diverse contexts, increasing the effective size of <span class="math inline">\(S(c)\)</span> to combat variance (Figure <a href="#fig:data-expansion">10</a>).</p>
+<div id="fig:data-expansion" class="fignos">
 <figure>
 <img src="images/data_expansion.png" style="width:80.0%" alt="Figure 10: Context-adaptive models use context signals to understand specific subpopulations or tasks (e.g. modeling thyroid cancer patients) within broader, heterogeneous populations or task sets (e.g. all cancer patients) during training. At inference time, context localizes the model to a specific predictive task. Context-adaptive models have higher variance than task-specific models, but context allows the model to ingest larger and more heterogeneous datasets, offsetting this cost." />
 <figcaption aria-hidden="true"><span>Figure 10:</span> Context-adaptive models use context signals to understand specific subpopulations or tasks (e.g. modeling thyroid cancer patients) within broader, heterogeneous populations or task sets (e.g. all cancer patients) during training. At inference time, context localizes the model to a specific predictive task. Context-adaptive models have higher variance than task-specific models, but context allows the model to ingest larger and more heterogeneous datasets, offsetting this cost.</figcaption>
