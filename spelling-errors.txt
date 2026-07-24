@@ -8,7 +8,7 @@ algorithmically
 ANOVA
 approximators
 Arjovsky
-arxiv
+arXiv
 AUC
 auditability
 auditable
@@ -50,7 +50,7 @@ DRO
 DRO’s
 EarlyDrift
 EIIL
-Embeddings
+embeddings
 emergently
 ensembling
 ericxing
@@ -93,7 +93,7 @@ Jiaqi
 Jingyun
 jittering
 JTT
-Kolar
+kolar
 KRR
 KV
 latents
@@ -124,7 +124,7 @@ minimizer
 mis
 misattribution
 miscalibrated
-Missingness
+missingness
 misspecified
 MLP
 MNAR
@@ -133,7 +133,7 @@ modularized
 MoICE
 MSE
 mtl
-multimodal
+Multimodal
 Nelder
 Neyman
 NLP
@@ -157,7 +157,7 @@ pointwise
 Poursabzi
 pre
 preprocessing
-Pretrained
+pretrained
 pretraining
 priori
 probablybots
@@ -171,7 +171,7 @@ recomputation
 recursing
 reframes
 regressor
-Regressors
+regressors
 regularizer
 regularizers
 reproducibility

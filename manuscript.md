@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-07-20'
+date-meta: '2026-07-24'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-20" />
-  <meta name="citation_publication_date" content="2026-07-20" />
-  <meta property="article:published_time" content="2026-07-20" />
-  <meta name="dc.modified" content="2026-07-20T04:53:39+00:00" />
-  <meta property="article:modified_time" content="2026-07-20T04:53:39+00:00" />
+  <meta name="dc.date" content="2026-07-24" />
+  <meta name="citation_publication_date" content="2026-07-24" />
+  <meta property="article:published_time" content="2026-07-24" />
+  <meta name="dc.modified" content="2026-07-24T20:00:37+00:00" />
+  <meta property="article:modified_time" content="2026-07-24T20:00:37+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/bf079859e71b3d4ae8355048adbd8ce81303a6c2/))
+([permalink](https://AdaptInfer.github.io/context-review/v/0d388013054f27e9b4ca24bd027d3dc34a6947e6/))
 was automatically generated
-from [AdaptInfer/context-review@bf07985](https://github.com/AdaptInfer/context-review/tree/bf079859e71b3d4ae8355048adbd8ce81303a6c2)
-on July 20, 2026.
+from [AdaptInfer/context-review@0d38801](https://github.com/AdaptInfer/context-review/tree/0d388013054f27e9b4ca24bd027d3dc34a6947e6)
+on July 24, 2026.
 </em></small>
 
 
@@ -655,7 +655,7 @@ Gradient-based meta-learning frameworks such as Model-Agnostic Meta-Learning (MA
 
 The contextualized models at the end of the previous section already learned a context encoder, a map from a task's context to a set of task-specific parameters. The result is an amortized estimator, which predicts the parameters of the downstream model that would have been produced by a classical estimator if sufficient data were collected under that context. Here we take the same object and ask what happens as the encoder absorbs progressively more of the estimation pipeline.
 
-This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task's context to infer the task-specific data distribution and produce in-context inferences. 
+This is desirable because data collection and model estimation are often far more costly than model inference. Plotting the progression of estimation methods, classical methods require a sufficient amount of data for every task. Transfer learning and meta-learning are formulated to achieve similar performance with fewer samples, but still require explicit gradient-based estimators. Pushing this to its limit produces amortized estimators, such as context encoders, which only use a task's context to infer the task-specific data distribution and produce in-context inferences (Figure {@fig:estimation-evolution}). 
 
 ![Evolution of Statistical Estimation. Classical estimators (left) require sufficiently large context-specific datasets for single-instance learning. Meta-learning and transfer learning (middle) decrease the need for context-specific data collection, but still perform a few rounds of gradient descent on context-specific data. Finally, amortized estimators (right) only use a representation of the data context to produce new model parameters, handling data collection and classical estimation implicitly.](images/estimation_evolution.png){#fig:estimation-evolution width="80%"}  
 
@@ -911,9 +911,9 @@ in Eq. {@eq:unified}, the regularizer $\mathcal{R}(\theta;c)$ may also act as a 
 ### 5. Adaptivity is bounded by data efficiency and data volume
 Even with flexibility, heterogeneity, modularity, and selectivity in place, the scope of adaptation is fundamentally constrained by the amount of relevant data. Fine-grained adaptation requires sufficient samples to estimate context-specific effects reliably. When data are scarce, adaptive systems risk inflating variance, capturing noise, or overfitting. This basic statistical constraint is the fundamental bias-variance tradeoff [@doi:10.1109/72.788640], but it occurs more acutely in context-adaptive models due to (i) the expectation that information will transfer from well-samples contexts to under-sampled contexts and (ii) the ability of context-adaptive models to sample much larger and more heterogeneous data spaces from loosely connected tasks. 
 
-The traditional way of addressing this is Eq. {@eq:unified}'s regularization term $\mathcal{R}(\theta;c)$: increasing regularization lowers variance, compute, and instability, but raises bias. Unlike traditional models, context-adaptive models can also address this by expanding datasets to train across more diverse contexts, increasing the effective size of $S(c)$ to combat variance.
+The traditional way of addressing this is Eq. {@eq:unified}'s regularization term $\mathcal{R}(\theta;c)$: increasing regularization lowers variance, compute, and instability, but raises bias. Unlike traditional models, context-adaptive models can also address this by expanding datasets to train across more diverse contexts, increasing the effective size of $S(c)$ to combat variance (Figure {@fig:data-expansion}).
 
-![Context-adaptive models use context signals to understand specific subpopulations or tasks (e.g. modeling thyroid cancer patients) within broader, heterogeneous populations or task sets (e.g. all cancer patients) during training. At inference time, context localizes the model to a specific predictive task. Context-adaptive models have higher variance than task-specific models, but context allows the model to ingest larger and more heterogeneous datasets, offsetting this cost.](images/data_expansion.png){#fig:estimation-evolution width="80%"}  
+![Context-adaptive models use context signals to understand specific subpopulations or tasks (e.g. modeling thyroid cancer patients) within broader, heterogeneous populations or task sets (e.g. all cancer patients) during training. At inference time, context localizes the model to a specific predictive task. Context-adaptive models have higher variance than task-specific models, but context allows the model to ingest larger and more heterogeneous datasets, offsetting this cost.](images/data_expansion.png){#fig:data-expansion width="80%"}  
 
 A recent analysis on varying-coefficient models explores scaling laws for context-adaptive models in terms of two axes: "vertical scaling," the traditional mode where model performance improves with task-specific samples, and "horizontal scaling," where model performance improves by incorporating samples from new tasks [@doi:10.1073/pnas.2411930122]. This analysis found that (i) under a fixed sample budget, horizontal scaling can outperform vertical scaling (ii) this happens at a critical point where the model has seen sufficiently many tasks, and begins to generalize to new tasks.
 
