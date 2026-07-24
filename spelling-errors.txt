@@ -79,8 +79,8 @@ ImageNet
 importances
 independencies
 interconnectedness
-Interpretability
-interpretable
+interpretability
+Interpretable
 invariance
 invariances
 IRM
@@ -89,11 +89,11 @@ IRMv
 Jacobian
 Jessego
 Jia
-jiaqi
+Jiaqi
 Jingyun
 jittering
 JTT
-Kolar
+kolar
 KRR
 KV
 latents
@@ -128,7 +128,7 @@ missingness
 misspecified
 MLP
 MNAR
-Modularity
+modularity
 modularized
 MoICE
 MSE
@@ -142,7 +142,7 @@ nonnegative
 nonparametric
 NTK
 OOD
-overfitting
+Overfitting
 overflexible
 overparameterized
 parameterization
@@ -157,7 +157,7 @@ pointwise
 Poursabzi
 pre
 preprocessing
-pretrained
+Pretrained
 pretraining
 priori
 probablybots
@@ -171,7 +171,7 @@ recomputation
 recursing
 reframes
 regressor
-regressors
+Regressors
 regularizer
 regularizers
 reproducibility
@@ -229,7 +229,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCBART
 VCM
 VCMs

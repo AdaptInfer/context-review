@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-24" />
   <meta name="citation_publication_date" content="2026-07-24" />
   <meta property="article:published_time" content="2026-07-24" />
-  <meta name="dc.modified" content="2026-07-24T22:07:46+00:00" />
-  <meta property="article:modified_time" content="2026-07-24T22:07:46+00:00" />
+  <meta name="dc.modified" content="2026-07-24T23:03:49+00:00" />
+  <meta property="article:modified_time" content="2026-07-24T23:03:49+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7fb93c571a41e47a0ebf887b7de3e96e4836a9d9/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7fb93c571a41e47a0ebf887b7de3e96e4836a9d9/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7fb93c571a41e47a0ebf887b7de3e96e4836a9d9/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/7fb93c571a41e47a0ebf887b7de3e96e4836a9d9/))
+([permalink](https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/))
 was compiled
-from [AdaptInfer/context-review@7fb93c5](https://github.com/AdaptInfer/context-review/tree/7fb93c571a41e47a0ebf887b7de3e96e4836a9d9)
+from [AdaptInfer/context-review@7ce7e1d](https://github.com/AdaptInfer/context-review/tree/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8)
 on July 24, 2026.
 </em></small>
 
