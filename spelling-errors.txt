@@ -36,7 +36,7 @@ controllability
 counterfactuals
 Counterintuitively
 covariate
-covariates
+Covariates
 Dai
 decodable
 DeepLIFT
@@ -80,7 +80,7 @@ importances
 independencies
 interconnectedness
 Interpretability
-interpretable
+Interpretable
 invariance
 invariances
 IRM
@@ -89,7 +89,7 @@ IRMv
 Jacobian
 Jessego
 Jia
-Jiaqi
+jiaqi
 Jingyun
 jittering
 JTT
@@ -97,7 +97,7 @@ kolar
 KRR
 KV
 latents
-lengerich
+Lengerich
 Lepski’s
 linearization
 linearized
@@ -142,7 +142,7 @@ nonnegative
 nonparametric
 NTK
 OOD
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -171,7 +171,7 @@ recomputation
 recursing
 reframes
 regressor
-regressors
+Regressors
 regularizer
 regularizers
 reproducibility
