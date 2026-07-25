@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-25" />
   <meta name="citation_publication_date" content="2026-07-25" />
   <meta property="article:published_time" content="2026-07-25" />
-  <meta name="dc.modified" content="2026-07-25T16:41:34+00:00" />
-  <meta property="article:modified_time" content="2026-07-25T16:41:34+00:00" />
+  <meta name="dc.modified" content="2026-07-25T17:39:14+00:00" />
+  <meta property="article:modified_time" content="2026-07-25T17:39:14+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/5157158b9a55586e37693f11d148c5d4ebaa3a95/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5157158b9a55586e37693f11d148c5d4ebaa3a95/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/5157158b9a55586e37693f11d148c5d4ebaa3a95/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/))
+([permalink](https://AdaptInfer.github.io/context-review/v/5157158b9a55586e37693f11d148c5d4ebaa3a95/))
 was compiled
-from [AdaptInfer/context-review@f677d9d](https://github.com/AdaptInfer/context-review/tree/f677d9d9120911cb31f3004218fbf7d173d1876b)
+from [AdaptInfer/context-review@5157158](https://github.com/AdaptInfer/context-review/tree/5157158b9a55586e37693f11d148c5d4ebaa3a95)
 on July 25, 2026.
 </em></small>
 
@@ -143,7 +143,7 @@ on July 25, 2026.
   </small>
 
 + **Caleb N. Ellington**
-  <br>
+  ^[✉](#correspondence)^<br>
     ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
     [0000-0001-7029-8023](https://orcid.org/0000-0001-7029-8023)
     · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
@@ -269,8 +269,9 @@ on July 25, 2026.
 
 
 ::: {#correspondence}
-✉ — Correspondence possible via [GitHub Issues](https://github.com/AdaptInfer/context-review/issues)
+✉ — Correspondence possible via GitHub Issues on [github.com/AdaptInfer/context-review](https://github.com/AdaptInfer/context-review/issues)
 or email to
+Caleb N. Ellington \<cellingt@cs.cmu.edu\> and 
 Ben Lengerich \<lengerich@wisc.edu\>.
 
 

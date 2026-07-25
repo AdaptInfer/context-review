@@ -1,6 +1,6 @@
 activations
 adaptively
-Adaptivity
+adaptivity
 adversarially
 Agentic
 Akyürek
@@ -8,7 +8,7 @@ algorithmically
 ANOVA
 approximators
 Arjovsky
-arxiv
+arXiv
 AUC
 auditability
 auditable
@@ -36,7 +36,7 @@ controllability
 counterfactuals
 Counterintuitively
 covariate
-Covariates
+covariates
 Dai
 decodable
 DeepLIFT
@@ -50,7 +50,7 @@ DRO
 DRO’s
 EarlyDrift
 EIIL
-embeddings
+Embeddings
 emergently
 ensembling
 ericxing
@@ -74,7 +74,7 @@ hypernetworks
 hyperparameter
 hyperparameters
 ICL
-identifiability
+Identifiability
 ignorability
 ImageNet
 importances
@@ -90,15 +90,15 @@ IRMv
 Jacobian
 Jessego
 Jia
-Jiaqi
+jiaqi
 Jingyun
 jittering
 JTT
-kolar
+Kolar
 KRR
 KV
 latents
-Lengerich
+lengerich
 Lepski’s
 linearization
 linearized
@@ -129,7 +129,7 @@ missingness
 misspecified
 MLP
 MNAR
-Modularity
+modularity
 modularized
 MoICE
 MSE
@@ -143,7 +143,7 @@ nonnegative
 nonparametric
 NTK
 OOD
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -172,7 +172,7 @@ recomputation
 recursing
 reframes
 regressor
-regressors
+Regressors
 regularizer
 regularizers
 reproducibility
@@ -230,7 +230,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-variational
+Variational
 VCBART
 VCM
 VCMs
