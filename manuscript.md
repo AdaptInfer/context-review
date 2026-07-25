@@ -5,7 +5,7 @@ keywords:
 - publishing
 - manubot
 lang: en-US
-date-meta: '2026-07-24'
+date-meta: '2026-07-25'
 author-meta:
 - Yue Yao
 - Caleb N. Ellington
@@ -30,11 +30,11 @@ header-includes: |
   <meta name="citation_title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="og:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
   <meta property="twitter:title" content="Context-Adaptive Inference: A Unified Statistical and Foundation-Model View" />
-  <meta name="dc.date" content="2026-07-24" />
-  <meta name="citation_publication_date" content="2026-07-24" />
-  <meta property="article:published_time" content="2026-07-24" />
-  <meta name="dc.modified" content="2026-07-24T23:03:49+00:00" />
-  <meta property="article:modified_time" content="2026-07-24T23:03:49+00:00" />
+  <meta name="dc.date" content="2026-07-25" />
+  <meta name="citation_publication_date" content="2026-07-25" />
+  <meta property="article:published_time" content="2026-07-25" />
+  <meta name="dc.modified" content="2026-07-25T06:27:04+00:00" />
+  <meta property="article:modified_time" content="2026-07-25T06:27:04+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,10 +119,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8/))
+([permalink](https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/))
 was compiled
-from [AdaptInfer/context-review@7ce7e1d](https://github.com/AdaptInfer/context-review/tree/7ce7e1dd417ee0a5d7d8b12ecaecaacb987e73e8)
-on July 24, 2026.
+from [AdaptInfer/context-review@8516f8a](https://github.com/AdaptInfer/context-review/tree/8516f8aa790d38c988c6b7ea58369ec1f84a8412)
+on July 25, 2026.
 </em></small>
 
 
@@ -383,7 +383,7 @@ $$
 \hat{\beta} = \arg\min_{\beta} \sum_{i=1}^{n} \bigl( y_i - x_i^{\top}\beta \bigr)^{2},
 $$
 
-giving a systematic procedure for estimating a shared parameter vector from i.i.d. data. Generalized linear models (GLMs) extended this reach to non-Gaussian outcomes. Nelder and Wedderburn connected the mean of the response to a linear predictor through a link function [@doi:10.2307/2344614], later formalized into the now-standard compact notation [@doi:10.1007/978-1-4899-3242-6],
+giving a systematic procedure for estimating a shared parameter vector of coefficients $\beta$ from a set of $n$ i.i.d. observations of paired covariates and outcomes $(x_i, y_i)$. Generalized linear models (GLMs) extended this reach to non-Gaussian outcomes. Nelder and Wedderburn connected the mean of the response to a linear predictor through a link function [@doi:10.2307/2344614], later formalized into the now-standard compact notation [@doi:10.1007/978-1-4899-3242-6],
 
 $$
 g(\mu_i) = x_i^\top \beta,
@@ -401,11 +401,15 @@ $$
 y = X\beta + Zu + \varepsilon, \quad u \sim N(0, G), \quad \varepsilon \sim N(0, R).
 $$
 
+Here $X$ and $Z$ are the fixed- and random-effects design matrices, $\beta$ the population-level fixed effects, $u$ the group-specific random effects with covariance $G$, and $\varepsilon$ the residual error with covariance $R$.
+
 Extensions carried this beyond Gaussian responses: practical estimation for generalized linear mixed models applied link functions to clustered binary, count, or categorical outcomes [@doi:10.1093/biomet/78.4.719], with penalized quasi-likelihood making application feasible in medical and biological settings [@doi:10.1080/01621459.1993.10594284]. In parallel, Bayesian hierarchical modeling linked parameters across groups through priors [@doi:10.1111/j.2517-6161.1972.tb00885.x],
 
 $$
 y_{ij} \mid \theta_j \sim p(y_{ij} \mid \theta_j), \quad \theta_j \sim p(\theta_j \mid \phi), \quad \phi \sim p(\phi),
 $$
+
+where $y_{ij}$ is the $i$-th observation in group $j$, $\theta_j$ the group-specific parameters, and $\phi$ the shared hyperparameters that couple groups through the prior.
 
 though it became practical only once Gibbs sampling [@doi:10.1109/TPAMI.1984.4767596] and later Markov chain Monte Carlo methods [@doi:10.1201/b16018] supplied the needed computation. These developments let parameters be indexed by group, the first crack toward $\theta_i = f(c_i)$. The variation, however, was still tied to discrete, pre-specified groupings rather than to arbitrary context.
 
@@ -417,7 +421,7 @@ $$
 y_i = \alpha + \sum_{j=1}^p f_j(x_{ij}) + \varepsilon_i,
 $$
 
-so the data, rather than a fixed linear form, determine the shape of each effect. As dimensionality kept growing, for example with genomic or imaging data, the burden shifted from specifying features to learning them. Representation learning generalizes classical dimension reduction such as PCA to nonlinear, data-driven embeddings [@doi:10.1109/TPAMI.2013.50], with neural autoencoders as the prototypical case: an encoder maps each input to a low-dimensional code and a decoder reconstructs it, so the model adapts its own feature extraction to complex data. In this regime, heterogeneity no longer lives in a hand-specified design but in a learned representation, which raises the question of how that representation should itself depend on context.
+where $\alpha$ is an intercept, each $f_j$ is an estimated smooth function of the $j$-th of $p$ predictors $x_{ij}$, and $\varepsilon_i$ is residual error. In this case the data, rather than a fixed linear form, determine the shape of each effect. As dimensionality kept growing, for example with genomic or imaging data, the burden shifted from specifying features to learning them. Representation learning generalizes classical dimension reduction such as PCA to nonlinear, data-driven embeddings [@doi:10.1109/TPAMI.2013.50], with neural autoencoders as the prototypical case: an encoder maps each input to a low-dimensional code and a decoder reconstructs it, so the model adapts its own feature extraction to complex data. In this regime, heterogeneity no longer lives in a hand-specified design but in a learned representation, which raises the question of how that representation should itself depend on context.
 
 ### Heterogeneous tasks and scarce data
 
@@ -427,7 +431,7 @@ $$
 \min_{W}\sum_{t=1}^T \sum_{i=1}^{n_t} \ell\bigl(y_i^t, f(x_i^t;w^t)\bigr) + \lambda\,\Omega(W),
 $$
 
-where $W$ collects task parameters and $\Omega(W)$ enforces shared structure. Transfer learning extends the idea across domains, adapting a model trained on a large source to a target with few labels [@doi:10.1109/TKDE.2009.191], as when an ImageNet-pretrained network is fine-tuned on a small medical imaging set. Distribution shift between training and deployment introduced a further challenge: under covariate shift the input distribution changes while the conditional stays fixed, correctable by importance weighting, and more general domain adaptation handles shifts in both the input and the conditional through techniques such as kernel mean matching or adversarial domain-invariant representations. Pushing to the extreme of many tasks with only a handful of examples each yields few-shot learning [@doi:10.1145/3386252], where metric-based methods embed inputs so that same-class samples cluster [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175] and meta-learning trains across simulated tasks so a model learns to adapt quickly. These frameworks confront scarcity by transferring inductive bias across tasks, making the task itself a form of context and adaptation an explicit goal, a thread the implicit-adaptivity section develops in full.
+where $W$ collects the per-task parameter vectors $w^t$, $\ell$ is a per-task loss over the $n_t$ samples of each of $T$ tasks, $\lambda$ sets the regularization strength, and $\Omega(W)$ enforces shared structure. Transfer learning extends the idea across domains, adapting a model trained on a large source to a target with few labels [@doi:10.1109/TKDE.2009.191], as when an ImageNet-pretrained network is fine-tuned on a small medical imaging set. Distribution shift between training and deployment introduced a further challenge: under covariate shift the input distribution changes while the conditional stays fixed, correctable by importance weighting, and more general domain adaptation handles shifts in both the input and the conditional through techniques such as kernel mean matching or adversarial domain-invariant representations. Pushing to the extreme of many tasks with only a handful of examples each yields few-shot learning [@doi:10.1145/3386252], where metric-based methods embed inputs so that same-class samples cluster [@doi:10.48550/arXiv.1606.04080; @doi:10.48550/arXiv.1703.05175] and meta-learning trains across simulated tasks so a model learns to adapt quickly. These frameworks confront scarcity by transferring inductive bias across tasks, making the task itself a form of context and adaptation an explicit goal, a thread the implicit-adaptivity section develops in full.
 
 ### Online and interactive data
 
@@ -439,7 +443,7 @@ $$
 a_t = \arg\max_{a \in \mathcal{A}} \left( x_t^\top \hat{\theta}_a + \alpha \sqrt{x_t^\top A_a^{-1} x_t} \right),
 $$
 
-personalizing decisions to the observed environment, as in news recommendation and adaptive experimentation. When actions also influence future contexts, reinforcement learning generalizes this to sequential decisions through Markov decision processes [@Bellman1957Markovian], with value-based [@Watkins1989Learning] and policy-based [@doi:10.1023/a:1022672621406; @doi:10.1109/tsmc.1983.6313077] solutions enabling applications from game-playing to robotics [@doi:10.1038/nature14236]. Across this progression, adaptivity to context and feedback moves from a modeling convenience to the central object.
+where $\mathcal{A}$ is the action set, $\hat{\theta}_a$ the estimated reward parameters for arm $a$, $A_a$ its design matrix, and $\alpha$ controls the strength of the exploration bonus. This setup personalizes decisions to the observed environment, as in news recommendation and adaptive experimentation. When actions also influence future contexts, reinforcement learning generalizes this to sequential decisions through Markov decision processes [@Bellman1957Markovian], with value-based [@Watkins1989Learning] and policy-based [@doi:10.1023/a:1022672621406; @doi:10.1109/tsmc.1983.6313077] solutions enabling applications from game-playing to robotics [@doi:10.1038/nature14236]. Across this progression, adaptivity to context and feedback moves from a modeling convenience to the central object.
 
 ### Multimodal data and large-scale pretraining
 
@@ -450,13 +454,13 @@ $$
 \log p(x) = \sum_{t=1}^T \log p(x_t \mid x_{<t}),
 $$
 
-and allows context to be flexibly specified. This allows adaptation to occur over a wide range of contexts at inference time, without weight updates: given a prompt of examples $(x_1, y_1), \dots, (x_k, y_k)$ and a query $x_{k+1}$, the model predicts
+where $x_t$ is the $t$-th token and $x_{<t}$ the preceding tokens of a length-$T$ sequence, and allows context to be flexibly specified. This allows adaptation to occur over a wide range of contexts at inference time, without weight updates: given a prompt of examples $(x_1, y_1), \dots, (x_k, y_k)$ and a query $x_{k+1}$, the model predicts
 
 $$
 \hat{y}_{k+1} = \arg\max_{y_{k+1}} p(y_{k+1} \mid x_{k+1}, y_k, x_k, \dots y_1, x_1),
 $$
 
-with the same fixed $\theta^\star$. This emergent capability, in-context learning, is the basis for the implicit context-adaptive view explored in subsequent sections.
+with the same fixed pretrained parameters $\theta^\star$. This emergent capability, in-context learning, is the basis for the implicit context-adaptive view explored in subsequent sections.
 
 ### From heterogeneity to context
 
@@ -477,7 +481,7 @@ $$
 y_i = \sum_{j=1}^{p} \beta_j(c_i)\, x_{ij} + \varepsilon_i .
 $$
 
-Every method in this section is, at its core, a different way to estimate the maps $\beta_j(\cdot)$, or more generally $f(\cdot)$. We organize them along an axis of increasingly sophisticated statistical and machine-learning concepts. This progression traces a spectrum of assumptions about how parameters relate to context, from none to fully learned:
+where each coefficient $\beta_j(c_i)$ is a function of the context $c_i$, $x_{ij}$ is the $j$-th of $p$ covariates, and $\varepsilon_i$ is residual error. Every method in this section is, at its core, a different way to estimate the maps $\beta_j(\cdot)$, or more generally $f(\cdot)$. We organize them along an axis of increasingly sophisticated statistical and machine-learning concepts. This progression traces a spectrum of assumptions about how parameters relate to context, from none to fully learned:
 
 * Global models: $\theta_i = \theta$ for all $i$.
 * Grouped models: $\theta_i = \theta_c$ for a finite set of groups.
@@ -836,7 +840,7 @@ To formalize this link between explicit and implicit context adaptation, we requ
 **Proposition 1 (Explicit varying-coefficients and linear ICL coincide with kernel ridge on joint features in the linear squared-loss setting).**  
 Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\varepsilon$ with $\mathbb{E}[\varepsilon]=0$. Let
 (i) a context encoder $\phi:\mathcal{C}\to\mathbb{R}^{d_c}$,
-(ii) joint features $\psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}$,
+(ii) joint features $\psi(x,c):=x\otimes \phi(c)\in\mathbb{R}^{d_x d_c}$, where $\otimes$ is the Kronecker product, and $d_x$ and $d_c$ are the dimensions of $x$ and $\phi(c)$,
 (iii) a context-dependent support set $S(c)$ with nonnegative weights $w_{ij}(c)$.
 
 - **(A) Explicit varying-coefficients.** Let $\theta(c)=B\,\phi(c)$ with $B\in\mathbb{R}^{d_x\times d_c}$ and ridge penalty $\lambda\lVert B\rVert_F^2$. The weighted ridge solution yields
@@ -846,7 +850,7 @@ Assume squared loss and the regression model $y=\langle \theta(c),x\rangle+\vare
   $$
   i.e., **kernel ridge regression (KRR)** on joint features.
 
-- **(B) Implicit adaptation via linear ICL.** Let a single linear attention layer consume the weighted support set $S(c)$ with linear $q=Q\psi$, $k=K\psi$, $v=V\psi$ and a linear readout. With attention weights proportional to $w_{ij}(c)\cdot \langle q,k_{ij}\rangle$, the induced predictor equals KRR with kernel
+- **(B) Implicit adaptation via linear ICL.** Let a single linear attention layer consume the weighted support set $S(c)$ with linear query, key, and value maps $q=Q\psi$, $k=K\psi$, $v=V\psi$ (projection matrices $Q$, $K$, $V$, distinct from the Gram matrix $K$ above) and a linear readout. With attention weights proportional to $w_{ij}(c)\cdot \langle q,k_{ij}\rangle$, the induced predictor equals KRR with kernel
   $$
   k\big((x,c),(x',c')\big)=\langle q(x,c),k(x',c')\rangle,
   $$
@@ -868,6 +872,7 @@ This linear, squared-loss bridge captures a large class of explicit and implicit
 We view these as open extensions to explore beyond the scope of this review.
 
 
+
 ## Principles of Context-Adaptive Inference
 
 What makes a model adaptive? When is it good for a model to be adaptive? While the appeal of adaptivity lies in flexibility and personalized inference, not all adaptivity is beneficial. This section formalizes the core principles that underlie adaptive modeling and situates them within both classical statistics and recent advances in machine learning.
@@ -886,7 +891,7 @@ Flexibility alone is not enough; a model also requires observable signals that i
 
 In machine learning, contextual bandits adapt decisions to side information that characterizes the current environment, while benchmarks like WILDS highlight that real-world datasets often contain distributional shifts and subgroup heterogeneity [@doi:10.48550/arXiv.2012.07421]. Recent work extends this further, modeling time-varying changes in continuous temporal domain generalization [@doi:10.48550/arXiv.2405.16075] or using diversity across experts to separate stable from unstable patterns [@doi:10.48550/arXiv.2410.17020]. Across applications, from medicine to online platforms, signals that indicate heterogeneity or distribution shift drive adaptation.
 
-Causal inference is a canonical example. In the Neyman-Rubin potential-outcomes framework, the average treatment effect $E[Y(1) - Y(0)]$ assumes one effect shared across the population. If the underlying population contains multiple groups (heterogeneous) and the effect differs between groups, the average estimator is confounded. Recovering heterogeneous treatment effects across groups requires side information $C$ about group membership, i.e. "no unmeasured confounding" (Figure {@fig:hte-context}). 
+Causal inference is a canonical example. In the Neyman-Rubin potential-outcomes framework, the average treatment effect $E[Y(1) - Y(0)]$, the mean difference between the potential outcomes under treatment $Y(1)$ and control $Y(0)$, assumes one effect shared across the population. If the underlying population contains multiple groups (heterogeneous) and the effect differs between groups, the average estimator is confounded. Recovering heterogeneous treatment effects across groups requires side information $C$ about group membership, i.e. "no unmeasured confounding" (Figure {@fig:hte-context}). 
 
 ![Heterogeneous treatment effects. Left: average treatment effect (ATE) conditional on $X$, 
 implicitly assuming homogeneity across contexts. Right: conditional average treatment effect (CATE) 
@@ -1022,7 +1027,7 @@ $$
 \qquad \alpha>0.
 $$
 
-Finer locality (small $\delta$) sharpens resolution but shrinks $N_{\text{eff}}$ and inflates variance; this is the quantitative form of the adaptation–data tradeoff, and amortized encoders raise $N_{\text{eff}}$ by sharing $\theta(c)=f_\phi(c)$ across contexts. Compute enters through the same neighborhood: an early-stopped first-order method with step size $\eta$ and $T(c)$ context-dependent iterations satisfies
+where $\sigma^2$ is the noise variance, $L$ and $\mu$ the smoothness and strong-convexity constants of the risk, and $\alpha>0$ the context-smoothness exponent governing the approximation bias. Finer locality (small $\delta$) sharpens resolution but shrinks $N_{\text{eff}}$ and inflates variance; this is the quantitative form of the adaptation–data tradeoff, and amortized encoders raise $N_{\text{eff}}$ by sharing $\theta(c)=f_\phi(c)$ across contexts. Compute enters through the same neighborhood: an early-stopped first-order method with step size $\eta$ and $T(c)$ context-dependent iterations satisfies
 
 $$
 \mathcal{L}\!\big(\theta^{(T(c))}\big)-\mathcal{L}\!\big(\theta^{\star}\big)
@@ -1031,7 +1036,8 @@ $$
 +\frac{\eta L\sigma^2}{2\mu\,N_{\text{eff}}(c,\delta)},
 $$
 
-linking the compute budget $T(c)$ and data availability $N_{\text{eff}}(c,\delta)$ to the attainable excess risk at context $c$.
+where $\mathcal{L}$ is the population objective, $\theta^{(0)}$ the initialization, $\theta^{\star}$ its minimizer, and $\eta$ the step size.
+This links the compute budget $T(c)$ and data availability $N_{\text{eff}}(c,\delta)$ to the attainable excess risk at context $c$.
 
 ### Routing Stability
 
@@ -1106,10 +1112,10 @@ $$
 R^2_{\text{local}}
 = 1 - \frac{\sum_i w_i\,\big(h_i - g_i\big)^2}{\sum_i w_i\,\big(h_i - \bar h\big)^2},
 \qquad
-w_i \propto \kappa\!\big((x_i,c_i),(x_0,c_0)\big).
+w_i \propto \kappa\!\big((x_i,c_i),(x_0,c_0)\big),
 $$
 
-LIME perturbs inputs and fits a locality-weighted linear surrogate [@doi:10.48550/arXiv.1602.04938]; SHAP / DeepSHAP provide additive attributions based on Shapley values [@doi:10.48550/arXiv.1705.07874]. Integrated Gradients and DeepLIFT link attribution to path-integrated sensitivity or reference-based contributions [@doi:10.48550/arXiv.1703.01365; @doi:10.48550/arXiv.1704.02685]. These methods are most reliable when the model is near-linear in the chosen neighborhood and perturbations remain near the data manifold; consequently, a rigorous analysis involves stating the neighborhood definition, reporting the surrogate’s goodness-of-fit, and assessing stability across seeds and baselines.
+where $h_i=h(x_i,c_i)$ and $g_i=g(x_i,c_i)$ are the black-box and surrogate predictions, $\bar h$ their weighted mean, and $\kappa$ a locality kernel centered at the point of interest $(x_0,c_0)$. LIME perturbs inputs and fits a locality-weighted linear surrogate [@doi:10.48550/arXiv.1602.04938]; SHAP / DeepSHAP provide additive attributions based on Shapley values [@doi:10.48550/arXiv.1705.07874]. Integrated Gradients and DeepLIFT link attribution to path-integrated sensitivity or reference-based contributions [@doi:10.48550/arXiv.1703.01365; @doi:10.48550/arXiv.1704.02685]. These methods are most reliable when the model is near-linear in the chosen neighborhood and perturbations remain near the data manifold; consequently, a rigorous analysis involves stating the neighborhood definition, reporting the surrogate’s goodness-of-fit, and assessing stability across seeds and baselines.
 
 #### Prototype and Nearest-Neighbor Methods
 Here, a decision is grounded by reference to similar cases in representation space, which supports case-based explanations and modular updates. ProtoPNet learns a library of visual prototypes to implement “this looks like that” reasoning [@doi:10.48550/arXiv.1806.10574]. Deep $k$-nearest neighbors audits predictions by querying neighbors in activation space and can flag distribution shift [@doi:10.48550/arXiv.1803.04765]. Influence functions link a prediction to influential training points for data-centric debugging [@doi:10.48550/arXiv.1703.04730]. This line of work connects naturally to exemplar models and contextual bandits, where decisions are justified via comparisons to context-matched exemplars. Reports include prototype coverage and diversity, neighbor quality checks, and the effect of editing prototypes or influential examples. These prototype-based approaches make local adaptation explicit by grounding predictions in reference cases, bridging the gap between black-box models and case-based reasoning frameworks.

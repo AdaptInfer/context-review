@@ -1,6 +1,6 @@
 activations
 adaptively
-adaptivity
+Adaptivity
 adversarially
 Agentic
 Akyürek
@@ -50,7 +50,7 @@ DRO
 DRO’s
 EarlyDrift
 EIIL
-embeddings
+Embeddings
 emergently
 ensembling
 ericxing
@@ -72,6 +72,7 @@ Guo
 hte
 hypernetworks
 hyperparameter
+hyperparameters
 ICL
 identifiability
 ignorability
@@ -80,7 +81,7 @@ importances
 independencies
 interconnectedness
 interpretability
-Interpretable
+interpretable
 invariance
 invariances
 IRM
@@ -97,7 +98,7 @@ kolar
 KRR
 KV
 latents
-lengerich
+Lengerich
 Lepski’s
 linearization
 linearized
@@ -128,11 +129,11 @@ missingness
 misspecified
 MLP
 MNAR
-modularity
+Modularity
 modularized
 MoICE
 MSE
-mtl
+MTL
 multimodal
 Nelder
 Neyman
@@ -142,7 +143,7 @@ nonnegative
 nonparametric
 NTK
 OOD
-Overfitting
+overfitting
 overflexible
 overparameterized
 parameterization
@@ -155,9 +156,9 @@ PGD
 piecewise
 pointwise
 Poursabzi
-pre
+Pre
 preprocessing
-Pretrained
+pretrained
 pretraining
 priori
 probablybots
