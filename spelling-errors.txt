@@ -8,7 +8,7 @@ algorithmically
 ANOVA
 approximators
 Arjovsky
-arXiv
+arxiv
 AUC
 auditability
 auditable
@@ -36,7 +36,7 @@ controllability
 counterfactuals
 Counterintuitively
 covariate
-covariates
+Covariates
 Dai
 decodable
 DeepLIFT
@@ -50,7 +50,7 @@ DRO
 DRO’s
 EarlyDrift
 EIIL
-Embeddings
+embeddings
 emergently
 ensembling
 ericxing
@@ -133,7 +133,7 @@ Modularity
 modularized
 MoICE
 MSE
-MTL
+mtl
 multimodal
 Nelder
 Neyman
@@ -143,7 +143,7 @@ nonnegative
 nonparametric
 NTK
 OOD
-overfitting
+Overfitting
 overflexible
 overparameterized
 parameterization
@@ -156,7 +156,7 @@ PGD
 piecewise
 pointwise
 Poursabzi
-Pre
+pre
 preprocessing
 pretrained
 pretraining
@@ -172,7 +172,7 @@ recomputation
 recursing
 reframes
 regressor
-Regressors
+regressors
 regularizer
 regularizers
 reproducibility
@@ -230,7 +230,7 @@ upweighted
 VAE
 VAEAC
 VAEs
-Variational
+variational
 VCBART
 VCM
 VCMs

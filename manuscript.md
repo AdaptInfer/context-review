@@ -33,8 +33,8 @@ header-includes: |
   <meta name="dc.date" content="2026-07-25" />
   <meta name="citation_publication_date" content="2026-07-25" />
   <meta property="article:published_time" content="2026-07-25" />
-  <meta name="dc.modified" content="2026-07-25T06:27:04+00:00" />
-  <meta property="article:modified_time" content="2026-07-25T06:27:04+00:00" />
+  <meta name="dc.modified" content="2026-07-25T16:41:34+00:00" />
+  <meta property="article:modified_time" content="2026-07-25T16:41:34+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -95,9 +95,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://AdaptInfer.github.io/context-review/" />
   <meta name="citation_pdf_url" content="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://AdaptInfer.github.io/context-review/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/" />
-  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/" />
-  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/" />
+  <meta name="manubot_html_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -119,9 +119,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://AdaptInfer.github.io/context-review/v/8516f8aa790d38c988c6b7ea58369ec1f84a8412/))
+([permalink](https://AdaptInfer.github.io/context-review/v/f677d9d9120911cb31f3004218fbf7d173d1876b/))
 was compiled
-from [AdaptInfer/context-review@8516f8a](https://github.com/AdaptInfer/context-review/tree/8516f8aa790d38c988c6b7ea58369ec1f84a8412)
+from [AdaptInfer/context-review@f677d9d](https://github.com/AdaptInfer/context-review/tree/f677d9d9120911cb31f3004218fbf7d173d1876b)
 on July 25, 2026.
 </em></small>
 
@@ -823,7 +823,7 @@ $$
 w_{ij}(c)\propto K\!\big(\phi(c),\phi(c_i)\big)\cdot \mathbf{1}\!\big[(i,j)\in S(c)\big].
 $$
 
-Adaptivity across estimation and inference are governed defined by three tools that can be applied independently:
+Adaptivity across estimation and inference is governed by three tools that can be applied independently:
 1) **Information** via $S(c)$ (what context is exposed),  
 2) **Inductive bias** via $\mathcal{R}(\theta;c)$ (how parameters may vary),  
 3) **Compute** via warm-starts/caching/steps (how aggressively we solve Eq. {@eq:unified} at test time).
